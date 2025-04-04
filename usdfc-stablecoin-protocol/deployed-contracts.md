@@ -8,9 +8,7 @@ description: The official contract address, audit reports, and architecture diag
 
 The latest version of [`@secured-finance/stablecoin-contracts`](https://github.com/Secured-Finance/stablecoin-contracts) is deployed at the addresses listed below.
 
-| Contract | Filecoin Mainnet                           | Filecoin Calibration Testnet               |
-| -------- | ------------------------------------------ | ------------------------------------------ |
-| USDFC    | 0x80B98d3aa09ffff255c3ba4A241111Ff1262F045 | 0xb3042734b608a1B16e9e86B374A3f3e389B4cDf0 |
+<table><thead><tr><th width="153.1953125">Contract</th><th width="291">Filecoin Mainnet</th><th>Filecoin Calibration Testnet</th></tr></thead><tbody><tr><td>USDFC</td><td><a href="https://filfox.info/en/address/0x80B98d3aa09ffff255c3ba4A241111Ff1262F045"><code>0x80B98d3aa09ffff255c3ba4A241111Ff1262F045</code></a></td><td><a href="https://calibration.filfox.info/en/address/0xb3042734b608a1B16e9e86B374A3f3e389B4cDf0?t=3"><code>0xb3042734b608a1B16e9e86B374A3f3e389B4cDf0</code></a></td></tr></tbody></table>
 
 
 
