@@ -20,3 +20,4 @@ Our platform is built on two core protocols:
 * USDFC - [Beginners Guide](usdfc-stablecoin-protocol/beginners-guide.md)
 * Fixed-Rate Lending - [Beginners Guide](fixed-rate-lending-protocol/beginners-guide.md)
 
+Let's try!
