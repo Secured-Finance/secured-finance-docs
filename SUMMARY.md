@@ -78,8 +78,6 @@
   * [Query Examples](fixed-rate-lending-protocol/the-graph/query-examples.md)
 * [❓ FAQs](fixed-rate-lending-protocol/faqs.md)
 
-## Technical Guide
-
 ## RESOURCES
 
 * [📚 Knowledge Base](resources/knowledge-base/README.md)

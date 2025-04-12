@@ -24,8 +24,6 @@ $$
 
 _n: Number of Rolls_
 
-
-
 If you are a lender, the GV number will be positive and will remain the same. However, if you are a borrower of the asset, the GV will be negative, and your obligation will increase after each roll.
 
 The GV for borrowers is calculated from the GV of lenders and Compound Factors.The calculation of Genesis Value (GV) for each user in our protocol is as follows:
@@ -43,11 +41,9 @@ x = GV_{n} \times (\frac{BCF_{n+a}}{BCF_{n}} \times \frac{LCF_{n}}{LCF_{n+a}} - 
 $$
 
 _n: Number of Rolls_\
-_a: Additional Roll periods_
+&#xNAN;_&#x61;: Additional Roll periods_
 
 In essence, the GV serves as a reflection of your role (lender or borrower) and the changes in your obligations over time within the protocol.
-
-
 
 To calculate your Future Value (FV), you simply need to multiply the Genesis Value (GV) by the Compound Factor from the lending side. This formula allows you to determine the projected value of your assets or obligations in the future, based on the current Genesis Value and the Compound Factor.
 
@@ -59,7 +55,4 @@ $$
 
 _n: Number of Rolls_
 
-
-
 The Compound Factor is a crucial element of the Secured Finance protocol, contributing to efficient value calculation and transaction execution.
-
