@@ -8,7 +8,7 @@ description: Answers to Frequently Asked Questions
 {% tab title="Overview" %}
 ### What is Secured Finance?
 
-Secured Finance is a decentralized finance platform that facilitates peer-to-contract lending and derivatives trading. It's built on the Ethereum blockchain, offering a transparent, robust, and cost-effective alternative to traditional financial institutions. For more details, you can refer to our Secured Finance [Overview](../) section.
+Secured Finance is a decentralized finance platform that facilitates peer-to-contract lending and derivatives trading. It's built on the Ethereum blockchain, offering a transparent, robust, and cost-effective alternative to traditional financial institutions. For more details, you can refer to our Secured Finance [Overview](broken-reference) section.
 
 ### What products does Secured Finance offer?
 
