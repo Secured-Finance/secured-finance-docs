@@ -3,7 +3,7 @@
 ## About Secured Finance
 
 * [⚜️ About Secured Finance](README.md)
-* [🎏 Mission & Vision](about-secured-finance/mission-and-vision.md)
+* [🎏 Vision & Mission](about-secured-finance/mission-and-vision.md)
 * [🏁 Roadmap 2025](about-secured-finance/roadmap-2025/README.md)
   * [Roadmap 2024](about-secured-finance/roadmap-2025/roadmap-2024.md)
   * [Roadmap 2023](about-secured-finance/roadmap-2025/roadmap-2023.md)
