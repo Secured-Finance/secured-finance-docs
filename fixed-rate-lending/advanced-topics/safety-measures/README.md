@@ -6,7 +6,7 @@ description: Safety Rules and Regulations for Ensuring Platform Integrity
 
 Protocol Safety Measures are a critical aspect of our protocol. We have implemented robust mechanisms to ensure the safety and stability of our platform. This includes the Emergency Termination Procedure and the Circuit Breaker.
 
-### [Mark to Market](../advanced-topics/mark-to-market.md)
+### [Mark to Market](../../protocol-features/liquidation/mark-to-market.md)
 
 Mark to Market is a standard accounting practice adopted at Secured Finance, which entails recording the fair value of assets and liabilities, thereby providing a realistic appraisal of the financial health and the risk profile of positions on our platform. This practice is indispensable for maintaining transparency and accuracy in financial reporting, which in turn fosters trust and confidence among our users. The Mark to Market mechanism also plays a pivotal role in ensuring that the pricing of assets is aligned with the current market conditions, which is vital for effective risk management.
 

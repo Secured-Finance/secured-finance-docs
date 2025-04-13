@@ -11,7 +11,7 @@ description: To sustain our Protocol
 The market taker fee will linearly increase/decrease depending on the duration (1% annum), included in the transaction, and charged by Future Value.
 
 {% hint style="info" %}
-No fee will be charged for 'pre-open orders' that are filled during the order book opening process as the trade fee will be waived for the '[Itayose](../fixed-rate-lending-protocol/broken-reference/)' process!!
+No fee will be charged for 'pre-open orders' that are filled during the order book opening process as the trade fee will be waived for the '[Itayose](../../fixed-rate-lending-protocol/broken-reference/)' process!!
 {% endhint %}
 
 ## Liquidation Fees
@@ -20,7 +20,7 @@ As a DeFi project, Collateral Management is critical to secure the protocol. Hen
 
 ## Auto Roll Fees
 
-Our protocol designed the automated rolling feature when the loan matures. This benefits users since you can reinvest without any action at the mid-price with little market impact (see '[Auto Roll](advanced-topics/auto-rolling/)'). The roll fee will be the same as the trade fee at 0.25% of the notional amount for a 3-month duration.
+Our protocol designed the automated rolling feature when the loan matures. This benefits users since you can reinvest without any action at the mid-price with little market impact (see '[Auto Roll](../advanced-topics/market-dynamics/auto-rolling/)'). The roll fee will be the same as the trade fee at 0.25% of the notional amount for a 3-month duration.
 
 ## Fee Reserve and Distribution
 

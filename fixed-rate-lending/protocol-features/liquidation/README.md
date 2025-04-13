@@ -15,7 +15,7 @@ The liquidation process holds paramount importance for Secured Finance as a Dece
 
 When the borrower's [**Loan to Value**](./#loan-to-value) ratio surpasses the [**Threshold**](./#threshold)**,** the borrower's asset will be subject to liquidation.
 
-During a liquidation process, a portion of the borrower's outstanding debt, which can be up to 50%, is repaid using the available collateral. The amount repaid from the debt is equal to the sum of the [**Collateral**](../../platform-guide/portfolio/collateral-management.md) used for repayment and the [**Liquidation Penalty**](./#liquidation-penalty).
+During a liquidation process, a portion of the borrower's outstanding debt, which can be up to 50%, is repaid using the available collateral. The amount repaid from the debt is equal to the sum of the [**Collateral**](../../getting-started/platform-guide/portfolio/collateral-management.md) used for repayment and the [**Liquidation Penalty**](./#liquidation-penalty).
 
 #### Loan to Value
 
@@ -33,7 +33,7 @@ We use an on-chain live calculation based on the chainlink price feed for the co
 
 ## Liquidation Penalty
 
-Our protocol charges a 7% liquidation penalty for the liquidated asset. Borrowers need to manage their collateral carefully to avoid the extra cost. This [fee](../../protocol-fees.md) is paid to the liquidation agent and reserve fund to secure the protocol.
+Our protocol charges a 7% liquidation penalty for the liquidated asset. Borrowers need to manage their collateral carefully to avoid the extra cost. This [fee](../protocol-fees.md) is paid to the liquidation agent and reserve fund to secure the protocol.
 
 > See more details at [Liquidation Case study](case-study.md)
 

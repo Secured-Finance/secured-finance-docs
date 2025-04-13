@@ -2,7 +2,7 @@
 description: The Secured Finance Roadmap
 ---
 
-# 🛣️ Roadmap 2025
+# 🏁 Roadmap 2025
 
 {% hint style="info" %}
 Token Launch timing will be TBD
@@ -16,8 +16,8 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [ ] SFC Launch & DAO Governance
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
-* [ ] USDFC Stablecoin Official Launch on Filecoin Mainnet&#x20;
-* [ ] USDFC Stablecoin Beta Launch on Filecoin Mainnet&#x20;
+* [ ] USDFC Stablecoin Official Launch on Filecoin Mainnet
+* [ ] USDFC Stablecoin Beta Launch on Filecoin Mainnet
 
 ### 2025 Q1
 
@@ -29,4 +29,3 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [x] [Partnership Announcement](https://medium.com/secured-finance/secured-finance-defi-2-0-1538041ec31a) with Lighthouse
 * [x] Parasail's wpFIL integration
 * [x] MAR2024 Markets Itayose & Auto-roll (Pre-Order 3/21-3/27: [Report](https://medium.com/secured-finance/itayose-and-auto-rolling-report-q1-2025-1c718c2004f4))
-

@@ -26,10 +26,10 @@ If you want to exit a position, you can unwind a trade with ease. For lenders, t
 
 ### **What Happens When My Loan Matures?**
 
-Upon maturity, funds are automatically reinvested into the next 3-month maturity cycle via our Auto-Roll feature. This functionality minimizes reinvestment risks and promotes steady growth by keeping your assets continuously invested. See our [Auto-Rolling](../../advanced-topics/auto-rolling/) section for more details.
+Upon maturity, funds are automatically reinvested into the next 3-month maturity cycle via our Auto-Roll feature. This functionality minimizes reinvestment risks and promotes steady growth by keeping your assets continuously invested. See our [Auto-Rolling](../../../advanced-topics/market-dynamics/auto-rolling/) section for more details.
 
 ## **How Does Secured Finance Protect My Loan?**
 
-Secured Finance prioritizes loan security with robust collateral management and smart contract technology. Borrowers are required to pledge collateral, which is managed by the smart contract to reduce counterparty risk. Our smart contracts enforce loan terms automatically, enhancing security and reliability. For more details, see our [Collateral](../portfolio/collateral-management.md) and [Security & Safety Measures](../../safety-measures/) sections.
+Secured Finance prioritizes loan security with robust collateral management and smart contract technology. Borrowers are required to pledge collateral, which is managed by the smart contract to reduce counterparty risk. Our smart contracts enforce loan terms automatically, enhancing security and reliability. For more details, see our [Collateral](../portfolio/collateral-management.md) and [Security & Safety Measures](../../../advanced-topics/safety-measures/) sections.
 
-Ready to begin? Visit our [Beginners Guides](../../getting-started.md) to learn more about using the [Trading tab](https://app.secured.finance/) on Secured Finance and start trading with confidence.
+Ready to begin? Visit our [Beginners Guides](../../) to learn more about using the [Trading tab](https://app.secured.finance/) on Secured Finance and start trading with confidence.

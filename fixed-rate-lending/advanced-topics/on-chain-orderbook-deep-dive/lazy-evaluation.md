@@ -4,7 +4,7 @@ description: 'Optimizing Gas Costs: The Intersection of Lazy Evaluation'
 
 # ⏯️ Lazy Evaluation
 
-Secured Finance has introduced a revolutionary feature known as “lazy evaluation,” which significantly streamlines the management of orders and the auto-roll process. This mechanism works by deferring the computation and update of orders and positions until absolutely necessary. As a result, it eliminates the need to manually roll over each position or update a multitude of open orders whenever an order is filled. This approach not only leads to substantial savings in [gas costs](../../resources/knowledge-base/gas-cost.md) but also boosts the overall efficiency of the protocol.
+Secured Finance has introduced a revolutionary feature known as “lazy evaluation,” which significantly streamlines the management of orders and the auto-roll process. This mechanism works by deferring the computation and update of orders and positions until absolutely necessary. As a result, it eliminates the need to manually roll over each position or update a multitude of open orders whenever an order is filled. This approach not only leads to substantial savings in [gas costs](../../../resources/knowledge-base/gas-cost.md) but also boosts the overall efficiency of the protocol.
 
 ### States of Orders:
 
@@ -14,7 +14,7 @@ Orders in the system can exist in three states: Open Order, Active Position (FV)
 2. Active Position (FV): Once Orders are filled, it will be managed by Future Value (FV)
 3. Auto-rolled Position (GV): Positions that have reached their maturity date will be Auto-rolled without any action and managed by [Genesis Value](genesis-value.md) (GV).
 
-**Lazy evaluation is utilized for all states above**. For Open Orders, the contract checks if the order has been unlinked on the red-black tree, indicating that the order has already been filled. As for Active Positions (FV), if the positions reach their maturity date, they are then treated as Auto-rolled Positions (GV) and returned as such. As for Auto-rolled Positions (GV), only borrowing positions will increase after each roll. (Please refer to the [Compound Factor](../../fixed-rate-lending-protocol/on-chain-orderbook-deep-dive/broken-reference/) for more detail)
+**Lazy evaluation is utilized for all states above**. For Open Orders, the contract checks if the order has been unlinked on the red-black tree, indicating that the order has already been filled. As for Active Positions (FV), if the positions reach their maturity date, they are then treated as Auto-rolled Positions (GV) and returned as such. As for Auto-rolled Positions (GV), only borrowing positions will increase after each roll. (Please refer to the [Compound Factor](../../../fixed-rate-lending-protocol/on-chain-orderbook-deep-dive/broken-reference/) for more detail)
 
 ### States update:
 
@@ -32,4 +32,4 @@ The above states are stored on the smart contract storage, ensuring data integri
 
 Lazy order evaluation is a critical component for supporting essential functionalities such as market orders and auto-roll. Without it, executing these operations would result in substantial gas costs, particularly in terms of storage. By adopting lazy evaluation, Secured Finance streamlines its platform and ensures a more cost-effective and user-friendly experience for all participants.
 
-<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>

@@ -29,4 +29,4 @@ The **Points Dashboard** allows you to:
 
 ### More Information
 
-For detailed information on the SFP system, including point calculations and reward structures, please visit our [Secured Finance Points (SFP)](../../community-and-support/tokenomics/secured-finance-points-sfp-v2/) page.
+For detailed information on the SFP system, including point calculations and reward structures, please visit our [Secured Finance Points (SFP)](../../../community-and-support/tokenomics/secured-finance-points-sfp-v2/) page.

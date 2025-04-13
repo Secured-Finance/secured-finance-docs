@@ -4,7 +4,7 @@ cover: .gitbook/assets/securedfinance_background2(dark)_twitter.png
 coverY: 0
 ---
 
-# 🔮 About Secured Finance
+# ⚜️ About Secured Finance
 
 ## Welcome to Secured Finance
 
@@ -26,6 +26,6 @@ Our platform is built on two innovative protocols:
 Ready to experience the future of decentralized finance? Choose your path:
 
 * **USDFC Stablecoin:** Mint, borrow, and manage your USDFC by opening a Trove - [Beginners Guide](usdfc-stablecoin/getting-started.md)
-* **Fixed-Rate Lending:** Lend and borrow at fixed rates with tokenized debt - [Beginners Guide](fixed-rate-lending/getting-started.md)
+* **Fixed-Rate Lending:** Lend and borrow at fixed rates with tokenized debt - [Beginners Guide](fixed-rate-lending/getting-started/)
 
 Visit our [app](https://app.secured.finance/) to start your journey with Secured Finance today!

@@ -2,7 +2,7 @@
 description: APR calculation
 ---
 
-# ZC Bond Price to APR
+# ➗ ZC Bond Price to APR
 
 On our platform, the execution of bond transactions is determined by the bond price. However, we recognize that users may find it more convenient to reference the Annual Percentage Rate (APR) when assessing yields. To accommodate this, we provide the APR as a reference rate, which is based on a linear calculation up to a 1-year tenor using an Act/365 basis. For tenors exceeding 1 year, we utilize annual compounding to determine the yield.
 
@@ -56,7 +56,7 @@ $$
 
 **What is the Pre-Open Period?**
 
-The pre-open period is a specific time frame before the official opening of a new bond market. During this period, we invite users to place their orders in the pre-open order book. This allows market participants to gauge interest and liquidity before the market officially starts. For more detailed explanation, please visit to [Fair Price Discovery.](../fixed-rate-lending/advanced-topics/new-market-listing-and-delisting/itayose-fair-price-discovery.md)
+The pre-open period is a specific time frame before the official opening of a new bond market. During this period, we invite users to place their orders in the pre-open order book. This allows market participants to gauge interest and liquidity before the market officially starts. For more detailed explanation, please visit to [Fair Price Discovery.](market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery.md)
 
 **How is APR Displayed During the Pre-Open Period?**
 

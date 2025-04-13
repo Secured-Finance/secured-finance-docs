@@ -2,7 +2,7 @@
 description: A New Dawn in Financial Integrity and Accessibility
 ---
 
-# 🗝️ Our Mission
+# 🎏 Mission & Vision
 
 Dear Fellow Navigators of the Financial Future,
 
@@ -23,4 +23,3 @@ Join us as we sail towards a future where finance is not merely a system but a s
 In the Spirit of the Hopeful Forward Movement,\
 \
 Secured Finance Team
-

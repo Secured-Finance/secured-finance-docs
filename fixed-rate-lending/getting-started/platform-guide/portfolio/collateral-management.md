@@ -47,7 +47,7 @@ Filecoin is the native cryptocurrency of the Filecoin network, a decentralized s
 
 #### USD for Filecoin Community (USDFC)
 
-[**USDFC** ](../../../usdfc-stablecoin/overview.md)is a FIL-backed stablecoin minted through a **Collateralized Debt Position (CDP)** approach on the Filecoin Virtual Machine (FVM). By locking FIL as collateral, users can generate USDFC—maintaining a **1:1 peg** to the U.S. dollar—without selling their underlying assets.
+[**USDFC** ](../../../../usdfc-stablecoin/overview.md)is a FIL-backed stablecoin minted through a **Collateralized Debt Position (CDP)** approach on the Filecoin Virtual Machine (FVM). By locking FIL as collateral, users can generate USDFC—maintaining a **1:1 peg** to the U.S. dollar—without selling their underlying assets.
 
 #### **iFIL and pFIL (Filecoin Liquid Staking Token)**
 

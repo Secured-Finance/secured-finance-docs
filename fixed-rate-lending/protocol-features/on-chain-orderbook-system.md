@@ -25,5 +25,5 @@ A Zero-Coupon bond is a debt security that doesn't pay interest (coupons) but is
 {% hint style="info" %}
 **Why is On-Chain Orderbook so difficult?**
 
-The on-chain Orderbook system is often perceived as inefficient due to high gas costs. As a result, many DeFi projects rely on the liquidity pool system (LP) which is a great financial innovation for gathering liquidity. However, the interest rate provided by the pool lacks composability and transparency. Secured Finance has successfully deployed an on-chain orderbook system using the 'lazy evaluation' method, which significantly reduces gas costs. Learn more details at '[Full On-Chain Orderbook system](../on-chain-orderbook-deep-dive/)' at technical overview.
+The on-chain Orderbook system is often perceived as inefficient due to high gas costs. As a result, many DeFi projects rely on the liquidity pool system (LP) which is a great financial innovation for gathering liquidity. However, the interest rate provided by the pool lacks composability and transparency. Secured Finance has successfully deployed an on-chain orderbook system using the 'lazy evaluation' method, which significantly reduces gas costs. Learn more details at '[Full On-Chain Orderbook system](../advanced-topics/on-chain-orderbook-deep-dive/)' at technical overview.
 {% endhint %}

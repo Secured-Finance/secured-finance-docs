@@ -19,10 +19,10 @@ Similarly, "DEC24" would represent the contract month of December 2024 within th
 
 ## What happens at Maturity?
 
-To keep the orderbooks current, at Maturity, we will deactivate the orderbook that is expiring each quarter and start a new orderbook with the [Itayose process](../../fixed-rate-lending-protocol/protocol-features/broken-reference/). This new orderbook is added to the farthest term, currently the 2-year order book. For more details, please refer to the '[Orderbook Life Cycle](../on-chain-orderbook-deep-dive/orderbook-rotation.md)' section.
+To keep the orderbooks current, at Maturity, we will deactivate the orderbook that is expiring each quarter and start a new orderbook with the [Itayose process](../../fixed-rate-lending-protocol/protocol-features/broken-reference/). This new orderbook is added to the farthest term, currently the 2-year order book. For more details, please refer to the '[Orderbook Life Cycle](../advanced-topics/on-chain-orderbook-deep-dive/orderbook-rotation.md)' section.
 
 {% hint style="info" %}
 What happens to your loan position?
 
-No worries. Matured Loan position will be reinvested through our platform using our [Auto-Rolling](../advanced-topics/auto-rolling/) feature.
+No worries. Matured Loan position will be reinvested through our platform using our [Auto-Rolling](../advanced-topics/market-dynamics/auto-rolling/) feature.
 {% endhint %}

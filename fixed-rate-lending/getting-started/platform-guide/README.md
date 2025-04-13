@@ -7,7 +7,7 @@ description: A web application for Zero-Coupon Bond Trading
 Welcome to the Secured Finance platform. In this section, we introduce what you can do with our web application and provide detailed explanations of the six main tabs. These tabs are designed to help you make the most of the platform.
 
 {% hint style="info" %}
-If you wish to start trading immediately, please visit our [Beginners Guid](../getting-started.md) featuring tutorial animations.
+If you wish to start trading immediately, please visit our [Beginners Guid](../) featuring tutorial animations.
 {% endhint %}
 
 ## What You Can Do on the Platform

@@ -20,7 +20,7 @@ A groundbreaking bond standard that allows users to purchase bonds at a discount
 
 Our fixed maturity standard ensures that all lending and borrowing positions have predetermined maturity dates, offering transparency and predictability for users.
 
-## [**Auto-Rolling**](../advanced-topics/auto-rolling/)
+## [**Auto-Rolling**](../advanced-topics/market-dynamics/auto-rolling/)
 
 With our innovative auto-rolling feature, users' positions are automatically extended to a new maturity date upon reaching maturity, simplifying the process and maximizing returns.
 

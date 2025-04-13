@@ -4,7 +4,7 @@ description: A Practical Walkthrough
 
 # 💫 Case Study: Order Status & Transition
 
-We'll explore the entire spectrum of order statuses through a detailed example, incorporating our platform's price range limit mechanism, [the Circuit Breaker](../../../safety-measures/circuit-breaker/), for practical understanding.
+We'll explore the entire spectrum of order statuses through a detailed example, incorporating our platform's price range limit mechanism, [the Circuit Breaker](../../../../advanced-topics/safety-measures/circuit-breaker/), for practical understanding.
 
 {% hint style="info" %}
 For an in-depth understanding of the loan lifecycle, please visit the '[Order Life Cycle](./)' section.

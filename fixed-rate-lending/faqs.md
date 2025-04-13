@@ -12,7 +12,7 @@ Secured Finance is a decentralized finance platform that facilitates peer-to-con
 
 **What products does Secured Finance offer?**
 
-Secured Finance's inaugural offering is the Loan Market Platform, designed to facilitate seamless peer-to-peer lending and derivatives trading for fixed-income investments and hedging. For more details, you can refer to our [Loan Market Platform](platform-guide/) section.
+Secured Finance's inaugural offering is the Loan Market Platform, designed to facilitate seamless peer-to-peer lending and derivatives trading for fixed-income investments and hedging. For more details, you can refer to our [Loan Market Platform](getting-started/platform-guide/) section.
 
 **What is a Zero-Coupon Bond (ZC Bond)?**
 
@@ -20,7 +20,7 @@ A Zero-Coupon Bond (ZC Bond) is a type of bond that does not pay interest (coupo
 
 **How do I buy or sell a ZC Bond on Secured Finance?**
 
-To buy or sell a ZC Bond on Secured Finance, you can browse the orders on our platform's orderbook. Once you have found a contract you want to buy or sell, you can execute the transaction directly from the platform. The platform uses smart contracts to transfer ownership of the contract to you automatically and to ensure that payments are made as specified in the order. For a step-by-step guide, you can refer to our [User Guides](getting-started.md) section.
+To buy or sell a ZC Bond on Secured Finance, you can browse the orders on our platform's orderbook. Once you have found a contract you want to buy or sell, you can execute the transaction directly from the platform. The platform uses smart contracts to transfer ownership of the contract to you automatically and to ensure that payments are made as specified in the order. For a step-by-step guide, you can refer to our [User Guides](getting-started/) section.
 
 **What is the underlying asset for zero-coupon bonds?**
 
@@ -40,7 +40,7 @@ If you are a lender, meaning you hold a ZC Bond, you can access your funds by ei
 
 **How does lending and borrowing work on Secured Finance?**
 
-On Secured Finance, lending and borrowing work through the creation and trading of ZC Bonds. If you want to borrow digital assets, you can create a ZC Bond order and sell it on the platform. If you want to lend digital assets, you can buy a ZC Bond from the platform. The platform uses smart contracts to ensure that the terms of the contract are automatically enforced. This means payments are automatically transferred when due. For more details, you can refer to our [OTC Lending](platform-guide/trading/) section.
+On Secured Finance, lending and borrowing work through the creation and trading of ZC Bonds. If you want to borrow digital assets, you can create a ZC Bond order and sell it on the platform. If you want to lend digital assets, you can buy a ZC Bond from the platform. The platform uses smart contracts to ensure that the terms of the contract are automatically enforced. This means payments are automatically transferred when due. For more details, you can refer to our [OTC Lending](getting-started/platform-guide/trading/) section.
 
 **What is the user journey for lending assets?**
 
@@ -48,11 +48,11 @@ A: Users connect their wallet, deposit collateral, select an order book with a p
 
 **What is the Itayose process?**
 
-The Itayose process is a matching algorithm used in financial markets to ensure fair and efficient order execution. It's a method used by Secured Finance to match orders when a new order book starts trading in a way that prioritizes the highest bid and lowest ask prices. For more details, you can refer to our [Itayose Process](advanced-topics/new-market-listing-and-delisting/itayose-fair-price-discovery.md) section.
+The Itayose process is a matching algorithm used in financial markets to ensure fair and efficient order execution. It's a method used by Secured Finance to match orders when a new order book starts trading in a way that prioritizes the highest bid and lowest ask prices. For more details, you can refer to our [Itayose Process](advanced-topics/market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery.md) section.
 
 **What is Auto-Rolling?**
 
-Auto-Rolling is a feature on Secured Finance that allows for automatic reinvestment of funds at maturity. This feature helps mitigate reinvestment risk, ensures cost-efficiency, and promotes continuous growth for users. For more details, you can refer to our [Auto-Rolling](advanced-topics/auto-rolling/) section.
+Auto-Rolling is a feature on Secured Finance that allows for automatic reinvestment of funds at maturity. This feature helps mitigate reinvestment risk, ensures cost-efficiency, and promotes continuous growth for users. For more details, you can refer to our [Auto-Rolling](advanced-topics/market-dynamics/auto-rolling/) section.
 
 **What happens to my outstanding order when the order book matures?**
 
@@ -61,7 +61,7 @@ Your outstanding order will be sent to your Collateral Vault upon the maturity o
 **Why is My Unwinding order 'Blocked'? What does it mean by 'Partially Blocked'?**
 
 When unwinding an order, it may become **'Blocked'** if there are no matching orders available on the Orderbook to satisfy your request. This could occur for two main reasons: 1) The amount of available orders is less than the quantity you wish to unwind, or 2) Even if there is an order with a sufficient amount, it might be outside the price range set by our Circuit Breaker, thus preventing a match. In cases where only part of your unwinding order is executed and the rest remains unmatched, the status will be marked as **'Partially Blocked'**. In such instances, you may either wait for a matching order to appear or place a limit order on the Orderbook and wait for it to be executed.\
-The Circuit Breaker is a safety feature implemented in our protocol to limit price deviations from the mark price, designed to prevent price manipulation. For more information, please refer to the relevant section on [Circuit Breakers](safety-measures/circuit-breaker/).
+The Circuit Breaker is a safety feature implemented in our protocol to limit price deviations from the mark price, designed to prevent price manipulation. For more information, please refer to the relevant section on [Circuit Breakers](advanced-topics/safety-measures/circuit-breaker/).
 {% endtab %}
 
 {% tab title="Collateral" %}

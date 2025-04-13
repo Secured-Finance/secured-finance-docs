@@ -2,7 +2,7 @@
 description: Enhancing Liquidity and Composability
 ---
 
-# 🪙 Zero-Coupon Bond Tokenization
+# 🪙 ZC Bond Tokenization
 
 Our protocol allows Zero Coupon Bonds (Lending positions) to be tokenized as ERC20 standard tokens, which is called `ZCToken`, and withdrawn from the platform.
 
@@ -16,7 +16,7 @@ The tokenization flows are the following.
 
 <figure><img src="../../.gitbook/assets/ZCToken burn.png" alt=""><figcaption></figcaption></figure>
 
-Each ZC token has a maturity, but if the maturity is 0, it becomes a ZC perpetual token. Generally ZC tokens are minted from `FutureValueVault` but ZC perpetual tokens are minted from `GenesisValueVault`. Please check the [Genesis Value page](../on-chain-orderbook-deep-dive/genesis-value.md) for the reference.
+Each ZC token has a maturity, but if the maturity is 0, it becomes a ZC perpetual token. Generally ZC tokens are minted from `FutureValueVault` but ZC perpetual tokens are minted from `GenesisValueVault`. Please check the [Genesis Value page](on-chain-orderbook-deep-dive/genesis-value.md) for the reference.
 
 **Those token names and symbols are defined as follows: (example as March2024 expire)**
 

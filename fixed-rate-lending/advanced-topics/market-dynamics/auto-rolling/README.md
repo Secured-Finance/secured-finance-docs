@@ -18,7 +18,6 @@ By eliminating the need to find another counterparty on the order book for reinv
 
 The auto-roll feature ensures a seamless reinvestment process, fostering continuous growth for users and enhancing the overall value proposition of the Secured Finance platform.
 
-<figure><img src="../../../.gitbook/assets/autoroll.gif" alt="" width="563"><figcaption><p>Auto-Roll: Automatic reinvestment of matured loans into the nearest 3-month bucket</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/autoroll.gif" alt="" width="563"><figcaption><p>Auto-Roll: Automatic reinvestment of matured loans into the nearest 3-month bucket</p></figcaption></figure>
 
 In essence, the auto-roll feature is designed to provide an easy, efficient, and smooth reinvestment experience, contributing to the overall user-friendliness of the Secured Finance platform.
-

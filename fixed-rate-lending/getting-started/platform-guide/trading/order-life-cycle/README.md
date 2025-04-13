@@ -10,7 +10,7 @@ In this section, we aim to demystify the various stages your order may undergo, 
 
 As you embark on your trading journey with us, you initially select an Order Type—either 'Market Order' or 'Limit Order', as detailed in the [preceding section](../order-type.md). As your order progresses, it will assume one of seven distinct states that delineate its current status and actions being undertaken on it.
 
-<figure><img src="../../../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Order Status Diagram</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Order Status Diagram</p></figcaption></figure>
 
 1.  **Open**
 
@@ -26,7 +26,7 @@ As you embark on your trading journey with us, you initially select an Order Typ
     Specific to Market Orders that have been partially filled. This state indicates that the order cannot proceed to full execution due to **insufficient liquidity**.
 5.  **Blocked**
 
-    It pertains solely to market order and arises in exceptional regulatory conditions, such as the activation of [**circuit breakers**](../../../safety-measures/circuit-breaker/)**.**
+    It pertains solely to market order and arises in exceptional regulatory conditions, such as the activation of [**circuit breakers**](../../../../advanced-topics/safety-measures/circuit-breaker/)**.**
 6.  **Canceled**
 
     This state is possible for Limit Order. The trader can cancel the order if it has not yet been executed.

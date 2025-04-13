@@ -12,7 +12,7 @@ The Zero-Coupon standard was chosen for its cost efficiency, simplicity, and low
 
 Zero-Coupon bonds are debt securities that do not pay interest (coupons) but are traded at a deep discount, rendering profit at maturity when the bond is redeemed for its full face value. On the Secured Finance platform, bonds are redeemable at 100.
 
-The platform streamlines the borrowing and lending process by allowing users to specify the desired 'Price' and 'Amount' parameters. The system instantaneously calculates the implied Annual Percentage Rate (APR), interest accrual, estimated $ value, and transaction fee upon submission. For further information on [ZC Bond Price to Yield conversion](../../financial-concepts/zc-bond-price-to-apr.md), please consult the relevant materials.
+The platform streamlines the borrowing and lending process by allowing users to specify the desired 'Price' and 'Amount' parameters. The system instantaneously calculates the implied Annual Percentage Rate (APR), interest accrual, estimated $ value, and transaction fee upon submission. For further information on [ZC Bond Price to Yield conversion](../advanced-topics/zc-bond-price-to-apr.md), please consult the relevant materials.
 
 > **Example**: Consider an example where Bob lends 1,000 FIL for 1 year at 80.00 through our platform. At maturity, he will receive 1,250 FIL, which is calculated as 1,000 \* 100 / 80. The Annual Percentage Yield (APY) of this transaction is 25%, as Bob earned 250 FIL from his initial investment of 1,000 for 1 year.
 

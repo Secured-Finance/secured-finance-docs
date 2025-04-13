@@ -13,7 +13,7 @@ layout:
     visible: true
 ---
 
-# 🧙‍♂️ Beginners Guide
+# 🧙‍♂️ Getting Started
 
 ## Overview <a href="#id-898b" id="id-898b"></a>
 
@@ -23,7 +23,7 @@ The User Guides section provides helpful resources for users to understand the p
 
 ### How to Deposit
 
-<figure><img src="../.gitbook/assets/Deposit-x1.7mp4-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>How to Deposit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Deposit-x1.7mp4-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>How to Deposit</p></figcaption></figure>
 
 1. Go to Secured Finance WebApps and open [Portfolio Tab](https://app.secured.finance/portfolio/)
 2. Connect Your Wallet
@@ -31,7 +31,7 @@ The User Guides section provides helpful resources for users to understand the p
 
 ### How to Provide Liquidity on Orderbook
 
-<figure><img src="../.gitbook/assets/LPonOrderbookx1.5-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>How to Provide Liquidity on Orderbook</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/LPonOrderbookx1.5-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>How to Provide Liquidity on Orderbook</p></figcaption></figure>
 
 1. Go to Secured Finance[ Trading Apps](https://app.secured.finance/)
 2. Set the Condition\
@@ -60,4 +60,3 @@ This guide offers a concise walkthrough of the platform, covering key aspects fr
 3. [Trading at Itayose (Pre-Open) Order Book](https://blog.secured.finance/trading-at-pre-open-order-book-itayose-f9ae35663667)
 4. [Placing Limit Order](https://blog.secured.finance/placing-limit-order-aeb81431af6f)
 5. [Add/Reduce or Unwind Position](https://blog.secured.finance/add-reduce-or-unwind-position-266633e74978)
-

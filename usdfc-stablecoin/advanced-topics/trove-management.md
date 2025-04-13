@@ -124,7 +124,7 @@ Hence, your actual out-of-pocket requirement is 180.90 USDFC to close the Trove.
 
 * **Interest-Free Borrowing:** Only a one-time Borrowing Fee applies (no ongoing interest).
 * **Monitor Collateral Ratio:** Aim above 150% to reduce liquidation risk, especially in volatile markets.
-* **Parameters May Vary:** Check the official docs for the latest [Fee Rates](../protocol-fees.md) and Liquidation Reserve settings.
+* **Parameters May Vary:** Check the official docs for the latest [Fee Rates](../core-mechanics/protocol-fees.md) and Liquidation Reserve settings.
 
 For more on redemptions (and how they support the USDFC peg), see the [Redemption as Peg Mechanism](https://docs.secured.finance/stablecoin-protocol-guide/key-features/redemption-as-peg-mechanism). Understanding these basics helps you manage your Trove effectively and protect your collateral.
 

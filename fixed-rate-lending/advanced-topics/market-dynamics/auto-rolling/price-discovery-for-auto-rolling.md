@@ -14,7 +14,7 @@ In a normal and liquid market condition, we observe the transactions that occur 
 
 ## **Less Liquid Condition**
 
-In a less liquid market condition, where no transactions occur during the 6-hour window before maturity, we set the roll price based on the '[Mark Price](../mark-to-market.md)'. This price is adjusted for duration to ensure that it accurately reflects the time value of the financial instrument.
+In a less liquid market condition, where no transactions occur during the 6-hour window before maturity, we set the roll price based on the '[Mark Price](../../../protocol-features/liquidation/mark-to-market.md)'. This price is adjusted for duration to ensure that it accurately reflects the time value of the financial instrument.
 
 ## **Extreme Condition**
 
