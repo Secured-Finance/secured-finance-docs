@@ -29,7 +29,7 @@
   * [🏗️ System Overview](usdfc-stablecoin/core-mechanics/system-overview.md) <!-- Moved from Developer Portal/Architecture -->
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
   * [💰 Mint & Borrow](usdfc-stablecoin/core-mechanics/mint-and-borrow.md)
-  * [🌊 Liquidation](usdfc-stablecoin/core-mechanics/liquidation/README.md) <!-- Renamed from Liquidation Process -->
+  * [🚰 Liquidation](usdfc-stablecoin/core-mechanics/liquidation/README.md) <!-- Renamed from Liquidation Process -->
     * [⚖️ Collateral Ratio](usdfc-stablecoin/core-mechanics/liquidation/collateral-ratio.md)
     * [👮‍♂️ Liquidators](usdfc-stablecoin/core-mechanics/liquidation/liquidators.md)
     * [📋 Case Study](usdfc-stablecoin/core-mechanics/liquidation/case-study.md)
@@ -120,7 +120,7 @@
   * [🔵 Secured Finance Coin (SFC)](community/tokenomics/secured-finance-coin-sfc.md)
   * [🔶 Secured Finance Points (SFP) v2](community/tokenomics/secured-finance-points-sfp-v2/README.md)
     * [🔶 Secured Finance Points (SFP) v1](community/tokenomics/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md)
-* [📞 Support & Contacts](community/support-and-contacts.md)
+* [🎗️ Support & Contacts](community/support-and-contacts.md)
 
 ## Resources
 
