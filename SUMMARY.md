@@ -63,6 +63,8 @@
 * [⚙️ Core Mechanics](fixed-rate-lending/core-mechanics/README.md)
   * [🧩 Order Book System](fixed-rate-lending/core-mechanics/order-book-system/README.md) <!-- Made into subsection -->
       * [🆎 Order Type](fixed-rate-lending/core-mechanics/order-book-system/order-type.md) <!-- Moved from Platform Guide -->
+      * [🪃 Order Life Cycle](fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/README.md) <!-- Moved from Platform Guide -->
+        * [💫 Case Study: Order Status & Transition](fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/case-study-order-status-and-transition.md) <!-- Moved from Platform Guide -->
   * [📐 Standardization](fixed-rate-lending/core-mechanics/standardization/README.md) <!-- New Subsection -->
       * [💠 Zero-Coupon Bonds](fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md) <!-- Moved -->
       * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md) <!-- Moved -->
