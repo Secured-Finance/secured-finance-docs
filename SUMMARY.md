@@ -29,7 +29,7 @@
 * [⚙️ Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
   * [💰 Mint & Borrow](usdfc-stablecoin/core-mechanics/mint-and-borrow.md)
-  * [🏊 Stability Pool](usdfc-stablecoin/core-mechanics/stability-pool.md)
+  * [🏊 Liquidation (Stability Pool)](usdfc-stablecoin/core-mechanics/liquidation.md)
   * [💸 Redemption](usdfc-stablecoin/core-mechanics/redemption.md)
   * [💲 Protocol Fees](usdfc-stablecoin/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](usdfc-stablecoin/advanced-topics/README.md)

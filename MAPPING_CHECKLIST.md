@@ -39,7 +39,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - (Existing content to be refactored) -> `usdfc-stablecoin/getting-started/redeeming-usdfc.md`
 - `usdfc-stablecoin/core-mechanics/README.md` -> `usdfc-stablecoin/core-mechanics/README.md`
 - `usdfc-stablecoin/advanced-topics/trove-management.md` -> `usdfc-stablecoin/core-mechanics/the-trove-system.md` (Concept Integration)
-- `usdfc-stablecoin/core-mechanics/stability-pool-liquidations.md` -> `usdfc-stablecoin/core-mechanics/stability-pool.md` (Concept Integration)
+- `usdfc-stablecoin/core-mechanics/stability-pool-liquidations.md` -> `usdfc-stablecoin/core-mechanics/liquidation.md` (Renamed & Concept Integration)
 - `usdfc-stablecoin/core-mechanics/redemption-mechanism.md` -> `usdfc-stablecoin/core-mechanics/redemption.md` (Concept Integration)
 - `usdfc-stablecoin/core-mechanics/mint-to-borrow.md` -> `usdfc-stablecoin/core-mechanics/mint-and-borrow.md` (Renamed for consistency)
 - `usdfc-stablecoin/core-mechanics/protocol-fees.md` -> `usdfc-stablecoin/core-mechanics/protocol-fees.md`
