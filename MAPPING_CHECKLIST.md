@@ -59,7 +59,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `fixed-rate-lending/overview/white-paper.md` -> `fixed-rate-lending/overview/white-paper.md`
 - `fixed-rate-lending/overview/concept-paper.md` -> `fixed-rate-lending/overview/concept-paper.md`
 - `fixed-rate-lending/getting-started/README.md` -> `fixed-rate-lending/getting-started/README.md`
-- `fixed-rate-lending/getting-started/platform-guide/*` -> `fixed-rate-lending/getting-started/platform-guide/*` (Remains nested, except for Order Life Cycle pages moved below)
+- `fixed-rate-lending/getting-started/platform-guide/*` -> `fixed-rate-lending/getting-started/platform-guide/*` (Remains nested, except for Order Life Cycle & Collateral Management pages moved below)
 - `fixed-rate-lending/getting-started/platform-guide/trading/order-type.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-type.md` (Moved)
 - `fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/README.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/README.md` (Moved per PR comment)
 - `fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/case-study-order-status-and-transition.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/case-study-order-status-and-transition.md` (Moved per PR comment)
@@ -73,6 +73,8 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - *New Directory* -> `fixed-rate-lending/core-mechanics/standardization/`
 - *New File* -> `fixed-rate-lending/core-mechanics/standardization/README.md`
 - `fixed-rate-lending/advanced-topics/zero-coupon-bond-tokenization.md` -> `fixed-rate-lending/core-mechanics/tokenization.md` (Concept Integration)
+- `fixed-rate-lending/getting-started/platform-guide/portfolio/collateral-management.md` -> `fixed-rate-lending/core-mechanics/collateral-management.md` (Moved per PR comment)
+
 - `fixed-rate-lending/protocol-features/liquidation/*` -> `fixed-rate-lending/core-mechanics/liquidation/*` (Renamed & Restructured)
 - `fixed-rate-lending/protocol-features/protocol-fees.md` -> `fixed-rate-lending/core-mechanics/protocol-fees.md`
 - `fixed-rate-lending/advanced-topics/README.md` -> `fixed-rate-lending/advanced-topics/README.md`

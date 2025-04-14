@@ -56,7 +56,6 @@
       * [💲 Supported Currencies](fixed-rate-lending/getting-started/platform-guide/trading/supported-currencies.md)
     * [📈 Markets](fixed-rate-lending/getting-started/platform-guide/markets.md)
     * [🐋 Portfolio](fixed-rate-lending/getting-started/platform-guide/portfolio/README.md)
-      * [🏋️ Collateral Management](fixed-rate-lending/getting-started/platform-guide/portfolio/collateral-management.md)
     * [🌉 Bridge](fixed-rate-lending/getting-started/platform-guide/bridge.md)
     * [🚀 Points](fixed-rate-lending/getting-started/platform-guide/points.md)
     * [📣 Campaign](fixed-rate-lending/getting-started/platform-guide/campaign.md)
@@ -70,6 +69,8 @@
       * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md) <!-- Moved -->
   * [🪙 Tokenization](fixed-rate-lending/core-mechanics/tokenization.md)
   * [🌊 Liquidation](fixed-rate-lending/core-mechanics/liquidation/liquidation/README.md) <!-- Renamed from Liquidation Process -->
+  * [🏋️ Collateral Management](fixed-rate-lending/core-mechanics/collateral-management.md) <!-- Moved from Platform Guide -->
+
     * [⚖️ Mark to Market](fixed-rate-lending/core-mechanics/liquidation/liquidation/mark-to-market.md)
     * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation/liquidation/collateral-liquidations/README.md)
       * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation/liquidation/collateral-liquidations/how-liquidation-works.md)
