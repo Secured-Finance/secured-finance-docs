@@ -2,9 +2,9 @@
 
 This document maps the previous documentation structure (on `docs-optimize` before this PR) to the new structure implemented in this PR, incorporating changes based on PR #4 comments.
 
-## Introduction
+## About Secured Finance
 
-- `README.md` + `introduction/overview.md` -> `introduction/overview.md` (Merged Welcome & Overview, Renamed title to 'About Secured Finance')
+- `README.md` + `introduction/overview.md` -> `introduction/overview.md` (Merged Welcome & Overview, Renamed section/title back to 'About Secured Finance')
 - `README.md` -> `README.md` (Simplified root entry point, content updated)
 - `about-secured-finance/mission-and-vision.md` -> `introduction/mission-and-vision.md`
 - `about-secured-finance/roadmap-2025/README.md` -> `introduction/roadmap/README.md`
