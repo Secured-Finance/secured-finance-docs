@@ -3,7 +3,7 @@
 
 ## Introduction
 
-* [⚜️ Introduction](introduction/overview.md)
+* [⚜️ About Secured Finance](introduction/overview.md)
 * [🎏 Vision & Mission](introduction/mission-and-vision.md)
 * [🌍 Ecosystem Overview](introduction/ecosystem-overview.md)
 
@@ -66,7 +66,7 @@
       * [🪃 Order Life Cycle](fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/README.md) <!-- Moved from Platform Guide -->
         * [💫 Case Study: Order Status & Transition](fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/case-study-order-status-and-transition.md) <!-- Moved from Platform Guide -->
   * [📐 Standardization](fixed-rate-lending/core-mechanics/standardization/README.md) <!-- New Subsection -->
-      * [💠 Zero-Coupon Bonds](fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md) <!-- Moved -->
+      * [💠 Zero-Coupon Loan](fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md) <!-- Moved -->
       * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md) <!-- Moved -->
   * [🪙 Tokenization](fixed-rate-lending/core-mechanics/tokenization.md)
   * [🌊 Liquidation](fixed-rate-lending/core-mechanics/liquidation/liquidation/README.md) <!-- Renamed from Liquidation Process -->
