@@ -3,8 +3,8 @@
 
 ## Introduction
 
-* [✨ About Secured Finance](introduction/overview.md)
-* [🎯 Mission & Vision](introduction/mission-and-vision.md)
+* [✨ About Secured Finance](introduction/overview.md) <!-- Renamed from Mission & Vision -->
+* [🎯 Mission & Vision](introduction/mission-and-vision.md) <!-- Kept original file, adjusted title link -->
 * [🛣️ Roadmap](introduction/roadmap/README.md)
   * [Roadmap 2024](introduction/roadmap/roadmap-2024.md)
   * [Roadmap 2023](introduction/roadmap/roadmap-2023.md)
@@ -26,12 +26,13 @@
   * [🏊 Using the Stability Pool](usdfc-stablecoin/getting-started/using-the-stability-pool.md)
   * [💸 Redeeming USDFC](usdfc-stablecoin/getting-started/redeeming-usdfc.md)
 * [⚙️ Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
+  * [🏗️ System Overview](usdfc-stablecoin/core-mechanics/system-overview.md) <!-- Moved from Developer Portal/Architecture -->
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
   * [💰 Mint & Borrow](usdfc-stablecoin/core-mechanics/mint-and-borrow.md)
-  * [🌊 Liquidation](usdfc-stablecoin/core-mechanics/liquidation-process/README.md)
-    * [⚖️ Collateral Ratio](usdfc-stablecoin/core-mechanics/liquidation-process/collateral-ratio.md)
-    * [👮‍♂️ Liquidators](usdfc-stablecoin/core-mechanics/liquidation-process/liquidators.md)
-    * [📋 Case Study](usdfc-stablecoin/core-mechanics/liquidation-process/case-study.md)
+  * [🌊 Liquidation](usdfc-stablecoin/core-mechanics/liquidation/README.md) <!-- Renamed from Liquidation Process -->
+    * [⚖️ Collateral Ratio](usdfc-stablecoin/core-mechanics/liquidation/collateral-ratio.md)
+    * [👮‍♂️ Liquidators](usdfc-stablecoin/core-mechanics/liquidation/liquidators.md)
+    * [📋 Case Study](usdfc-stablecoin/core-mechanics/liquidation/case-study.md)
   * [💸 Redemption](usdfc-stablecoin/core-mechanics/redemption.md)
   * [💲 Protocol Fees](usdfc-stablecoin/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](usdfc-stablecoin/advanced-topics/README.md)
@@ -50,7 +51,6 @@
   * [📈 Managing Positions](fixed-rate-lending/getting-started/managing-positions.md)
   * [🎮 Platform Guide](fixed-rate-lending/getting-started/platform-guide/README.md)
     * [💰 Trading](fixed-rate-lending/getting-started/platform-guide/trading/README.md)
-      * [🆎 Order Type](fixed-rate-lending/getting-started/platform-guide/trading/order-type.md)
       * [🪃 Order Life Cycle](fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/README.md)
         * [💫 Case Study: Order Status & Transition](fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/case-study-order-status-and-transition.md)
       * [💲 Supported Currencies](fixed-rate-lending/getting-started/platform-guide/trading/supported-currencies.md)
@@ -61,15 +61,17 @@
     * [🚀 Points](fixed-rate-lending/getting-started/platform-guide/points.md)
     * [📣 Campaign](fixed-rate-lending/getting-started/platform-guide/campaign.md)
 * [⚙️ Core Mechanics](fixed-rate-lending/core-mechanics/README.md)
-  * [🧩 Order Book System](fixed-rate-lending/core-mechanics/order-book-system.md)
-  * [💠 Zero-Coupon Bonds](fixed-rate-lending/core-mechanics/zero-coupon-bonds.md)
-  * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/fixed-maturity.md)
+  * [🧩 Order Book System](fixed-rate-lending/core-mechanics/order-book-system/README.md) <!-- Made into subsection -->
+      * [🆎 Order Type](fixed-rate-lending/core-mechanics/order-book-system/order-type.md) <!-- Moved from Platform Guide -->
+  * [📐 Standardization](fixed-rate-lending/core-mechanics/standardization/README.md) <!-- New Subsection -->
+      * [💠 Zero-Coupon Bonds](fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md) <!-- Moved -->
+      * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md) <!-- Moved -->
   * [🪙 Tokenization](fixed-rate-lending/core-mechanics/tokenization.md)
-  * [🌊 Liquidation Process](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/README.md)
-    * [⚖️ Mark to Market](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/mark-to-market.md)
-    * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/collateral-liquidations/README.md)
-      * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/collateral-liquidations/how-liquidation-works.md)
-    * [📋 Case Study](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/case-study.md)
+  * [🌊 Liquidation](fixed-rate-lending/core-mechanics/liquidation/liquidation/README.md) <!-- Renamed from Liquidation Process -->
+    * [⚖️ Mark to Market](fixed-rate-lending/core-mechanics/liquidation/liquidation/mark-to-market.md)
+    * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation/liquidation/collateral-liquidations/README.md)
+      * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation/liquidation/collateral-liquidations/how-liquidation-works.md)
+    * [📋 Case Study](fixed-rate-lending/core-mechanics/liquidation/liquidation/case-study.md)
   * [💲 Protocol Fees](fixed-rate-lending/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](fixed-rate-lending/advanced-topics/README.md)
   * [📈 APR vs APY](fixed-rate-lending/advanced-topics/apr-vs-apy.md)
@@ -87,26 +89,25 @@
       * [🛑 Price Range Limits](fixed-rate-lending/advanced-topics/safety-measures/circuit-breaker/price-range-limits.md)
     * [🪄 Base Price Adjustment](fixed-rate-lending/advanced-topics/safety-measures/base-price-adjustment.md)
     * [🌎 Emergency Global Settlement](fixed-rate-lending/advanced-topics/safety-measures/emergency-global-settlement.md)
+  * [⛓️ Orderbook Deep Dive](fixed-rate-lending/advanced-topics/orderbook-deep-dive/README.md) <!-- Moved from Developer Portal -->
+    * [🎡 Orderbook Rotation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/orderbook-rotation.md)
+    * [🎋 Red Black Tree](fixed-rate-lending/advanced-topics/orderbook-deep-dive/red-black-tree.md)
+    * [⏯️ Lazy Evaluation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/lazy-evaluation.md)
+    * [⏮️ Genesis Value](fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value.md)
+    * [🔄 Compound Factor](fixed-rate-lending/advanced-topics/orderbook-deep-dive/compound-factor.md)
 * [📜 Deployed Contracts](fixed-rate-lending/deployed-contracts.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
 ## Developer Portal
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
-* [🏗️ Architecture](developer-portal/architecture.md)
 * [🔌 API Reference](developer-portal/api-reference/README.md)
   * [📈 Fixed-Rate Lending Subgraph](developer-portal/api-reference/fixed-rate-lending-subgraph/README.md)
-    * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md)
+    * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md) <!-- Restored -->
   * [💲 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph.md)
 * [📦 SDK Reference](developer-portal/sdk-reference/README.md)
   * [📈 Fixed-Rate Lending SDK](developer-portal/sdk-reference/fixed-rate-lending-sdk.md)
   * [💲 USDFC SDK](developer-portal/sdk-reference/usdfc-sdk.md)
-* [⛓️ Orderbook Deep Dive](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/README.md)
-  * [🎡 Orderbook Rotation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/orderbook-rotation.md)
-  * [🎋 Red Black Tree](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/red-black-tree.md)
-  * [⏯️ Lazy Evaluation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/lazy-evaluation.md)
-  * [⏮️ Genesis Value](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/genesis-value.md)
-  * [🔄 Compound Factor](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/compound-factor.md)
 * [🐛 Bug Bounty](developer-portal/bug-bounty.md)
 
 ## Community
