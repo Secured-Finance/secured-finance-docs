@@ -1,5 +1,7 @@
 # Table of contents
 
+<!-- * [Home](README.md) -->
+
 ## Introduction
 
 * [✨ About Secured Finance](introduction/overview.md)
