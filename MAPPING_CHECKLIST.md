@@ -73,9 +73,9 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - *New Directory* -> `fixed-rate-lending/core-mechanics/standardization/`
 - *New File* -> `fixed-rate-lending/core-mechanics/standardization/README.md`
 - `fixed-rate-lending/advanced-topics/zero-coupon-bond-tokenization.md` -> `fixed-rate-lending/core-mechanics/tokenization.md` (Concept Integration)
-- `fixed-rate-lending/getting-started/platform-guide/portfolio/collateral-management.md` -> `fixed-rate-lending/core-mechanics/collateral-management.md` (Moved per PR comment)
-
-- `fixed-rate-lending/protocol-features/liquidation/*` -> `fixed-rate-lending/core-mechanics/liquidation/*` (Renamed & Restructured)
+- `fixed-rate-lending/getting-started/platform-guide/portfolio/collateral-management.md` -> `fixed-rate-lending/core-mechanics/liquidation/collateral.md` (Moved to Liquidation section & Renamed per PR comment)
+- *New File* -> `fixed-rate-lending/core-mechanics/liquidation/mark-to-market.md` (Placeholder added per PR comment)
+- `fixed-rate-lending/protocol-features/liquidation/*` -> `fixed-rate-lending/core-mechanics/liquidation/*` (Renamed & Restructured per PR comment)
 - `fixed-rate-lending/protocol-features/protocol-fees.md` -> `fixed-rate-lending/core-mechanics/protocol-fees.md`
 - `fixed-rate-lending/advanced-topics/README.md` -> `fixed-rate-lending/advanced-topics/README.md`
 - `resources/knowledge-base/apr-vs-apy.md` -> `fixed-rate-lending/advanced-topics/apr-vs-apy.md` (Moved from Knowledge Base)
