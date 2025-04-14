@@ -1,9 +1,9 @@
 # Table of contents
 
 
-## About Secured Finance
+## Introduction
 
-* [⚜️ About Secured Finance](introduction/overview.md)
+* [⚜️ Introduction](introduction/overview.md)
 * [🎏 Vision & Mission](introduction/mission-and-vision.md)
 * [🛣️ Roadmap](introduction/roadmap/README.md)
   * [Roadmap 2024](introduction/roadmap/roadmap-2024.md)
