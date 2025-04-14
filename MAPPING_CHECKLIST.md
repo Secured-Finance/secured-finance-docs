@@ -67,7 +67,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - *New File* -> `fixed-rate-lending/getting-started/borrowing-assets.md`
 - *New File* -> `fixed-rate-lending/getting-started/managing-positions.md`
 - `fixed-rate-lending/protocol-features/README.md` -> `fixed-rate-lending/core-mechanics/README.md`
-- `fixed-rate-lending/protocol-features/on-chain-orderbook-system.md` -> `fixed-rate-lending/core-mechanics/order-book-system/README.md` (Made into subsection)
+- `fixed-rate-lending/protocol-features/on-chain-orderbook-system.md` -> `fixed-rate-lending/core-mechanics/order-book-system/README.md` (Made into subsection, content restored per PR comment)
 - `fixed-rate-lending/protocol-features/zero-coupon-standard.md` -> `fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md` (Moved to Standardization)
 - `fixed-rate-lending/protocol-features/fixed-maturity-standard.md` -> `fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md` (Moved to Standardization)
 - *New Directory* -> `fixed-rate-lending/core-mechanics/standardization/`
