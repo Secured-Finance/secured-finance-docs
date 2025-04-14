@@ -28,7 +28,7 @@
 * [⚙️ Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
   * [💰 Mint & Borrow](usdfc-stablecoin/core-mechanics/mint-and-borrow.md)
-  * [🌊 Liquidation Process](usdfc-stablecoin/core-mechanics/liquidation-process/README.md)
+  * [🌊 Liquidation](usdfc-stablecoin/core-mechanics/liquidation-process/README.md)
     * [⚖️ Collateral Ratio](usdfc-stablecoin/core-mechanics/liquidation-process/collateral-ratio.md)
     * [👮‍♂️ Liquidators](usdfc-stablecoin/core-mechanics/liquidation-process/liquidators.md)
     * [📋 Case Study](usdfc-stablecoin/core-mechanics/liquidation-process/case-study.md)

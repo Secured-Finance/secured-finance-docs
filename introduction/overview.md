@@ -1,3 +1,10 @@
+---
+description: Welcome and Starter Guide
+cover: ../.gitbook/assets/securedfinance_background2(dark)_twitter.png
+coverY: 0
+---
+
+
 # About Secured Finance
 
 Last edited: 14/04/2025
