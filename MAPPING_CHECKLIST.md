@@ -4,8 +4,8 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 
 ## Introduction
 
-- `README.md` -> `README.md` (Root remains entry point)
-- *New File* -> `introduction/overview.md` (Specific intro page)
+- `README.md` + `introduction/overview.md` -> `introduction/overview.md` (Merged Welcome & Overview)
+- `README.md` -> `README.md` (Simplified root entry point)
 - `about-secured-finance/mission-and-vision.md` -> `introduction/mission-and-vision.md`
 - `about-secured-finance/roadmap-2025/README.md` -> `introduction/roadmap/README.md`
 - `about-secured-finance/roadmap-2025/roadmap-2024.md` -> `introduction/roadmap/roadmap-2024.md`
