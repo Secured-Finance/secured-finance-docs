@@ -102,11 +102,10 @@
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
 * [🔌 API Reference](developer-portal/api-reference/README.md)
-  * [📊 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md)
-  * [📈 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph.md)
+  * [📈 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph/README.md)
+    * [🔍 Query Examples](developer-portal/api-reference/usdfc-subgraph/query-examples.md)
   * [📈 Fixed-Rate Lending Subgraph](developer-portal/api-reference/fixed-rate-lending-subgraph/README.md)
-    * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md) <!-- Restored -->
-  * [💲 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph.md)
+    * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md)
 * [📦 SDK Reference](developer-portal/sdk-reference/README.md)
   * [📈 Fixed-Rate Lending SDK](developer-portal/sdk-reference/fixed-rate-lending-sdk.md)
   * [💲 USDFC SDK](developer-portal/sdk-reference/usdfc-sdk.md)

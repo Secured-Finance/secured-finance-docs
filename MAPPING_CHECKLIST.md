@@ -108,6 +108,9 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `community-and-support/governance.md` -> `community/governance.md`
 - `top/secured-finance-coin-sfc.md` -> `community/tokenomics/secured-finance-coin-sfc.md`
 - `top/secured-finance-points-sfp-v2/README.md` -> `community/tokenomics/secured-finance-points-sfp-v2/README.md`
+  - *New File* -> `developer-portal/api-reference/usdfc-subgraph/README.md`
+  - *New File* -> `developer-portal/api-reference/usdfc-subgraph/query-examples.md`
+
 - `top/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md` -> `community/tokenomics/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md`
 - `community-and-support/contact-us.md` -> `community/support-and-contacts.md`
 
