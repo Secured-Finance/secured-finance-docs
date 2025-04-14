@@ -59,8 +59,10 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `fixed-rate-lending/overview/white-paper.md` -> `fixed-rate-lending/overview/white-paper.md`
 - `fixed-rate-lending/overview/concept-paper.md` -> `fixed-rate-lending/overview/concept-paper.md`
 - `fixed-rate-lending/getting-started/README.md` -> `fixed-rate-lending/getting-started/README.md`
-- `fixed-rate-lending/getting-started/platform-guide/*` -> `fixed-rate-lending/getting-started/platform-guide/*` (Remains nested)
+- `fixed-rate-lending/getting-started/platform-guide/*` -> `fixed-rate-lending/getting-started/platform-guide/*` (Remains nested, except for Order Life Cycle pages moved below)
 - `fixed-rate-lending/getting-started/platform-guide/trading/order-type.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-type.md` (Moved)
+- `fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/README.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/README.md` (Moved per PR comment)
+- `fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/case-study-order-status-and-transition.md` -> `fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/case-study-order-status-and-transition.md` (Moved per PR comment)
 - *New File* -> `fixed-rate-lending/getting-started/lending-assets.md`
 - *New File* -> `fixed-rate-lending/getting-started/borrowing-assets.md`
 - *New File* -> `fixed-rate-lending/getting-started/managing-positions.md`
