@@ -16,7 +16,6 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - *New Directory* -> `introduction/defi-starter-guide/`
 - `resources/knowledge-base/README.md` -> (Removed, content integrated)
 - `resources/knowledge-base/defi-vs-cefi.md` -> `introduction/defi-starter-guide/defi-vs-cefi.md`
-- `resources/knowledge-base/apr-vs-apy.md` -> `introduction/defi-starter-guide/apr-vs-apy.md`
 - `resources/knowledge-base/gas-cost.md` -> `introduction/defi-starter-guide/gas-cost.md`
 - `resources/knowledge-base/dao.md` -> `introduction/defi-starter-guide/dao.md`
 - *New File* -> `introduction/defi-starter-guide/wallet-setup-and-management.md`
@@ -24,6 +23,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - *New File* -> `introduction/defi-starter-guide/interacting-with-dapps.md`
 
 *(Note: `resources/knowledge-base/discount-factor.md` moved to Fixed-Rate Lending)*
+*(Note: `resources/knowledge-base/apr-vs-apy.md` moved to Fixed-Rate Lending)*
 
 ---
 
@@ -69,6 +69,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `fixed-rate-lending/protocol-features/liquidation/*` -> `fixed-rate-lending/core-mechanics/liquidation-process/*` (Concept Integration)
 - `fixed-rate-lending/protocol-features/protocol-fees.md` -> `fixed-rate-lending/core-mechanics/protocol-fees.md`
 - `fixed-rate-lending/advanced-topics/README.md` -> `fixed-rate-lending/advanced-topics/README.md`
+- `resources/knowledge-base/apr-vs-apy.md` -> `fixed-rate-lending/advanced-topics/apr-vs-apy.md` (Moved from Knowledge Base)
 - `fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md` -> `fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md`
 - `resources/knowledge-base/discount-factor.md` -> `fixed-rate-lending/advanced-topics/discount-factor.md` (Moved from Knowledge Base)
 - `fixed-rate-lending/advanced-topics/zc-bond-collateral/*` -> `fixed-rate-lending/advanced-topics/zc-bond-collateral/*`

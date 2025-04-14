@@ -14,7 +14,6 @@
   * [⛽ Understanding Gas](introduction/defi-starter-guide/understanding-gas.md)
   * [👛 Wallet Setup & Management](introduction/defi-starter-guide/wallet-setup-and-management.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
-  * [📈 APR vs APY](introduction/defi-starter-guide/apr-vs-apy.md)
   * [🏛️ DAO](introduction/defi-starter-guide/dao.md)
 
 ## USDFC Stablecoin
@@ -71,6 +70,7 @@
     * [📋 Case Study](fixed-rate-lending/core-mechanics/liquidation-process/liquidation/case-study.md)
   * [💲 Protocol Fees](fixed-rate-lending/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](fixed-rate-lending/advanced-topics/README.md)
+  * [📈 APR vs APY](fixed-rate-lending/advanced-topics/apr-vs-apy.md)
   * [➗ ZC Bond Price to APR](fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md)
   * [📉 Discount Factor](fixed-rate-lending/advanced-topics/discount-factor.md)
   * [🏋️‍♀️ ZC Bond Collateral](fixed-rate-lending/advanced-topics/zc-bond-collateral/README.md)
