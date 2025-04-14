@@ -99,12 +99,12 @@
 * [📦 SDK Reference](developer-portal/sdk-reference/README.md)
   * [📈 Fixed-Rate Lending SDK](developer-portal/sdk-reference/fixed-rate-lending-sdk.md)
   * [💲 USDFC SDK](developer-portal/sdk-reference/usdfc-sdk.md)
-* [⛓️ Orderbook Deep Dive](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/README.md)
-  * [🎡 Orderbook Rotation](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/orderbook-rotation.md)
-  * [🎋 Red Black Tree](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/red-black-tree.md)
-  * [⏯️ Lazy Evaluation](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/lazy-evaluation.md)
-  * [⏮️ Genesis Value](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/genesis-value.md)
-  * [🔄 Compound Factor](developer-portal/orderbook-deep-dive/on-chain-orderbook-deep-dive/compound-factor.md)
+* [⛓️ Orderbook Deep Dive](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/README.md)
+  * [🎡 Orderbook Rotation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/orderbook-rotation.md)
+  * [🎋 Red Black Tree](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/red-black-tree.md)
+  * [⏯️ Lazy Evaluation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/lazy-evaluation.md)
+  * [⏮️ Genesis Value](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/genesis-value.md)
+  * [🔄 Compound Factor](fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/compound-factor.md)
 * [🐛 Bug Bounty](developer-portal/bug-bounty.md)
 
 ## Community

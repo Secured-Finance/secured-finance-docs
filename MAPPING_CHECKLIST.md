@@ -75,7 +75,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `fixed-rate-lending/advanced-topics/zc-bond-collateral/*` -> `fixed-rate-lending/advanced-topics/zc-bond-collateral/*`
 - `fixed-rate-lending/advanced-topics/market-dynamics/*` -> `fixed-rate-lending/advanced-topics/market-dynamics/*`
 - `fixed-rate-lending/advanced-topics/safety-measures/*` -> `fixed-rate-lending/advanced-topics/safety-measures/*`
-- `fixed-rate-lending/advanced-topics/on-chain-orderbook-deep-dive/*` -> `developer-portal/orderbook-deep-dive/*` (Moved to Developer Portal)
+- `fixed-rate-lending/advanced-topics/on-chain-orderbook-deep-dive/*` -> `fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/*` (Path corrected)
 - `fixed-rate-lending/deployed-contracts.md` -> `fixed-rate-lending/deployed-contracts.md`
 - `fixed-rate-lending/faqs.md` -> `fixed-rate-lending/faqs.md`
 
@@ -90,7 +90,7 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `sdk-integration.md` -> `developer-portal/sdk-reference/README.md`
 - *New File* -> `developer-portal/sdk-reference/usdfc-sdk.md`
 - *New File* -> `developer-portal/sdk-reference/fixed-rate-lending-sdk.md`
-- `fixed-rate-lending/advanced-topics/on-chain-orderbook-deep-dive/*` -> `developer-portal/orderbook-deep-dive/*` (Moved from Fixed-Rate Lending)
+- `fixed-rate-lending/advanced-topics/on-chain-orderbook-deep-dive/*` -> `fixed-rate-lending/advanced-topics/orderbook-deep-dive/on-chain-orderbook-deep-dive/*` (Path corrected)
 - `usdfc-stablecoin/advanced-topics/community-resources.md` -> `developer-portal/architecture.md` (Moved from USDFC)
 - `bug-bounty-program.md` -> `developer-portal/bug-bounty.md`
 
