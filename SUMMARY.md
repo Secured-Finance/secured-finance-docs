@@ -67,9 +67,9 @@
   * [📐 Standardization](fixed-rate-lending/core-mechanics/standardization/README.md) <!-- New Subsection -->
       * [💠 Zero-Coupon Loan](fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds.md) <!-- Moved -->
       * [⏳ Fixed Maturity](fixed-rate-lending/core-mechanics/standardization/fixed-maturity.md) <!-- Moved -->
+  * [🛡️ Collateralization](fixed-rate-lending/core-mechanics/collateralization.md) <!-- Moved from Liquidation & Renamed per PR comment -->
   * [🪙 Tokenization](fixed-rate-lending/core-mechanics/tokenization.md)
-  * [🌊 Liquidation](fixed-rate-lending/core-mechanics/liquidation/README.md) <!-- Renamed from Liquidation Process & Restructured -->
-    * [🛡️ Collateral](fixed-rate-lending/core-mechanics/liquidation/collateral.md) <!-- Renamed & Moved from Core Mechanics root -->
+  * [🚰 Liquidation](fixed-rate-lending/core-mechanics/liquidation/README.md) <!-- Icon changed & Restructured per PR comment -->
     * [⚖️ Mark to Market](fixed-rate-lending/core-mechanics/liquidation/mark-to-market.md) <!-- New Placeholder -->
     * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation/liquidators/README.md) <!-- Restructured -->
       * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation/liquidators/how-liquidation-works.md) <!-- Restructured -->
