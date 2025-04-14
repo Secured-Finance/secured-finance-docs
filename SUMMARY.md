@@ -5,6 +5,8 @@
 
 * [⚜️ Introduction](introduction/overview.md)
 * [🎏 Vision & Mission](introduction/mission-and-vision.md)
+* [🌍 Ecosystem Overview](introduction/ecosystem-overview.md)
+
 * [🛣️ Roadmap](introduction/roadmap/README.md)
   * [Roadmap 2024](introduction/roadmap/roadmap-2024.md)
   * [Roadmap 2023](introduction/roadmap/roadmap-2023.md)
