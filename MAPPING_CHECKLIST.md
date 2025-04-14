@@ -91,9 +91,9 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 ## Developer Portal
 
 - `developer-resources/developer-introduction.md` -> `developer-portal/introduction.md`
-- `developer-resources/api-documentation/README.md` -> `developer-portal/api-reference/README.md`
+- `developer-resources/api-documentation/README.md` -> `developer-portal/api-reference/README.md` (Content restored per PR comment)
 - `developer-resources/api-documentation/fixed-rate-lending-subgraph/*` -> `developer-portal/api-reference/fixed-rate-lending-subgraph/*`
-- `developer-resources/api-documentation/query-examples.md` -> `developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md` (Restored)
+- `developer-resources/api-documentation/query-examples.md` -> `developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md` (Content restored per PR comment)
 - *New File* -> `developer-portal/api-reference/usdfc-subgraph.md`
 - `sdk-integration.md` -> `developer-portal/sdk-reference/README.md`
 - *New File* -> `developer-portal/sdk-reference/usdfc-sdk.md`

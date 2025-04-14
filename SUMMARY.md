@@ -25,7 +25,7 @@
   * [👀 Monitoring Your Position](usdfc-stablecoin/getting-started/monitoring-your-position.md)
   * [🏊 Using the Stability Pool](usdfc-stablecoin/getting-started/using-the-stability-pool.md)
   * [💸 Redeeming USDFC](usdfc-stablecoin/getting-started/redeeming-usdfc.md)
-* [⚙️ Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
+* [🔦 Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
   * [🏗️ System Overview](usdfc-stablecoin/core-mechanics/system-overview.md) <!-- Moved from Developer Portal/Architecture -->
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
   * [💰 Mint & Borrow](usdfc-stablecoin/core-mechanics/mint-and-borrow.md)
@@ -51,8 +51,6 @@
   * [📈 Managing Positions](fixed-rate-lending/getting-started/managing-positions.md)
   * [🎮 Platform Guide](fixed-rate-lending/getting-started/platform-guide/README.md)
     * [💰 Trading](fixed-rate-lending/getting-started/platform-guide/trading/README.md)
-      * [🪃 Order Life Cycle](fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/README.md)
-        * [💫 Case Study: Order Status & Transition](fixed-rate-lending/getting-started/platform-guide/trading/order-life-cycle/case-study-order-status-and-transition.md)
       * [💲 Supported Currencies](fixed-rate-lending/getting-started/platform-guide/trading/supported-currencies.md)
     * [📈 Markets](fixed-rate-lending/getting-started/platform-guide/markets.md)
     * [🐋 Portfolio](fixed-rate-lending/getting-started/platform-guide/portfolio/README.md)
@@ -60,7 +58,7 @@
     * [🌉 Bridge](fixed-rate-lending/getting-started/platform-guide/bridge.md)
     * [🚀 Points](fixed-rate-lending/getting-started/platform-guide/points.md)
     * [📣 Campaign](fixed-rate-lending/getting-started/platform-guide/campaign.md)
-* [⚙️ Core Mechanics](fixed-rate-lending/core-mechanics/README.md)
+* [🔦 Core Mechanics](fixed-rate-lending/core-mechanics/README.md)
   * [🧩 Order Book System](fixed-rate-lending/core-mechanics/order-book-system/README.md) <!-- Made into subsection -->
       * [🆎 Order Type](fixed-rate-lending/core-mechanics/order-book-system/order-type.md) <!-- Moved from Platform Guide -->
       * [🪃 Order Life Cycle](fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/README.md) <!-- Moved from Platform Guide -->
@@ -104,6 +102,8 @@
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
 * [🔌 API Reference](developer-portal/api-reference/README.md)
+  * [📊 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md)
+  * [📈 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph.md)
   * [📈 Fixed-Rate Lending Subgraph](developer-portal/api-reference/fixed-rate-lending-subgraph/README.md)
     * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md) <!-- Restored -->
   * [💲 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph.md)
