@@ -96,7 +96,8 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `developer-resources/api-documentation/README.md` -> `developer-portal/api-reference/README.md` (Content restored per PR comment)
 - `developer-resources/api-documentation/fixed-rate-lending-subgraph/*` -> `developer-portal/api-reference/fixed-rate-lending-subgraph/*`
 - `developer-resources/api-documentation/query-examples.md` -> `developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md` (Content restored per PR comment)
-- *New File* -> `developer-portal/api-reference/usdfc-subgraph.md`
+- *New File* -> `developer-portal/api-reference/usdfc-subgraph/README.md`
+- *New File* -> `developer-portal/api-reference/usdfc-subgraph/query-examples.md`
 - `sdk-integration.md` -> `developer-portal/sdk-reference/README.md`
 - *New File* -> `developer-portal/sdk-reference/usdfc-sdk.md`
 - *New File* -> `developer-portal/sdk-reference/fixed-rate-lending-sdk.md`
@@ -110,9 +111,6 @@ This document maps the previous documentation structure (on `docs-optimize` befo
 - `community-and-support/governance.md` -> `community/governance.md`
 - `top/secured-finance-coin-sfc.md` -> `community/tokenomics/secured-finance-coin-sfc.md`
 - `top/secured-finance-points-sfp-v2/README.md` -> `community/tokenomics/secured-finance-points-sfp-v2/README.md`
-  - *New File* -> `developer-portal/api-reference/usdfc-subgraph/README.md`
-  - *New File* -> `developer-portal/api-reference/usdfc-subgraph/query-examples.md`
-
 - `top/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md` -> `community/tokenomics/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md`
 - `community-and-support/contact-us.md` -> `community/support-and-contacts.md`
 
