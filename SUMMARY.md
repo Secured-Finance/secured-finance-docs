@@ -71,8 +71,8 @@
   * [🪙 Tokenization](fixed-rate-lending/core-mechanics/tokenization.md)
   * [🚰 Liquidation](fixed-rate-lending/core-mechanics/liquidation/README.md) <!-- Icon changed & Restructured per PR comment -->
     * [⚖️ Mark to Market](fixed-rate-lending/core-mechanics/liquidation/mark-to-market.md) <!-- New Placeholder -->
-    * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation/liquidators/README.md) <!-- Restructured -->
-      * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation/liquidators/how-liquidation-works.md) <!-- Restructured -->
+    * [👮‍♂️ Liquidators](fixed-rate-lending/core-mechanics/liquidation/liquidators/README.md) <!-- Restored -->
+      * [✏️ How Liquidation Works](fixed-rate-lending/core-mechanics/liquidation/liquidators/how-liquidation-works.md) <!-- Restored -->
     * [📋 Case Study](fixed-rate-lending/core-mechanics/liquidation/case-study.md) <!-- Restructured -->
   * [💲 Protocol Fees](fixed-rate-lending/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](fixed-rate-lending/advanced-topics/README.md)
