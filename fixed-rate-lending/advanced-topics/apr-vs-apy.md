@@ -1,10 +1,21 @@
 ---
-description: Annualised Interest Rate
+description: Understanding the difference between Annual Percentage Rate and Annual Percentage Yield
+icon: 📊
 ---
 
-# APR vs APY
+# 📊 APR vs APY
 
-APR (Annual Percentage Rate) and APY (Annual Percentage Yield) are two common measures of interest rates that are used in the DeFi loan and deposit markets. While they may seem similar, there are key differences between them.
+## Overview
+
+APR (Annual Percentage Rate) and APY (Annual Percentage Yield) are two common measures of interest rates that are used in the DeFi loan and deposit markets. While they may seem similar, there are key differences between them, particularly in how they account for compounding interest.
+
+## What You'll Learn
+
+- The difference between APR and APY in interest rate calculations
+- How compounding affects interest rate calculations
+- How to convert between APR and APY
+- Why the Fixed-Rate Lending Protocol uses APR rather than APY
+- How these concepts apply in practical lending scenarios
 
 ## What is APY?
 
@@ -37,3 +48,9 @@ The use of APY is widespread in DeFi projects because of the variable nature of 
 
 However, adhering to the prevailing market conventions, our protocol naturally displays APR rather than APY.
 {% endhint %}
+
+## Related Resources
+
+- [Discount Factor](discount-factor.md)
+- [ZC Bond Price to APR](zc-bond-price-to-apr.md)
+- [Market Dynamics](market-dynamics/README.md)
