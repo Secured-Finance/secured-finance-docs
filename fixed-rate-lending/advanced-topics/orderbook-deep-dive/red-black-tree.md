@@ -164,21 +164,6 @@ The protocol maintains separate Red-Black Trees for each orderbook and order typ
 
 This modular approach helps maintain performance even as the number of markets and orders grows.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Computational Complexity | Time complexity for insertion, deletion, and search operations | O(log n) |
-| Tree Structure | Type of balanced binary search tree used | Red-Black Tree |
-| Node Representation | What each node in the tree represents | Price level in orderbook |
-| Order Storage | How orders at the same price are stored | LinkedList |
-| Number of Trees per Orderbook | Separate trees for different order types | 2 (Borrowing and Lending) |
-| Unlinking Operation | Special operation for efficient order removal | Custom implementation |
-| Rebalancing Threshold | When tree rebalancing occurs | After insertion/deletion |
-| Maximum Tree Depth | Worst-case depth of the tree with n nodes | 2×log₂(n+1) |
-| Color Property | Colors used in the Red-Black Tree | Red and Black |
-| Tree Properties | Rules that maintain tree balance | 5 standard Red-Black Tree properties |
-
 ## Related Resources
 
 - [Orderbook Deep Dive](README.md)
