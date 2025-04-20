@@ -1,10 +1,21 @@
 ---
-description: Ensure No Counterparty Credit Risks
+description: Understanding how undercollateralized positions are liquidated in the Fixed-Rate Lending Protocol
+icon: 👮‍♂️
 ---
 
 # 👮‍♂️ Collateral Liquidations
 
+## Overview
+
 In the Secured Finance ecosystem, Liquidators play a crucial role in maintaining the health and stability of the decentralized loan protocol. As a Liquidator, you have the unique opportunity to participate in the liquidation process, ensuring the safety of lenders' funds while potentially earning rewards for your efforts. This section will guide you through how you can become a Liquidator, how the liquidation process works, and the associated risks and rewards.
+
+## What You'll Learn
+
+- How collateral liquidations maintain protocol stability
+- How to become a liquidator in the Fixed-Rate Lending Protocol
+- How the liquidation process works for undercollateralized positions
+- What risks and rewards are associated with being a liquidator
+- How liquidation penalties are calculated and distributed
 
 ### Becoming a Liquidator:&#x20;
 
@@ -21,4 +32,11 @@ For more technical details, please consult '[How Liquidation Works](how-liquidat
 Being a Liquidator comes with both risks and rewards. The main risk is the potential price volatility of the assets involved in the liquidation process. The value of the collateral may fluctuate rapidly, affecting the profitability of the liquidation.&#x20;
 
 On the other hand, the rewards for successful liquidations can be lucrative. Liquidators stand to receive a portion of the discounted collateral acquired during the liquidation. This reward serves as an incentive for participants to actively engage in the liquidation process and contribute to the protocol's stability.
+
+## Related Resources
+
+- [How Liquidation Works](how-liquidation-works.md)
+- [Liquidation](../README.md)
+- [Mark to Market](../mark-to-market.md)
+- [Safety Measures](../../../../advanced-topics/safety-measures/README.md)
 
