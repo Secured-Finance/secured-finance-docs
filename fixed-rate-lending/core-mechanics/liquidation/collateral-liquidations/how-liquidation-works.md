@@ -9,13 +9,7 @@ icon: ✏️
 
 The liquidation process in the Fixed-Rate Lending Protocol is a critical mechanism that maintains the system's solvency by ensuring that undercollateralized positions are promptly addressed. This technical guide explains how liquidations work from identification of eligible positions to execution of the liquidation process.
 
-## What You'll Learn
 
-- How to identify positions eligible for liquidation
-- How to execute the liquidation process through smart contract functions
-- How liquidation fees and penalties are calculated
-- How to implement callback functions for handling liquidated assets
-- How the liquidation process flow works from start to finish
 
 ## How It Works
 
