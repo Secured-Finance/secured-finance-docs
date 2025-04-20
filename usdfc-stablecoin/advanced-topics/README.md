@@ -18,7 +18,7 @@ This section covers advanced concepts and mechanisms of the USDFC Stablecoin Pro
 
 ## Key Components
 
-- **Recovery Mode**: The protocol's defensive mechanism that activates when system collateralization falls below critical thresholds
+- [**Recovery Mode**](recovery-mode.md): The protocol's defensive mechanism that activates when system collateralization falls below critical thresholds
 - **Advanced Liquidation Scenarios**: Complex edge cases in the liquidation process
 - **Price Oracle Implementation**: Technical details of how the protocol obtains and validates price data
 - **Economic Mechanisms**: Detailed explanations of incentive structures and game theory considerations

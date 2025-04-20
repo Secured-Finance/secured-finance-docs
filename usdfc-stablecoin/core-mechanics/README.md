@@ -1,6 +1,6 @@
 ---
 description: Explore the fundamental mechanisms of the USDFC Stablecoin Protocol
-icon: flashlight
+icon: 🔦
 ---
 
 # 🔦 Core Mechanics
