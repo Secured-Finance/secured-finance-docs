@@ -11,13 +11,7 @@ In the case of Zero Coupon Bonds, which begin trading at a significant discount 
 
 **To safeguard borrowers from the risk of liquidation, while also minimizing insolvency risks for our protocol, we mandate a minimum collateral requirement that varies based on the currency and the duration of the loan.**
 
-## What You'll Learn
-
-- How the Base Price Adjustment mechanism protects both borrowers and the protocol
-- How minimum collateral requirements are calculated based on currency and loan duration
-- How the Base Price is determined using reference values and time to maturity
-- How different yield categories affect collateral requirements
-- How categories are assigned to different currencies and periodically reviewed
+## How It Works
 
 To secure user assets and protect the protocol from market exploitation, we introduce the <mark style="color:red;">minimum collateral base price</mark> (**Base Price: BP**). It will be used to calculate the required collateral for borrowers such that the input bond price is lower than the BP.&#x20;
 

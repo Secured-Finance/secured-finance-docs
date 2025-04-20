@@ -9,13 +9,7 @@ icon: 🛑
 
 Our trading platform incorporates a circuit breaker mechanism to regulate price fluctuations within a single block. This feature is applicable to both 'market orders' and 'limit orders,' and operates to ensure that orders are executed within acceptable price ranges. The primary objective of the circuit breaker is to mitigate extreme volatility and maintain equilibrium in our Zero Coupon bond market.
 
-## What You'll Learn
 
-- How the Circuit Breaker mechanism calculates price range limits
-- Why different limits are applied to upward vs. downward price movements
-- How Moving Averages of reliable block prices are used to determine limits
-- How to calculate price range limits using practical examples
-- How minimum price fluctuation rules are applied in exceptional cases
 
 ## How It Works
 
