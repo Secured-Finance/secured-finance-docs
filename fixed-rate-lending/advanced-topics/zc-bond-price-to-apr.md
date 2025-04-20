@@ -81,6 +81,17 @@ During the pre-open period, the APR displayed is based on the estimated 'opening
 The formula for APR during the pre-open period would be similar to the existing APR calculation, but the 'Actual duration to Maturity' (Act) and 'Years to Maturity' would be replaced by the 'Actual Bond Duration from Start Trading Date to End of Maturity' and 'PV' will be 'estimated opening price'.
 {% endhint %}
 
+## Key Parameters
+
+| Parameter | Description | Impact on APR Calculation |
+|-----------|-------------|---------------------------|
+| Bond Price | Current market price of the Zero-Coupon Bond | Lower price → Higher APR |
+| Time to Maturity | Time remaining until the bond matures | Shorter maturity → Different calculation method |
+| Day Count Convention | Method for counting days (Act/365) | Standardizes time calculation |
+| Calculation Method | Linear vs. Compounding based on maturity | Affects APR for different time horizons |
+| Pre-Open Status | Whether the bond is in pre-open period | Changes time basis for calculation |
+| Seconds Per Year | Standard time basis (31,536,000 seconds) | Standardizes annualization |
+
 ## Examples
 
 ### Example 1: Calculating APR for a 3-Month Bond
