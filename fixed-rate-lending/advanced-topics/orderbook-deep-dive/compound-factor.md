@@ -68,6 +68,17 @@ $$
 
 _n: Number of Rolls_
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Lending Compound Factor (LCF) | Factor used to calculate lender's future value | Calculated per formula |
+| Borrowing Compound Factor (BCF) | Factor used to calculate borrower's future obligations | Calculated per formula |
+| AutoRollPrice | Price at which auto-roll occurs | Determined by Price Waterfall Mechanism |
+| AutoRollFeeRate | Fee rate applied during auto-roll | Protocol-defined percentage |
+| Genesis Value (GV) | Initial value of an asset or obligation | Positive for lenders, negative for borrowers |
+| Future Value (FV) | Projected value of an asset or obligation | Calculated as GV × LCF |
+
 ## Examples
 
 ### Example 1: Calculating Compound Factors After Auto-Roll
@@ -197,17 +208,6 @@ Compound Factors ensure fair interest distribution through:
 3. **Continuous Tracking**: The protocol continuously tracks and updates Compound Factors
 4. **Proportional Application**: Interest is applied proportionally to all positions based on their Genesis Values
 5. **Historical Record**: The protocol maintains a historical record of all Compound Factors for accurate accounting
-
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Lending Compound Factor (LCF) | Factor used to calculate lender's future value | Calculated per formula |
-| Borrowing Compound Factor (BCF) | Factor used to calculate borrower's future obligations | Calculated per formula |
-| AutoRollPrice | Price at which auto-roll occurs | Determined by Price Waterfall Mechanism |
-| AutoRollFeeRate | Fee rate applied during auto-roll | Protocol-defined percentage |
-| Genesis Value (GV) | Initial value of an asset or obligation | Positive for lenders, negative for borrowers |
-| Future Value (FV) | Projected value of an asset or obligation | Calculated as GV × LCF |
 
 ## Related Resources
 
