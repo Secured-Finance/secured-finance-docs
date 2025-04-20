@@ -46,6 +46,15 @@ We review and revise Volume Threshold periodically.
 3. Use 'Last traded price' and/or 'VWAP' for 'Mark to Market' price during the same block if there is no matching orders have been executed before and no 'Mark Price' exist
    * If there are no 'Mark Price' exist yet, we remove the Volume Threshold above and use 'last traded price'
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Minimum Volume Threshold | Minimum trading volume required for Mark Price updates | 100 USD |
+| VWAP Calculation Method | How the Volume Weighted Average Price is calculated | Future Value (FV) approach |
+| Price Update Frequency | How often the Mark Price can be updated | Per block |
+| Waterfall Priority | Order of price sources used when determining Mark Price | 1. Itayose Opening Price<br>2. Auto-roll Price<br>3. Last traded price/VWAP |
+
 ## Examples
 
 ### Example 1: Calculating Mark Price with Sufficient Volume

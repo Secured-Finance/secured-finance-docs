@@ -35,6 +35,18 @@ Our protocol designed the automated rolling feature when the loan matures. This 
 
 We reserve part of the fee above to our 'Reserve Fund' to secure the protocol from the incidents, i.e., the black swan event. The rest of the fee will be distributed to the community depending on the contribution.
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Market Taker Fee (3-month) | Fee charged to market orders for 3-month duration | 0.25% |
+| Annual Fee Rate | Rate used to calculate fees for different durations | 1.00% |
+| Limit Order Fee | Fee charged to limit orders | 0% |
+| Liquidation Fee | Fee charged on liquidated positions | 7% |
+| Auto Roll Fee (3-month) | Fee for automatic position rolling at maturity | 0.25% |
+| Itayose Process Fee | Fee for orders filled during market opening | 0% |
+| Reserve Fund Allocation | Portion of fees allocated to protocol safety reserve | Variable |
+
 ## Examples
 
 ### Example 1: Trading Fee Calculation for Different Durations
