@@ -1,10 +1,28 @@
 ---
-description: APR calculation
+description: Understanding how Zero-Coupon Bond prices are converted to Annual Percentage Rates
+icon: ➗
 ---
 
 # ➗ ZC Bond Price to APR
 
+## Overview
+
 On our platform, the execution of bond transactions is determined by the bond price. However, we recognize that users may find it more convenient to reference the Annual Percentage Rate (APR) when assessing yields. To accommodate this, we provide the APR as a reference rate, which is based on a linear calculation up to a 1-year tenor using an Act/365 basis. For tenors exceeding 1 year, we utilize annual compounding to determine the yield.
+
+## What You'll Learn
+
+- How Zero-Coupon Bond prices are converted to APR
+- How APR calculations differ for bonds with maturities less than or greater than one year
+- How the Act/365 day count convention is used in APR calculations
+- How APR is displayed during pre-open periods
+- How to interpret APR in relation to bond prices
+
+## Key Components
+
+- **Day Count Convention**: How days are counted for interest calculations
+- **Linear Calculation**: The method used for bonds with maturities less than one year
+- **Annual Compounding**: The method used for bonds with maturities greater than one year
+- **Pre-Open Period Calculations**: Special considerations for APR during pre-open periods
 
 {% hint style="info" %}
 **What is Act/365?**
@@ -52,16 +70,22 @@ $$
 
 * Years to Maturity: Seconds to Maturity/Seconds Per Year
 
-## **During Pre-Open Period**
+## During Pre-Open Period
 
-**What is the Pre-Open Period?**
+### What is the Pre-Open Period?
 
 The pre-open period is a specific time frame before the official opening of a new bond market. During this period, we invite users to place their orders in the pre-open order book. This allows market participants to gauge interest and liquidity before the market officially starts. For more detailed explanation, please visit to [Fair Price Discovery.](market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery.md)
 
-**How is APR Displayed During the Pre-Open Period?**
+### How is APR Displayed During the Pre-Open Period?
 
 During the pre-open period, the APR displayed is based on the estimated 'opening price' at the time the market starts. It's important to note that the APR is not calculated from the spot date to the end of maturity. Instead, it is calculated from the start trading date to the end of maturity.
 
 {% hint style="info" %}
 The formula for APR during the pre-open period would be similar to the existing APR calculation, but the 'Actual duration to Maturity' (Act) and 'Years to Maturity' would be replaced by the 'Actual Bond Duration from Start Trading Date to End of Maturity' and 'PV' will be 'estimated opening price'.
 {% endhint %}
+
+## Related Resources
+
+- [APR vs APY](apr-vs-apy.md)
+- [Discount Factor](discount-factor.md)
+- [Market Dynamics](market-dynamics/README.md)
