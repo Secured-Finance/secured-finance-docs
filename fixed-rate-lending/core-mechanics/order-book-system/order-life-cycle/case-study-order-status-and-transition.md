@@ -102,6 +102,29 @@ Our scenario unfolds within the bounds of an order book, structured around three
 * **Example**: Buy 10 at 89, no fill and lending market matures.
 * **Transition**: Order **Expires** after the maturity time passes.
 
+## FAQ
+
+### What happens to my order if it's partially filled?
+
+When an order is partially filled, the filled portion becomes a position, while the unfilled portion remains in the orderbook as an open order. You can choose to leave it open, cancel it, or wait for it to be filled. For market orders, the unfilled portion may be killed or blocked depending on market conditions and circuit breaker limits.
+
+### Why would my market order get blocked?
+
+Market orders can be blocked when they would execute at a price outside the circuit breaker limits. This is a safety mechanism to prevent extreme price movements and protect the market from manipulation. When a market order is blocked, the unfilled portion is killed and removed from the orderbook.
+
+### Can I modify an order that's already in the orderbook?
+
+No, you cannot modify an existing order. If you want to change the price or amount, you'll need to cancel your existing order and place a new one with the updated parameters. This ensures price-time priority is maintained fairly in the orderbook.
+
+### What's the difference between an order being killed versus blocked?
+
+- **Killed**: An order is killed when there's insufficient liquidity to fill it completely. This typically happens with market orders when there are no more matching orders in the orderbook.
+- **Blocked**: An order is blocked when its execution would violate the circuit breaker price limits. This is a safety mechanism to prevent extreme price volatility.
+
+### What happens to my orders when a market matures?
+
+Any open or partially filled orders in a market that reaches maturity will automatically expire. This means they are removed from the orderbook and will not be executed. Any filled portions of orders have already become positions and will be subject to the auto-rolling mechanism.
+
 ## Key Parameters
 
 | Parameter | Description | Value |
