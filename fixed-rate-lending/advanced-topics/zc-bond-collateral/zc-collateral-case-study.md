@@ -9,13 +9,7 @@ icon: 🏍️
 
 This case study demonstrates the practical application of Zero Coupon Bonds (ZC) as collateral within our platform, focusing on the calculation of ZC utilization ratios, the overall collateral utilization ratio, and ZC collateral liquidation. Through detailed examples, we explore how these metrics are calculated and displayed, providing insights into effective collateral management.
 
-## What You'll Learn
 
-- How Zero-Coupon Bonds can be used as collateral in the Fixed-Rate Lending Protocol
-- How to calculate ZC utilization ratios and total collateral utilization ratios
-- How the liquidation process works specifically for ZC bond collateral
-- How to determine post-liquidation positions and ratios
-- How to manage risk when using ZC bonds as collateral
 
 ## How It Works
 
