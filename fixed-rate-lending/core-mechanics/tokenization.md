@@ -9,13 +9,7 @@ icon: 🪙
 
 Our protocol allows Zero Coupon Bonds (Lending positions) to be tokenized as ERC20 standard tokens, which is called `ZCToken`, and withdrawn from the platform. This tokenization enables greater flexibility for users, allowing them to transfer their lending positions to other wallets or potentially trade them on secondary markets.
 
-## What You'll Learn
 
-- How Zero Coupon Bonds can be tokenized as ERC20 tokens
-- How the tokenization process works for withdrawals and deposits
-- How ZC tokens and ZC perpetual tokens differ
-- How token names and symbols are structured for different assets
-- How Metamask displays these tokens with specific naming conventions
 
 ## How It Works
 
