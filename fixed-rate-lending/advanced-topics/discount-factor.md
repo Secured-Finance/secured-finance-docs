@@ -9,12 +9,7 @@ icon: 📉
 
 The discount factor in bond trading is the mathematical factor used to convert a series of future cash flows into a present value. The discount factor is useful as it allows investors to compare bonds of different maturities and features as they can convert all cash flow streams into a present value. This also helps investors compare each bond's expected return more accurately in traditional finance.&#x20;
 
-## What You'll Learn
 
-- How discount factors are used to calculate present and future values
-- How Zero-Coupon bond prices relate to discount factors
-- How to calculate redemption values using discount factors
-- How to compare bonds of different maturities using discount factors
 
 ## How It Works
 
