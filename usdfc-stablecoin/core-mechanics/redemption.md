@@ -48,7 +48,7 @@ The system requires a minimum borrowed amount of 180 USDFC and reserves an addit
 
 ## Redemption Fee
 
-The **Redemption Fee** is calculated as **Base Rate + 0.5%**, which ensures a minimum fee of **0.5%**. This fee dynamically adjusts depending on redemption activity:
+The **Redemption Fee** is calculated as [**Base Rate**](mint-and-borrow.md#base-rate) + 0.5%, which ensures a minimum fee of **0.5%**. This fee dynamically adjusts depending on redemption activity:
 
 $$\text{Redemption Fee} = (\text{Base Rate} + 0.5\%) \times \text{Redeemed USDFC}$$
 
