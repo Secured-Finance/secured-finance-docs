@@ -9,13 +9,7 @@ icon: 💰
 
 The auto-rolling price discovery mechanism is a critical component of Secured Finance's platform. It ensures that the pricing for the quarterly roll is calculated accurately and fairly, preventing potential price manipulation. This mechanism is designed to adapt to varying market conditions, ranging from normal and liquid conditions to less liquid or extreme situations with no liquidity.
 
-## What You'll Learn
 
-- How the Auto-Rolling price discovery mechanism works
-- How prices are determined in different market conditions
-- Why different price discovery methods are used based on liquidity
-- How the platform prevents price manipulation during Auto-Rolling
-- How the initial roll price is determined when no transaction history exists
 
 ## How It Works
 
