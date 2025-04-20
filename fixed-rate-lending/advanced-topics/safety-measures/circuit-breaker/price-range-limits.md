@@ -30,6 +30,17 @@ The Circuit Breaker mechanism uses a combination of historical price data and pe
 Due to the inherent characteristics of Zero-Coupon Bonds—which begin trading at a significant discount and mature at par (100 on our platform)—there are tighter restrictions on downward movements to prevent excessive volatility.
 {% endhint %}
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Downward Movement Limit | Maximum percentage decrease from Moving Average | 5% |
+| Upward Movement Limit | Maximum percentage increase from Moving Average | 10% |
+| Downward Moving Average Period | Number of blocks used for downward limit calculation | 5 blocks |
+| Upward Moving Average Period | Number of blocks used for upward limit calculation | 3 blocks |
+| Minimum Downward Movement | Minimum allowed price decrease regardless of percentage | 2.00 |
+| Minimum Upward Movement | Minimum allowed price increase regardless of percentage | 7.00 |
+
 ## Examples
 
 ### Example 1: Standard Price Range Calculation

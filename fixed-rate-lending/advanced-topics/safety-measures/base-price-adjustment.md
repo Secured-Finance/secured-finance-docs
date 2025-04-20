@@ -29,6 +29,17 @@ $$
 
 <table><thead><tr><th width="123" align="center">Category</th><th width="185" align="center">Yield range</th><th width="207" align="center">BP at Maturity</th><th align="center">BP of 1y Duration</th></tr></thead><tbody><tr><td align="center">A</td><td align="center">0%~3%</td><td align="center">96.00</td><td align="center">93.00</td></tr><tr><td align="center">B</td><td align="center">3%~5%</td><td align="center">96.00</td><td align="center">91.00</td></tr><tr><td align="center">C</td><td align="center">5%~7.5%</td><td align="center">96.00</td><td align="center">89.00</td></tr><tr><td align="center">D</td><td align="center">7.5%~10%</td><td align="center">96.00</td><td align="center">87.00</td></tr><tr><td align="center">E</td><td align="center">10%~15%</td><td align="center">96.00</td><td align="center">84.00</td></tr><tr><td align="center">F</td><td align="center">15%~</td><td align="center">96.00</td><td align="center">81.00</td></tr></tbody></table>
 
+## Key Parameters
+
+| Parameter | Description | Default Value |
+|-----------|-------------|---------------|
+| BP at Maturity | Reference Base Price at maturity (0y Duration) | 96.00 |
+| BP of 1y Duration | Reference Base Price at 1 year duration | Varies by category (81.00-93.00) |
+| Category Review Period | How often categories are reviewed | Quarterly |
+| Category Assignment | How currencies are assigned to yield categories | Based on APR range |
+| Interpolation Method | How BP is calculated between reference points | Linear interpolation |
+| Time Unit | Base time unit for calculations | Seconds |
+
 ## Examples
 
 ### Example 1: Calculating Base Price for Short-Term Bonds

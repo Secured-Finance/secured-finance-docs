@@ -24,7 +24,15 @@ The Emergency Global Settlement process follows a specific sequence of steps to 
 
 It's important to note that even users who only have deposits without positions will have their deposits replaced with collateral tokens based on the ratios in the Token Vault.
 
+## Key Parameters
 
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Settlement Trigger | Who can initiate emergency settlement | Protocol Admin only |
+| Price Feed Cache | How price feeds are stored during settlement | Snapshot at settlement time |
+| Redemption Window | Time users have to redeem positions | Unlimited (no expiration) |
+| Token Replacement | How positions are converted to tokens | Based on Token Vault ratios |
+| Market Status | State of markets after settlement | Permanently closed |
 
 ## Examples
 
