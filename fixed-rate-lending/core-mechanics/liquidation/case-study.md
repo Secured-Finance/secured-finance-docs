@@ -9,13 +9,7 @@ icon: 📋
 
 There are two main patterns that trigger liquidation in the Fixed-Rate Lending Protocol. One is when your collateral value decreases against your borrowed asset, typically represented by currency exchange rate fluctuations. The other is when the borrowed asset value increases compared to your collateral, which might occur when borrowing rates go lower. This case study explores these scenarios through practical examples.
 
-## What You'll Learn
 
-- How collateral value decreases can trigger liquidation
-- How borrowed asset value increases can trigger liquidation
-- How the liquidation process works in practice
-- How LTV (Loan-to-Value) ratios are calculated before and after liquidation
-- How liquidation penalties are applied to borrower positions
 
 ## How It Works
 
