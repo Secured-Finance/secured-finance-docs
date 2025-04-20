@@ -38,6 +38,47 @@ What happens to your loan position?
 No worries. Matured Loan position will be reinvested through our platform using our [Auto-Rolling](../../advanced-topics/market-dynamics/auto-rolling/README.md) feature.
 {% endhint %}
 
+## Examples
+
+### Example 1: Lending Across Multiple Maturities
+
+A user wants to diversify their lending strategy across different time horizons:
+
+1. They deposit 3,000 USDC into the platform
+2. They allocate 1,000 USDC to the 3-month maturity (JUN24)
+3. They allocate 1,000 USDC to the 6-month maturity (SEP24)
+4. They allocate 1,000 USDC to the 9-month maturity (DEC24)
+5. This creates a "ladder" strategy that provides liquidity at regular intervals
+6. When the JUN24 position matures, it will auto-roll to the new 2-year maturity (JUN26)
+
+### Example 2: Navigating Orderbook Transitions
+
+A borrower has an active loan in the SEP23 orderbook approaching maturity:
+
+1. As the maturity date (September 29, 2023) approaches, they receive notifications
+2. On maturity day, their position is automatically handled by the Auto-Rolling feature
+3. The SEP23 orderbook is deactivated and a new orderbook (SEP25) is created
+4. Their position is rolled into the next available maturity with similar duration
+5. The borrower can view their new position details in the platform interface
+
+## FAQ
+
+### What happens if I want to exit before maturity?
+
+If you want to exit your position before maturity, you can take an opposite position in the same maturity orderbook. For example, if you initially lent in the DEC24 orderbook, you can borrow in the same DEC24 orderbook to close your position. Market conditions at the time will determine whether you realize a gain or loss.
+
+### How are new orderbooks created?
+
+New orderbooks are created through the Itayose process, which is a price discovery mechanism. When the shortest-term orderbook matures, a new orderbook is created for the longest term (currently 2 years out). This maintains a consistent set of eight active orderbooks at all times.
+
+### Can I choose which maturity my position auto-rolls into?
+
+By default, positions auto-roll according to the protocol's rules, typically into the next available maturity. However, you can manually close your position before maturity and open a new position in your preferred maturity orderbook if you want more control over the rollover process.
+
+### Why use quarterly maturities instead of monthly or weekly?
+
+Quarterly maturities (Mar/Jun/Sep/Dec) align with traditional financial markets and futures contracts, providing better liquidity and price discovery. This standardization also reduces fragmentation of liquidity across too many orderbooks, which could lead to thinner markets and wider spreads.
+
 ## Key Parameters
 
 | Parameter | Description | Value |
