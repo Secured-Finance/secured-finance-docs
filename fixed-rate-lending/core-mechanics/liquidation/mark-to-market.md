@@ -9,13 +9,7 @@ icon: ⚖️
 
 Mark to Market is a pricing methodology where the value of an asset is calculated based on its current market value. In this methodology, the asset is valued at the current market price instead of its book value. We use this price to evaluate Profit and Loss (PnL) and Loan to Value (LTV) ratio.
 
-## What You'll Learn
 
-- How Mark to Market valuation works in the Fixed-Rate Lending Protocol
-- How the protocol calculates Mark Price using Volume Weighted Average Price (VWAP)
-- Why Future Value (FV) is used instead of Present Value (PV) in calculations
-- How minimum volume thresholds protect against price manipulation
-- How the waterfall mechanism determines Mark Price in different scenarios
 
 ## How It Works
 
