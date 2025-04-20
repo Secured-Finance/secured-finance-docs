@@ -1,4 +1,23 @@
+---
+description: A technical guide to the liquidation process implementation in the Fixed-Rate Lending Protocol
+icon: ✏️
+---
+
 # ✏️ How Liquidation Works
+
+## Overview
+
+The liquidation process in the Fixed-Rate Lending Protocol involves identifying undercollateralized positions and executing liquidation calls through smart contract functions. This technical guide explains the implementation details of how liquidation works from a developer's perspective.
+
+## What You'll Learn
+
+- How to identify positions eligible for liquidation using the `getCoverage()` function
+- How to execute liquidation calls with the `executeLiquidationCall()` function
+- How to implement callback functions for handling liquidated assets
+- How to maximize profits from liquidation opportunities
+- How the liquidation process flow works at the smart contract level
+
+## How It Works
 
 First of all, it is necessary to identify the target user through off-chain actions before executing liquidation. The function `getCoverage()` is used for this purpose. A user becomes a target for liquidation if this function returns a value of `8000` or higher. For more details, refer to the documentation at [TokenVault Documentation](https://github.com/Secured-Finance/contracts/blob/develop/docs/protocol/TokenVault.md#getcoverage).
 
@@ -32,3 +51,19 @@ Market-->>FV: Transfer the debt balance<BR>from the selected user<BR>to the liqu
 Market-->>Liquidator: Execute the callback<BR>function for debt
 Market-->>Market: Check if the liquidator<BR>has enough collateral
 ```
+
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Coverage Threshold | The threshold value returned by `getCoverage()` that makes a position eligible for liquidation | 8000 |
+| Liquidation Fee | The additional collateral received by the liquidator | 5% |
+| Liquidator Coverage Limit | Maximum coverage value a liquidator can have after liquidation | 80% |
+| Callback Functions | Functions that can be implemented to handle received assets | `executeOperationForCollateral()`, `executeOperationForDebt()` |
+
+## Related Resources
+
+- [Liquidators](README.md)
+- [Liquidation Process](../../README.md)
+- [Mark to Market](../../mark-to-market.md)
+- [Collateral Liquidations](../../collateral-liquidations/README.md)
