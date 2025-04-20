@@ -19,6 +19,16 @@ Zero-Coupon bonds are traded at a discount to their face value and redeemed at f
 
 The platform streamlines the borrowing and lending process by allowing users to specify the desired 'Price' and 'Amount' parameters. The system instantaneously calculates the implied Annual Percentage Rate (APR), interest accrual, estimated $ value, and transaction fee upon submission. For further information on [ZC Bond Price to Yield conversion](../../advanced-topics/zc-bond-price-to-apr.md), please consult the relevant materials.
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Bond Par Value | The value at which bonds are redeemed at maturity | 100 |
+| Maximum Bond Price | The maximum price allowed for bond orders | 100.00 |
+| Minimum Bond Price | The minimum price allowed for bond orders | Varies by asset |
+| Price Precision | Decimal precision for bond prices | 2 decimal places |
+| Yield Calculation | How yield is calculated from bond price | See [ZC Bond Price to APR](../../advanced-topics/zc-bond-price-to-apr.md) |
+
 ## Examples
 
 ### Example 1: Lending with Zero-Coupon Bonds
@@ -43,16 +53,6 @@ Alice needs to borrow FIL for 6 months and is willing to pay a 20% APR:
 4. When the order is filled, she receives 909.1 FIL upfront (1,000 × 90.91 / 100)
 5. At maturity, she will need to repay 1,000 FIL
 6. The effective interest paid is 90.9 FIL on a loan of 909.1 FIL for 6 months
-
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Bond Par Value | The value at which bonds are redeemed at maturity | 100 |
-| Maximum Bond Price | The maximum price allowed for bond orders | 100.00 |
-| Minimum Bond Price | The minimum price allowed for bond orders | Varies by asset |
-| Price Precision | Decimal precision for bond prices | 2 decimal places |
-| Yield Calculation | How yield is calculated from bond price | See [ZC Bond Price to APR](../../advanced-topics/zc-bond-price-to-apr.md) |
 
 ## FAQ
 

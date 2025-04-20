@@ -25,6 +25,19 @@ This cycle ensures a seamless and continuous operation of our orderbooks, facili
 
 <figure><img src="../../../.gitbook/assets/Market Kife Cycle (1).png" alt=""><figcaption><p>Market Life Cycle</p></figcaption></figure>
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Active Orderbooks | Number of active orderbooks per currency | 8 |
+| Inactive Orderbooks | Number of inactive orderbooks per currency | 1 |
+| Pre-Order Period | Duration before new orderbook opens | 168 hours (7 days) |
+| Orderbook Freeze | Time before opening when orderbook is frozen | 1 hour |
+| Total Orderbooks | Maximum number of orderbooks per currency | 9 |
+| Rotation Trigger | Event that initiates orderbook rotation | Maturity of shortest orderbook |
+| Maturity Spacing | Typical time between consecutive maturities | 3 months |
+| Rotation Frequency | How often orderbook rotation typically occurs | Every 3 months |
+
 ## Examples
 
 ### Example 1: Complete Orderbook Rotation Cycle

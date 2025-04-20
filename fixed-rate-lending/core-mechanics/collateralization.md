@@ -17,7 +17,15 @@ The collateralization process in the Fixed-Rate Lending Protocol involves users 
 
 Each collateral type has specific parameters including minimum collateralization ratios, liquidation thresholds, and accepted currencies. The protocol supports multi-collateral positions, allowing users to diversify their risk across different assets.
 
+## Key Parameters
 
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Minimum Collateralization Ratio | The minimum ratio of collateral value to loan value required | 110%-150% (varies by asset) |
+| Liquidation Threshold | The collateralization ratio at which a position becomes eligible for liquidation | Varies by asset |
+| Collateral Factor | The percentage of an asset's value that can be borrowed against | 50%-90% (varies by asset) |
+| Price Feed Update Frequency | How often collateral values are updated from oracles | Real-time |
+| Supported Collateral Types | Assets accepted as collateral | WBTC, ETH, USDC, FIL, iFIL, pFIL, USDFC (varies by network) |
 
 ## What is Collateral?
 

@@ -32,6 +32,16 @@ What happens to your loan position?
 No worries. Matured Loan position will be reinvested through our platform using our [Auto-Rolling](../../advanced-topics/market-dynamics/auto-rolling/README.md) feature.
 {% endhint %}
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Number of Orderbooks | Total number of active orderbooks at any time | 8 |
+| Maturity Range | Time range covered by the orderbooks | 3 months to 2 years |
+| Maturity Gap | Time between consecutive maturities | 3 months |
+| Maturity Date | When loans in an orderbook mature | Last Friday of Mar/Jun/Sep/Dec |
+| Contract Naming | How contracts are named in the system | MMM+YY (e.g., SEP23, DEC24) |
+
 ## Examples
 
 ### Example 1: Lending Across Multiple Maturities
