@@ -9,7 +9,39 @@ icon: 📊
 
 APR (Annual Percentage Rate) and APY (Annual Percentage Yield) are two common measures of interest rates that are used in the DeFi loan and deposit markets. While they may seem similar, there are key differences between them, particularly in how they account for compounding interest.
 
+## How It Works
 
+The difference between APR and APY lies in how they account for compounding:
+
+1. **APR (Annual Percentage Rate)** is a simple interest rate calculated by multiplying the periodic rate by the number of periods in a year. It does not account for compounding effects.
+
+2. **APY (Annual Percentage Yield)** accounts for compounding by calculating the effective annual rate of return. It represents the actual return you would receive after accounting for the effects of compounding.
+
+The mathematical relationship between APR and APY is:
+
+$$
+APY = \left(1 + \frac{APR}{n}\right)^n - 1
+$$
+
+Where n is the number of compounding periods per year.
+
+{% hint style="info" %}
+The use of APY is widespread in DeFi projects because of the variable nature of their quoted interest, leading to the representation of compounded interest. APY assumes that the current variable rate remains constant for the next 365 days and compounds daily. Moreover, fixed-term projects that depend on variable rates as their underlying interest rate also utilize APY.
+
+However, adhering to the prevailing market conventions, our protocol naturally displays APR rather than APY.
+{% endhint %}
+
+## Key Parameters
+
+| Parameter | Description | Relevance to Protocol |
+|-----------|-------------|----------------------|
+| Compounding Frequency | How often interest is compounded | N/A for Zero-Coupon Bonds |
+| Term Length | Duration of the investment | Determines the fixed rate period |
+| Nominal Rate | Stated interest rate before compounding | Used in APR calculations |
+| Effective Rate | Actual yield after accounting for compounding | Equivalent to APY |
+| Day Count Convention | Method of calculating days for interest accrual | Actual/365 used in protocol |
+| Reinvestment Assumption | Assumption about reinvesting proceeds | Auto-rolling handles reinvestment |
+| Market Convention | Standard way rates are quoted in a market | Protocol follows fixed-income market conventions |
 
 ## What is APY?
 
