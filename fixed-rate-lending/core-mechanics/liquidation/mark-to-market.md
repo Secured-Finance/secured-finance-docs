@@ -111,15 +111,6 @@ The Mark Price is updated on a block-by-block basis whenever there is sufficient
 
 Yes, users can view the current Mark Price for each market through the protocol's interface. This transparency allows users to understand how their positions are being valued and to make informed decisions about their borrowing and lending activities. The Mark Price is a critical component for calculating collateralization ratios and determining when positions may be at risk of liquidation.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Minimum Volume Threshold | Minimum trading volume required for Mark Price updates | 100 USD |
-| VWAP Calculation Method | How the Volume Weighted Average Price is calculated | Future Value (FV) approach |
-| Price Update Frequency | How often the Mark Price can be updated | Per block |
-| Waterfall Priority | Order of price sources used when determining Mark Price | 1. Itayose Opening Price<br>2. Auto-roll Price<br>3. Last traded price/VWAP |
-
 ## Related Resources
 
 - [Liquidation](README.md)
