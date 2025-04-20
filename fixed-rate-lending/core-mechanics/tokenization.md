@@ -1,10 +1,21 @@
 ---
-description: Enhancing Liquidity and Composability
+description: Understanding how Zero-Coupon Bonds can be tokenized as ERC20 tokens in the Fixed-Rate Lending Protocol
+icon: 🪙
 ---
 
 # 🪙 ZC Bond Tokenization
 
+## Overview
+
 Our protocol allows Zero Coupon Bonds (Lending positions) to be tokenized as ERC20 standard tokens, which is called `ZCToken`, and withdrawn from the platform.
+
+## What You'll Learn
+
+- How Zero Coupon Bonds can be tokenized as ERC20 tokens
+- How the tokenization process works for withdrawals and deposits
+- How ZC tokens and ZC perpetual tokens differ
+- How token names and symbols are structured for different assets
+- How Metamask displays these tokens with specific naming conventions
 
 The tokenization flows are the following.
 
@@ -33,3 +44,10 @@ Each ZC token has a maturity, but if the maturity is 0, it becomes a ZC perpetua
 | FIL    | ZC FIL MAR2024    | zcFIL24M        |
 
 MAR = M; JUN = J; SEP = S; DEC = D
+
+## Related Resources
+
+- [Standardization](standardization/README.md)
+- [Zero-Coupon Bonds](standardization/zero-coupon-bonds.md)
+- [Order Book System](order-book-system/README.md)
+- [Advanced Topics](../advanced-topics/README.md)

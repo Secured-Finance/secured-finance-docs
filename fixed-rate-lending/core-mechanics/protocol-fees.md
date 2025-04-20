@@ -1,8 +1,21 @@
 ---
-description: To sustain our Protocol
+description: Understanding the fee structure that sustains the Fixed-Rate Lending Protocol
+icon: 🧀
 ---
 
 # 🧀 Protocol Fees
+
+## Overview
+
+The Fixed-Rate Lending Protocol implements various fees to sustain operations, incentivize participants, and ensure protocol security. These fees are carefully designed to balance user experience with protocol sustainability.
+
+## What You'll Learn
+
+- How trading fees are structured for market takers vs. limit orders
+- How liquidation fees help secure the protocol
+- How Auto Roll fees work for reinvestment at maturity
+- How fees are reserved and distributed within the ecosystem
+- How fee structures vary based on loan duration
 
 ## Trading Fees
 
@@ -25,3 +38,10 @@ Our protocol designed the automated rolling feature when the loan matures. This 
 ## Fee Reserve and Distribution
 
 We reserve part of the fee above to our 'Reserve Fund' to secure the protocol from the incidents, i.e., the black swan event. The rest of the fee will be distributed to the community depending on the contribution.
+
+## Related Resources
+
+- [Liquidation](liquidation/README.md)
+- [Order Book System](order-book-system/README.md)
+- [Auto-Rolling](../advanced-topics/market-dynamics/auto-rolling/README.md)
+- [Safety Measures](../advanced-topics/safety-measures/README.md)
