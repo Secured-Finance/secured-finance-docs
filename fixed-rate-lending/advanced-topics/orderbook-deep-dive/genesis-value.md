@@ -29,6 +29,16 @@ The utilization of Genesis Value offers several compelling advantages for the Se
 
 3. **Scalability and User-Friendliness**: Genesis Value's gas cost reduction makes the protocol more economically viable for users of all sizes, enhancing scalability, and encouraging broader participation in the ecosystem.
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Genesis Date | Starting point for Genesis Value calculations | Protocol-defined date (e.g., June 30, 2020) |
+| Genesis Value (GV) | Asset Value at the Genesis Date | Calculated based on position and Compound Factors |
+| Future Value (FV) | Projected value calculated from GV | GV × Lending Compound Factor |
+| Auto-Roll Period | Frequency of orderbook maturity and GV recalculation | 3 months |
+| Position Conversion | How shorter positions are handled | Converted to GV using Compound Factors |
+
 ## Examples
 
 ### Example 1: Genesis Value Calculation for a New Position
@@ -143,16 +153,6 @@ Users cannot manipulate their Genesis Value because:
 3. **Market-Driven Factors**: Compound Factors are determined by market forces, not individual users
 4. **Transparent Formulas**: All calculations follow transparent, predetermined formulas
 5. **Audit Trail**: All Genesis Value calculations are recorded on-chain and can be verified
-
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Genesis Date | Starting point for Genesis Value calculations | Protocol-defined date (e.g., June 30, 2020) |
-| Genesis Value (GV) | Asset Value at the Genesis Date | Calculated based on position and Compound Factors |
-| Future Value (FV) | Projected value calculated from GV | GV × Lending Compound Factor |
-| Auto-Roll Period | Frequency of orderbook maturity and GV recalculation | 3 months |
-| Position Conversion | How shorter positions are handled | Converted to GV using Compound Factors |
 
 ## Related Resources
 
