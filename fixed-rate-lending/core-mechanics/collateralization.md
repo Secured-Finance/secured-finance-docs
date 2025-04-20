@@ -82,6 +82,44 @@ To acquire iFIL tokens, follow these steps:
 3. **Use iFIL as Collateral**: Deposit your iFIL tokens into your Secured Finance portfolio on the FVM network to use them as collateral.
 {% endhint %}
 
+## Examples
+
+### Example 1: Borrowing with ETH Collateral
+
+A user wants to borrow 1,000 USDC on Ethereum. They would:
+
+1. Deposit 1 ETH as collateral (assuming ETH price is $2,000)
+2. This gives them a collateralization ratio of 200% (2,000 / 1,000 × 100%)
+3. They can now borrow up to 1,000 USDC while maintaining a safe position
+4. If ETH price drops below $1,500, their position would be at risk of liquidation
+
+### Example 2: Using iFIL as Collateral on FVM
+
+A storage provider has 1,000 FIL they want to earn yield on while also accessing liquidity:
+
+1. They stake their 1,000 FIL on GLIF to receive 1,000 iFIL
+2. They deposit the 1,000 iFIL as collateral on Secured Finance
+3. They can now borrow USDFC while their original FIL continues earning staking rewards
+4. This creates a dual yield opportunity: staking rewards plus potential trading gains
+
+## FAQ
+
+### What happens if my collateral value drops?
+
+If your collateral value drops below the required threshold for your loan, your position becomes eligible for liquidation. The protocol will automatically liquidate a portion of your collateral to repay part of your debt and bring your position back to a safe level. To avoid liquidation, you can either add more collateral or repay part of your loan.
+
+### Can I use multiple types of collateral for a single loan?
+
+Yes, Secured Finance supports multi-collateral positions. You can deposit different types of accepted collateral assets to back your loan, which can help diversify your risk exposure to any single asset's price volatility.
+
+### How often is my collateral value updated?
+
+Collateral values are updated in real-time using oracle price feeds. This ensures that your position's health is always calculated based on the most current market prices.
+
+### What are the minimum collateral requirements?
+
+Minimum collateral requirements vary by asset type and network. Generally, the protocol requires a minimum collateralization ratio of 110%-150% depending on the volatility and liquidity of the collateral asset. Specific requirements for each asset are displayed in the platform interface.
+
 ## Future Plans: Expanding Collateral Options
 
 While WBTC, ETH, USDC, FIL, iFIL, pFIL, and USDFC are our current collateral options across supported networks, we continue to explore additional assets that align with our commitment to flexibility, security, and open DeFi principles. Stay tuned for updates on new collateral integrations and chain support as we further evolve the Secured Finance platform.
