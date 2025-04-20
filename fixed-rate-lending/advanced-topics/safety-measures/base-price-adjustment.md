@@ -71,6 +71,64 @@ Category will be set depending on the APR of the currency.
 
 We review the category in quarterly basis and revise if needed with community vote on the APR movement during the observing period.
 
+## FAQ
+
+### Why is Base Price Adjustment necessary?
+
+Base Price Adjustment is necessary for several important reasons:
+1. **Protection Against Liquidation**: It protects borrowers from unexpected liquidations as bond prices naturally approach par value near maturity
+2. **Risk Management**: It ensures the protocol maintains adequate collateralization as market conditions change
+3. **Price Manipulation Prevention**: It prevents malicious actors from manipulating prices to trigger unfair liquidations
+4. **Market Stability**: It contributes to overall market stability by setting reasonable minimum collateral requirements
+5. **Yield Curve Alignment**: It aligns collateral requirements with the natural yield curve of different assets
+
+### How are yield categories determined?
+
+Yield categories are determined through the following process:
+1. **Historical Analysis**: Analysis of historical yield ranges for each supported asset
+2. **Market Benchmarks**: Comparison with market benchmarks and similar assets
+3. **Risk Assessment**: Evaluation of the asset's volatility and liquidity characteristics
+4. **Protocol Governance**: Final approval through protocol governance mechanisms
+5. **Quarterly Review**: Regular review and potential adjustment based on market conditions
+
+### What happens if market yields change significantly between quarterly reviews?
+
+If market yields change significantly between quarterly reviews:
+1. **Emergency Review**: Protocol governance can initiate an emergency review if necessary
+2. **Gradual Adjustment**: Any changes to categories are typically implemented gradually
+3. **Safety Buffer**: The category system includes built-in buffers to accommodate some yield fluctuation
+4. **Monitoring Systems**: Continuous monitoring alerts governance to significant deviations
+5. **User Communication**: Users are notified of any potential category changes in advance
+
+### How does Base Price affect my borrowing position?
+
+Base Price affects your borrowing position in several ways:
+1. **Minimum Collateral**: It determines the minimum amount of collateral you must maintain
+2. **Liquidation Threshold**: It influences when your position becomes eligible for liquidation
+3. **Borrowing Capacity**: It affects how much you can borrow against your collateral
+4. **Position Management**: You may need to add more collateral as maturity approaches
+5. **Risk Exposure**: Lower Base Price (higher category) means higher collateral requirements
+
+### Can I predict how my collateral requirements will change over time?
+
+Yes, you can predict collateral requirement changes:
+1. **Formula Transparency**: The Base Price formula is publicly available and deterministic
+2. **Time-Based Calculation**: Requirements change based on time to maturity, which is known
+3. **Category Stability**: Categories typically remain stable during the quarterly periods
+4. **Simulation Tools**: The protocol provides tools to simulate future collateral requirements
+5. **Advance Notice**: Any category changes are announced in advance through governance
+
+## Key Parameters
+
+| Parameter | Description | Default Value |
+|-----------|-------------|---------------|
+| BP at Maturity | Reference Base Price at maturity (0y Duration) | 96.00 |
+| BP of 1y Duration | Reference Base Price at 1 year duration | Varies by category (81.00-93.00) |
+| Category Review Period | How often categories are reviewed | Quarterly |
+| Category Assignment | How currencies are assigned to yield categories | Based on APR range |
+| Interpolation Method | How BP is calculated between reference points | Linear interpolation |
+| Time Unit | Base time unit for calculations | Seconds |
+
 ## Related Resources
 
 - [Safety Measures](README.md)
