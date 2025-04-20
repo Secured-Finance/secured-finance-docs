@@ -1,6 +1,6 @@
 ---
 description: Explore deeper concepts and mechanisms of the USDFC Stablecoin Protocol
-icon: graduation-cap
+icon: 🎓
 ---
 
 # 🎓 Advanced Topics
