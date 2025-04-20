@@ -9,13 +9,7 @@ icon: 💫
 
 This case study explores the entire spectrum of order statuses through detailed examples, incorporating our platform's price range limit mechanism, [the Circuit Breaker](../../../../advanced-topics/safety-measures/circuit-breaker/README.md), for practical understanding.
 
-## What You'll Learn
 
-- How different order types (Market, Overlapping Limit, Non-Overlapping Limit) behave in the orderbook
-- How orders transition between different statuses (Open, Partially Filled, Filled, etc.)
-- How the Circuit Breaker mechanism affects order execution
-- How to interpret order status transitions in various market scenarios
-- How to anticipate order behavior based on market conditions
 
 ## How It Works
 
