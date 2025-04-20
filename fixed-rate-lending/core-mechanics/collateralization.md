@@ -11,6 +11,12 @@ Collateralization is a fundamental mechanism in the Fixed-Rate Lending Protocol 
 
 
 
+## How It Works
+
+The collateralization process in the Fixed-Rate Lending Protocol involves users depositing supported assets as collateral before borrowing or trading. The protocol continuously monitors the value of collateral against outstanding loans using real-time price feeds. If the collateralization ratio falls below the required threshold, the position becomes eligible for liquidation to protect the system's solvency.
+
+Each collateral type has specific parameters including minimum collateralization ratios, liquidation thresholds, and accepted currencies. The protocol supports multi-collateral positions, allowing users to diversify their risk across different assets.
+
 
 
 ## What is Collateral?
