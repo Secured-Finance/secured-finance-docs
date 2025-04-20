@@ -9,15 +9,9 @@ icon: 🌎
 
 Emergency global settlement is a critical functionality designed to address unforeseen situations such as hacks or unexpected bugs that could compromise the integrity of our protocol. When this functionality is executed by an admin, all markets are immediately halted, and the protocol becomes non-operational. Subsequently, users can only redeem their positions and withdraw their tokens.
 
-## What You'll Learn
+## How It Works
 
-- How Emergency Global Settlement protects the protocol in extreme scenarios
-- The step-by-step process of Emergency Global Settlement
-- How user positions and deposits are handled during settlement
-- How token replacement and withdrawal work after settlement
-- How this safety mechanism ensures the security of user funds
-
-## The Emergency Global Settlement Process
+The Emergency Global Settlement process follows a specific sequence of steps to ensure the secure resolution of all positions in the protocol:
 
 1. Admin initiates an emergency global settlement.&#x20;
    * All markets and the Token Vault are brought to a stop.
