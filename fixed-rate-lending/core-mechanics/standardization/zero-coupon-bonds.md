@@ -9,13 +9,7 @@ icon: 💠
 
 Zero-Coupon bonds are debt securities that do not pay interest (coupons) but are traded at a deep discount, rendering profit at maturity when the bond is redeemed for its full face value. The Secured Finance platform uses Zero-Coupon bonds as the standardized instrument for fixed-rate lending and borrowing.
 
-## What You'll Learn
 
-- Why Zero-Coupon bonds were chosen as the standard for the Fixed-Rate Lending Protocol
-- How Zero-Coupon bonds work in practice
-- How to calculate returns from Zero-Coupon bond investments
-- How the platform handles bond pricing and yield calculations
-- What constraints are placed on Zero-Coupon bond prices
 
 ## How It Works
 
