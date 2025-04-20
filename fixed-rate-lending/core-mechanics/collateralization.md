@@ -1,14 +1,33 @@
 ---
-description: Asset Backing for Loan Security
+description: Understanding how collateral secures loans in the Fixed-Rate Lending Protocol
+icon: 🏋️
 ---
 
-# 🏋️ Collateral Management
+# 🏋️ Collateralization
 
-## **What is Collateral?**
+## Overview
+
+Collateralization is a fundamental mechanism in the Fixed-Rate Lending Protocol that ensures the security and stability of the lending system. By requiring borrowers to deposit assets as collateral, the protocol protects lenders from default risk while enabling borrowers to access liquidity without traditional credit checks.
+
+## What You'll Learn
+
+- What collateral is and why it's essential for secured lending
+- How collateral serves dual purposes in risk reduction and financial inclusivity
+- What cryptocurrencies are accepted as collateral across different networks
+- How to obtain and use specialized collateral types like iFIL
+- How collateral management affects liquidation risk
+
+## Key Components
+
+- **Loan-to-Value (LTV) Ratio**: The relationship between borrowed amount and collateral value
+- **Collateral Currencies**: The various assets accepted as collateral across different networks
+- **Liquidation Threshold**: The point at which undercollateralized positions become eligible for liquidation
+
+## What is Collateral?
 
 Collateral is an asset that borrowers pledge to back a loan. It acts as a safety net for lenders, giving them the assurance that borrowers have a strong reason to repay their loans. If a borrower defaults, the lender can seize the collateral to recover the outstanding loan amount. Collateral can take various forms, such as real estate, vehicles, or other valuable assets, but it's a cornerstone of secured loans. It often allows borrowers to enjoy lower interest rates due to reduced lender risk.
 
-### **The Dual Role of Collateral in Secured Finance**
+### The Dual Role of Collateral in Secured Finance
 
 Collateral serves two main purposes in Secured Finance:
 
@@ -70,3 +89,9 @@ While WBTC, ETH, USDC, FIL, iFIL, pFIL, and USDFC are our current collateral opt
 {% hint style="warning" %}
 We are **sunsetting support** for Avalanche and Polygon zkEVM. Collateral options for those networks will no longer be active on Secured Finance Fixed Rate Lending Protocol.
 {% endhint %}
+
+## Related Resources
+
+- [Liquidation](liquidation/README.md)
+- [Order Book System](order-book-system/README.md)
+- [Safety Measures](../advanced-topics/safety-measures/README.md)
