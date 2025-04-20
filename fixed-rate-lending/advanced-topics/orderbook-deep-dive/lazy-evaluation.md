@@ -164,19 +164,6 @@ The Red-Black Tree and Lazy Evaluation work together to optimize the orderbook:
 
 This combination of data structures and evaluation strategies is what enables the protocol to achieve its high efficiency.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Order States | Number of possible states for orders in the system | 3 (Open Order, Active Position, Auto-rolled Position) |
-| CleanUp Trigger | Operations that trigger the CleanUp process | Order execution, collateral withdrawals, etc. |
-| Calculation Timing | When actual values are calculated | Real-time, only when requested |
-| Storage Optimization | How storage is optimized for gas efficiency | Recycling of mature market contracts |
-| Evaluation Method | How order and position values are determined | Deferred until necessary |
-| Gas Savings | Typical gas savings compared to eager evaluation | 40-60% |
-| Maximum Orderbooks | Maximum number of orderbooks per currency | 9 (8 active, 1 inactive) |
-| State Transition | When positions transition between states | At maturity or when orders are filled |
-
 ## Related Resources
 
 - [Orderbook Deep Dive](README.md)
