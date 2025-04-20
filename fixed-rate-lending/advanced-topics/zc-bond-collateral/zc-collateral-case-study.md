@@ -35,23 +35,41 @@ $$
 
 This results in a collateral utilization ratio of approximately 44.44%, illustrating a more favorable leverage position than indicated by the ZC utilization ratio alone.
 
-In the scenario described, User A has the capability to withdraw up to 800 USDC cash into their wallet. Consequently, both the ZC utilization and the overall Collateral utilization ratios stand at 80%. It's crucial to remain vigilant regarding potential sudden fluctuations in the ZC bond price. Should these ratios exceed 80%, it would initiate a liquidation process.
+## Examples
 
-### Liquidation of ZC Collateral
+### Example 1: Basic ZC Bond Collateralization
 
-In this scenario, User A has utilized a Zero Coupon Bond (ZC) as collateral to borrow funds. User A successfully borrows 800 USDC, which leads to a ZC utilization of 80% and a collateral utilization also at 80% without any cash collateral position.
+User A holds a ZC bond with a Present Value (PV) of 1,000 USDC and wants to borrow without adding cash collateral:
 
-#### Liquidation Mechanics
+1. User A deposits the ZC bond as collateral
+2. Under the 80% maximum utilization rule, User A can borrow up to 800 USDC
+3. After borrowing 800 USDC, the ZC utilization ratio is 80% (800/1000)
+4. User A can withdraw the 800 USDC to their wallet
+5. Both ZC utilization and overall collateral utilization ratios are at 80%
 
-Should the price of the ZC bond experience a sudden decline, the liquidation process may be initiated. Same as the normal liquidation process, the liquidator is permitted to liquidate up to 50% of User A's obligation, which amounts to a maximum of 400 USDC. The liquidation process involves User A losing a portion of their collateral equal to the liquidated amount plus a liquidation fee. The total cost to User A, including the liquidation fee of 7% (5%: fee for liquidator, and 2%: reserve fund), would be 428 USDC (400 USDC + 28 USDC).
+### Example 2: Liquidation Scenario
 
-#### Post-Liquidation Position
+If the price of User A's ZC bond suddenly declines:
 
-After the liquidation, User A's remaining obligation is reduced to 400 USDC, while the ZC collateral is diminished to 572 USDC (1000 USDC original collateral - 428 USDC liquidated amount). Consequently, the ZC utilization ratio post-liquidation adjusts to approximately 69.93%, calculated as follows:
+1. The liquidation process is triggered when utilization exceeds 80%
+2. A liquidator can liquidate up to 50% of User A's obligation (400 USDC)
+3. User A loses the liquidated amount plus a 7% fee (400 + 28 = 428 USDC)
+4. After liquidation, User A's remaining obligation is 400 USDC
+5. The ZC collateral is reduced to 572 USDC (1000 - 428)
+6. The post-liquidation ZC utilization ratio becomes 69.93% (400/572)
 
-$$
-\text{ZC Utilization Ratio} = \frac{400}{572} \approx 69.93\%
-$$
+### Example 3: Mixed Collateral Strategy
+
+User B has both ZC bonds and cash collateral:
+
+1. User B deposits a ZC bond worth 2,000 USDC and 1,000 USDC cash
+2. User B can borrow up to 2,600 USDC (80% of ZC value + 100% of cash)
+3. After borrowing 2,000 USDC:
+   - ZC utilization: 80% (1,600/2,000)
+   - Cash utilization: 40% (400/1,000)
+   - Overall collateral utilization: 66.7% (2,000/3,000)
+4. This mixed strategy provides better protection against price fluctuations
+5. User B would need a significant price drop to trigger liquidation
 
 ## FAQ
 
