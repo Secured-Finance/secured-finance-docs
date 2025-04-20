@@ -59,6 +59,53 @@ $$
 \text{ZC Utilization Ratio} = \frac{400}{572} \approx 69.93\%
 $$
 
+## FAQ
+
+### What are the advantages of using ZC bonds as collateral?
+
+Using Zero-Coupon Bonds as collateral offers several advantages:
+1. **Increased Capital Efficiency**: Allows users to leverage their ZC bond holdings without selling them
+2. **Yield Optimization**: Users can maintain exposure to fixed-rate returns while accessing liquidity
+3. **Portfolio Diversification**: Enables users to maintain diversified positions across different assets
+4. **Reduced Opportunity Cost**: Provides access to capital without forfeiting future bond returns
+5. **Strategic Positioning**: Allows for complex trading strategies that combine fixed-rate exposure with other market opportunities
+
+### What risks should I be aware of when using ZC bonds as collateral?
+
+When using ZC bonds as collateral, be aware of these risks:
+1. **Price Volatility**: ZC bond prices can fluctuate based on market conditions and interest rate changes
+2. **Liquidation Risk**: If utilization ratios exceed thresholds, your position may be partially liquidated
+3. **Maturity Considerations**: As bonds approach maturity, their price sensitivity to interest rate changes decreases
+4. **Market Liquidity**: In times of market stress, ZC bond liquidity may decrease, affecting collateral valuations
+5. **Correlation Risk**: If you borrow assets that are highly correlated with your ZC bond collateral, market downturns could affect both simultaneously
+
+### How is the ZC bond value calculated for collateral purposes?
+
+The ZC bond value for collateral is calculated as follows:
+1. **Present Value Calculation**: The system uses the current market price to determine the Present Value (PV)
+2. **Mark-to-Market Updates**: The value is regularly updated based on market prices
+3. **Haircut Application**: A 20% haircut is applied to the PV to determine the maximum borrowing capacity
+4. **Maturity Consideration**: As bonds approach maturity, their value converges toward par (face value)
+5. **Price Oracle Integration**: The system uses decentralized price oracles to ensure accurate valuations
+
+### What happens if I want to withdraw my ZC bond collateral?
+
+To withdraw your ZC bond collateral:
+1. **Utilization Check**: The system verifies that your remaining collateral will maintain utilization ratios below thresholds
+2. **Repayment Requirement**: You may need to repay a portion of your borrowed amount to reduce utilization
+3. **Partial Withdrawal**: You can withdraw a portion of your ZC bond collateral if full withdrawal isn't possible
+4. **Fee Consideration**: There are no additional fees for withdrawing collateral
+5. **Processing Time**: Withdrawals are processed on-chain and typically complete within one block
+
+### How does the liquidation process differ for ZC bond collateral compared to other collateral types?
+
+The liquidation process for ZC bond collateral:
+1. **Same Threshold**: Uses the same 80% utilization threshold as other collateral types
+2. **Partial Liquidation**: Liquidators can liquidate up to 50% of the obligation in a single liquidation
+3. **Collateral Valuation**: ZC bonds are valued at current market prices during liquidation
+4. **Liquidation Fee**: The same 7% liquidation fee applies (5% to liquidator, 2% to reserve)
+5. **Post-Liquidation Target**: The process aims to bring utilization down to approximately 70%
+
 ## Key Parameters
 
 | Parameter | Description | Value |
