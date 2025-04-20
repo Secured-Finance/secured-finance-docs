@@ -29,25 +29,37 @@ $$
 
 <table><thead><tr><th width="123" align="center">Category</th><th width="185" align="center">Yield range</th><th width="207" align="center">BP at Maturity</th><th align="center">BP of 1y Duration</th></tr></thead><tbody><tr><td align="center">A</td><td align="center">0%~3%</td><td align="center">96.00</td><td align="center">93.00</td></tr><tr><td align="center">B</td><td align="center">3%~5%</td><td align="center">96.00</td><td align="center">91.00</td></tr><tr><td align="center">C</td><td align="center">5%~7.5%</td><td align="center">96.00</td><td align="center">89.00</td></tr><tr><td align="center">D</td><td align="center">7.5%~10%</td><td align="center">96.00</td><td align="center">87.00</td></tr><tr><td align="center">E</td><td align="center">10%~15%</td><td align="center">96.00</td><td align="center">84.00</td></tr><tr><td align="center">F</td><td align="center">15%~</td><td align="center">96.00</td><td align="center">81.00</td></tr></tbody></table>
 
-### Example:&#x20;
+## Examples
 
-1\) Category A, 0.25y Duration:&#x20;
+### Example 1: Calculating Base Price for Short-Term Bonds
+
+For a Category A bond (0-3% yield range) with 0.25 years to maturity:
 
 $$
 BP(0.25y) = 96.00 - 0.25y/1y * (96.00-93.00) = 95.25
 $$
 
-2\) Category C, 1.0 Duration:&#x20;
+This means that for this short-term bond, the minimum collateral base price is 95.25. Any borrowing against this bond would use this value to calculate the required collateral, ensuring adequate protection as the bond approaches maturity.
+
+### Example 2: Calculating Base Price for Medium-Term Bonds
+
+For a Category C bond (5-7.5% yield range) with exactly 1 year to maturity:
 
 $$
 BP(1y) = 96.00 - 1y/1y * (96.00-89.00) = 89.00
 $$
 
-3\) Category F, 1.5y Duration:&#x20;
+This medium-term bond has a lower base price of 89.00, reflecting the higher yield and longer duration. Borrowers would need to maintain collateral based on this value to avoid liquidation.
+
+### Example 3: Calculating Base Price for Long-Term Bonds
+
+For a Category F bond (15%+ yield range) with 1.5 years to maturity:
 
 $$
 BP(1.5y) = 96.00 - 1.5y/1y * (96.00-81.00) = 73.50
 $$
+
+This long-term, high-yield bond has a significantly lower base price of 73.50, reflecting the higher risk and longer time to maturity. Borrowers using this bond as collateral would need to be particularly vigilant about maintaining adequate collateralization.
 
 {% hint style="info" %}
 In the examples above, we simplified the calculations by using annualized Duration. However, it's important to note that the actual calculations for our contract are based on seconds.

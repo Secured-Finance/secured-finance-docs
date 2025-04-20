@@ -30,7 +30,9 @@ The Circuit Breaker mechanism uses a combination of historical price data and pe
 Due to the inherent characteristics of Zero-Coupon Bonds—which begin trading at a significant discount and mature at par (100 on our platform)—there are tighter restrictions on downward movements to prevent excessive volatility.
 {% endhint %}
 
-### Practical Example
+## Examples
+
+### Example 1: Standard Price Range Calculation
 
 Consider a situation where the last 5 reliable Block Prices are 80.60, 80.40, 80.30, 80.10, and the most recent is 79.60.
 
@@ -64,9 +66,38 @@ $$
 80.00 * 1.10 = 88.00
 $$
 
-### Exceptional Case: Minimum Movement
+This means that in the next block, orders will only be executed if their prices fall within the range of 76.19 to 88.00, protecting the market from extreme volatility.
 
-For instance, if the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00. Normally, the downward movement would be limited to 15.20 which is 95% of the 16.00. However, the platform allows for a minimum market movement of 2.00, setting the lower limit at 14.00 (= 16.00 - 2.00).
+### Example 2: Minimum Movement Rule Application
+
+If the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00. 
+
+Normally, the downward movement would be limited to:
+
+$$
+16.00 * 0.95 = 15.20
+$$
+
+However, since the platform allows for a minimum market movement of 2.00, the actual lower limit would be:
+
+$$
+16.00 - 2.00 = 14.00
+$$
+
+This minimum movement rule ensures that markets with low prices can still function efficiently, as percentage-based limits might be too restrictive in such cases.
+
+### Example 3: Asymmetric Limits in Action
+
+Consider a market with the following recent prices:
+- Last 5 prices: 50.00, 49.80, 49.60, 49.40, 49.20
+- Moving Average (5 blocks): 49.60
+- Moving Average (3 blocks): 49.40
+
+The price limits would be:
+- Downward limit: 49.60 * 0.95 = 47.12
+- Upward limit: 49.40 * 1.10 = 54.34
+
+This asymmetric design (5% down vs. 10% up) reflects the natural tendency of Zero-Coupon Bonds to increase in price as they approach maturity, allowing for more natural upward movement while protecting against sharp downward spikes.
 
 ## FAQ
 

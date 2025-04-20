@@ -26,11 +26,11 @@ It's important to note that even users who only have deposits without positions 
 
 
 
-***
+## Examples
 
-### Example Scenario
+### Example 1: Emergency Settlement Process
 
-Let's illustrate the emergency global settlement process with the following example:
+Let's illustrate the emergency global settlement process with a practical example:
 
 **Token Vault Holdings:**
 
@@ -46,15 +46,34 @@ _Ratio: 1 USDC to 2 USD worth of ETH_
 
 _Total Funds: $15,000_
 
-
-
 **After Emergency Global Settlement:**
 
 * The user's lending positions and deposits are reset.
 * The user receives tokens worth $5,000 of USDC and ETH valued at $10,000 as per the replacement.
 * The user can withdraw $5,000 in USDC and $10,000 worth of ETH from their account.
 
+### Example 2: Multi-Asset Settlement
 
+Consider a user with a more complex portfolio:
+
+**Token Vault Holdings:**
+* Total USDC: $500,000
+* Total ETH Value: $300,000
+* Total BTC Value: $200,000
+
+_Ratio: 5:3:2 for USDC:ETH:BTC_
+
+**User's Positions:**
+* Various lending positions across multiple maturities (Total PV: $50,000)
+* Deposits in multiple currencies (Total value: $25,000)
+
+**After Emergency Global Settlement:**
+* All positions are valued at $75,000 total
+* User receives approximately:
+  * $37,500 in USDC (50% of portfolio value)
+  * $22,500 in ETH (30% of portfolio value)
+  * $15,000 in BTC (20% of portfolio value)
+* The exact distribution depends on the precise ratios in the Token Vault at settlement time
 
 {% hint style="info" %}
 Emergency global settlement acts as a vital safeguard, protecting both user funds and the overall integrity of the protocol in unforeseen circumstances. It ensures a secure and resilient DeFi ecosystem for all participants, enhancing trust and confidence in the platform.
