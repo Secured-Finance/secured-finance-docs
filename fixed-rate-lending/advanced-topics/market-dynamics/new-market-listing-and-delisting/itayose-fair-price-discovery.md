@@ -9,13 +9,7 @@ icon: 🤝
 
 The Itayose is a key process in our protocol that determines the 'opening price' for a new orderbook every quarter when the nearest orderbook matures. We accept 'pre-open orders' 7 days before the new orderbook starts trading and use the Itayose process to set the opening price. This mechanism ensures fair price discovery and efficient market opening for new tenor periods.
 
-## What You'll Learn
 
-- How the Itayose process works to determine opening prices for new orderbooks
-- The timeline and rules for placing pre-open orders
-- How opening prices are calculated from overlapping orders
-- What happens to unfilled orders after the Itayose process
-- Why transaction fees are waived during the Itayose process
 
 ## How It Works
 
