@@ -9,13 +9,7 @@ icon: ⏳
 
 Secured Finance's Loan Market Platform operates on a Fixed Maturity Standard, with up to eight distinct order books each representing a unique time horizon. These range from 3 months to 2 years, with a maturity gap of three months. Each order book exists until its maturity, with the duration shortening day by day. All currencies adhere to the same "Maturity".
 
-## What You'll Learn
 
-- How the Fixed Maturity Standard structures loan terms in the Fixed-Rate Lending Protocol
-- How maturity dates are determined for different contract months
-- What happens to orderbooks and loan positions at maturity
-- How the platform maintains a consistent set of maturity options
-- How Auto-Rolling works to reinvest matured positions
 
 ## How It Works
 
