@@ -1,6 +1,21 @@
+---
+description: A technical guide to the liquidation process in the Fixed-Rate Lending Protocol
+icon: ✏️
+---
+
 # ✏️ How Liquidation Works
 
+## Overview
+
 First of all, it is necessary to identify the target user through off-chain actions before executing liquidation. The function `getCoverage()` is used for this purpose. A user becomes a target for liquidation if this function returns a value of `8000` or higher. For more details, refer to the documentation at [TokenVault Documentation](https://github.com/Secured-Finance/contracts/blob/develop/docs/protocol/TokenVault.md#getcoverage).
+
+## What You'll Learn
+
+- How to identify positions eligible for liquidation
+- How to execute the liquidation process through smart contract functions
+- How liquidation fees and penalties are calculated
+- How to implement callback functions for handling liquidated assets
+- How the liquidation process flow works from start to finish
 
 To execute with liquidation, you must specify the currency of the collateral to be received, the currency of the debt to be liquidated, and its maturity. This is done by calling the function `executeLiquidationCall()`. To maximize the profit of the liquidation in the case that users have collateral or debt in multiple currencies, you need to estimate each case and choose one of them through off-chain action. For more details of the function, refer to the documentation at [LendingMarketController Documentation](https://github.com/Secured-Finance/contracts/blob/develop/docs/protocol/LendingMarketController.md#executeliquidationcall).
 
@@ -32,3 +47,10 @@ Market-->>FV: Transfer the debt balance<BR>from the selected user<BR>to the liqu
 Market-->>Liquidator: Execute the callback<BR>function for debt
 Market-->>Market: Check if the liquidator<BR>has enough collateral
 ```
+
+## Related Resources
+
+- [Collateral Liquidations](README.md)
+- [Liquidation](../../README.md)
+- [Mark to Market](../../mark-to-market.md)
+- [Safety Measures](../../../../advanced-topics/safety-measures/README.md)
