@@ -74,6 +74,53 @@ $$
 
 For instance, if the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00. Normally, the downward movement would be limited to 15.20 which is 95% of the 16.00. However, the platform allows for a minimum market movement of 2.00, setting the lower limit at 14.00 (= 16.00 - 2.00).
 
+## FAQ
+
+### Why are downward price movements more restricted than upward movements?
+
+Downward price movements are more restricted for several important reasons:
+1. **Zero-Coupon Bond Characteristics**: Zero-Coupon Bonds naturally increase in price as they approach maturity, so downward movements are more likely to be anomalous
+2. **Liquidation Protection**: Tighter downward limits help protect borrowers from unnecessary liquidations due to temporary price volatility
+3. **Market Stability**: More restrictive downward limits prevent panic selling and market crashes
+4. **Flash Loan Defense**: Stricter downward limits make it harder for attackers to manipulate prices downward to trigger liquidations
+5. **Asymmetric Risk**: The risk of rapid price collapses is generally more damaging to the protocol than rapid price increases
+
+### How are "Reliable Block Prices" determined?
+
+Reliable Block Prices are determined through the following process:
+1. **Price Validation**: Each block price must pass validation checks to be considered reliable
+2. **Manipulation Detection**: Prices that show signs of manipulation are excluded
+3. **Volume Requirements**: Blocks must have sufficient trading volume to be included
+4. **Outlier Rejection**: Statistical methods identify and exclude outlier prices
+5. **Recency Weighting**: More recent blocks have higher priority for inclusion
+
+### What happens if there aren't enough Reliable Block Prices available?
+
+If there aren't enough Reliable Block Prices available:
+1. **Fallback Mechanism**: The system uses a fallback calculation based on available data
+2. **Extended Timeframe**: The lookback period is extended until sufficient data is found
+3. **Oracle Integration**: External price oracles may be consulted as a secondary source
+4. **Conservative Limits**: More conservative limits are applied when data is limited
+5. **Admin Notification**: Protocol administrators are notified of the data shortage
+
+### Can the Circuit Breaker price limits be adjusted?
+
+Yes, the Circuit Breaker price limits can be adjusted:
+1. **Governance Process**: Changes to parameters require approval through protocol governance
+2. **Market-Specific Adjustments**: Different markets may have different parameters based on their characteristics
+3. **Volatility Adaptation**: Parameters can be adjusted in response to changing market volatility
+4. **Periodic Review**: All parameters are reviewed quarterly to ensure they remain appropriate
+5. **Emergency Adjustments**: In extreme market conditions, emergency parameter changes may be implemented
+
+### How do the minimum movement allowances work?
+
+The minimum movement allowances work as follows:
+1. **Floor Value**: They establish a minimum price movement that's always allowed regardless of percentage calculations
+2. **Market Efficiency**: They ensure that markets with very low prices can still function efficiently
+3. **Calculation Priority**: The system uses whichever is more permissive: the percentage-based limit or the minimum movement
+4. **Asymmetric Design**: Different minimum movements are set for upward (7.00) and downward (2.00) price changes
+5. **Practical Application**: For example, if 5% of the Moving Average is less than 2.00, the 2.00 minimum is used instead
+
 ## Key Parameters
 
 | Parameter | Description | Value |
