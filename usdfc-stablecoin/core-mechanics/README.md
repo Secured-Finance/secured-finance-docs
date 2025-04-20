@@ -19,11 +19,11 @@ The USDFC Stablecoin Protocol introduces a variety of innovative features that e
 
 ## Key Components
 
-- **The Trove System**: Individual vaults where users deposit FIL collateral and mint USDFC
-- **Mint & Borrow**: The process of creating new USDFC backed by FIL collateral
-- **Liquidation**: The mechanism for handling undercollateralized positions
-- **Redemption**: The process allowing USDFC holders to exchange for FIL at face value
-- **Protocol Fees**: The fee structure supporting the protocol's long-term sustainability
+- [**The Trove System**](the-trove-system.md): Individual vaults where users deposit FIL collateral and mint USDFC
+- [**Mint & Borrow**](mint-and-borrow.md): The process of creating new USDFC backed by FIL collateral
+- [**Liquidation**](liquidation/README.md): The mechanism for handling undercollateralized positions
+- [**Redemption**](redemption.md): The process allowing USDFC holders to exchange for FIL at face value
+- [**Protocol Fees**](protocol-fees.md): The fee structure supporting the protocol's long-term sustainability
 
 ## Related Resources
 
