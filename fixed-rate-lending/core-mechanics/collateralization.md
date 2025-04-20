@@ -11,11 +11,7 @@ Collateralization is a fundamental mechanism in the Fixed-Rate Lending Protocol 
 
 
 
-## Key Components
 
-- **Loan-to-Value (LTV) Ratio**: The relationship between borrowed amount and collateral value
-- **Collateral Currencies**: The various assets accepted as collateral across different networks
-- **Liquidation Threshold**: The point at which undercollateralized positions become eligible for liquidation
 
 ## What is Collateral?
 
