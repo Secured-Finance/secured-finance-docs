@@ -9,13 +9,7 @@ icon: 🏋️
 
 Collateralization is a fundamental mechanism in the Fixed-Rate Lending Protocol that ensures the security and stability of the lending system. By requiring borrowers to deposit assets as collateral, the protocol protects lenders from default risk while enabling borrowers to access liquidity without traditional credit checks.
 
-## What You'll Learn
 
-- What collateral is and why it's essential for secured lending
-- How collateral serves dual purposes in risk reduction and financial inclusivity
-- What cryptocurrencies are accepted as collateral across different networks
-- How to obtain and use specialized collateral types like iFIL
-- How collateral management affects liquidation risk
 
 ## Key Components
 
