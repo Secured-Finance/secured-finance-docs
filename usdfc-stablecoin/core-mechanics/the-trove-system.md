@@ -39,7 +39,9 @@ A Trove is your personal vault within the protocol where you lock up Filecoin (F
 
 ### Total Debt Formula
 
-$$\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})$$
+$$
+\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})
+$$
 
 The Total Debt represents the full amount you owe to the protocol, including:
 
@@ -49,7 +51,9 @@ The Total Debt represents the full amount you owe to the protocol, including:
 
 ### Collateral Ratio Formula
 
-$$\text{Collateral Ratio} = \frac{\text{Collateral Value (USD)}}{\text{Total Debt (USDFC)}}$$
+$$
+\text{Collateral Ratio} = \frac{\text{Collateral Value (USD)}}{\text{Total Debt (USDFC)}}
+$$
 
 * Must remain above 110% in Normal Mode
 * Recommended to maintain above 150% to avoid liquidation in Recovery Mode
@@ -60,10 +64,14 @@ $$\text{Collateral Ratio} = \frac{\text{Collateral Value (USD)}}{\text{Total Deb
 ### Opening a Trove
 
 **Normal Mode**:
-$$\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})$$
+$$
+\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})
+$$
 
 **Recovery Mode**:
-$$\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve})$$
+$$
+\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve})
+$$
 (Borrowing Fee is waived)
 
 **Example (Normal Mode)**:
