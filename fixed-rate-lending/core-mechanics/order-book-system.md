@@ -9,13 +9,7 @@ icon: 🧩
 
 Secured Finance's Loan Market Platform incorporates an on-chain orderbook system, a pioneering application in the DeFi space. This system facilitates the trading of [Zero-Coupon bonds](standardization/zero-coupon-bonds.md) with a specific maturity date.
 
-## What You'll Learn
 
-- What an orderbook is and how it functions in the Fixed-Rate Lending Protocol
-- The difference between borrow orders and lend orders
-- How Zero-Coupon bonds are traded on the platform
-- Why on-chain orderbooks are challenging to implement in DeFi
-- How Secured Finance overcomes gas cost challenges with its orderbook implementation
 
 ## How It Works
 
