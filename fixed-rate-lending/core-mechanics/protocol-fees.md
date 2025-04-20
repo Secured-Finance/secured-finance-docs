@@ -9,13 +9,7 @@ icon: 🧀
 
 The Fixed-Rate Lending Protocol implements various fees to sustain operations, incentivize participants, and ensure protocol security. These fees are carefully designed to balance user experience with protocol sustainability. The fee structure is transparent and predictable, allowing users to accurately calculate costs when interacting with the protocol.
 
-## What You'll Learn
 
-- How trading fees are structured for market takers vs. limit orders
-- How liquidation fees help secure the protocol
-- How Auto Roll fees work for reinvestment at maturity
-- How fees are reserved and distributed within the ecosystem
-- How fee structures vary based on loan duration
 
 ## How It Works
 
