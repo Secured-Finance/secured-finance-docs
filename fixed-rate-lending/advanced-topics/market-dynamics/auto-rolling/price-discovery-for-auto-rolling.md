@@ -31,6 +31,16 @@ In an extreme market condition, where no transactions have occurred for the last
 
 In the special case of the initial roll, if no transaction occurs on the 2nd order book until the first roll, we use the opening price of our product launch, adjusted for duration. This method ensures that the initial roll price is still based on market data, even if no transactions have occurred.
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Observation Window | Time period before maturity used for price calculation in liquid conditions | 6 hours |
+| Price Calculation Method (Liquid) | Method used to calculate price in liquid conditions | Volume-weighted average price |
+| Price Calculation Method (Less Liquid) | Method used when no transactions occur in observation window | Mark Price adjusted for duration |
+| Price Calculation Method (Extreme) | Method used when no transactions occur for extended period | Previous roll price |
+| Initial Roll Price | Method used for the first roll with no transaction history | Opening price adjusted for duration |
+
 ## Examples
 
 ### Example 1: Normal and Liquid Market Condition

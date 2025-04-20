@@ -43,6 +43,17 @@ To encourage people to place opening orders closer to the market level for effic
 
 All orders that were not filled by the Itayose process will remain in the Orderbook and start trading normally after the market opens. _**All orders that were executed by the Itayose process will be filled at the 'opening price'.**_
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Pre-Open Order Period | Time before new orderbook launch when users can place orders | 7 days |
+| Orderbook Freeze | Time before launch when orderbook is frozen for Itayose | 1 hour |
+| Order Types Allowed | Types of orders accepted during pre-open period | Limit orders only |
+| Transaction Fees | Fees charged for orders executed during Itayose | Waived (0%) |
+| Price Calculation Method | How opening price is determined | Based on order imbalance and mid-price |
+| Order Execution Priority | How orders are prioritized for execution | First come, first serve |
+
 ## Examples
 
 ### Example 1: Balanced Order Book
