@@ -1,12 +1,21 @@
 ---
-description: Real-Time Asset Valuation
+description: Understanding how assets are valued at current market prices in the Fixed-Rate Lending Protocol
+icon: ⚖️
 ---
 
 # ⚖️ Mark to Market
 
-## What is Mark to Market
+## Overview
 
 Mark to Market is a pricing methodology where the value of an asset is calculated based on its current market value. In this methodology, the asset is valued at the current market price instead of its book value. We use this price to evaluate Profit and Loss (PnL) and Loan to Value (LTV) ratio.
+
+## What You'll Learn
+
+- How Mark to Market valuation works in the Fixed-Rate Lending Protocol
+- How the protocol calculates Mark Price using Volume Weighted Average Price (VWAP)
+- Why Future Value (FV) is used instead of Present Value (PV) in calculations
+- How minimum volume thresholds protect against price manipulation
+- How the waterfall mechanism determines Mark Price in different scenarios
 
 ## Our Method - Mark Price
 
@@ -42,3 +51,9 @@ We review and revise Volume Threshold periodically.
 2. Use ‘Auto-roll Price’ for ‘Mark Price’ if there are no block price
 3. Use ‘Last traded price’ and/or ‘VWAP’ for ‘Mark to Market’ price during the same block if there is no matching orders have been executed before and no ‘Mark Price’ exist
    * [ ] If there are no ‘Mark Price’ exist yet, we remove the Volume Threshold above and use ‘last traded price’
+## Related Resources
+
+- [Liquidation](README.md)
+- [Collateralization](../../collateralization.md)
+- [Safety Measures](../../../advanced-topics/safety-measures/README.md)
+- [Circuit Breaker](../../../advanced-topics/safety-measures/circuit-breaker/README.md)
