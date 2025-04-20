@@ -9,13 +9,7 @@ icon: ✏️
 
 The liquidation process in the Fixed-Rate Lending Protocol involves identifying undercollateralized positions and executing liquidation calls through smart contract functions. This technical guide explains the implementation details of how liquidation works from a developer's perspective.
 
-## What You'll Learn
 
-- How to identify positions eligible for liquidation using the `getCoverage()` function
-- How to execute liquidation calls with the `executeLiquidationCall()` function
-- How to implement callback functions for handling liquidated assets
-- How to maximize profits from liquidation opportunities
-- How the liquidation process flow works at the smart contract level
 
 ## How It Works
 
