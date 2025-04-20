@@ -1,10 +1,21 @@
 ---
-description: Price Range Limit Mechanism for Market Stability
+description: A protective mechanism that prevents excessive price movements in the Fixed-Rate Lending Protocol
+icon: 🚦
 ---
 
 # 🚦 Circuit Breaker
 
+## Overview
+
 The Circuit Breaker is a protective mechanism used in the bond market to prevent excessive price movements and maintain stability. This user guide will explain what the Circuit Breaker is and why it is important for bond market participants.
+
+## What You'll Learn
+
+- What a Circuit Breaker is and how it functions in the bond market
+- Why Circuit Breakers are essential for market stability
+- How Circuit Breakers protect against flash loan attacks in crypto trading
+- How the Secured Finance platform implements Circuit Breakers
+- How the 3-threshold system works to prevent extreme volatility
 
 ## What is the Circuit Breaker in Bond Market?&#x20;
 
@@ -21,6 +32,13 @@ By setting the value threshold of the Circuit Breaker to dynamically change base
 ## How does it work for Secured Finance platform?
 
 At our trading platform, we have implemented a circuit breaker mechanism that effectively sets price limitations for market movements within a single block. This mechanism applies to both our 'market order' and 'limit order' functions, ensuring that all orders adhere to a well-defined 3-threshold system. By doing so, we guarantee that orders remain within acceptable price ranges, effectively preventing extreme volatility and maintaining stability in our Zero Coupon bond market. The circuit breaker serves as a crucial tool to promote a secure and reliable trading environment, safeguarding both traders and the overall integrity of our platform. For a more detailed calculation, please consult the '[Formulaic for Circuit Breaker](price-range-limits.md)'.
+
+## Related Resources
+
+- [Safety Measures](../README.md)
+- [Base Price Adjustment](../base-price-adjustment.md)
+- [Emergency Global Settlement](../emergency-global-settlement.md)
+- [Mark to Market](../../../core-mechanics/liquidation/mark-to-market.md)
 
 
 

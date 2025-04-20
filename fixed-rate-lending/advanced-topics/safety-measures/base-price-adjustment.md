@@ -1,12 +1,23 @@
 ---
-description: Secure Assets and Protocol
+description: A mechanism that ensures fair pricing and adequate collateralization during market stress
+icon: 🪄
 ---
 
 # 🪄 Base Price Adjustment
 
+## Overview
+
 In the case of Zero Coupon Bonds, which begin trading at a significant discount and mature at par value (100 on our platform), borrowers are required to progressively increase their collateral over time.
 
 **To safeguard borrowers from the risk of liquidation, while also minimizing insolvency risks for our protocol, we mandate a minimum collateral requirement that varies based on the currency and the duration of the loan.**
+
+## What You'll Learn
+
+- How the Base Price Adjustment mechanism protects both borrowers and the protocol
+- How minimum collateral requirements are calculated based on currency and loan duration
+- How the Base Price is determined using reference values and time to maturity
+- How different yield categories affect collateral requirements
+- How categories are assigned to different currencies and periodically reviewed
 
 To secure user assets and protect the protocol from market exploitation, we introduce the <mark style="color:red;">minimum collateral base price</mark> (**Base Price: BP**). It will be used to calculate the required collateral for borrowers such that the input bond price is lower than the BP.&#x20;
 
@@ -59,3 +70,10 @@ Category will be set depending on the APR of the currency.
 
 
 We review the category in quarterly basis and revise if needed with community vote on the APR movement during the observing period.
+
+## Related Resources
+
+- [Safety Measures](README.md)
+- [Circuit Breaker](circuit-breaker/README.md)
+- [Emergency Global Settlement](emergency-global-settlement.md)
+- [Minimum Collateral](../../../core-mechanics/collateralization.md)

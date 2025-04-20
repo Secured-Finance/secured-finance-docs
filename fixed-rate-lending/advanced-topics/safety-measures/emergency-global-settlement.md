@@ -1,12 +1,23 @@
 ---
-description: A Safety Net for Unforeseen Situations
+description: A protocol-wide safety mechanism for extreme scenarios in the Fixed-Rate Lending Protocol
+icon: 🌎
 ---
 
 # 🌎 Emergency Global Settlement
 
+## Overview
+
 Emergency global settlement is a critical functionality designed to address unforeseen situations such as hacks or unexpected bugs that could compromise the integrity of our protocol. When this functionality is executed by an admin, all markets are immediately halted, and the protocol becomes non-operational. Subsequently, users can only redeem their positions and withdraw their tokens.
 
-### The Emergency Global Settlement process:
+## What You'll Learn
+
+- How Emergency Global Settlement protects the protocol in extreme scenarios
+- The step-by-step process of Emergency Global Settlement
+- How user positions and deposits are handled during settlement
+- How token replacement and withdrawal work after settlement
+- How this safety mechanism ensures the security of user funds
+
+## The Emergency Global Settlement Process
 
 1. Admin initiates an emergency global settlement.&#x20;
    * All markets and the Token Vault are brought to a stop.
@@ -54,3 +65,10 @@ _Total Funds: $15,000_
 {% hint style="info" %}
 Emergency global settlement acts as a vital safeguard, protecting both user funds and the overall integrity of the protocol in unforeseen circumstances. It ensures a secure and resilient DeFi ecosystem for all participants, enhancing trust and confidence in the platform.
 {% endhint %}
+
+## Related Resources
+
+- [Safety Measures](README.md)
+- [Circuit Breaker](circuit-breaker/README.md)
+- [Base Price Adjustment](base-price-adjustment.md)
+- [Core Mechanics](../../core-mechanics/README.md)
