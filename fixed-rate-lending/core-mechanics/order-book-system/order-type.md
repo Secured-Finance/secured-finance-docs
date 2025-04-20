@@ -9,13 +9,7 @@ icon: 🆎
 
 Secured Finance's Loan Market Platform supports two primary types of orders: limit orders and market orders. These order types provide users with flexibility and control over their trading strategies in the Fixed-Rate Lending Protocol.
 
-## What You'll Learn
 
-- The difference between limit orders and market orders
-- How overlapping limit orders are executed
-- The role of market makers and market takers in the orderbook
-- How each order type affects market liquidity
-- When to use each type of order for different trading strategies
 
 ## How It Works
 
