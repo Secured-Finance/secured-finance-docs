@@ -9,13 +9,7 @@ icon: 📊
 
 APR (Annual Percentage Rate) and APY (Annual Percentage Yield) are two common measures of interest rates that are used in the DeFi loan and deposit markets. While they may seem similar, there are key differences between them, particularly in how they account for compounding interest.
 
-## What You'll Learn
 
-- The difference between APR and APY in interest rate calculations
-- How compounding affects interest rate calculations
-- How to convert between APR and APY
-- Why the Fixed-Rate Lending Protocol uses APR rather than APY
-- How these concepts apply in practical lending scenarios
 
 ## What is APY?
 
