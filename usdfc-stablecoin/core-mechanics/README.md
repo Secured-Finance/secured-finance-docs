@@ -1,19 +1,32 @@
+---
+description: Explore the fundamental mechanisms of the USDFC Stablecoin Protocol
+icon: flashlight
+---
+
 # 🔦 Core Mechanics
 
-Secured Finance's stablecoin protocol introduces a variety of innovative features that enable users to efficiently mint, manage and utilise **USDFC**, our decentralized, Filecoin-backed stablecoin. Below are the key features:
+## Overview
 
-## [**Mint & Borrow**](mint-to-borrow.md)
+The USDFC Stablecoin Protocol introduces a variety of innovative features that enable users to efficiently mint, manage, and utilize **USDFC**, our decentralized, Filecoin-backed stablecoin. These core mechanics work together to ensure the stability, security, and usability of the protocol.
 
-Mint USDFC by locking Filecoin (FIL) as collateral with a minimum collateralization ratio of 110%. This ensures capital efficiency while allowing users to extract liquidity from their FIL holdings.
+## What You'll Learn
 
-## [**Liquidation with Stability Pool**](stability-pool-liquidations.md)
+- How to mint USDFC using Filecoin (FIL) as collateral
+- How the Trove system manages individual collateralized debt positions
+- How liquidations protect the protocol from undercollateralization
+- How the redemption mechanism maintains USDFC's peg to the US Dollar
+- How protocol fees contribute to the system's sustainability
 
-The Stability Pool secures the protocol by covering liquidations. Users who deposit USDFC into the pool can receive discounted FIL from liquidated positions.
+## Key Components
 
-## [**Redemption for Peg Mechanism**](redemption-mechanism.md)
+- **The Trove System**: Individual vaults where users deposit FIL collateral and mint USDFC
+- **Mint & Borrow**: The process of creating new USDFC backed by FIL collateral
+- **Liquidation**: The mechanism for handling undercollateralized positions
+- **Redemption**: The process allowing USDFC holders to exchange for FIL at face value
+- **Protocol Fees**: The fee structure supporting the protocol's long-term sustainability
 
-USDFC maintains a 1:1 peg to the USD through a redemption mechanism, allowing users to exchange USDFC for FIL at its peg value, stabilizing its price.
+## Related Resources
 
-## [**Recovery Mode**](../advanced-topics/recovery-mode.md)
-
-If the system-wide collateral ratio drops below 150%, the protocol enters Recovery Mode, prioritizing liquidations and restricting new borrowing to restore stability.
+- [System Overview](system-overview.md)
+- [Advanced Topics](../advanced-topics/README.md)
+- [FAQs](../faqs.md)
