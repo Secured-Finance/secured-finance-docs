@@ -49,6 +49,19 @@ Each ZC token has a maturity, but if the maturity is 0, it becomes a ZC perpetua
 
 Month abbreviations: MAR = M; JUN = J; SEP = S; DEC = D
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Token Standard | The token standard used for ZC tokens | ERC20 |
+| Token Decimals | Number of decimal places supported by ZC tokens | 18 |
+| Maturity Format | How maturity is represented in token names | MMMYYYY (e.g., MAR2024) |
+| Symbol Format | Format for token symbols | zc[ASSET]-YYYY-MM |
+| Metamask Symbol Format | Shortened format for Metamask display | zc[ASSET]YYM |
+| Perpetual Token Maturity | Maturity value for perpetual tokens | 0 |
+| Minting Source (ZC Tokens) | Contract that mints standard ZC tokens | FutureValueVault |
+| Minting Source (Perpetual) | Contract that mints perpetual ZC tokens | GenesisValueVault |
+
 ## Examples
 
 ### Example 1: Withdrawing a Lending Position as a ZC Token

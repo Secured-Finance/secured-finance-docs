@@ -126,19 +126,6 @@ Yes, you can place orders in the inactive orderbook during its pre-order period:
 4. If your pre-order matches during Itayose, it will be executed when the orderbook becomes active
 5. If not, it will remain as a limit order in the newly activated orderbook
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Active Orderbooks | Number of active orderbooks per currency | 8 |
-| Inactive Orderbooks | Number of inactive orderbooks per currency | 1 |
-| Pre-Order Period | Duration before new orderbook opens | 168 hours (7 days) |
-| Orderbook Freeze | Time before opening when orderbook is frozen | 1 hour |
-| Total Orderbooks | Maximum number of orderbooks per currency | 9 |
-| Rotation Trigger | Event that initiates orderbook rotation | Maturity of shortest orderbook |
-| Maturity Spacing | Typical time between consecutive maturities | 3 months |
-| Rotation Frequency | How often orderbook rotation typically occurs | Every 3 months |
-
 ## Related Resources
 
 - [Orderbook Deep Dive](README.md)
