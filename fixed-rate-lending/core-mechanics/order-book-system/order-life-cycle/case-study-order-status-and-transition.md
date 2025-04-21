@@ -28,6 +28,23 @@ When using this chart:
 
 This chart works in conjunction with the Circuit Breaker mechanism, which prevents extreme price movements by limiting the range within which orders can execute.
 
+### Understanding Order Status Transitions
+
+The chart below serves as a comprehensive guide to understanding how orders move through different states in the Fixed-Rate Lending Protocol. Each order type follows a specific path through the system:
+
+- **Market Orders**: These are intended for immediate execution and typically transition directly to "Filled" status if there's sufficient liquidity. If there's partial liquidity, they may become "Partially Filled" before reaching a terminal state like "Killed" or "Blocked".
+
+- **Overlapping Limit Orders**: These orders match with existing orders in the orderbook and can be executed immediately. They may be "Filled" completely, "Partially Filled" (with the remainder staying open), or transition to "Cancelled" or "Expired" states if the user cancels them or they reach maturity.
+
+- **Non-Overlapping Limit Orders**: These orders don't match with existing orders and remain "Open" in the orderbook. They can later transition to "Partially Filled", "Filled", "Cancelled", or "Expired" states depending on market conditions and user actions.
+
+The exceptional cases are handled through specific status transitions:
+- Orders that would execute outside the Circuit Breaker price range become "Blocked"
+- Orders that can't be filled due to insufficient liquidity become "Killed"
+- Orders that reach maturity without being filled become "Expired"
+
+By understanding these transitions, users can better predict how their orders will behave under different market conditions and take appropriate actions to manage their positions.
+
 ## Key Parameters
 
 | Parameter | Description | Value |
