@@ -35,15 +35,14 @@ At our trading platform, we have implemented a circuit breaker mechanism that ef
 
 ## Key Parameters
 
-| Parameter | Description | Typical Value |
-|-----------|-------------|---------------|
-| Soft Limit | First threshold for price movement monitoring | 0.5% of current price |
-| Medium Limit | Second threshold with partial restrictions | 1.0% of current price |
-| Hard Limit | Maximum allowed price movement per block | 1.5% of current price |
-| Cooldown Period | Time before thresholds reset after triggering | 10 blocks |
-| Threshold Calculation | How thresholds are determined | Based on volatility and liquidity |
-| Adjustment Frequency | How often parameters are reviewed | Monthly |
-| Implementation Level | Where the mechanism is enforced | Smart contract level |
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Downward Movement Limit | Maximum percentage decrease from Moving Average | 5% |
+| Upward Movement Limit | Maximum percentage increase from Moving Average | 10% |
+| Downward Moving Average Period | Number of blocks used for downward limit calculation | 5 blocks |
+| Upward Moving Average Period | Number of blocks used for upward limit calculation | 3 blocks |
+| Downward Allowance | Price can decrease regardless of the percentage limit | 2.00 |
+| Upward Allowance | Price can increase regardless of the percentage limit | 7.00 |
 
 ## Examples
 
@@ -99,7 +98,7 @@ The three thresholds in our Circuit Breaker system are:
 
 2. **Limitation on Upward Price Movement**: Conversely, upward price movement is capped at 10% from the Moving Average of the last 3 Reliable Block Prices.
 
-3. **Maximum Price Fluctuation (Max Price Range)**: The market is permitted to move a maximum of 2.00 for downside and 7.00 for topside within a single block.
+3. **Price Fluctuation Allowance**: The market is permitted to move at least 2.00 for downside and 7.00 for topside regardless of percentage calculations.
 
 These thresholds are designed to prevent market manipulation and ensure stability while allowing for natural price discovery. For more detailed calculations, please refer to the [Price Range Limits](price-range-limits.md) page.
 
