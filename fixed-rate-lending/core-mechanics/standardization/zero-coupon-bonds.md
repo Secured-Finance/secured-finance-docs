@@ -74,7 +74,7 @@ Yes, you can sell your position before maturity by taking an opposite position i
 
 ### What happens at bond maturity?
 
-At maturity, Zero-Coupon bonds are automatically redeemed at their par value (100). Lenders receive the full face value of their bonds, and borrowers must have sufficient funds to cover their repayment obligations. The protocol handles this settlement process automatically.
+At maturity, Zero-Coupon bonds reach their par value (100), but the protocol does not have automatic settlement functionality. Users must manually unwind their positions by taking the opposite action in the market. Lenders who want to receive their funds must sell their positions, and borrowers must repay their loans by buying back their positions. The protocol does not handle this settlement process automatically.
 
 {% hint style="info" %}
 What is the price range of the Zero-Coupon bond?
