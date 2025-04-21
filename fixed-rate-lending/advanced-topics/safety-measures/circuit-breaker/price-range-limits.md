@@ -23,8 +23,24 @@ The Circuit Breaker mechanism uses a combination of historical price data and pe
 * **Limitation on Upward Price Movement:**
   Conversely, upward price movement is capped at 10% from the Moving Average of the last 3 Reliable Block Prices.
 
-* **Maximum Price Fluctuation (Max Price Range):**
-  The market is permitted to move a maximum of 2.00 for downside and 7.00 for topside within a single block.
+* **Minimum Allowed Price Fluctuation:**
+  The market is permitted to move at least 2.00 for downside and 7.00 for topside regardless of percentage calculations.
+
+### Mathematical Expression of Price Limits
+
+The price limits are calculated using the following mathematical expressions:
+
+* **For Upward Price Limit:**
+  ```
+  Min(Max(MA5 + 10%, MA5 + 7.00), Price)
+  ```
+  This means the system first takes the maximum of (MA5 + 10%) and (MA5 + 7.00), ensuring a minimum movement of 7.00, then takes the minimum of that result and the requested Price.
+
+* **For Downward Price Limit:**
+  ```
+  Max(Min(MA5 - 5%, MA5 - 2.00), Price)
+  ```
+  This means the system first takes the minimum of (MA5 - 5%) and (MA5 - 2.00), ensuring a minimum movement of 2.00, then takes the maximum of that result and the requested Price.
 
 {% hint style="info" %}
 Due to the inherent characteristics of Zero-Coupon Bonds—which begin trading at a significant discount and mature at par (100 on our platform)—there are tighter restrictions on downward movements to prevent excessive volatility.
@@ -38,8 +54,8 @@ Due to the inherent characteristics of Zero-Coupon Bonds—which begin trading a
 | Upward Movement Limit | Maximum percentage increase from Moving Average | 10% |
 | Downward Moving Average Period | Number of blocks used for downward limit calculation | 5 blocks |
 | Upward Moving Average Period | Number of blocks used for upward limit calculation | 3 blocks |
-| Maximum Downward Movement | Maximum allowed price decrease regardless of percentage | 2.00 |
-| Maximum Upward Movement | Maximum allowed price increase regardless of percentage | 7.00 |
+| Minimum Downward Movement | Minimum allowed price decrease regardless of percentage | 2.00 |
+| Minimum Upward Movement | Minimum allowed price increase regardless of percentage | 7.00 |
 
 ## Examples
 
@@ -79,7 +95,7 @@ $$
 
 This means that in the next block, orders will only be executed if their prices fall within the range of 76.19 to 88.00, protecting the market from extreme volatility.
 
-### Example 2: Minimum Movement Rule Application
+### Example 2: Minimum Allowed Price Fluctuation Application
 
 If the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00. 
 
@@ -89,13 +105,21 @@ $$
 16.00 * 0.95 = 15.20
 $$
 
-However, since the platform allows for a minimum market movement of 2.00, the actual lower limit would be:
+However, since the platform ensures a minimum allowed price fluctuation of 2.00 for downward movement, we apply the mathematical formula:
 
 $$
-16.00 - 2.00 = 14.00
+\text{Downward Price Limit} = \text{Max}(\text{Min}(16.00 - 5\%, 16.00 - 2.00), \text{Price})
 $$
 
-This minimum movement rule ensures that markets with low prices can still function efficiently, as percentage-based limits might be too restrictive in such cases.
+$$
+\text{Downward Price Limit} = \text{Max}(\text{Min}(15.20, 14.00), \text{Price})
+$$
+
+$$
+\text{Downward Price Limit} = \text{Max}(14.00, \text{Price})
+$$
+
+This minimum allowed price fluctuation ensures that markets with low prices can still function efficiently, as percentage-based limits might be too restrictive in such cases.
 
 ### Example 3: Asymmetric Limits in Action
 
@@ -148,14 +172,14 @@ Yes, the Circuit Breaker price limits can be adjusted:
 4. **Periodic Review**: All parameters are reviewed quarterly to ensure they remain appropriate
 5. **Emergency Adjustments**: In extreme market conditions, emergency parameter changes may be implemented
 
-### How do the minimum movement allowances work?
+### How do the minimum allowed price fluctuations work?
 
-The minimum movement allowances work as follows:
+The minimum allowed price fluctuations work as follows:
 1. **Floor Value**: They establish a minimum price movement that's always allowed regardless of percentage calculations
 2. **Market Efficiency**: They ensure that markets with very low prices can still function efficiently
-3. **Calculation Priority**: The system uses whichever is more permissive: the percentage-based limit or the minimum movement
-4. **Asymmetric Design**: Different minimum movements are set for upward (7.00) and downward (2.00) price changes
-5. **Practical Application**: For example, if 5% of the Moving Average is less than 2.00, the 2.00 minimum is used instead
+3. **Calculation Priority**: As shown in the mathematical expressions, the system first compares the percentage-based limit with the minimum allowed movement, then applies the appropriate limit
+4. **Asymmetric Design**: Different minimum allowed movements are set for upward (7.00) and downward (2.00) price changes
+5. **Mathematical Implementation**: For upward movement, we use Min(Max(MA5 + 10%, MA5 + 7.00), Price), and for downward movement, we use Max(Min(MA5 - 5%, MA5 - 2.00), Price)
 
 ## Related Resources
 
