@@ -17,6 +17,27 @@ This case study explores the entire spectrum of order statuses through detailed 
 For an in-depth understanding of the loan lifecycle, please visit the '[Order Life Cycle](./README.md)' section.
 {% endhint %}
 
+The chart below illustrates how different order types (Market, Overlapping Limit, and Non-Overlapping Limit) interact with various order statuses throughout their lifecycle. This chart, combined with the Order Life Cycle explanation, provides a comprehensive understanding of how orders progress through the system and how exceptional cases are handled.
+
+When using this chart:
+1. First identify your order type (column)
+2. Then follow the possible statuses (rows) that apply to your order type
+3. Note that some statuses are marked as "Not applicable" for certain order types
+4. Pay attention to "Final" statuses which represent the end of an order's lifecycle
+5. Combined states (like "Partially Filled & Blocked") indicate orders that were partially executed before reaching a terminal state
+
+This chart works in conjunction with the Circuit Breaker mechanism, which prevents extreme price movements by limiting the range within which orders can execute.
+
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Order Statuses | Possible states an order can be in | Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired |
+| Final Statuses | Order states that cannot transition further | Filled, Killed, Blocked, Cancelled, Expired |
+| Circuit Breaker Range | Price range within which orders can be executed | ±2% from last price (in example) |
+| Order Types | Types of orders that can be placed | Market, Limit (Overlapping and Non-Overlapping) |
+| Order Sides | Sides of the orderbook | Buy (Lend), Sell (Borrow) |
+
 ### Order Status and Order Types
 
 | Status \ Order Type   | Market Order                                                                        | Overlapping Limit Order                                                                           | Limit Order                                                                                                |
