@@ -52,7 +52,7 @@ Different assets are available on different blockchains. Use this table to deter
 | ------------------ | ---------------------------------------------- |
 | **Ethereum**       | WBTC, ETH, USDC, FIL (as axlFIL)               |
 | **Arbitrum**       | WBTC, ETH, USDC                                |
-| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking FIL), USDFC |
+| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking Tokens), USDFC |
 
 ## Step 3: Understanding Collateral Options
 
@@ -62,7 +62,7 @@ Not all assets can be used as collateral. Here's what you can use as collateral 
 | ------------------ | ---------------------------------------------- |
 | **Ethereum**       | WBTC, ETH, USDC                                |
 | **Arbitrum**       | WBTC, ETH, USDC                                |
-| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking FIL), USDFC |
+| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking Tokens), USDFC |
 
 ## Step 4: Selecting the Right Asset for Your Needs
 
@@ -76,16 +76,16 @@ When choosing which asset to lend or borrow, consider:
 2. **Blockchain**
    - Choose assets available on your preferred blockchain
    - Consider gas fees and transaction speeds of each network
-   - Note network-specific features (e.g., liquid staking derivatives on FVM)
+   - Note network-specific features (e.g., liquid staking tokens on FVM)
 
 3. **Risk Profile**
    - Stablecoins typically offer lower but more predictable returns
    - Native tokens may offer higher returns but with more volatility
    - Consider collateral requirements when borrowing
 
-## Step 5: Using Liquid Staking Derivatives
+## Step 5: Using Liquid Staking Tokens
 
-For Filecoin users, liquid staking derivatives offer additional options:
+For Filecoin users, liquid staking tokens offer additional options:
 
 1. **iFIL**
    - Available on: Filecoin (FVM)
@@ -94,7 +94,7 @@ For Filecoin users, liquid staking derivatives offer additional options:
 
 2. **pFIL**
    - Available on: Filecoin (FVM)
-   - Another liquid staking derivative for FIL
+   - Another liquid staking token for FIL
    - Combines staking rewards with lending/borrowing capabilities
 
 ## Next Steps

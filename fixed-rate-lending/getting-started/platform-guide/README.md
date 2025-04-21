@@ -29,7 +29,7 @@ If you wish to start trading immediately, please visit our [Beginners Guide](../
 - [**Portfolio**](portfolio/README.md): Manage assets, collateral, positions, and transaction history
 - [**Bridge**](bridge.md): Transfer assets securely between different blockchain networks
 - [**Points**](points.md): Earn rewards based on platform usage and participation
-- [**Campaign**](campaign.md): Special promotions offering additional benefits and rewards
+
 
 ## Related Resources
 

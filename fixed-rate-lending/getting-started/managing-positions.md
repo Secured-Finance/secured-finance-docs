@@ -96,12 +96,11 @@ Auto-Rolling is a protocol feature that applies to all positions. You cannot opt
 To exit your position when it reaches maturity:
 
 1. You must manually unwind your position before or after maturity
-2. Go to the Portfolio tab
+2. Go to the Active Positions tab
 3. Find the position you want to exit
-4. Click the "Unwind" button
-5. Select "Full" unwind option
-6. Review the details, including any fees or slippage
-7. Confirm the transaction in your wallet
+4. Click the "Close" button
+5. Review the details, including any fees or slippage
+6. Confirm the transaction in your wallet
 
 {% hint style="warning" %}
 There is no automatic claim system. You must manually unwind your position to exit, which means there is liquidity risk if there are insufficient counterparties in the market.
@@ -131,11 +130,3 @@ If your position values aren't updating:
 - Check that your wallet is still connected
 - Verify that the blockchain network is functioning normally
 - Contact support if the issue persists
-
-### Auto-Roll Not Working
-
-If your auto-roll settings aren't being applied:
-- Ensure you have sufficient collateral for the new position
-- Check that you've approved the necessary token permissions
-- Verify that the target maturity date is available for trading
-- Review the auto-roll settings to ensure they're correctly configured
