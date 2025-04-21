@@ -174,17 +174,6 @@ Transaction fees are waived for several reasons:
 4. **Price Accuracy**: Results in more orders and thus a more accurate opening price
 5. **Market Adoption**: Promotes adoption of new markets and tenor periods
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Pre-Open Order Period | Time before new orderbook launch when users can place orders | 7 days |
-| Orderbook Freeze | Time before launch when orderbook is frozen for Itayose | 1 hour |
-| Order Types Allowed | Types of orders accepted during pre-open period | Limit orders only |
-| Transaction Fees | Fees charged for orders executed during Itayose | Waived (0%) |
-| Price Calculation Method | How opening price is determined | Based on order imbalance and mid-price |
-| Order Execution Priority | How orders are prioritized for execution | First come, first serve |
-
 ## Related Resources
 
 - [New Market Listing and Delisting](README.md)

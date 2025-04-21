@@ -148,17 +148,6 @@ Several factors influence discount factors:
 4. **Market Sentiment**: Risk appetite in the market can influence discount rates
 5. **Inflation Expectations**: Higher expected inflation leads to larger discounts on nominal cash flows
 
-## Key Parameters
-
-| Parameter | Description | Impact on Discount Factor |
-|-----------|-------------|---------------------------|
-| Interest Rate | The rate used to discount future cash flows | Higher rates → Lower discount factor |
-| Time to Maturity | Time remaining until the bond matures | Longer maturity → Lower discount factor |
-| Compounding Frequency | How often interest is compounded | More frequent → Lower discount factor |
-| Risk Premium | Additional return required for taking risk | Higher premium → Lower discount factor |
-| Face Value | The amount paid at maturity (100 on our platform) | No direct impact on discount factor |
-| Market Price | Current trading price of the bond | Determines the implied discount factor |
-
 ## Related Resources
 
 - [APR vs APY](apr-vs-apy.md)

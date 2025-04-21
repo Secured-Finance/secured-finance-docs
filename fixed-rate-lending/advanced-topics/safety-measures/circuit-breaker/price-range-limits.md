@@ -157,17 +157,6 @@ The minimum movement allowances work as follows:
 4. **Asymmetric Design**: Different minimum movements are set for upward (7.00) and downward (2.00) price changes
 5. **Practical Application**: For example, if 5% of the Moving Average is less than 2.00, the 2.00 minimum is used instead
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Downward Movement Limit | Maximum percentage decrease from Moving Average | 5% |
-| Upward Movement Limit | Maximum percentage increase from Moving Average | 10% |
-| Downward Moving Average Period | Number of blocks used for downward limit calculation | 5 blocks |
-| Upward Moving Average Period | Number of blocks used for upward limit calculation | 3 blocks |
-| Minimum Downward Movement | Minimum allowed price decrease regardless of percentage | 2.00 |
-| Minimum Upward Movement | Minimum allowed price increase regardless of percentage | 7.00 |
-
 ## Related Resources
 
 - [Circuit Breaker](README.md)

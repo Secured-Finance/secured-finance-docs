@@ -187,17 +187,6 @@ The accuracy of the pre-open APR:
 4. **Historical Correlation**: Previous pre-open APRs have shown good correlation with actual opening APRs
 5. **Indicative Only**: It should be considered indicative rather than guaranteed
 
-## Key Parameters
-
-| Parameter | Description | Impact on APR Calculation |
-|-----------|-------------|---------------------------|
-| Bond Price | Current market price of the Zero-Coupon Bond | Lower price → Higher APR |
-| Time to Maturity | Time remaining until the bond matures | Shorter maturity → Different calculation method |
-| Day Count Convention | Method for counting days (Act/365) | Standardizes time calculation |
-| Calculation Method | Linear vs. Compounding based on maturity | Affects APR for different time horizons |
-| Pre-Open Status | Whether the bond is in pre-open period | Changes time basis for calculation |
-| Seconds Per Year | Standard time basis (31,536,000 seconds) | Standardizes annualization |
-
 ## Related Resources
 
 - [APR vs APY](apr-vs-apy.md)

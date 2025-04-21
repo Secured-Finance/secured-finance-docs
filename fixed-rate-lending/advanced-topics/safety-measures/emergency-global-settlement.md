@@ -134,16 +134,6 @@ No, Emergency Global Settlement cannot be reversed:
 4. This irreversibility ensures that users can safely withdraw their funds without concerns about further protocol changes
 5. It provides certainty during uncertain circumstances
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Settlement Trigger | Who can initiate emergency settlement | Protocol Admin only |
-| Price Feed Cache | How price feeds are stored during settlement | Snapshot at settlement time |
-| Redemption Window | Time users have to redeem positions | Unlimited (no expiration) |
-| Token Replacement | How positions are converted to tokens | Based on Token Vault ratios |
-| Market Status | State of markets after settlement | Permanently closed |
-
 ## Related Resources
 
 - [Safety Measures](README.md)

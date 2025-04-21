@@ -135,17 +135,6 @@ Yes, you can predict collateral requirement changes:
 4. **Simulation Tools**: The protocol provides tools to simulate future collateral requirements
 5. **Advance Notice**: Any category changes are announced in advance through governance
 
-## Key Parameters
-
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| BP at Maturity | Reference Base Price at maturity (0y Duration) | 96.00 |
-| BP of 1y Duration | Reference Base Price at 1 year duration | Varies by category (81.00-93.00) |
-| Category Review Period | How often categories are reviewed | Quarterly |
-| Category Assignment | How currencies are assigned to yield categories | Based on APR range |
-| Interpolation Method | How BP is calculated between reference points | Linear interpolation |
-| Time Unit | Base time unit for calculations | Seconds |
-
 ## Related Resources
 
 - [Safety Measures](README.md)
