@@ -31,6 +31,8 @@ Our Smart-contract will repay half of his obligation, helped by the liquidator, 
 
 After the liquidation process, Bob's position will be 500 FIL cash, 500 FIL borrowed with 8,580 USDC collateral (15,000 - 6,420 USDC). His LTV recovered to 69.9% (=500 FIL \* 12.0 FILUSDC FX rate / 8,580 collateral).
 
+{% embed url="http://www.plantuml.com/plantuml/png/RL9TRu8m57tlhxWnCT644J3JAG-BWMN9acOFulPUuSgQb9QLglFVxu8IQxOdeEVZt7lekdN2kaEjM4DFMSX6Q0UZrEn685f8xu_pchuWCzfPKRYUaMVt52w_3x8KpjWUveobyF1Cj0HIOwqvGHn4KGIlRnmccL5AEBH29H3F-_EF_2MRCdANHq8w-pph3D91ZwNlmBUV2ImMuTDuoahqPKmRUZ57j906VJu9EdV0d-9Bw0h1TbIf2ukYnHRsrjGGHs44pa0y2oDlzdSy0MN1P4du-By1UG9RAwkAyjIr0saqx8s5-MNQcuWpFXXli17dWU4t0WrgeToPrWiUPqCntexyrWpt0WjJDme9dsom5b9BNS7ksbmo10Lm0mll9oo3-V8I5GmhK_ugNFsfTuswf6lp2m00" %}
+
 ## Key Parameters
 
 | Parameter | Description | Value |
@@ -127,9 +129,6 @@ After liquidation, you will have:
 2. Your original collateral minus the amount taken during liquidation (including the 7% penalty)
 3. A healthier LTV ratio (typically around 70%)
 4. The ability to continue using the protocol with your remaining position
-
-
-{% embed url="http://www.plantuml.com/plantuml/png/RL9TRu8m57tlhxWnCT644J3JAG-BWMN9acOFulPUuSgQb9QLglFVxu8IQxOdeEVZt7lekdN2kaEjM4DFMSX6Q0UZrEn685f8xu_pchuWCzfPKRYUaMVt52w_3x8KpjWUveobyF1Cj0HIOwqvGHn4KGIlRnmccL5AEBH29H3F-_EF_2MRCdANHq8w-pph3D91ZwNlmBUV2ImMuTDuoahqPKmRUZ57j906VJu9EdV0d-9Bw0h1TbIf2ukYnHRsrjGGHs44pa0y2oDlzdSy0MN1P4du-By1UG9RAwkAyjIr0saqx8s5-MNQcuWpFXXli17dWU4t0WrgeToPrWiUPqCntexyrWpt0WjJDme9dsom5b9BNS7ksbmo10Lm0mll9oo3-V8I5GmhK_ugNFsfTuswf6lp2m00" %}
 
 ## Related Resources
 
