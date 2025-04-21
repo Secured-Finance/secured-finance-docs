@@ -124,19 +124,6 @@ Note that Metamask has a character limit for token symbols, so the symbols may a
 
 Yes, you can withdraw any portion of your lending position as a ZC token. The protocol will mint tokens representing the exact amount you choose to withdraw, and the remaining portion will stay in your account within the protocol.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Token Standard | The token standard used for ZC tokens | ERC20 |
-| Token Decimals | Number of decimal places supported by ZC tokens | 18 |
-| Maturity Format | How maturity is represented in token names | MMMYYYY (e.g., MAR2024) |
-| Symbol Format | Format for token symbols | zc[ASSET]-YYYY-MM |
-| Metamask Symbol Format | Shortened format for Metamask display | zc[ASSET]YYM |
-| Perpetual Token Maturity | Maturity value for perpetual tokens | 0 |
-| Minting Source (ZC Tokens) | Contract that mints standard ZC tokens | FutureValueVault |
-| Minting Source (Perpetual) | Contract that mints perpetual ZC tokens | GenesisValueVault |
-
 ## Related Resources
 
 - [Standardization](standardization/README.md)
