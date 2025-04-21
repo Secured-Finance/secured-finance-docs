@@ -22,6 +22,7 @@ The Fixed-Rate Lending Protocol introduces a variety of innovative features that
 - [**Order Book System**](order-book-system/README.md): The on-chain system that matches lenders and borrowers
 - [**Standardization**](standardization/README.md): The standardized components ensuring interoperability
 - [**Collateralization**](collateralization.md): The process of securing loans with collateral
+- [**Tokenization**](tokenization.md): The representation of lending positions as transferable tokens
 - [**Liquidation**](liquidation/README.md): The mechanism for handling undercollateralized positions
 - [**Protocol Fees**](protocol-fees.md): The fee structure supporting the protocol's long-term sustainability
 
