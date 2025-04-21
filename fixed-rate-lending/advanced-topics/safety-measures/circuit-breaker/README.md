@@ -93,7 +93,15 @@ The Circuit Breaker protects against flash loan attacks in several ways:
 
 ### What are the three thresholds in the Circuit Breaker system?
 
-The three thresholds in our Circuit Breaker system are dynamically calculated based on market conditions, liquidity, and time to maturity of the bonds. These thresholds control the maximum allowed price movement within a single block to prevent market manipulation and ensure stability.
+The three thresholds in our Circuit Breaker system are:
+
+1. **Limitation on Downward Price Movement**: The platform restricts the downward price movement to 5% from the Moving Average of the most recent 5 Reliable Block Prices.
+
+2. **Limitation on Upward Price Movement**: Conversely, upward price movement is capped at 10% from the Moving Average of the last 3 Reliable Block Prices.
+
+3. **Maximum Price Fluctuation (Max Price Range)**: The market is permitted to move a maximum of 2.00 for downside and 7.00 for topside within a single block.
+
+These thresholds are designed to prevent market manipulation and ensure stability while allowing for natural price discovery. For more detailed calculations, please refer to the [Price Range Limits](price-range-limits.md) page.
 
 ### Can the Circuit Breaker be bypassed or manipulated?
 

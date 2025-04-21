@@ -23,8 +23,8 @@ The Circuit Breaker mechanism uses a combination of historical price data and pe
 * **Limitation on Upward Price Movement:**
   Conversely, upward price movement is capped at 10% from the Moving Average of the last 3 Reliable Block Prices.
 
-* **Minimum Price Fluctuation:**
-  The market is permitted to move a minimum of 2.00 for downside and 7.00 for topside.
+* **Maximum Price Fluctuation (Max Price Range):**
+  The market is permitted to move a maximum of 2.00 for downside and 7.00 for topside within a single block.
 
 {% hint style="info" %}
 Due to the inherent characteristics of Zero-Coupon Bonds—which begin trading at a significant discount and mature at par (100 on our platform)—there are tighter restrictions on downward movements to prevent excessive volatility.
