@@ -105,16 +105,6 @@ Both limit and market orders incur protocol fees, but the fee structure may diff
 
 The exact fee structure is subject to change based on protocol governance decisions.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Order Types | Types of orders supported by the platform | Limit, Market |
-| Limit Order Execution | When limit orders are executed | When market price reaches or exceeds the limit price |
-| Market Order Execution | When market orders are executed | Immediately at best available price |
-| Order Sides | Sides of the orderbook | Borrow (Sell), Lend (Buy) |
-| Maker/Taker Role | Role of users based on order type | Limit orders = Makers, Market orders = Takers |
-
 ## Related Resources
 
 - [Orderbook Mechanics](../order-book-system.md)

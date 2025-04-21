@@ -129,16 +129,6 @@ No, you cannot modify an existing order. If you want to change the price or amou
 
 Any open or partially filled orders in a market that reaches maturity will automatically expire. This means they are removed from the orderbook and will not be executed. Any filled portions of orders have already become positions and will be subject to the auto-rolling mechanism.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Order Statuses | Possible states an order can be in | Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired |
-| Final Statuses | Order states that cannot transition further | Filled, Killed, Blocked, Cancelled, Expired |
-| Circuit Breaker Range | Price range within which orders can be executed | ±2% from last price (in example) |
-| Order Types | Types of orders that can be placed | Market, Limit (Overlapping and Non-Overlapping) |
-| Order Sides | Sides of the orderbook | Buy (Lend), Sell (Borrow) |
-
 ## Related Resources
 
 - [Order Life Cycle](./README.md)

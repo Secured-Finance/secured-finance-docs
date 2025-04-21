@@ -159,15 +159,6 @@ You can test your liquidation bot on a testnet or in a forked mainnet environmen
 3. Execute your liquidation bot against these test positions
 4. Verify that the liquidation was successful and that you received the expected collateral and fee
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Coverage Threshold | The threshold value returned by `getCoverage()` that makes a position eligible for liquidation | 8000 |
-| Liquidation Fee | The additional collateral received by the liquidator | 5% |
-| Liquidator Coverage Limit | Maximum coverage value a liquidator can have after liquidation | 80% |
-| Callback Functions | Functions that can be implemented to handle received assets | `executeOperationForCollateral()`, `executeOperationForDebt()` |
-
 ## Related Resources
 
 - [Liquidators](README.md)
