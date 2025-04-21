@@ -39,7 +39,6 @@ The Getting Started section provides comprehensive tutorials and guides to help 
   - [Portfolio](platform-guide/portfolio/README.md): Managing your assets and positions
   - [Bridge](platform-guide/bridge.md): Moving assets between blockchains
   - [Points](platform-guide/points.md): Earning and using platform points
-  - [Campaign](platform-guide/campaign.md): Special promotions and rewards
 
 ## Quick Start Guides
 
