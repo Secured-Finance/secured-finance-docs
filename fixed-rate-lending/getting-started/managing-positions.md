@@ -78,30 +78,34 @@ To completely close a position before maturity:
 Unwinding positions before maturity may result in different returns than holding until maturity, depending on current market rates.
 {% endhint %}
 
-## Step 6: Auto-Rolling Positions
+## Step 6: Understanding Auto-Rolling
 
-To set up automatic reinvestment at maturity:
+Auto-Rolling is a protocol-wide feature that automatically transitions positions to the next maturity period:
 
-1. Go to the Portfolio tab
-2. Find the position you want to auto-roll
-3. Click the "Auto-Roll" button
-4. Select your preferred settings:
-   - Target maturity date for the new position
-   - Price parameters (market rate or custom rate)
-5. Review and confirm the auto-roll settings
+1. All positions are subject to Auto-Rolling when they reach maturity
+2. The protocol automatically handles the transition to the next maturity period
+3. There is no need to manually select or configure Auto-Roll settings
+4. Be aware that Auto-Rolling will maintain your exposure to the market
 
-![Auto-Roll Settings](../../.gitbook/assets/auto-roll.png)
+{% hint style="info" %}
+Auto-Rolling is a protocol feature that applies to all positions. You cannot opt out of Auto-Rolling directly, but you can unwind your position before maturity if you wish to exit.
+{% endhint %}
 
-## Step 7: Claiming Matured Positions
+## Step 7: Exiting Positions at Maturity
 
-When a position reaches maturity:
+To exit your position when it reaches maturity:
 
-1. Go to the Portfolio tab
-2. Locate your matured positions (they will be marked as "Matured")
-3. Click the "Claim" button
-4. Review the amount to be claimed
-5. Confirm the transaction in your wallet
-6. The funds will be transferred to your wallet or collateral vault, depending on your settings
+1. You must manually unwind your position before or after maturity
+2. Go to the Portfolio tab
+3. Find the position you want to exit
+4. Click the "Unwind" button
+5. Select "Full" unwind option
+6. Review the details, including any fees or slippage
+7. Confirm the transaction in your wallet
+
+{% hint style="warning" %}
+There is no automatic claim system. You must manually unwind your position to exit, which means there is liquidity risk if there are insufficient counterparties in the market.
+{% endhint %}
 
 ## Next Steps
 

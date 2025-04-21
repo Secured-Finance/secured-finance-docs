@@ -96,7 +96,7 @@ If you don't see your tokens in the destination wallet:
 ### Insufficient Gas Fees
 
 If you encounter gas fee errors:
-- Ensure you have enough native tokens (ETH, MATIC, etc.) to cover gas fees
+- Ensure you have enough native tokens (ETH, FIL, etc.) to cover gas fees
 - Try reducing the amount you're swapping to leave room for gas fees
 - Consider bridging during off-peak hours when gas fees are lower
 
