@@ -128,16 +128,6 @@ The liquidation process for ZC bond collateral:
 4. **Liquidation Fee**: The same 7% liquidation fee applies (5% to liquidator, 2% to reserve)
 5. **Post-Liquidation Target**: The process aims to bring utilization down to approximately 70%
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Maximum ZC Utilization | Maximum percentage of ZC bond value that can be borrowed | 80% |
-| Liquidation Threshold | Utilization ratio at which liquidation is triggered | 80% |
-| Liquidation Amount | Maximum portion of obligation that can be liquidated | 50% |
-| Liquidation Fee | Additional fee applied to liquidated amount | 7% (5% to liquidator, 2% to reserve) |
-| Post-Liquidation Target | Target utilization ratio after liquidation | ~70% |
-
 ## Related Resources
 
 - [ZC Bond Collateral](README.md)
