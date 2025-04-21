@@ -16,6 +16,7 @@
   * [👛 Wallet Setup & Management](introduction/defi-starter-guide/wallet-setup-and-management.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
   * [🏛️ DAO](introduction/defi-starter-guide/dao.md)
+  * [⛽ Gas Cost](introduction/defi-starter-guide/gas-cost.md)
 
 ## USDFC Stablecoin
 
