@@ -101,11 +101,12 @@ The pre-order period provides several benefits:
 
 ### What happens to my positions when an orderbook matures?
 
-When an orderbook reaches maturity, several options are available for your positions:
-1. **Auto-Roll**: If enabled, your positions will automatically roll over to a suitable maturity at the prevailing market rate
-2. **Settlement**: You can choose to settle your position and receive/pay the underlying asset
-3. **Tokenization**: You can tokenize your lending position as an ERC20 token before maturity
-4. **Manual Roll**: You can manually roll your position to a specific maturity of your choice
+When an orderbook reaches maturity:
+1. **Auto-Roll**: Your positions will automatically roll over to a suitable maturity at the prevailing market rate. This is a protocol-wide feature that applies to everyone and does not need to be enabled.
+2. **Unwinding**: The only way to settle and exit your position is by manually unwinding it. There is no automatic settlement functionality.
+3. **Tokenization**: You can tokenize your lending position as an ERC20 token before maturity.
+
+Note that Manual Roll is not applicable as all positions are subject to Auto-Roll by default.
 
 ### How is the Itayose price determined for new orderbooks?
 

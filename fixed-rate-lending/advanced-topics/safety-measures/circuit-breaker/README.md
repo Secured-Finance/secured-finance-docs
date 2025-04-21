@@ -93,11 +93,7 @@ The Circuit Breaker protects against flash loan attacks in several ways:
 
 ### What are the three thresholds in the Circuit Breaker system?
 
-The three thresholds in our Circuit Breaker system are:
-1. **Soft Limit**: The first threshold that triggers monitoring but allows trades to continue
-2. **Medium Limit**: The second threshold that begins to restrict order sizes and price impacts
-3. **Hard Limit**: The maximum allowed price movement in a single block, beyond which orders are rejected
-These thresholds are calculated dynamically based on market conditions, liquidity, and time to maturity of the bonds.
+The three thresholds in our Circuit Breaker system are dynamically calculated based on market conditions, liquidity, and time to maturity of the bonds. These thresholds control the maximum allowed price movement within a single block to prevent market manipulation and ensure stability.
 
 ### Can the Circuit Breaker be bypassed or manipulated?
 
