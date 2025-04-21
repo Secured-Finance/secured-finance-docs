@@ -39,7 +39,9 @@ Should the trading volume within a block fall below our established threshold, w
 We review and revise Volume Threshold periodically.
 {% endhint %}
 
-#### Waterfall Mechanism
+#### Fallback Mechanism (Waterfall)
+
+In exceptional cases where the primary Mark Price calculation method cannot be applied due to insufficient trading volume or other market conditions, the protocol employs a fallback mechanism to ensure there is always a valid price available for mark-to-market calculations. This waterfall approach follows a strict priority order:
 
 1. Use 'Opening Price' for 'Mark Price' when Itayose Process Executed
 2. Use 'Auto-roll Price' for 'Mark Price' if there are no block price
