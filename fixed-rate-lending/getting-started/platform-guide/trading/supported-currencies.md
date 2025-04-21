@@ -1,69 +1,134 @@
 ---
-description: Diversify Loan/Bond's Currency Exposures with Various Denominated Currencies
+description: A guide to the digital assets available for lending and borrowing on the Fixed-Rate Lending Protocol
+icon: 💲
 ---
 
 # 💲 Supported Currencies
 
-## **Overview**
+## Prerequisites
 
-Secured Finance supports a carefully selected range of digital assets for lending and borrowing, tailored to meet the needs of diverse users across multiple blockchains. This section provides an overview of the assets currently supported on our platform and their unique characteristics.
+- Basic understanding of digital assets and cryptocurrencies
+- Access to the Secured Finance platform
+- Familiarity with blockchain networks (helpful but not required)
 
-***
+## Overview
 
-## **Supported Currencies**
+Secured Finance supports a carefully selected range of digital assets for lending and borrowing, tailored to meet the needs of diverse users across multiple blockchains. This guide provides an overview of the assets currently supported on our platform and their unique characteristics.
 
-### **Lending & Borrowing Currencies**
+## Step 1: Understanding Available Assets
 
-Secured Finance supports five major digital assets for lending: **Filecoin (FIL)**, **USD for Filecoin Community (USDFC), Ethereum (ETH)**, **USD Coin (USDC)**, and **Wrapped Bitcoin (WBTC)**. These assets were chosen for their stability, utility, and role in the digital asset ecosystem. Note that the availability of certain assets may vary depending on the blockchain.
+Secured Finance supports five major digital assets for lending and borrowing:
 
-<table data-header-hidden><thead><tr><th width="193">Currency</th><th width="254">Availability</th><th></th></tr></thead><tbody><tr><td><strong>Currency</strong></td><td><strong>Availability</strong></td><td><strong>Description</strong></td></tr><tr><td><strong>Filecoin (FIL)</strong></td><td>Filecoin (FVM), Ethereum</td><td>Native token of the decentralized storage network Filecoin, enabling payments and transactions.</td></tr><tr><td><strong>USD for Filecoin Community (USDFC)</strong></td><td>Filecoin (FVM)</td><td>A stablecoin pegged to the US dollar for the Filecoin Community; available exclusively on the FVM for lending/borrowing and collateral purposes.</td></tr><tr><td><strong>Ethereum (ETH)</strong></td><td>Ethereum, Arbitrum</td><td>Native token of Ethereum, powering smart contracts and decentralized applications.</td></tr><tr><td><strong>USD Coin (USDC)</strong></td><td>Ethereum, Arbitrum</td><td>A stablecoin pegged to the US dollar, offering price stability for lending and borrowing.</td></tr><tr><td><strong>Wrapped Bitcoin (WBTC)</strong></td><td>Ethereum, Arbitrum</td><td>Wrapped version of Bitcoin, enabling its use within the Ethereum ecosystem.</td></tr></tbody></table>
+1. **Filecoin (FIL)**
+   - Native token of the decentralized storage network Filecoin
+   - Available on: Filecoin (FVM), Ethereum
+   - Used for payments and transactions within the Filecoin ecosystem
 
-### **Collateral Currencies**
+2. **USD for Filecoin Community (USDFC)**
+   - A stablecoin pegged to the US dollar for the Filecoin Community
+   - Available exclusively on the FVM for lending/borrowing and collateral
+   - Provides price stability for Filecoin ecosystem participants
 
-Secured Finance also accepts collateral from a similar set of assets, but their use as collateral is defined by chain compatibility:
+3. **Ethereum (ETH)**
+   - Native token of Ethereum, powering smart contracts and dApps
+   - Available on: Ethereum, Arbitrum
+   - Core DeFi asset with widespread adoption
+
+4. **USD Coin (USDC)**
+   - A stablecoin pegged to the US dollar
+   - Available on: Ethereum, Arbitrum
+   - Offers price stability for lending and borrowing
+
+5. **Wrapped Bitcoin (WBTC)**
+   - Wrapped version of Bitcoin for use within the Ethereum ecosystem
+   - Available on: Ethereum, Arbitrum
+   - Brings Bitcoin's value and liquidity to DeFi protocols
+
+## Step 2: Checking Asset Availability by Blockchain
+
+Different assets are available on different blockchains. Use this table to determine which assets you can use on each network:
+
+| **Blockchain**     | **Available Assets**                      |
+| ------------------ | ---------------------------------------------- |
+| **Ethereum**       | WBTC, ETH, USDC, FIL (as axlFIL)               |
+| **Arbitrum**       | WBTC, ETH, USDC                                |
+| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking Tokens), USDFC |
+
+## Step 3: Understanding Collateral Options
+
+Not all assets can be used as collateral. Here's what you can use as collateral on each blockchain:
 
 | **Blockchain**     | **Collateral Currencies**                      |
 | ------------------ | ---------------------------------------------- |
 | **Ethereum**       | WBTC, ETH, USDC                                |
 | **Arbitrum**       | WBTC, ETH, USDC                                |
-| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking FIL), USDFC |
+| **Filecoin (FVM)** | FIL, iFIL and pFIL (Liquid Staking Tokens), USDFC |
 
-***
+## Step 4: Selecting the Right Asset for Your Needs
 
-## **Asset Highlights**
+When choosing which asset to lend or borrow, consider:
 
-#### **Filecoin (FIL, iFIL, and axlFIL)**
+1. **Purpose**
+   - For stable returns: Consider stablecoins like USDC or USDFC
+   - For potential appreciation: Consider native tokens like ETH or FIL
+   - For Bitcoin exposure: Consider WBTC
 
-* **Availability**: Filecoin mainnet (FVM), Ethereum mainnet
-* Filecoin (FIL) powers the decentralized storage ecosystem, facilitating payments and data retrieval.
-* Liquid staking derivatives, such as **iFIL**, are also supported on the Filecoin Virtual Machine (FVM), unlocking additional utility and lending opportunities.
+2. **Blockchain**
+   - Choose assets available on your preferred blockchain
+   - Consider gas fees and transaction speeds of each network
+   - Note network-specific features (e.g., liquid staking tokens on FVM)
 
-#### **Ethereum (ETH)**
+3. **Risk Profile**
+   - Stablecoins typically offer lower but more predictable returns
+   - Native tokens may offer higher returns but with more volatility
+   - Consider collateral requirements when borrowing
 
-* **Availability**: Ethereum mainnet, Arbitrum
-* ETH is a core DeFi asset, powering decentralized applications and smart contracts. Its stability and widespread use make it ideal for lending and borrowing.
+## Step 5: Using Liquid Staking Tokens
 
-#### **USD Coin (USDC)**
+For Filecoin users, liquid staking tokens offer additional options:
 
-* **Availability**: Ethereum mainnet, Arbitrum
-* As a stablecoin pegged to the US dollar, USDC is an attractive choice for users seeking price stability and predictable returns.
+1. **iFIL**
+   - Available on: Filecoin (FVM)
+   - Represents staked FIL that continues earning staking rewards
+   - Can be used as collateral while still earning staking yield
 
-#### **Wrapped Bitcoin (WBTC)**
+2. **pFIL**
+   - Available on: Filecoin (FVM)
+   - Another liquid staking token for FIL
+   - Combines staking rewards with lending/borrowing capabilities
 
-* **Availability**: Ethereum mainnet, Arbitrum
-* WBTC enables Bitcoin's value to integrate into the Ethereum ecosystem, allowing users to leverage its liquidity and utility within DeFi protocols.
+## Next Steps
 
-#### USD for Filecoin Community (USDFC)
+After understanding the supported currencies, you might want to:
 
-* **Availability**: Filecoin (FVM)
-* USDFC is a stablecoin pegged 1:1 to the US dollar, designed specifically for the Filecoin Community. It is supported for both lending/borrowing and collateral purposes exclusively on the Filecoin Virtual Machine (FVM).
+- [Start lending assets](../../lending-assets.md) in your preferred currency
+- [Borrow assets](../../borrowing-assets.md) using your available collateral
+- [Explore the trading interface](../trading/README.md) to place orders
 
-***
+## Troubleshooting
 
-## **Expanding Asset Options**
+### Asset Not Appearing in Wallet
 
-Looking ahead, Secured Finance plans to introduce additional digital assets and liquid staking derivatives to further diversify options for users. Our focus remains on enhancing flexibility and utility, ensuring the platform continues to meet the evolving needs of the DeFi community.
+If you don't see an asset in your wallet:
+- Ensure you're connected to the correct blockchain network
+- Check that you have the correct token contract address
+- Some assets may require manual addition to your wallet
+- Verify that the asset is supported on your current network
+
+### Cross-Chain Asset Access
+
+If you need to use assets across different blockchains:
+- Use the [Bridge feature](../bridge.md) to transfer assets between networks
+- Note that not all assets can be bridged to all networks
+- Some assets may have wrapped versions on other networks (e.g., axlFIL on Ethereum)
+
+### Network Sunsetting Notice
 
 {% hint style="warning" %}
 We are **sunsetting support** for Avalanche and Polygon zkEVM. These networks and associated assets will no longer be actively supported on Secured Finance Fixed Rate Lending Protocol.
 {% endhint %}
+
+If you have assets on sunsetting networks:
+- Bridge your assets to supported networks as soon as possible
+- Unwind any open positions on these networks
+- Monitor announcements for specific sunset timelines

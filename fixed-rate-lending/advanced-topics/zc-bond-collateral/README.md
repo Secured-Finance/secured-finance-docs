@@ -1,14 +1,32 @@
 ---
-description: Leverage with Your Assets
+description: Understanding how Zero-Coupon Bonds can be used as collateral in the Fixed-Rate Lending Protocol
+icon: 🏋️‍♀️
 ---
 
-# 🏋️‍♀️ Zero Coupon Bond as Collateral
+# 🏋️‍♀️ Zero-Coupon Bond as Collateral
+
+## Overview
 
 At Secured Finance, we offer our users the innovative opportunity to use Zero Coupon Bond (ZC) as collateral for borrowing. This feature allows participants to leverage yield spread trading while enjoying the benefits of lending and borrowing on our platform. However, it's important to understand the specific conditions and risks associated with using ZC as collateral.
 
 {% hint style="info" %}
 Users' ZC bonds will be automatically used as collateral until the usage hits 80%. After that, cash collateral will be used.
 {% endhint %}
+
+## What You'll Learn
+
+- How Zero-Coupon Bonds can be used as collateral for borrowing
+- How collateral valuation and utilization works with ZC Bonds
+- How the Loan-to-Value (LTV) calculation adjusts for ZC Bond collateral
+- The liquidation process and risk management for ZC Bond collateral
+
+## Key Components
+
+- [**Collateral Valuation**](#collateral-valuation): How ZC Bonds are valued as collateral
+- [**ZC Collateral Utilization**](#zc-collateral-utilization): How the system prioritizes ZC Bonds as collateral
+- [**Liquidation Process**](#liquidation-process-with-zc-collateral): How liquidation works with ZC Bond collateral
+- [**Risk Management**](#risk-management): Important considerations when using ZC Bonds as collateral
+- [**Case Study**](zc-collateral-case-study.md): Practical examples of using ZC Bonds as collateral
 
 ### **Collateral Valuation**
 
@@ -59,3 +77,9 @@ This mechanism underscores the importance of vigilant collateral management. Use
 ### **Risk Management**
 
 Utilizing ZC as collateral offers a unique avenue for capitalizing on yield spreads. However, it comes with its set of risks, primarily due to price fluctuations and the potential for liquidation in a different currency. We urge our users to exercise caution and continuously monitor their collateral positions to mitigate risks and avoid unintended liquidations.
+
+## Related Resources
+
+- [Core Mechanics](../../core-mechanics/README.md)
+- [Orderbook Deep Dive](../orderbook-deep-dive/README.md)
+- [Safety Measures](../safety-measures/README.md)
