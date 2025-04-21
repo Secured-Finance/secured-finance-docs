@@ -46,6 +46,15 @@ Market-->>Liquidator: Execute the callback<BR>function for debt
 Market-->>Market: Check if the liquidator<BR>has enough collateral
 ```
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Coverage Threshold | The threshold value returned by `getCoverage()` that makes a position eligible for liquidation | 8000 |
+| Liquidation Fee | The additional collateral received by the liquidator | 5% |
+| Liquidator Coverage Limit | Maximum coverage value a liquidator can have after liquidation | 80% |
+| Callback Functions | Functions that can be implemented to handle received assets | `executeOperationForCollateral()`, `executeOperationForDebt()` |
+
 ## Examples
 
 ### Example 1: Identifying Positions for Liquidation

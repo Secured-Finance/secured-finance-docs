@@ -83,16 +83,6 @@ By default, positions auto-roll according to the protocol's rules, typically int
 
 Quarterly maturities (Mar/Jun/Sep/Dec) align with traditional financial markets and futures contracts, providing better liquidity and price discovery. This standardization also reduces fragmentation of liquidity across too many orderbooks, which could lead to thinner markets and wider spreads.
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Number of Orderbooks | Total number of active orderbooks at any time | 8 |
-| Maturity Range | Time range covered by the orderbooks | 3 months to 2 years |
-| Maturity Gap | Time between consecutive maturities | 3 months |
-| Maturity Date | When loans in an orderbook mature | Last Friday of Mar/Jun/Sep/Dec |
-| Contract Naming | How contracts are named in the system | MMM+YY (e.g., SEP23, DEC24) |
-
 ## Related Resources
 
 - [Zero-Coupon Standard](zero-coupon-bonds.md)

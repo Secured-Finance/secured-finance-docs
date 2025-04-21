@@ -29,6 +29,16 @@ For an in-depth understanding of the loan lifecycle, please visit the '[Order Li
 | **Cancelled (Final)** | <mark style="color:red;">Not applicable</mark> as they are executed immediately     | Can be canceled before execution or after being Partially Filled                                  | Can be canceled at any point before being fully executed                                                   |
 | **Expired (Final)**   | <mark style="color:red;">Not applicable</mark> as they are executed immediately     | Expires if not executed within a specific timeframe after being Partially Filled                  | Expires if the set timing (ex. maturity) passes without full execution                                     |
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Order Statuses | Possible states an order can be in | Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired |
+| Final Statuses | Order states that cannot transition further | Filled, Killed, Blocked, Cancelled, Expired |
+| Circuit Breaker Range | Price range within which orders can be executed | ±2% from last price (in example) |
+| Order Types | Types of orders that can be placed | Market, Limit (Overlapping and Non-Overlapping) |
+| Order Sides | Sides of the orderbook | Buy (Lend), Sell (Borrow) |
+
 ### Orderbook Scenario
 
 Our scenario unfolds within the bounds of an order book, structured around three key order types: 'Market Order', 'Overlapping Limit Order', and 'Non-Overlapping Limit Order'. Let's consider the following order book setup:

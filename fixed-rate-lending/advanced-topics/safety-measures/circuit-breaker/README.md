@@ -33,6 +33,18 @@ By setting the value threshold of the Circuit Breaker to dynamically change base
 
 At our trading platform, we have implemented a circuit breaker mechanism that effectively sets price limitations for market movements within a single block. This mechanism applies to both our 'market order' and 'limit order' functions, ensuring that all orders adhere to a well-defined 3-threshold system. By doing so, we guarantee that orders remain within acceptable price ranges, effectively preventing extreme volatility and maintaining stability in our Zero Coupon bond market. The circuit breaker serves as a crucial tool to promote a secure and reliable trading environment, safeguarding both traders and the overall integrity of our platform. For a more detailed calculation, please consult the '[Formulaic for Circuit Breaker](price-range-limits.md)'.
 
+## Key Parameters
+
+| Parameter | Description | Typical Value |
+|-----------|-------------|---------------|
+| Soft Limit | First threshold for price movement monitoring | 0.5% of current price |
+| Medium Limit | Second threshold with partial restrictions | 1.0% of current price |
+| Hard Limit | Maximum allowed price movement per block | 1.5% of current price |
+| Cooldown Period | Time before thresholds reset after triggering | 10 blocks |
+| Threshold Calculation | How thresholds are determined | Based on volatility and liquidity |
+| Adjustment Frequency | How often parameters are reviewed | Monthly |
+| Implementation Level | Where the mechanism is enforced | Smart contract level |
+
 ## Examples
 
 ### Example 1: Normal Market Conditions
@@ -113,18 +125,6 @@ No, Circuit Breaker parameters vary by asset:
 3. **Maturity Adjustment**: Bonds closer to maturity have different parameters than those with longer durations
 4. **Periodic Review**: Parameters are reviewed regularly and adjusted based on market conditions
 5. **Transparency**: Current parameters for each asset are publicly available in the protocol documentation
-
-## Key Parameters
-
-| Parameter | Description | Typical Value |
-|-----------|-------------|---------------|
-| Soft Limit | First threshold for price movement monitoring | 0.5% of current price |
-| Medium Limit | Second threshold with partial restrictions | 1.0% of current price |
-| Hard Limit | Maximum allowed price movement per block | 1.5% of current price |
-| Cooldown Period | Time before thresholds reset after triggering | 10 blocks |
-| Threshold Calculation | How thresholds are determined | Based on volatility and liquidity |
-| Adjustment Frequency | How often parameters are reviewed | Monthly |
-| Implementation Level | Where the mechanism is enforced | Smart contract level |
 
 ## Related Resources
 

@@ -143,16 +143,6 @@ Users have limited ability to influence the auto-roll price:
 4. **Market Forces**: Other participants can counter manipulation attempts if prices deviate from fair value
 5. **Multiple Methods**: The fallback methods for less liquid markets are resistant to direct manipulation
 
-## Key Parameters
-
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Observation Window | Time period before maturity used for price calculation in liquid conditions | 6 hours |
-| Price Calculation Method (Liquid) | Method used to calculate price in liquid conditions | Volume-weighted average price |
-| Price Calculation Method (Less Liquid) | Method used when no transactions occur in observation window | Mark Price adjusted for duration |
-| Price Calculation Method (Extreme) | Method used when no transactions occur for extended period | Previous roll price |
-| Initial Roll Price | Method used for the first roll with no transaction history | Opening price adjusted for duration |
-
 ## Related Resources
 
 - [Auto-Rolling](README.md)

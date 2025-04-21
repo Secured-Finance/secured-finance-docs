@@ -29,6 +29,16 @@ While market orders do not guarantee a specific price, they ensure the order wil
 
 By offering these two types of orders, Secured Finance's Loan Market Platform caters to both users who prioritize price control (limit orders) and those who prioritize quick execution (market orders).
 
+## Key Parameters
+
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| Order Types | Types of orders supported by the platform | Limit, Market |
+| Limit Order Execution | When limit orders are executed | When market price reaches or exceeds the limit price |
+| Market Order Execution | When market orders are executed | Immediately at best available price |
+| Order Sides | Sides of the orderbook | Borrow (Sell), Lend (Buy) |
+| Maker/Taker Role | Role of users based on order type | Limit orders = Makers, Market orders = Takers |
+
 ## Examples
 
 ### Example 1: Using a Limit Order to Lend
