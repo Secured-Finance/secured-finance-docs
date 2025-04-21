@@ -21,7 +21,6 @@ This section explains the liquidation process specific to the Fixed-Rate Lending
 
 ## Key Components
 
-- [**Collateral Liquidations**](collateral-liquidations/README.md): The process of liquidating undercollateralized positions
 - [**Mark to Market**](mark-to-market.md): The valuation mechanism for determining collateral value
 - [**Liquidators**](liquidators/README.md): The third-party actors who execute liquidations
 - [**Case Study**](case-study.md): A detailed example of the liquidation process
@@ -40,7 +39,7 @@ When the borrower's [**Loan to Value (LTV)**](#loan-to-value) ratio surpasses th
 During a liquidation process:
 *   A portion of the borrower's outstanding debt (up to 50%) is repaid using their deposited collateral.
 *   The amount of collateral seized is equal to the value of the debt being repaid plus a [**Liquidation Penalty**](#liquidation-penalty).
-*   Liquidations are typically executed by third-party [Liquidators](./collateral-liquidations/README.md) who are incentivized to perform this action.
+*   Liquidations are typically executed by third-party [Liquidators](./liquidators/README.md) who are incentivized to perform this action.
 
 ### Loan to Value (LTV)
 
@@ -74,7 +73,7 @@ A penalty is applied during liquidation to compensate the liquidator and contrib
 Borrowers should actively manage their collateral levels to avoid liquidation and the associated penalty.
 
 > See a detailed example in the [Liquidation Case Study](./case-study.md).
-> Learn more about the role of liquidators in [Collateral Liquidations](./collateral-liquidations/README.md).
+> Learn more about the role of liquidators in [Liquidators](./liquidators/README.md).
 
 ## Related Resources
 
