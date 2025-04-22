@@ -2,7 +2,7 @@
 description: Understanding Decentralized Autonomous Organizations
 ---
 
-# DAO
+# Understanding DAOs
 
 ## Overview
 
