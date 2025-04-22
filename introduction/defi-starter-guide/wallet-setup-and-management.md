@@ -65,16 +65,16 @@ Your recovery phrase (also called seed phrase or mnemonic) is a series of 12-24 
 
 [THIS IS WHERE AN IMAGE WOULD SHOW NETWORK CONFIGURATION]
 
-To interact with Secured Finance on Filecoin:
+To interact with Secured Finance on Ethereum or Filecoin:
 - Open your wallet settings
-- Add the Filecoin network
+- Add the Ethereum or Filecoin network
 - Verify the network details (RPC URL, Chain ID, etc.)
 
 ### 6. Fund Your Wallet
 
 [THIS IS WHERE AN IMAGE WOULD SHOW SENDING FUNDS TO THE WALLET]
 
-You'll need some FIL (Filecoin's native token) to pay for transaction fees. You can acquire this from cryptocurrency exchanges.
+You'll need some ETH or FIL (Ethereum or Filecoin's native token) to pay for transaction fees. You can acquire these from cryptocurrency exchanges.
 
 ## Security Best Practices
 

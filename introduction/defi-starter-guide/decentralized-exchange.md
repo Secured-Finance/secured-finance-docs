@@ -35,7 +35,7 @@ Secured Finance combines elements of order book systems with innovative fixed-ra
 
 1. **Zero-Coupon Bond Trading**: Assets are tokenized as zero-coupon bonds with fixed maturities
 2. **Order Book System**: Orders are matched based on price-time priority
-3. **On-Chain Settlement**: All transactions are settled on the Filecoin blockchain
+3. **On-Chain Settlement**: All transactions are settled on the blockchain (Ethereum, Arbitrum, or Filecoin)
 4. **Standardized Contracts**: Fixed maturities and standardized terms enable efficient markets
 
 ## Key Differences: DEX vs CEX
@@ -43,7 +43,7 @@ Secured Finance combines elements of order book systems with innovative fixed-ra
 | Parameter | Centralized Exchange (CEX) | Decentralized Exchange (DEX) |
 |-----------|----------------------------|------------------------------|
 | Custody | Exchange holds user funds | Users maintain custody of assets |
-| Privacy | KYC/AML requirements | Minimal or no identity verification |
+| Privacy | Enhanced KYC/AML with no transparency | Minimal exposure with full transparency |
 | Control | Central authority makes decisions | Governed by smart contracts and often DAOs |
 | Security | Vulnerable to exchange hacks | Vulnerable to smart contract exploits |
 | Speed | High throughput, instant trades | Variable speed based on blockchain congestion |
@@ -81,9 +81,9 @@ Secured Finance operates as a specialized DEX focused on fixed-rate lending and 
 
 The USDFC stablecoin system functions as a decentralized exchange where:
 
-- Users can mint USDFC by depositing collateral (similar to providing liquidity)
+- Users can mint and borrow USDFC by depositing FIL (Filecoin) as collateral
 - The system maintains price stability through algorithmic mechanisms
-- Anyone can participate without permission or identity verification
+- Anyone can participate without permission
 - All operations are transparent and verifiable on-chain
 
 ### Fixed-Rate Lending Protocol
@@ -95,15 +95,7 @@ Secured Finance's lending protocol operates as a specialized DEX for time-value 
 - Fixed rates are discovered through market mechanisms
 - The protocol is accessible to anyone with a compatible wallet
 
-## Democratizing Access to Financial Infrastructure
 
-Secured Finance's vision centers on democratizing access to institutional-grade financial market infrastructure through decentralized applications:
-
-1. **Removing Barriers**: By eliminating intermediaries and KYC requirements, Secured Finance makes sophisticated financial instruments accessible to anyone with an internet connection
-2. **Standardization**: The protocol standardizes complex financial products into easily tradable digital assets
-3. **Transparency**: All market activities are visible on-chain, creating a level playing field for all participants
-4. **Interoperability**: As a DApp, Secured Finance can integrate with other DeFi protocols, creating composable financial legos
-5. **Global Access**: The protocol is accessible 24/7 from anywhere in the world, breaking down geographical barriers to financial services
 
 ## Common Questions
 

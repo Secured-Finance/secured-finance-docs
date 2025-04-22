@@ -17,6 +17,7 @@
   * [🤝 DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
   * [🏦 DEX](introduction/defi-starter-guide/decentralized-exchange.md)
   * [📝 Smart Contracts](introduction/defi-starter-guide/smart-contracts.md)
+  * [🪙 Governance Tokens](introduction/defi-starter-guide/governance-tokens.md)
   * [🏛️ DAOs](introduction/defi-starter-guide/dao.md)
 
 ## USDFC Stablecoin

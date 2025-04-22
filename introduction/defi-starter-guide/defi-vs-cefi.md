@@ -66,7 +66,7 @@ Neither system is inherently superior—each has advantages for different use ca
 Yes, many users employ a hybrid approach, using CeFi services for fiat on/off ramps and DeFi for specific financial activities that benefit from decentralization.
 
 **What are the main risks of each system?**
-CeFi risks include counterparty risk, censorship, and potential data breaches. DeFi risks include smart contract vulnerabilities, user error, and market volatility.
+CeFi risks include counterparty risk, censorship, and potential data breaches. DeFi risks include smart contract vulnerabilities, user error, and market liquidity.
 
 **Do I need technical knowledge to use DeFi?**
 While basic blockchain knowledge is helpful, user interfaces have improved significantly. However, understanding the underlying concepts helps users make informed decisions and avoid common pitfalls.

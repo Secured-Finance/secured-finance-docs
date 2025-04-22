@@ -82,7 +82,9 @@ After signing, your transaction will be submitted to the blockchain. Confirmatio
 
 Before interacting with a DApp that will handle your tokens, you'll need to approve it to spend those tokens on your behalf. This is a security feature of the token standard.
 
+{% hint style="warning" %}
 **Important**: Approvals give DApps permission to move specified tokens from your wallet. Only approve trusted DApps, and consider limiting approval amounts when possible.
+{% endhint %}
 
 ### Transaction Batching
 

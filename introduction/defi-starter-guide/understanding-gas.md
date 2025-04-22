@@ -58,7 +58,7 @@ Different blockchain networks implement various fee mechanisms:
 A basic token transfer typically requires around 21,000 gas units. If the current gas price is 20 gwei:
 
 $$
-\text{Fee} = 21,000 \times 20 \text{ gwei} = 420,000 \text{ gwei} = 0.00042 \text{ ETH/FIL}
+\text{Fee} = 21,000 \times 20 \text{ gwei} = 420,000 \text{ gwei} = 0.00042 \text{ ETH or FIL}
 $$
 
 ### Complex DeFi Transaction
@@ -76,6 +76,15 @@ Gas prices vary based on network demand. During periods of high activity (NFT dr
 
 **What happens if I set my gas limit too low?**
 If your gas limit is too low, your transaction will fail when it runs out of gas, but you'll still be charged for the computational resources used up to that point.
+
+**Where can I check the current gas price?**
+You can check current gas prices on various websites like Etherscan.io, Ethgas.watch, or GasNow for Ethereum, and Filfox.info for Filecoin. Many wallets also display current gas prices directly in their interfaces.
+
+**How do I convert gas costs to USD value?**
+To calculate the USD value of gas fees:
+1. Calculate the fee in the native token: Gas Units × Gas Price = Fee in ETH/FIL
+2. Multiply by the current token price: Fee in ETH/FIL × Current Price in USD = Fee in USD
+For example, if gas costs 0.002 ETH and ETH is $3,000, the fee would be $6.
 
 **How can I reduce gas costs?**
 - Execute transactions during periods of lower network activity

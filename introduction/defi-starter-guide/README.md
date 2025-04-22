@@ -18,7 +18,7 @@ This DeFi Starter Guide provides essential knowledge for newcomers to decentrali
 
 ## Key Components
 
-The DeFi ecosystem consists of several interconnected components that work together to provide financial services without intermediaries:
+The DeFi ecosystem consists of several interconnected components that work together to provide self-controlled financial solutions without intermediaries:
 
 - **Wallets**: Digital tools for storing and managing your crypto assets
 - **Smart Contracts**: Self-executing code that powers DeFi applications
