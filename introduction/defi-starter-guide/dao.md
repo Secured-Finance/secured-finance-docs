@@ -20,14 +20,15 @@ DAOs operate through smart contracts that establish the rules for governance and
 
 This process creates a self-governing system where decisions are made collectively rather than by a central authority. All activities are recorded on the blockchain, ensuring transparency and immutability.
 
-### Governance Models
+### Foundation Role in DAOs
 
-DAOs can implement various governance models:
+Many DAOs establish a foundation that serves several critical functions:
 
-- **Token-weighted Voting**: Voting power proportional to token holdings
-- **Quadratic Voting**: Voting power increases as the square root of tokens, reducing the influence of large holders
-- **Reputation-based**: Voting power based on contributions and participation history
-- **Delegated Voting**: Token holders can delegate their voting power to trusted representatives
+- **Treasury Management**: Foundations often manage the DAO's treasury, ensuring proper allocation of resources
+- **Legal Representation**: Providing a legal entity that can interact with traditional systems
+- **Protocol Development**: Coordinating and funding ongoing technical development
+- **Parameter Governance**: Managing day-to-day protocol parameters that don't require full community votes
+- **Regulatory Compliance**: Navigating the evolving regulatory landscape for the DAO
 
 ## Key Parameters
 
