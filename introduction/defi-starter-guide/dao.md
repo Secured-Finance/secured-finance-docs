@@ -20,25 +20,40 @@ DAOs operate through smart contracts that establish the rules for governance and
 
 This process creates a self-governing system where decisions are made collectively rather than by a central authority. All activities are recorded on the blockchain, ensuring transparency and immutability.
 
-### Foundation Role in DAOs
+### Organizational Structure: DAO, Foundation, and DevCo
 
-Many DAOs establish a foundation that serves several critical functions:
+Most mature DeFi protocols operate with a three-part organizational structure:
 
-- **Treasury Management**: Foundations often manage the DAO's treasury, ensuring proper allocation of resources
-- **Legal Representation**: Providing a legal entity that can interact with traditional systems
-- **Protocol Development**: Coordinating and funding ongoing technical development
-- **Parameter Governance**: Managing day-to-day protocol parameters that don't require full community votes
-- **Regulatory Compliance**: Navigating the evolving regulatory landscape for the DAO
+#### DAO
+- **Purpose**: Community governance and protocol direction
+- **Structure**: Decentralized collection of token holders
+- **Legal Status**: Often unincorporated association or DAO LLC in some jurisdictions
+- **Decision Making**: Token-weighted voting on major protocol changes
 
-## Key Parameters
+#### Foundation
+- **Purpose**: Legal entity that supports the DAO
+- **Structure**: Non-profit organization with board of directors
+- **Legal Status**: Typically incorporated in crypto-friendly jurisdictions
+- **Functions**: Treasury management, grants distribution, legal representation, regulatory compliance
 
-| Parameter | Description | Common Implementation |
-|-----------|-------------|----------------------|
-| Governance Token | Asset that grants voting rights | ERC-20 tokens on Ethereum |
-| Proposal Threshold | Minimum tokens needed to submit proposals | 1-5% of total token supply |
-| Quorum | Minimum participation required for valid votes | 10-20% of total token supply |
-| Voting Period | Time allowed for voting on proposals | 3-7 days |
-| Time Lock | Delay between approval and execution | 1-3 days |
+#### DevCo (Development Company)
+- **Purpose**: Technical development of the protocol
+- **Structure**: For-profit company with traditional corporate structure
+- **Legal Status**: Incorporated business entity
+- **Functions**: Code development, protocol maintenance, implementation of DAO-approved changes
+
+This separation of concerns helps manage legal and regulatory risks while ensuring the protocol can continue to develop in a decentralized manner.
+
+## Key Differences: DAO vs Foundation vs DevCo
+
+| Aspect | DAO | Foundation | DevCo |
+|--------|-----|------------|-------|
+| Governance | Community-driven through token voting | Board-directed with community input | Corporate management |
+| Decision Speed | Slower (days to weeks) | Medium (days) | Faster (hours to days) |
+| Transparency | Fully transparent on-chain | Partially transparent | Often private |
+| Risk Exposure | Distributed across token holders | Limited liability | Corporate liability |
+| Funding Source | Protocol fees, token reserves | DAO treasury grants | Service contracts, equity |
+| Primary Focus | Strategic direction, treasury allocation | Legal compliance, ecosystem growth | Technical implementation |
 
 ## Examples
 
