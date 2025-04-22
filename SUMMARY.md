@@ -14,8 +14,8 @@
   * [🔄 Understanding DeFi vs CeFi](introduction/defi-starter-guide/defi-vs-cefi.md)
   * [👛 Wallet Setup & Management](introduction/defi-starter-guide/wallet-setup-and-management.md)
   * [⛽ Understanding Gas Fees](introduction/defi-starter-guide/understanding-gas.md)
-  * [🏦 Decentralized Exchanges (DEX)](introduction/defi-starter-guide/decentralized-exchange.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
+  * [🏦 Decentralized Exchanges (DEX)](introduction/defi-starter-guide/decentralized-exchange.md)
   * [📝 Understanding Smart Contracts](introduction/defi-starter-guide/smart-contracts.md)
   * [🏛️ Understanding DAOs](introduction/defi-starter-guide/dao.md)
 
