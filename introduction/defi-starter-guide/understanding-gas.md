@@ -2,7 +2,7 @@
 description: Understanding transaction fees in blockchain networks
 ---
 
-# Understanding Gas Fees
+# Gas Fees
 
 ## Overview
 

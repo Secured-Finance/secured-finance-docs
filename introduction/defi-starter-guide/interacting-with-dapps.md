@@ -2,7 +2,7 @@
 description: Guide to using decentralized applications
 ---
 
-# Interacting with DApps
+# DApps
 
 ## Overview
 

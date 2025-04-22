@@ -2,7 +2,7 @@
 description: Understanding the building blocks of DeFi applications
 ---
 
-# Understanding Smart Contracts
+# Smart Contracts
 
 ## Overview
 

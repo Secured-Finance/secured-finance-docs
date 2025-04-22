@@ -2,7 +2,7 @@
 description: Setting up and securing your cryptocurrency wallet
 ---
 
-# Wallet Setup & Management
+# Wallet Setup
 
 ## Overview
 

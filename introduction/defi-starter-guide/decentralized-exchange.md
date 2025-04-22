@@ -2,7 +2,7 @@
 description: Understanding decentralized exchanges and their role in DeFi
 ---
 
-# Decentralized Exchanges (DEX)
+# DEX
 
 ## Overview
 
