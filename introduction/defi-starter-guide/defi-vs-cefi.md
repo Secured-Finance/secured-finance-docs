@@ -57,7 +57,7 @@ Decentralized Finance refers to financial services built on blockchain networks 
 - Automated market makers
 - Yield farming platforms
 
-## FAQ
+## Common Questions
 
 **Is one system better than the other?**
 Neither system is inherently superior—each has advantages for different use cases. CeFi offers familiarity, customer support, and regulatory protection, while DeFi provides greater financial autonomy, innovation, and accessibility.

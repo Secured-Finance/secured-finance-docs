@@ -86,7 +86,7 @@ You'll need some FIL (Filecoin's native token) to pay for transaction fees. You 
 - **Be Cautious of Phishing** attempts requesting your private keys or seed phrase
 - **Test with Small Amounts** before making large transfers
 
-## FAQ
+## Common Questions
 
 **What happens if I lose my recovery phrase?**
 If you lose both your device and recovery phrase, your funds will be permanently inaccessible. There is no "forgot password" option in decentralized systems.

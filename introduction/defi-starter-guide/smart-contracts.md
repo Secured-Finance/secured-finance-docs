@@ -77,7 +77,7 @@ More complex smart contracts power DeFi protocols:
 - **Staking Contracts**: Handle token delegation and reward distribution
 - **Governance Systems**: Enable decentralized decision-making through voting
 
-## FAQ
+## Common Questions
 
 **What happens if there's a bug in a smart contract?**
 Unlike traditional software, smart contracts cannot be directly patched once deployed. If a bug is discovered, developers typically must deploy a new contract and migrate users to it. Serious vulnerabilities can lead to loss of funds, as seen in several high-profile DeFi hacks.

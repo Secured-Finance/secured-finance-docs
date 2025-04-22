@@ -102,7 +102,7 @@ If you submit a transaction with a low gas price during network congestion, it m
 - **Be Wary of High APYs**: Unusually high returns often indicate higher risk
 - **Understand the Risks**: DeFi involves various risks including smart contract vulnerabilities, market volatility, and liquidation
 
-## FAQ
+## Common Questions
 
 **What if a transaction fails?**
 Failed transactions still consume gas for the computational resources used, but don't change the blockchain state. Check error messages for troubleshooting.

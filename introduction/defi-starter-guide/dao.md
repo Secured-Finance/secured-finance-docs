@@ -51,7 +51,7 @@ DAOs can implement various governance models:
 - FlamingoDAO: Collective focused on NFT investments
 - MetaCartel: Funds early-stage decentralized applications
 
-## FAQ
+## Common Questions
 
 **How do I join a DAO?**
 Typically, you join a DAO by acquiring its governance tokens, either through direct purchase on exchanges or by contributing to the project in some way.

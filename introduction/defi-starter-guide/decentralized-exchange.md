@@ -105,7 +105,7 @@ Secured Finance's vision centers on democratizing access to institutional-grade 
 4. **Interoperability**: As a DApp, Secured Finance can integrate with other DeFi protocols, creating composable financial legos
 5. **Global Access**: The protocol is accessible 24/7 from anywhere in the world, breaking down geographical barriers to financial services
 
-## FAQ
+## Common Questions
 
 **How do DEXs make money if they're decentralized?**
 Most DEXs charge trading fees that are distributed to liquidity providers and/or token holders. Some protocols also direct a portion of fees to a treasury controlled by governance.

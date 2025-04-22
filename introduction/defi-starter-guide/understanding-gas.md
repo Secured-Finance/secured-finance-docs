@@ -69,7 +69,7 @@ Interacting with DeFi protocols like Secured Finance can require significantly m
 - Swapping tokens: ~100,000-200,000 gas units
 - Providing liquidity: ~150,000-300,000 gas units
 
-## FAQ
+## Common Questions
 
 **Why do gas prices fluctuate?**
 Gas prices vary based on network demand. During periods of high activity (NFT drops, market volatility), users compete for limited block space by offering higher gas prices.
