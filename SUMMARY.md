@@ -13,8 +13,7 @@
 * [📚 DeFi Starter Guide](introduction/defi-starter-guide/README.md)
   * [🔄 DeFi vs CeFi](introduction/defi-starter-guide/defi-vs-cefi.md)
   * [👛 Wallet Setup & Management](introduction/defi-starter-guide/wallet-setup-and-management.md)
-  * [⛽ Understanding Gas](introduction/defi-starter-guide/understanding-gas.md)
-  * [⛽ Gas Cost](introduction/defi-starter-guide/gas-cost.md)
+  * [⛽ Understanding Gas Fees](introduction/defi-starter-guide/understanding-gas.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
   * [🏛️ DAO](introduction/defi-starter-guide/dao.md)
 

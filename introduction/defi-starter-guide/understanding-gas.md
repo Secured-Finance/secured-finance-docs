@@ -2,15 +2,15 @@
 description: Understanding transaction fees in blockchain networks
 ---
 
-# Understanding Gas
+# Understanding Gas Fees
 
 ## Overview
 
-Gas is a crucial concept in blockchain networks, particularly on Ethereum and Filecoin, where it represents the computational cost of executing operations. Understanding gas is essential for anyone interacting with decentralized applications, as it directly affects transaction costs and processing times.
+Gas fees are the transaction costs paid to execute operations on blockchain networks like Ethereum and Filecoin. These fees compensate validators (miners or stakers) for the computational resources required to process and verify transactions. Understanding gas is essential for anyone interacting with decentralized applications, as it directly affects transaction costs and determines how quickly your transactions are processed.
 
 ## How It Works
 
-When you perform any action on a blockchain network—whether sending tokens, interacting with a smart contract, or deploying a new application—you're requesting network validators (miners or stakers) to process your transaction and include it in a block. Since these operations require computational resources, gas serves as a mechanism to:
+When you perform any action on a blockchain network—whether sending tokens, interacting with a smart contract, or deploying a new application—you're requesting network validators to process your transaction and include it in a block. Since blockchain networks have limited capacity, gas fees serve as a market mechanism to:
 
 1. **Measure Computational Effort**: Each operation has a fixed gas cost based on its complexity
 2. **Allocate Network Resources**: During high demand, higher gas prices prioritize urgent transactions
@@ -20,10 +20,11 @@ On the Filecoin network, which Secured Finance uses, gas works similarly to Ethe
 
 ### Gas Components
 
-A transaction's gas fee consists of two main components:
+The gas fee system consists of several components:
 
+- **Gas Units**: Each operation in a transaction requires a specific amount of computational work measured in gas units
 - **Gas Limit**: The maximum amount of computational work you're willing to pay for
-- **Gas Price**: How much you're willing to pay per unit of gas (typically in gwei, where 1 gwei = 0.000000001 ETH or FIL)
+- **Gas Price**: How much you're willing to pay per unit of gas (typically in gwei, where 1 gwei = 0.000000001 ETH or attoFIL for Filecoin)
 
 Your total transaction fee is calculated as:
 
@@ -33,14 +34,22 @@ $$
 
 Where Gas Used is the actual amount of gas consumed by your transaction (which cannot exceed your specified Gas Limit).
 
+### Fee Market Mechanisms
+
+Different blockchain networks implement various fee mechanisms:
+
+- **Ethereum's EIP-1559**: Includes a base fee that gets burned and a priority fee (tip) that goes to validators
+- **Filecoin's Gas Model**: Uses a similar approach with base fees adjusted based on network congestion
+
 ## Key Parameters
 
 | Parameter | Description | Recommendation |
 |-----------|-------------|---------------|
-| Gas Limit | Maximum computational work allowed | Set slightly higher than the estimated requirement |
-| Gas Price | Cost per unit of gas | Check current network conditions for appropriate pricing |
-| Priority Fee | Additional tip to validators | Optional, but helps during network congestion |
+| Gas Limit | Maximum computational units allowed | Set 10-20% higher than estimated requirement |
+| Gas Price | Cost per unit of gas | Check current network conditions |
+| Priority Fee | Optional tip to validators | Higher during network congestion |
 | Base Fee | Network-determined minimum fee | Automatically set by the network based on demand |
+| Max Fee | Maximum total fee willing to pay | Set based on urgency of transaction |
 
 ## Examples
 
@@ -52,14 +61,18 @@ $$
 \text{Fee} = 21,000 \times 20 \text{ gwei} = 420,000 \text{ gwei} = 0.00042 \text{ ETH/FIL}
 $$
 
-### Complex Smart Contract Interaction
+### Complex DeFi Transaction
 
-Interacting with DeFi protocols like Secured Finance can require significantly more gas, often 100,000-300,000 gas units or more, depending on the complexity of the operation.
+Interacting with DeFi protocols like Secured Finance can require significantly more gas:
+
+- Approving a token: ~45,000 gas units
+- Swapping tokens: ~100,000-200,000 gas units
+- Providing liquidity: ~150,000-300,000 gas units
 
 ## FAQ
 
 **Why do gas prices fluctuate?**
-Gas prices vary based on network demand. During periods of high activity, users compete for limited block space by offering higher gas prices.
+Gas prices vary based on network demand. During periods of high activity (NFT drops, market volatility), users compete for limited block space by offering higher gas prices.
 
 **What happens if I set my gas limit too low?**
 If your gas limit is too low, your transaction will fail when it runs out of gas, but you'll still be charged for the computational resources used up to that point.
@@ -70,11 +83,14 @@ If your gas limit is too low, your transaction will fail when it runs out of gas
 - Batch multiple operations into a single transaction when possible
 - Consider layer-2 solutions or sidechains for frequent transactions
 
+**Is gas refundable?**
+You're only charged for the actual gas used, even if you set a higher gas limit. However, failed transactions still consume gas and incur fees without completing the intended action.
+
 **Do all blockchains use gas?**
 Not all blockchains use the exact gas model, but most have some form of transaction fee mechanism to prevent spam and allocate resources.
 
 ## Related Resources
 
-- [Gas Cost](gas-cost.md)
-- [Interacting with DApps](interacting-with-dapps.md)
 - [Wallet Setup & Management](wallet-setup-and-management.md)
+- [Interacting with DApps](interacting-with-dapps.md)
+- [DeFi vs CeFi](defi-vs-cefi.md)
