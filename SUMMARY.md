@@ -16,6 +16,7 @@
   * [⛽ Understanding Gas Fees](introduction/defi-starter-guide/understanding-gas.md)
   * [🏦 Decentralized Exchanges (DEX)](introduction/defi-starter-guide/decentralized-exchange.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
+  * [📝 Understanding Smart Contracts](introduction/defi-starter-guide/smart-contracts.md)
   * [🏛️ Understanding DAOs](introduction/defi-starter-guide/dao.md)
 
 ## USDFC Stablecoin
