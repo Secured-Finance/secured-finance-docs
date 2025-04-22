@@ -107,7 +107,7 @@ Redemption is most beneficial in the following scenarios:
 - **Cannot Redeem**: There may not be enough Troves available for redemption, or the system might be in Recovery Mode
 - **High Redemption Fee**: The base rate might be elevated due to recent redemptions; consider waiting for it to decay
 
-## FAQ
+## Common Questions
 **Q: Can I redeem any amount of USDFC?**  
 A: Yes, but smaller amounts may not be cost-effective due to gas fees and the redemption fee.
 

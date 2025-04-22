@@ -80,7 +80,7 @@ Now that you've minted USDFC, you can:
 - **Cannot Mint More USDFC**: You may have reached the maximum debt for your current collateral amount
 - **High Gas Fees**: Try again when network congestion is lower or adjust your gas settings
 
-## FAQ
+## Common Questions
 **Q: Is there a limit to how much USDFC I can mint?**  
 A: The amount of USDFC you can mint is limited by your collateral amount and the minimum collateral ratio requirement.
 

@@ -80,7 +80,7 @@ Now that you've created your first Trove, you can:
 - **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../deployed-contracts.md) page
 - **High Gas Fees**: Try again when network congestion is lower or adjust your gas settings
 
-## FAQ
+## Common Questions
 **Q: What is the minimum amount of FIL I can deposit?**  
 A: There is no minimum amount, but you need to ensure your collateral ratio meets the minimum requirement and covers the Liquidation Reserve.
 

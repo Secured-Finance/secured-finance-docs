@@ -126,7 +126,7 @@ It's important to understand that your deposit may be "diluted" over time:
 - **Cannot Deposit**: Verify that you have the USDFC amount you're trying to deposit
 - **Rewards Not Showing**: Rewards only accumulate when liquidations occur; there may not have been recent liquidations
 
-## FAQ
+## Common Questions
 **Q: Is there a minimum amount I need to deposit?**  
 A: There is typically no minimum amount, but very small deposits may result in gas fees outweighing potential rewards.
 

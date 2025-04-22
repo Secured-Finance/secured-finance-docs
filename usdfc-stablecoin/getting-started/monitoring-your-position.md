@@ -125,7 +125,7 @@ Develop a plan for responding to different market scenarios.
 - **Metrics Not Updating**: Check if there are pending transactions or network congestion
 - **Unexpected Collateral Ratio**: Verify the current FIL price from multiple sources
 
-## FAQ
+## Common Questions
 **Q: How often does the dashboard update?**  
 A: The dashboard updates in real-time based on blockchain data and current price feeds.
 

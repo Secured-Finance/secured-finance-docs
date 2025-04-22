@@ -124,7 +124,7 @@ $$
 - **Transaction Failed**: Ensure you have enough FIL for gas fees
 - **Collateral Not Showing**: Refresh the page or check your transaction history
 
-## FAQ
+## Common Questions
 **Q: How often should I adjust my collateral?**  
 A: This depends on your risk tolerance and FIL price volatility. More volatile markets require more frequent adjustments.
 
