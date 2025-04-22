@@ -32,7 +32,7 @@ Most mature DeFi protocols operate with a three-part organizational structure:
 
 #### Foundation
 - **Purpose**: Legal entity that supports the DAO
-- **Structure**: Non-profit organization with board of directors
+- **Structure**: Non-profit organization with board of directors or supervisors
 - **Legal Status**: Typically incorporated in crypto-friendly jurisdictions
 - **Functions**: Treasury management, grants distribution, legal representation, regulatory compliance
 
@@ -40,7 +40,7 @@ Most mature DeFi protocols operate with a three-part organizational structure:
 - **Purpose**: Technical development of the protocol
 - **Structure**: For-profit company with traditional corporate structure
 - **Legal Status**: Incorporated business entity
-- **Functions**: Code development, protocol maintenance, implementation of DAO-approved changes
+- **Functions**: Code development, protocol maintenance, implementation of DAO-approved updates
 
 This separation of concerns helps manage legal and regulatory risks while ensuring the protocol can continue to develop in a decentralized manner.
 
