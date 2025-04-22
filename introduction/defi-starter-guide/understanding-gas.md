@@ -58,7 +58,7 @@ Different blockchain networks implement various fee mechanisms:
 A basic token transfer typically requires around 21,000 gas units. If the current gas price is 20 gwei:
 
 $$
-\text{Fee} = 21,000 \times 20 \text{ gwei} = 420,000 \text{ gwei} = 0.00042 \text{ ETH or FIL}
+\text{Fee} = 21,000 \times 20 \text{ gwei} = 420,000 \text{ gwei} = 0.00042 \text{ ETH}
 $$
 
 ### Complex DeFi Transaction
