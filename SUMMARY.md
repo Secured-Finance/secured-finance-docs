@@ -12,11 +12,11 @@
   * [Roadmap 2023](introduction/roadmap/roadmap-2023.md)
 * [📚 DeFi Starter Guide](introduction/defi-starter-guide/README.md)
   * [🔄 DeFi vs CeFi](introduction/defi-starter-guide/defi-vs-cefi.md)
-  * [⛽ Understanding Gas](introduction/defi-starter-guide/understanding-gas.md)
   * [👛 Wallet Setup & Management](introduction/defi-starter-guide/wallet-setup-and-management.md)
+  * [⛽ Understanding Gas](introduction/defi-starter-guide/understanding-gas.md)
+  * [⛽ Gas Cost](introduction/defi-starter-guide/gas-cost.md)
   * [🤝 Interacting with DApps](introduction/defi-starter-guide/interacting-with-dapps.md)
   * [🏛️ DAO](introduction/defi-starter-guide/dao.md)
-  * [⛽ Gas Cost](introduction/defi-starter-guide/gas-cost.md)
 
 ## USDFC Stablecoin
 
