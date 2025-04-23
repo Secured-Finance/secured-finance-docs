@@ -1,9 +1,10 @@
 ---
-description: Understanding the difference between Annual Percentage Rate and Annual Percentage Yield
-icon: 📊
+description: >-
+  Understanding the difference between Annual Percentage Rate and Annual
+  Percentage Yield
 ---
 
-# 📊 APR vs APY
+# 📈 APR vs APY
 
 ## Overview
 
@@ -14,7 +15,6 @@ APR (Annual Percentage Rate) and APY (Annual Percentage Yield) are two common me
 The difference between APR and APY lies in how they account for compounding:
 
 1. **APR (Annual Percentage Rate)** is a simple interest rate calculated by multiplying the periodic rate by the number of periods in a year. It does not account for compounding effects.
-
 2. **APY (Annual Percentage Yield)** accounts for compounding by calculating the effective annual rate of return. It represents the actual return you would receive after accounting for the effects of compounding.
 
 The mathematical relationship between APR and APY is:
@@ -33,15 +33,15 @@ However, adhering to the prevailing market conventions, our protocol naturally d
 
 ## Key Parameters
 
-| Parameter | Description | Relevance to Protocol |
-|-----------|-------------|----------------------|
-| Compounding Frequency | How often interest is compounded | N/A for Zero-Coupon Bonds |
-| Term Length | Duration of the investment | Determines the fixed rate period |
-| Nominal Rate | Stated interest rate before compounding | Used in APR calculations |
-| Effective Rate | Actual yield after accounting for compounding | Equivalent to APY |
-| Day Count Convention | Method of calculating days for interest accrual | Actual/365 used in protocol |
-| Reinvestment Assumption | Assumption about reinvesting proceeds | Auto-rolling handles reinvestment |
-| Market Convention | Standard way rates are quoted in a market | Protocol follows fixed-income market conventions |
+| Parameter               | Description                                     | Relevance to Protocol                            |
+| ----------------------- | ----------------------------------------------- | ------------------------------------------------ |
+| Compounding Frequency   | How often interest is compounded                | N/A for Zero-Coupon Bonds                        |
+| Term Length             | Duration of the investment                      | Determines the fixed rate period                 |
+| Nominal Rate            | Stated interest rate before compounding         | Used in APR calculations                         |
+| Effective Rate          | Actual yield after accounting for compounding   | Equivalent to APY                                |
+| Day Count Convention    | Method of calculating days for interest accrual | Actual/365 used in protocol                      |
+| Reinvestment Assumption | Assumption about reinvesting proceeds           | Auto-rolling handles reinvestment                |
+| Market Convention       | Standard way rates are quoted in a market       | Protocol follows fixed-income market conventions |
 
 ## What is APY?
 
@@ -75,14 +75,14 @@ Hence his 100 USD will grow to 104.88 USD, meaning he earns 4.88 dollars.
 
 Let's examine how different compounding frequencies affect the effective yield on a 12% APR loan of 1,000 USD for one year:
 
-| Compounding Frequency | Calculation | Final Amount | Effective APY |
-|-----------------------|-------------|--------------|---------------|
-| Annual (1×) | 1,000 × (1 + 0.12) | 1,120.00 USD | 12.00% |
-| Semi-annual (2×) | 1,000 × (1 + 0.12/2)² | 1,123.60 USD | 12.36% |
-| Quarterly (4×) | 1,000 × (1 + 0.12/4)⁴ | 1,125.51 USD | 12.55% |
-| Monthly (12×) | 1,000 × (1 + 0.12/12)¹² | 1,126.83 USD | 12.68% |
-| Daily (365×) | 1,000 × (1 + 0.12/365)³⁶⁵ | 1,127.47 USD | 12.75% |
-| Continuous | 1,000 × e^(0.12) | 1,127.50 USD | 12.75% |
+| Compounding Frequency | Calculation               | Final Amount | Effective APY |
+| --------------------- | ------------------------- | ------------ | ------------- |
+| Annual (1×)           | 1,000 × (1 + 0.12)        | 1,120.00 USD | 12.00%        |
+| Semi-annual (2×)      | 1,000 × (1 + 0.12/2)²     | 1,123.60 USD | 12.36%        |
+| Quarterly (4×)        | 1,000 × (1 + 0.12/4)⁴     | 1,125.51 USD | 12.55%        |
+| Monthly (12×)         | 1,000 × (1 + 0.12/12)¹²   | 1,126.83 USD | 12.68%        |
+| Daily (365×)          | 1,000 × (1 + 0.12/365)³⁶⁵ | 1,127.47 USD | 12.75%        |
+| Continuous            | 1,000 × e^(0.12)          | 1,127.50 USD | 12.75%        |
 
 This example demonstrates that more frequent compounding results in a higher effective yield (APY) for the same stated APR.
 
@@ -91,25 +91,30 @@ This example demonstrates that more frequent compounding results in a higher eff
 To convert between APR and APY:
 
 **From APR to APY:**
+
 ```
 APY = (1 + APR/n)^n - 1
 ```
+
 Where n is the number of compounding periods per year.
 
 **From APY to APR:**
+
 ```
 APR = n × ((1 + APY)^(1/n) - 1)
 ```
 
 For example, with monthly compounding (n=12):
-- A 12% APR yields an APY of (1 + 0.12/12)^12 - 1 = 12.68%
-- A 12% APY corresponds to an APR of 12 × ((1 + 0.12)^(1/12) - 1) = 11.39%
+
+* A 12% APR yields an APY of (1 + 0.12/12)^12 - 1 = 12.68%
+* A 12% APY corresponds to an APR of 12 × ((1 + 0.12)^(1/12) - 1) = 11.39%
 
 ## FAQ
 
 ### Why does the Fixed-Rate Lending Protocol use APR instead of APY?
 
 The Fixed-Rate Lending Protocol uses APR for several reasons:
+
 1. **Market Convention**: Fixed-rate markets traditionally quote rates as APR, making it easier for traditional finance participants to understand
 2. **Simplicity**: APR provides a straightforward calculation without the complexity of compounding assumptions
 3. **Transparency**: With fixed terms, the exact return is known upfront without needing to make assumptions about reinvestment
@@ -119,6 +124,7 @@ The Fixed-Rate Lending Protocol uses APR for several reasons:
 ### How do I compare rates between protocols that use different conventions?
 
 To compare rates between protocols:
+
 1. **Identify the Convention**: Determine whether each protocol quotes rates as APR or APY
 2. **Convert to the Same Basis**: Use the conversion formulas to convert all rates to either APR or APY
 3. **Consider Compounding Frequency**: Take into account how often interest is compounded in each protocol
@@ -128,6 +134,7 @@ To compare rates between protocols:
 ### Does compounding frequency matter for Zero-Coupon Bonds?
 
 For Zero-Coupon Bonds:
+
 1. **No Periodic Payments**: Zero-Coupon Bonds don't make periodic interest payments, so traditional compounding doesn't apply
 2. **Implicit Compounding**: The discount at which the bond is purchased implicitly accounts for the time value of money
 3. **APR Representation**: The yield is typically expressed as an APR based on the purchase price and face value
@@ -137,6 +144,7 @@ For Zero-Coupon Bonds:
 ### What happens if I withdraw before maturity in a fixed-rate protocol?
 
 If you withdraw before maturity:
+
 1. **Market Price Exposure**: You'll need to sell your position at the current market price, which may be higher or lower than your entry price
 2. **Yield Calculation Changes**: Your actual yield will be determined by the price at which you sell, not the original APR
 3. **No Guaranteed Rate**: The guaranteed rate only applies if you hold until maturity
@@ -146,6 +154,7 @@ If you withdraw before maturity:
 ### How does inflation affect APR and APY?
 
 Inflation affects both APR and APY in similar ways:
+
 1. **Real Returns**: To calculate real returns, subtract the inflation rate from the nominal APR or APY
 2. **Purchasing Power**: Higher inflation reduces the purchasing power of your returns
 3. **Fixed vs. Variable Rates**: Fixed rates provide certainty but may not adjust for changing inflation
@@ -154,7 +163,7 @@ Inflation affects both APR and APY in similar ways:
 
 ## Related Resources
 
-- [Discount Factor](discount-factor.md)
-- [ZC Bond Price to APR](zc-bond-price-to-apr.md)
-- [Market Dynamics](market-dynamics/README.md)
-- [Auto-Rolling](market-dynamics/auto-rolling/README.md)
+* [Discount Factor](discount-factor.md)
+* [ZC Bond Price to APR](zc-bond-price-to-apr.md)
+* [Market Dynamics](market-dynamics/)
+* [Auto-Rolling](market-dynamics/auto-rolling/)

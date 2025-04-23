@@ -1,15 +1,14 @@
 ---
 description: A step-by-step guide to lending assets on the Fixed-Rate Lending Protocol
-icon: 💰
 ---
 
-# 💰 Lending Assets
+# 💵 Lending Assets
 
 ## Prerequisites
 
-- A connected wallet with sufficient assets to lend
-- Basic understanding of fixed-rate lending concepts
-- Access to the Secured Finance platform
+* A connected wallet with sufficient assets to lend
+* Basic understanding of fixed-rate lending concepts
+* Access to the Secured Finance platform
 
 ## Overview
 
@@ -49,11 +48,11 @@ Before lending, you need to deposit the assets you want to lend into the protoco
 1. Select "Lend" in the order type section
 2. Choose between "Market Order" (immediate execution at current market price) or "Limit Order" (execution at your specified price)
 3. For a Limit Order:
-   - Set your desired interest rate (APR)
-   - Enter the amount you want to lend
+   * Set your desired interest rate (APR)
+   * Enter the amount you want to lend
 4. For a Market Order:
-   - Enter the amount you want to lend
-   - Review the current market rate
+   * Enter the amount you want to lend
+   * Review the current market rate
 5. Click "Place Order" to submit your lending request
 
 ![Place Lending Order](../../.gitbook/assets/LPonOrderbookx1.5-ezgif.com-video-to-gif-converter.gif)
@@ -89,29 +88,32 @@ You have several options for managing your lending position:
 
 Now that you've successfully lent assets, you might want to:
 
-- [Learn how to manage your positions](managing-positions.md)
-- [Explore auto-rolling features](../advanced-topics/market-dynamics/auto-rolling/README.md) to automatically reinvest at maturity
-- [Understand how Zero-Coupon Bonds work](../core-mechanics/standardization/zero-coupon-bonds.md) as representations of your lending position
+* [Learn how to manage your positions](managing-positions.md)
+* [Explore auto-rolling features](../advanced-topics/market-dynamics/auto-rolling/) to automatically reinvest at maturity
+* [Understand how Zero-Coupon Bonds work](../core-mechanics/standardization/zero-coupon-bonds.md) as representations of your lending position
 
 ## Troubleshooting
 
 ### Order Not Executing
 
 If your limit order isn't being executed:
-- Your specified interest rate may not be competitive with current market rates
-- There might be insufficient borrowing demand at your specified rate
-- Try adjusting your rate or switching to a market order for immediate execution
+
+* Your specified interest rate may not be competitive with current market rates
+* There might be insufficient borrowing demand at your specified rate
+* Try adjusting your rate or switching to a market order for immediate execution
 
 ### Transaction Failing
 
 If your transaction is failing:
-- Ensure you have enough native tokens (ETH, MATIC, etc.) to cover gas fees
-- Check that you have sufficient balance of the asset you're trying to lend
-- Try refreshing the page and attempting the transaction again
+
+* Ensure you have enough native tokens (ETH, MATIC, etc.) to cover gas fees
+* Check that you have sufficient balance of the asset you're trying to lend
+* Try refreshing the page and attempting the transaction again
 
 ### ZC Bonds Not Appearing
 
 If your ZC Bonds don't appear in your portfolio after lending:
-- The transaction may still be pending; check your wallet for transaction status
-- There might be a delay in the UI updating; try refreshing the page
-- Verify the transaction was successful on the blockchain explorer
+
+* The transaction may still be pending; check your wallet for transaction status
+* There might be a delay in the UI updating; try refreshing the page
+* Verify the transaction was successful on the blockchain explorer

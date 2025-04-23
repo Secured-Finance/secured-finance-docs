@@ -2,7 +2,7 @@
 description: Download Logos and Brand Guidelines
 ---
 
-# USDFC Logo
+# 💲 USDFC Logo
 
 <figure><img src="../../.gitbook/assets/USDFC Circle Icon.svg" alt="" width="81"><figcaption><p>USDFC Circle Icon.svg</p></figcaption></figure>
 
@@ -17,4 +17,3 @@ description: Download Logos and Brand Guidelines
 {% file src="../../.gitbook/assets/USDFC Brand Sheet.pdf" %}
 USDFC Brand Sheet
 {% endfile %}
-

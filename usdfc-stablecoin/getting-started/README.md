@@ -2,7 +2,7 @@
 description: Your guide to using the USDFC stablecoin protocol
 ---
 
-# 🚀 Getting Started
+# 🧙 Getting Started
 
 Welcome to the USDFC stablecoin protocol! This section provides step-by-step guides to help you start using USDFC, a dollar-pegged stablecoin backed by Filecoin (FIL) collateral. Whether you're new to DeFi or an experienced user, these guides will walk you through the essential operations of the USDFC protocol.
 
@@ -10,12 +10,12 @@ USDFC allows you to unlock the value of your FIL holdings while maintaining expo
 
 ## What You'll Learn
 
-- How to create a Trove and deposit FIL collateral
-- How to mint USDFC stablecoins against your collateral
-- How to manage your collateral ratio to avoid liquidation
-- How to monitor your position's health
-- How to participate in the Stability Pool to earn rewards
-- How to redeem USDFC for FIL when you're ready to exit
+* How to create a Trove and deposit FIL collateral
+* How to mint USDFC stablecoins against your collateral
+* How to manage your collateral ratio to avoid liquidation
+* How to monitor your position's health
+* How to participate in the Stability Pool to earn rewards
+* How to redeem USDFC for FIL when you're ready to exit
 
 ## Key Components
 
@@ -23,14 +23,14 @@ USDFC allows you to unlock the value of your FIL holdings while maintaining expo
 
 ### Core Operations
 
-| Operation | Description | Guide |
-|-----------|-------------|-------|
-| Creating a Trove | Set up your collateralized debt position | [Creating Your First Trove](./creating-your-first-trove.md) |
-| Minting USDFC | Generate stablecoins against your collateral | [Minting USDFC Step-by-Step](./minting-usdfc-step-by-step.md) |
-| Managing Collateral | Add or withdraw collateral to adjust risk | [Managing Collateral Effectively](./managing-collateral-effectively.md) |
-| Monitoring Position | Track your Trove's health and liquidation risk | [Monitoring Your Position](./monitoring-your-position.md) |
-| Using Stability Pool | Earn rewards by helping secure the protocol | [Using the Stability Pool](./using-the-stability-pool.md) |
-| Redeeming USDFC | Exchange USDFC for FIL at face value | [Redeeming USDFC](./redeeming-usdfc.md) |
+| Operation            | Description                                    | Guide                                                                 |
+| -------------------- | ---------------------------------------------- | --------------------------------------------------------------------- |
+| Creating a Trove     | Set up your collateralized debt position       | [Creating Your First Trove](creating-your-first-trove.md)             |
+| Minting USDFC        | Generate stablecoins against your collateral   | [Minting USDFC Step-by-Step](minting-usdfc-step-by-step.md)           |
+| Managing Collateral  | Add or withdraw collateral to adjust risk      | [Managing Collateral Effectively](managing-collateral-effectively.md) |
+| Monitoring Position  | Track your Trove's health and liquidation risk | [Monitoring Your Position](monitoring-your-position.md)               |
+| Using Stability Pool | Earn rewards by helping secure the protocol    | [Using the Stability Pool](using-the-stability-pool.md)               |
+| Redeeming USDFC      | Exchange USDFC for FIL at face value           | [Redeeming USDFC](redeeming-usdfc.md)                                 |
 
 ### What You Can Do With USDFC
 
@@ -45,14 +45,14 @@ After minting USDFC, you have several options to put your stablecoins to work:
 
 If you want to try USDFC on testnet first:
 
-- Access the [Calibration Testnet Guide](https://medium.com/secured-finance/secured-finance-stablecoin-usdfc-on-the-calibration-testnet-6447f05cbfbf) (also available in [Chinese](https://medium.com/secured-finance/secured-finance%E7%A8%B3%E5%AE%9A%E5%B8%81-usdfc-calibration%E6%B5%8B%E8%AF%95%E7%BD%91%E9%93%B8%E9%80%A0%E6%8C%87%E5%8D%97-129c443cebc4))
-- Get testnet FIL from the [Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/)
-- Watch the [Demo from FIL Dev Summit 2024](https://www.youtube.com/watch?v=LOnCu4HZnXg\&list=PL_0VrY55uV1__uv3uOvZ3L6exG9y10lSy\&index=13)
+* Access the [Calibration Testnet Guide](https://medium.com/secured-finance/secured-finance-stablecoin-usdfc-on-the-calibration-testnet-6447f05cbfbf) (also available in [Chinese](https://medium.com/secured-finance/secured-finance%E7%A8%B3%E5%AE%9A%E5%B8%81-usdfc-calibration%E6%B5%8B%E8%AF%95%E7%BD%91%E9%93%B8%E9%80%A0%E6%8C%87%E5%8D%97-129c443cebc4))
+* Get testnet FIL from the [Calibration Faucet](https://faucet.calibnet.chainsafe-fil.io/)
+* Watch the [Demo from FIL Dev Summit 2024](https://www.youtube.com/watch?v=LOnCu4HZnXg\&list=PL_0VrY55uV1__uv3uOvZ3L6exG9y10lSy\&index=13)
 
 ## Related Resources
 
-- [USDFC Overview](../overview.md)
-- [Core Mechanics](../core-mechanics/)
-- [Advanced Topics](../advanced-topics/)
-- [FAQs](../faqs.md)
-- [Fixed-Rate Lending](../../fixed-rate-lending/overview/)
+* [USDFC Overview](../overview.md)
+* [Core Mechanics](../core-mechanics/)
+* [Advanced Topics](../advanced-topics/)
+* [FAQs](../faqs.md)
+* [Fixed-Rate Lending](../../fixed-rate-lending/overview/)

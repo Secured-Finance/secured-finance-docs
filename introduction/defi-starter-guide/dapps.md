@@ -2,7 +2,7 @@
 description: Guide to using decentralized applications
 ---
 
-# DApps
+# 🤝 DApps
 
 ## Overview
 
@@ -28,7 +28,7 @@ When you use a DApp, you're essentially sending transactions to these smart cont
 
 ### 1. Connect Your Wallet
 
-[THIS IS WHERE AN IMAGE WOULD SHOW THE WALLET CONNECTION INTERFACE]
+\[THIS IS WHERE AN IMAGE WOULD SHOW THE WALLET CONNECTION INTERFACE]
 
 Most DApps feature a "Connect Wallet" button in the top corner of their interface. Clicking this will prompt you to select your wallet provider and approve the connection.
 
@@ -36,43 +36,45 @@ Most DApps feature a "Connect Wallet" button in the top corner of their interfac
 
 ### 2. Review Permissions
 
-[THIS IS WHERE AN IMAGE WOULD SHOW THE PERMISSION REQUEST SCREEN]
+\[THIS IS WHERE AN IMAGE WOULD SHOW THE PERMISSION REQUEST SCREEN]
 
 When connecting for the first time, your wallet will ask you to approve certain permissions. Read these carefully—they determine what the DApp can do with your wallet.
 
 ### 3. Navigate the Interface
 
-[THIS IS WHERE AN IMAGE WOULD SHOW A TYPICAL DAPP INTERFACE]
+\[THIS IS WHERE AN IMAGE WOULD SHOW A TYPICAL DAPP INTERFACE]
 
 DApp interfaces typically include:
-- Dashboard showing your assets or positions
-- Action buttons for key functions (swap, deposit, borrow, etc.)
-- Information panels displaying rates, fees, and other important data
+
+* Dashboard showing your assets or positions
+* Action buttons for key functions (swap, deposit, borrow, etc.)
+* Information panels displaying rates, fees, and other important data
 
 ### 4. Initiate Transactions
 
-[THIS IS WHERE AN IMAGE WOULD SHOW A TRANSACTION BEING INITIATED]
+\[THIS IS WHERE AN IMAGE WOULD SHOW A TRANSACTION BEING INITIATED]
 
 When you click an action button, you'll typically see a form to fill out with transaction details (amount, recipient, etc.).
 
 ### 5. Review and Confirm
 
-[THIS IS WHERE AN IMAGE WOULD SHOW A TRANSACTION CONFIRMATION SCREEN]
+\[THIS IS WHERE AN IMAGE WOULD SHOW A TRANSACTION CONFIRMATION SCREEN]
 
 Before executing any transaction:
-- Double-check all details
-- Review the estimated gas fee
-- Understand the potential impact on your portfolio
+
+* Double-check all details
+* Review the estimated gas fee
+* Understand the potential impact on your portfolio
 
 ### 6. Sign the Transaction
 
-[THIS IS WHERE AN IMAGE WOULD SHOW A WALLET SIGNING PROMPT]
+\[THIS IS WHERE AN IMAGE WOULD SHOW A WALLET SIGNING PROMPT]
 
 Your wallet will prompt you to sign the transaction. This is your final chance to review before committing.
 
 ### 7. Wait for Confirmation
 
-[THIS IS WHERE AN IMAGE WOULD SHOW A PENDING TRANSACTION]
+\[THIS IS WHERE AN IMAGE WOULD SHOW A PENDING TRANSACTION]
 
 After signing, your transaction will be submitted to the blockchain. Confirmation times vary based on network congestion and the gas price you set.
 
@@ -93,37 +95,38 @@ Some DApps offer transaction batching, which combines multiple actions into a si
 ### Canceling Transactions
 
 If you submit a transaction with a low gas price during network congestion, it might remain pending for a long time. Most wallets allow you to:
-- Cancel the transaction (by sending a 0-value transaction with the same nonce)
-- Speed up the transaction (by resubmitting with a higher gas price)
+
+* Cancel the transaction (by sending a 0-value transaction with the same nonce)
+* Speed up the transaction (by resubmitting with a higher gas price)
 
 ## Security Considerations
 
-- **Verify Smart Contract Addresses**: Check that you're interacting with legitimate contracts
-- **Start with Small Amounts**: Test new DApps with minimal funds first
-- **Check for Audits**: Prioritize DApps with security audits from reputable firms
-- **Be Wary of High APYs**: Unusually high returns often indicate higher risk
-- **Understand the Risks**: DeFi involves various risks including smart contract vulnerabilities, market volatility, and liquidation
+* **Verify Smart Contract Addresses**: Check that you're interacting with legitimate contracts
+* **Start with Small Amounts**: Test new DApps with minimal funds first
+* **Check for Audits**: Prioritize DApps with security audits from reputable firms
+* **Be Wary of High APYs**: Unusually high returns often indicate higher risk
+* **Understand the Risks**: DeFi involves various risks including smart contract vulnerabilities, market volatility, and liquidation
 
 ## Common Questions
 
-**What if a transaction fails?**
+**What if a transaction fails?**\
 Failed transactions still consume gas for the computational resources used, but don't change the blockchain state. Check error messages for troubleshooting.
 
-**Do I need to connect my wallet every time?**
+**Do I need to connect my wallet every time?**\
 Most DApps will remember your connection between sessions, but you may need to reconnect after clearing browser data or using a different device.
 
-**Can DApps access all my funds once connected?**
+**Can DApps access all my funds once connected?**\
 Connecting only gives DApps the ability to request transactions—you still need to approve each transaction individually. However, token approvals can grant spending permissions, so be careful with these.
 
-**What's the difference between DApps and websites?**
+**What's the difference between DApps and websites?**\
 Traditional websites run on centralized servers and typically rely on a company to maintain them. DApps run on decentralized blockchain networks and can continue to function even if the original developers disappear.
 
-**How can I tell if a DApp is legitimate?**
+**How can I tell if a DApp is legitimate?**\
 Research the project's team, check for security audits, look for community feedback, and verify smart contract addresses against official sources.
 
 ## Related Resources
 
-- [Wallet Setup & Management](wallet-setup-and-management.md)
-- [Understanding Gas](understanding-gas.md)
-- [USDFC Stablecoin Overview](../../usdfc-stablecoin/overview.md)
-- [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview/README.md)
+* [Wallet Setup & Management](wallet-setup.md)
+* [Understanding Gas](gas-fees.md)
+* [USDFC Stablecoin Overview](../../usdfc-stablecoin/overview.md)
+* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview/)

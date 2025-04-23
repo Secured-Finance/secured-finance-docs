@@ -1,15 +1,15 @@
 ---
 description: A step-by-step guide to transferring assets between blockchain networks
-icon: 🌉
+icon: bridge-circle-check
 ---
 
 # 🌉 Bridge
 
 ## Prerequisites
 
-- A connected wallet with assets to transfer
-- Basic understanding of blockchain networks
-- Access to the Secured Finance platform
+* A connected wallet with assets to transfer
+* Basic understanding of blockchain networks
+* Access to the Secured Finance platform
 
 ## Overview
 
@@ -51,9 +51,9 @@ The [**Bridge tab**](https://app.secured.finance/bridge/) lets you easily transf
 ## Step 5: Review and Confirm
 
 1. Check the transaction details, including:
-   - Estimated time for completion
-   - Network fees
-   - Exchange rate
+   * Estimated time for completion
+   * Network fees
+   * Exchange rate
 2. Click **Swap** to initiate the transfer
 3. Confirm the transaction in your wallet
 4. Wait for the transaction to be processed
@@ -72,33 +72,36 @@ Need more detailed guidance? Here is the step-by-step Medium article: [**How to 
 
 After successfully bridging assets, you might want to:
 
-- [Deposit your assets as collateral](../../borrowing-assets.md)
-- [Start lending your assets](../../lending-assets.md)
-- [Explore trading opportunities](../trading/README.md)
+* [Deposit your assets as collateral](../../borrowing-assets.md)
+* [Start lending your assets](../../lending-assets.md)
+* [Explore trading opportunities](../trading/)
 
 ## Troubleshooting
 
 ### Transaction Pending for Too Long
 
 If your transaction has been pending for an extended period:
-- Check the network status for congestion
-- Verify the transaction status on the blockchain explorer
-- Contact support if the issue persists after 30 minutes
+
+* Check the network status for congestion
+* Verify the transaction status on the blockchain explorer
+* Contact support if the issue persists after 30 minutes
 
 ### Tokens Not Received
 
 If you don't see your tokens in the destination wallet:
-- Ensure you're connected to the correct network in your wallet
-- Check the transaction status on Axelar Explorer
-- Allow up to 15 minutes during periods of high network congestion
-- Verify that your wallet supports the token you're receiving
+
+* Ensure you're connected to the correct network in your wallet
+* Check the transaction status on Axelar Explorer
+* Allow up to 15 minutes during periods of high network congestion
+* Verify that your wallet supports the token you're receiving
 
 ### Insufficient Gas Fees
 
 If you encounter gas fee errors:
-- Ensure you have enough native tokens (ETH, FIL, etc.) to cover gas fees
-- Try reducing the amount you're swapping to leave room for gas fees
-- Consider bridging during off-peak hours when gas fees are lower
+
+* Ensure you have enough native tokens (ETH, FIL, etc.) to cover gas fees
+* Try reducing the amount you're swapping to leave room for gas fees
+* Consider bridging during off-peak hours when gas fees are lower
 
 ## Technical Details
 

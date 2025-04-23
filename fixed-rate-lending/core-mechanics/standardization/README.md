@@ -1,9 +1,10 @@
 ---
-description: Understanding the standardized components that ensure interoperability in the Fixed-Rate Lending Protocol
-icon: 🧩
+description: >-
+  Understanding the standardized components that ensure interoperability in the
+  Fixed-Rate Lending Protocol
 ---
 
-# 🧩 Standardization
+# 📐 Standardization
 
 ## Overview
 
@@ -11,18 +12,18 @@ Standardization is a core principle of the Fixed-Rate Lending Protocol that ensu
 
 ## What You'll Learn
 
-- How standardized maturities create predictable market cycles
-- How Zero-Coupon Bonds represent lending and borrowing positions
-- How standardization benefits market liquidity and user experience
-- How the protocol maintains consistency across different markets
+* How standardized maturities create predictable market cycles
+* How Zero-Coupon Bonds represent lending and borrowing positions
+* How standardization benefits market liquidity and user experience
+* How the protocol maintains consistency across different markets
 
 ## Key Components
 
-- [**Fixed Maturity**](fixed-maturity.md): Standardized time periods for lending and borrowing
-- [**Zero-Coupon Bonds**](zero-coupon-bonds.md): The standardized representation of lending and borrowing positions
+* [**Fixed Maturity**](fixed-maturity.md): Standardized time periods for lending and borrowing
+* [**Zero-Coupon Bonds**](zero-coupon-bonds.md): The standardized representation of lending and borrowing positions
 
 ## Related Resources
 
-- [Order Book System](../order-book-system/README.md)
-- [Collateralization](../collateralization.md)
-- [Advanced Topics](../../advanced-topics/README.md)
+* [Order Book System](../order-book-system/)
+* [Collateralization](../collateralization.md)
+* [Advanced Topics](../../advanced-topics/)

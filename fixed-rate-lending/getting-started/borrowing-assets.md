@@ -1,15 +1,14 @@
 ---
 description: A step-by-step guide to borrowing assets on the Fixed-Rate Lending Protocol
-icon: 💸
 ---
 
-# 💸 Borrowing Assets
+# 🏦 Borrowing Assets
 
 ## Prerequisites
 
-- A connected wallet with sufficient collateral deposited
-- Basic understanding of fixed-rate lending concepts
-- Access to the Secured Finance platform
+* A connected wallet with sufficient collateral deposited
+* Basic understanding of fixed-rate lending concepts
+* Access to the Secured Finance platform
 
 ## Overview
 
@@ -49,11 +48,11 @@ Before borrowing, you need to deposit collateral to secure your loan.
 1. Select "Borrow" in the order type section
 2. Choose between "Market Order" (immediate execution at current market price) or "Limit Order" (execution at your specified price)
 3. For a Limit Order:
-   - Set your desired interest rate (APR)
-   - Enter the amount you want to borrow
+   * Set your desired interest rate (APR)
+   * Enter the amount you want to borrow
 4. For a Market Order:
-   - Enter the amount you want to borrow
-   - Review the current market rate
+   * Enter the amount you want to borrow
+   * Review the current market rate
 5. Click "Place Order" to submit your borrow request
 
 ![Place Borrow Order](../../.gitbook/assets/place-order.png)
@@ -80,29 +79,32 @@ After successfully borrowing assets:
 
 Now that you've successfully borrowed assets, you might want to:
 
-- [Learn how to manage your positions](managing-positions.md)
-- [Explore auto-rolling features](../advanced-topics/market-dynamics/auto-rolling/README.md) to extend your loan term
-- [Understand liquidation risks](../core-mechanics/liquidation/README.md) to protect your collateral
+* [Learn how to manage your positions](managing-positions.md)
+* [Explore auto-rolling features](../advanced-topics/market-dynamics/auto-rolling/) to extend your loan term
+* [Understand liquidation risks](../core-mechanics/liquidation/) to protect your collateral
 
 ## Troubleshooting
 
 ### Order Not Executing
 
 If your limit order isn't being executed:
-- Your specified interest rate may not be competitive with current market rates
-- There might be insufficient liquidity in the orderbook
-- Try adjusting your rate or switching to a market order for immediate execution
+
+* Your specified interest rate may not be competitive with current market rates
+* There might be insufficient liquidity in the orderbook
+* Try adjusting your rate or switching to a market order for immediate execution
 
 ### Insufficient Collateral Error
 
 If you receive an "Insufficient Collateral" error:
-- Your collateral value may be too low for the amount you're trying to borrow
-- Deposit additional collateral or reduce your borrow amount
-- Check the current collateralization requirements for your selected asset
+
+* Your collateral value may be too low for the amount you're trying to borrow
+* Deposit additional collateral or reduce your borrow amount
+* Check the current collateralization requirements for your selected asset
 
 ### Transaction Failing
 
 If your transaction is failing:
-- Ensure you have enough native tokens (ETH, MATIC, etc.) to cover gas fees
-- Check that you're not exceeding your borrowing capacity
-- Try refreshing the page and attempting the transaction again
+
+* Ensure you have enough native tokens (ETH, MATIC, etc.) to cover gas fees
+* Check that you're not exceeding your borrowing capacity
+* Try refreshing the page and attempting the transaction again

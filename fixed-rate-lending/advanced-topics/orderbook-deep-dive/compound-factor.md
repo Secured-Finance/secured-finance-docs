@@ -1,6 +1,7 @@
 ---
-description: Understanding how Compound Factors bridge Genesis and Future Values in the Fixed-Rate Lending Protocol
-icon: 🔄
+description: >-
+  Understanding how Compound Factors bridge Genesis and Future Values in the
+  Fixed-Rate Lending Protocol
 ---
 
 # 🔄 Compound Factor
@@ -52,7 +53,7 @@ x = GV_{n} \times (\frac{BCF_{n+a}}{BCF_{n}} \times \frac{LCF_{n}}{LCF_{n+a}} - 
 $$
 
 _n: Number of Rolls_\
-_a: Additional Roll periods_
+&#xNAN;_&#x61;: Additional Roll periods_
 
 In essence, the GV serves as a reflection of your role (lender or borrower) and the changes in your obligations over time within the protocol.
 
@@ -70,14 +71,14 @@ _n: Number of Rolls_
 
 ## Key Parameters
 
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Lending Compound Factor (LCF) | Factor used to calculate lender's future value | Calculated per formula |
-| Borrowing Compound Factor (BCF) | Factor used to calculate borrower's future obligations | Calculated per formula |
-| AutoRollPrice | Price at which auto-roll occurs | Determined by Price Waterfall Mechanism |
-| AutoRollFeeRate | Fee rate applied during auto-roll | Protocol-defined percentage |
-| Genesis Value (GV) | Initial value of an asset or obligation | Positive for lenders, negative for borrowers |
-| Future Value (FV) | Projected value of an asset or obligation | Calculated as GV × LCF |
+| Parameter                       | Description                                            | Value                                        |
+| ------------------------------- | ------------------------------------------------------ | -------------------------------------------- |
+| Lending Compound Factor (LCF)   | Factor used to calculate lender's future value         | Calculated per formula                       |
+| Borrowing Compound Factor (BCF) | Factor used to calculate borrower's future obligations | Calculated per formula                       |
+| AutoRollPrice                   | Price at which auto-roll occurs                        | Determined by Price Waterfall Mechanism      |
+| AutoRollFeeRate                 | Fee rate applied during auto-roll                      | Protocol-defined percentage                  |
+| Genesis Value (GV)              | Initial value of an asset or obligation                | Positive for lenders, negative for borrowers |
+| Future Value (FV)               | Projected value of an asset or obligation              | Calculated as GV × LCF                       |
 
 ## Examples
 
@@ -86,87 +87,89 @@ _n: Number of Rolls_
 Let's calculate how Compound Factors change after an Auto-Roll event:
 
 1. Initial values before Auto-Roll:
-   - Lending Compound Factor (LCF₀) = 1.05
-   - Borrowing Compound Factor (BCF₀) = 1.07
-   - Auto-Roll Price = 98.00
-   - Auto-Roll Fee Rate = 0.001 (0.1%)
+   * Lending Compound Factor (LCF₀) = 1.05
+   * Borrowing Compound Factor (BCF₀) = 1.07
+   * Auto-Roll Price = 98.00
+   * Auto-Roll Fee Rate = 0.001 (0.1%)
+2.  Calculate the new Lending Compound Factor:
 
-2. Calculate the new Lending Compound Factor:
-   ```
-   LCF₁ = LCF₀ × (1/AutoRollPrice₀ - AutoRollFeeRate)
-   LCF₁ = 1.05 × (1/0.98 - 0.001)
-   LCF₁ = 1.05 × (1.0204 - 0.001)
-   LCF₁ = 1.05 × 1.0194
-   LCF₁ = 1.0704
-   ```
+    ```
+    LCF₁ = LCF₀ × (1/AutoRollPrice₀ - AutoRollFeeRate)
+    LCF₁ = 1.05 × (1/0.98 - 0.001)
+    LCF₁ = 1.05 × (1.0204 - 0.001)
+    LCF₁ = 1.05 × 1.0194
+    LCF₁ = 1.0704
+    ```
+3.  Calculate the new Borrowing Compound Factor:
 
-3. Calculate the new Borrowing Compound Factor:
-   ```
-   BCF₁ = BCF₀ × (1/AutoRollPrice₀ + AutoRollFeeRate)
-   BCF₁ = 1.07 × (1/0.98 + 0.001)
-   BCF₁ = 1.07 × (1.0204 + 0.001)
-   BCF₁ = 1.07 × 1.0214
-   BCF₁ = 1.0929
-   ```
-
+    ```
+    BCF₁ = BCF₀ × (1/AutoRollPrice₀ + AutoRollFeeRate)
+    BCF₁ = 1.07 × (1/0.98 + 0.001)
+    BCF₁ = 1.07 × (1.0204 + 0.001)
+    BCF₁ = 1.07 × 1.0214
+    BCF₁ = 1.0929
+    ```
 4. The updated Compound Factors after Auto-Roll are:
-   - LCF₁ = 1.0704
-   - BCF₁ = 1.0929
+   * LCF₁ = 1.0704
+   * BCF₁ = 1.0929
 
 ### Example 2: Calculating Genesis Value for a Borrower After Multiple Rolls
 
 Let's calculate how a borrower's Genesis Value changes after multiple rolls:
 
 1. Initial values:
-   - Initial Genesis Value (GV₀) = -1000 (negative because it's a borrower)
-   - Initial Lending Compound Factor (LCF₀) = 1.00
-   - Initial Borrowing Compound Factor (BCF₀) = 1.00
-   - After 2 rolls: LCF₂ = 1.06, BCF₂ = 1.08
+   * Initial Genesis Value (GV₀) = -1000 (negative because it's a borrower)
+   * Initial Lending Compound Factor (LCF₀) = 1.00
+   * Initial Borrowing Compound Factor (BCF₀) = 1.00
+   * After 2 rolls: LCF₂ = 1.06, BCF₂ = 1.08
+2.  Calculate the adjustment factor x:
 
-2. Calculate the adjustment factor x:
-   ```
-   x = GV₀ × (BCF₂/BCF₀ × LCF₀/LCF₂ - 1)
-   x = -1000 × (1.08/1.00 × 1.00/1.06 - 1)
-   x = -1000 × (1.08 × 0.9434 - 1)
-   x = -1000 × (1.0189 - 1)
-   x = -1000 × 0.0189
-   x = -18.9
-   ```
+    ```
+    x = GV₀ × (BCF₂/BCF₀ × LCF₀/LCF₂ - 1)
+    x = -1000 × (1.08/1.00 × 1.00/1.06 - 1)
+    x = -1000 × (1.08 × 0.9434 - 1)
+    x = -1000 × (1.0189 - 1)
+    x = -1000 × 0.0189
+    x = -18.9
+    ```
+3.  Calculate the new Genesis Value:
 
-3. Calculate the new Genesis Value:
-   ```
-   GV₂ = GV₀ + x
-   GV₂ = -1000 + (-18.9)
-   GV₂ = -1018.9
-   ```
-
+    ```
+    GV₂ = GV₀ + x
+    GV₂ = -1000 + (-18.9)
+    GV₂ = -1018.9
+    ```
 4. The borrower's Genesis Value has increased in magnitude to -1018.9, reflecting the increased obligation due to interest accrual.
 
 ### Example 3: Calculating Future Value Using Compound Factors
 
 Let's calculate the Future Value for both a lender and a borrower:
 
-1. For a lender with GV = 500 and current LCF = 1.12:
-   ```
-   FV = GV × LCF
-   FV = 500 × 1.12
-   FV = 560
-   ```
-   The lender's Future Value is 560, representing their initial investment plus accrued interest.
+1.  For a lender with GV = 500 and current LCF = 1.12:
 
-2. For a borrower with GV = -800 and current LCF = 1.12:
-   ```
-   FV = GV × LCF
-   FV = -800 × 1.12
-   FV = -896
-   ```
-   The borrower's Future Value is -896, representing their debt obligation including accrued interest.
+    ```
+    FV = GV × LCF
+    FV = 500 × 1.12
+    FV = 560
+    ```
+
+    The lender's Future Value is 560, representing their initial investment plus accrued interest.
+2.  For a borrower with GV = -800 and current LCF = 1.12:
+
+    ```
+    FV = GV × LCF
+    FV = -800 × 1.12
+    FV = -896
+    ```
+
+    The borrower's Future Value is -896, representing their debt obligation including accrued interest.
 
 ## FAQ
 
 ### How do Compound Factors differ from traditional interest rates?
 
 Compound Factors differ from traditional interest rates in several ways:
+
 1. **Cumulative Nature**: Compound Factors accumulate over time, representing the total growth factor since inception
 2. **Protocol-Specific**: They are specifically designed for the Fixed-Rate Lending Protocol's auto-rolling mechanism
 3. **Dual Factors**: The protocol maintains separate factors for lenders and borrowers to account for fees
@@ -176,6 +179,7 @@ Compound Factors differ from traditional interest rates in several ways:
 ### Why are there separate Compound Factors for lenders and borrowers?
 
 Separate Compound Factors exist for several reasons:
+
 1. **Fee Incorporation**: The difference accounts for protocol fees that create a spread between lending and borrowing rates
 2. **Risk Management**: The spread helps cover potential defaults and maintain protocol solvency
 3. **Protocol Revenue**: Part of the spread contributes to protocol revenue and sustainability
@@ -185,6 +189,7 @@ Separate Compound Factors exist for several reasons:
 ### How do Compound Factors change during market stress?
 
 During market stress, Compound Factors may be affected in these ways:
+
 1. **Auto-Roll Price Impact**: Market volatility can lead to higher or lower Auto-Roll prices, affecting the Compound Factor calculation
 2. **Fee Adjustments**: The protocol might adjust Auto-Roll fee rates in response to market conditions
 3. **Governance Intervention**: In extreme cases, governance might implement emergency measures affecting Compound Factors
@@ -194,6 +199,7 @@ During market stress, Compound Factors may be affected in these ways:
 ### What happens to Compound Factors if I enter the market between Auto-Rolls?
 
 When entering the market between Auto-Rolls:
+
 1. **Immediate Application**: The current Compound Factors apply to your position immediately
 2. **Pro-Rated Interest**: You effectively receive or pay interest based on the time remaining until the next Auto-Roll
 3. **Genesis Value Calculation**: Your Genesis Value is calculated based on the current market price and Compound Factors
@@ -203,6 +209,7 @@ When entering the market between Auto-Rolls:
 ### How do Compound Factors ensure fair interest distribution?
 
 Compound Factors ensure fair interest distribution through:
+
 1. **Transparent Calculation**: The formula is transparent and applied consistently to all participants
 2. **Market-Driven Rates**: Auto-Roll prices are determined by market forces, ensuring rates reflect supply and demand
 3. **Continuous Tracking**: The protocol continuously tracks and updates Compound Factors
@@ -211,7 +218,7 @@ Compound Factors ensure fair interest distribution through:
 
 ## Related Resources
 
-- [Orderbook Deep Dive](README.md)
-- [Genesis Value](genesis-value.md)
-- [Orderbook Rotation](orderbook-rotation.md)
-- [Auto-Rolling](../../market-dynamics/auto-rolling/README.md)
+* [Orderbook Deep Dive](./)
+* [Genesis Value](genesis-value.md)
+* [Orderbook Rotation](orderbook-rotation.md)
+* [Auto-Rolling](../../market-dynamics/auto-rolling/)

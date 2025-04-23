@@ -1,9 +1,8 @@
 ---
 description: Understanding the role of liquidators in maintaining protocol stability
-icon: 🤖
 ---
 
-# 🤖 Liquidators
+# 👮‍♂️ Liquidators
 
 ## Overview
 
@@ -19,12 +18,12 @@ For more technical details, please consult '[How Liquidation Works](how-liquidat
 
 ## Key Parameters
 
-| Parameter | Description | Value |
-|-----------|-------------|-------|
-| Liquidation Threshold | The LTV ratio at which a position becomes eligible for liquidation | 80% |
-| Liquidation Penalty | The discount applied to collateral during liquidation | 5% |
-| Minimum Liquidation Size | The smallest position that can be liquidated | None |
-| Liquidation Cooldown | Time required between liquidations of the same position | None |
+| Parameter                | Description                                                        | Value |
+| ------------------------ | ------------------------------------------------------------------ | ----- |
+| Liquidation Threshold    | The LTV ratio at which a position becomes eligible for liquidation | 80%   |
+| Liquidation Penalty      | The discount applied to collateral during liquidation              | 5%    |
+| Minimum Liquidation Size | The smallest position that can be liquidated                       | None  |
+| Liquidation Cooldown     | Time required between liquidations of the same position            | None  |
 
 ## Examples
 
@@ -91,6 +90,7 @@ Liquidators profit from the liquidation penalty (currently 5%) applied to the li
 ### What tools do I need to become an effective liquidator?
 
 To be an effective liquidator, you typically need:
+
 1. A monitoring system to track positions close to liquidation threshold
 2. Sufficient capital to cover the debt you're liquidating
 3. Automation tools or bots to execute liquidations quickly
@@ -99,6 +99,7 @@ To be an effective liquidator, you typically need:
 ### Are there any risks involved in being a liquidator?
 
 Yes, there are several risks:
+
 1. **Price Volatility**: Rapid price changes can affect the value of the collateral you receive
 2. **Gas Costs**: High gas prices can reduce or eliminate profitability
 3. **Competition**: Other liquidators may compete for the same liquidation opportunities
@@ -110,13 +111,12 @@ Speed is crucial in liquidations. Once a position crosses the liquidation thresh
 
 ## Risks and Rewards
 
-Being a Liquidator comes with both risks and rewards. The main risk is the potential price volatility of the assets involved in the liquidation process. The value of the collateral may fluctuate rapidly, affecting the profitability of the liquidation.&#x20;
+Being a Liquidator comes with both risks and rewards. The main risk is the potential price volatility of the assets involved in the liquidation process. The value of the collateral may fluctuate rapidly, affecting the profitability of the liquidation.
 
 On the other hand, the rewards for successful liquidations can be lucrative. Liquidators stand to receive a portion of the discounted collateral acquired during the liquidation. This reward serves as an incentive for participants to actively engage in the liquidation process and contribute to the protocol's stability.
 
 ## Related Topics
 
-- [Liquidation Process](../README.md)
-- [How Liquidation Works](how-liquidation-works.md)
-- [Mark to Market](../mark-to-market.md)
-
+* [Liquidation Process](../)
+* [How Liquidation Works](how-liquidation-works.md)
+* [Mark to Market](../mark-to-market.md)

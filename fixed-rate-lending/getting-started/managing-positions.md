@@ -1,15 +1,16 @@
 ---
-description: A step-by-step guide to managing your positions on the Fixed-Rate Lending Protocol
-icon: 📊
+description: >-
+  A step-by-step guide to managing your positions on the Fixed-Rate Lending
+  Protocol
 ---
 
-# 📊 Managing Positions
+# 📈 Managing Positions
 
 ## Prerequisites
 
-- Active lending or borrowing positions on the Secured Finance platform
-- A connected wallet
-- Basic understanding of fixed-rate lending concepts
+* Active lending or borrowing positions on the Secured Finance platform
+* A connected wallet
+* Basic understanding of fixed-rate lending concepts
 
 ## Overview
 
@@ -21,11 +22,11 @@ Managing your positions effectively is crucial for maximizing returns and minimi
 2. Connect your wallet if not already connected
 3. Go to the "Portfolio" tab to see all your active positions
 4. Review your positions, including:
-   - Asset type
-   - Position size
-   - Maturity date
-   - Current value
-   - Profit/loss
+   * Asset type
+   * Position size
+   * Maturity date
+   * Current value
+   * Profit/loss
 
 ![Portfolio View](../../.gitbook/assets/portfolio-view.png)
 
@@ -110,23 +111,25 @@ There is no automatic claim system. You must manually unwind your position to ex
 
 After mastering position management, you might want to:
 
-- [Explore advanced trading strategies](../advanced-topics/market-dynamics/README.md)
-- [Learn about liquidation mechanics](../core-mechanics/liquidation/README.md) to better manage risk
-- [Understand Zero-Coupon Bond tokenization](../core-mechanics/tokenization.md) for additional opportunities
+* [Explore advanced trading strategies](../advanced-topics/market-dynamics/)
+* [Learn about liquidation mechanics](../core-mechanics/liquidation/) to better manage risk
+* [Understand Zero-Coupon Bond tokenization](../core-mechanics/tokenization.md) for additional opportunities
 
 ## Troubleshooting
 
 ### Unwind Order Not Executing
 
 If your unwind order isn't being executed:
-- There might be insufficient liquidity in the orderbook
-- Your unwind price might not be competitive with current market rates
-- Try using a market unwind instead of a limit unwind for immediate execution
+
+* There might be insufficient liquidity in the orderbook
+* Your unwind price might not be competitive with current market rates
+* Try using a market unwind instead of a limit unwind for immediate execution
 
 ### Position Not Showing Updated Values
 
 If your position values aren't updating:
-- Refresh the page to get the latest data
-- Check that your wallet is still connected
-- Verify that the blockchain network is functioning normally
-- Contact support if the issue persists
+
+* Refresh the page to get the latest data
+* Check that your wallet is still connected
+* Verify that the blockchain network is functioning normally
+* Contact support if the issue persists

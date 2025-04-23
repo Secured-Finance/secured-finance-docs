@@ -2,7 +2,7 @@
 description: Understanding transaction fees in blockchain networks
 ---
 
-# Gas Fees
+# ⛽ Gas Fees
 
 ## Overview
 
@@ -22,9 +22,9 @@ On the Filecoin network, which Secured Finance uses, gas works similarly to Ethe
 
 The gas fee system consists of several components:
 
-- **Gas Units**: Each operation in a transaction requires a specific amount of computational work measured in gas units
-- **Gas Limit**: The maximum amount of computational work you're willing to pay for
-- **Gas Price**: How much you're willing to pay per unit of gas (typically in gwei, where 1 gwei = 0.000000001 ETH or attoFIL for Filecoin)
+* **Gas Units**: Each operation in a transaction requires a specific amount of computational work measured in gas units
+* **Gas Limit**: The maximum amount of computational work you're willing to pay for
+* **Gas Price**: How much you're willing to pay per unit of gas (typically in gwei, where 1 gwei = 0.000000001 ETH or attoFIL for Filecoin)
 
 Your total transaction fee is calculated as:
 
@@ -38,18 +38,18 @@ Where Gas Used is the actual amount of gas consumed by your transaction (which c
 
 Different blockchain networks implement various fee mechanisms:
 
-- **Ethereum's EIP-1559**: Includes a base fee that gets burned and a priority fee (tip) that goes to validators
-- **Filecoin's Gas Model**: Uses a similar approach with base fees adjusted based on network congestion
+* **Ethereum's EIP-1559**: Includes a base fee that gets burned and a priority fee (tip) that goes to validators
+* **Filecoin's Gas Model**: Uses a similar approach with base fees adjusted based on network congestion
 
 ## Key Parameters
 
-| Parameter | Description | Recommendation |
-|-----------|-------------|---------------|
-| Gas Limit | Maximum computational units allowed | Set 10-20% higher than estimated requirement |
-| Gas Price | Cost per unit of gas | Check current network conditions |
-| Priority Fee | Optional tip to validators | Higher during network congestion |
-| Base Fee | Network-determined minimum fee | Automatically set by the network based on demand |
-| Max Fee | Maximum total fee willing to pay | Set based on urgency of transaction |
+| Parameter    | Description                         | Recommendation                                   |
+| ------------ | ----------------------------------- | ------------------------------------------------ |
+| Gas Limit    | Maximum computational units allowed | Set 10-20% higher than estimated requirement     |
+| Gas Price    | Cost per unit of gas                | Check current network conditions                 |
+| Priority Fee | Optional tip to validators          | Higher during network congestion                 |
+| Base Fee     | Network-determined minimum fee      | Automatically set by the network based on demand |
+| Max Fee      | Maximum total fee willing to pay    | Set based on urgency of transaction              |
 
 ## Examples
 
@@ -65,41 +65,43 @@ $$
 
 Interacting with DeFi protocols like Secured Finance can require significantly more gas:
 
-- Approving a token: ~45,000 gas units
-- Swapping tokens: ~100,000-200,000 gas units
-- Providing liquidity: ~150,000-300,000 gas units
+* Approving a token: \~45,000 gas units
+* Swapping tokens: \~100,000-200,000 gas units
+* Providing liquidity: \~150,000-300,000 gas units
 
 ## Common Questions
 
-**Why do gas prices fluctuate?**
+**Why do gas prices fluctuate?**\
 Gas prices vary based on network demand. During periods of high activity (NFT drops, market volatility), users compete for limited block space by offering higher gas prices.
 
-**What happens if I set my gas limit too low?**
+**What happens if I set my gas limit too low?**\
 If your gas limit is too low, your transaction will fail when it runs out of gas, but you'll still be charged for the computational resources used up to that point.
 
-**Where can I check the current gas price?**
+**Where can I check the current gas price?**\
 You can check current gas prices on various websites like Etherscan.io, Ethgas.watch, or GasNow for Ethereum, and Filfox.info for Filecoin. Many wallets also display current gas prices directly in their interfaces.
 
-**How do I convert gas costs to USD value?**
+**How do I convert gas costs to USD value?**\
 To calculate the USD value of gas fees:
+
 1. Calculate the fee in the native token: Gas Units × Gas Price = Fee in ETH/FIL
-2. Multiply by the current token price: Fee in ETH/FIL × Current Price in USD = Fee in USD
-For example, if gas costs 0.002 ETH and ETH is $3,000, the fee would be $6.
+2. Multiply by the current token price: Fee in ETH/FIL × Current Price in USD = Fee in USD\
+   For example, if gas costs 0.002 ETH and ETH is $3,000, the fee would be $6.
 
 **How can I reduce gas costs?**
-- Execute transactions during periods of lower network activity
-- Use gas price estimator tools to avoid overpaying
-- Batch multiple operations into a single transaction when possible
-- Consider layer-2 solutions or sidechains for frequent transactions
 
-**Is gas refundable?**
+* Execute transactions during periods of lower network activity
+* Use gas price estimator tools to avoid overpaying
+* Batch multiple operations into a single transaction when possible
+* Consider layer-2 solutions or sidechains for frequent transactions
+
+**Is gas refundable?**\
 You're only charged for the actual gas used, even if you set a higher gas limit. However, failed transactions still consume gas and incur fees without completing the intended action.
 
-**Do all blockchains use gas?**
+**Do all blockchains use gas?**\
 Not all blockchains use the exact gas model, but most have some form of transaction fee mechanism to prevent spam and allocate resources.
 
 ## Related Resources
 
-- [Wallet Setup & Management](wallet-setup-and-management.md)
-- [Interacting with DApps](interacting-with-dapps.md)
-- [DeFi vs CeFi](defi-vs-cefi.md)
+* [Wallet Setup & Management](wallet-setup.md)
+* [Interacting with DApps](dapps.md)
+* [DeFi vs CeFi](defi-vs-cefi.md)

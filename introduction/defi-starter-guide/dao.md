@@ -2,7 +2,7 @@
 description: Understanding Decentralized Autonomous Organizations
 ---
 
-# DAOs
+# 🏛️ DAOs
 
 ## Overview
 
@@ -25,68 +25,72 @@ This process creates a self-governing system where decisions are made collective
 Most mature DeFi protocols operate with a three-part organizational structure:
 
 #### DAO
-- **Purpose**: Community governance and protocol direction
-- **Structure**: Decentralized collection of token holders
-- **Legal Status**: Often unincorporated association or DAO LLC in some jurisdictions
-- **Decision Making**: Token-weighted voting on major protocol changes
+
+* **Purpose**: Community governance and protocol direction
+* **Structure**: Decentralized collection of token holders
+* **Legal Status**: Often unincorporated association or DAO LLC in some jurisdictions
+* **Decision Making**: Token-weighted voting on major protocol changes
 
 #### Foundation
-- **Purpose**: Legal entity that supports the DAO
-- **Structure**: Non-profit organization with board of directors or supervisors
-- **Legal Status**: Typically incorporated in crypto-friendly jurisdictions
-- **Functions**: Treasury management, grants distribution, legal representation, regulatory compliance
+
+* **Purpose**: Legal entity that supports the DAO
+* **Structure**: Non-profit organization with board of directors or supervisors
+* **Legal Status**: Typically incorporated in crypto-friendly jurisdictions
+* **Functions**: Treasury management, grants distribution, legal representation, regulatory compliance
 
 #### DevCo (Development Company)
-- **Purpose**: Technical development of the protocol
-- **Structure**: For-profit company with traditional corporate structure
-- **Legal Status**: Incorporated business entity
-- **Functions**: Code development, protocol maintenance, implementation of DAO-approved updates
+
+* **Purpose**: Technical development of the protocol
+* **Structure**: For-profit company with traditional corporate structure
+* **Legal Status**: Incorporated business entity
+* **Functions**: Code development, protocol maintenance, implementation of DAO-approved updates
 
 This separation of concerns helps manage legal and regulatory risks while ensuring the protocol can continue to develop in a decentralized manner.
 
 ## Key Differences: DAO vs Foundation vs DevCo
 
-| Aspect | DAO | Foundation | DevCo |
-|--------|-----|------------|-------|
-| Governance | Community-driven through token voting | Board-directed with community input | Corporate management |
-| Decision Speed | Slower (days to weeks) | Medium (days) | Faster (hours to days) |
-| Transparency | Fully transparent on-chain | Partially transparent | Often private |
-| Risk Exposure | Distributed across token holders | Limited liability | Corporate liability |
-| Funding Source | Protocol fees, token reserves | DAO treasury grants | Service contracts, equity |
-| Primary Focus | Strategic direction, treasury allocation | Legal compliance, ecosystem growth | Technical implementation |
+| Aspect         | DAO                                      | Foundation                          | DevCo                     |
+| -------------- | ---------------------------------------- | ----------------------------------- | ------------------------- |
+| Governance     | Community-driven through token voting    | Board-directed with community input | Corporate management      |
+| Decision Speed | Slower (days to weeks)                   | Medium (days)                       | Faster (hours to days)    |
+| Transparency   | Fully transparent on-chain               | Partially transparent               | Often private             |
+| Risk Exposure  | Distributed across token holders         | Limited liability                   | Corporate liability       |
+| Funding Source | Protocol fees, token reserves            | DAO treasury grants                 | Service contracts, equity |
+| Primary Focus  | Strategic direction, treasury allocation | Legal compliance, ecosystem growth  | Technical implementation  |
 
 ## Examples
 
 ### DeFi Protocol DAOs
-- MakerDAO: Governs the DAI stablecoin system
-- Uniswap: Community governance of the decentralized exchange protocol
-- Aave: Manages parameters and upgrades for the lending protocol
+
+* MakerDAO: Governs the DAI stablecoin system
+* Uniswap: Community governance of the decentralized exchange protocol
+* Aave: Manages parameters and upgrades for the lending protocol
 
 ### Investment DAOs
-- BitDAO: One of the largest DAOs focused on supporting DeFi development
-- FlamingoDAO: Collective focused on NFT investments
-- MetaCartel: Funds early-stage decentralized applications
+
+* BitDAO: One of the largest DAOs focused on supporting DeFi development
+* FlamingoDAO: Collective focused on NFT investments
+* MetaCartel: Funds early-stage decentralized applications
 
 ## Common Questions
 
-**How do I join a DAO?**
+**How do I join a DAO?**\
 Typically, you join a DAO by acquiring its governance tokens, either through direct purchase on exchanges or by contributing to the project in some way.
 
-**What rights do DAO members have?**
+**What rights do DAO members have?**\
 Members can typically propose changes, vote on proposals, and receive a share of any profits generated by the DAO, depending on its structure.
 
-**Are DAOs legally recognized?**
+**Are DAOs legally recognized?**\
 Legal recognition varies by jurisdiction. Some regions like Wyoming in the US have created legal frameworks for DAOs, while in most places they operate in a regulatory gray area.
 
-**What happens if a DAO is hacked?**
+**What happens if a DAO is hacked?**\
 Unlike traditional organizations, DAOs may have limited recourse if exploited. The immutable nature of blockchain means that hacks can be difficult to reverse without community consensus for extraordinary measures.
 
-**Can DAOs replace traditional companies?**
+**Can DAOs replace traditional companies?**\
 While DAOs excel at certain functions like treasury management and open-source development, they currently face challenges in areas requiring rapid decision-making or confidentiality.
 
 ## Related Resources
 
-- [DeFi vs CeFi](defi-vs-cefi.md)
-- [Interacting with DApps](interacting-with-dapps.md)
-- [Wallet Setup & Management](wallet-setup-and-management.md)
-
+* [DeFi vs CeFi](defi-vs-cefi.md)
+* [Interacting with DApps](dapps.md)
+* [Wallet Setup & Management](wallet-setup.md)
