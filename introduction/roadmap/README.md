@@ -2,7 +2,7 @@
 description: The Secured Finance Roadmap
 ---
 
-# 🏁 Roadmap 2025
+# 🏁 Roadmap
 
 {% hint style="info" %}
 Token Launch timing will be TBD
@@ -17,7 +17,7 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] USDFC Stablecoin Official Launch on Filecoin Mainnet
-* [ ] USDFC Stablecoin Beta Launch on Filecoin Mainnet
+* [x] USDFC Stablecoin Beta Launch on Filecoin Mainnet
 
 ### 2025 Q1
 
