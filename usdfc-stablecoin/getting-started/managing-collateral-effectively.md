@@ -6,7 +6,7 @@ description: Learn how to manage your collateral to maintain a healthy Trove
 
 ## Prerequisites
 - An active Trove with FIL collateral
-- Access to the [USDFC application](https://usdfc.secured.finance/)
+- Access to the [USDFC application](https://app.usdfc.net)
 - Connected wallet with FIL for additional collateral (if adding)
 
 ## Overview
@@ -15,9 +15,9 @@ Managing your collateral effectively is crucial for maintaining a healthy Trove 
 ## Step 1: Access Your Trove
 First, you need to access your existing Trove in the USDFC application.
 
-1. Navigate to the [USDFC application](https://usdfc.secured.finance/)
+1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Go to the "Trove" or "My Position" section
+3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current collateral amount, debt, and collateral ratio
 
 [Image: Screenshot of the Trove dashboard showing current position details]
@@ -25,7 +25,7 @@ First, you need to access your existing Trove in the USDFC application.
 ## Step 2: Select "Adjust Trove"
 To manage your collateral, you need to adjust your Trove.
 
-1. Click on the "Adjust Trove" or "Manage" button
+1. Click on the "Adjust" button
 2. This will open the Trove adjustment interface
 
 [Image: Screenshot highlighting the "Adjust Trove" button]
@@ -34,18 +34,18 @@ To manage your collateral, you need to adjust your Trove.
 Now you can add more collateral or withdraw some of your existing collateral.
 
 ### To Add Collateral:
-1. In the adjustment interface, locate the "Add Collateral" section
-2. Enter the amount of FIL you want to add
+1. In the adjustment interface, locate the "Collateral" input field
+2. Increase the amount of FIL from your current value
 3. The system will automatically calculate your new collateral ratio
 4. Adding collateral increases your collateral ratio and reduces liquidation risk
 
 [Image: Screenshot of the interface for adding collateral]
 
 ### To Withdraw Collateral:
-1. In the adjustment interface, locate the "Withdraw Collateral" section
-2. Enter the amount of FIL you want to withdraw
+1. In the adjustment interface, locate the "Collateral" input field
+2. Decrease the amount of FIL from your current value
 3. The system will automatically calculate your new collateral ratio
-4. Ensure your new collateral ratio remains above the minimum required (typically 110%)
+4. Ensure your new collateral ratio remains above the minimum required (110%)
 
 [Image: Screenshot of the interface for withdrawing collateral]
 
@@ -62,7 +62,7 @@ Before confirming, review all transaction details carefully.
 ## Step 5: Confirm and Execute
 Once you're satisfied with the details, you can proceed with the adjustment.
 
-1. Click the "Confirm" or "Adjust Trove" button
+1. Click the "Confirm" button
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 

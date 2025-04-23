@@ -6,7 +6,7 @@ description: Learn how to deposit USDFC into the Stability Pool and earn rewards
 
 ## Prerequisites
 - USDFC tokens in your wallet
-- Access to the [USDFC application](https://usdfc.secured.finance/)
+- Access to the [USDFC application](https://app.usdfc.net)
 - Connected wallet with enough FIL for gas fees
 
 ## Overview
@@ -15,9 +15,9 @@ The Stability Pool is a key component of the USDFC protocol that helps maintain 
 ## Step 1: Access the Stability Pool
 First, you need to navigate to the Stability Pool section in the USDFC application.
 
-1. Navigate to the [USDFC application](https://usdfc.secured.finance/)
+1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Locate and click on the "Stability Pool" option in the navigation menu
+3. Click on the "Stability Pool" button in the USDFC Dashboard
 
 [Image: Screenshot of the USDFC application with the Stability Pool option highlighted]
 
@@ -50,16 +50,14 @@ After depositing, you can monitor your position and earned rewards.
 
 [Image: Screenshot showing deposit and rewards information]
 
-## Step 5: Claim Rewards (When Available)
-When you've earned rewards, you can claim them.
+## Step 5: Rewards Distribution
+When liquidations occur, rewards are automatically distributed to your wallet.
 
-1. Locate the "Claim Rewards" or similar button in the Stability Pool dashboard
-2. Click the button to claim your earned FIL rewards
-3. Confirm the transaction in your wallet
-4. Wait for the transaction to be processed
-5. Verify that the FIL rewards have been added to your wallet
+1. Rewards are automatically sent to your wallet when liquidations happen
+2. No manual claiming is required
+3. You can view your accumulated rewards in the Stability Pool dashboard
 
-[Image: Screenshot highlighting the claim rewards functionality]
+[Image: Screenshot showing rewards distribution information]
 
 ## Step 6: Withdraw USDFC (When Desired)
 You can withdraw your USDFC from the Stability Pool at any time.

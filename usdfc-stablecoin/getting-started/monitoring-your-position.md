@@ -6,7 +6,7 @@ description: Learn how to track and manage your Trove's health
 
 ## Prerequisites
 - An active Trove with FIL collateral
-- Access to the [USDFC application](https://usdfc.secured.finance/)
+- Access to the [USDFC application](https://app.usdfc.net)
 - Basic understanding of collateral ratios and liquidation risk
 
 ## Overview
@@ -15,9 +15,9 @@ Monitoring your position is essential for maintaining a healthy Trove and avoidi
 ## Step 1: Access Your Trove Dashboard
 The Trove dashboard is your primary tool for monitoring your position.
 
-1. Navigate to the [USDFC application](https://usdfc.secured.finance/)
+1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Go to the "Trove" or "My Position" section
+3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current Trove details
 
 [Image: Screenshot of the Trove dashboard showing key metrics]

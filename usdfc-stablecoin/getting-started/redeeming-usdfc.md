@@ -6,7 +6,7 @@ description: Learn how to redeem your USDFC for FIL collateral
 
 ## Prerequisites
 - USDFC tokens in your wallet
-- Access to the [USDFC application](https://usdfc.secured.finance/)
+- Access to the [USDFC application](https://app.usdfc.net)
 - Connected wallet with enough FIL for gas fees
 - Understanding of redemption mechanics and fees
 
@@ -16,9 +16,9 @@ Redemption is a process that allows you to exchange your USDFC for FIL collatera
 ## Step 1: Access the Redemption Feature
 First, you need to navigate to the redemption section in the USDFC application.
 
-1. Navigate to the [USDFC application](https://usdfc.secured.finance/)
+1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Locate and click on the "Redeem" option in the navigation menu
+3. Click on the "Redeem" button in the USDFC Dashboard
 
 [Image: Screenshot of the USDFC application with the Redeem option highlighted]
 
@@ -54,7 +54,7 @@ Before confirming, review all transaction details carefully.
 ## Step 5: Confirm and Execute Redemption
 Once you're satisfied with the details, you can proceed with the redemption.
 
-1. Click the "Redeem" or "Confirm" button
+1. Click the "Confirm" button
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
