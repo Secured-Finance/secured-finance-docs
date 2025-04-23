@@ -17,7 +17,8 @@ First, you need to navigate to the Stability Pool section in the USDFC applicati
 
 1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Click on the "Stability Pool" button in the USDFC Dashboard
+3. Locate the "Stability Pool" section on the Dashboard page
+4. See the "Protocol Statistics" section to check the Stability Pool information
 
 [Image: Screenshot of the USDFC application with the Stability Pool option highlighted]
 
@@ -25,8 +26,9 @@ First, you need to navigate to the Stability Pool section in the USDFC applicati
 Before depositing, review the current Stability Pool information.
 
 1. Check the total USDFC deposited in the Stability Pool
-2. Review the current rewards and APR (if displayed)
-3. Understand the liquidation history and potential future rewards
+2. Review the current rewards (if displayed)
+3. Note that liquidation rewards are automatically calculated and distributed on a pro rata basis based on your Stability Pool contribution
+4. Be aware that liquidation history is not displayed in the app but may be available through external on-chain analytics tools
 
 [Image: Screenshot of the Stability Pool dashboard showing key metrics]
 
@@ -35,7 +37,7 @@ Now you can deposit your USDFC into the Stability Pool.
 
 1. Enter the amount of USDFC you want to deposit
 2. Review any fees or conditions associated with the deposit
-3. Click the "Deposit" button
+3. Click the "Confirm" button
 4. Confirm the transaction in your wallet
 5. Wait for the transaction to be processed on the blockchain
 
@@ -46,24 +48,26 @@ After depositing, you can monitor your position and earned rewards.
 
 1. Your deposit amount will be displayed in the Stability Pool dashboard
 2. Any earned FIL rewards will accumulate over time
-3. The dashboard will show your share of the Stability Pool and estimated rewards
+3. The dashboard will show your share of the Stability Pool and Liquidation gain as rewards
 
 [Image: Screenshot showing deposit and rewards information]
 
-## Step 5: Rewards Distribution
-When liquidations occur, rewards are automatically distributed to your wallet.
+## Step 5: Claim Rewards (When Available)
+When you've earned rewards, you can claim them.
 
-1. Rewards are automatically sent to your wallet when liquidations happen
-2. No manual claiming is required
-3. You can view your accumulated rewards in the Stability Pool dashboard
+1. Locate the "Claim FIL" or similar button in the Stability Pool dashboard
+2. Click the button to claim your earned FIL rewards
+3. Confirm the transaction in your wallet
+4. Wait for the transaction to be processed
+5. Verify that the FIL rewards have been added to your trove
 
-[Image: Screenshot showing rewards distribution information]
+[Image: Screenshot highlighting the claim rewards functionality]
 
 ## Step 6: Withdraw USDFC (When Desired)
 You can withdraw your USDFC from the Stability Pool at any time.
 
-1. Enter the amount of USDFC you want to withdraw
-2. Click the "Withdraw" button
+1. Enter the amount of USDFC you want to keep in the Stability Pool by subtracting the amount of USDFC you want to withdraw
+2. Click the "Confirm" button
 3. Confirm the transaction in your wallet
 4. Wait for the transaction to be processed
 5. Verify that the USDFC has been returned to your wallet

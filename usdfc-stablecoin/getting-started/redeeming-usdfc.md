@@ -18,7 +18,7 @@ First, you need to navigate to the redemption section in the USDFC application.
 
 1. Navigate to the [USDFC application](https://app.usdfc.net)
 2. Connect your wallet if not already connected
-3. Click on the "Redeem" button in the USDFC Dashboard
+3. Locate the "Redemption" page in the "More" tab in the USDFC application
 
 [Image: Screenshot of the USDFC application with the Redeem option highlighted]
 
