@@ -1,6 +1,7 @@
 ---
-description: Understanding how under-collateralized positions are handled in the USDFC protocol
-icon: droplet
+description: >-
+  Understanding how under-collateralized positions are handled in the USDFC
+  protocol
 ---
 
 # 🚰 Liquidation
@@ -29,26 +30,29 @@ The Stability Pool is a reserve of USDFC dedicated to absorbing liquidations whe
 
 ## Key Parameters
 
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| Liquidation Threshold | Collateral ratio below which a Trove can be liquidated | 110% |
-| Liquidator Reward | Percentage of liquidated collateral given to the liquidator | 0.5% |
-| Liquidation Reserve | USDFC reserved for potential liquidation gas costs | 20 USDFC |
+| Parameter             | Description                                                 | Default Value |
+| --------------------- | ----------------------------------------------------------- | ------------- |
+| Liquidation Threshold | Collateral ratio below which a Trove can be liquidated      | 110%          |
+| Liquidator Reward     | Percentage of liquidated collateral given to the liquidator | 0.5%          |
+| Liquidation Reserve   | USDFC reserved for potential liquidation gas costs          | 20 USDFC      |
 
 ## Stakeholders in the Liquidation Process
 
 ### 1. Stability Pool Depositors
+
 * Provide USDFC to the pool and receive FIL at a discount when liquidations occur
 * Effectively "buy FIL cheaper" than market price through the liquidation process
 * Earn passive rewards by helping maintain system stability
 
 ### 2. Liquidated Borrowers
+
 * Have their Trove liquidated when their collateral ratio falls below 110%
 * Lose a portion of their collateral to repay their debt
 * Trove will be closed, but they keep their borrowed USDFC
 * Typically incur around a 10% loss in the process
 
 ### 3. Liquidators
+
 * Trigger the liquidation process by calling the liquidation function
 * Receive the Liquidation Reserve (20 USDFC) as gas compensation
 * Earn 0.5% of the liquidated collateral as an incentive
@@ -60,6 +64,7 @@ Secured Finance uses Pyth as the primary oracle to determine the FIL price. Pyth
 ### Fallback Mechanism
 
 In case of extreme conditions where the Pyth price feed is unavailable, the protocol switches to Tellor as a backup:
+
 * Pyth price not updated for over 4 hours
 * Pyth response reverts, returns invalid data, or shows an invalid timestamp
 * Price change between consecutive updates exceeds 50%
@@ -76,20 +81,21 @@ If the Stability Pool is empty during a liquidation, the protocol switches to a 
 
 ## Common Questions
 
-**How can I avoid liquidation?**  
+**How can I avoid liquidation?**\
 Maintain a collateral ratio well above 110%. A buffer of 150% or higher is recommended to account for FIL price volatility.
 
-**What happens to my borrowed USDFC if my Trove is liquidated?**  
+**What happens to my borrowed USDFC if my Trove is liquidated?**\
 You keep your borrowed USDFC, but lose your collateral. The liquidation effectively closes your Trove.
 
-**How can I benefit from liquidations?**  
+**How can I benefit from liquidations?**\
 You can deposit USDFC into the Stability Pool to receive discounted FIL when liquidations occur, or become a liquidator to earn rewards for triggering liquidations.
 
-[Learn more in the FAQs section](../../faqs.md)
+[Learn more in the FAQs section](../faqs.md)
 
 ## Related Topics
-- [The Trove System](../the-trove-system.md)
-- [Collateral Ratio](collateral-ratio.md)
-- [Liquidators](liquidators.md)
-- [Liquidation Case Study](case-study.md)
-- [Recovery Mode](../../advanced-topics/recovery-mode.md)
+
+* [The Trove System](the-trove-system.md)
+* [Collateral Ratio](liquidation/collateral-ratio.md)
+* [Liquidators](liquidation/liquidators.md)
+* [Liquidation Case Study](liquidation/case-study.md)
+* [Recovery Mode](../advanced-topics/recovery-mode.md)

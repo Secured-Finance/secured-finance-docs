@@ -1,6 +1,5 @@
 ---
 description: The main feature to generate USDFC and borrow it into your connected wallet
-icon: pickaxe
 ---
 
 # 💰 Mint & Borrow
@@ -19,31 +18,27 @@ Mint & Borrow is the core function of the USDFC Stablecoin Protocol that allows 
 
 ## How It Works
 
-To use USDFC, you first open a trove to manage your FIL collateral and USDFC debt, maintaining a **minimum collateralization ratio (MCR) of 110%** to avoid [liquidation](liquidation/README.md). This ensures the safety and stability of the system. The process involves the following steps:
+To use USDFC, you first open a trove to manage your FIL collateral and USDFC debt, maintaining a **minimum collateralization ratio (MCR) of 110%** to avoid [liquidation](liquidation.md). This ensures the safety and stability of the system. The process involves the following steps:
 
 1. **Deposit FIL as Collateral**
    * Prepare FIL in your wallet to cover the USDFC debt (borrowed amount + mint fees)
    * Open a trove and input a FIL amount to deposit as collateral
    * Input USDFC amount you want to borrow (after minted inside your trove)
      * You must maintain at least a 110% collateral ratio
-
 2. **Mint USDFC**
    * Once the FIL amount and USDFC amount is set, check that the minting costs are added as total debt, then you can click confirm
    * Your connected wallet (ex. MetaMask) asks you to send a transaction
    * Once the USDFC amount is minted, you can see your borrowed amount in the app
    * Import the USDFC contract [address](../deployed-contracts.md#contract-addresses) to your wallet so you can use it anywhere
-
 3. **Maintain Collateral Ratio**
    * The minimum collateralization ratio (MCR) is set to 110%
      * For instance, if you deposit 1,000 USD worth of FIL, you can mint up to 909 USDFC, keeping a 110% collateral ratio
    * It's crucial to monitor your collateral ratio to avoid liquidation. If the collateral value drops, consider adding more FIL or repaying some USDFC to maintain a healthy buffer
-
 4. **Adjust or Close**
    * You can make adjustments on your trove to manage FIL collateral and USDFC debt
    * Adjustment is used to add/reduce collateral, or borrow/repay USDFC
    * If you no longer need the trove, you can close it by repaying debts (borrowed + fees) in USDFC
      * You don't need to repay the liquidation reserve
-
 5. **3rd Party Trove Adjustment (Liquidation & Redemption)**
    * You should be aware that your trove can be adjusted by special conditions below
    * To protect the system, anyone can liquidate your collateral using USDFC stability pool for the trove below 110% collateral ratio
@@ -51,13 +46,13 @@ To use USDFC, you first open a trove to manage your FIL collateral and USDFC deb
 
 ## Key Parameters
 
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| Minimum Collateral Ratio | Minimum required ratio of collateral to debt | 110% |
-| Minimum Borrow Amount | Minimum USDFC that can be borrowed | 180 USDFC |
-| Liquidation Reserve | USDFC reserved for potential liquidation gas costs | 20 USDFC |
-| Minting Fee | One-time fee charged when minting USDFC | 0.5% to 5% |
-| Interest Rate | Ongoing interest charged on borrowed USDFC | 0% (currently) |
+| Parameter                | Description                                        | Default Value  |
+| ------------------------ | -------------------------------------------------- | -------------- |
+| Minimum Collateral Ratio | Minimum required ratio of collateral to debt       | 110%           |
+| Minimum Borrow Amount    | Minimum USDFC that can be borrowed                 | 180 USDFC      |
+| Liquidation Reserve      | USDFC reserved for potential liquidation gas costs | 20 USDFC       |
+| Minting Fee              | One-time fee charged when minting USDFC            | 0.5% to 5%     |
+| Interest Rate            | Ongoing interest charged on borrowed USDFC         | 0% (currently) |
 
 {% hint style="warning" %}
 The system requires a minimum borrowed amount of 180 USDFC and reserves an additional 20 USDFC as long as trove exists. It creates limitations on all trove activities.
@@ -117,8 +112,8 @@ $$
 \text{Base Rate}_t = \text{Base Rate}_{t-1} + 0.5 \times \left( \frac{m}{n} \right)
 $$
 
-Where:  
-m = amount of USDFC redeemed  
+Where:\
+m = amount of USDFC redeemed\
 n = current total supply of USDFC
 
 ### Decay
@@ -131,8 +126,8 @@ $$
 \text{Base Rate}_t = \text{Base Rate}_{t-1} \times \delta^{\Delta t}
 $$
 
-Where:  
-δ = hourly decay factor (e.g., 0.944)  
+Where:\
+δ = hourly decay factor (e.g., 0.944)\
 Δt = time elapsed (in hours) since the last redemption or loan issuance
 
 {% hint style="info" %}
@@ -158,19 +153,20 @@ We may introduce an **interest rate fee** on borrowed USDFC in the future to fur
 
 ## Common Questions
 
-**What is the minimum amount of USDFC I can borrow?**  
+**What is the minimum amount of USDFC I can borrow?**\
 The minimum borrow amount is 180 USDFC, plus the 20 USDFC liquidation reserve.
 
-**Do I need to repay the liquidation reserve when closing my trove?**  
+**Do I need to repay the liquidation reserve when closing my trove?**\
 No, the liquidation reserve is automatically refunded when you close your trove.
 
-**What happens if the value of my FIL collateral drops?**  
+**What happens if the value of my FIL collateral drops?**\
 If your collateral ratio falls below 110%, your trove becomes eligible for liquidation. It's recommended to maintain a higher ratio (150%+) as a safety buffer.
 
 [Learn more in the FAQs section](../faqs.md)
 
 ## Related Topics
-- [The Trove System](the-trove-system.md)
-- [Liquidation](liquidation/README.md)
-- [Redemption](redemption.md)
-- [Recovery Mode](../advanced-topics/recovery-mode.md)
+
+* [The Trove System](the-trove-system.md)
+* [Liquidation](liquidation.md)
+* [Redemption](redemption.md)
+* [Recovery Mode](../advanced-topics/recovery-mode.md)

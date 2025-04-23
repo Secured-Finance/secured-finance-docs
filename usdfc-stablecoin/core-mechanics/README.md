@@ -1,6 +1,5 @@
 ---
 description: Explore the fundamental mechanisms of the USDFC Stablecoin Protocol
-icon: 🔦
 ---
 
 # 🔦 Core Mechanics
@@ -11,22 +10,22 @@ The USDFC Stablecoin Protocol introduces a variety of innovative features that e
 
 ## What You'll Learn
 
-- How to mint USDFC using Filecoin (FIL) as collateral
-- How the Trove system manages individual collateralized debt positions
-- How liquidations protect the protocol from undercollateralization
-- How the redemption mechanism maintains USDFC's peg to the US Dollar
-- How protocol fees contribute to the system's sustainability
+* How to mint USDFC using Filecoin (FIL) as collateral
+* How the Trove system manages individual collateralized debt positions
+* How liquidations protect the protocol from undercollateralization
+* How the redemption mechanism maintains USDFC's peg to the US Dollar
+* How protocol fees contribute to the system's sustainability
 
 ## Key Components
 
-- [**The Trove System**](the-trove-system.md): Individual vaults where users deposit FIL collateral and mint USDFC
-- [**Mint & Borrow**](mint-and-borrow.md): The process of creating new USDFC backed by FIL collateral
-- [**Liquidation**](liquidation/README.md): The mechanism for handling undercollateralized positions
-- [**Redemption**](redemption.md): The process allowing USDFC holders to exchange for FIL at face value
-- [**Protocol Fees**](protocol-fees.md): The fee structure supporting the protocol's long-term sustainability
+* [**The Trove System**](the-trove-system.md): Individual vaults where users deposit FIL collateral and mint USDFC
+* [**Mint & Borrow**](mint-and-borrow.md): The process of creating new USDFC backed by FIL collateral
+* [**Liquidation**](liquidation.md): The mechanism for handling undercollateralized positions
+* [**Redemption**](redemption.md): The process allowing USDFC holders to exchange for FIL at face value
+* [**Protocol Fees**](protocol-fees.md): The fee structure supporting the protocol's long-term sustainability
 
 ## Related Resources
 
-- [System Overview](system-overview.md)
-- [Advanced Topics](../advanced-topics/README.md)
-- [FAQs](../faqs.md)
+* [System Overview](system-overview.md)
+* [Advanced Topics](../advanced-topics/)
+* [FAQs](../faqs.md)

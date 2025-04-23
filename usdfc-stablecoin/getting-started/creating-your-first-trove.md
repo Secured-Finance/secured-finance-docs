@@ -103,11 +103,11 @@ A: The Liquidation Reserve is a small amount of USDFC (20 USDFC) that is set asi
 A: No, each wallet address can only have one Trove at a time.
 
 **Q: What happens if my collateral ratio falls below the minimum?**\
-A: Your Trove may be liquidated. Learn more in the [Liquidation](../core-mechanics/liquidation/) section.
+A: Your Trove may be liquidated. Learn more in the [Liquidation](../core-mechanics/liquidation.md) section.
 
 ## Related Topics
 
 * [The Trove System](../core-mechanics/the-trove-system.md)
 * [Mint & Borrow](../core-mechanics/mint-and-borrow.md)
-* [Liquidation](../core-mechanics/liquidation/)
+* [Liquidation](../core-mechanics/liquidation.md)
 * [Recovery Mode](../advanced-topics/recovery-mode.md)

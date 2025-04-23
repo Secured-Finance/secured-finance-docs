@@ -109,6 +109,6 @@ The 20 USDFC Liquidation Reserve is automatically refunded when you close your T
 ## Related Topics
 
 * [Mint & Borrow](mint-and-borrow.md)
-* [Liquidation](liquidation/)
+* [Liquidation](liquidation.md)
 * [Redemption](redemption.md)
 * [Recovery Mode](../advanced-topics/recovery-mode.md)

@@ -1,9 +1,8 @@
 ---
 description: The mechanism that maintains USDFC's 1:1 peg to the US Dollar
-icon: arrow-down-to-line
 ---
 
-# 💸 Redemption Mechanism
+# 💸 Redemption
 
 ## Overview
 
@@ -39,12 +38,12 @@ The system requires a minimum borrowed amount of 180 USDFC and reserves an addit
 
 ## Key Parameters
 
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| Redemption Fee | Fee charged on redemption transactions | Base Rate + 0.5% |
-| Minimum Fee | Minimum fee regardless of Base Rate | 0.5% |
-| Base Rate | Variable component that increases with redemption activity | 0% to 4.5% |
-| Minimum Trove Size | Minimum USDFC debt a Trove must maintain | 180 USDFC |
+| Parameter          | Description                                                | Default Value    |
+| ------------------ | ---------------------------------------------------------- | ---------------- |
+| Redemption Fee     | Fee charged on redemption transactions                     | Base Rate + 0.5% |
+| Minimum Fee        | Minimum fee regardless of Base Rate                        | 0.5%             |
+| Base Rate          | Variable component that increases with redemption activity | 0% to 4.5%       |
+| Minimum Trove Size | Minimum USDFC debt a Trove must maintain                   | 180 USDFC        |
 
 ## Redemption Fee
 
@@ -85,19 +84,20 @@ The redemption mechanism works alongside minting to maintain USDFC's stability a
 
 ## Common Questions
 
-**Can I redeem USDFC to pay back my own debt?**  
+**Can I redeem USDFC to pay back my own debt?**\
 No, redemption is not a debt repayment mechanism. It's a separate process that allows USDFC holders to exchange their tokens for FIL at face value.
 
-**How can I avoid having my Trove targeted by redemptions?**  
+**How can I avoid having my Trove targeted by redemptions?**\
 Maintain a higher collateral ratio than other Troves in the system. Redemptions always target Troves with the lowest collateral ratios first.
 
-**Is there a limit to how much USDFC can be redeemed at once?**  
+**Is there a limit to how much USDFC can be redeemed at once?**\
 There's no hard cap, but large redemptions may be limited by the available collateral in under-collateralized Troves and will incur higher fees as the Base Rate increases.
 
 [Learn more in the FAQs section](../faqs.md)
 
 ## Related Topics
-- [The Trove System](the-trove-system.md)
-- [Mint & Borrow](mint-and-borrow.md)
-- [Liquidation](liquidation/README.md)
-- [Protocol Fees](protocol-fees.md)
+
+* [The Trove System](the-trove-system.md)
+* [Mint & Borrow](mint-and-borrow.md)
+* [Liquidation](liquidation.md)
+* [Protocol Fees](protocol-fees.md)

@@ -110,4 +110,4 @@ A: Yes, you can mint USDFC in any amount as long as your collateral ratio remain
 * [The Trove System](../core-mechanics/the-trove-system.md)
 * [Mint & Borrow](../core-mechanics/mint-and-borrow.md)
 * [Protocol Fees](../core-mechanics/protocol-fees.md)
-* [Liquidation](../core-mechanics/liquidation/)
+* [Liquidation](../core-mechanics/liquidation.md)

@@ -165,6 +165,6 @@ A: The dashboard will display a prominent notification when the system enters Re
 ## Related Topics
 
 * [The Trove System](../core-mechanics/the-trove-system.md)
-* [Liquidation](../core-mechanics/liquidation/)
-* [Collateral Ratio](../core-mechanics/liquidation/collateral-ratio.md)
+* [Liquidation](../core-mechanics/liquidation.md)
+* [Collateral Ratio](broken-reference)
 * [Recovery Mode](../advanced-topics/recovery-mode.md)

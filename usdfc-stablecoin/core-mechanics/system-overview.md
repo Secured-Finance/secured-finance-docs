@@ -1,6 +1,5 @@
 ---
 description: Understanding the USDFC Stablecoin Protocol Architecture
-icon: group-arrows-rotate
 ---
 
 # 🏗️ System Overview
@@ -23,38 +22,39 @@ The protocol operates through several key components that work together to maint
 
 ### Normal Mode
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Normal Mode Architecture"><figcaption>USDFC Protocol Architecture in Normal Mode</figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
 
 ### Recovery Mode
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="Recovery Mode Architecture"><figcaption>USDFC Protocol Architecture in Recovery Mode</figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
 
 ## Key Parameters
 
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| Minimum Collateral Ratio (MCR) | Minimum required ratio of collateral to debt | 110% |
-| Recovery Mode Threshold | TCR level that triggers Recovery Mode | 150% |
-| Liquidation Reserve | USDFC reserved for potential liquidation gas costs | 20 USDFC |
-| Minimum Borrow Amount | Minimum USDFC that can be borrowed | 180 USDFC |
-| Base Rate | Variable component of minting and redemption fees | 0% to 4.5% |
+| Parameter                      | Description                                        | Default Value |
+| ------------------------------ | -------------------------------------------------- | ------------- |
+| Minimum Collateral Ratio (MCR) | Minimum required ratio of collateral to debt       | 110%          |
+| Recovery Mode Threshold        | TCR level that triggers Recovery Mode              | 150%          |
+| Liquidation Reserve            | USDFC reserved for potential liquidation gas costs | 20 USDFC      |
+| Minimum Borrow Amount          | Minimum USDFC that can be borrowed                 | 180 USDFC     |
+| Base Rate                      | Variable component of minting and redemption fees  | 0% to 4.5%    |
 
 ## Common Questions
 
-**What happens if the price of FIL drops significantly?**  
+**What happens if the price of FIL drops significantly?**\
 If FIL price drops, Troves with lower collateral ratios may become eligible for liquidation. The protocol prioritizes liquidating the riskiest Troves first to maintain system solvency.
 
-**How does the protocol maintain the USDFC peg?**  
+**How does the protocol maintain the USDFC peg?**\
 The redemption mechanism allows USDFC holders to exchange their tokens for FIL at face value, creating arbitrage opportunities that help maintain the peg.
 
-**What is the difference between Normal Mode and Recovery Mode?**  
+**What is the difference between Normal Mode and Recovery Mode?**\
 In Normal Mode, Troves require a minimum 110% collateral ratio. In Recovery Mode, stricter rules apply, including higher liquidation thresholds and restrictions on borrowing.
 
 [Learn more in the FAQs section](../faqs.md)
 
 ## Related Topics
-- [The Trove System](the-trove-system.md)
-- [Mint & Borrow](mint-and-borrow.md)
-- [Liquidation](liquidation/README.md)
-- [Redemption](redemption.md)
-- [Recovery Mode](../advanced-topics/recovery-mode.md)
+
+* [The Trove System](the-trove-system.md)
+* [Mint & Borrow](mint-and-borrow.md)
+* [Liquidation](liquidation.md)
+* [Redemption](redemption.md)
+* [Recovery Mode](../advanced-topics/recovery-mode.md)
