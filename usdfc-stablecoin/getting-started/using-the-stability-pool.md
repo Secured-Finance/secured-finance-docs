@@ -52,14 +52,16 @@ After depositing, you can monitor your position and earned rewards.
 
 [Image: Screenshot showing deposit and rewards information]
 
-## Step 5: Rewards Distribution
-When liquidations occur, rewards are automatically distributed to your wallet.
+## Step 5: Claim Rewards (When Available)
+When you've earned rewards, you can claim them.
 
-1. Rewards are automatically sent to your wallet when liquidations happen
-2. No manual claiming is required
-3. You can view your accumulated rewards in the Stability Pool dashboard
+1. Locate the "Claim FIL" or similar button in the Stability Pool dashboard
+2. Click the button to claim your earned FIL rewards
+3. Confirm the transaction in your wallet
+4. Wait for the transaction to be processed
+5. Verify that the FIL rewards have been added to your trove
 
-[Image: Screenshot showing rewards distribution information]
+[Image: Screenshot highlighting the claim rewards functionality]
 
 ## Step 6: Withdraw USDFC (When Desired)
 You can withdraw your USDFC from the Stability Pool at any time.
