@@ -88,7 +88,7 @@ Category will be set depending on the APR of the currency.
 
 We review the category in quarterly basis and revise if needed with community vote on the APR movement during the observing period.
 
-## FAQ
+## Common Questions
 
 ### Why is Base Price Adjustment necessary?
 

@@ -106,7 +106,7 @@ A storage provider has 1,000 FIL they want to earn yield on while also accessing
 3. They can now borrow USDFC while their original FIL continues earning staking rewards
 4. This creates a dual yield opportunity: staking rewards plus potential trading gains
 
-## FAQ
+## Common Questions
 
 ### What happens if my collateral value drops?
 

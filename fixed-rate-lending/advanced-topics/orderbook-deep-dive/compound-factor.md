@@ -164,7 +164,7 @@ Let's calculate the Future Value for both a lender and a borrower:
 
     The borrower's Future Value is -896, representing their debt obligation including accrued interest.
 
-## FAQ
+## Common Questions
 
 ### How do Compound Factors differ from traditional interest rates?
 

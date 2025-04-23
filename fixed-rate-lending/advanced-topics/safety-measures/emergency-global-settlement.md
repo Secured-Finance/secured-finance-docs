@@ -87,7 +87,7 @@ _Ratio: 5:3:2 for USDC:ETH:BTC_
 Emergency global settlement acts as a vital safeguard, protecting both user funds and the overall integrity of the protocol in unforeseen circumstances. It ensures a secure and resilient DeFi ecosystem for all participants, enhancing trust and confidence in the platform.
 {% endhint %}
 
-## FAQ
+## Common Questions
 
 ### When would Emergency Global Settlement be triggered?
 

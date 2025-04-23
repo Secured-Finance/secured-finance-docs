@@ -96,7 +96,7 @@ Charlie wants to create a more flexible lending position that isn't tied to a sp
 4. Charlie can transfer these tokens to other users or use them in other DeFi protocols
 5. When Charlie wants to redeem the underlying value, he can deposit the tokens back into the GenesisValueVault
 
-## FAQ
+## Common Questions
 
 ### What is the difference between ZC tokens and ZC perpetual tokens?
 

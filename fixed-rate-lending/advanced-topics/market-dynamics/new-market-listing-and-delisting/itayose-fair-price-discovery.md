@@ -127,7 +127,7 @@ For the very first 3-month USDC-BTC Zero-Coupon Bond orderbook:
    Only 105,000 USDC of the borrow orders are filled (based on first-come-first-serve)
    Remaining 15,000 USDC of borrow orders stay in the orderbook when trading begins
 
-## FAQ
+## Common Questions
 
 ### Why is the Itayose process important for new orderbooks?
 

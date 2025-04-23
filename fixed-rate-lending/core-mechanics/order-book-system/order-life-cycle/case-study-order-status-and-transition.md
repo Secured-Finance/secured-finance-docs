@@ -134,7 +134,7 @@ Our scenario unfolds within the bounds of an order book, structured around three
 * **Example**: Buy 10 at 89, no fill and lending market matures.
 * **Transition**: Order **Expires** after the maturity time passes.
 
-## FAQ
+## Common Questions
 
 ### What happens to my order if it's partially filled?
 

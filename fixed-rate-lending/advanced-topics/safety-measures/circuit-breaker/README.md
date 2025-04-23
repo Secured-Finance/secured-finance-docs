@@ -79,7 +79,7 @@ During periods of high volatility:
 6. Subsequent blocks can continue price discovery in a more orderly fashion
 7. The market stabilizes without experiencing extreme price swings
 
-## FAQ
+## Common Questions
 
 ### How does the Circuit Breaker protect against flash loan attacks?
 

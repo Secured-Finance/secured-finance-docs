@@ -109,7 +109,7 @@ The protocol further optimizes gas usage through market recycling:
    - Predictable behavior when markets mature
    - Efficient position management across the entire protocol
 
-## FAQ
+## Common Questions
 
 ### How does Lazy Evaluation reduce gas costs?
 

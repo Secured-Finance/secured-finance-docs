@@ -81,7 +81,7 @@ User B has both ZC bonds and cash collateral:
 4. This mixed strategy provides better protection against price fluctuations
 5. User B would need a significant price drop to trigger liquidation
 
-## FAQ
+## Common Questions
 
 ### What are the advantages of using ZC bonds as collateral?
 

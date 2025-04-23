@@ -87,7 +87,7 @@ When a position is liquidated, the 7% liquidation fee is distributed as follows:
 
 This distribution incentivizes liquidators to maintain the health of the protocol while building a safety reserve.
 
-## FAQ
+## Common Questions
 
 ### Why are there no fees for limit orders?
 

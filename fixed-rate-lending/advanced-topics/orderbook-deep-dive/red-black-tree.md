@@ -102,7 +102,7 @@ Consider the gas cost implications of different data structures for an orderbook
 
 The Red-Black Tree with unlinking provides an 85-90% reduction in gas costs compared to naive implementations.
 
-## FAQ
+## Common Questions
 
 ### Why use Red-Black Trees instead of other data structures?
 

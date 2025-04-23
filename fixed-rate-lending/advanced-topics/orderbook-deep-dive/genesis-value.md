@@ -107,7 +107,7 @@ Let's compare gas costs between traditional position calculation and Genesis Val
 
 4. This significant gas reduction makes the protocol more economically viable, especially during periods of high Ethereum gas prices.
 
-## FAQ
+## Common Questions
 
 ### How does Genesis Value differ from Future Value?
 

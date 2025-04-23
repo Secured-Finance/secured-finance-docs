@@ -47,22 +47,22 @@ async function monitorForLiquidations() {
   while (true) {
     // Get all borrowers from the protocol
     const borrowers = await protocol.getAllBorrowers();
-    
+
     // Check each borrower's position
     for (const borrower of borrowers) {
       const ltv = await protocol.getLTV(borrower);
-      
+
       // If LTV is above liquidation threshold
       if (ltv >= 8000) { // 80% represented as 8000 basis points
         // Calculate potential profit
         const debtValue = await protocol.getDebtValue(borrower);
         const liquidationAmount = debtValue.div(2); // 50% liquidation
         const profit = liquidationAmount.mul(5).div(100); // 5% fee
-        
+
         // Check if profitable after gas costs
         const gasEstimate = await protocol.estimateGas.liquidate(borrower);
         const gasCost = gasEstimate.mul(gasPrice);
-        
+
         if (profit.gt(gasCost)) {
           // Execute liquidation
           await protocol.liquidate(borrower);
@@ -70,14 +70,14 @@ async function monitorForLiquidations() {
         }
       }
     }
-    
+
     // Wait before next check
     await sleep(30000); // Check every 30 seconds
   }
 }
 ```
 
-## FAQ
+## Common Questions
 
 ### Who can become a liquidator?
 

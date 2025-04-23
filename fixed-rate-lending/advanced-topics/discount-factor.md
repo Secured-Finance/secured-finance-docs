@@ -101,7 +101,7 @@ An investor wants to compare two Zero-Coupon Bonds:
 
 4. Bond B offers a slightly higher annualized yield, but requires a longer commitment
 
-## FAQ
+## Common Questions
 
 ### How does the discount factor relate to interest rates?
 

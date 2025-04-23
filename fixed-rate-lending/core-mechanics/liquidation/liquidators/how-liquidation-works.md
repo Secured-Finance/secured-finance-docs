@@ -35,10 +35,10 @@ title Liquidation Process
   participant FV as FutureValueVault
   participant Token as TokenVault
 
-Bot-->>Market: Check if the selected user<BR>has enough collateral 
+Bot-->>Market: Check if the selected user<BR>has enough collateral
 Bot-->>Liquidator: Liquidate the<BR>selected user
 Liquidator-->>Market: Execute liquidation<BR>process
-Market-->>Market: Check if the selected user<BR>doesn't has enough collateral 
+Market-->>Market: Check if the selected user<BR>doesn't has enough collateral
 Market-->>Token: Transfer the collaterl balance<BR>from the selected user<BR>to the liquidator<BR>(Liquidation fee included)
 Market-->>Liquidator: Execute the callback<BR>function for the collateral
 Market-->>FV: Transfer the debt balance<BR>from the selected user<BR>to the liquidator
@@ -66,18 +66,18 @@ A liquidator bot wants to find undercollateralized positions:
 async function findLiquidationTargets() {
   const users = await getAllUsers();
   const liquidationTargets = [];
-  
+
   for (const user of users) {
     // Check if user's position is undercollateralized
     const coverage = await tokenVault.getCoverage(user.address);
-    
+
     // If coverage is 8000 or higher, the position is eligible for liquidation
     if (coverage >= 8000) {
       // Calculate potential profit from liquidation
       const collateralValue = await getCollateralValue(user.address);
       const debtValue = await getDebtValue(user.address);
       const liquidationFee = collateralValue * 0.05; // 5% fee
-      
+
       liquidationTargets.push({
         user: user.address,
         coverage,
@@ -87,7 +87,7 @@ async function findLiquidationTargets() {
       });
     }
   }
-  
+
   // Sort by potential profit to prioritize most profitable liquidations
   return liquidationTargets.sort((a, b) => b.potentialProfit - a.potentialProfit);
 }
@@ -104,7 +104,7 @@ async function executeLiquidation(targetUser) {
   const collateralCurrency = findMostProfitableCollateral(targetUser);
   const debtCurrency = findMostEfficientDebt(targetUser);
   const maturity = getCurrentMaturity();
-  
+
   // Execute the liquidation call
   const tx = await lendingMarketController.executeLiquidationCall(
     targetUser,
@@ -112,11 +112,11 @@ async function executeLiquidation(targetUser) {
     debtCurrency,
     maturity
   );
-  
+
   // Handle the received collateral and debt
   // This will trigger the callback functions if implemented
   await tx.wait();
-  
+
   // Check if liquidation was successful
   const liquidatorCoverage = await tokenVault.getCoverage(liquidatorAddress);
   if (liquidatorCoverage > 8000) {
@@ -127,7 +127,7 @@ async function executeLiquidation(targetUser) {
 }
 ```
 
-## FAQ
+## Common Questions
 
 ### How do I determine which collateral and debt currencies to liquidate?
 

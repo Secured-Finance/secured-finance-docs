@@ -97,7 +97,7 @@ This means that in the next block, orders will only be executed if their prices 
 
 ### Example 2: Price Fluctuation Allowance Application
 
-If the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00. 
+If the last 5 reliable block prices were 20.00, 18.00, 16.00, 14.00, and 12.00, the Moving Average would be 16.00.
 
 Normally, the downward movement would be limited to:
 
@@ -134,7 +134,7 @@ The price limits would be:
 
 This asymmetric design (5% down vs. 10% up) reflects the natural tendency of Zero-Coupon Bonds to increase in price as they approach maturity, allowing for more natural upward movement while protecting against sharp downward spikes.
 
-## FAQ
+## Common Questions
 
 ### Why are downward price movements more restricted than upward movements?
 

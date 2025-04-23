@@ -65,7 +65,7 @@ A borrower has an active loan in the SEP23 orderbook approaching maturity:
 4. Their position is rolled into the next available maturity with similar duration
 5. The borrower can view their new position details in the platform interface
 
-## FAQ
+## Common Questions
 
 ### What happens if I want to exit before maturity?
 

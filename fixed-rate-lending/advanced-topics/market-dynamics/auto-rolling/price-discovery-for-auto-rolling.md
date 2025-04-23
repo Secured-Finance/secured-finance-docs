@@ -96,7 +96,7 @@ When launching a new 3-month USDC-AVAX Zero-Coupon Bond market:
    ```
 5. The new bonds begin trading at 94.81, providing a fair starting point based on the initial launch price
 
-## FAQ
+## Common Questions
 
 ### Why use different price discovery methods based on market conditions?
 

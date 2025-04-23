@@ -109,7 +109,7 @@ For example, with monthly compounding (n=12):
 * A 12% APR yields an APY of (1 + 0.12/12)^12 - 1 = 12.68%
 * A 12% APY corresponds to an APR of 12 × ((1 + 0.12)^(1/12) - 1) = 11.39%
 
-## FAQ
+## Common Questions
 
 ### Why does the Fixed-Rate Lending Protocol use APR instead of APY?
 

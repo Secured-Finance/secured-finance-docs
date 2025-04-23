@@ -140,7 +140,7 @@ During a pre-open period for a new 6-month Zero-Coupon Bond:
    ```
 5. During the pre-open period, this bond would display an estimated APR of 6.44%
 
-## FAQ
+## Common Questions
 
 ### Why does Secured Finance use different calculation methods for different maturities?
 

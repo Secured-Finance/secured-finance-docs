@@ -15,15 +15,15 @@ Secured Finance's Loan Market Platform supports two primary types of orders: lim
 
 ### Limit Orders
 
-A limit order is an order to buy or sell a zero-coupon bond at a specific price or better. This type of order allows users to specify the maximum price at which they are willing to buy or the minimum price at which they are willing to sell. 
+A limit order is an order to buy or sell a zero-coupon bond at a specific price or better. This type of order allows users to specify the maximum price at which they are willing to buy or the minimum price at which they are willing to sell.
 
-If the market doesn't reach these prices, the limit order will not be executed. If the market already exists at executable prices (**overlapping limit orders**), such orders will be executed immediately, and non-overlapping orders will remain as open. 
+If the market doesn't reach these prices, the limit order will not be executed. If the market already exists at executable prices (**overlapping limit orders**), such orders will be executed immediately, and non-overlapping orders will remain as open.
 
 This ensures that users can control the price points at which they enter or exit their positions. By placing limit orders, users effectively act as market makers, contributing to the liquidity and depth of the market.
 
 ### Market Orders
 
-A market order is an order to buy or sell a zero-coupon bond immediately at the best available current price. Market orders are typically executed quickly unless the market is exceptionally volatile. 
+A market order is an order to buy or sell a zero-coupon bond immediately at the best available current price. Market orders are typically executed quickly unless the market is exceptionally volatile.
 
 While market orders do not guarantee a specific price, they ensure the order will be executed. By placing market orders, users effectively act as market takers, accepting the prices currently offered in the market without contributing to the liquidity.
 
@@ -69,7 +69,7 @@ A borrower needs 5,000 USDC immediately and doesn't want to wait for a limit ord
 7. At maturity, they will need to repay 5,000 USDC
 8. The effective interest paid is 50 USDC on a loan of 4,950 USDC for 3 months
 
-## FAQ
+## Common Questions
 
 ### When should I use a limit order versus a market order?
 

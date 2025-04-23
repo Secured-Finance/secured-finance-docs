@@ -54,7 +54,7 @@ Alice needs to borrow FIL for 6 months and is willing to pay a 20% APR:
 5. At maturity, she will need to repay 1,000 FIL
 6. The effective interest paid is 90.9 FIL on a loan of 909.1 FIL for 6 months
 
-## FAQ
+## Common Questions
 
 ### Why use Zero-Coupon bonds instead of traditional interest-bearing loans?
 

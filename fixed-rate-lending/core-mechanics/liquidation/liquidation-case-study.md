@@ -96,7 +96,7 @@ After the liquidation process, Bob's position will be 500 FIL cash, 500 FIL borr
 - Remaining position: 57,200 USDC collateral and 5 BTC debt
 - Post-liquidation LTV: ~70% ($400,000 / $57,200)
 
-## FAQ
+## Common Questions
 
 ### What triggers a liquidation in the Fixed-Rate Lending Protocol?
 

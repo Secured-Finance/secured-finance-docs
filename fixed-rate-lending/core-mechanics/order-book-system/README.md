@@ -62,7 +62,7 @@ A borrower needs 5,000 USDC for 6 months and is willing to pay up to 6% APR:
 6. When the order is filled, they receive approximately 4,854.5 USDC upfront
 7. At maturity, they will need to repay 5,000 USDC
 
-## FAQ
+## Common Questions
 
 ### How does the orderbook match orders?
 

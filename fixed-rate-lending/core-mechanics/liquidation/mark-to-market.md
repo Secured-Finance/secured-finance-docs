@@ -86,7 +86,7 @@ Scenario: A new market has just been created through the Itayose process with an
 
 This example demonstrates how the waterfall mechanism ensures there is always a valid Mark Price available for collateral valuation and liquidation calculations.
 
-## FAQ
+## Common Questions
 
 ### Why use Future Value (FV) instead of Present Value (PV) for VWAP calculations?
 

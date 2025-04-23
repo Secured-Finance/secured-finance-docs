@@ -15,7 +15,7 @@ The orderbook rotation process follows a specific cycle that ensures continuous 
 
 ### Orderbook Lifecycle
 
-The inactive orderbook undergoes a pre-order period lasting 168 hours (7 days) up to 1 hour before the expiration date of the shortest orderbook. At that point, the Itayose process is initiated, leading to the opening of the orderbook at the specified date. Simultaneously, the orderbook rotation takes place. 
+The inactive orderbook undergoes a pre-order period lasting 168 hours (7 days) up to 1 hour before the expiration date of the shortest orderbook. At that point, the Itayose process is initiated, leading to the opening of the orderbook at the specified date. Simultaneously, the orderbook rotation takes place.
 
 During this action, if the nearest orderbook has already reached maturity, it will move to the end, and auto-roll will be executed concurrently. The moved orderbook is then recycled and transformed into an inactive, awaiting the next pre-order period.
 
@@ -45,16 +45,16 @@ This cycle ensures a seamless and continuous operation of our orderbooks, facili
 Let's follow a complete rotation cycle for ETH orderbooks:
 
 1. **Initial State**: 8 active orderbooks (maturities: Mar 2024, Jun 2024, Sep 2024, Dec 2024, Mar 2025, Jun 2025, Sep 2025, Dec 2025) and 1 inactive orderbook (future Mar 2026)
-   
+
 2. **Pre-Order Period**: 7 days before Mar 2024 maturity, the inactive Mar 2026 orderbook enters pre-order period
    - Users can place pre-orders for the Mar 2026 market
    - These orders will be matched during the Itayose process
-   
+
 3. **Maturity and Rotation**: When Mar 2024 orderbook matures:
    - Mar 2024 orderbook is moved to the end of the queue and becomes inactive
    - Mar 2026 orderbook becomes active after Itayose process completes
    - Auto-roll executes for positions in the Mar 2024 orderbook
-   
+
 4. **New State**: 8 active orderbooks (Jun 2024, Sep 2024, Dec 2024, Mar 2025, Jun 2025, Sep 2025, Dec 2025, Mar 2026) and 1 inactive orderbook (recycled Mar 2024, which will become Jun 2026)
 
 ### Example 2: Pre-Order Placement and Itayose
@@ -79,7 +79,7 @@ Consider the impact of limiting orderbooks to 9 per currency:
 4. Additionally, the lazy evaluation process has fewer data points to process
 5. This optimization is especially important during high network congestion periods
 
-## FAQ
+## Common Questions
 
 ### Why limit the number of orderbooks to 9 per currency?
 
