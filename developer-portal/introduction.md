@@ -19,8 +19,9 @@ Welcome to the Secured Finance Developer Portal, your comprehensive resource for
 
 Our API Reference provides comprehensive documentation for querying data from our protocols using GraphQL through The Graph's subgraphs:
 
-- [USDFC Subgraph](api-reference/usdfc-subgraph/README.md) - Query data from the USDFC stablecoin protocol
 - [Fixed-Rate Lending Subgraph](api-reference/fixed-rate-lending-subgraph/README.md) - Query data from the Fixed-Rate Lending protocol
+
+> **Note:** The USDFC Subgraph is currently under development and not yet deployed. USDFC data is only available through the [USDFC SDK](sdk-reference/usdfc-sdk.md).
 
 ### SDK Reference
 
