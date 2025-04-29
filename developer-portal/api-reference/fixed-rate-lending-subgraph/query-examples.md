@@ -1,6 +1,10 @@
+---
+description: Example queries for the Fixed-Rate Lending Subgraph
+---
+
 # 🔍 Query Examples
 
-The Graph uses the GraphQL language to query the subgraphs. This doc will teach you how to query the Secured Finance Subgraphs by writing the GraphQL queries. You can copy and paste these queries into the [Subgraph endpoints](broken-reference/).
+The Graph uses the GraphQL language to query the subgraphs. This doc will teach you how to query the Secured Finance Subgraphs by writing the GraphQL queries. You can copy and paste these queries into the [Subgraph endpoints](README.md#subgraph-endpoints).
 
 ### Tips and Guidelines:
 
