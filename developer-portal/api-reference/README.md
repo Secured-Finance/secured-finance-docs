@@ -8,27 +8,28 @@ Secured Finance provides GraphQL APIs via The Graph protocol to query data from 
 
 ## What You'll Learn
 
-- How to query data from the USDFC stablecoin protocol
 - How to query data from the Fixed-Rate Lending protocol
 - Examples of common queries and their responses
 - How to use GraphQL to build custom queries
+- How to use our interactive API documentation
 
 ## Key Components
 
 ### Subgraphs
 
-Secured Finance maintains subgraphs for each of its protocols:
+Secured Finance maintains subgraphs for its protocols:
 
-- [USDFC Subgraph](usdfc-subgraph/README.md) - For querying data from the USDFC stablecoin protocol
 - [Fixed-Rate Lending Subgraph](fixed-rate-lending-subgraph/README.md) - For querying data from the Fixed-Rate Lending protocol
+
+> **Note:** The USDFC Subgraph is currently under development and not yet deployed. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md).
 
 ### Available Networks
 
-Our subgraphs are deployed on multiple networks:
+Our subgraphs are deployed on the following networks:
 
 | Protocol | Ethereum | Arbitrum | Filecoin |
 |----------|----------|----------|----------|
-| USDFC | ✅ | ✅ | ✅ |
+| USDFC | | | ✅ |
 | Fixed-Rate Lending | ✅ | ✅ | ✅ |
 
 ### Subgraph Endpoints
@@ -55,60 +56,30 @@ The Graph is a decentralized protocol for indexing and querying blockchain data,
 
 To view the source of our subgraphs, visit our [GitHub Repository](https://github.com/Secured-Finance/secured-finance-subgraph).
 
-## OpenAPI Integration
+## Interactive API Documentation
 
-GitBook supports OpenAPI specifications, allowing you to create interactive API documentation. To add an OpenAPI spec to your documentation:
+We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation.
 
-1. Create an OpenAPI specification file (in JSON or YAML format)
-2. In GitBook, navigate to the page where you want to add the API reference
-3. Click on the "+" button and select "API Reference"
-4. Upload your OpenAPI specification file or provide a URL to the file
-5. Configure the display options as needed
+{% swagger src="./fixed-rate-lending-subgraph/openapi.yaml" %}
+[Fixed-Rate Lending Subgraph API Documentation](./fixed-rate-lending-subgraph/openapi.yaml)
+{% endswagger %}
 
-For our subgraphs, you can use the GraphQL schema as the basis for creating an OpenAPI specification. The Graph also provides a GraphQL Playground interface that allows for interactive querying.
+The interactive documentation above allows you to:
 
-### Example OpenAPI Integration
+1. Explore available endpoints and operations
+2. View request and response schemas
+3. Try out API calls directly from the documentation
+4. See example queries and responses
 
-```yaml
-openapi: 3.0.0
-info:
-  title: Secured Finance API
-  version: 1.0.0
-  description: API for interacting with Secured Finance protocols
-paths:
-  /subgraphs/name/secured-finance/fixed-rate-lending-filecoin:
-    post:
-      summary: Query the Fixed-Rate Lending Subgraph
-      description: Execute a GraphQL query against the Fixed-Rate Lending Subgraph
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                query:
-                  type: string
-                  example: |
-                    {
-                      orders(first: 10) {
-                        id
-                        side
-                        amount
-                        price
-                        status
-                      }
-                    }
-                variables:
-                  type: object
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-```
+### Using the Interactive Documentation
+
+1. Browse through the available operations
+2. Click on an operation to expand it
+3. View the request parameters and example values
+4. Click "Try it" to execute a request
+5. View the response directly in the documentation
+
+For more complex queries, you can also use The Graph's Playground interface by visiting the subgraph endpoints directly.
 
 ## Related Resources
 

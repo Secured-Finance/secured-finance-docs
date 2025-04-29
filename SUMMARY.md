@@ -102,8 +102,6 @@
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
 * [🔌 API Reference](developer-portal/api-reference/README.md)
-  * [📈 USDFC Subgraph](developer-portal/api-reference/usdfc-subgraph/README.md)
-    * [🔍 Query Examples](developer-portal/api-reference/usdfc-subgraph/query-examples.md)
   * [📈 Fixed-Rate Lending Subgraph](developer-portal/api-reference/fixed-rate-lending-subgraph/README.md)
     * [🔍 Query Examples](developer-portal/api-reference/fixed-rate-lending-subgraph/query-examples.md)
 * [📦 SDK Reference](developer-portal/sdk-reference/README.md)

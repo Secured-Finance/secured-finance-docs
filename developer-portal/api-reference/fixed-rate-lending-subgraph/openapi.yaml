@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  title: Secured Finance Fixed-Rate Lending API
+  version: 1.0.0
+  description: |
+    API for querying the Secured Finance Fixed-Rate Lending protocol data through The Graph.
+    
+    This API allows developers to access data about lending markets, orders, positions, and other protocol activities.
+servers:
+  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin/0.0.3
+    description: Filecoin Mainnet
+  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-mainnet/0.0.3
+    description: Ethereum Mainnet
+  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum/0.0.3
+    description: Arbitrum Mainnet
+paths:
+  /:
+    post:
+      summary: Query the Fixed-Rate Lending Subgraph
+      description: Execute a GraphQL query against the Fixed-Rate Lending Subgraph
+      operationId: querySubgraph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  example: |
+                    {
+                      lendingMarkets(
+                        where: { isReady: true },
+                        orderBy: maturity,
+                        orderDirection: asc,
+                        first: 10
+                      ) {
+                        id
+                        currency {
+                          symbol
+                        }
+                        maturity
+                        lastPrice
+                        bestLendUnitPrice
+                        bestBorrowUnitPrice
+                      }
+                    }
+                variables:
+                  type: object
+            examples:
+              getLendingMarkets:
+                summary: Get Active Lending Markets
+                value:
+                  query: |
+                    {
+                      lendingMarkets(
+                        where: { isReady: true },
+                        orderBy: maturity,
+                        orderDirection: asc,
+                        first: 10
+                      ) {
+                        id
+                        currency {
+                          symbol
+                        }
+                        maturity
+                        lastPrice
+                        bestLendUnitPrice
+                        bestBorrowUnitPrice
+                      }
+                    }
+              getOrderBook:
+                summary: Get Order Book for a Market
+                value:
+                  query: |
+                    {
+                      orders(
+                        where: {
+                          market: "0x123...",
+                          status_in: [PENDING, PARTIALLY_EXECUTED]
+                        },
+                        orderBy: price,
+                        orderDirection: asc,
+                        first: 20
+                      ) {
+                        id
+                        user {
+                          id
+                        }
+                        side
+                        amount
+                        price
+                        status
+                      }
+                    }
+              getUserPositions:
+                summary: Get User Positions
+                value:
+                  query: |
+                    {
+                      positions(
+                        where: { user: "0x456..." },
+                        orderBy: updatedAt,
+                        orderDirection: desc
+                      ) {
+                        id
+                        market {
+                          currency {
+                            symbol
+                          }
+                          maturity
+                        }
+                        side
+                        amount
+                        presentValue
+                      }
+                    }
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: The data returned by the query
+                  errors:
+                    type: array
+                    description: Any errors that occurred during the query
+              examples:
+                lendingMarketsResponse:
+                  summary: Lending Markets Response
+                  value:
+                    data:
+                      lendingMarkets:
+                        - id: "0x123..."
+                          currency:
+                            symbol: "USDC"
+                          maturity: "1735689600"
+                          lastPrice: "9850"
+                          bestLendUnitPrice: "9830"
+                          bestBorrowUnitPrice: "9870"
+                        - id: "0x456..."
+                          currency:
+                            symbol: "WETH"
+                          maturity: "1735689600"
+                          lastPrice: "9800"
+                          bestLendUnitPrice: "9780"
+                          bestBorrowUnitPrice: "9820"
+components:
+  schemas:
+    LendingMarket:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the lending market
+        currency:
+          type: object
+          properties:
+            id:
+              type: string
+            symbol:
+              type: string
+            name:
+              type: string
+            decimals:
+              type: integer
+        maturity:
+          type: string
+          description: Unix timestamp for the maturity date
+        lastPrice:
+          type: string
+          description: Last traded price in the market
+        bestLendUnitPrice:
+          type: string
+          description: Best unit price for lending
+        bestBorrowUnitPrice:
+          type: string
+          description: Best unit price for borrowing
+        openingDate:
+          type: string
+          description: Unix timestamp for the market opening date
+        isReady:
+          type: boolean
+          description: Whether the market is ready for trading
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the order
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+        market:
+          $ref: '#/components/schemas/LendingMarket'
+        side:
+          type: string
+          enum: [LEND, BORROW]
+          description: Order side (LEND or BORROW)
+        amount:
+          type: string
+          description: Order amount
+        price:
+          type: string
+          description: Order price
+        status:
+          type: string
+          enum: [PENDING, EXECUTED, PARTIALLY_EXECUTED, CANCELLED]
+          description: Order status
+        createdAt:
+          type: string
+          description: Unix timestamp for order creation
+        executedAt:
+          type: string
+          description: Unix timestamp for order execution
+        cancelledAt:
+          type: string
+          description: Unix timestamp for order cancellation
+    Position:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the position
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+        market:
+          $ref: '#/components/schemas/LendingMarket'
+        side:
+          type: string
+          enum: [LEND, BORROW]
+          description: Position side (LEND or BORROW)
+        amount:
+          type: string
+          description: Position amount
+        presentValue:
+          type: string
+          description: Present value of the position
+        createdAt:
+          type: string
+          description: Unix timestamp for position creation
+        updatedAt:
+          type: string
+          description: Unix timestamp for position update
