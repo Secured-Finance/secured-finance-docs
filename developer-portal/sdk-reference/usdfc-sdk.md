@@ -436,10 +436,9 @@ usdfc.store.onTroveChanged = (trove) => {
 ```
 
 ### What networks does the SDK support?
-The SDK supports all networks where the USDFC protocol is deployed, including Ethereum, Arbitrum, and Filecoin.
+The SDK supports Filecoin network, which is the only network where the USDFC protocol is deployed.
 
 ## Related Resources
 - [USDFC Protocol Documentation](../../usdfc-stablecoin/overview.md)
-- [USDFC Subgraph Documentation](../api-reference/usdfc-subgraph/README.md)
 - [GitHub Repository](https://github.com/Secured-Finance/stablecoin-sdk)
 - [NPM Package](https://www.npmjs.com/package/@secured-finance/stablecoin-sdk)
