@@ -1,6 +1,10 @@
+---
+description: Example queries for the Fixed-Rate Lending Subgraph
+---
+
 # 🔍 Query Examples
 
-The Graph uses the GraphQL language to query the subgraphs. This doc will teach you how to query the Secured Finance Subgraphs by writing the GraphQL queries. You can copy and paste these queries into the [Subgraph endpoints](broken-reference/).
+The Graph uses the GraphQL language to query the subgraphs. This doc will teach you how to query the Secured Finance Subgraphs by writing the GraphQL queries. You can copy and paste these queries into the [Subgraph endpoints](README.md#subgraph-endpoints).
 
 ### Tips and Guidelines:
 
@@ -14,13 +18,13 @@ The Graph uses the GraphQL language to query the subgraphs. This doc will teach 
 
 ### Order Entity
 
-When a user places an order on our protocol, it is stored in the Order entity. You can check the order entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/8caa85fa0ae4b2abc41694c8a91538bd0f66a4c0/schema.graphql#L22C9-L22C9).
+When a user places an order on our protocol, it is stored in the Order entity. You can check the order entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/develop/schema.graphql#L22).
 
 ```graphql
 {
-  orders(where: {maker: "0xe477f1adcd3b4a2e1e152f79105a18e5368f0d33"}) {
+  orders(where: {user: "0xe477f1adcd3b4a2e1e152f79105a18e5368f0d33"}) {
     orderId
-    maker {
+    user {
       id
     }
     side
@@ -30,13 +34,15 @@ When a user places an order on our protocol, it is stored in the Order entity. Y
     filledAmount
     inputAmount
     inputUnitPrice
+    type
+    isPreOrder
   }
 }
 ```
 
 ### Transfer Entity
 
-When a user deposits or withdraws assets, it is stored in the Transfer entity. You can check the Transfer entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/8caa85fa0ae4b2abc41694c8a91538bd0f66a4c0/schema.graphql#L128).
+When a user deposits or withdraws assets, it is stored in the Transfer entity. You can check the Transfer entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/develop/schema.graphql#L170).
 
 ```graphql
 {
@@ -47,13 +53,16 @@ When a user deposits or withdraws assets, it is stored in the Transfer entity. Y
     currency
     amount
     transferType
+    timestamp
+    blockNumber
+    txHash
   }
 }
 ```
 
 ### Liquidation Entity
 
-When a user is liquidated, it is stored in the Liquidation entity. You can check the Liquidation entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/a53a6097987891e88be6bed61cde131fa08c9598/schema.graphql#L110).
+When a user is liquidated, it is stored in the Liquidation entity. You can check the Liquidation entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/develop/schema.graphql#L153).
 
 ```graphql
 {
@@ -65,46 +74,72 @@ When a user is liquidated, it is stored in the Liquidation entity. You can check
     debtCurrency
     debtMaturity
     debtAmount
+    timestamp
+    blockNumber
+    txHash
   }
 }
 ```
 
 ### Transaction Entity
 
-When a user takes an order or its order is taken, it is stored in the Transaction entity. You can check the Transaction entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/a53a6097987891e88be6bed61cde131fa08c9598/schema.graphql#L1).
+When a user takes an order or its order is taken, it is stored in the Transaction entity. You can check the Transaction entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/develop/schema.graphql#L1).
 
 ```graphql
 {
-  transactions(where: {taker: "0xe477f1adcd3b4a2e1e152f79105a18e5368f0d33"}) {
-    taker {
+  transactions(where: {user: "0xe477f1adcd3b4a2e1e152f79105a18e5368f0d33"}) {
+    user {
       id
     }
     currency
     maturity
     side
+    executionPrice
+    executionType
+    futureValue
     amount
+    feeInFV
+    averagePrice
+    lendingMarket {
+      id
+    }
+    order {
+      id
+      orderId
+    }
+    createdAt
+    blockNumber
+    txHash
   }
 }
 ```
 
 ### User Entity
 
-All users' information for their orders, transactions, transfers, liquidations etc. are stored in the User entity. You can check the User entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/a53a6097987891e88be6bed61cde131fa08c9598/schema.graphql#L80).
+All users' information for their orders, transactions, transfers, liquidations etc. are stored in the User entity. You can check the User entity [here](https://github.com/Secured-Finance/secured-finance-subgraph/blob/develop/schema.graphql#L80).
 
 ```graphql
 {
   user (id: "0xe477f1adcd3b4a2e1e152f79105a18e5368f0d33") {
     id
+    createdAt
+    transactionCount
+    orderCount
+    liquidationCount
+    transferCount
     orders (orderBy: orderId, orderDirection: asc) {
       orderId
       currency
       maturity
       status
+      inputAmount
+      inputUnitPrice
     }
     transactions (skip: 20, first: 20) {
       currency
       maturity
       amount
+      executionType
     }
     liquidations (where: {debtCurrency: "0x4554480000000000000000000000000000000000000000000000000000000000"}, orderBy: debtAmount, orderDirection: desc) {
       debtCurrency
@@ -114,6 +149,15 @@ All users' information for their orders, transactions, transfers, liquidations e
     transfers (where: {transferType: Deposit}) {
       currency
       amount
+      transferType
+    }
+    deposits {
+      currency
+      amount
+    }
+    takerVolumesByCurrency {
+      currency
+      totalVolume
     }
   }
 }
@@ -123,7 +167,7 @@ You can also add nested filtering in the queries. The below query will fetch the
 
 ```graphql
 {
-  users (where: { orders_ : {orderId: 1}}) {
+  users (where: { orders_: {orderId: 1}}) {
     id
     orders (where: {orderId: 1}) {
       orderId
@@ -132,6 +176,8 @@ You can also add nested filtering in the queries. The below query will fetch the
       status
       inputAmount
       inputUnitPrice
+      type
+      isPreOrder
     }
   }
 }
