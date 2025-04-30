@@ -5,29 +5,36 @@ info:
   description: |
     API for querying the Secured Finance Fixed-Rate Lending protocol data through The Graph.
     
-    This API allows developers to access data about lending markets, orders, positions, and other protocol activities.
+    This API allows developers to access data about lending markets, orders, positions, and other protocol activities using GraphQL queries.
 servers:
-  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin/0.0.3
-    description: Filecoin Mainnet
-  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-mainnet/0.0.3
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest
+    description: Arbitrum Sepolia Testnet
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest
     description: Ethereum Mainnet
-  - url: https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum/0.0.3
-    description: Arbitrum Mainnet
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest
+    description: Arbitrum One
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest
+    description: Ethereum Sepolia
 paths:
   /:
     post:
       summary: Query the Fixed-Rate Lending Subgraph
       description: Execute a GraphQL query against the Fixed-Rate Lending Subgraph
       operationId: querySubgraph
+      tags:
+        - GraphQL Queries
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
+              required:
+                - query
               properties:
                 query:
                   type: string
+                  description: GraphQL query to execute
                   example: |
                     {
                       lendingMarkets(
@@ -48,6 +55,7 @@ paths:
                     }
                 variables:
                   type: object
+                  description: Variables for the GraphQL query (optional)
             examples:
               getLendingMarkets:
                 summary: Get Active Lending Markets

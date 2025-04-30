@@ -11,7 +11,7 @@ Secured Finance provides GraphQL APIs via The Graph protocol to query data from 
 - How to query data from the Fixed-Rate Lending protocol
 - Examples of common queries and their responses
 - How to use GraphQL to build custom queries
-- How to use our interactive API documentation
+- How to use our interactive API documentation with "Test It" functionality
 
 ## Key Components
 
@@ -57,17 +57,17 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 ## Interactive API Documentation
 
-We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's embed integration. This allows you to explore and test the API directly from the documentation page in real-time.
+We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
-{% embed url="https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest" %}
-Fixed-Rate Lending Subgraph API Documentation (Arbitrum Sepolia Testnet)
-{% endembed %}
+{% openapi src="./fixed-rate-lending-subgraph/openapi.yaml" %}
+[Fixed-Rate Lending Subgraph API Documentation]
+{% endopenapi %}
 
 The interactive documentation above allows you to:
 
 1. Explore available endpoints and operations
 2. View request and response schemas
-3. Try out API calls directly from the documentation
+3. Try out API calls directly from the documentation using the "Test It" feature
 4. See example queries and responses
 
 ### Using the Interactive Documentation
@@ -75,7 +75,7 @@ The interactive documentation above allows you to:
 1. Browse through the available operations
 2. Click on an operation to expand it
 3. View the request parameters and example values
-4. Click "Try it" to execute a request
+4. Click "Test It" to execute a request against the selected server
 5. View the response directly in the documentation
 
 For more complex queries, you can also use The Graph's Playground interface by visiting the subgraph endpoints directly.
