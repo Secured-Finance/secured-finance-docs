@@ -8,10 +8,10 @@ Secured Finance provides GraphQL APIs via The Graph protocol to query data from 
 
 ## What You'll Learn
 
-- How to query data from the Fixed-Rate Lending protocol
-- Examples of common queries and their responses
-- How to use GraphQL to build custom queries
-- How to use our interactive API documentation with "Test It" functionality
+* How to query data from the Fixed-Rate Lending protocol
+* Examples of common queries and their responses
+* How to use GraphQL to build custom queries
+* How to use our interactive API documentation with "Test It" functionality
 
 ## Key Components
 
@@ -19,7 +19,7 @@ Secured Finance provides GraphQL APIs via The Graph protocol to query data from 
 
 Secured Finance maintains subgraphs for its protocols:
 
-- [Fixed-Rate Lending Subgraph](fixed-rate-lending-subgraph/README.md) - For querying data from the Fixed-Rate Lending protocol
+* [Fixed-Rate Lending Subgraph](fixed-rate-lending-subgraph/) - For querying data from the Fixed-Rate Lending protocol
 
 > **Note:** The USDFC Subgraph is currently under development and not yet deployed. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md).
 
@@ -27,10 +27,10 @@ Secured Finance maintains subgraphs for its protocols:
 
 Our subgraphs are deployed on the following networks:
 
-| Protocol | Ethereum | Arbitrum | Filecoin |
-|----------|----------|----------|----------|
-| USDFC | | | |
-| Fixed-Rate Lending | ✅ | ✅ | ✅ |
+| Protocol           | Ethereum | Arbitrum | Filecoin |
+| ------------------ | -------- | -------- | -------- |
+| USDFC              |          |          |          |
+| Fixed-Rate Lending | ✅        | ✅        | ✅        |
 
 > **Note:** The USDFC Subgraph is not deployed on any network yet. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md).
 
@@ -38,15 +38,18 @@ Our subgraphs are deployed on the following networks:
 
 #### Fixed-Rate Lending Subgraph
 
-##### Ethereum
+**Ethereum**
+
 * Mainnet: [https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest)
 * Sepolia: [https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest)
 
-##### Arbitrum
+**Arbitrum**
+
 * Mainnet: [https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest)
 * Sepolia: [https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest)
 
-##### Filecoin
+**Filecoin**
+
 > **Note:** The Filecoin subgraph endpoints are currently under development. Please check back later for updated URLs.
 
 ## Getting Started
@@ -61,9 +64,9 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
-{% openapi src="./fixed-rate-lending-subgraph/openapi.yaml" %}
-[Fixed-Rate Lending Subgraph API Documentation]
-{% endopenapi %}
+{% openapi-operation spec="secured-finance-api" path="/" method="post" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 
 The interactive documentation above allows you to:
 
@@ -84,6 +87,6 @@ For more complex queries, you can also use The Graph's Playground interface by v
 
 ## Related Resources
 
-- [The Graph Documentation](https://thegraph.com/docs/en/)
-- [GraphQL Documentation](https://graphql.org/learn/)
-- [Secured Finance GitHub Repositories](https://github.com/Secured-Finance)
+* [The Graph Documentation](https://thegraph.com/docs/en/)
+* [GraphQL Documentation](https://graphql.org/learn/)
+* [Secured Finance GitHub Repositories](https://github.com/Secured-Finance)
