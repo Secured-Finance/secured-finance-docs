@@ -38,19 +38,19 @@ paths:
                   example: |
                     {
                       lendingMarkets(
-                        where: { isReady: true },
+                        where: { isActive: true },
                         orderBy: maturity,
                         orderDirection: asc,
                         first: 10
                       ) {
                         id
-                        currency {
-                          symbol
-                        }
+                        currency
                         maturity
-                        lastPrice
-                        bestLendUnitPrice
-                        bestBorrowUnitPrice
+                        isActive
+                        openingUnitPrice
+                        lastLendUnitPrice
+                        lastBorrowUnitPrice
+                        volume
                       }
                     }
                 variables:
@@ -63,19 +63,19 @@ paths:
                   query: |
                     {
                       lendingMarkets(
-                        where: { isReady: true },
+                        where: { isActive: true },
                         orderBy: maturity,
                         orderDirection: asc,
                         first: 10
                       ) {
                         id
-                        currency {
-                          symbol
-                        }
+                        currency
                         maturity
-                        lastPrice
-                        bestLendUnitPrice
-                        bestBorrowUnitPrice
+                        isActive
+                        openingUnitPrice
+                        lastLendUnitPrice
+                        lastBorrowUnitPrice
+                        volume
                       }
                     }
               getOrderBook:
@@ -85,43 +85,111 @@ paths:
                     {
                       orders(
                         where: {
-                          market: "0x123...",
-                          status_in: [PENDING, PARTIALLY_EXECUTED]
+                          lendingMarket: "0x123...",
+                          status_in: [Open, PartiallyFilled]
                         },
-                        orderBy: price,
+                        orderBy: inputUnitPrice,
                         orderDirection: asc,
                         first: 20
+                      ) {
+                        id
+                        orderId
+                        user {
+                          id
+                        }
+                        side
+                        inputAmount
+                        inputUnitPrice
+                        filledAmount
+                        status
+                        type
+                        isPreOrder
+                      }
+                    }
+              getUserTransactions:
+                summary: Get User Transactions
+                value:
+                  query: |
+                    {
+                      transactions(
+                        where: { user: "0x456..." },
+                        orderBy: createdAt,
+                        orderDirection: desc,
+                        first: 10
+                      ) {
+                        id
+                        currency
+                        maturity
+                        side
+                        executionPrice
+                        executionType
+                        futureValue
+                        amount
+                        feeInFV
+                        averagePrice
+                        createdAt
+                        blockNumber
+                        txHash
+                      }
+                    }
+              getUserDeposits:
+                summary: Get User Deposits
+                value:
+                  query: |
+                    {
+                      deposits(
+                        where: { user: "0x456..." }
                       ) {
                         id
                         user {
                           id
                         }
-                        side
+                        currency
                         amount
-                        price
-                        status
                       }
                     }
-              getUserPositions:
-                summary: Get User Positions
+              getTransactionCandleSticks:
+                summary: Get Transaction Candle Sticks for Market Analysis
                 value:
                   query: |
                     {
-                      positions(
-                        where: { user: "0x456..." },
-                        orderBy: updatedAt,
-                        orderDirection: desc
+                      transactionCandleSticks(
+                        where: {
+                          currency: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                          maturity: "1735689600"
+                        },
+                        orderBy: timestamp,
+                        orderDirection: asc,
+                        first: 24
                       ) {
                         id
-                        market {
-                          currency {
-                            symbol
-                          }
-                          maturity
+                        interval
+                        currency
+                        maturity
+                        timestamp
+                        open
+                        close
+                        high
+                        low
+                        average
+                        volume
+                        volumeInFV
+                      }
+                    }
+              getTakerVolumesByCurrency:
+                summary: Get Taker Volumes By Currency
+                value:
+                  query: |
+                    {
+                      takerVolumesByCurrencies(
+                        where: { user: "0x456..." }
+                      ) {
+                        id
+                        user {
+                          id
                         }
-                        side
-                        amount
-                        presentValue
+                        currency
+                        totalVolume
                       }
                     }
       responses:
@@ -160,6 +228,18 @@ paths:
                         type: array
                         items:
                           $ref: '#/components/schemas/Transfer'
+                      deposits:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Deposit'
+                      transactionCandleSticks:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TransactionCandleStick'
+                      takerVolumesByCurrencies:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TakerVolumeByCurrency'
                   errors:
                     type: array
                     items:
@@ -184,19 +264,21 @@ paths:
                     data:
                       lendingMarkets:
                         - id: "0x123..."
-                          currency:
-                            symbol: "USDC"
+                          currency: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
                           maturity: "1735689600"
-                          lastPrice: "9850"
-                          bestLendUnitPrice: "9830"
-                          bestBorrowUnitPrice: "9870"
+                          isActive: true
+                          openingUnitPrice: "9900"
+                          lastLendUnitPrice: "9830"
+                          lastBorrowUnitPrice: "9870"
+                          volume: "1000000000000"
                         - id: "0x456..."
-                          currency:
-                            symbol: "WETH"
+                          currency: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
                           maturity: "1735689600"
-                          lastPrice: "9800"
-                          bestLendUnitPrice: "9780"
-                          bestBorrowUnitPrice: "9820"
+                          isActive: true
+                          openingUnitPrice: "9850"
+                          lastLendUnitPrice: "9780"
+                          lastBorrowUnitPrice: "9820"
+                          volume: "500000000000"
 components:
   schemas:
     LendingMarket:
@@ -456,3 +538,84 @@ components:
           type: string
           format: bytes
           description: Transaction hash of the transfer
+    Deposit:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the deposit
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        amount:
+          type: string
+          format: int64
+          description: Deposit amount
+    TransactionCandleStick:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the candle stick
+        interval:
+          type: string
+          description: Time interval for the candle stick
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the candle stick
+        open:
+          type: string
+          format: int64
+          description: Opening price
+        close:
+          type: string
+          format: int64
+          description: Closing price
+        high:
+          type: string
+          format: int64
+          description: Highest price
+        low:
+          type: string
+          format: int64
+          description: Lowest price
+        average:
+          type: string
+          format: decimal
+          description: Average price
+        volume:
+          type: string
+          format: int64
+          description: Trading volume
+        volumeInFV:
+          type: string
+          format: int64
+          description: Trading volume in future value
+    TakerVolumeByCurrency:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the taker volume
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        totalVolume:
+          type: string
+          format: int64
+          description: Total volume for the user and currency
