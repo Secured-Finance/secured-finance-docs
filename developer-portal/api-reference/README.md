@@ -64,7 +64,7 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
-{% openapi-operation path="./fixed-rate-lending-subgraph/openapi.yaml" method="post" %}
+{% openapi-operation spec="secured-finance-api" path="/" method="post" %}
 [Fixed-Rate Lending Subgraph API Documentation]
 {% endopenapi-operation %}
 
