@@ -38,19 +38,26 @@ Represents a transaction on the Fixed-Rate Lending protocol.
 ```graphql
 type Transaction @entity {
   id: ID!
+  currency: Bytes!
+  maturity: BigInt!
+  side: Int!
+  executionPrice: BigInt!
+  user: User!
+  executionType: TransactionExecutionType!
+  futureValue: BigInt!
+  amount: BigInt!
+  feeInFV: BigInt!
+  averagePrice: BigDecimal!
+  lendingMarket: LendingMarket!
+  order: Order!
+  createdAt: BigInt!
   blockNumber: BigInt!
-  timestamp: BigInt!
-  from: Bytes!
-  gasPrice: BigInt
-  gasUsed: BigInt
-  gasLimit: BigInt
-  status: TransactionStatus
+  txHash: Bytes!
 }
 
-enum TransactionStatus {
-  PENDING
-  SUCCESS
-  FAILED
+enum TransactionExecutionType {
+  Maker
+  Taker
 }
 ```
 
@@ -60,10 +67,18 @@ Represents users who interact with the Fixed-Rate Lending protocol.
 
 ```graphql
 type User @entity {
-  id: ID!
+  id: ID! # wallet address
+  createdAt: BigInt!
+  transactionCount: BigInt!
   transactions: [Transaction!]! @derivedFrom(field: "user")
+  orderCount: BigInt!
   orders: [Order!]! @derivedFrom(field: "user")
-  positions: [Position!]! @derivedFrom(field: "user")
+  liquidationCount: BigInt!
+  liquidations: [Liquidation!]! @derivedFrom(field: "user")
+  transferCount: BigInt!
+  transfers: [Transfer!]! @derivedFrom(field: "user")
+  deposits: [Deposit!]! @derivedFrom(field: "user")
+  takerVolumesByCurrency: [TakerVolumeByCurrency!]! @derivedFrom(field: "user")
 }
 ```
 
@@ -74,27 +89,38 @@ Represents an order in the order book.
 ```graphql
 type Order @entity {
   id: ID!
+  orderId: BigInt!
   user: User!
-  market: LendingMarket!
-  side: OrderSide!
-  amount: BigInt!
-  price: BigInt!
+  currency: Bytes!
+  side: Int!
+  maturity: BigInt!
+  inputUnitPrice: BigInt!
+  inputAmount: BigInt!
+  filledAmount: BigInt!
   status: OrderStatus!
+  statusUpdatedAt: BigInt!
+  lendingMarket: LendingMarket!
+  isPreOrder: Boolean!
+  type: OrderType!
+  transactions: [Transaction!]! @derivedFrom(field: "order")
+  isCircuitBreakerTriggered: Boolean!
   createdAt: BigInt!
-  executedAt: BigInt
-  cancelledAt: BigInt
+  blockNumber: BigInt!
+  txHash: Bytes!
 }
 
-enum OrderSide {
-  LEND
-  BORROW
+enum OrderType {
+  Market
+  Limit
+  Unwind
 }
 
 enum OrderStatus {
-  PENDING
-  EXECUTED
-  PARTIALLY_EXECUTED
-  CANCELLED
+  Open
+  PartiallyFilled
+  Filled
+  Killed
+  Cancelled
 }
 ```
 
@@ -107,44 +133,161 @@ type LendingMarket @entity {
   id: ID!
   currency: Bytes!
   maturity: BigInt!
-  orders: [Order!]! @derivedFrom(field: "market")
-  positions: [Position!]! @derivedFrom(field: "market")
-  lastPrice: BigInt
-  bestLendUnitPrice: BigInt
-  bestBorrowUnitPrice: BigInt
-  openingDate: BigInt!
-  isReady: Boolean!
+  isActive: Boolean!
+  transactions: [Transaction!]! @derivedFrom(field: "lendingMarket")
+  orders: [Order!]! @derivedFrom(field: "lendingMarket")
+  volume: BigInt!
+  dailyVolume: [DailyVolume!]! @derivedFrom(field: "lendingMarket")
+  openingUnitPrice: BigInt!
+  lastLendUnitPrice: BigInt!
+  lastBorrowUnitPrice: BigInt!
+  offsetAmount: BigInt!
 }
 ```
 
-### Position
+### Liquidation
 
-Represents a user's position in a lending market.
+Records details of a liquidation event.
 
 ```graphql
-type Position @entity {
+type Liquidation @entity {
+  id: ID!
+  collateralCurrency: Bytes!
+  debtCurrency: Bytes!
+  debtMaturity: BigInt!
+  debtAmount: BigInt!
+  user: User!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  txHash: Bytes!
+}
+```
+
+### Transfer
+
+Records details of a deposit or withdrawal.
+
+```graphql
+type Transfer @entity {
   id: ID!
   user: User!
-  market: LendingMarket!
-  side: OrderSide!
+  currency: Bytes!
   amount: BigInt!
-  presentValue: BigInt!
-  createdAt: BigInt!
-  updatedAt: BigInt!
+  transferType: TransferType!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  txHash: Bytes!
+}
+
+enum TransferType {
+  Deposit
+  Withdraw
 }
 ```
 
-### Currency
+### Deposit
 
-Represents a currency supported by the protocol.
+Records details of a user's deposit.
 
 ```graphql
-type Currency @entity {
+type Deposit @entity {
   id: ID!
-  symbol: String!
-  name: String!
-  decimals: Int!
-  markets: [LendingMarket!]! @derivedFrom(field: "currency")
+  user: User!
+  currency: Bytes!
+  amount: BigInt!
+}
+```
+
+### DailyVolume
+
+Records daily trading volume for a lending market.
+
+```graphql
+type DailyVolume @entity {
+  id: ID! # currency-maturity-date(yyyy-mm-dd)
+  currency: Bytes!
+  maturity: BigInt!
+  day: String! # dd-mm-yyyy
+  volume: BigInt!
+  timestamp: BigInt!
+  lendingMarket: LendingMarket!
+}
+```
+
+### Protocol
+
+Records protocol-wide statistics.
+
+```graphql
+type Protocol @entity {
+  id: ID! # 1
+  totalUsers: BigInt!
+  volumesByCurrency: [ProtocolVolumeByCurrency!]! @derivedFrom(field: "protocol")
+}
+```
+
+### ProtocolVolumeByCurrency
+
+Records total volume by currency for the protocol.
+
+```graphql
+type ProtocolVolumeByCurrency @entity {
+  id: ID! # currency
+  protocol: Protocol!
+  currency: Bytes!
+  totalVolume: BigInt!
+}
+```
+
+### TakerVolumeByCurrency
+
+Records taker volume by currency for a user.
+
+```graphql
+type TakerVolumeByCurrency @entity {
+  id: ID! # user-currency
+  user: User!
+  currency: Bytes!
+  totalVolume: BigInt!
+  totalVolumesByInterval: [TakerVolumeByIntervalAndCurrency!]! @derivedFrom(field: "takerVolumesByCurrency")
+}
+```
+
+### TransactionCandleStick
+
+Records price candles for transactions.
+
+```graphql
+type TransactionCandleStick @entity {
+  id: ID! # A composite ID, e.g., "currency-maturity-interval-epochTime"
+  interval: BigInt! # interval in seconds
+  currency: Bytes!
+  maturity: BigInt!
+  timestamp: BigInt! # The start time of the interval
+  open: BigInt!
+  close: BigInt!
+  high: BigInt!
+  low: BigInt!
+  average: BigDecimal!
+  volume: BigInt!
+  volumeInFV: BigInt!
+  lendingMarket: LendingMarket!
+}
+```
+
+### TakerVolumeByIntervalAndCurrency
+
+Records taker volume by interval and currency.
+
+```graphql
+type TakerVolumeByIntervalAndCurrency @entity {
+  id: ID! # Composite ID, e.g., "user-currency-interval-createdAt"
+  takerVolumesByCurrency: TakerVolumeByCurrency!
+  currency: Bytes!
+  interval: BigInt!
+  createdAt: BigInt! # The start time of the interval
+  volume: BigInt! # Total transaction volume for the interval
+  updatedAt: BigInt! # Timestamp when the record was last updated
 }
 ```
 
@@ -167,15 +310,15 @@ Use the orders entity with filters:
 {
   orders(
     where: {
-      market: "0x123...",
-      status_in: [PENDING, PARTIALLY_EXECUTED]
+      lendingMarket: "0x123...",
+      status_in: [Open, PartiallyFilled]
     }
   ) {
     id
     user { id }
     side
-    amount
-    price
+    inputAmount
+    inputUnitPrice
     status
   }
 }
@@ -186,12 +329,13 @@ Subscribe to lending market events:
 
 ```graphql
 subscription {
-  lendingMarket(orderBy: openingDate, orderDirection: desc) {
+  lendingMarket(orderBy: maturity, orderDirection: desc) {
     id
     currency
     maturity
-    openingDate
-    isReady
+    isActive
+    lastLendUnitPrice
+    lastBorrowUnitPrice
   }
 }
 ```
