@@ -29,8 +29,10 @@ Our subgraphs are deployed on the following networks:
 
 | Protocol | Ethereum | Arbitrum | Filecoin |
 |----------|----------|----------|----------|
-| USDFC | | | ✅ |
+| USDFC | | | |
 | Fixed-Rate Lending | ✅ | ✅ | ✅ |
+
+> **Note:** The USDFC Subgraph is not deployed on any network yet. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md).
 
 ### Subgraph Endpoints
 
