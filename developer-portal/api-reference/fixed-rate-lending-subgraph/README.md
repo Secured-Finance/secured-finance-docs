@@ -16,19 +16,16 @@ The Fixed-Rate Lending Subgraph continuously indexes events emitted by the Fixed
 
 ## Subgraph Endpoints
 
-Access the Fixed-Rate Lending Subgraph through these endpoints:
+For the complete list of subgraph endpoints, please refer to the [API Reference](../README.md#subgraph-endpoints) page.
 
-### Ethereum
-* Mainnet: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-mainnet/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-mainnet/0.0.3)
-* Sepolia: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-sepolia/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-sepolia/0.0.3)
+You can access the Fixed-Rate Lending Subgraph through these endpoints:
 
-### Arbitrum
-* Mainnet: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum/0.0.3)
-* Sepolia: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum-sepolia/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-arbitrum-sepolia/0.0.3)
+- Ethereum Mainnet: [https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest)
+- Ethereum Sepolia: [https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest)
+- Arbitrum One: [https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest)
+- Arbitrum Sepolia: [https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest](https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest)
 
-### Filecoin
-* Mainnet: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin/0.0.3)
-* Calibration: [https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin-calibration/0.0.3](https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin-calibration/0.0.3)
+> **Note:** The Filecoin subgraph endpoints are currently under development. Please check back later for updated URLs.
 
 ## Key Entities
 
@@ -155,13 +152,11 @@ type Currency @entity {
 
 See the [Query Examples](query-examples.md) page for sample queries to get started.
 
-## OpenAPI Interactive Documentation
+## Interactive Documentation
 
-You can interact with the Fixed-Rate Lending Subgraph directly through GraphQL using The Graph's Playground. Click the links below to access the interactive interface:
+You can interact with the Fixed-Rate Lending Subgraph directly through GraphQL using The Graph's Playground by visiting the subgraph endpoints listed above.
 
-- [Ethereum Playground](https://thegraph.com/hosted-service/subgraph/secured-finance/fixed-rate-lending-ethereum)
-- [Arbitrum Playground](https://thegraph.com/hosted-service/subgraph/secured-finance/fixed-rate-lending-arbitrum)
-- [Filecoin Playground](https://thegraph.com/hosted-service/subgraph/secured-finance/fixed-rate-lending-filecoin)
+For interactive API documentation embedded directly in this documentation, please refer to the [API Reference](../README.md#interactive-api-documentation) page.
 
 ## FAQ
 
