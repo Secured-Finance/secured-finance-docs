@@ -58,7 +58,7 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 ## Interactive API Documentation
 
-We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's embed integration. This allows you to explore and test the API directly from the documentation page.
+We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's embed integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
 {% embed url="https://api.studio.thegraph.com/proxy/61214/sf-protocol-prd-filecoin/0.0.3" %}
 Fixed-Rate Lending Subgraph API Documentation
