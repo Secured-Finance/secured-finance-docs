@@ -135,8 +135,35 @@ paths:
                   data:
                     type: object
                     description: The data returned by the query
+                    properties:
+                      lendingMarkets:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/LendingMarket'
+                      orders:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Order'
+                      positions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Position'
                   errors:
                     type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        locations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              line:
+                                type: integer
+                              column:
+                                type: integer
                     description: Any errors that occurred during the query
               examples:
                 lendingMarketsResponse:
