@@ -36,6 +36,8 @@ Our subgraphs are deployed on the following networks:
 
 ### Subgraph Endpoints
 
+These are Subgraph endpoint URLs for our production Mainnet and Testnet environments. You can click the URL and try some queries on the GraphQL playground.
+
 #### Fixed-Rate Lending Subgraph
 
 **Ethereum**
