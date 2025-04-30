@@ -144,10 +144,22 @@ paths:
                         type: array
                         items:
                           $ref: '#/components/schemas/Order'
-                      positions:
+                      transactions:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Position'
+                          $ref: '#/components/schemas/Transaction'
+                      users:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/User'
+                      liquidations:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Liquidation'
+                      transfers:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Transfer'
                   errors:
                     type: array
                     items:
@@ -194,96 +206,253 @@ components:
           type: string
           description: Unique identifier for the lending market
         currency:
-          type: object
-          properties:
-            id:
-              type: string
-            symbol:
-              type: string
-            name:
-              type: string
-            decimals:
-              type: integer
+          type: string
+          format: bytes
+          description: Currency address
         maturity:
           type: string
+          format: int64
           description: Unix timestamp for the maturity date
-        lastPrice:
-          type: string
-          description: Last traded price in the market
-        bestLendUnitPrice:
-          type: string
-          description: Best unit price for lending
-        bestBorrowUnitPrice:
-          type: string
-          description: Best unit price for borrowing
-        openingDate:
-          type: string
-          description: Unix timestamp for the market opening date
-        isReady:
+        isActive:
           type: boolean
-          description: Whether the market is ready for trading
+          description: Whether the market is active
+        volume:
+          type: string
+          format: int64
+          description: Total volume of the market
+        openingUnitPrice:
+          type: string
+          format: int64
+          description: Opening unit price of the market
+        lastLendUnitPrice:
+          type: string
+          format: int64
+          description: Last unit price for lending
+        lastBorrowUnitPrice:
+          type: string
+          format: int64
+          description: Last unit price for borrowing
+        offsetAmount:
+          type: string
+          format: int64
+          description: Offset amount of the market
     Order:
       type: object
       properties:
         id:
           type: string
           description: Unique identifier for the order
+        orderId:
+          type: string
+          format: int64
+          description: Order ID in the contract
         user:
-          type: object
-          properties:
-            id:
-              type: string
-        market:
-          $ref: '#/components/schemas/LendingMarket'
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
         side:
+          type: integer
+          description: Order side (0 for LEND, 1 for BORROW)
+        maturity:
           type: string
-          enum: [LEND, BORROW]
-          description: Order side (LEND or BORROW)
-        amount:
+          format: int64
+          description: Unix timestamp for the maturity date
+        inputUnitPrice:
           type: string
-          description: Order amount
-        price:
+          format: int64
+          description: Input unit price for the order
+        inputAmount:
           type: string
-          description: Order price
+          format: int64
+          description: Input amount for the order
+        filledAmount:
+          type: string
+          format: int64
+          description: Filled amount of the order
         status:
           type: string
-          enum: [PENDING, EXECUTED, PARTIALLY_EXECUTED, CANCELLED]
+          enum: [Open, PartiallyFilled, Filled, Killed, Cancelled]
           description: Order status
+        statusUpdatedAt:
+          type: string
+          format: int64
+          description: Unix timestamp for status update
+        lendingMarket:
+          $ref: '#/components/schemas/LendingMarket'
+        isPreOrder:
+          type: boolean
+          description: Whether the order is a pre-order
+        type:
+          type: string
+          enum: [Market, Limit, Unwind]
+          description: Order type
+        isCircuitBreakerTriggered:
+          type: boolean
+          description: Whether the circuit breaker was triggered
         createdAt:
           type: string
+          format: int64
           description: Unix timestamp for order creation
-        executedAt:
+        blockNumber:
           type: string
-          description: Unix timestamp for order execution
-        cancelledAt:
+          format: int64
+          description: Block number of the order creation
+        txHash:
           type: string
-          description: Unix timestamp for order cancellation
-    Position:
+          format: bytes
+          description: Transaction hash of the order creation
+    Transaction:
       type: object
       properties:
         id:
           type: string
-          description: Unique identifier for the position
-        user:
-          type: object
-          properties:
-            id:
-              type: string
-        market:
-          $ref: '#/components/schemas/LendingMarket'
-        side:
+          description: Unique identifier for the transaction
+        currency:
           type: string
-          enum: [LEND, BORROW]
-          description: Position side (LEND or BORROW)
+          format: bytes
+          description: Currency address
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        side:
+          type: integer
+          description: Transaction side (0 for LEND, 1 for BORROW)
+        executionPrice:
+          type: string
+          format: int64
+          description: Execution price of the transaction
+        user:
+          $ref: '#/components/schemas/User'
+        executionType:
+          type: string
+          enum: [Maker, Taker]
+          description: Execution type
+        futureValue:
+          type: string
+          format: int64
+          description: Future value of the transaction
         amount:
           type: string
-          description: Position amount
-        presentValue:
+          format: int64
+          description: Amount of the transaction
+        feeInFV:
           type: string
-          description: Present value of the position
+          format: int64
+          description: Fee in future value
+        averagePrice:
+          type: string
+          format: decimal
+          description: Average price of the transaction
+        lendingMarket:
+          $ref: '#/components/schemas/LendingMarket'
+        order:
+          $ref: '#/components/schemas/Order'
         createdAt:
           type: string
-          description: Unix timestamp for position creation
-        updatedAt:
+          format: int64
+          description: Unix timestamp for transaction creation
+        blockNumber:
           type: string
-          description: Unix timestamp for position update
+          format: int64
+          description: Block number of the transaction
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Wallet address of the user
+        createdAt:
+          type: string
+          format: int64
+          description: Unix timestamp for user creation
+        transactionCount:
+          type: string
+          format: int64
+          description: Number of transactions by the user
+        orderCount:
+          type: string
+          format: int64
+          description: Number of orders by the user
+        liquidationCount:
+          type: string
+          format: int64
+          description: Number of liquidations by the user
+        transferCount:
+          type: string
+          format: int64
+          description: Number of transfers by the user
+    Liquidation:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the liquidation
+        collateralCurrency:
+          type: string
+          format: bytes
+          description: Collateral currency address
+        debtCurrency:
+          type: string
+          format: bytes
+          description: Debt currency address
+        debtMaturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the debt maturity
+        debtAmount:
+          type: string
+          format: int64
+          description: Debt amount
+        user:
+          $ref: '#/components/schemas/User'
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the liquidation
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the liquidation
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash of the liquidation
+    Transfer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the transfer
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        amount:
+          type: string
+          format: int64
+          description: Transfer amount
+        transferType:
+          type: string
+          enum: [Deposit, Withdraw]
+          description: Transfer type
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the transfer
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the transfer
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash of the transfer
