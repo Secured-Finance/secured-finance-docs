@@ -29,10 +29,11 @@ Our subgraphs are deployed on the following networks:
 
 | Protocol           | Ethereum | Arbitrum | Filecoin |
 | ------------------ | -------- | -------- | -------- |
-| USDFC              |          |          |          |
-| Fixed-Rate Lending | ✅        | ✅        | ✅        |
+| Fixed-Rate Lending | ✅        | ✅        | ✅*       |
 
-> **Note:** The USDFC Subgraph is not deployed on any network yet. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md).
+> **Note:** The USDFC Subgraph is currently under development and not yet deployed. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md) on the Filecoin network.
+> 
+> *Filecoin subgraph endpoints are currently under development.
 
 ### Subgraph Endpoints
 
@@ -66,9 +67,9 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
-{% openapi-operation spec="secured-finance-api" path="/" method="post" %}
-[Fixed-Rate Lending Subgraph API Documentation]
-{% endopenapi-operation %}
+{% embed url="https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest" %}
+Fixed-Rate Lending Subgraph API Documentation
+{% endembed %}
 
 The interactive documentation above allows you to:
 
