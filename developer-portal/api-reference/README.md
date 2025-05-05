@@ -51,8 +51,9 @@ These are Subgraph endpoint URLs for our production Mainnet and Testnet environm
 
 **Filecoin**
 
-* Mainnet: [https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin/v0.0.1/gn](https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin/v0.0.1/gn)
-* Calibration: [https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin-calibration/v0.0.1/gn](https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin-calibration/v0.0.1/gn)
+* Mainnet: [https://api.goldsky.com/api/public/project_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/0.0.3/gn](https://api.goldsky.com/api/public/project_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/0.0.3/gn)
+
+> **Note:** The Filecoin Calibration testnet endpoints are not provided yet.
 
 ## Getting Started
 

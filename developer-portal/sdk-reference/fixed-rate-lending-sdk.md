@@ -365,25 +365,9 @@ try {
 ```
 
 ### How do I convert between unit price and APR?
-The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period:
+The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC Bond Price to APR conversion](https://docs.secured.finance/fixed-rate-lending/advanced-topics/zc-bond-price-to-apr).
 
-```javascript
-function unitPriceToAPR(unitPrice, maturity) {
-  const now = Math.floor(Date.now() / 1000);
-  const secondsToMaturity = maturity - now;
-  const secondsPerYear = 365 * 24 * 60 * 60; // 31,536,000
-  const yearsToMaturity = secondsToMaturity / secondsPerYear;
-  
-  // Different calculation methods based on maturity
-  if (yearsToMaturity < 1) {
-    // For bonds with maturity less than 1 year (linear calculation)
-    return ((10000 / unitPrice) - 1) * (secondsPerYear / secondsToMaturity) * 100;
-  } else {
-    // For bonds with maturity greater than 1 year (annual compounding)
-    return (Math.pow(10000 / unitPrice, 1 / yearsToMaturity) - 1) * 100;
-  }
-}
-```
+The calculation is implemented in the Price Calculations section above.
 
 ### What networks does the SDK support?
 The SDK supports all networks where the Fixed-Rate Lending protocol is deployed, including Ethereum, Arbitrum, and Filecoin.
