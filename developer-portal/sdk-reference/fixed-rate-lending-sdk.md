@@ -303,12 +303,18 @@ import { getUTCMonthYear } from "@secured-finance/sf-core";
 // Convert unit price to APR
 function unitPriceToAPR(unitPrice, maturity) {
   const now = Math.floor(Date.now() / 1000);
-  const daysToMaturity = (maturity - now) / (60 * 60 * 24);
+  const secondsToMaturity = maturity - now;
+  const secondsPerYear = 365 * 24 * 60 * 60; // 31,536,000
+  const yearsToMaturity = secondsToMaturity / secondsPerYear;
   
-  // Convert unit price to APR
-  const apr = ((10000 / unitPrice) - 1) * (365 / daysToMaturity) * 100;
-  
-  return apr;
+  // Different calculation methods based on maturity
+  if (yearsToMaturity < 1) {
+    // For bonds with maturity less than 1 year (linear calculation)
+    return ((10000 / unitPrice) - 1) * (secondsPerYear / secondsToMaturity) * 100;
+  } else {
+    // For bonds with maturity greater than 1 year (annual compounding)
+    return (Math.pow(10000 / unitPrice, 1 / yearsToMaturity) - 1) * 100;
+  }
 }
 
 // Format maturity date
