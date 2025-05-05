@@ -16,15 +16,21 @@ The Fixed-Rate Lending SDK is built on top of viem and provides a type-safe inte
 
 ## Installation
 
-Install the Fixed-Rate Lending SDK using npm or yarn:
+The Fixed-Rate Lending SDK packages are hosted on GitHub Packages registry, not the public NPM registry. You'll need to configure your `.npmrc` file to access them:
 
 ```bash
-# Using npm
-npm install @secured-finance/sf-sdk
+# Add this to your .npmrc file
+@secured-finance:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 
-# Using yarn
-yarn add @secured-finance/sf-sdk
+# Then install the individual packages
+npm install @secured-finance/sf-client
+npm install @secured-finance/sf-graph-client
+npm install @secured-finance/sf-core
 ```
+
+For more details on setting up authentication for GitHub Packages, see the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+
 
 ## Key Components
 
@@ -195,8 +201,8 @@ async function getProtocolDepositAmount(client) {
 
 ```javascript
 // Unwind a position
-async function unwindPosition(client, currency, maturity, amount) {
-  const tx = await client.unwindPosition(currency, maturity, amount);
+async function unwindPosition(client, currency, maturity) {
+  const tx = await client.unwindPosition(currency, maturity);
   console.log("Position unwound:", tx);
   return tx;
 }
@@ -214,58 +220,78 @@ async function getTotalPresentValue(client) {
 ### Using the Graph Client
 
 ```javascript
-import { GraphClient } from "@secured-finance/sf-graph-client";
+import { GraphClient, useQuery } from "@secured-finance/sf-graph-client";
+import { useEffect, useState } from "react";
 
-// Create a graph client
+// Create a graph client for a specific network
 const graphClient = new GraphClient({
-  uri: "https://api.thegraph.com/subgraphs/name/secured-finance/fixed-rate-lending-filecoin"
+  uri: "https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest"
 });
 
-// Query lending markets
+// Example 1: Simple query using the GraphClient directly
 async function queryLendingMarkets() {
-  const { lendingMarkets } = await graphClient.query({
-    lendingMarkets: {
-      id: true,
-      currency: true,
-      maturity: true,
-      lastPrice: true,
-      bestLendUnitPrice: true,
-      bestBorrowUnitPrice: true,
-      openingDate: true,
-      isReady: true
-    }
-  });
-  
-  console.log("Lending markets:", lendingMarkets);
-  return lendingMarkets;
+  try {
+    // Define the query document
+    const { lendingMarkets } = await graphClient.query({
+      lendingMarkets: {
+        id: true,
+        currency: {
+          id: true,
+          symbol: true,
+          decimals: true
+        },
+        maturity: true,
+        isReady: true
+      }
+    });
+    
+    console.log("Lending markets:", lendingMarkets);
+    return lendingMarkets;
+  } catch (error) {
+    console.error("Error querying lending markets:", error);
+    return [];
+  }
 }
 
-// Query user orders
-async function queryUserOrders(userAddress) {
-  const { orders } = await graphClient.query({
-    orders: {
-      __args: {
-        where: { user: userAddress }
-      },
+// Example 2: Using the useQuery hook in a React component
+function LendingMarketsComponent() {
+  // Define the query document
+  const queryDocument = {
+    lendingMarkets: {
       id: true,
-      user: {
-        id: true
-      },
-      market: {
+      currency: {
         id: true,
-        currency: true,
-        maturity: true
+        symbol: true
       },
-      side: true,
-      amount: true,
-      price: true,
-      status: true,
-      createdAt: true
+      maturity: true,
+      isReady: true
     }
+  };
+  
+  // Execute the query
+  const { data, loading, error } = useQuery(queryDocument, {
+    client: graphClient,
+    variables: {},
+    fetchPolicy: "network-only"
   });
   
-  console.log("User orders:", orders);
-  return orders;
+  // Handle loading and error states
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  
+  // Render the data
+  return (
+    <div>
+      <h2>Available Lending Markets</h2>
+      <ul>
+        {data?.lendingMarkets?.map(market => (
+          <li key={market.id}>
+            {market.currency.symbol} - Maturity: {new Date(Number(market.maturity) * 1000).toLocaleDateString()}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 ```
 
@@ -277,12 +303,18 @@ import { getUTCMonthYear } from "@secured-finance/sf-core";
 // Convert unit price to APR
 function unitPriceToAPR(unitPrice, maturity) {
   const now = Math.floor(Date.now() / 1000);
-  const daysToMaturity = (maturity - now) / (60 * 60 * 24);
+  const secondsToMaturity = maturity - now;
+  const secondsPerYear = 365 * 24 * 60 * 60; // 31,536,000
+  const yearsToMaturity = secondsToMaturity / secondsPerYear;
   
-  // Convert unit price to APR
-  const apr = ((10000 / unitPrice) - 1) * (365 / daysToMaturity) * 100;
-  
-  return apr;
+  // Different calculation methods based on maturity
+  if (yearsToMaturity < 1) {
+    // For bonds with maturity less than 1 year (linear calculation)
+    return ((10000 / unitPrice) - 1) * (secondsPerYear / secondsToMaturity) * 100;
+  } else {
+    // For bonds with maturity greater than 1 year (annual compounding)
+    return (Math.pow(10000 / unitPrice, 1 / yearsToMaturity) - 1) * 100;
+  }
 }
 
 // Format maturity date
@@ -306,176 +338,7 @@ async function calculateOrderEstimation(client, currency, maturity, account, sid
 }
 ```
 
-## Examples
 
-### Creating a Lending Position
-
-```javascript
-import { SecuredFinanceClient, OrderSide, WalletSource } from "@secured-finance/sf-client";
-import { Currency } from "@secured-finance/sf-core";
-import { createPublicClient, createWalletClient, http } from "viem";
-import { filecoin } from "viem/chains";
-
-async function createLendingPosition() {
-  // Connect to the protocol
-  const publicClient = createPublicClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const walletClient = createWalletClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const client = new SecuredFinanceClient();
-  await client.init(publicClient, walletClient);
-  
-  // Get the user's address
-  const [address] = await walletClient.getAddresses();
-  
-  // Get supported currencies
-  const currencies = await client.getCurrencies();
-  const usdcCurrency = currencies.find(c => c.symbol === "USDC");
-  
-  if (!usdcCurrency) {
-    throw new Error("USDC currency not found");
-  }
-  
-  // Get available maturities
-  const maturities = await client.getMaturities(usdcCurrency);
-  
-  if (maturities.length === 0) {
-    throw new Error("No maturities available for USDC");
-  }
-  
-  // Choose the nearest maturity
-  const maturity = maturities[0];
-  
-  // Get the best lend unit price
-  const bestLendUnitPrices = await client.getBestLendUnitPrices(usdcCurrency);
-  const bestLendUnitPrice = bestLendUnitPrices.find(p => p.maturity === maturity);
-  
-  if (!bestLendUnitPrice) {
-    throw new Error("No best lend unit price found for the selected maturity");
-  }
-  
-  // Deposit collateral
-  const collateralAmount = 1000n * 10n ** 6n; // 1000 USDC (assuming 6 decimals)
-  await client.depositCollateral(usdcCurrency, collateralAmount);
-  
-  // Place a lend order
-  const lendAmount = 500n * 10n ** 6n; // 500 USDC
-  const unitPrice = bestLendUnitPrice.unitPrice;
-  
-  try {
-    const tx = await client.placeOrder(
-      usdcCurrency,
-      maturity,
-      OrderSide.LEND,
-      lendAmount,
-      WalletSource.METAMASK,
-      unitPrice
-    );
-    
-    console.log("Lend order placed successfully:", tx);
-    
-    // Get the user's positions
-    const positions = await client.getPositions(address);
-    console.log("User positions:", positions);
-    
-    return positions;
-  } catch (error) {
-    console.error("Error placing lend order:", error);
-    throw error;
-  }
-}
-```
-
-### Monitoring Order Book and Placing Market Orders
-
-```javascript
-import { SecuredFinanceClient, OrderSide, WalletSource } from "@secured-finance/sf-client";
-import { Currency } from "@secured-finance/sf-core";
-import { createPublicClient, createWalletClient, http } from "viem";
-import { filecoin } from "viem/chains";
-
-async function monitorAndPlaceMarketOrder() {
-  // Connect to the protocol
-  const publicClient = createPublicClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const walletClient = createWalletClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const client = new SecuredFinanceClient();
-  await client.init(publicClient, walletClient);
-  
-  // Get supported currencies
-  const currencies = await client.getCurrencies();
-  const usdcCurrency = currencies.find(c => c.symbol === "USDC");
-  
-  if (!usdcCurrency) {
-    throw new Error("USDC currency not found");
-  }
-  
-  // Get available maturities
-  const maturities = await client.getMaturities(usdcCurrency);
-  
-  if (maturities.length === 0) {
-    throw new Error("No maturities available for USDC");
-  }
-  
-  // Choose the nearest maturity
-  const maturity = maturities[0];
-  
-  // Monitor the order book
-  const orderBookDetail = await client.getOrderBookDetail(usdcCurrency, maturity);
-  console.log("Order book detail:", orderBookDetail);
-  
-  const lendOrders = await client.getLendOrderBook(usdcCurrency, maturity, 0, 10);
-  console.log("Lend orders:", lendOrders);
-  
-  
-  const borrowOrders = await client.getBorrowOrderBook(usdcCurrency, maturity, 0, 10);
-  console.log("Borrow orders:", borrowOrders);
-  
-  // Check if there are any borrow orders
-  if (borrowOrders.length === 0) {
-    console.log("No borrow orders available");
-    return null;
-  }
-  
-  // Place a market order to lend (match against the best borrow order)
-  const bestBorrowOrder = borrowOrders[0];
-  const lendAmount = bestBorrowOrder.amount / 2n; // Lend half of the best borrow order amount
-  
-  // Deposit collateral
-  await client.depositCollateral(usdcCurrency, lendAmount);
-  
-  // Place a market order (unitPrice = 0 for market orders)
-  try {
-    const tx = await client.placeOrder(
-      usdcCurrency,
-      maturity,
-      OrderSide.LEND,
-      lendAmount,
-      WalletSource.METAMASK,
-      0 // Market order
-    );
-    
-    console.log("Market order placed successfully:", tx);
-    return tx;
-  } catch (error) {
-    console.error("Error placing market order:", error);
-    throw error;
-  }
-}
-```
 
 ## FAQ
 
@@ -502,19 +365,9 @@ try {
 ```
 
 ### How do I convert between unit price and APR?
-Use the following formula to convert unit price to APR:
+The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC Bond Price to APR conversion](../../fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md).
 
-```javascript
-function unitPriceToAPR(unitPrice, maturity) {
-  const now = Math.floor(Date.now() / 1000);
-  const daysToMaturity = (maturity - now) / (60 * 60 * 24);
-  
-  // Convert unit price to APR
-  const apr = ((10000 / unitPrice) - 1) * (365 / daysToMaturity) * 100;
-  
-  return apr;
-}
-```
+The calculation is implemented in the Price Calculations section above.
 
 ### What networks does the SDK support?
 The SDK supports all networks where the Fixed-Rate Lending protocol is deployed, including Ethereum, Arbitrum, and Filecoin.

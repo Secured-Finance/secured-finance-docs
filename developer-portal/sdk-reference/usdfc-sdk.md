@@ -16,15 +16,21 @@ The USDFC SDK is built on top of ethers.js and provides a type-safe interface to
 
 ## Installation
 
-Install the USDFC SDK using npm or yarn:
+The USDFC SDK packages are hosted on GitHub Packages registry, not the public NPM registry. You'll need to configure your `.npmrc` file to access them:
 
 ```bash
-# Using npm
-npm install @secured-finance/stablecoin-sdk
+# Add this to your .npmrc file
+@secured-finance:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 
-# Using yarn
-yarn add @secured-finance/stablecoin-sdk
+# Then install the individual packages
+npm install @secured-finance/stablecoin-lib-ethers
+npm install @secured-finance/stablecoin-lib-react
+npm install @secured-finance/stablecoin-lib-base
 ```
+
+For more details on setting up authentication for GitHub Packages, see the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+
 
 ## Key Components
 
@@ -46,13 +52,7 @@ React hooks and components for building USDFC-integrated web applications.
 import { useSfStablecoinStore } from "@secured-finance/stablecoin-lib-react";
 ```
 
-### lib-subgraph
 
-Utilities for querying the USDFC subgraph.
-
-```javascript
-import { SubgraphSfStablecoin } from "@secured-finance/stablecoin-lib-subgraph";
-```
 
 ## Basic Usage
 
@@ -201,36 +201,6 @@ async function liquidateUpTo(usdfc, maxTroves) {
 ```
 
 ## Advanced Usage
-
-### Using the Subgraph Client
-
-```javascript
-import { SubgraphSfStablecoin } from "@secured-finance/stablecoin-lib-subgraph";
-
-// Create a subgraph client
-const subgraphClient = new SubgraphSfStablecoin(
-  "https://api.thegraph.com/subgraphs/name/secured-finance/usdfc-filecoin"
-);
-
-// Query Troves
-async function queryTroves() {
-  const troves = await subgraphClient.getTroves({
-    first: 10,
-    sortBy: "collateralRatio",
-    sortDirection: "asc"
-  });
-  
-  console.log("Troves:", troves);
-  return troves;
-}
-
-// Query user history
-async function queryUserHistory(userAddress) {
-  const history = await subgraphClient.getUserHistory(userAddress);
-  console.log("User History:", history);
-  return history;
-}
-```
 
 ### React Integration
 
@@ -436,7 +406,7 @@ usdfc.store.onTroveChanged = (trove) => {
 ```
 
 ### What networks does the SDK support?
-The SDK supports Filecoin network, which is the only network where the USDFC protocol is deployed.
+The SDK supports the Filecoin network, which is the only network where the USDFC protocol is deployed. The USDFC protocol is not available on Ethereum or Arbitrum networks.
 
 ## Related Resources
 - [USDFC Protocol Documentation](../../usdfc-stablecoin/overview.md)
