@@ -365,7 +365,7 @@ try {
 ```
 
 ### How do I convert between unit price and APR?
-The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC Bond Price to APR conversion](https://docs.secured.finance/fixed-rate-lending/advanced-topics/zc-bond-price-to-apr).
+The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC Bond Price to APR conversion](../../fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md).
 
 The calculation is implemented in the Price Calculations section above.
 
