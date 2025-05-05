@@ -16,15 +16,21 @@ The Fixed-Rate Lending SDK is built on top of viem and provides a type-safe inte
 
 ## Installation
 
-Install the Fixed-Rate Lending SDK using npm or yarn:
+The Fixed-Rate Lending SDK packages are hosted on GitHub Packages registry, not the public NPM registry. You'll need to configure your `.npmrc` file to access them:
 
 ```bash
-# Using npm
-npm install @secured-finance/sf-sdk
+# Add this to your .npmrc file
+@secured-finance:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 
-# Using yarn
-yarn add @secured-finance/sf-sdk
+# Then install the individual packages
+npm install @secured-finance/sf-client
+npm install @secured-finance/sf-graph-client
+npm install @secured-finance/sf-core
 ```
+
+For more details on setting up authentication for GitHub Packages, see the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+
 
 ## Key Components
 
@@ -218,7 +224,7 @@ import { GraphClient } from "@secured-finance/sf-graph-client";
 
 // Create a graph client
 const graphClient = new GraphClient({
-  uri: "https://api.thegraph.com/subgraphs/name/secured-finance/fixed-rate-lending-filecoin"
+  uri: "https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest"
 });
 
 // Query lending markets

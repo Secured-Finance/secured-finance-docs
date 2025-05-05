@@ -16,15 +16,21 @@ The USDFC SDK is built on top of ethers.js and provides a type-safe interface to
 
 ## Installation
 
-Install the USDFC SDK using npm or yarn:
+The USDFC SDK packages are hosted on GitHub Packages registry, not the public NPM registry. You'll need to configure your `.npmrc` file to access them:
 
 ```bash
-# Using npm
-npm install @secured-finance/stablecoin-sdk
+# Add this to your .npmrc file
+@secured-finance:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 
-# Using yarn
-yarn add @secured-finance/stablecoin-sdk
+# Then install the individual packages
+npm install @secured-finance/stablecoin-lib-ethers
+npm install @secured-finance/stablecoin-lib-react
+npm install @secured-finance/stablecoin-lib-base
 ```
+
+For more details on setting up authentication for GitHub Packages, see the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+
 
 ## Key Components
 
