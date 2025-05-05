@@ -220,177 +220,78 @@ async function getTotalPresentValue(client) {
 ### Using the Graph Client
 
 ```javascript
-import { GraphClient } from "@secured-finance/sf-graph-client";
-import { formatUnits } from "viem";
+import { GraphClient, useQuery } from "@secured-finance/sf-graph-client";
+import { useEffect, useState } from "react";
 
 // Create a graph client for a specific network
 const graphClient = new GraphClient({
   uri: "https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest"
 });
 
-// Example: Fetch user positions with detailed market data
-async function fetchUserPositions(userAddress) {
-  const { user } = await graphClient.query({
-    user: {
-      __args: {
-        id: userAddress.toLowerCase()
-      },
-      id: true,
-      positions: {
+// Example 1: Simple query using the GraphClient directly
+async function queryLendingMarkets() {
+  try {
+    // Define the query document
+    const { lendingMarkets } = await graphClient.query({
+      lendingMarkets: {
         id: true,
-        side: true,
-        amount: true,
-        presentValue: true,
-        createdAt: true,
-        updatedAt: true,
-        market: {
+        currency: {
           id: true,
-          currency: {
-            id: true,
-            symbol: true,
-            decimals: true
-          },
-          maturity: true
-        }
-      }
-    }
-  });
-
-  if (!user || !user.positions || user.positions.length === 0) {
-    console.log("No positions found for user:", userAddress);
-    return [];
-  }
-
-  // Process and format the position data
-  const formattedPositions = user.positions.map(position => {
-    const { market, amount, presentValue, side, createdAt } = position;
-    const { currency, maturity } = market;
-    
-    // Format amounts using proper decimals
-    const formattedAmount = formatUnits(BigInt(amount), currency.decimals);
-    const formattedPresentValue = formatUnits(BigInt(presentValue), currency.decimals);
-    
-    // Format maturity date
-    const maturityDate = new Date(Number(maturity) * 1000).toLocaleDateString();
-    
-    return {
-      id: position.id,
-      currency: currency.symbol,
-      maturityDate,
-      side,
-      amount: formattedAmount,
-      presentValue: formattedPresentValue,
-      createdAt: new Date(Number(createdAt) * 1000).toLocaleDateString()
-    };
-  });
-
-  console.log("User positions:", formattedPositions);
-  return formattedPositions;
-}
-
-// Example: Get market overview with order book depth
-async function getMarketOverview(currencySymbol = "USDC") {
-  // First query all markets for the specified currency
-  const { currencies } = await graphClient.query({
-    currencies: {
-      __args: {
-        where: {
-          symbol: currencySymbol
-        }
-      },
-      id: true,
-      symbol: true,
-      decimals: true,
-      markets: {
-        id: true,
+          symbol: true,
+          decimals: true
+        },
         maturity: true,
-        lastPrice: true,
-        openingDate: true,
         isReady: true
       }
-    }
-  });
-
-  if (!currencies || currencies.length === 0) {
-    console.log(`No markets found for currency: ${currencySymbol}`);
+    });
+    
+    console.log("Lending markets:", lendingMarkets);
+    return lendingMarkets;
+  } catch (error) {
+    console.error("Error querying lending markets:", error);
     return [];
   }
+}
 
-  const currency = currencies[0];
+// Example 2: Using the useQuery hook in a React component
+function LendingMarketsComponent() {
+  // Define the query document
+  const queryDocument = {
+    lendingMarkets: {
+      id: true,
+      currency: {
+        id: true,
+        symbol: true
+      },
+      maturity: true,
+      isReady: true
+    }
+  };
   
-  // For each market, get order book depth
-  const marketsWithDepth = await Promise.all(
-    currency.markets.map(async (market) => {
-      // Get lend orders
-      const { orders: lendOrders } = await graphClient.query({
-        orders: {
-          __args: {
-            where: {
-              market: market.id,
-              side: "LEND",
-              status_in: ["PENDING", "PARTIALLY_EXECUTED"]
-            },
-            orderBy: "price",
-            orderDirection: "desc",
-            first: 5
-          },
-          id: true,
-          amount: true,
-          price: true
-        }
-      });
-
-      // Get borrow orders
-      const { orders: borrowOrders } = await graphClient.query({
-        orders: {
-          __args: {
-            where: {
-              market: market.id,
-              side: "BORROW",
-              status_in: ["PENDING", "PARTIALLY_EXECUTED"]
-            },
-            orderBy: "price",
-            orderDirection: "asc",
-            first: 5
-          },
-          id: true,
-          amount: true,
-          price: true
-        }
-      });
-
-      // Calculate total volume
-      const lendVolume = lendOrders.reduce(
-        (sum, order) => sum + BigInt(order.amount),
-        0n
-      );
-      const borrowVolume = borrowOrders.reduce(
-        (sum, order) => sum + BigInt(order.amount),
-        0n
-      );
-
-      // Format maturity date
-      const maturityDate = new Date(Number(market.maturity) * 1000);
-
-      return {
-        id: market.id,
-        maturity: market.maturity,
-        maturityDate: maturityDate.toLocaleDateString(),
-        lastPrice: market.lastPrice ? formatUnits(BigInt(market.lastPrice), 4) : "N/A",
-        lendOrders: lendOrders.length,
-        borrowOrders: borrowOrders.length,
-        lendVolume: formatUnits(lendVolume, currency.decimals),
-        borrowVolume: formatUnits(borrowVolume, currency.decimals),
-        isActive: market.isReady && Number(market.maturity) > Date.now() / 1000
-      };
-    })
+  // Execute the query
+  const { data, loading, error } = useQuery(queryDocument, {
+    client: graphClient,
+    variables: {},
+    fetchPolicy: "network-only"
+  });
+  
+  // Handle loading and error states
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  
+  // Render the data
+  return (
+    <div>
+      <h2>Available Lending Markets</h2>
+      <ul>
+        {data?.lendingMarkets?.map(market => (
+          <li key={market.id}>
+            {market.currency.symbol} - Maturity: {new Date(Number(market.maturity) * 1000).toLocaleDateString()}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-
-  // Sort by maturity date (ascending)
-  marketsWithDepth.sort((a, b) => Number(a.maturity) - Number(b.maturity));
-  
-  console.log(`Market overview for ${currencySymbol}:`, marketsWithDepth);
-  return marketsWithDepth;
 }
 ```
 
@@ -431,176 +332,7 @@ async function calculateOrderEstimation(client, currency, maturity, account, sid
 }
 ```
 
-## Examples
 
-### Creating a Lending Position
-
-```javascript
-import { SecuredFinanceClient, OrderSide, WalletSource } from "@secured-finance/sf-client";
-import { Currency } from "@secured-finance/sf-core";
-import { createPublicClient, createWalletClient, http } from "viem";
-import { filecoin } from "viem/chains";
-
-async function createLendingPosition() {
-  // Connect to the protocol
-  const publicClient = createPublicClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const walletClient = createWalletClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const client = new SecuredFinanceClient();
-  await client.init(publicClient, walletClient);
-  
-  // Get the user's address
-  const [address] = await walletClient.getAddresses();
-  
-  // Get supported currencies
-  const currencies = await client.getCurrencies();
-  const usdcCurrency = currencies.find(c => c.symbol === "USDC");
-  
-  if (!usdcCurrency) {
-    throw new Error("USDC currency not found");
-  }
-  
-  // Get available maturities
-  const maturities = await client.getMaturities(usdcCurrency);
-  
-  if (maturities.length === 0) {
-    throw new Error("No maturities available for USDC");
-  }
-  
-  // Choose the nearest maturity
-  const maturity = maturities[0];
-  
-  // Get the best lend unit price
-  const bestLendUnitPrices = await client.getBestLendUnitPrices(usdcCurrency);
-  const bestLendUnitPrice = bestLendUnitPrices.find(p => p.maturity === maturity);
-  
-  if (!bestLendUnitPrice) {
-    throw new Error("No best lend unit price found for the selected maturity");
-  }
-  
-  // Deposit collateral
-  const collateralAmount = 1000n * 10n ** 6n; // 1000 USDC (assuming 6 decimals)
-  await client.depositCollateral(usdcCurrency, collateralAmount);
-  
-  // Place a lend order
-  const lendAmount = 500n * 10n ** 6n; // 500 USDC
-  const unitPrice = bestLendUnitPrice.unitPrice;
-  
-  try {
-    const tx = await client.placeOrder(
-      usdcCurrency,
-      maturity,
-      OrderSide.LEND,
-      lendAmount,
-      WalletSource.METAMASK,
-      unitPrice
-    );
-    
-    console.log("Lend order placed successfully:", tx);
-    
-    // Get the user's positions
-    const positions = await client.getPositions(address);
-    console.log("User positions:", positions);
-    
-    return positions;
-  } catch (error) {
-    console.error("Error placing lend order:", error);
-    throw error;
-  }
-}
-```
-
-### Monitoring Order Book and Placing Market Orders
-
-```javascript
-import { SecuredFinanceClient, OrderSide, WalletSource } from "@secured-finance/sf-client";
-import { Currency } from "@secured-finance/sf-core";
-import { createPublicClient, createWalletClient, http } from "viem";
-import { filecoin } from "viem/chains";
-
-async function monitorAndPlaceMarketOrder() {
-  // Connect to the protocol
-  const publicClient = createPublicClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const walletClient = createWalletClient({
-    chain: filecoin,
-    transport: http()
-  });
-  
-  const client = new SecuredFinanceClient();
-  await client.init(publicClient, walletClient);
-  
-  // Get supported currencies
-  const currencies = await client.getCurrencies();
-  const usdcCurrency = currencies.find(c => c.symbol === "USDC");
-  
-  if (!usdcCurrency) {
-    throw new Error("USDC currency not found");
-  }
-  
-  // Get available maturities
-  const maturities = await client.getMaturities(usdcCurrency);
-  
-  if (maturities.length === 0) {
-    throw new Error("No maturities available for USDC");
-  }
-  
-  // Choose the nearest maturity
-  const maturity = maturities[0];
-  
-  // Monitor the order book
-  const orderBookDetail = await client.getOrderBookDetail(usdcCurrency, maturity);
-  console.log("Order book detail:", orderBookDetail);
-  
-  const lendOrders = await client.getLendOrderBook(usdcCurrency, maturity, 0, 10);
-  console.log("Lend orders:", lendOrders);
-  
-  
-  const borrowOrders = await client.getBorrowOrderBook(usdcCurrency, maturity, 0, 10);
-  console.log("Borrow orders:", borrowOrders);
-  
-  // Check if there are any borrow orders
-  if (borrowOrders.length === 0) {
-    console.log("No borrow orders available");
-    return null;
-  }
-  
-  // Place a market order to lend (match against the best borrow order)
-  const bestBorrowOrder = borrowOrders[0];
-  const lendAmount = bestBorrowOrder.amount / 2n; // Lend half of the best borrow order amount
-  
-  // Deposit collateral
-  await client.depositCollateral(usdcCurrency, lendAmount);
-  
-  // Place a market order (unitPrice = 0 for market orders)
-  try {
-    const tx = await client.placeOrder(
-      usdcCurrency,
-      maturity,
-      OrderSide.LEND,
-      lendAmount,
-      WalletSource.METAMASK,
-      0 // Market order
-    );
-    
-    console.log("Market order placed successfully:", tx);
-    return tx;
-  } catch (error) {
-    console.error("Error placing market order:", error);
-    throw error;
-  }
-}
-```
 
 ## FAQ
 
@@ -627,17 +359,23 @@ try {
 ```
 
 ### How do I convert between unit price and APR?
-Use the following formula to convert unit price to APR:
+The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period:
 
 ```javascript
 function unitPriceToAPR(unitPrice, maturity) {
   const now = Math.floor(Date.now() / 1000);
-  const daysToMaturity = (maturity - now) / (60 * 60 * 24);
+  const secondsToMaturity = maturity - now;
+  const secondsPerYear = 365 * 24 * 60 * 60; // 31,536,000
+  const yearsToMaturity = secondsToMaturity / secondsPerYear;
   
-  // Convert unit price to APR
-  const apr = ((10000 / unitPrice) - 1) * (365 / daysToMaturity) * 100;
-  
-  return apr;
+  // Different calculation methods based on maturity
+  if (yearsToMaturity < 1) {
+    // For bonds with maturity less than 1 year (linear calculation)
+    return ((10000 / unitPrice) - 1) * (secondsPerYear / secondsToMaturity) * 100;
+  } else {
+    // For bonds with maturity greater than 1 year (annual compounding)
+    return (Math.pow(10000 / unitPrice, 1 / yearsToMaturity) - 1) * 100;
+  }
 }
 ```
 
