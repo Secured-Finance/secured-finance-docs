@@ -195,8 +195,8 @@ async function getProtocolDepositAmount(client) {
 
 ```javascript
 // Unwind a position
-async function unwindPosition(client, currency, maturity, amount) {
-  const tx = await client.unwindPosition(currency, maturity, amount);
+async function unwindPosition(client, currency, maturity) {
+  const tx = await client.unwindPosition(currency, maturity);
   console.log("Position unwound:", tx);
   return tx;
 }

@@ -46,13 +46,7 @@ React hooks and components for building USDFC-integrated web applications.
 import { useSfStablecoinStore } from "@secured-finance/stablecoin-lib-react";
 ```
 
-### lib-subgraph
 
-Utilities for querying the USDFC subgraph.
-
-```javascript
-import { SubgraphSfStablecoin } from "@secured-finance/stablecoin-lib-subgraph";
-```
 
 ## Basic Usage
 
@@ -201,36 +195,6 @@ async function liquidateUpTo(usdfc, maxTroves) {
 ```
 
 ## Advanced Usage
-
-### Using the Subgraph Client
-
-```javascript
-import { SubgraphSfStablecoin } from "@secured-finance/stablecoin-lib-subgraph";
-
-// Create a subgraph client
-const subgraphClient = new SubgraphSfStablecoin(
-  "https://api.thegraph.com/subgraphs/name/secured-finance/usdfc-filecoin"
-);
-
-// Query Troves
-async function queryTroves() {
-  const troves = await subgraphClient.getTroves({
-    first: 10,
-    sortBy: "collateralRatio",
-    sortDirection: "asc"
-  });
-  
-  console.log("Troves:", troves);
-  return troves;
-}
-
-// Query user history
-async function queryUserHistory(userAddress) {
-  const history = await subgraphClient.getUserHistory(userAddress);
-  console.log("User History:", history);
-  return history;
-}
-```
 
 ### React Integration
 
@@ -436,7 +400,7 @@ usdfc.store.onTroveChanged = (trove) => {
 ```
 
 ### What networks does the SDK support?
-The SDK supports Filecoin network, which is the only network where the USDFC protocol is deployed.
+The SDK supports the Filecoin network, which is the only network where the USDFC protocol is deployed. The USDFC protocol is not available on Ethereum or Arbitrum networks.
 
 ## Related Resources
 - [USDFC Protocol Documentation](../../usdfc-stablecoin/overview.md)
