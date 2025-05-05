@@ -221,57 +221,176 @@ async function getTotalPresentValue(client) {
 
 ```javascript
 import { GraphClient } from "@secured-finance/sf-graph-client";
+import { formatUnits } from "viem";
 
-// Create a graph client
+// Create a graph client for a specific network
 const graphClient = new GraphClient({
   uri: "https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest"
 });
 
-// Query lending markets
-async function queryLendingMarkets() {
-  const { lendingMarkets } = await graphClient.query({
-    lendingMarkets: {
+// Example: Fetch user positions with detailed market data
+async function fetchUserPositions(userAddress) {
+  const { user } = await graphClient.query({
+    user: {
+      __args: {
+        id: userAddress.toLowerCase()
+      },
       id: true,
-      currency: true,
-      maturity: true,
-      lastPrice: true,
-      bestLendUnitPrice: true,
-      bestBorrowUnitPrice: true,
-      openingDate: true,
-      isReady: true
+      positions: {
+        id: true,
+        side: true,
+        amount: true,
+        presentValue: true,
+        createdAt: true,
+        updatedAt: true,
+        market: {
+          id: true,
+          currency: {
+            id: true,
+            symbol: true,
+            decimals: true
+          },
+          maturity: true
+        }
+      }
     }
   });
-  
-  console.log("Lending markets:", lendingMarkets);
-  return lendingMarkets;
+
+  if (!user || !user.positions || user.positions.length === 0) {
+    console.log("No positions found for user:", userAddress);
+    return [];
+  }
+
+  // Process and format the position data
+  const formattedPositions = user.positions.map(position => {
+    const { market, amount, presentValue, side, createdAt } = position;
+    const { currency, maturity } = market;
+    
+    // Format amounts using proper decimals
+    const formattedAmount = formatUnits(BigInt(amount), currency.decimals);
+    const formattedPresentValue = formatUnits(BigInt(presentValue), currency.decimals);
+    
+    // Format maturity date
+    const maturityDate = new Date(Number(maturity) * 1000).toLocaleDateString();
+    
+    return {
+      id: position.id,
+      currency: currency.symbol,
+      maturityDate,
+      side,
+      amount: formattedAmount,
+      presentValue: formattedPresentValue,
+      createdAt: new Date(Number(createdAt) * 1000).toLocaleDateString()
+    };
+  });
+
+  console.log("User positions:", formattedPositions);
+  return formattedPositions;
 }
 
-// Query user orders
-async function queryUserOrders(userAddress) {
-  const { orders } = await graphClient.query({
-    orders: {
+// Example: Get market overview with order book depth
+async function getMarketOverview(currencySymbol = "USDC") {
+  // First query all markets for the specified currency
+  const { currencies } = await graphClient.query({
+    currencies: {
       __args: {
-        where: { user: userAddress }
+        where: {
+          symbol: currencySymbol
+        }
       },
       id: true,
-      user: {
-        id: true
-      },
-      market: {
+      symbol: true,
+      decimals: true,
+      markets: {
         id: true,
-        currency: true,
-        maturity: true
-      },
-      side: true,
-      amount: true,
-      price: true,
-      status: true,
-      createdAt: true
+        maturity: true,
+        lastPrice: true,
+        openingDate: true,
+        isReady: true
+      }
     }
   });
+
+  if (!currencies || currencies.length === 0) {
+    console.log(`No markets found for currency: ${currencySymbol}`);
+    return [];
+  }
+
+  const currency = currencies[0];
   
-  console.log("User orders:", orders);
-  return orders;
+  // For each market, get order book depth
+  const marketsWithDepth = await Promise.all(
+    currency.markets.map(async (market) => {
+      // Get lend orders
+      const { orders: lendOrders } = await graphClient.query({
+        orders: {
+          __args: {
+            where: {
+              market: market.id,
+              side: "LEND",
+              status_in: ["PENDING", "PARTIALLY_EXECUTED"]
+            },
+            orderBy: "price",
+            orderDirection: "desc",
+            first: 5
+          },
+          id: true,
+          amount: true,
+          price: true
+        }
+      });
+
+      // Get borrow orders
+      const { orders: borrowOrders } = await graphClient.query({
+        orders: {
+          __args: {
+            where: {
+              market: market.id,
+              side: "BORROW",
+              status_in: ["PENDING", "PARTIALLY_EXECUTED"]
+            },
+            orderBy: "price",
+            orderDirection: "asc",
+            first: 5
+          },
+          id: true,
+          amount: true,
+          price: true
+        }
+      });
+
+      // Calculate total volume
+      const lendVolume = lendOrders.reduce(
+        (sum, order) => sum + BigInt(order.amount),
+        0n
+      );
+      const borrowVolume = borrowOrders.reduce(
+        (sum, order) => sum + BigInt(order.amount),
+        0n
+      );
+
+      // Format maturity date
+      const maturityDate = new Date(Number(market.maturity) * 1000);
+
+      return {
+        id: market.id,
+        maturity: market.maturity,
+        maturityDate: maturityDate.toLocaleDateString(),
+        lastPrice: market.lastPrice ? formatUnits(BigInt(market.lastPrice), 4) : "N/A",
+        lendOrders: lendOrders.length,
+        borrowOrders: borrowOrders.length,
+        lendVolume: formatUnits(lendVolume, currency.decimals),
+        borrowVolume: formatUnits(borrowVolume, currency.decimals),
+        isActive: market.isReady && Number(market.maturity) > Date.now() / 1000
+      };
+    })
+  );
+
+  // Sort by maturity date (ascending)
+  marketsWithDepth.sort((a, b) => Number(a.maturity) - Number(b.maturity));
+  
+  console.log(`Market overview for ${currencySymbol}:`, marketsWithDepth);
+  return marketsWithDepth;
 }
 ```
 

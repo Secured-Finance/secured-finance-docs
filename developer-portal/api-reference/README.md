@@ -29,11 +29,9 @@ Our subgraphs are deployed on the following networks:
 
 | Protocol           | Ethereum | Arbitrum | Filecoin |
 | ------------------ | -------- | -------- | -------- |
-| Fixed-Rate Lending | ✅        | ✅        | ✅*       |
+| Fixed-Rate Lending | ✅        | ✅        | ✅        |
 
 > **Note:** The USDFC Subgraph is currently under development and not yet deployed. USDFC data is only available through the [USDFC SDK](../sdk-reference/usdfc-sdk.md) on the Filecoin network.
-> 
-> *Filecoin subgraph endpoints are currently under development.
 
 ### Subgraph Endpoints
 
@@ -53,7 +51,8 @@ These are Subgraph endpoint URLs for our production Mainnet and Testnet environm
 
 **Filecoin**
 
-> **Note:** The Filecoin subgraph endpoints are currently under development. Please check back later for updated URLs.
+* Mainnet: [https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin/v0.0.1/gn](https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin/v0.0.1/gn)
+* Calibration: [https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin-calibration/v0.0.1/gn](https://api.goldsky.com/api/public/project_clqgm3ixhcj9t01uj9zbo4l4n/subgraphs/sf-prd-filecoin-calibration/v0.0.1/gn)
 
 ## Getting Started
 
@@ -67,9 +66,9 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 
 We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
-{% embed url="https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest" %}
+{% openapi-operation spec="secured-finance-api" path="/" method="post" %}
 Fixed-Rate Lending Subgraph API Documentation
-{% endembed %}
+{% endopenapi-operation %}
 
 The interactive documentation above allows you to:
 
