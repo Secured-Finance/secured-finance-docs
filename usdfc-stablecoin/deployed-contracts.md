@@ -2,7 +2,7 @@
 description: The official contract address, audit reports, and architecture diagram
 ---
 
-# 📔 Deployed Contracts
+# 📔 Contracts and Security
 
 ## Contract Addresses
 
@@ -16,3 +16,8 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 | -------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Hexens   | 2024/12/30 - 2025/1/20 | [2025-1-Hexens.pdf](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-01-Hexens.pdf)     |
 | Decurity | 2025/2/19 - 2025/3/5   | [2025-3-Decurity.pdf](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-03-Decurity.pdf) |
+
+## Stress Test Report
+
+[Simulation and Risk Assessment (CEL Team)](https://www.overleaf.com/project/67f4279bdf8430b6455e9cb7)
+

@@ -37,7 +37,7 @@
   * [🧀 Protocol Fees](usdfc-stablecoin/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](usdfc-stablecoin/advanced-topics/README.md)
   * [🚨 Recovery Mode](usdfc-stablecoin/advanced-topics/recovery-mode.md)
-* [📔 Deployed Contracts](usdfc-stablecoin/deployed-contracts.md)
+* [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts.md)
 * [❓ FAQs](usdfc-stablecoin/faqs.md)
 
 ## Fixed-Rate Lending
@@ -95,7 +95,7 @@
     * [⏯️ Lazy Evaluation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/lazy-evaluation.md)
     * [⏮️ Genesis Value](fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value.md)
     * [🔄 Compound Factor](fixed-rate-lending/advanced-topics/orderbook-deep-dive/compound-factor.md)
-* [📔 Deployed Contracts](fixed-rate-lending/deployed-contracts.md)
+* [📔 Contracts and Security](fixed-rate-lending/deployed-contracts.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
 ## Developer Portal
