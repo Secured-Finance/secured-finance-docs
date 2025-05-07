@@ -72,7 +72,7 @@ After the transaction is confirmed, verify that your USDFC was minted successful
 
 1. Check that your Trove details have been updated with the new debt amount
 2. Verify that the additional USDFC has been added to your wallet balance
-3. If you don't see the additional USDFC in your wallet, you may need to refresh or check your transaction history
+3. If you don't see the additional USDFC in your wallet, you may need to refresh or check your transaction history on your wallet or [a blockchain explorer](https://filfox.info/en)
 
 \[Image: Screenshot showing updated Trove details and wallet balance]
 

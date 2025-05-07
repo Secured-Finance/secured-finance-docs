@@ -72,7 +72,7 @@ After the transaction is confirmed, verify that your Trove was created successfu
 
 1. Check that your Trove appears in the dashboard
 2. Verify that the USDFC has been added to your wallet balance
-3. If you don't see USDFC in your wallet, you may need to add it as a custom token (see USDFC contract info in the Protocol Statistics section)
+3. If you don't see USDFC in your wallet, you may need to add it as a custom token (see a [wallet icon](https://gyazo.com/4102e760883c7c413ee1161a851d5712) in the Protocol Statistics section)
 
 \[Image: Screenshot showing a successfully created Trove in the dashboard]
 
