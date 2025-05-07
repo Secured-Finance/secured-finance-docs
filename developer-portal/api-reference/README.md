@@ -51,7 +51,7 @@ These are Subgraph endpoint URLs for our production Mainnet and Testnet environm
 
 **Filecoin**
 
-* Mainnet: [https://api.goldsky.com/api/public/project_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/0.0.3/gn](https://api.goldsky.com/api/public/project_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/0.0.3/gn)
+* Mainnet: [https://api.goldsky.com/api/public/project\_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/latest/gn](https://api.goldsky.com/api/public/project_cm8i6ca9k24d601wy45zzbsrq/subgraphs/sf-filecoin-mainnet/latest/gn)
 
 > **Note:** The Filecoin Calibration testnet endpoints are not provided yet.
 
@@ -68,7 +68,7 @@ To view the source of our subgraphs, visit our [GitHub Repository](https://githu
 We provide interactive API documentation for our Fixed-Rate Lending Subgraph using GitBook's OpenAPI integration. This allows you to explore and test the API directly from the documentation page in real-time.
 
 {% openapi-operation spec="secured-finance-api" path="/" method="post" %}
-Fixed-Rate Lending Subgraph API Documentation
+[Broken link](broken-reference)
 {% endopenapi-operation %}
 
 The interactive documentation above allows you to:
