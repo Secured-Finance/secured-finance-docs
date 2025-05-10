@@ -23,7 +23,7 @@ The Trove dashboard is your primary tool for monitoring your position.
 3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current Trove details
 
-\[Image: Screenshot of the Trove dashboard showing key metrics]
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
 
 ## Step 2: Understand Key Metrics
 
@@ -62,8 +62,6 @@ The current price of FIL relative to USD is displayed to help you understand how
 
 Based on your current metrics, the dashboard may suggest available actions to improve your position's health.
 
-\[Image: Screenshot showing suggested actions based on Trove health]
-
 ## Step 3: Set Up External Alerts
 
 While the USDFC application doesn't currently offer built-in alerts, you can set up external alerts to monitor your position.
@@ -74,19 +72,15 @@ Set up price alerts for FIL using cryptocurrency tracking apps or exchanges.
 
 1. Calculate your liquidation price
 2. Set an alert for when FIL price approaches this threshold (e.g., 20% above liquidation price)
-3. Popular platforms for price alerts include CoinGecko, CoinMarketCap, or exchange apps
-
-\[Image: Screenshot of setting up a price alert on a crypto tracking platform]
+3. Popular platforms for price alerts include [CoinGecko](https://www.coingecko.com/learn/how-to-set-up-the-price-alert-function-on-coingecko), CoinMarketCap, or exchange apps
 
 ### Blockchain Monitoring Tools
 
 Use blockchain monitoring tools to track your Trove's health.
 
 1. Find your Trove's address or ID
-2. Set up monitoring using tools like Etherscan, Tenderly, or DeFi-specific monitoring platforms
+2. Set up monitoring using tools like [Filfox](https://filfox.info/en), Tenderly, or DeFi-specific monitoring platforms
 3. Configure alerts for significant changes to your Trove
-
-\[Image: Screenshot of blockchain monitoring tool setup]
 
 ## Step 4: Regular Check-ins
 
@@ -115,8 +109,6 @@ If your collateral ratio is very high (>200%):
 * Check your position at least once monthly
 * Evaluate if you're being too conservative with your capital
 * Consider strategies to optimize your position
-
-\[Image: Calendar or schedule visualization for position monitoring]
 
 ## Step 5: Respond to Market Changes
 
@@ -166,5 +158,5 @@ A: The dashboard will display a prominent notification when the system enters Re
 
 * [The Trove System](../core-mechanics/the-trove-system.md)
 * [Liquidation](../core-mechanics/liquidation.md)
-* [Collateral Ratio](broken-reference)
+* [Collateral Ratio](broken-reference/)
 * [Recovery Mode](../advanced-topics/recovery-mode.md)

@@ -22,11 +22,11 @@ The protocol operates through several key components that work together to maint
 
 ### Normal Mode
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
 
 ### Recovery Mode
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
 
 ## Key Parameters
 
