@@ -22,7 +22,7 @@ The protocol operates through several key components that work together to maint
 
 ### Normal Mode
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
 
 ### Recovery Mode
 
