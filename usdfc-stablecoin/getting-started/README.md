@@ -15,7 +15,7 @@ USDFC allows you to unlock the value of your FIL holdings while maintaining expo
 * How to manage your collateral ratio to avoid liquidation
 * How to monitor your position's health
 * How to participate in the Stability Pool to earn rewards
-* How to redeem USDFC for FIL when you're ready to exit
+* How to redeem USDFC for FIL under low liquidity conditions
 
 ## Key Components
 

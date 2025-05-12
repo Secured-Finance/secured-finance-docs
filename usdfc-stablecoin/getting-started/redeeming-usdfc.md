@@ -1,5 +1,5 @@
 ---
-description: Learn how to redeem your USDFC for FIL collateral
+description: Learn how to redeem your USDFC for FIL collateral under certain conditions
 ---
 
 # 💸 Redeeming USDFC
@@ -9,11 +9,17 @@ description: Learn how to redeem your USDFC for FIL collateral
 * USDFC tokens in your wallet
 * Access to the [USDFC application](https://app.usdfc.net)
 * Connected wallet with enough FIL for gas fees
+* Understanding of repayment with trove adjustments
 * Understanding of redemption mechanics and fees
 
 ## Overview
 
 Redemption is a process that allows you to exchange your USDFC for FIL collateral at face value (1 USDFC = $1 worth of FIL). This mechanism helps maintain the USDFC peg to the US dollar. This guide will walk you through the redemption process and help you understand when redemption is beneficial.
+
+{% hint style="warning" %}
+Repayment is adjusting your trove. However, the redemption is adjusting 3rd party's lowest collateral trove. \
+To avoid getting redemption, please watch 'Debt in front' amount and increase the collateral ratio.
+{% endhint %}
 
 ## Step 1: Access the Redemption Feature
 
