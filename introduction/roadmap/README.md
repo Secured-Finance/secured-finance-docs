@@ -2,7 +2,7 @@
 description: The Secured Finance Roadmap
 ---
 
-# 🏁 Roadmap 2025
+# 🏁 Roadmap
 
 {% hint style="info" %}
 Token Launch timing will be TBD
@@ -10,14 +10,20 @@ Token Launch timing will be TBD
 Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-finance-app/releases)
 {% endhint %}
 
-### 2025 Q2+
+### 2025 Q3 & later
 
-* [ ] New Pool-based AMM Fixed-Rate Lending White Paper
 * [ ] SFC Launch & DAO Governance
+* [ ] New Pool-based AMM Fixed-Rate Lending White Paper
+* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+
+### 2025 Q2
+
+* [x] USDFC Stablecoin Beta Launch on Filecoin Mainnet
+* [x] USDFC Stablecoin Official Launch on Filecoin Mainnet
+* [ ] Secured Finance Product Roadmap Update
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
-* [ ] USDFC Stablecoin Official Launch on Filecoin Mainnet
-* [ ] USDFC Stablecoin Beta Launch on Filecoin Mainnet
+* [ ] JUL2024 Markets Itayose & Auto-roll (Pre-Order 6/20-6/26)
 
 ### 2025 Q1
 
