@@ -27,6 +27,7 @@
   * [👀 Monitoring Your Position](usdfc-stablecoin/getting-started/monitoring-your-position.md)
   * [🏊 Using the Stability Pool](usdfc-stablecoin/getting-started/using-the-stability-pool.md)
   * [💸 Redeeming USDFC](usdfc-stablecoin/getting-started/redeeming-usdfc.md)
+  * [🧪 Getting Test USDFC on Testnet](usdfc-stablecoin/getting-started/getting-test-usdfc-on-testnet.md)
 * [🔦 Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
   * [🏗️ System Overview](usdfc-stablecoin/core-mechanics/system-overview.md) <!-- Moved from Developer Portal/Architecture -->
   * [🏦 The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)
