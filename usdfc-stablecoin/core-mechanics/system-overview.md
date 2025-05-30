@@ -26,7 +26,7 @@ The protocol operates through several key components that work together to maint
 
 ### Recovery Mode
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
 
 ## Key Parameters
 

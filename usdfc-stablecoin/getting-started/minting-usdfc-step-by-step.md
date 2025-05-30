@@ -40,7 +40,7 @@ To mint additional USDFC, you need to adjust your Trove.
 "Net debt" is Total Debt - Liquidation Reserve. In this example, 221.02 - 20 = 201.02 USDFC.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
 
 ## Step 3: Specify Minting Amount
 

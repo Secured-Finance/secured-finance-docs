@@ -23,7 +23,7 @@ First, you need to access your existing Trove in the USDFC application.
 3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current collateral amount, debt, and collateral ratio
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Trove dashboard showing current position details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Trove dashboard showing current position details</p></figcaption></figure>
 
 ## Step 2: Select "Adjust Trove"
 
@@ -32,7 +32,7 @@ To manage your collateral, you need to adjust your Trove.
 1. Click on the "Adjust" button
 2. This will open the Trove adjustment interface
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
 
 ## Step 3: Add or Withdraw Collateral
 

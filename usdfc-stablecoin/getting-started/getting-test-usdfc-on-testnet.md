@@ -66,6 +66,21 @@ After minting, you'll want to see your test USDFC in your wallet.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-30 at 1.53.26.png" alt=""><figcaption><p>Adding USDFC to Wallet</p></figcaption></figure>
 
+## Step 5: Closing Your Trove
+
+Most cases, 'Adjust' should allow withdrawing collateralized FIL, but if you no longer need to use USDFC system, you can close your trove and you can reopen a trove again.
+
+{% hint style="warning" %}
+Don't forget to repay the borrowing fees. If you wish to close the trove with the USDFC amount you just borrowed, it doesn't work. You should repay borrowing fees. Please get additional USDFC from another account or via swap.
+{% endhint %}
+
+1. On the Dashboard page, navigate to the "Trove" section
+2. Click "Close Trove" button
+3. If you see error message that you need more USDFC to pay borrowing fees, please get it.
+4. Click "Confirm"
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Closing Your Trove requires repayment of the borrowed amount and fees in USDFC</p></figcaption></figure>
+
 ## Using Test USDFC on Testnet
 
 Now that you have test USDFC, you can explore various features of the USDFC ecosystem on testnet:
