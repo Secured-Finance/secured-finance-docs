@@ -76,8 +76,9 @@ Don't forget to repay the borrowing fees. If you wish to close the trove with th
 
 1. On the Dashboard page, navigate to the "Trove" section
 2. Click "Close Trove" button
-3. If you see error message that you need more USDFC to pay borrowing fees, please get it.
-4. Click "Confirm"
+3. If you see error message that you need more USDFC to pay borrowing fees, please get it.&#x20;
+4. If you just wish to withdraw FIL as much as possible, you can cancel closing and click "Adjust"
+5. Click "Confirm" to send the transaction with your wallet
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Closing Your Trove requires repayment of the borrowed amount and fees in USDFC</p></figcaption></figure>
 
