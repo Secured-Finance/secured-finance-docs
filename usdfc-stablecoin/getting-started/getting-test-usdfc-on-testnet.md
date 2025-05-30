@@ -62,7 +62,7 @@ After minting, you'll want to see your test USDFC in your wallet.
 1. On the Dashboard page, navigate to the "Protocol Statistics" section and find "USDFC contract.
 2. Click "Add to Wallet" icon.
 3. The token symbol (USDFC) and decimals should be added
-4. Click "Add" or "Import" to add test USDFC to your wallet
+4. Click "Add" or "Import" to add test USDFC to your wallet ([video](https://gyazo.com/4102e760883c7c413ee1161a851d5712))
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-30 at 1.53.26.png" alt=""><figcaption><p>Adding USDFC to Wallet</p></figcaption></figure>
 
