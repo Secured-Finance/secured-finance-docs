@@ -19,7 +19,7 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 
 ## Stress Test Report
 
-[Stress-Testing Simulation and Risk Assessment](https://medium.com/cryptoeconlab/stress-testing-usdfc-8b068d13a1cf) by Cryoto Econ Lab Team
+[Stress-Testing Simulation and Risk Assessment](https://medium.com/cryptoeconlab/stress-testing-usdfc-8b068d13a1cf) by CryotoEconLab Team
 
 {% file src="../.gitbook/assets/Secure_Finance_Report.pdf" %}
 
