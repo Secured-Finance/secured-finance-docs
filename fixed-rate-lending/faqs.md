@@ -1,80 +1,303 @@
 ---
-description: Answers to Frequently Asked Questions
+description: Comprehensive answers to frequently asked questions about Fixed-Rate Lending
 ---
 
-# ❓ FAQs
+# ❓ Fixed-Rate Lending FAQs
 
-{% tabs %}
-{% tab title="Overview" %}
-**What is Secured Finance?**
+## Overview
 
-Secured Finance is a decentralized finance platform that facilitates peer-to-contract lending and derivatives trading. It's built on the Ethereum blockchain, offering a transparent, robust, and cost-effective alternative to traditional financial institutions. For more details, you can refer to our Secured Finance [Overview](../) section.
+This FAQ covers the Fixed-Rate Lending protocol, from basic trading concepts to advanced features and risk management. Whether you're new to fixed-rate lending or looking for specific technical details, you'll find comprehensive answers here.
 
-**What products does Secured Finance offer?**
+## What You'll Learn
 
-Secured Finance's inaugural offering is the Loan Market Platform, designed to facilitate seamless peer-to-peer lending and derivatives trading for fixed-income investments and hedging. For more details, you can refer to our [Loan Market Platform](getting-started/platform-guide/) section.
+- How zero-coupon bonds and fixed-rate lending work on Secured Finance
+- Trading operations, order management, and platform navigation
+- Collateral requirements and liquidation processes
+- Advanced features like auto-rolling, Itayose, and market dynamics
+- Risk management and troubleshooting common issues
 
-**What is a Zero-Coupon Bond (ZC Bond)?**
+## Quick Navigation
 
-A Zero-Coupon Bond (ZC Bond) is a type of bond that does not pay interest (coupons) during its life. Instead, it is sold at a discount to its face value and pays the full face value at maturity. This makes them ideal for users who want a guaranteed return at a specific point in the future. For more details, you can refer to our [Zero-Coupon Bond](protocol-features/zero-coupon-standard.md) section.
+- [Platform Basics](#platform-basics)
+- [Trading Operations](#trading-operations)
+- [Risk Management](#risk-management)
+- [Advanced Features](#advanced-features)
 
-**How do I buy or sell a ZC Bond on Secured Finance?**
+## Platform Basics
 
-To buy or sell a ZC Bond on Secured Finance, you can browse the orders on our platform's orderbook. Once you have found a contract you want to buy or sell, you can execute the transaction directly from the platform. The platform uses smart contracts to transfer ownership of the contract to you automatically and to ensure that payments are made as specified in the order. For a step-by-step guide, you can refer to our [User Guides](getting-started/) section.
+<details>
+<summary>What is Secured Finance?</summary>
 
-**What is the underlying asset for zero-coupon bonds?**
+Secured Finance is a decentralized finance platform that facilitates peer-to-contract lending and derivatives trading. Built on multiple blockchains including Ethereum, Arbitrum, and Filecoin, it offers a transparent, robust, and cost-effective alternative to traditional financial institutions.
 
-A: The underlying asset for zero-coupon bonds is the specific digital asset lent by the user. For example, lending ETH in the "September 2026 Order Book" mints a bond called **"ZC ETH SEP2026"**, representing the loaned ETH and its maturity date.
+The platform consists of two main products:
+- **Fixed-Rate Lending Protocol**: Enables fixed-rate, fixed-term lending and borrowing through zero-coupon bonds
+- **USDFC Stablecoin**: A dollar-pegged stablecoin backed by Filecoin collateral
 
-**Can zero-coupon bonds be used outside the Secured Finance platform?**
+**Related:** [Platform Overview](../overview/README.md)
+</details>
 
-A: Yes, zero-coupon bonds are tokenized and fully transferable. They can be used on other DeFi protocols for trading, as collateral, or for yield optimization opportunities.
-{% endtab %}
+<details>
+<summary>What is a Zero-Coupon Bond (ZC Bond)?</summary>
 
-{% tab title="Trading" %}
-**Is my money locked and need to wait until maturity?**
+A Zero-Coupon Bond (ZC Bond) is a debt instrument that doesn't pay interest during its life. Instead, it's sold at a discount to its face value and pays the full face value at maturity. This makes them ideal for users who want a guaranteed return at a specific future date.
 
-No. There is **no lock-up period** involved. Similar to spot transactions, our platform facilitates the trading of Zero Coupon Bonds (ZC Bonds) anytime you like. It is available 24/7!
+**Example:**
+- You buy a ZC Bond for 950 USDC that matures in 6 months for 1,000 USDC
+- Your fixed return is 50 USDC (approximately 10.5% APR)
+- No interest payments during the 6-month period
 
-If you are a lender, meaning you hold a ZC Bond, you can access your funds by either unwinding or selling the ZC Bond any time. This process allows you to withdraw the funds. Similarly, if you have an open limit order that hasn't been executed, you can cancel the order to withdraw your funds.
+**Related:** [Zero-Coupon Bonds](../core-mechanics/standardization/zero-coupon-bonds.md)
+</details>
 
-**How does lending and borrowing work on Secured Finance?**
+<details>
+<summary>What is the underlying asset for zero-coupon bonds?</summary>
 
-On Secured Finance, lending and borrowing work through the creation and trading of ZC Bonds. If you want to borrow digital assets, you can create a ZC Bond order and sell it on the platform. If you want to lend digital assets, you can buy a ZC Bond from the platform. The platform uses smart contracts to ensure that the terms of the contract are automatically enforced. This means payments are automatically transferred when due. For more details, you can refer to our [OTC Lending](getting-started/platform-guide/trading/) section.
+The underlying asset for zero-coupon bonds is the specific digital asset lent by the user. For example, lending ETH in the "September 2026 Order Book" mints a bond called **"ZC ETH SEP2026"**, representing the loaned ETH and its maturity date.
 
-**What is the user journey for lending assets?**
+Each ZC Bond is:
+- **Asset-specific**: Denominated in the currency being lent (ETH, USDC, etc.)
+- **Maturity-specific**: Includes the exact maturity date in the token name
+- **Transferable**: Can be traded or used as collateral on other DeFi protocols
 
-A: Users connect their wallet, deposit collateral, select an order book with a preferred maturity date, and lend assets. They receive zero-coupon bonds as proof of lending, which can be redeemed at maturity for the principal plus yield.
+**Related:** [Tokenization](../core-mechanics/tokenization.md)
+</details>
 
-**What is the Itayose process?**
+<details>
+<summary>Can zero-coupon bonds be used outside the Secured Finance platform?</summary>
 
-The Itayose process is a matching algorithm used in financial markets to ensure fair and efficient order execution. It's a method used by Secured Finance to match orders when a new order book starts trading in a way that prioritizes the highest bid and lowest ask prices. For more details, you can refer to our [Itayose Process](advanced-topics/market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery.md) section.
+Yes, zero-coupon bonds are tokenized and fully transferable ERC-20 tokens. They can be used on other DeFi protocols for:
+- **Trading**: Sell your position on secondary markets
+- **Collateral**: Use ZC Bonds as collateral for other loans
+- **Yield optimization**: Integrate with other DeFi strategies
+- **Portfolio management**: Track and manage across multiple platforms
 
-**What is Auto-Rolling?**
+This composability is a key advantage of Secured Finance's tokenized approach to fixed-rate lending.
 
-Auto-Rolling is a feature on Secured Finance that allows for automatic reinvestment of funds at maturity. This feature helps mitigate reinvestment risk, ensures cost-efficiency, and promotes continuous growth for users. For more details, you can refer to our [Auto-Rolling](advanced-topics/market-dynamics/auto-rolling/) section.
+**Related:** [Tokenization](../core-mechanics/tokenization.md)
+</details>
 
-**What happens to my outstanding order when the order book matures?**
+## Trading Operations
 
-Your outstanding order will be sent to your Collateral Vault upon the maturity of the order book. From there, you can either use these funds to place new trades or choose to withdraw them from the vault.
+<details>
+<summary>How do I buy or sell a ZC Bond on Secured Finance?</summary>
 
-**Why is My Unwinding order 'Blocked'? What does it mean by 'Partially Blocked'?**
+To trade ZC Bonds on Secured Finance:
 
-When unwinding an order, it may become **'Blocked'** if there are no matching orders available on the Orderbook to satisfy your request. This could occur for two main reasons: 1) The amount of available orders is less than the quantity you wish to unwind, or 2) Even if there is an order with a sufficient amount, it might be outside the price range set by our Circuit Breaker, thus preventing a match. In cases where only part of your unwinding order is executed and the rest remains unmatched, the status will be marked as **'Partially Blocked'**. In such instances, you may either wait for a matching order to appear or place a limit order on the Orderbook and wait for it to be executed.\
-The Circuit Breaker is a safety feature implemented in our protocol to limit price deviations from the mark price, designed to prevent price manipulation. For more information, please refer to the relevant section on [Circuit Breakers](advanced-topics/safety-measures/circuit-breaker/).
-{% endtab %}
+1. **Connect your wallet** to the platform
+2. **Browse the order book** for your desired maturity and asset
+3. **Place your order** (market or limit order)
+4. **Confirm the transaction** in your wallet
+5. **Receive your ZC Bond** automatically via smart contract
 
-{% tab title="Collateral" %}
-**What is collateral and why is it needed?**
+The platform uses smart contracts to ensure automatic execution and settlement. For detailed instructions, see our [Trading Guide](../getting-started/platform-guide/trading/README.md).
 
-Collateral is an asset that a borrower offers to Secured Finance's platform to secure a loan. If the borrower defaults on loan repayments, the lender can seize the collateral to recover their losses. On Secured Finance, collateral is needed to ensure the security and integrity of the lending and borrowing process. For more details, you can refer to our [Collateral](faqs.md#collateral) section.
+**Related:** [Platform Guide](../getting-started/platform-guide/README.md)
+</details>
 
-**What types of assets can be used as collateral on Secured Finance?**
+<details>
+<summary>Is my money locked until maturity?</summary>
 
-Secured Finance currently accepts Wrapped BTC, ETH, USDC, FIL and iFIL (only on FVM) as collateral. These assets were chosen due to their stability and wide acceptance in cryptocurrency. However, Secured Finance is always exploring the addition of more assets to expand its offering.
+No, there is **no lock-up period** involved. Similar to spot transactions, our platform facilitates the trading of Zero Coupon Bonds (ZC Bonds) 24/7.
 
-**What happens if the value of my collateral falls?**
+**As a lender** (ZC Bond holder):
+- **Unwind**: Sell your ZC Bond back to the market anytime
+- **Transfer**: Move your ZC Bond to another wallet or platform
+- **Use as collateral**: Leverage your ZC Bond in other DeFi protocols
 
-If the value of your collateral falls and the loan-to-value (LTV) ratio exceeds the specified limit, your position may be liquidated. This is to ensure the security of the loan for the lender. For more details, you can refer to our [Liquidation](protocol-features/liquidation/) section.
-{% endtab %}
-{% endtabs %}
+**As a borrower** (with outstanding orders):
+- **Cancel orders**: Withdraw funds from unfilled limit orders anytime
+- **Partial fills**: Access funds from partially filled orders immediately
+
+**Note:** Users must manually unwind their positions when bonds reach maturity. The protocol does not automatically settle positions at maturity.
+
+**Related:** [Order Life Cycle](../core-mechanics/order-book-system/order-life-cycle/README.md)
+</details>
+
+<details>
+<summary>How does lending and borrowing work on Secured Finance?</summary>
+
+Secured Finance uses a peer-to-peer order book system where lending and borrowing happen through ZC Bond creation and trading:
+
+**To Lend (Buy ZC Bonds):**
+1. Deposit assets into your collateral vault
+2. Browse available borrowing orders
+3. Buy ZC Bonds at your desired rate
+4. Receive principal + yield at maturity
+
+**To Borrow (Sell ZC Bonds):**
+1. Deposit collateral (must exceed borrowing amount)
+2. Create a ZC Bond sell order
+3. Receive borrowed funds when order is filled
+4. Repay at maturity or face liquidation
+
+**Related:** [Core Mechanics](../core-mechanics/README.md)
+</details>
+
+<details>
+<summary>What is the user journey for lending assets?</summary>
+
+The complete lending journey involves:
+
+1. **Wallet Connection**: Connect your Web3 wallet to the platform
+2. **Deposit Collateral**: Add assets to your collateral vault for gas and potential margin
+3. **Select Order Book**: Choose your preferred maturity date and asset
+4. **Place Lending Order**: Buy ZC Bonds at your desired rate
+5. **Receive ZC Bonds**: Get tokenized proof of your lending position
+6. **Monitor Position**: Track performance in your portfolio
+7. **Maturity Settlement**: Manually unwind position to receive principal + yield, or trade before maturity
+
+**Related:** [Lending Assets Guide](../getting-started/lending-assets.md)
+</details>
+
+<details>
+<summary>What happens to my outstanding order when the order book matures?</summary>
+
+When an order book reaches maturity:
+
+- **Unfilled orders** are automatically sent to your Collateral Vault
+- **Filled positions** are settled according to the contract terms
+- **Funds become available** for withdrawal or new trades
+
+From your Collateral Vault, you can:
+- **Withdraw funds** to your wallet
+- **Place new orders** in active order books
+- **Transfer to other assets** or maturities
+
+This automatic process ensures you never lose access to your funds due to market maturity.
+
+**Note:** For filled positions, users must manually unwind their ZC Bonds when they reach maturity to receive their principal and yield.
+
+**Related:** [Order Life Cycle](../core-mechanics/order-book-system/order-life-cycle/README.md)
+</details>
+
+<details>
+<summary>Why is my unwinding order 'Blocked' or 'Partially Blocked'?</summary>
+
+Unwinding orders may become **'Blocked'** for two main reasons:
+
+1. **Insufficient liquidity**: Not enough matching orders available on the order book
+2. **Circuit Breaker limits**: Available orders are outside the acceptable price range
+
+**'Partially Blocked'** means only part of your unwinding order was executed, with the remainder still seeking matches.
+
+**Solutions:**
+- **Wait for liquidity**: New orders may appear that match your requirements
+- **Place a limit order**: Set your own price and wait for execution
+- **Adjust your price**: Move closer to market rates if acceptable
+
+The Circuit Breaker is a safety feature that prevents price manipulation by limiting deviations from the mark price.
+
+**Related:** [Circuit Breaker](../advanced-topics/safety-measures/circuit-breaker/README.md)
+</details>
+
+## Risk Management
+
+<details>
+<summary>What is collateral and why is it needed?</summary>
+
+Collateral is an asset that borrowers deposit to secure their loans. It serves as protection for lenders and ensures the integrity of the lending process.
+
+**Key functions:**
+- **Security**: Protects lenders against borrower default
+- **Liquidation source**: Provides assets to cover unpaid debts
+- **Risk management**: Enables automated position monitoring
+
+**For borrowers**: Collateral must exceed the borrowed amount by a safety margin
+**For lenders**: Collateral provides confidence in loan repayment
+
+**Related:** [Collateralization](../core-mechanics/collateralization.md)
+</details>
+
+<details>
+<summary>What types of assets can be used as collateral?</summary>
+
+Secured Finance currently accepts these assets as collateral:
+
+**Ethereum & Arbitrum:**
+- **ETH**: Native Ethereum
+- **WBTC**: Wrapped Bitcoin
+- **USDC**: USD Coin stablecoin
+
+**Filecoin:**
+- **FIL**: Native Filecoin
+- **iFIL**: Interest-bearing FIL (FVM only)
+
+These assets were chosen for their:
+- **Liquidity**: High trading volumes and market depth
+- **Stability**: Established track record and wide acceptance
+- **Oracle support**: Reliable price feeds for liquidation calculations
+
+Secured Finance continuously evaluates additional assets based on community demand and risk assessment.
+
+**Related:** [Supported Currencies](../getting-started/platform-guide/trading/supported-currencies.md)
+</details>
+
+<details>
+<summary>What happens if the value of my collateral falls?</summary>
+
+If your collateral value falls and your loan-to-value (LTV) ratio exceeds the liquidation threshold:
+
+1. **Warning phase**: Your position becomes at-risk
+2. **Liquidation trigger**: Automated liquidators can close your position
+3. **Asset sale**: Collateral is sold to repay the debt
+4. **Remaining funds**: Any surplus is returned to you
+
+**Prevention strategies:**
+- **Monitor your LTV ratio** regularly in your portfolio
+- **Add more collateral** when approaching limits
+- **Reduce debt** by repaying part of your loan
+- **Set up alerts** for position health monitoring
+
+**Related:** [Liquidation Process](../core-mechanics/liquidation/README.md)
+</details>
+
+## Advanced Features
+
+<details>
+<summary>What is the Itayose process?</summary>
+
+Itayose is a fair price discovery mechanism used when new order books start trading. It ensures efficient order matching by:
+
+1. **Collecting orders**: Gathering all initial buy and sell orders
+2. **Finding equilibrium**: Determining the price that maximizes trading volume
+3. **Batch execution**: Executing all compatible orders simultaneously
+4. **Fair pricing**: Ensuring all participants get the same fair market price
+
+This process prioritizes the highest bid and lowest ask prices while maximizing the number of successful trades.
+
+**Benefits:**
+- **Fair price discovery**: Prevents manipulation during market opening
+- **Maximum liquidity**: Enables the most trades possible
+- **Equal treatment**: All participants get the same execution price
+
+**Related:** [Itayose Process](../advanced-topics/market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery.md)
+</details>
+
+<details>
+<summary>What is Auto-Rolling?</summary>
+
+Auto-Rolling is a feature that automatically reinvests your funds when positions mature, helping you:
+
+**Benefits:**
+- **Mitigate reinvestment risk**: Avoid gaps between investment periods
+- **Ensure cost-efficiency**: Reduce transaction costs through automation
+- **Promote continuous growth**: Maintain your investment strategy seamlessly
+- **Save time**: Eliminate manual reinvestment processes
+
+**How it works:**
+1. **Position maturity**: Your ZC Bond reaches its maturity date
+2. **Automatic reinvestment**: Funds are automatically placed in the next available market
+3. **Rate determination**: New rate is set based on current market conditions
+4. **Continuous compounding**: Your returns continue growing without interruption
+
+**Related:** [Auto-Rolling](../advanced-topics/market-dynamics/auto-rolling/README.md)
+</details>
+
+## Related Resources
+
+- [Getting Started Guide](../getting-started/README.md)
+- [Core Mechanics Documentation](../core-mechanics/README.md)
+- [Advanced Topics](../advanced-topics/README.md)
+- [Platform Guide](../getting-started/platform-guide/README.md)
+- [Developer Portal](../../developer-portal/introduction.md)

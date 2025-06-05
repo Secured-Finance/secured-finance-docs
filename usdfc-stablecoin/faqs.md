@@ -1,3 +1,354 @@
+---
+description: Comprehensive answers to frequently asked questions about USDFC Stablecoin
+---
+
+# ❓ USDFC Stablecoin FAQs
+
+## Overview
+
+This FAQ covers everything you need to know about USDFC, from basic concepts to advanced operations and troubleshooting. Whether you're new to stablecoins or looking for specific technical details, you'll find comprehensive answers here.
+
+## What You'll Learn
+
+- How USDFC stablecoin works and its key features
+- Step-by-step processes for minting, managing, and redeeming USDFC
+- Risk management and liquidation mechanics
+- Advanced topics like Recovery Mode and edge cases
+- Stability Pool participation and rewards
+
+## Quick Navigation
+
+- [Getting Started](#getting-started)
+- [Minting & Borrowing](#minting--borrowing)
+- [Risk Management](#risk-management)
+- [Advanced Topics](#advanced-topics)
+
+## Getting Started
+
+<details>
+<summary>What is Secured Finance?</summary>
+
+Secured Finance is a decentralized finance platform that facilitates peer-to-contract lending and derivatives trading. Built on multiple blockchains including Ethereum, Arbitrum, and Filecoin, it offers a transparent, robust, and cost-effective alternative to traditional financial institutions.
+
+The platform consists of two main products:
+- **Fixed-Rate Lending Protocol**: Enables fixed-rate, fixed-term lending and borrowing through zero-coupon bonds
+- **USDFC Stablecoin**: A dollar-pegged stablecoin backed by Filecoin collateral
+
+**Related:** [Platform Overview](../../introduction/overview.md)
+</details>
+
+<details>
+<summary>What is USDFC?</summary>
+
+USDFC is a decentralized stablecoin pegged to the US Dollar and backed by Filecoin (FIL) collateral. It's designed to maintain its value at $1 USD through over-collateralization and various stability mechanisms.
+
+**Key features:**
+- **Decentralized**: No central authority controls USDFC
+- **Over-collateralized**: Backed by at least 110% FIL collateral
+- **Redeemable**: Exchange USDFC for underlying FIL anytime
+- **Yield-generating**: Earn rewards through Stability Pool participation
+
+**Related:** [USDFC Overview](../overview.md)
+</details>
+
+<details>
+<summary>How does USDFC maintain its peg to the US Dollar?</summary>
+
+USDFC maintains its $1 peg through multiple mechanisms:
+
+1. **Over-collateralization**: Minimum 110% FIL collateral backing
+2. **Redemption mechanism**: Direct exchange of USDFC for FIL at $1 rate
+3. **Liquidation system**: Automatic closure of under-collateralized positions
+4. **Stability Pool**: Buffer that absorbs liquidated debt
+5. **Arbitrage opportunities**: Market forces help restore peg when deviations occur
+
+These mechanisms work together to create strong economic incentives for maintaining the peg.
+
+**Related:** [System Overview](../core-mechanics/system-overview.md)
+</details>
+
+<details>
+<summary>What are the benefits of using USDFC?</summary>
+
+USDFC offers several advantages:
+
+**For Users:**
+- **Stable value**: Maintains $1 peg for predictable purchasing power
+- **Decentralized**: No reliance on traditional banking systems
+- **Transparent**: All operations recorded on blockchain
+- **Yield opportunities**: Earn rewards through Stability Pool
+
+**For DeFi:**
+- **Composability**: Use in other DeFi protocols
+- **Liquidity**: Trade on decentralized exchanges
+- **Collateral**: Use as collateral for other loans
+
+**Related:** [USDFC Overview](../overview.md)
+</details>
+
+<details>
+<summary>How do I get started with USDFC?</summary>
+
+To get started with USDFC:
+
+1. **Set up a wallet**: Use a Web3 wallet like MetaMask
+2. **Acquire FIL**: Purchase Filecoin on exchanges
+3. **Connect to platform**: Access the USDFC interface
+4. **Create a Trove**: Deposit FIL as collateral
+5. **Mint USDFC**: Borrow against your collateral
+6. **Manage position**: Monitor and maintain healthy ratios
+
+**Related:** [Getting Started Guide](../getting-started/README.md)
+</details>
+
+## Minting & Borrowing
+
+<details>
+<summary>How do I mint USDFC?</summary>
+
+To mint USDFC:
+
+1. **Connect your wallet** to the USDFC platform
+2. **Create a Trove** by depositing FIL as collateral
+3. **Set collateral ratio** (minimum 110%, recommended 150%+)
+4. **Mint USDFC** against your collateral
+5. **Pay borrowing fee** (currently 0.5% of minted amount)
+6. **Confirm transaction** and receive USDFC
+
+**Example:**
+- Deposit 100 FIL worth $500
+- Mint 400 USDFC (125% collateral ratio)
+- Pay 2 USDFC borrowing fee
+- Receive 398 USDFC in your wallet
+
+**Related:** [Minting USDFC Step-by-Step](../getting-started/minting-usdfc-step-by-step.md)
+</details>
+
+<details>
+<summary>What is the minimum collateral ratio?</summary>
+
+The minimum collateral ratio for USDFC is **110%**. This means:
+
+- Deposit at least $110 worth of FIL to mint $100 USDFC
+- If your ratio falls below 110%, liquidation may occur
+- **Recommended ratio**: 150% or higher for safety margin
+
+**Calculation:**
+$$
+\text{Collateral Ratio} = \frac{\text{FIL Value}}{\text{USDFC Debt}} \times 100\%
+$$
+
+**Related:** [Collateral Ratio](../core-mechanics/liquidation/collateral-ratio.md)
+</details>
+
+<details>
+<summary>What fees are involved in minting USDFC?</summary>
+
+When minting USDFC, you pay:
+
+**One-time fees:**
+- **Borrowing Fee**: 0.5% of minted USDFC amount
+- **Gas Fees**: Network transaction fees in FIL
+
+**No ongoing fees:**
+- No interest payments
+- No maintenance fees
+- No time-based charges
+
+**Example:** Minting 1,000 USDFC costs 5 USDFC borrowing fee plus gas.
+
+**Related:** [Protocol Fees](../core-mechanics/protocol-fees.md)
+</details>
+
+<details>
+<summary>Can I mint more USDFC from an existing Trove?</summary>
+
+Yes, you can mint additional USDFC from an existing Trove if:
+
+1. **Collateral ratio remains above 110%** after minting
+2. **You pay the borrowing fee** on additional USDFC
+3. **Sufficient FIL collateral** supports the new total debt
+
+**Process:**
+1. Access your existing Trove
+2. Calculate new collateral ratio
+3. Mint additional USDFC
+4. Pay borrowing fee on new amount only
+
+**Related:** [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md)
+</details>
+
+<details>
+<summary>What happens if I want to close my Trove?</summary>
+
+To close your Trove:
+
+1. **Repay all USDFC debt** including any fees
+2. **Confirm closure transaction** 
+3. **Receive all FIL collateral** back to your wallet
+4. **Pay gas fees** for the transaction
+
+**Requirements:**
+- Must repay 100% of USDFC debt
+- Cannot partially close a Trove
+- Trove is permanently removed after closure
+
+**Related:** [Monitoring Your Position](../getting-started/monitoring-your-position.md)
+</details>
+
+## Risk Management
+
+<details>
+<summary>What is the Stability Pool?</summary>
+
+The Stability Pool is a pool of USDFC tokens that acts as a buffer to absorb debt from liquidated Troves. It provides system stability and rewards for participants.
+
+**How it works:**
+1. **Users deposit USDFC** into the pool
+2. **Liquidated debt** is paid using pool funds
+3. **Liquidated FIL collateral** is distributed to depositors
+4. **Depositors typically profit** from liquidation premiums
+
+**Related:** [Using the Stability Pool](../getting-started/using-the-stability-pool.md)
+</details>
+
+<details>
+<summary>How do liquidations work?</summary>
+
+When a Trove's collateral ratio falls below 110%:
+
+1. **Liquidation trigger**: Anyone can initiate liquidation
+2. **Debt payment**: Stability Pool USDFC pays off the debt
+3. **Collateral distribution**: FIL collateral goes to Stability Pool depositors
+4. **Liquidator reward**: Liquidator receives 0.5% of collateral
+
+**Example:**
+- Trove has 100 FIL ($400) and 380 USDFC debt
+- Collateral ratio = 105% (below 110%)
+- Liquidation occurs, Stability Pool receives ~$400 FIL for $380 debt
+
+**Related:** [Liquidation Process](../core-mechanics/liquidation.md)
+</details>
+
+<details>
+<summary>What are the benefits of depositing in the Stability Pool?</summary>
+
+Stability Pool depositors receive:
+
+**Rewards:**
+- **FIL from liquidations**: Typically profitable due to 110%+ collateral
+- **Liquidation premiums**: Receive more value than USDFC deposited
+- **System rewards**: Potential additional token rewards
+
+**Example profit:**
+- Deposit 1,000 USDFC
+- Liquidation occurs, receive 1,100 USDFC worth of FIL
+- Net profit: 100 USDFC equivalent
+
+**Related:** [Using the Stability Pool](../getting-started/using-the-stability-pool.md)
+</details>
+
+<details>
+<summary>What are the risks of the Stability Pool?</summary>
+
+Risks include:
+
+1. **USDFC reduction**: Your deposit decreases during liquidations
+2. **FIL price volatility**: Received FIL may fluctuate in value
+3. **Opportunity cost**: Might miss FIL price appreciation
+4. **Smart contract risk**: Protocol vulnerabilities (though audited)
+
+**Mitigation strategies:**
+- **Diversify exposure**: Don't deposit all USDFC
+- **Monitor FIL price**: Consider market conditions
+- **Understand mechanics**: Know when liquidations likely occur
+
+**Related:** [Using the Stability Pool](../getting-started/using-the-stability-pool.md)
+</details>
+
+## Advanced Topics
+
+<details>
+<summary>What is redemption and how does it work?</summary>
+
+Redemption allows USDFC holders to exchange their USDFC for underlying FIL collateral directly from the protocol at face value.
+
+**Process:**
+1. **Submit redemption request** with USDFC amount
+2. **Protocol selects Troves** with lowest collateral ratios
+3. **Receive equivalent FIL** based on current price
+4. **Pay redemption fee** (0.5% base + dynamic component)
+
+**Use cases:**
+- **Arbitrage**: When USDFC trades below $1
+- **Exit strategy**: Convert back to FIL
+- **Peg maintenance**: Helps maintain $1 peg
+
+**Related:** [Redemption Process](../core-mechanics/redemption.md)
+</details>
+
+<details>
+<summary>What is Recovery Mode?</summary>
+
+Recovery Mode activates when the system's Total Collateral Ratio (TCR) falls below 150%. It implements stricter rules to restore system health.
+
+**Changes in Recovery Mode:**
+- **Lower liquidation threshold**: Troves below 150% can be liquidated
+- **Partial liquidations**: Only liquidate enough to reach 150%
+- **Restricted operations**: Limited new borrowing
+- **Higher requirements**: New Troves need 150% minimum ratio
+
+**User actions:**
+- **Add collateral** to improve your ratio
+- **Repay debt** to reduce liquidation risk
+- **Monitor closely** for system status updates
+
+**Related:** [Recovery Mode](../advanced-topics/recovery-mode.md)
+</details>
+
+<details>
+<summary>What happens if the Stability Pool is empty during liquidation?</summary>
+
+If the Stability Pool is empty when liquidation occurs:
+
+1. **Redistribution mechanism**: Debt and collateral redistribute to all Troves
+2. **Proportional allocation**: Based on each Trove's existing debt
+3. **Automatic updates**: Positions adjust automatically
+4. **No user action required**: System handles redistribution
+
+**Impact on Trove owners:**
+- **Debt increases**: Receive portion of liquidated debt
+- **Collateral increases**: Receive portion of liquidated FIL
+- **Ratio may improve**: Net effect often positive
+
+**Related:** [Liquidation Process](../core-mechanics/liquidation.md)
+</details>
+
+<details>
+<summary>What if FIL price crashes significantly?</summary>
+
+In case of severe FIL price decline:
+
+1. **Mass liquidations**: Many Troves become under-collateralized
+2. **Recovery Mode**: System automatically activates
+3. **Stability mechanisms**: Built-in protections engage
+4. **Market forces**: Arbitrage opportunities help stabilize
+
+**User protections:**
+- **Over-collateralization**: 110%+ provides buffer
+- **Liquidation premiums**: Incentivize quick liquidations
+- **Redemption mechanism**: Maintains peg pressure
+
+**Related:** [Recovery Mode](../advanced-topics/recovery-mode.md)
+</details>
+
+## Related Resources
+
+- [Getting Started Guide](../getting-started/README.md)
+- [Core Mechanics Documentation](../core-mechanics/README.md)
+- [Advanced Topics](../advanced-topics/README.md)
+- [System Overview](../core-mechanics/system-overview.md)
+- [Developer Portal](../../developer-portal/introduction.md)
 # ❓ FAQs
 
 {% tabs %}

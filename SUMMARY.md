@@ -122,6 +122,7 @@
 
 ## Resources
 
+* [📋 FAQ Page Structure Guidelines](resources/faq-structure-guidelines.md)
 * [🖼️ Media Kit](resources/media-kit/README.md)
   * [🖼️ Secured Finance Logo](resources/media-kit/brand-assets.md)
   * [💲 USDFC Logo](resources/media-kit/usdfc-logo.md)
