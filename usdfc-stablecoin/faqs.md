@@ -112,7 +112,7 @@ To mint USDFC:
 2. **Create a Trove** by depositing FIL as collateral
 3. **Set collateral ratio** (minimum 110%, recommended 150%+)
 4. **Mint USDFC** against your collateral
-5. **Pay borrowing fee** (currently 0.5% of minted amount)
+5. **Pay borrowing fee** (0.5% base fee)
 6. **Confirm transaction** and receive USDFC
 
 **Example:**
@@ -127,18 +127,14 @@ To mint USDFC:
 <details>
 <summary>What is the minimum collateral ratio?</summary>
 
-The minimum collateral ratio for USDFC is **110%**. This means:
+The minimum collateral ratio for USDFC is **110%**. This means you need at least $110 worth of FIL to mint $100 USDFC.
 
-- Deposit at least $110 worth of FIL to mint $100 USDFC
-- If your ratio falls below 110%, liquidation may occur
-- **Recommended ratio**: 150% or higher for safety margin
+**Key points:**
+- Below 110% = liquidation risk
+- Recommended: 150%+ for safety
+- Increases to 150% during Recovery Mode
 
-**Calculation:**
-$$
-\text{Collateral Ratio} = \frac{\text{FIL Value}}{\text{USDFC Debt}} \times 100\%
-$$
-
-**Related:** [Collateral Ratio](../core-mechanics/liquidation/collateral-ratio.md)
+**Related:** [Collateral Ratio Details](../core-mechanics/liquidation/collateral-ratio.md)
 </details>
 
 <details>
@@ -147,7 +143,7 @@ $$
 When minting USDFC, you pay:
 
 **One-time fees:**
-- **Borrowing Fee**: 0.5% of minted USDFC amount
+- **Borrowing Fee**: 0.5% base fee (may vary with market conditions)
 - **Gas Fees**: Network transaction fees in FIL
 
 **No ongoing fees:**
@@ -157,7 +153,7 @@ When minting USDFC, you pay:
 
 **Example:** Minting 1,000 USDFC costs 5 USDFC borrowing fee plus gas.
 
-**Related:** [Protocol Fees](../core-mechanics/protocol-fees.md)
+**Related:** [Protocol Fees Details](../core-mechanics/protocol-fees.md)
 </details>
 
 <details>
@@ -277,33 +273,28 @@ Redemption allows USDFC holders to exchange their USDFC for underlying FIL colla
 1. **Submit redemption request** with USDFC amount
 2. **Protocol selects Troves** with lowest collateral ratios
 3. **Receive equivalent FIL** based on current price
-4. **Pay redemption fee** (0.5% base + dynamic component)
+4. **Pay redemption fee** (0.5% base fee + market conditions)
 
 **Use cases:**
 - **Arbitrage**: When USDFC trades below $1
 - **Exit strategy**: Convert back to FIL
 - **Peg maintenance**: Helps maintain $1 peg
 
-**Related:** [Redemption Process](../core-mechanics/redemption.md)
+**Related:** [Redemption Process Details](../core-mechanics/redemption.md)
 </details>
 
 <details>
 <summary>What is Recovery Mode?</summary>
 
-Recovery Mode activates when the system's Total Collateral Ratio (TCR) falls below 150%. It implements stricter rules to restore system health.
+Recovery Mode activates when the system's Total Collateral Ratio falls below 150%. It implements stricter rules to restore system health:
 
-**Changes in Recovery Mode:**
-- **Lower liquidation threshold**: Troves below 150% can be liquidated
-- **Partial liquidations**: Only liquidate enough to reach 150%
+- **Higher liquidation threshold**: Positions below 150% at risk
+- **No borrowing fees**: Encourages adding collateral
 - **Restricted operations**: Limited new borrowing
-- **Higher requirements**: New Troves need 150% minimum ratio
 
-**User actions:**
-- **Add collateral** to improve your ratio
-- **Repay debt** to reduce liquidation risk
-- **Monitor closely** for system status updates
+**User actions:** Add collateral or repay debt to stay above 150%.
 
-**Related:** [Recovery Mode](../advanced-topics/recovery-mode.md)
+**Related:** [Recovery Mode Details](../advanced-topics/recovery-mode.md)
 </details>
 
 <details>

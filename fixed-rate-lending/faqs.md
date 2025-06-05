@@ -40,14 +40,11 @@ The platform consists of two main products:
 <details>
 <summary>What is a Zero-Coupon Bond (ZC Bond)?</summary>
 
-A Zero-Coupon Bond (ZC Bond) is a debt instrument that doesn't pay interest during its life. Instead, it's sold at a discount to its face value and pays the full face value at maturity. This makes them ideal for users who want a guaranteed return at a specific future date.
+A Zero-Coupon Bond is a debt instrument sold at a discount and redeemed at face value at maturity, providing guaranteed returns.
 
-**Example:**
-- You buy a ZC Bond for 950 USDC that matures in 6 months for 1,000 USDC
-- Your fixed return is 50 USDC (approximately 10.5% APR)
-- No interest payments during the 6-month period
+**Example:** Buy for 950 USDC, receive 1,000 USDC at maturity = 5.26% return
 
-**Related:** [Zero-Coupon Bonds](../core-mechanics/standardization/zero-coupon-bonds.md)
+**Related:** [ZC Bond Mechanics](../core-mechanics/standardization/zero-coupon-bonds.md)
 </details>
 
 <details>
