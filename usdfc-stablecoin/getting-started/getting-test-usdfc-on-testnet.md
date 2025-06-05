@@ -111,7 +111,7 @@ It's important to understand the differences between testnet and mainnet:
 * Transaction times and network behavior may differ from mainnet
 * The USDFC fixed rate lending market is available at [https://stg.secured.finance](http://stg.secured.finance/?chain_id=314159)
 
-## FAQ
+## Common Questions
 
 **Q: How often can I request test FIL from the faucet?**\
 A: Faucet limitations vary, but typically you can request once every 24 hours.

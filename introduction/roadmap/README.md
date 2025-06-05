@@ -12,6 +12,8 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 
 ### 2025 Q3 & later
 
+* [ ] SFC Tokenomics Announcement
+* [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] SFC Launch & DAO Governance
 * [ ] New Pool-based AMM Fixed-Rate Lending White Paper
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
@@ -21,8 +23,6 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [x] USDFC Stablecoin Beta Launch on Filecoin Mainnet
 * [x] USDFC Stablecoin Official Launch on Filecoin Mainnet
 * [ ] Secured Finance Product Roadmap Update
-* [ ] SFC Tokenomics Announcement
-* [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] JUL2024 Markets Itayose & Auto-roll (Pre-Order 6/20-6/26)
 
 ### 2025 Q1
