@@ -21,9 +21,10 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 ### 2025 Q2
 
 * [x] USDFC Stablecoin Beta Launch on Filecoin Mainnet
-* [x] USDFC Stablecoin Official Launch on Filecoin Mainnet
-* [ ] Secured Finance Product Roadmap Update
-* [ ] JUL2024 Markets Itayose & Auto-roll (Pre-Order 6/20-6/26)
+* [x] USDFC Stablecoin Official Launch on Filecoin Mainnet ([Report](https://medium.com/secured-finance/usdfc-is-about-to-go-public-b3f4f82f64a3))
+* [x] Secured Finance Product Roadmap Update
+* [x] JUL2024 Markets Itayose & Auto-roll (Pre-Order 6/20-6/26: [Report](https://medium.com/secured-finance/itayose-auto-rolling-report-q2-2025-026c959056b4))
+* [x] Cumulative Volume surpassed 1.5 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 
 ### 2025 Q1
 
