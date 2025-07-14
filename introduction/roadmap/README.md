@@ -15,7 +15,7 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] SFC Launch & DAO Governance
-* [ ] New Pool-based AMM Fixed-Rate Lending White Paper
+* [ ] New Lending Vault Launch
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
 
 ### 2025 Q2
