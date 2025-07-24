@@ -14,6 +14,9 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 
 * [ ] Permissionless Money Market Lending Pool
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
+* [ ] SFC Launch & DAO Governance
+* [ ] USDFC Payment Gateway (HTTP 402 & EIP-3009)
+* [ ] RWA Integration as collateral
 
 ### 2025 Q3
 
@@ -21,11 +24,8 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [x] Cumulative Volume surpassed 2.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
-* [ ] SFC Launch & DAO Governance
 * [ ] Lending Vault Launch
-* [ ] USDFC Payment Gateway (HTTP 402 & EIP-3009)
 * [ ] USDFC UI V2
-* [ ] RWA Integration as collateral
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
 
 ### 2025 Q2
