@@ -12,6 +12,7 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 
 ### 2025 Q4 & later
 
+* [ ] Lending Apps Expansion to Another Chain
 * [ ] Permissionless Money Market Lending Pool
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
 * [ ] SFC Launch & DAO Governance
@@ -21,7 +22,7 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 ### 2025 Q3
 
 * [x] PL Genesis Hackathon ([recap](https://medium.com/secured-finance/hack-the-decentralized-economy-with-usdfc-on-filecoin-f52c095928b1))
-* [x] Cumulative Volume surpassed 2.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
+* [x] Cumulative Volume surpassed 3.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] Lending Vault Launch
