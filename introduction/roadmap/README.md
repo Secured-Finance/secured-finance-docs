@@ -12,7 +12,7 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 
 ### 2025 Q4 & later
 
-* [ ] Lending Apps Expansion to Another Chain
+* [ ] Fixed-Rate Lending App Expansion to Another Chain
 * [ ] Permissionless Money Market Lending Pool
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
 * [ ] SFC Launch & DAO Governance
