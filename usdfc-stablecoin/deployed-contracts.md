@@ -16,6 +16,7 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 | -------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Hexens   | 2024/12/30 - 2025/1/20 | [2025-1-Hexens.pdf](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-01-Hexens.pdf)     |
 | Decurity | 2025/2/19 - 2025/3/5   | [2025-3-Decurity.pdf](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-03-Decurity.pdf) |
+| Hexens   | 2025/8/20 - 2025/8/28  | [ 2025-8-Hexens.pdf](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-08-Hexens.pdf)    |
 
 ## Stress Test Report
 
