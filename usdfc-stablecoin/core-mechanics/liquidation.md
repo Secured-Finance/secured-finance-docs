@@ -47,7 +47,7 @@ The Stability Pool is a reserve of USDFC dedicated to absorbing liquidations whe
 ### 2. Liquidated Borrowers
 
 * Have their Trove liquidated when their collateral ratio falls below 110%
-* Lose a portion of their collateral to repay their debt
+* Lose collateral to repay their debt
 * Trove will be closed, but they keep their borrowed USDFC
 * Typically incur around a 10% loss in the process
 
