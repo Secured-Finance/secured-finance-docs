@@ -1,0 +1,621 @@
+openapi: 3.0.0
+info:
+  title: Secured Finance Fixed-Rate Lending API
+  version: 1.0.0
+  description: |
+    API for querying the Secured Finance Fixed-Rate Lending protocol data through The Graph.
+    
+    This API allows developers to access data about lending markets, orders, positions, and other protocol activities using GraphQL queries.
+servers:
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-sepolia/version/latest
+    description: Arbitrum Sepolia Testnet
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-mainnet/version/latest
+    description: Ethereum Mainnet
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-arbitrum-one/version/latest
+    description: Arbitrum One
+  - url: https://api.studio.thegraph.com/query/64582/sf-prd-sepolia/version/latest
+    description: Ethereum Sepolia
+paths:
+  /:
+    post:
+      summary: Query the Fixed-Rate Lending Subgraph
+      description: Execute a GraphQL query against the Fixed-Rate Lending Subgraph
+      operationId: querySubgraph
+      tags:
+        - GraphQL Queries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: GraphQL query to execute
+                  example: |
+                    {
+                      lendingMarkets(
+                        where: { isActive: true },
+                        orderBy: maturity,
+                        orderDirection: asc,
+                        first: 10
+                      ) {
+                        id
+                        currency
+                        maturity
+                        isActive
+                        openingUnitPrice
+                        lastLendUnitPrice
+                        lastBorrowUnitPrice
+                        volume
+                      }
+                    }
+                variables:
+                  type: object
+                  description: Variables for the GraphQL query (optional)
+            examples:
+              getLendingMarkets:
+                summary: Get Active Lending Markets
+                value:
+                  query: |
+                    {
+                      lendingMarkets(
+                        where: { isActive: true },
+                        orderBy: maturity,
+                        orderDirection: asc,
+                        first: 10
+                      ) {
+                        id
+                        currency
+                        maturity
+                        isActive
+                        openingUnitPrice
+                        lastLendUnitPrice
+                        lastBorrowUnitPrice
+                        volume
+                      }
+                    }
+              getOrderBook:
+                summary: Get Order Book for a Market
+                value:
+                  query: |
+                    {
+                      orders(
+                        where: {
+                          lendingMarket: "0x123...",
+                          status_in: [Open, PartiallyFilled]
+                        },
+                        orderBy: inputUnitPrice,
+                        orderDirection: asc,
+                        first: 20
+                      ) {
+                        id
+                        orderId
+                        user {
+                          id
+                        }
+                        side
+                        inputAmount
+                        inputUnitPrice
+                        filledAmount
+                        status
+                        type
+                        isPreOrder
+                      }
+                    }
+              getUserTransactions:
+                summary: Get User Transactions
+                value:
+                  query: |
+                    {
+                      transactions(
+                        where: { user: "0x456..." },
+                        orderBy: createdAt,
+                        orderDirection: desc,
+                        first: 10
+                      ) {
+                        id
+                        currency
+                        maturity
+                        side
+                        executionPrice
+                        executionType
+                        futureValue
+                        amount
+                        feeInFV
+                        averagePrice
+                        createdAt
+                        blockNumber
+                        txHash
+                      }
+                    }
+              getUserDeposits:
+                summary: Get User Deposits
+                value:
+                  query: |
+                    {
+                      deposits(
+                        where: { user: "0x456..." }
+                      ) {
+                        id
+                        user {
+                          id
+                        }
+                        currency
+                        amount
+                      }
+                    }
+              getTransactionCandleSticks:
+                summary: Get Transaction Candle Sticks for Market Analysis
+                value:
+                  query: |
+                    {
+                      transactionCandleSticks(
+                        where: {
+                          currency: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                          maturity: "1735689600"
+                        },
+                        orderBy: timestamp,
+                        orderDirection: asc,
+                        first: 24
+                      ) {
+                        id
+                        interval
+                        currency
+                        maturity
+                        timestamp
+                        open
+                        close
+                        high
+                        low
+                        average
+                        volume
+                        volumeInFV
+                      }
+                    }
+              getTakerVolumesByCurrency:
+                summary: Get Taker Volumes By Currency
+                value:
+                  query: |
+                    {
+                      takerVolumesByCurrencies(
+                        where: { user: "0x456..." }
+                      ) {
+                        id
+                        user {
+                          id
+                        }
+                        currency
+                        totalVolume
+                      }
+                    }
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: The data returned by the query
+                    properties:
+                      lendingMarkets:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/LendingMarket'
+                      orders:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Order'
+                      transactions:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Transaction'
+                      users:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/User'
+                      liquidations:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Liquidation'
+                      transfers:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Transfer'
+                      deposits:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Deposit'
+                      transactionCandleSticks:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TransactionCandleStick'
+                      takerVolumesByCurrencies:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TakerVolumeByCurrency'
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        locations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              line:
+                                type: integer
+                              column:
+                                type: integer
+                    description: Any errors that occurred during the query
+              examples:
+                lendingMarketsResponse:
+                  summary: Lending Markets Response
+                  value:
+                    data:
+                      lendingMarkets:
+                        - id: "0x123..."
+                          currency: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+                          maturity: "1735689600"
+                          isActive: true
+                          openingUnitPrice: "9900"
+                          lastLendUnitPrice: "9830"
+                          lastBorrowUnitPrice: "9870"
+                          volume: "1000000000000"
+                        - id: "0x456..."
+                          currency: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+                          maturity: "1735689600"
+                          isActive: true
+                          openingUnitPrice: "9850"
+                          lastLendUnitPrice: "9780"
+                          lastBorrowUnitPrice: "9820"
+                          volume: "500000000000"
+components:
+  schemas:
+    LendingMarket:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the lending market
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        isActive:
+          type: boolean
+          description: Whether the market is active
+        volume:
+          type: string
+          format: int64
+          description: Total volume of the market
+        openingUnitPrice:
+          type: string
+          format: int64
+          description: Opening unit price of the market
+        lastLendUnitPrice:
+          type: string
+          format: int64
+          description: Last unit price for lending
+        lastBorrowUnitPrice:
+          type: string
+          format: int64
+          description: Last unit price for borrowing
+        offsetAmount:
+          type: string
+          format: int64
+          description: Offset amount of the market
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the order
+        orderId:
+          type: string
+          format: int64
+          description: Order ID in the contract
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        side:
+          type: integer
+          description: Order side (0 for LEND, 1 for BORROW)
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        inputUnitPrice:
+          type: string
+          format: int64
+          description: Input unit price for the order
+        inputAmount:
+          type: string
+          format: int64
+          description: Input amount for the order
+        filledAmount:
+          type: string
+          format: int64
+          description: Filled amount of the order
+        status:
+          type: string
+          enum: [Open, PartiallyFilled, Filled, Killed, Cancelled]
+          description: Order status
+        statusUpdatedAt:
+          type: string
+          format: int64
+          description: Unix timestamp for status update
+        lendingMarket:
+          $ref: '#/components/schemas/LendingMarket'
+        isPreOrder:
+          type: boolean
+          description: Whether the order is a pre-order
+        type:
+          type: string
+          enum: [Market, Limit, Unwind]
+          description: Order type
+        isCircuitBreakerTriggered:
+          type: boolean
+          description: Whether the circuit breaker was triggered
+        createdAt:
+          type: string
+          format: int64
+          description: Unix timestamp for order creation
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the order creation
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash of the order creation
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the transaction
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        side:
+          type: integer
+          description: Transaction side (0 for LEND, 1 for BORROW)
+        executionPrice:
+          type: string
+          format: int64
+          description: Execution price of the transaction
+        user:
+          $ref: '#/components/schemas/User'
+        executionType:
+          type: string
+          enum: [Maker, Taker]
+          description: Execution type
+        futureValue:
+          type: string
+          format: int64
+          description: Future value of the transaction
+        amount:
+          type: string
+          format: int64
+          description: Amount of the transaction
+        feeInFV:
+          type: string
+          format: int64
+          description: Fee in future value
+        averagePrice:
+          type: string
+          format: decimal
+          description: Average price of the transaction
+        lendingMarket:
+          $ref: '#/components/schemas/LendingMarket'
+        order:
+          $ref: '#/components/schemas/Order'
+        createdAt:
+          type: string
+          format: int64
+          description: Unix timestamp for transaction creation
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the transaction
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Wallet address of the user
+        createdAt:
+          type: string
+          format: int64
+          description: Unix timestamp for user creation
+        transactionCount:
+          type: string
+          format: int64
+          description: Number of transactions by the user
+        orderCount:
+          type: string
+          format: int64
+          description: Number of orders by the user
+        liquidationCount:
+          type: string
+          format: int64
+          description: Number of liquidations by the user
+        transferCount:
+          type: string
+          format: int64
+          description: Number of transfers by the user
+    Liquidation:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the liquidation
+        collateralCurrency:
+          type: string
+          format: bytes
+          description: Collateral currency address
+        debtCurrency:
+          type: string
+          format: bytes
+          description: Debt currency address
+        debtMaturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the debt maturity
+        debtAmount:
+          type: string
+          format: int64
+          description: Debt amount
+        user:
+          $ref: '#/components/schemas/User'
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the liquidation
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the liquidation
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash of the liquidation
+    Transfer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the transfer
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        amount:
+          type: string
+          format: int64
+          description: Transfer amount
+        transferType:
+          type: string
+          enum: [Deposit, Withdraw]
+          description: Transfer type
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the transfer
+        blockNumber:
+          type: string
+          format: int64
+          description: Block number of the transfer
+        txHash:
+          type: string
+          format: bytes
+          description: Transaction hash of the transfer
+    Deposit:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the deposit
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        amount:
+          type: string
+          format: int64
+          description: Deposit amount
+    TransactionCandleStick:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the candle stick
+        interval:
+          type: string
+          description: Time interval for the candle stick
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        maturity:
+          type: string
+          format: int64
+          description: Unix timestamp for the maturity date
+        timestamp:
+          type: string
+          format: int64
+          description: Unix timestamp for the candle stick
+        open:
+          type: string
+          format: int64
+          description: Opening price
+        close:
+          type: string
+          format: int64
+          description: Closing price
+        high:
+          type: string
+          format: int64
+          description: Highest price
+        low:
+          type: string
+          format: int64
+          description: Lowest price
+        average:
+          type: string
+          format: decimal
+          description: Average price
+        volume:
+          type: string
+          format: int64
+          description: Trading volume
+        volumeInFV:
+          type: string
+          format: int64
+          description: Trading volume in future value
+    TakerVolumeByCurrency:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the taker volume
+        user:
+          $ref: '#/components/schemas/User'
+        currency:
+          type: string
+          format: bytes
+          description: Currency address
+        totalVolume:
+          type: string
+          format: int64
+          description: Total volume for the user and currency

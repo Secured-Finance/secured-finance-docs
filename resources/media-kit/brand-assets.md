@@ -2,7 +2,7 @@
 description: Logo Usage Guidelines for Secured Finance
 ---
 
-# Secured Finance Logo
+# 🖼️ Secured Finance Logo
 
 {% hint style="info" %}
 This page is evolving. Additional assets will be added as required.

@@ -2,7 +2,7 @@
 description: The Secured Finance Roadmap
 ---
 
-# 🏁 Roadmap 2025
+# 🏁 Roadmap
 
 {% hint style="info" %}
 Token Launch timing will be TBD
@@ -10,14 +10,32 @@ Token Launch timing will be TBD
 Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-finance-app/releases)
 {% endhint %}
 
-### 2025 Q2+
+### 2025 Q4 & later
 
-* [ ] New Pool-based AMM Fixed-Rate Lending White Paper
+* [ ] Fixed-Rate Lending App Expansion to Another Chain
+* [ ] Permissionless Money Market Lending Pool
+* [ ] Quarterly Markets Launch via Itayose & Auto-roll
 * [ ] SFC Launch & DAO Governance
+* [ ] RWA Integration as collateral
+
+### 2025 Q3
+
+* [x] USDFC Payment Gateway (HTTP 402 & EIP-3009)
+* [x] PL Genesis Hackathon ([recap](https://medium.com/secured-finance/hack-the-decentralized-economy-with-usdfc-on-filecoin-f52c095928b1))
+* [x] Cumulative Volume surpassed 3.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 * [ ] SFC Tokenomics Announcement
 * [ ] SFC Token Sale (TBD: Private & Public)
-* [ ] USDFC Stablecoin Official Launch on Filecoin Mainnet
-* [ ] USDFC Stablecoin Beta Launch on Filecoin Mainnet
+* [ ] &#x20;USDFC Vault Launch
+* [ ] USDFC UI V2
+* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+
+### 2025 Q2
+
+* [x] USDFC Stablecoin Beta Launch on Filecoin Mainnet
+* [x] USDFC Stablecoin Official Launch on Filecoin Mainnet ([Report](https://medium.com/secured-finance/usdfc-is-about-to-go-public-b3f4f82f64a3))
+* [x] Secured Finance Product Roadmap Update
+* [x] JUN2025 Markets Itayose & Auto-roll (Pre-Order 6/20-6/26: [Report](https://medium.com/secured-finance/itayose-auto-rolling-report-q2-2025-026c959056b4))
+* [x] Cumulative Volume surpassed 1.5 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 
 ### 2025 Q1
 
@@ -28,4 +46,4 @@ Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-fin
 * [x] [Collaboration Announcement](https://medium.com/secured-finance/secured-finances-fixed-income-lending-stablecoin-protocol-collaborate-with-parasail-for-liquid-7626766bfd5b) with Parasail
 * [x] [Partnership Announcement](https://medium.com/secured-finance/secured-finance-defi-2-0-1538041ec31a) with Lighthouse
 * [x] Parasail's wpFIL integration
-* [x] MAR2024 Markets Itayose & Auto-roll (Pre-Order 3/21-3/27: [Report](https://medium.com/secured-finance/itayose-and-auto-rolling-report-q1-2025-1c718c2004f4))
+* [x] MAR2025 Markets Itayose & Auto-roll (Pre-Order 3/21-3/27: [Report](https://medium.com/secured-finance/itayose-and-auto-rolling-report-q1-2025-1c718c2004f4))

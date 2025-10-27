@@ -1,2 +1,2 @@
-# Media Kit
+# 🖼️ Media Kit
 
