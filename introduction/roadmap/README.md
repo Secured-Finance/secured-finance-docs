@@ -10,24 +10,23 @@ Token Launch timing will be TBD
 Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-finance-app/releases)
 {% endhint %}
 
-### 2025 Q4 & later
+### 2025 Q4 & 2026
 
-* [ ] Fixed-Rate Lending App Expansion to Another Chain
-* [ ] Permissionless Money Market Lending Pool
-* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+* [ ] Fixed-Rate Lending Market Expansion to Another Chain
+* [ ] Yearn V3 Strategy Vault Launch for USDFC
+* [ ] USDFC App UI V2
+* [ ] RWA Token Collateralization & Partnership
+* [ ] SFC Tokenomics Announcement
 * [ ] SFC Launch & DAO Governance
-* [ ] RWA Integration as collateral
+* [ ] SFC Token Sale (TBD: Private & Public)
+* [ ] Quarterly Markets Launch via Itayose & Auto-roll
 
 ### 2025 Q3
 
 * [x] USDFC Payment Gateway (HTTP 402 & EIP-3009)
 * [x] PL Genesis Hackathon ([recap](https://medium.com/secured-finance/hack-the-decentralized-economy-with-usdfc-on-filecoin-f52c095928b1))
 * [x] Cumulative Volume surpassed 3.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
-* [ ] SFC Tokenomics Announcement
-* [ ] SFC Token Sale (TBD: Private & Public)
-* [ ] &#x20;USDFC Vault Launch
-* [ ] USDFC UI V2
-* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+* [x] Quarterly Markets Launch via Itayose & Auto-roll
 
 ### 2025 Q2
 

@@ -126,6 +126,6 @@
   * [🖼️ Secured Finance Logo](resources/media-kit/brand-assets.md)
   * [💲 USDFC Logo](resources/media-kit/usdfc-logo.md)
 * [⚖️ Legal](resources/legal/README.md)
+  * [⚠️ Risk Disclaimer](resources/legal/risk-disclaimer.md)
   * [📜 Terms of Use](resources/legal/terms-of-use.md)
   * [🔒 Privacy Policy](resources/legal/privacy-policy.md)
-  * [⚠️ Risk Disclaimer](resources/legal/risk-disclaimer.md)
