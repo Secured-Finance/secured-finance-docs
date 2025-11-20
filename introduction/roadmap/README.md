@@ -10,16 +10,24 @@ Token Launch timing will be TBD
 Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-finance-app/releases)
 {% endhint %}
 
-### 2025 Q4 & 2026
+### 2026 Q1+
 
 * [ ] Fixed-Rate Lending Market Expansion to Another Chain
-* [ ] Yearn V3 Strategy Vault Launch for USDFC
-* [ ] USDFC App UI V2
-* [ ] RWA Token Collateralization & Partnership
-* [ ] SFC Tokenomics Announcement
+* [ ] Vault Integration for Delta Neutral Strategy
 * [ ] SFC Launch & DAO Governance
 * [ ] SFC Token Sale (TBD: Private & Public)
+* [ ] SFC Tokenomics Announcement
 * [ ] Quarterly Markets Launch via Itayose & Auto-roll
+
+### 2025 Q4&#x20;
+
+* [x] JPYC Integration on Lending Apps
+* [ ] Yearn V3 Strategy Vault Launch for USDFC
+* [ ] Yearn V3 Strategy Vault Launch for JPYC
+* [ ] USDFC App UI V2
+* [ ] RWA Token Collateralization & Partnership
+* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+* [x] Cumulative Volume surpassed 10 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 
 ### 2025 Q3
 
