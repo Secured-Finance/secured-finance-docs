@@ -99,6 +99,14 @@
 * [📔 Contracts and Security](fixed-rate-lending/deployed-contracts.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
+## X402 Payment Protocol
+
+* [📢 What is X402?](x402/overview.md)
+* [🌍 Network Guide](x402/network-guide.md)
+* [🚀 Quick Start](x402/quick-start.md)
+* [🏦 Facilitator Guide](x402/facilitator-guide.md)
+* [📚 API Reference](x402/api-reference.md)
+
 ## Developer Portal
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
