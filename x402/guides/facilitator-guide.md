@@ -624,10 +624,11 @@ Before going to production:
 
 ## Related Resources
 
-* [Overview](overview.md) - What is X402?
-* [Quick Start](quick-start.md) - Build your first paid API
+* [Overview](../overview.md) - What is X402?
+* [Quick Start](../quick-start.md) - Build your first paid API
 * [Network Guide](network-guide.md) - Choose the right network
-* [API Reference](api-reference.md) - Complete package docs
+* [Use Cases](use-cases.md) - Real-world examples
+* [Core Package](../packages/core.md) - Core library documentation
 
 ---
 

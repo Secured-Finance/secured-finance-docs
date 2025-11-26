@@ -73,7 +73,7 @@ X402 is a payment protocol that allows users to pay for API access by signing me
 
 ### For Developers
 - ✅ **Easy integration** - One line of middleware code
-- ✅ **Works everywhere** - Express, Next.js, Hono, any framework
+- ✅ **Easy integration** - Express, Next.js, or build custom
 - ✅ **Flexible pricing** - Static or dynamic pricing based on usage
 - ✅ **Multiple networks** - Filecoin, Polygon, Ethereum, Base
 
@@ -205,7 +205,7 @@ Ready to integrate X402? Choose your path:
 2. **Configure networks**: Sepolia, Polygon, Filecoin
 3. **Start earning**: 0.3% on every payment
 
-👉 **[Facilitator Guide](facilitator-guide.md)**
+👉 **[Facilitator Guide](guides/facilitator-guide.md)**
 
 ### For Users (Make Payments)
 1. **Connect wallet**: MetaMask or Coinbase Wallet
@@ -214,74 +214,28 @@ Ready to integrate X402? Choose your path:
 
 ---
 
-## Real-World Examples
-
-### Example 1: Premium Weather API (JPYC on Sepolia)
-```typescript
-// Charge $0.01 per weather request using JPYC
-app.get('/weather/:city', paymentMiddleware(
-  merchantWallet,
-  {
-    'GET /weather/:city': {
-      price: '$0.01',
-      network: 'sepolia',      // Use 'polygon' or 'mainnet' for production
-      token: 'JPYC'
-    }
-  },
-  { url: 'https://x402.org/facilitator' }
-), (req, res) => {
-  res.json({ temp: 72, condition: 'sunny' });
-});
-```
-
-**User experience:**
-- Request: `GET /weather/tokyo`
-- Wallet prompts: "Pay ¥1.5 ($0.01) JPYC"
-- User signs (free, no gas)
-- Response: `{ temp: 72, condition: 'sunny' }`
-
-### Example 2: Storage Subscription (USDFC on Filecoin)
-```typescript
-// Charge $9.99/month for 100GB storage using USDFC
-app.post('/subscribe', paymentMiddleware(
-  merchantWallet,
-  {
-    'POST /subscribe': {
-      price: '$9.99',
-      network: 'filecoin-calibration',  // Use 'filecoin' for production
-      token: 'USDFC'
-    }
-  },
-  { url: 'https://x402.org/facilitator' }
-), (req, res) => {
-  res.json({
-    subscriptionId: 'sub_123',
-    storageLimit: '100GB',
-    expiresAt: '2025-12-17'
-  });
-});
-```
 
 ---
 
 ## Published Packages
 
-| Package | Version | Description | Use Case |
-|---------|---------|-------------|----------|
-| `@secured-finance/sf-x402` | 0.1.0 | Core library | Build facilitators, verify & settle payments |
-| `@secured-finance/sf-x402-express` | 0.1.0 | Express middleware | Express.js applications |
-| `@secured-finance/sf-x402-next` | 0.1.0 | Next.js middleware | Next.js applications (App/Pages Router) |
+| Package | Description | Use Case |
+|---------|-------------|----------|
+| `@secured-finance/sf-x402` | Core library | Build facilitators, verify & settle payments |
+| `@secured-finance/sf-x402-express` | Express middleware | Express.js applications |
+| `@secured-finance/sf-x402-next` | Next.js middleware | Next.js applications (App/Pages Router) |
 
-📦 **[Package Documentation](api-reference.md)**
+📦 **[Package Documentation](packages/README.md)**
 
 ---
 
 ## Related Resources
 
-* [Network Guide](network-guide.md) - Choose the right network
+* [Network Guide](guides/network-guide.md) - Choose the right network
 * [Quick Start](quick-start.md) - Build your first paid API
-* [Facilitator Guide](facilitator-guide.md) - Deploy and earn fees
-* [API Reference](api-reference.md) - Complete package docs
+* [Use Cases](guides/use-cases.md) - Real-world examples
+* [Facilitator Guide](guides/facilitator-guide.md) - Deploy and earn fees
+* [Package Documentation](packages/README.md) - Complete package docs
 
 ## Community & Support
 

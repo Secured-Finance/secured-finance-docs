@@ -215,7 +215,7 @@ curl http://localhost:4000/weather/tokyo
   </head>
   <body>
     <h1>402 Payment Required</h1>
-    <p>This resource requires payment of $0.01 JPYC on sepolia</p>
+    <p>This resource requires payment of 0.01 JPYC on sepolia</p>
     <!-- Payment form will appear here in browser -->
   </body>
 </html>
@@ -230,7 +230,7 @@ curl http://localhost:4000/weather/tokyo
 1. Open `http://localhost:4000/weather/tokyo` in your browser
 2. You'll see a payment prompt
 3. Connect your MetaMask wallet
-4. Click "Pay $0.01"
+4. Click "Pay 0.01"
 5. Sign the message in your wallet (free, no gas fee!)
 6. See the weather data appear instantly
 
@@ -410,7 +410,7 @@ For production, switch to mainnet networks:
 FACILITATOR_URL=https://x402.org/facilitator  # Public facilitator
 ```
 
-Or [run your own facilitator](facilitator-guide.md)
+Or [run your own facilitator](guides/facilitator-guide.md)
 
 ### Issue: "Transaction timeout"
 
@@ -453,17 +453,15 @@ Check out complete examples:
   * Code: `examples/typescript/fullstack/next/`
   * Live demo: https://shop.x402.org
 
-* **Content Paywall** - Premium articles
-  * Code: `examples/typescript/servers/hono/blog.ts`
-  * Live demo: https://blog.x402.org
-
 ---
 
 ## Related Resources
 
-* [Network Guide](network-guide.md) - Choose the right network
-* [Facilitator Guide](facilitator-guide.md) - Run your own & earn fees
-* [API Reference](api-reference.md) - Complete package docs
+* [Network Guide](guides/network-guide.md) - Choose the right network
+* [Use Cases](guides/use-cases.md) - Real-world examples
+* [Facilitator Guide](guides/facilitator-guide.md) - Run your own & earn fees
+* [Express Package](packages/express.md) - Express middleware docs
+* [Next.js Package](packages/next.md) - Next.js middleware docs
 * [GitHub Examples](https://github.com/Secured-Finance/x402/tree/main/examples) - Working code
 
 ---
@@ -472,4 +470,4 @@ Check out complete examples:
 
 ---
 
-**Ready to deploy your own facilitator?** → [Facilitator Guide](facilitator-guide.md)
+**Ready to deploy your own facilitator?** → [Facilitator Guide](guides/facilitator-guide.md)

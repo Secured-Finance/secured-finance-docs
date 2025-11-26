@@ -666,11 +666,12 @@ Practice on testnets before going live:
 
 ## Related Resources
 
-* [Overview](overview.md) - What is X402?
-* [Quick Start](quick-start.md) - Build your first paid API
+* [Overview](../overview.md) - What is X402?
+* [Quick Start](../quick-start.md) - Build your first paid API
+* [Use Cases](use-cases.md) - Real-world examples
 * [Facilitator Guide](facilitator-guide.md) - Deploy and earn fees
-* [API Reference](api-reference.md) - Package documentation
+* [Package Documentation](../packages/README.md) - API reference
 
 ---
 
-**Ready to integrate?** → [Quick Start Guide](quick-start.md)
+**Ready to integrate?** → [Quick Start Guide](../quick-start.md)

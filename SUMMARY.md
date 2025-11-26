@@ -102,10 +102,15 @@
 ## X402 Payment Protocol
 
 * [📢 What is X402?](x402/overview.md)
-* [🌍 Network Guide](x402/network-guide.md)
 * [🚀 Quick Start](x402/quick-start.md)
-* [🏦 Facilitator Guide](x402/facilitator-guide.md)
-* [📚 API Reference](x402/api-reference.md)
+* [📦 Packages](x402/packages/README.md)
+  * [Core Package](x402/packages/core.md)
+  * [Express Middleware](x402/packages/express.md)
+  * [Next.js Middleware](x402/packages/next.md)
+* [📖 Guides](x402/guides/README.md)
+  * [Network Guide](x402/guides/network-guide.md)
+  * [Use Cases](x402/guides/use-cases.md)
+  * [Facilitator Guide](x402/guides/facilitator-guide.md)
 
 ## Developer Portal
 
