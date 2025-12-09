@@ -24,45 +24,31 @@ The core package provides low-level functions for payment verification and settl
 
 ---
 
-### [@secured-finance/sf-x402-express](express.md) - Express Middleware
-**For**: Express.js applications
+### [@secured-finance/sf-x402-express](middleware.md) & [@secured-finance/sf-x402-next](middleware.md) - Payment Middleware
+**For**: Express.js and Next.js applications
 
-Drop-in Express middleware that handles payment verification and 402 responses automatically. Add paid endpoints with just 3 lines of code.
+Drop-in middleware for Express and Next.js that handles payment verification and 402 responses automatically. Add paid endpoints with just 3 lines of code.
 
 **Features:**
-- Drop-in middleware (3 lines of code)
+- Simple integration (one line of middleware)
 - Dynamic pricing support
-- Transaction tracking
+- Multiple network support
+- Custom paywall HTML
 - TypeScript support
 
-[**View Express Documentation →**](express.md)
-
----
-
-### [@secured-finance/sf-x402-next](next.md) - Next.js Middleware
-**For**: Next.js applications (App Router & Pages Router)
-
-Next.js middleware for payment-gated API routes and server actions. Works with both App Router and Pages Router.
-
-**Features:**
-- Edge runtime compatible
-- Paywall HTML support
-- Coinbase Onramp integration (optional)
-- Session token API
-
-[**View Next.js Documentation →**](next.md)
+[**View Middleware Documentation →**](middleware.md)
 
 ---
 
 ## Quick Comparison
 
-| Feature | Core | Express | Next.js |
-|---------|------|---------|---------|
-| **Use Case** | Build facilitators | Express apps | Next.js apps |
-| **Complexity** | Low-level | High-level | High-level |
-| **Integration** | Manual | 3 lines of code | Middleware |
-| **Paywall** | No | Yes | Yes |
-| **Coinbase Onramp** | No | Yes | Yes |
+| Feature | Core | Middleware (Express/Next.js) |
+|---------|------|------------------------------|
+| **Use Case** | Build facilitators | Add payments to APIs |
+| **Complexity** | Low-level | High-level |
+| **Integration** | Manual | One line of code |
+| **Paywall** | No | Yes |
+| **Framework** | Any | Express.js, Next.js |
 
 ---
 

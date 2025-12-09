@@ -104,13 +104,13 @@
 * [📢 What is X402?](x402/overview.md)
 * [🚀 Quick Start](x402/quick-start.md)
 * [📦 Packages](x402/packages/README.md)
+  * [Payment Middleware](x402/packages/middleware.md)
   * [Core Package](x402/packages/core.md)
-  * [Express Middleware](x402/packages/express.md)
-  * [Next.js Middleware](x402/packages/next.md)
 * [📖 Guides](x402/guides/README.md)
+  * [Using the Facilitator](x402/guides/using-facilitator.md)
+  * [Running Your Own Facilitator](x402/guides/facilitator-guide.md)
   * [Network Guide](x402/guides/network-guide.md)
   * [Use Cases](x402/guides/use-cases.md)
-  * [Facilitator Guide](x402/guides/facilitator-guide.md)
 
 ## Developer Portal
 

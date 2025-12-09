@@ -40,11 +40,11 @@ Learn from complete, production-ready examples:
 ### [🏦 Facilitator Guide](facilitator-guide.md)
 **Build and operate your own facilitator service**
 
-Facilitators verify and settle payments, earning 0.3% fees automatically. Learn how to:
+Facilitators verify and settle payments, earning fees on transactions they process. Learn how to:
 - Build a facilitator service
 - Deploy to production
+- Claim accumulated fees
 - Monitor and maintain
-- Earn revenue from fees
 
 [**Read Facilitator Guide →**](facilitator-guide.md)
 
