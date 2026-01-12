@@ -64,9 +64,9 @@ When you call `settleAndExecute()`:
 
 ```bash
 mkdir my-facilitator && cd my-facilitator
-pnpm init
-pnpm add @secured-finance/sf-x402 express dotenv express-rate-limit
-pnpm add -D typescript @types/express @types/node tsx
+npm init -y
+npm install @secured-finance/x402-core express dotenv express-rate-limit
+npm install -D typescript @types/express @types/node tsx
 ```
 
 ### 2. Configure Environment
@@ -84,64 +84,95 @@ PORT=3000
 
 The facilitator needs three endpoints: `/health`, `/verify`, and `/settle`.
 
-**Full example code:** See [X402 GitHub repository](https://github.com/Secured-Finance/x402/tree/main/examples/typescript/facilitator) for complete implementation.
+**Full example code:** See [x402-exec GitHub repository](https://github.com/Secured-Finance/x402-exec/tree/main/facilitator) for complete production-ready implementation.
 
 **Basic structure:**
 
 ```typescript
 import express from 'express';
-import { verify, settle } from '@secured-finance/sf-x402/facilitator';
-import { createConnectedClient, createSigner } from '@secured-finance/sf-x402/shared/evm';
+import { createPublicClient, createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { baseSepolia } from 'viem/chains';
 
 const app = express();
 app.use(express.json());
+
+// Initialize blockchain clients
+const account = privateKeyToAccount(process.env.EVM_PRIVATE_KEY as `0x${string}`);
+const publicClient = createPublicClient({
+  chain: baseSepolia,
+  transport: http()
+});
+const walletClient = createWalletClient({
+  account,
+  chain: baseSepolia,
+  transport: http()
+});
 
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'healthy' });
 });
 
-// Verify payment signature
+// Verify payment signature (off-chain validation)
 app.post('/verify', async (req, res) => {
   const { paymentPayload, paymentRequirements } = req.body;
-  const client = createConnectedClient(paymentRequirements.network);
-  const result = await verify(client, paymentPayload, paymentRequirements);
-  res.json(result);
+  
+  // Implement signature verification logic
+  // Validate commitment, check balances, verify signatures
+  
+  res.json({
+    isValid: true,
+    payer: paymentPayload.from
+  });
 });
 
-// Settle payment on-chain
+// Settle payment on-chain via SettlementRouter
 app.post('/settle', async (req, res) => {
   const { paymentPayload, paymentRequirements } = req.body;
-  const signer = await createSigner(
-    paymentRequirements.network,
-    process.env.EVM_PRIVATE_KEY!
-  );
-  const result = await settle(signer, paymentPayload, paymentRequirements);
-  res.json(result);
+  
+  // Call SettlementRouter.settleAndExecute()
+  // This pays gas and earns facilitator fee
+  
+  res.json({
+    success: true,
+    transaction: txHash,
+    network: paymentRequirements.network,
+    payer: paymentPayload.from
+  });
 });
 
 app.listen(3000);
 ```
 
+For a complete, production-ready facilitator implementation with all features, see the [facilitator directory](https://github.com/Secured-Finance/x402-exec/tree/main/facilitator) in the x402-exec repository.
+
 ### 4. Run
 
 ```bash
-pnpm tsx index.ts
+npm run dev
+# or
+npx tsx index.ts
 ```
 
 ---
 
 ## Fee Mechanism
 
-The SettlementRouter contract tracks your earned fees:
+The SettlementRouter contract tracks your earned fees. Fees are automatically calculated and deducted during settlement:
 
 ```typescript
-// Fee calculation (from @secured-finance/sf-x402)
-import { calculateFee } from '@secured-finance/sf-x402';
+// Fee calculation example
+const paymentAmount = 1000000n; // 1.00 USDC (6 decimals)
+const feePercentage = 30n; // 0.3% = 30 basis points
+const minFeeUSD = 10000n; // 0.01 USDC minimum
 
-const totalAmount = BigInt(1000000); // 1.00 USDC (6 decimals)
-const { feeAmount, merchantAmount } = calculateFee(totalAmount, 6);
-// feeAmount: 10000n (0.01 USDC - minimum fee)
+// Calculate fee
+const calculatedFee = (paymentAmount * feePercentage) / 10000n;
+const facilitatorFee = calculatedFee > minFeeUSD ? calculatedFee : minFeeUSD;
+const merchantAmount = paymentAmount - facilitatorFee;
+
+// feeAmount: 10000n (0.01 USDC - minimum fee applied)
 // merchantAmount: 990000n (0.99 USDC)
 ```
 
@@ -155,31 +186,36 @@ const { feeAmount, merchantAmount } = calculateFee(totalAmount, 6);
 
 ### Claiming Fees
 
-Fees accumulate in the SettlementRouter contract. You can claim them anytime:
+Fees accumulate in the SettlementRouter contract. You can claim them anytime by calling the contract directly:
 
 ```typescript
-import { claimFees } from '@secured-finance/sf-x402/facilitator';
+import { getContract } from 'viem';
+import { getNetworkConfig } from '@secured-finance/x402-core';
+
+// Get SettlementRouter address for your network
+const config = getNetworkConfig('base-sepolia');
+const settlementRouter = getContract({
+  address: config.settlementRouter,
+  abi: settlementRouterAbi,
+  client: walletClient
+});
 
 // Claim accumulated fees for multiple tokens
-const txHash = await claimFees(
-  ['0xTokenAddress1', '0xTokenAddress2'],
-  'sepolia',
-  wallet
-);
+const txHash = await settlementRouter.write.claimFees([
+  ['0xTokenAddress1', '0xTokenAddress2']
+]);
 ```
 
 Check pending fees:
 
 ```typescript
-import { getPendingFees } from '@secured-finance/sf-x402/facilitator';
-
-const fees = await getPendingFees(
+// Query pending fees from the contract
+const pendingFee = await settlementRouter.read.pendingFees([
   facilitatorAddress,
-  ['0xUSDC', '0xJPYC'],
-  'sepolia',
-  wallet
-);
-// Returns: Map<tokenAddress, feeAmount>
+  tokenAddress
+]);
+
+console.log(`Pending fees: ${pendingFee}`);
 ```
 
 ---
@@ -211,8 +247,8 @@ docker run -d -p 3000:3000 -e EVM_PRIVATE_KEY=$EVM_PRIVATE_KEY x402-facilitator
 ### Other Options
 
 - **PM2**: Process manager for Node.js apps
-- **Cloud platforms**: Railway, Render, AWS
-- **See full deployment guide**: [GitHub repository](https://github.com/Secured-Finance/x402)
+- **Cloud platforms**: Railway, Render, AWS, Cloudflare Workers
+- **See full deployment guide**: [x402-exec repository](https://github.com/Secured-Finance/x402-exec)
 
 ---
 
@@ -239,23 +275,33 @@ Before production:
 
 **Check your earned fees:**
 
-Use the SDK to query pending fees:
+Query pending fees from the SettlementRouter contract:
 
 ```typescript
-import { getPendingFees } from '@secured-finance/sf-x402/facilitator';
+import { getContract } from 'viem';
+import { getNetworkConfig } from '@secured-finance/x402-core';
 
-const pendingFees = await getPendingFees(
+const config = getNetworkConfig('base-sepolia');
+const settlementRouter = getContract({
+  address: config.settlementRouter,
+  abi: settlementRouterAbi,
+  client: publicClient
+});
+
+// Check fees for each token
+const usdcFees = await settlementRouter.read.pendingFees([
   yourFacilitatorAddress,
-  [usdcAddress, jpycAddress],
-  'sepolia',
-  wallet
-);
+  usdcAddress
+]);
 
-console.log('Pending USDC:', pendingFees.get(usdcAddress));
-console.log('Pending JPYC:', pendingFees.get(jpycAddress));
+console.log(`Pending USDC fees: ${usdcFees}`);
 ```
 
 Or view on block explorers:
+- Base: https://basescan.org
+- X-Layer: https://www.oklink.com/xlayer
+- Base Sepolia: https://sepolia.basescan.org
+- X-Layer Testnet: https://www.oklink.com/xlayer-test
 - Sepolia: https://sepolia.etherscan.io
 - Filecoin Calibration: https://calibration.filfox.info
 
@@ -263,9 +309,10 @@ Or view on block explorers:
 
 ## Next Steps
 
-- **[Example Code](https://github.com/Secured-Finance/x402/tree/main/examples/typescript/facilitator)** - Full implementation
+- **[Production Facilitator](https://github.com/Secured-Finance/x402-exec/tree/main/facilitator)** - Full production implementation
 - **[Network Guide](network-guide.md)** - Network details and contract addresses
 - **[Core Package](../packages/core.md)** - API reference
+- **[Live Demo](https://demo.x402x.dev)** - See it in action
 
 ---
 

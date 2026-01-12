@@ -4,7 +4,7 @@ description: Build your first paid API in 10 minutes
 
 # Quick Start
 
-Build a simple weather API that charges $0.01 per request using X402.
+Build a simple weather API that charges $0.01 per request using x402-exec.
 
 ## Prerequisites
 
@@ -21,16 +21,17 @@ Choose your framework:
 **Express.js**
 ```bash
 mkdir my-paid-api && cd my-paid-api
-pnpm init
-pnpm add @secured-finance/sf-x402-express express dotenv
-pnpm add -D typescript @types/express @types/node tsx
+npm init -y
+npm install @secured-finance/x402-express express dotenv
+npm install -D typescript @types/express @types/node tsx
 ```
 
-**Next.js**
+**Hono (Edge/Workers)**
 ```bash
-npx create-next-app@latest my-paid-api
-cd my-paid-api
-pnpm add @secured-finance/sf-x402-next
+mkdir my-paid-api && cd my-paid-api
+npm init -y
+npm install @secured-finance/x402-hono @secured-finance/x402-core hono
+npm install -D typescript @types/node tsx
 ```
 
 ---
@@ -41,10 +42,10 @@ Create `.env`:
 
 ```bash
 MERCHANT_WALLET=0xYourWalletAddress
-FACILITATOR_URL=https://x402.org/facilitator
+FACILITATOR_URL=https://facilitator.x402x.dev
 ```
 
-The facilitator verifies signatures and settles payments on-chain. Use Secured Finance's public facilitator for testing.
+The facilitator verifies signatures and settles payments on-chain via SettlementRouter. Use the public facilitator for testing.
 
 ---
 
@@ -56,7 +57,7 @@ Create `server.ts`:
 
 ```typescript
 import express from 'express';
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -67,8 +68,7 @@ app.get('/weather/:city', paymentMiddleware(
   {
     'GET /weather/:city': {
       price: '$0.01',
-      network: 'sepolia',
-      token: 'JPYC'
+      network: 'base-sepolia'
     }
   },
   { url: process.env.FACILITATOR_URL! }
@@ -85,39 +85,37 @@ app.listen(4000, () => {
 });
 ```
 
-### Next.js
+### Hono (Edge/Workers)
 
-Create `app/api/weather/[city]/route.ts`:
+Create `server.ts`:
 
 ```typescript
-import { NextRequest } from 'next/server';
-import { paymentMiddleware } from '@secured-finance/sf-x402-next';
+import { Hono } from 'hono';
+import { paymentMiddleware } from '@secured-finance/x402-hono';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { city: string } }
-) {
-  const middleware = paymentMiddleware(
+const app = new Hono();
+
+app.use('/weather/:city',
+  paymentMiddleware(
     process.env.MERCHANT_WALLET!,
     {
-      'GET /api/weather/:city': {
-        price: '$0.01',
-        network: 'sepolia',
-        token: 'JPYC'
-      }
+      price: '$0.01',
+      network: 'base-sepolia'
     },
-    { url: process.env.FACILITATOR_URL! }
-  );
+    { url: 'https://facilitator.x402x.dev' }
+  )
+);
 
-  const paymentResponse = await middleware(request);
-  if (paymentResponse) return paymentResponse;
-
-  return Response.json({
-    city: params.city,
+app.get('/weather/:city', (c) => {
+  const city = c.req.param('city');
+  return c.json({
+    city,
     temperature: 72,
     condition: 'sunny'
   });
-}
+});
+
+export default app;
 ```
 
 ---
@@ -126,10 +124,10 @@ export async function GET(
 
 ```bash
 # Express
-pnpm tsx server.ts
+npx tsx server.ts
 
-# Next.js
-pnpm dev
+# Hono
+npx tsx server.ts
 ```
 
 ---
@@ -155,21 +153,23 @@ The middleware handles verification and settlement through the facilitator autom
 
 1. Browser requests `/weather/tokyo`
 2. Middleware returns 402 with payment form
-3. User signs payment in wallet
+3. User signs payment in wallet (free, no gas)
 4. Facilitator verifies signature
-5. Facilitator settles on-chain (pays gas)
-6. Middleware allows request through
-7. API returns data
+5. Facilitator settles on-chain via SettlementRouter (pays gas, earns 0.3% fee)
+6. Hook executes (TransferHook transfers payment to merchant)
+7. Middleware allows request through
+8. API returns data
 
 ---
 
 ## Next Steps
 
+* **[Live Demo](https://demo.x402x.dev)** - See working examples with revenue splits, NFT minting, and rewards
 * **[Using the Facilitator](guides/using-facilitator.md)** - Learn more about the default facilitator
-* **[Network Guide](guides/network-guide.md)** - Get testnet tokens and contract addresses
-* **[Run Your Own Facilitator](guides/facilitator-guide.md)** - Earn fees on payments you process
+* **[Network Guide](guides/network-guide.md)** - Base and X-Layer are live on mainnet!
+* **[Run Your Own Facilitator](guides/facilitator-guide.md)** - Earn fees (0.3%) on payments you process
 * **[Use Cases](guides/use-cases.md)** - See more examples
-* **[Package Docs](packages/README.md)** - Complete API reference
+* **[Package Docs](packages/README.md)** - Complete API reference for all x402x packages
 
 ---
 

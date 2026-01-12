@@ -104,7 +104,7 @@
 * [📢 What is X402?](x402/overview.md)
 * [🚀 Quick Start](x402/quick-start.md)
 * [📦 Packages](x402/packages/README.md)
-  * [Payment Middleware](x402/packages/middleware.md)
+  * [Express Middleware](x402/packages/express.md)
   * [Core Package](x402/packages/core.md)
 * [📖 Guides](x402/guides/README.md)
   * [Using the Facilitator](x402/guides/using-facilitator.md)

@@ -14,7 +14,7 @@ Real-world examples showing how to use X402 for different payment scenarios.
 
 ```typescript
 import express from 'express';
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 const app = express();
 
@@ -23,11 +23,10 @@ app.get('/weather/:city', paymentMiddleware(
   {
     'GET /weather/:city': {
       price: '$0.01',
-      network: 'sepolia',
-      token: 'JPYC'
+      network: 'base-sepolia'
     }
   },
-  { url: process.env.FACILITATOR_URL! }
+  { url: 'https://facilitator.x402x.dev' }
 ), (req, res) => {
   res.json({
     city: req.params.city,
@@ -39,11 +38,12 @@ app.get('/weather/:city', paymentMiddleware(
 app.listen(4000);
 ```
 
-**Why X402?**
+**Why x402x?**
 - $0.01 is too small for credit cards (fees would be higher than payment)
-- Users pay only for what they use
+- Users pay only for what they use (no gas fees!)
 - No subscription required
-- Instant confirmation
+- Instant confirmation via facilitator
+- Programmable settlement through hooks
 
 ---
 
@@ -52,18 +52,17 @@ app.listen(4000);
 **Best for:** SaaS platforms, storage services, membership sites
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 app.post('/subscribe', paymentMiddleware(
   merchantWallet,
   {
     'POST /subscribe': {
       price: '$9.99',
-      network: 'filecoin-calibration',
-      token: 'USDFC'
+      network: 'base'
     }
   },
-  { url: facilitatorUrl }
+  { url: 'https://facilitator.x402x.dev' }
 ), async (req, res) => {
   // Activate subscription
   const userId = req.body.userId;
@@ -77,11 +76,12 @@ app.post('/subscribe', paymentMiddleware(
 });
 ```
 
-**Why X402?**
+**Why x402x?**
 - Global payments without credit card processors
-- Lower fees than traditional payment processors
-- Instant settlement
+- Lower fees than traditional payment processors (0.3% facilitator fee)
+- Instant settlement via SettlementRouter
 - Blockchain-native users already have wallets
+- No gas fees for users
 
 ---
 
@@ -90,18 +90,17 @@ app.post('/subscribe', paymentMiddleware(
 **Best for:** IPFS hosting, archival storage, data preservation
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 app.post('/store-data', paymentMiddleware(
   merchantWallet,
   {
     'POST /store-data': {
       price: '$120.00',
-      network: 'filecoin-calibration',
-      token: 'USDFC'
+      network: 'filecoin-calibration'
     }
   },
-  { url: facilitatorUrl }
+  { url: 'https://facilitator.x402x.dev' }
 ), async (req, res) => {
   // Store data to Filecoin
   const cid = await storeToFilecoin(req.body.data);
@@ -114,11 +113,12 @@ app.post('/store-data', paymentMiddleware(
 });
 ```
 
-**Why X402?**
+**Why x402x?**
 - Native integration with Filecoin ecosystem
 - USDFC token aligns with storage pricing
 - 60-second settlement perfect for storage workflows
 - Filecoin users already have FIL wallets
+- Programmable hooks can automate deal setup
 
 ---
 
@@ -137,11 +137,11 @@ app.post('/translate', async (req, res) => {
     {
       'POST /translate': {
         price,
-        network: 'sepolia',
-        token: 'JPYC'
+        network: 'base-sepolia',
+        token: 'USDC'
       }
     },
-    { url: facilitatorUrl }
+    { url: 'https://facilitator.x402x.dev' }
   );
 
   middleware(req, res, async () => {
@@ -153,35 +153,43 @@ app.post('/translate', async (req, res) => {
 
 ---
 
-## When to Use X402
+## When to Use x402x
 
 **Good fit:**
 - Micropayments under $10
-- Pay-per-use APIs
+- Pay-per-use APIs and services
 - Blockchain-native applications
-- Global audience
-- Recurring billing
+- Global audience (no geographic restrictions)
+- Recurring billing and subscriptions
+- Programmable payments (revenue splits, NFTs, rewards)
 
 **Not ideal:**
-- Free APIs
-- Very high-value B2C payments (credit cards may be better UX)
+- Free APIs (no payment needed)
+- Very high-value B2C payments (credit cards may offer better UX)
 - Traditional fiat-only businesses
+- Applications where users don't have crypto wallets
 
 ---
 
 ## More Examples
 
-See the [GitHub repository](https://github.com/Secured-Finance/x402/tree/main/examples) for complete working examples:
+### Live Demo
+Visit https://demo.x402x.dev to see working examples:
+- **Referral revenue split** - Automatic payment splitting via TransferHook
+- **NFT minting** - Atomic NFT mint with payment via NFTMintHook
+- **Loyalty rewards** - Automatic points distribution via RewardHook
 
-- **E-commerce checkout** - Shopping cart with dynamic pricing
-- **AI image generation** - Pay per image generated
-- **Video streaming** - Pay per video watched
-- **Game items** - In-game purchases
+### GitHub Examples
+See the [x402-exec repository](https://github.com/Secured-Finance/x402-exec/tree/main/examples/showcase) for complete source code:
+
+- **Showcase application** - Full-stack demo with React + TypeScript
+- **Custom hooks** - Example hook implementations
+- **Facilitator** - Production-ready facilitator service
 
 ---
 
 ## Next Steps
 
 - **[Quick Start](../quick-start.md)** - Build your first paid API
-- **[Middleware Docs](../packages/middleware.md)** - Complete API reference
+- **[Express Middleware](../packages/express.md)** - Complete API reference
 - **[Network Guide](network-guide.md)** - Choose the right network

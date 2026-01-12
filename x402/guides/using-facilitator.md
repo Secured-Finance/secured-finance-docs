@@ -4,66 +4,65 @@ description: Use Secured Finance's facilitator node to handle payment verificati
 
 # Using the Facilitator
 
-The X402 payment middleware requires a **facilitator node** to verify signatures and settle payments on-chain. This guide explains how to use Secured Finance's default facilitator.
+The x402x payment system requires a **facilitator node** to verify signatures and settle payments on-chain through the SettlementRouter. This guide explains how to use the default facilitator.
 
 ## What is a Facilitator?
 
 A facilitator is a service that:
-1. **Verifies** payment signatures from users
-2. **Settles** payments on-chain (pays gas fees)
-3. **Earns** fees on payments they process (can claim anytime)
+1. **Verifies** payment signatures from users (off-chain)
+2. **Settles** payments on-chain via SettlementRouter (pays gas fees)
+3. **Earns** fees (0.3%, min $0.01) on payments they process
+4. **Claims** accumulated fees from SettlementRouter anytime
 
-Think of it as a payment processor that handles the blockchain complexity for you.
+Think of it as a payment processor that handles the blockchain complexity and gas fees for you.
 
 ---
 
 ## Using the Default Facilitator
 
-Secured Finance operates a public facilitator at `https://x402.org/facilitator` for testing and development.
+Secured Finance operates a public facilitator at `https://facilitator.x402x.dev` for testing and development.
 
 ### Express.js Integration
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 app.get('/api/data', paymentMiddleware(
   '0xYourMerchantWallet',
   {
     'GET /api/data': {
       price: '$0.01',
-      network: 'sepolia',
-      token: 'JPYC'
+      network: 'base-sepolia'
     }
   },
-  { url: 'https://x402.org/facilitator' }  // Facilitator URL
+  { url: 'https://facilitator.x402x.dev' }  // Facilitator URL
 ), (req, res) => {
   res.json({ data: 'premium content' });
 });
 ```
 
-### Next.js Integration
+### Hono Integration
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-next';
+import { Hono } from 'hono';
+import { paymentMiddleware } from '@secured-finance/x402-hono';
 
-export async function GET(request: NextRequest) {
-  const middleware = paymentMiddleware(
-    process.env.MERCHANT_WALLET!,
+const app = new Hono();
+
+app.use('/api/data',
+  paymentMiddleware(
+    '0xYourMerchantWallet',
     {
-      'GET /api/data': {
-        price: '$0.01',
-        network: 'sepolia',
-        token: 'JPYC'
-      }
+      price: '$0.01',
+      network: 'base-sepolia'
     },
-    { url: 'https://x402.org/facilitator' }  // Facilitator URL
-  );
+    { url: 'https://facilitator.x402x.dev' }
+  )
+);
 
-  const paymentResponse = await middleware(request);
-  if (paymentResponse) return paymentResponse;
-
-  return Response.json({ data: 'premium content' });
-}
+app.get('/api/data', (c) => {
+  return c.json({ data: 'premium content' });
+});
 ```
 
 ---
@@ -89,11 +88,13 @@ When a user makes a request to your protected API:
 
 **4. Settlement:**
 - Facilitator's `/settle` endpoint is called
-- Facilitator calculates fee (0.3%, min $0.01) using `calculateFee()`
-- Facilitator submits transaction on-chain via `settleAndExecute()`:
-  - User's total amount transferred to SettlementRouter
-  - Facilitator's fee accumulates in `pendingFees` mapping
-  - Merchant receives merchantAmount via TransferHook
+- Facilitator calculates fee (0.3%, min $0.01)
+- Facilitator submits transaction on-chain via SettlementRouter's `settleAndExecute()`:
+  - User's signed payment authorization is executed
+  - Payment flows through SettlementRouter
+  - Hook is executed (e.g., TransferHook transfers to merchant)
+  - Facilitator's fee accumulates in `pendingFees[facilitatorAddress][token]`
+  - Merchant receives payment
 
 **5. Response:**
 - Middleware allows request through to your handler
@@ -111,7 +112,7 @@ All of this happens automatically—you just add the middleware!
 paymentMiddleware(
   merchantWallet,
   routes,
-  { url: 'https://x402.org/facilitator' }
+  { url: 'https://facilitator.x402x.dev' }
 )
 ```
 
@@ -122,9 +123,8 @@ paymentMiddleware(
   merchantWallet,
   routes,
   {
-    url: 'https://x402.org/facilitator',
+    url: 'https://facilitator.x402x.dev',
     timeout: 30000,              // Request timeout (ms)
-    retries: 3                    // Retry failed requests
   }
 )
 ```
@@ -133,14 +133,20 @@ paymentMiddleware(
 
 ## Multiple Networks
 
-The middleware and facilitator support multiple networks. Simply specify the network in your route configuration:
+The middleware and facilitator support multiple networks. Simply specify the network in your configuration:
 
 ```typescript
+// Express.js
 const routes = {
-  'GET /sepolia-data': {
+  'GET /base-data': {
     price: '$0.01',
-    network: 'sepolia',
-    token: 'JPYC'
+    network: 'base-sepolia',
+    token: 'USDC'
+  },
+  'GET /xlayer-data': {
+    price: '$0.05',
+    network: 'xlayer-testnet',
+    token: 'USDC'
   },
   'GET /filecoin-data': {
     price: '$9.99',
@@ -150,7 +156,7 @@ const routes = {
 };
 ```
 
-The facilitator handles verification and settlement on the appropriate network.
+The facilitator automatically handles verification and settlement on the appropriate network via the deployed SettlementRouter.
 
 ---
 
@@ -179,7 +185,7 @@ For production, [run your own facilitator](facilitator-guide.md) to:
 
 Check that the facilitator URL is correct:
 ```typescript
-{ url: 'https://x402.org/facilitator' }
+{ url: 'https://facilitator.x402x.dev' }
 ```
 
 ### "Payment verification failed"

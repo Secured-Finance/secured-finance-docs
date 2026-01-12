@@ -1,242 +1,349 @@
 ---
-description: Core X402 library for building facilitators and custom integrations
+description: Core X402 library for x402x settlement framework
 ---
 
 # Core Package
 
-The `@secured-finance/sf-x402` package provides low-level functions for payment verification and settlement. Use this when building a facilitator or custom integration.
+The `@secured-finance/x402-core` package provides core utilities for the x402x settlement framework - a lightweight library that extends x402 with programmable settlement capabilities.
 
 ---
 
 ## Installation
 
 ```bash
-pnpm add @secured-finance/sf-x402
+pnpm add @secured-finance/x402-core
 ```
 
 ---
 
-## Main Functions
+## Quick Start
 
-### `verify()`
-
-Verify a payment signature without settling on-chain.
+### Resource Server (Generating PaymentRequirements)
 
 ```typescript
-import { verify } from '@secured-finance/sf-x402/facilitator';
-import { createConnectedClient } from '@secured-finance/sf-x402/shared/evm';
+import { addSettlementExtra, TransferHook, getNetworkConfig } from "@secured-finance/x402-core";
 
-const client = createConnectedClient('sepolia');
-const result = await verify(client, paymentPayload, paymentRequirements);
+// Base PaymentRequirements (standard x402)
+const baseRequirements = {
+  scheme: "exact",
+  network: "base-sepolia",
+  maxAmountRequired: "100000", // 0.1 USDC
+  asset: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+  payTo: merchantAddress,
+  resource: "/api/payment",
+};
 
-if (result.isValid) {
-  console.log('Valid payment from:', result.payer);
-} else {
-  console.error('Invalid:', result.invalidReason);
-}
-```
+// Add settlement extension
+const requirements = addSettlementExtra(baseRequirements, {
+  hook: TransferHook.getAddress("base-sepolia"),
+  hookData: TransferHook.encode(),
+  facilitatorFee: "10000", // 0.01 USDC
+  payTo: merchantAddress,
+});
 
-**Returns:**
-```typescript
-{
-  isValid: boolean;
-  payer?: string;
-  invalidReason?: string;
-}
-```
-
----
-
-### `settle()`
-
-Settle a payment on-chain (execute the transfer).
-
-```typescript
-import { settle } from '@secured-finance/sf-x402/facilitator';
-import { createSigner } from '@secured-finance/sf-x402/shared/evm';
-
-const signer = await createSigner('sepolia', process.env.EVM_PRIVATE_KEY!);
-const result = await settle(signer, paymentPayload, paymentRequirements);
-
-if (result.success) {
-  console.log('Transaction:', result.transaction);
-} else {
-  console.error('Failed:', result.errorReason);
-}
-```
-
-**Returns:**
-```typescript
-{
-  success: boolean;
-  transaction?: string;    // Transaction hash
-  errorReason?: string;
-}
-```
-
----
-
-### `getSupportedKinds()`
-
-Get supported payment schemes and networks.
-
-```typescript
-import { getSupportedKinds } from '@secured-finance/sf-x402/facilitator';
-
-const kinds = getSupportedKinds();
-console.log(kinds);
-// [
-//   { x402Version: 1, scheme: "exact", network: "sepolia" },
-//   { x402Version: 1, scheme: "exact", network: "filecoin-calibration" },
-//   ...
-// ]
-```
-
----
-
-## Utilities
-
-### `createConnectedClient()`
-
-Create a read-only blockchain client for verification.
-
-```typescript
-import { createConnectedClient } from '@secured-finance/sf-x402/shared/evm';
-
-const client = createConnectedClient('sepolia', {
-  rpcUrl: 'https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY'  // Optional custom RPC
+// Return 402 response
+res.status(402).json({
+  accepts: [requirements],
+  x402Version: 1,
 });
 ```
 
-### `createSigner()`
+---
 
-Create a wallet client for signing transactions.
+## API Reference
+
+### Core Functions
+
+#### `calculateCommitment(params: CommitmentParams): string`
+
+Calculate commitment hash that binds all settlement parameters.
 
 ```typescript
-import { createSigner } from '@secured-finance/sf-x402/shared/evm';
+import { calculateCommitment } from "@secured-finance/x402-core";
 
-const signer = await createSigner(
-  'sepolia',
-  process.env.EVM_PRIVATE_KEY!,
-  {
-    rpcUrl: 'https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY'  // Optional custom RPC
-  }
-);
+const commitment = calculateCommitment({
+  chainId: 84532,
+  hub: "0x...",
+  asset: "0x...",
+  from: "0x...",
+  value: "100000",
+  validAfter: "0",
+  validBefore: "1234567890",
+  salt: "0x...",
+  payTo: "0x...",
+  facilitatorFee: "10000",
+  hook: "0x...",
+  hookData: "0x",
+});
 ```
+
+#### `generateSalt(): string`
+
+Generate a random 32-byte salt for settlement uniqueness.
+
+```typescript
+import { generateSalt } from "@secured-finance/x402-core";
+
+const salt = generateSalt();
+// => '0x1234567890abcdef...'
+```
+
+#### `addSettlementExtra(requirements, params): PaymentRequirements`
+
+Add settlement extension to PaymentRequirements.
+
+```typescript
+import { addSettlementExtra } from "@secured-finance/x402-core";
+
+const requirements = addSettlementExtra(baseRequirements, {
+  hook: "0x...",
+  hookData: "0x",
+  facilitatorFee: "10000",
+  payTo: "0x...",
+});
+```
+
+### Network Functions
+
+#### `getNetworkConfig(network: string): NetworkConfig`
+
+Get configuration for a specific network.
+
+```typescript
+import { getNetworkConfig } from "@secured-finance/x402-core";
+
+const config = getNetworkConfig("base-sepolia");
+// => { chainId: 84532, settlementRouter: '0x...', ... }
+```
+
+#### `getSupportedNetworks(): string[]`
+
+Get list of all supported networks.
+
+```typescript
+import { getSupportedNetworks } from "@secured-finance/x402-core";
+
+const networks = getSupportedNetworks();
+// => ['base-sepolia', 'x-layer-testnet']
+```
+
+### Built-in Hooks
+
+#### `TransferHook`
+
+TransferHook for simple transfers and revenue splits.
+
+```typescript
+import { TransferHook } from "@secured-finance/x402-core";
+
+// Get address for a network
+const hookAddress = TransferHook.getAddress("base-sepolia");
+
+// Encode hook data (simple transfer)
+const hookData = TransferHook.encode();
+
+// Encode hook data with revenue split
+const hookDataWithSplit = TransferHook.encode([
+  { recipient: "0xAlice...", bips: 6000 }, // 60% to Alice
+  { recipient: "0xBob...", bips: 4000 }, // 40% to Bob
+]);
+```
+
+#### `NFTMintHook`
+
+NFTMintHook for NFT minting operations.
+
+```typescript
+import { NFTMintHook } from "@secured-finance/x402-core";
+
+const hookAddress = NFTMintHook.getAddress("base-sepolia");
+const hookData = NFTMintHook.encode({
+  collection: "0x...",
+  tokenId: 1,
+});
+```
+
+#### `RewardHook`
+
+RewardHook for reward point distribution.
+
+```typescript
+import { RewardHook } from "@secured-finance/x402-core";
+
+const hookAddress = RewardHook.getAddress("base-sepolia");
+const hookData = RewardHook.encode({
+  recipient: "0x...",
+  points: 1000,
+});
+```
+
+### Amount Utilities
+
+#### `parseDefaultAssetAmount(usdAmount: string, network: string): string`
+
+Convert USD amount to atomic units for the default asset on a network.
+
+```typescript
+import { parseDefaultAssetAmount } from "@secured-finance/x402-core";
+
+const atomicAmount = parseDefaultAssetAmount("1", "base-sepolia");
+// => '1000000' (1 USDC with 6 decimals)
+```
+
+#### `formatDefaultAssetAmount(atomicAmount: string, network: string): string`
+
+Convert atomic units back to USD amount for display.
+
+```typescript
+import { formatDefaultAssetAmount } from "@secured-finance/x402-core";
+
+const displayAmount = formatDefaultAssetAmount("1000000", "base-sepolia");
+// => '1'
+```
+
+### Facilitator API
+
+The core package provides HTTP client functions to interact with facilitator services.
+
+#### `verify(facilitatorUrl, paymentPayload, paymentRequirements): Promise<VerifyResponse>`
+
+Verify a payment payload with a facilitator without executing it.
+
+```typescript
+import { verify } from "@secured-finance/x402-core";
+
+const result = await verify("https://facilitator.x402x.dev", paymentPayload, paymentRequirements);
+
+if (result.isValid) {
+  console.log("Payment is valid, payer:", result.payer);
+} else {
+  console.error("Invalid payment:", result.invalidReason);
+}
+```
+
+#### `settle(facilitatorUrl, paymentPayload, paymentRequirements, timeout?): Promise<SettleResponse>`
+
+Settle a payment with a facilitator service.
+
+```typescript
+import { settle } from "@secured-finance/x402-core";
+
+const result = await settle(
+  "https://facilitator.x402x.dev",
+  paymentPayload,
+  paymentRequirements,
+  30000, // optional timeout in ms
+);
+
+if (result.success) {
+  console.log("Settlement successful!");
+  console.log("Transaction:", result.transaction);
+  console.log("Network:", result.network);
+} else {
+  console.error("Settlement failed:", result.errorReason);
+}
+```
+
+#### `calculateFacilitatorFee(facilitatorUrl, network, hook, hookData?): Promise<FeeCalculationResult>`
+
+Calculate recommended facilitator fee from a facilitator service.
+
+```typescript
+import { calculateFacilitatorFee } from "@secured-finance/x402-core";
+
+const feeResult = await calculateFacilitatorFee(
+  "https://facilitator.x402x.dev",
+  "base-sepolia",
+  "0x1234...",
+  "0x",
+);
+
+console.log(`Fee: ${feeResult.facilitatorFee} (${feeResult.facilitatorFeeUSD} USD)`);
+```
+
+#### Other Utilities
+
+- `isSettlementMode(paymentRequirements)` - Check if SettlementRouter mode is required
+- `parseSettlementExtra(extra)` - Parse and validate settlement extra parameters
+- `clearFeeCache()` - Clear the fee calculation cache
+
+---
+
+## Supported Networks
+
+**Mainnet (Live):**
+- **base**: Base Mainnet - Production payments
+- **x-layer**: X-Layer Mainnet - Production payments
+
+**Testnet:**
+- **base-sepolia**: Base Sepolia testnet
+- **x-layer-testnet**: X-Layer testnet
+- **sepolia**: Sepolia testnet (JPYC, USDC)
+- **filecoin-calibration**: Filecoin Calibration testnet (USDFC)
+
+See [Network Guide](../guides/network-guide.md) for full details and contract addresses.
 
 ---
 
 ## Type Definitions
 
 ```typescript
-interface PaymentPayload {
-  from: string;           // User wallet
-  to: string;             // Merchant wallet
-  value: string;          // Amount in token units
-  validAfter: number;     // Unix timestamp
-  validBefore: number;    // Unix timestamp
-  nonce: string;          // Unique nonce
-  signature: string;      // EIP-712 signature
+interface CommitmentParams {
+  chainId: number;
+  hub: string;
+  asset: string;
+  from: string;
+  value: string;
+  validAfter: string;
+  validBefore: string;
+  salt: string;
+  payTo: string;
+  facilitatorFee: string;
+  hook: string;
+  hookData: string;
 }
 
-interface PaymentRequirements {
-  payTo: string;          // Merchant wallet
-  maxAmountRequired: bigint;
-  network: string;        // 'sepolia', 'filecoin-calibration', etc.
-  token?: string;         // 'JPYC', 'USDC', 'USDFC'
+interface NetworkConfig {
+  chainId: number;
+  name: string;
+  type: "testnet" | "mainnet";
+  settlementRouter: string;
+  defaultAsset: {
+    address: string;
+    symbol: string;
+    decimals: number;
+    eip712: {
+      name: string;
+      version: string;
+    };
+  };
+  hooks: {
+    transfer: string;
+  };
+  demoHooks?: {
+    nftMint?: string;
+    randomNFT?: string;
+    reward?: string;
+    rewardToken?: string;
+  };
 }
-```
 
----
-
-## Client-Side Functions
-
-For creating payments from user wallets:
-
-```typescript
-import { createPaymentHeader } from '@secured-finance/sf-x402/client';
-
-// User creates and signs payment
-const paymentHeader = await createPaymentHeader(
-  walletClient,
-  {
-    to: merchantWallet,
-    value: '10000000000000000',  // 0.01 JPYC (18 decimals)
-    validBefore: Math.floor(Date.now() / 1000) + 300  // 5 min expiry
-  }
-);
-
-// Send payment header with API request
-fetch('/api/data', {
-  headers: {
-    'X-PAYMENT': paymentHeader
-  }
-});
-```
-
----
-
-## Example: Building a Facilitator
-
-```typescript
-import express from 'express';
-import { verify, settle } from '@secured-finance/sf-x402/facilitator';
-import { createConnectedClient, createSigner } from '@secured-finance/sf-x402/shared/evm';
-
-const app = express();
-app.use(express.json());
-
-// Verify endpoint
-app.post('/verify', async (req, res) => {
-  const { paymentPayload, paymentRequirements } = req.body;
-  const client = createConnectedClient(paymentRequirements.network);
-  const result = await verify(client, paymentPayload, paymentRequirements);
-  res.json(result);
-});
-
-// Settle endpoint
-app.post('/settle', async (req, res) => {
-  const { paymentPayload, paymentRequirements } = req.body;
-  const signer = await createSigner(
-    paymentRequirements.network,
-    process.env.EVM_PRIVATE_KEY!
-  );
-  const result = await settle(signer, paymentPayload, paymentRequirements);
-  res.json(result);
-});
-
-app.listen(3000);
-```
-
-**Full example:** See [GitHub repository](https://github.com/Secured-Finance/x402/tree/main/examples/typescript/facilitator)
-
----
-
-## Configuration
-
-### Custom RPC Endpoints
-
-```typescript
-const config = {
-  rpcUrl: 'https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY'
-};
-
-const client = createConnectedClient('sepolia', config);
-const signer = await createSigner('sepolia', privateKey, config);
-```
-
-### Environment Variables
-
-```bash
-SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
-FILECOIN_CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+interface SettlementExtra {
+  settlementRouter: string;
+  salt: string;
+  payTo: string;
+  facilitatorFee: string;
+  hook: string;
+  hookData: string;
+}
 ```
 
 ---
 
 ## Next Steps
 
-- **[Facilitator Guide](../guides/facilitator-guide.md)** - Build your own facilitator
-- **[Middleware Docs](middleware.md)** - Use with Express/Next.js
+- **[Express Middleware](express.md)** - Use with Express.js
+- **[Hono Middleware](hono.md)** - Use with Hono
+- **[Client SDK](client.md)** - Client-side integration
 - **[Network Guide](../guides/network-guide.md)** - Network details
-- **[GitHub Examples](https://github.com/Secured-Finance/x402/tree/main/examples)** - Working code
+- **[Facilitator Guide](../guides/facilitator-guide.md)** - Build your own facilitator

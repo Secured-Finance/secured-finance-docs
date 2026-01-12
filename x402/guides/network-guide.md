@@ -4,7 +4,7 @@ description: Network details and deployed contracts
 
 # Network Guide
 
-X402 supports multiple blockchain networks. Currently, **Sepolia** and **Filecoin Calibration** have deployed settlement contracts for testing.
+x402x supports multiple blockchain networks with deployed SettlementRouter contracts for production and testing.
 
 ---
 
@@ -12,13 +12,182 @@ X402 supports multiple blockchain networks. Currently, **Sepolia** and **Filecoi
 
 | Network | Token | Type | Finality | Deployed Contracts |
 |---------|-------|------|----------|-------------------|
-| **Sepolia** | JPYC, USDC | Testnet | ~2min | ✅ Yes |
-| **Filecoin Calibration** | USDFC | Testnet | ~60s | ✅ Yes |
-| Ethereum | JPYC, USDC | Mainnet | ~2min | ❌ Not yet |
-| Polygon | JPYC, USDC | Mainnet | ~5s | ❌ Not yet |
-| Base | USDC | Mainnet | ~2s | ❌ Not yet |
-| Avalanche | USDC | Mainnet | ~2s | ❌ Not yet |
-| Filecoin | USDFC | Mainnet | ~60s | ❌ Not yet |
+| **Base** | USDC | Mainnet | ~2s | 🎉 Live |
+| **X-Layer** | USDC | Mainnet | ~2s | 🎉 Live |
+| **Base Sepolia** | USDC | Testnet | ~2s | ✅ Active |
+| **X-Layer Testnet** | USDC | Testnet | ~2s | ✅ Active |
+| **Sepolia** | JPYC, USDC | Testnet | ~2min | ✅ Active |
+| **Filecoin Calibration** | USDFC | Testnet | ~60s | ✅ Active |
+| Ethereum | JPYC, USDC | Mainnet | ~2min | 🚧 Planned |
+| Polygon | JPYC, USDC | Mainnet | ~5s | 🚧 Planned |
+| Avalanche | USDC | Mainnet | ~2s | 🚧 Planned |
+| Filecoin | USDFC | Mainnet | ~60s | 🚧 Planned |
+
+---
+
+## Base (Mainnet) 
+
+### Overview
+- **Purpose**: Production payments on Base network
+- **Block Time**: ~2 seconds
+- **Finality**: ~2 seconds
+- **Gas**: Low cost
+- **Token**: USDC (6 decimals)
+- **Status**: Live in production
+
+### Deployed Contracts
+
+**SettlementRouter**: `0x73fc659Cd5494E69852bE8D9D23FE05Aab14b29B`
+- Handles payment settlement and fee tracking
+- Accumulates facilitator fees in `pendingFees` mapping
+
+**TransferHook**: `0x081258287F692D61575387ee2a4075f34dd7Aef7`
+- Default hook for transferring payments to merchants
+- Supports simple and distributed transfers
+
+### Block Explorer
+https://basescan.org
+
+### Example Usage
+
+```typescript
+import { X402Client } from '@secured-finance/x402-client';
+import { TransferHook, parseDefaultAssetAmount } from '@secured-finance/x402-core';
+
+const client = new X402Client({
+  wallet: extendedWallet,
+  network: 'base'
+});
+
+const amount = parseDefaultAssetAmount('1', 'base'); // 1 USDC
+await client.execute({
+  hook: TransferHook.getAddress('base'),
+  hookData: TransferHook.encode(),
+  amount,
+  payTo: merchantAddress
+});
+```
+
+---
+
+## X-Layer (Mainnet) 
+
+### Overview
+- **Purpose**: Production payments on X-Layer network
+- **Block Time**: ~2 seconds
+- **Finality**: ~2 seconds
+- **Gas**: Low cost
+- **Token**: USDC (6 decimals)
+- **Status**: Live in production
+
+### Deployed Contracts
+
+**SettlementRouter**: `0x73fc659Cd5494E69852bE8D9D23FE05Aab14b29B`
+- Handles payment settlement and fee tracking
+- Accumulates facilitator fees in `pendingFees` mapping
+
+**TransferHook**: `0x081258287F692D61575387ee2a4075f34dd7Aef7`
+- Default hook for transferring payments to merchants
+- Supports simple and distributed transfers
+
+### Block Explorer
+https://www.oklink.com/xlayer
+
+### Example Usage
+
+```typescript
+import { X402Client } from '@secured-finance/x402-client';
+import { TransferHook, parseDefaultAssetAmount } from '@secured-finance/x402-core';
+
+const client = new X402Client({
+  wallet: extendedWallet,
+  network: 'x-layer'
+});
+
+const amount = parseDefaultAssetAmount('1', 'x-layer'); // 1 USDC
+await client.execute({
+  hook: TransferHook.getAddress('x-layer'),
+  hookData: TransferHook.encode(),
+  amount,
+  payTo: merchantAddress
+});
+```
+
+---
+
+## Base Sepolia (Testnet)
+
+### Overview
+- **Purpose**: Development and testing on Base network
+- **Block Time**: ~2 seconds
+- **Finality**: ~2 seconds
+- **Gas**: Free (testnet)
+- **Token**: USDC (6 decimals)
+
+### Deployed Contracts
+
+**SettlementRouter**: `0x817e4f0ee2fbdaac426f1178e149f7dc98873ecb`
+- Handles payment settlement and fee tracking
+- Accumulates facilitator fees in `pendingFees` mapping
+
+**TransferHook**: `0x4DE234059C6CcC94B8fE1eb1BD24804794083569`
+- Default hook for transferring payments to merchants
+- Supports simple and distributed transfers
+
+### Block Explorer
+https://sepolia.basescan.org
+
+### Get Testnet Tokens
+- ETH: https://www.coinbase.com/faucets/base-ethereum-goerli-faucet
+- USDC: Use Base Sepolia faucets
+
+### Example Usage
+
+```typescript
+import { X402Client } from '@secured-finance/x402-client';
+import { TransferHook, parseDefaultAssetAmount } from '@secured-finance/x402-core';
+
+const client = new X402Client({
+  wallet: extendedWallet,
+  network: 'base-sepolia'
+});
+
+const amount = parseDefaultAssetAmount('0.01', 'base-sepolia');
+await client.execute({
+  hook: TransferHook.getAddress('base-sepolia'),
+  hookData: TransferHook.encode(),
+  amount,
+  payTo: merchantAddress
+});
+```
+
+---
+
+## X-Layer Testnet
+
+### Overview
+- **Purpose**: Development and testing on X-Layer network
+- **Block Time**: ~2 seconds
+- **Finality**: ~2 seconds
+- **Gas**: Free (testnet)
+- **Token**: USDC (6 decimals)
+
+### Deployed Contracts
+
+**SettlementRouter**: `0xba9980fb08771e2fd10c17450f52d39bcb9ed576`
+- Handles payment settlement and fee tracking
+- Accumulates facilitator fees in `pendingFees` mapping
+
+**TransferHook**: `0xD4b98dd614c1Ea472fC4547a5d2B93f3D3637BEE`
+- Default hook for transferring payments to merchants
+- Supports simple and distributed transfers
+
+### Block Explorer
+https://www.oklink.com/xlayer-test
+
+### Get Testnet Tokens
+- OKB: Use X-Layer testnet faucet
+- USDC: Use X-Layer testnet faucets
 
 ---
 
@@ -56,18 +225,17 @@ https://sepolia.etherscan.io
 ### Example Usage
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 app.get('/api/data', paymentMiddleware(
   merchantWallet,
   {
     'GET /api/data': {
       price: '$0.01',
-      network: 'sepolia',
-      token: 'JPYC'
+      network: 'sepolia'
     }
   },
-  { url: facilitatorUrl }
+  { url: 'https://facilitator.x402x.dev' }
 ), (req, res) => {
   res.json({ data: 'premium content' });
 });
@@ -98,7 +266,7 @@ app.get('/api/data', paymentMiddleware(
 - USDFC: `0xb3042734b608a1B16e9e86B374A3f3e389B4cDf0` (18 decimals)
 
 ### Block Explorer
-https://calibration.filfox.info
+https://filecoin.blockscout.com
 
 ### Get Testnet Tokens
 - tFIL: https://faucet.calibnet.chainsafe-fil.io
@@ -107,18 +275,17 @@ https://calibration.filfox.info
 ### Example Usage
 
 ```typescript
-import { paymentMiddleware } from '@secured-finance/sf-x402-express';
+import { paymentMiddleware } from '@secured-finance/x402-express';
 
 app.post('/store-data', paymentMiddleware(
   merchantWallet,
   {
     'POST /store-data': {
       price: '$9.99',
-      network: 'filecoin-calibration',
-      token: 'USDFC'
+      network: 'filecoin-calibration'
     }
   },
-  { url: facilitatorUrl }
+  { url: 'https://facilitator.x402x.dev' }
 ), async (req, res) => {
   const cid = await storeToFilecoin(req.body.data);
   res.json({ cid, status: 'stored' });
@@ -127,89 +294,103 @@ app.post('/store-data', paymentMiddleware(
 
 ---
 
-## Other Supported Networks
+## Planned Networks
 
-The following networks are supported by the protocol but **don't have settlement contracts deployed yet**:
+The following networks will be supported after security audits:
 
 ### Ethereum Mainnet
 - **Tokens**: JPYC, USDC
 - **Best for**: High-value B2B payments
 - **Finality**: ~2 minutes
-- **Status**: Protocol support only
+- **Status**: Planned after audit
 
 ### Polygon
 - **Tokens**: JPYC, USDC
 - **Best for**: Fast, low-cost micropayments
 - **Finality**: ~5 seconds
-- **Status**: Protocol support only
-
-### Base
-- **Token**: USDC
-- **Best for**: Consumer apps, creator tips
-- **Finality**: ~2 seconds
-- **Status**: Protocol support only
+- **Status**: Planned after audit
 
 ### Avalanche
 - **Token**: USDC
 - **Best for**: DeFi integrations
 - **Finality**: ~2 seconds
-- **Status**: Protocol support only
+- **Status**: Planned after audit
 
 ### Filecoin Mainnet
 - **Token**: USDFC
 - **Best for**: Storage payments, subscriptions
 - **Finality**: ~60 seconds
-- **Status**: Protocol support only
+- **Status**: Planned after audit
 
 ---
 
 ## Choosing a Network
 
 **For development:**
-- Use **Sepolia** for most testing
+- Use **Base Sepolia** or **X-Layer Testnet** for fast, low-cost testing
+- Use **Sepolia** for Ethereum-compatible testing
 - Use **Filecoin Calibration** for Filecoin-specific features
+
+**For production:**
+- Use **Base** or **X-Layer** for fast, low-cost payments
+- Both networks offer ~2 second finality and low gas costs
 
 **Network characteristics:**
 
-| Characteristic | Sepolia | Filecoin Calibration |
-|----------------|---------|---------------------|
-| **Speed** | ~2min | ~60s |
-| **Tokens** | JPYC, USDC | USDFC |
-| **Gas cost** | Free | Low |
-| **Best for** | General testing | Storage use cases |
+| Characteristic | Base/X-Layer (Mainnet) | Base Sepolia | X-Layer Testnet | Sepolia | Filecoin Cal |
+|----------------|----------------------|--------------|-----------------|---------|--------------|
+| **Speed** | ~2s | ~2s | ~2s | ~2min | ~60s |
+| **Token** | USDC | USDC | USDC | JPYC, USDC | USDFC |
+| **Gas cost** | Low | Free | Free | Free | Low |
+| **Best for** | Production | Fast testing | Fast testing | ETH testing | Storage |
 
 ---
 
 ## Network Configuration
 
-The X402 packages automatically handle network configuration. Just specify the network name:
+The x402x packages automatically handle network configuration. Just specify the network name:
 
 ```typescript
-{
-  price: '$0.01',
-  network: 'sepolia',              // or 'filecoin-calibration'
-  token: 'JPYC'                    // or 'USDFC'
-}
+import { getNetworkConfig } from '@secured-finance/x402-core';
+
+// Get configuration for a network
+const config = getNetworkConfig('base-sepolia');
+console.log(config.settlementRouter); // '0x817e4f0ee2fbdaac426f1178e149f7dc98873ecb'
+console.log(config.chainId); // 84532
+
+// Or use in client
+import { X402Client } from '@secured-finance/x402-client';
+
+const client = new X402Client({
+  wallet: extendedWallet,
+  network: 'base-sepolia' // or 'base', 'x-layer', 'x-layer-testnet', etc.
+});
 ```
 
-Contract addresses and RPC endpoints are built into the packages.
+Contract addresses, chain IDs, and default assets are built into `@secured-finance/x402-core`.
 
 ---
 
 ## Custom RPC Endpoints
 
-For better reliability, configure custom RPC endpoints:
+For production facilitators, use custom RPC endpoints for better reliability:
 
 ```bash
 # .env
+BASE_RPC_URL=https://mainnet.base.org
+X_LAYER_RPC_URL=https://rpc.xlayer.tech
+BASE_SEPOLIA_RPC_URL=https://sepolia.base.org
+X_LAYER_TESTNET_RPC_URL=https://testrpc.xlayer.tech
 SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
 FILECOIN_CALIBRATION_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
 ```
 
-Free RPC providers:
-- **Alchemy**: https://www.alchemy.com
-- **Infura**: https://www.infura.io
-- **Ankr**: https://www.ankr.com
+RPC providers:
+- **Base**: Public RPC available at https://mainnet.base.org
+- **X-Layer**: Public RPC available at https://rpc.xlayer.tech
+- **Alchemy**: https://www.alchemy.com (for Ethereum networks)
+- **Infura**: https://www.infura.io (for Ethereum networks)
+- **Ankr**: https://www.ankr.com (multi-chain support)
 
 ---
 
