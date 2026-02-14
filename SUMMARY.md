@@ -100,6 +100,19 @@
 * [📔 Contracts and Security](fixed-rate-lending/deployed-contracts.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
+## X402 Payment Protocol
+
+* [📢 What is X402?](x402/overview.md)
+* [🚀 Quick Start](x402/quick-start.md)
+* [📦 Packages](x402/packages/README.md)
+  * [Express Middleware](x402/packages/express.md)
+  * [Core Package](x402/packages/core.md)
+* [📖 Guides](x402/guides/README.md)
+  * [Using the Facilitator](x402/guides/using-facilitator.md)
+  * [Running Your Own Facilitator](x402/guides/facilitator-guide.md)
+  * [Network Guide](x402/guides/network-guide.md)
+  * [Use Cases](x402/guides/use-cases.md)
+
 ## Developer Portal
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)
