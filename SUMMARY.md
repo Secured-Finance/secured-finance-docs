@@ -100,6 +100,22 @@
 * [📔 Contracts and Security](fixed-rate-lending/deployed-contracts.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
+## Yield Vault
+
+* [📢 Overview](yield-vault/overview.md)
+* [🧙 Getting Started](yield-vault/getting-started/README.md)
+  * [💴 Deposit Assets](yield-vault/getting-started/deposit-assets.md)
+  * [💰 Withdrawing Assets](yield-vault/getting-started/withdrawing-assets.md)
+  * [📈 Managing Position](yield-vault/getting-started/managing-position.md)
+  * [🎮 Platform Guide](yield-vault/getting-started/platform-guide.md)
+* [🔦 Core Mechanics](yield-vault/core-mechanics/README.md)
+  * [🎬 Vault System Overview](yield-vault/core-mechanics/vault-system-overview.md)
+  * [💿 Strategy Framework and Allocation Model](yield-vault/core-mechanics/strategy-framework-and-allocation-model.md)
+  * [📏 Available Vault and Strategies](yield-vault/core-mechanics/available-vault-and-strategies/README.md)
+    * [💹 JPYC Fixed-Income Strategy](yield-vault/core-mechanics/available-vault-and-strategies/jpyc-fixed-income-strategy.md)
+* [📔 Contracts and Security](yield-vault/contracts-and-security.md)
+* [❓ FAQs](yield-vault/faqs.md)
+
 ## Developer Portal
 
 * [🧑‍💻 Introduction](developer-portal/introduction.md)

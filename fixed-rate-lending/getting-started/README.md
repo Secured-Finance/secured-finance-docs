@@ -1,17 +1,5 @@
 ---
 description: Step-by-Step Tutorials for the Fixed-Rate Lending Protocol
-icon: 🧙‍♂️
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # 🧙‍♂️ Getting Started
@@ -22,23 +10,23 @@ The Getting Started section provides comprehensive tutorials and guides to help 
 
 ## What You'll Learn
 
-- How to set up your wallet and connect to the platform
-- How to deposit assets and manage collateral
-- How to lend and borrow assets at fixed rates
-- How to manage your positions effectively
-- How to navigate the platform's interface and features
+* How to set up your wallet and connect to the platform
+* How to deposit assets and manage collateral
+* How to lend and borrow assets at fixed rates
+* How to manage your positions effectively
+* How to navigate the platform's interface and features
 
 ## Key Components
 
-- [**Lending Assets**](lending-assets.md): Step-by-step guide to lending assets on the platform
-- [**Borrowing Assets**](borrowing-assets.md): Comprehensive tutorial on borrowing with collateral
-- [**Managing Positions**](managing-positions.md): Learn how to monitor and adjust your positions
-- [**Platform Guide**](platform-guide/README.md): Detailed overview of the platform's interface and features
-  - [Trading](platform-guide/trading/README.md): Guide to the trading interface
-  - [Markets](platform-guide/markets.md): Information on available markets
-  - [Portfolio](platform-guide/portfolio/README.md): Managing your assets and positions
-  - [Bridge](platform-guide/bridge.md): Moving assets between blockchains
-  - [Points](platform-guide/points.md): Earning and using platform points
+* [**Lending Assets**](lending-assets.md): Step-by-step guide to lending assets on the platform
+* [**Borrowing Assets**](borrowing-assets.md): Comprehensive tutorial on borrowing with collateral
+* [**Managing Positions**](managing-positions.md): Learn how to monitor and adjust your positions
+* [**Platform Guide**](platform-guide/): Detailed overview of the platform's interface and features
+  * [Trading](platform-guide/trading/): Guide to the trading interface
+  * [Markets](platform-guide/markets.md): Information on available markets
+  * [Portfolio](platform-guide/portfolio/): Managing your assets and positions
+  * [Bridge](platform-guide/bridge.md): Moving assets between blockchains
+  * [Points](platform-guide/points.md): Earning and using platform points
 
 ## Quick Start Guides
 
@@ -56,11 +44,11 @@ The Getting Started section provides comprehensive tutorials and guides to help 
 
 1. Go to Secured Finance [Trading Apps](https://app.secured.finance/)
 2. Set the Condition
-   - Choose Currency and Maturity
-   - Lend or Borrow
-   - Limit order or Market order
-   - Price (APR)
-   - Order Amount
+   * Choose Currency and Maturity
+   * Lend or Borrow
+   * Limit order or Market order
+   * Price (APR)
+   * Order Amount
 3. Click 'Place Order'!!!
 
 ## DeFi Apps Onboarding Guide
@@ -84,6 +72,6 @@ This guide offers a concise walkthrough of the platform, covering key aspects fr
 
 ## Related Resources
 
-- [Core Mechanics](../core-mechanics/README.md): Understand the fundamental concepts of the protocol
-- [Advanced Topics](../advanced-topics/README.md): Explore advanced features and technical details
-- [Blog](https://blog.secured.finance/): Additional tutorials and platform updates
+* [Core Mechanics](../core-mechanics/): Understand the fundamental concepts of the protocol
+* [Advanced Topics](../advanced-topics/): Explore advanced features and technical details
+* [Blog](https://blog.secured.finance/): Additional tutorials and platform updates
