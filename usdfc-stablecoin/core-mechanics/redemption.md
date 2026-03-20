@@ -25,7 +25,7 @@ The redemption process allows any USDFC holder to exchange their tokens for FIL 
 3. The user receives FIL, while the targeted Troves have their debt reduced but also lose collateral
 
 {% hint style="info" %}
-Redemptions target Troves with the **lowest collateral ratios** first. Trove owners are advised to keep their collateral ratios well above the 110% minimum (ideally 150% or higher) to reduce the likelihood of being affected by redemptions. Troves affected by redemptions undergo **a forced swap** of USDFC for their collateral at the current spot rate, impacting their collateral balance.
+Redemptions target the Troves with the **lowest collateral ratios** among those with a collateral ratio of 110% or higher. Troves below 110% are subject to liquidation rather than redemption. Trove owners are advised to keep their collateral ratios well above the 110% minimum (ideally 150% or higher) to reduce the likelihood of being affected by redemptions or liquidation. Troves affected by redemptions undergo **a forced swap** of USDFC for their collateral at the current spot rate, impacting their collateral balance.
 {% endhint %}
 
 ### Important Distinction
@@ -88,7 +88,7 @@ The redemption mechanism works alongside minting to maintain USDFC's stability a
 No, redemption is not a debt repayment mechanism. It's a separate process that allows USDFC holders to exchange their tokens for FIL at face value.
 
 **How can I avoid having my Trove targeted by redemptions?**\
-Maintain a higher collateral ratio than other Troves in the system. Redemptions always target Troves with the lowest collateral ratios first.
+Maintain a higher collateral ratio than other eligible Troves in the system. Redemptions always target Troves with the lowest collateral ratios among Troves that are at or above 110%. Troves below 110% are subject to liquidation rather than redemption.
 
 **Is there a limit to how much USDFC can be redeemed at once?**\
 There's no hard cap, but large redemptions may be limited by the available collateral in under-collateralized Troves and will incur higher fees as the Base Rate increases.
