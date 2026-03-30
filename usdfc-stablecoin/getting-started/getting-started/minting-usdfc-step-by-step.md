@@ -7,7 +7,7 @@ description: A comprehensive guide to minting USDFC stablecoins
 ## Prerequisites
 
 * An active Trove with FIL collateral
-* Access to the [USDFC application](https://app.usdfc.net)
+* Access to the [USDFC application](https://legacy.usdfc.net/)
 * Connected wallet with enough FIL for gas fees
 
 ## Overview
@@ -18,40 +18,44 @@ Minting USDFC allows you to generate dollar-pegged stablecoins against your FIL 
 
 First, you need to access your existing Trove in the USDFC application.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
+1. Navigate to the [USDFC application](https://legacy.usdfc.net/)
 2. Connect your wallet if not already connected
-3. Go to the "Trove" page on the USDFC application
+3. Go to the "Trove" section on the USDFC Dashboard page
 4. You should see your current Trove details including collateral amount, debt, and collateral ratio
 
 {% hint style="warning" %}
 "Debt" is the Total debt = Borrowed amount + Borrowing Fees (cumulative)
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.11.56.png" alt=""><figcaption><p>The Trove dashboard showing current position details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>The Trove dashboard showing current position details</p></figcaption></figure>
 
-## Step 2: Select "Update Trove"
+## Step 2: Select "Adjust Trove"
 
 To mint additional USDFC, you need to adjust your Trove.
 
-1. Click the "Update Trove" tab
+1. Click on the "Adjust" button
 2. This will open the Trove adjustment interface
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.11.56 (1).png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
+{% hint style="info" %}
+"Net debt" is Total Debt - Liquidation Reserve. In this example, 221.02 - 20 = 201.02 USDFC.
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
 
 ## Step 3: Specify Minting Amount
 
 Now you need to specify how much additional USDFC you want to mint.
 
-1. In the adjustment interface, locate the "Collateral" and "Borrowed Amount" input fields
+1. In the adjustment interface, locate the "Collateral" and "Net debt" input fields
 2. Enter the amount of Collateral and USDFC debt you want to adjust
 3. The system will automatically calculate your new collateral ratio
 4. Ensure your new collateral ratio remains above the minimum required (recommended 150%)
 
 {% hint style="info" %}
-"Total debt" is Borrowed Amount + Liquidation Reserve + Borrowing Fee (this mint fee).
+"Total debt" is Net debt + Liquidation Reserve + Borrowing Fee (this mint fee). In this example, 220.00 + 20 + 0.10 = 240.10 USDFC.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.12.44.png" alt=""><figcaption><p>The minting interface with the adjusted amount and collateral ratio calculation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>The minting interface with the adjusted amount and collateral ratio calculation</p></figcaption></figure>
 
 ## Step 4: Review Transaction Details
 
@@ -66,11 +70,11 @@ Before confirming, review all transaction details carefully.
 
 Once you're satisfied with the details, you can proceed with minting.
 
-1. Click the "Update Trove" button
+1. Click the "Confirm" button
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.13.19.png" alt=""><figcaption><p>The confirmation screen with the "Adjust Trove" method</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 6.15.51.png" alt=""><figcaption><p>The confirmation screen with the "Adjust Trove" method</p></figcaption></figure>
 
 ## Step 6: Verify Minted USDFC
 
@@ -82,10 +86,10 @@ After the transaction is confirmed, verify that your USDFC was minted successful
 4. Check that your wallet balance reflects Borrowing Fee subtracted
 
 {% hint style="info" %}
-Wallet balance = Total debt - Liquidation Reserve - Borrowing Fees (cumulative).
+Wallet balance = Total debt - Liquidation Reserve - Borrowing Fees (cumulative). In this example, 240.10 - 20 - 0.10 (this mint fee) - 1.02 (prev mint fee) = 218.98 USDFC.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.15.20.png" alt=""><figcaption><p>Screenshot showing updated Trove details and wallet balance</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 6.18.15.png" alt=""><figcaption><p>Screenshot showing updated Trove details and wallet balance</p></figcaption></figure>
 
 ## Next Steps
 
@@ -118,7 +122,7 @@ A: Yes, you can mint USDFC in any amount as long as your collateral ratio remain
 
 ## Related Topics
 
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Mint & Borrow](../core-mechanics/mint-and-borrow.md)
-* [Protocol Fees](../core-mechanics/protocol-fees.md)
-* [Liquidation](../core-mechanics/liquidation.md)
+* [The Trove System](../../core-mechanics/the-trove-system.md)
+* [Mint & Borrow](../../core-mechanics/mint-and-borrow.md)
+* [Protocol Fees](../../core-mechanics/protocol-fees.md)
+* [Liquidation](../../core-mechanics/liquidation.md)

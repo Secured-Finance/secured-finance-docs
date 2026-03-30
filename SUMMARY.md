@@ -22,7 +22,7 @@
 ## USDFC Stablecoin
 
 * [📢 Overview](usdfc-stablecoin/overview.md)
-* [🧙 Getting Started](usdfc-stablecoin/getting-started/README.md)
+* [🧙 Getting Started (UI v2)](usdfc-stablecoin/getting-started/README.md)
   * [🧪 Getting Test USDFC on Testnet](usdfc-stablecoin/getting-started/getting-test-usdfc-on-testnet.md)
   * [⛽ Creating Your First Trove](usdfc-stablecoin/getting-started/creating-your-first-trove.md)
   * [👛 Minting USDFC Step-by-Step](usdfc-stablecoin/getting-started/minting-usdfc-step-by-step.md)
@@ -30,6 +30,14 @@
   * [🏦 Monitoring Your Position](usdfc-stablecoin/getting-started/monitoring-your-position.md)
   * [🏊 Using the Stability Pool](usdfc-stablecoin/getting-started/using-the-stability-pool.md)
   * [💸 Redeeming USDFC](usdfc-stablecoin/getting-started/redeeming-usdfc.md)
+  * [🧙‍♂️ Getting Started (UI v1)](usdfc-stablecoin/getting-started/getting-started/README.md)
+    * [🧪 Getting Test USDFC on Testnet](usdfc-stablecoin/getting-started/getting-started/getting-test-usdfc-on-testnet.md)
+    * [⛽ Creating Your First Trove](usdfc-stablecoin/getting-started/getting-started/creating-your-first-trove.md)
+    * [👛 Minting USDFC Step-by-Step](usdfc-stablecoin/getting-started/getting-started/minting-usdfc-step-by-step.md)
+    * [🤝 Managing Collateral Effectively](usdfc-stablecoin/getting-started/getting-started/managing-collateral-effectively.md)
+    * [🏦 Monitoring Your Position](usdfc-stablecoin/getting-started/getting-started/monitoring-your-position.md)
+    * [🏊 Using the Stability Pool](usdfc-stablecoin/getting-started/getting-started/using-the-stability-pool.md)
+    * [💸 Redeeming USDFC](usdfc-stablecoin/getting-started/getting-started/redeeming-usdfc.md)
 * [🔦 Core Mechanics](usdfc-stablecoin/core-mechanics/README.md)
   * [🏗️ System Overview](usdfc-stablecoin/core-mechanics/system-overview.md)
   * [✏️ The Trove System](usdfc-stablecoin/core-mechanics/the-trove-system.md)

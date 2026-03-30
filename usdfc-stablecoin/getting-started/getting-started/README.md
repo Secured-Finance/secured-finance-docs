@@ -1,8 +1,8 @@
 ---
-description: Your guide to using the USDFC stablecoin protocol via the UI v2
+description: Your guide to using the USDFC stablecoin protocol via UI v1
 ---
 
-# 🧙 Getting Started (UI v2)
+# 🧙‍♂️ Getting Started (UI v1)
 
 Welcome to the USDFC stablecoin protocol! This section provides step-by-step guides to help you start using USDFC, a dollar-pegged stablecoin backed by Filecoin (FIL) collateral. Whether you're new to DeFi or an experienced user, these guides will walk you through the essential operations of the USDFC protocol.
 
@@ -19,7 +19,7 @@ USDFC allows you to unlock the value of your FIL holdings while maintaining expo
 
 ## Key Components
 
-<figure><img src="../.gitbook/assets/MintUSDFCforGIF2-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>Overview of the USDFC protocol workflow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/MintUSDFCforGIF2-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>Overview of the USDFC protocol workflow</p></figcaption></figure>
 
 ### Core Operations
 
@@ -39,7 +39,7 @@ After minting USDFC, you have several options to put your stablecoins to work:
 1. **Deposit into the Stability Pool** - Earn liquidated FIL at a discount while helping secure the protocol
 2. **Provide Liquidity on DEXs** - Pair USDFC with FIL on SushiSwap to earn trading fees
 3. **Lend in Fixed-Income Markets** - Earn interest by lending USDFC in Secured Finance's [Fixed Income Market](https://app.secured.finance/)
-4. **Bridge to Other Chains** - Use the [bridge and swap](https://usdfc.secured.finance/#/bridge) functionality to move USDFC to other blockchains
+4. **Bridge to Other Chains** - Use the [bridge and swap](https://legacy.usdfc.net/#/bridge) functionality to move USDFC to other blockchains
 
 ## Testnet Resources
 
@@ -51,8 +51,8 @@ If you want to try USDFC on testnet first:
 
 ## Related Resources
 
-* [USDFC Overview](../overview.md)
-* [Core Mechanics](../core-mechanics/)
-* [Advanced Topics](../advanced-topics/)
-* [FAQs](../faqs.md)
-* [Fixed-Rate Lending](../../fixed-rate-lending/overview/)
+* [USDFC Overview](../../overview.md)
+* [Core Mechanics](../../core-mechanics/)
+* [Advanced Topics](../../advanced-topics/)
+* [FAQs](../../faqs.md)
+* [Fixed-Rate Lending](../../../fixed-rate-lending/overview/)

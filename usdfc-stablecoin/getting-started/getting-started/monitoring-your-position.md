@@ -7,7 +7,7 @@ description: Learn how to track and manage your Trove's health
 ## Prerequisites
 
 * An active Trove with FIL collateral
-* Access to the [USDFC application](https://app.usdfc.net)
+* Access to the [USDFC application](https://legacy.usdfc.net/)
 * Basic understanding of collateral ratios and liquidation risk
 
 ## Overview
@@ -18,18 +18,16 @@ Monitoring your position is essential for maintaining a healthy Trove and avoidi
 
 The Trove dashboard is your primary tool for monitoring your position.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
+1. Navigate to the [USDFC application](https://legacy.usdfc.net/)
 2. Connect your wallet if not already connected
-3. Go to the "Dashboard" page on the USDFC application
-4. Review your current Trove or Stability Pool details
+3. Go to the "Trove" section on the USDFC Dashboard page
+4. Review your current Trove details
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt=""><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
 
 ## Step 2: Understand Key Metrics
 
 To effectively monitor your position, you need to understand the key metrics displayed on your dashboard.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt=""><figcaption></figcaption></figure>
 
 ### Collateral Ratio
 
@@ -134,7 +132,7 @@ Develop a plan for responding to different market scenarios.
 
 * Learn how to [manage your collateral effectively](managing-collateral-effectively.md)
 * Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Understand [Recovery Mode](../advanced-topics/recovery-mode.md) and how it affects your Trove
+* Understand [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects your Trove
 
 ## Troubleshooting
 
@@ -158,7 +156,7 @@ A: The dashboard will display a prominent notification when the system enters Re
 
 ## Related Topics
 
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Collateral Ratio](broken-reference/)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [The Trove System](../../core-mechanics/the-trove-system.md)
+* [Liquidation](../../core-mechanics/liquidation.md)
+* [Collateral Ratio](../broken-reference/)
+* [Recovery Mode](../../advanced-topics/recovery-mode.md)

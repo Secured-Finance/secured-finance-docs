@@ -7,7 +7,7 @@ description: Learn how to deposit USDFC into the Stability Pool and earn rewards
 ## Prerequisites
 
 * USDFC tokens in your wallet
-* Access to the [USDFC application](https://app.usdfc.net)
+* Access to the [USDFC application](https://legacy.usdfc.net/)
 * Connected wallet with enough FIL for gas fees
 
 ## Overview
@@ -16,14 +16,14 @@ The Stability Pool is a key component of the USDFC protocol that helps maintain 
 
 ## Step 1: Access the Stability Pool
 
-First, you need to navigate to the Stability Pool page in the USDFC application.
+First, you need to navigate to the Stability Pool section in the USDFC application.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
+1. Navigate to the [USDFC application](https://legacy.usdfc.net/)
 2. Connect your wallet if not already connected
-3. Go to the "Stability Pool" page on the USDFC application
-4. See the "Protocol Overview" section on the Dashboard page to check the Stability Pool information
+3. Locate the "Stability Pool" section on the Dashboard page
+4. See the "Protocol Statistics" section to check the Stability Pool information
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.22.png" alt=""><figcaption><p>Stability Pool section and Protocol Statistics section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Stability Pool section and Protocol Statistics section</p></figcaption></figure>
 
 ## Step 2: Review Stability Pool Information
 
@@ -40,11 +40,11 @@ Now you can deposit your USDFC into the Stability Pool.
 
 1. Enter the amount of USDFC you want to deposit
 2. Review any fees or conditions associated with the deposit
-3. Click the "Deposit USDFC" button
+3. Click the "Confirm" button
 4. Confirm the transaction in your wallet
 5. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.23.48.png" alt=""><figcaption><p>The Stability Pool deposit interface with the amount input field</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (132).png" alt=""><figcaption><p>The Stability Pool deposit interface with the amount input field</p></figcaption></figure>
 
 ## Step 4: Monitor Your Deposit and Rewards
 
@@ -54,33 +54,33 @@ After depositing, you can monitor your position and earned rewards.
 2. Any earned FIL rewards will accumulate over time
 3. The dashboard will show your share of the Stability Pool and Liquidation gain as rewards
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt=""><figcaption><p>Screenshot showing deposit and rewards information</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption><p>Screenshot showing deposit and rewards information</p></figcaption></figure>
 
 ## Step 5: Claim Rewards (When Available)
 
 When you've earned rewards, you can claim them.
 
-1. Locate the "Claim Gains" or similar button in the Stability Pool dashboard
+1. Locate the "Claim FIL" or similar button in the Stability Pool dashboard
 2. Click the button to claim your earned FIL rewards
 3. Confirm the transaction in your wallet
 4. Wait for the transaction to be processed
-5. Verify that the FIL rewards have been added to your&#x20;
+5. Verify that the FIL rewards have been added to your trove
 
 ## Step 6: Withdraw USDFC (When Desired)
 
 You can generally withdraw your USDFC from the Stability Pool at any time.
 
 1. Enter the amount of USDFC you want to keep in the Stability Pool by subtracting the amount of USDFC you want to withdraw
-2. Click the "Withdraw USDFC" button
+2. Click the "Confirm" button
 3. Confirm the transaction in your wallet
 4. Wait for the transaction to be processed
-5. Verify that the USDFC has been returned to your Liquidation Gains
+5. Verify that the USDFC has been returned to your wallet
 
 {% hint style="warning" %}
 As a general rule, deposits in the Stability Pool can be withdrawn at any time, and there is no minimum lockup period. However, withdrawals are temporarily suspended while there are Troves below the minimum collateral ratio of 110% that have not yet been liquidated.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
 
 ## How Stability Pool Rewards Work
 
@@ -137,7 +137,7 @@ It's important to understand that your deposit may be "diluted" over time:
 ## Next Steps
 
 * Learn about [redeeming USDFC](redeeming-usdfc.md) when you're ready to exit
-* Understand [Recovery Mode](../advanced-topics/recovery-mode.md) and how it affects the Stability Pool
+* Understand [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects the Stability Pool
 * Explore other ways to use your USDFC in the ecosystem
 
 ## Troubleshooting
@@ -162,7 +162,7 @@ A: Monitor the liquidation history and current system health. More liquidations 
 
 ## Related Topics
 
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
-* [Protocol Fees](../core-mechanics/protocol-fees.md)
-* [The Trove System](../core-mechanics/the-trove-system.md)
+* [Liquidation](../../core-mechanics/liquidation.md)
+* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Protocol Fees](../../core-mechanics/protocol-fees.md)
+* [The Trove System](../../core-mechanics/the-trove-system.md)
