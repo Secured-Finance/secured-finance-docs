@@ -23,7 +23,6 @@
 
 * [📢 Overview](usdfc-stablecoin/overview.md)
 * [🧙 Getting Started (UI v2)](usdfc-stablecoin/getting-started/README.md)
-  * [test](usdfc-stablecoin/getting-started/test.md)
   * [🧪 Getting Test USDFC on Testnet](usdfc-stablecoin/getting-started/getting-test-usdfc-on-testnet.md)
   * [⛽ Creating Your First Trove](usdfc-stablecoin/getting-started/creating-your-first-trove.md)
   * [👛 Minting USDFC Step-by-Step](usdfc-stablecoin/getting-started/minting-usdfc-step-by-step.md)
