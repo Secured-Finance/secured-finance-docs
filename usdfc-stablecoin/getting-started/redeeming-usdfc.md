@@ -4,6 +4,8 @@ description: Learn how to redeem your USDFC for FIL collateral under certain con
 
 # 💸 Redeeming USDFC
 
+<figure><img src="../../.gitbook/assets/step6.gif" alt=""><figcaption></figcaption></figure>
+
 ## Prerequisites
 
 * USDFC tokens in your wallet

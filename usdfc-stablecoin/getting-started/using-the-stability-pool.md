@@ -4,6 +4,8 @@ description: Learn how to deposit USDFC into the Stability Pool and earn rewards
 
 # 🏊 Using the Stability Pool
 
+<figure><img src="../../.gitbook/assets/step5.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+
 ## Prerequisites
 
 * USDFC tokens in your wallet

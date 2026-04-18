@@ -4,6 +4,8 @@ description: Learn how to manage your collateral to maintain a healthy Trove
 
 # 🤝 Managing Collateral Effectively
 
+<figure><img src="../../.gitbook/assets/step3.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+
 ## Prerequisites
 
 * An active Trove with FIL collateral

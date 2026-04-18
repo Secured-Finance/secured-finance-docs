@@ -4,6 +4,8 @@ description: A comprehensive guide to minting USDFC stablecoins
 
 # 👛 Minting USDFC Step-by-Step
 
+<figure><img src="../../.gitbook/assets/step2.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+
 ## Prerequisites
 
 * An active Trove with FIL collateral

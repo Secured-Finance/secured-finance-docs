@@ -4,6 +4,8 @@ description: Learn how to track and manage your Trove's health
 
 # 🏦 Monitoring Your Position
 
+<figure><img src="../../.gitbook/assets/step4.gif" alt=""><figcaption></figcaption></figure>
+
 ## Prerequisites
 
 * An active Trove with FIL collateral

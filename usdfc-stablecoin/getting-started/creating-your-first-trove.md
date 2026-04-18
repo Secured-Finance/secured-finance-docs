@@ -4,6 +4,8 @@ description: Learn how to create your first Trove to start using USDFC
 
 # ⛽ Creating Your First Trove
 
+<figure><img src="../../.gitbook/assets/step1.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+
 ## Prerequisites
 
 * A wallet with FIL tokens (Filecoin's native cryptocurrency)
