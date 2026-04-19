@@ -12,7 +12,9 @@ description: Download Logos and Brand Guidelines
 
 <figure><img src="../../.gitbook/assets/option 01 (1).png" alt="" width="200"><figcaption><p>USDFC Square Icon 400 x 400.png</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Color Light Background.svg" alt=""><figcaption><p>USDFC Light Background.svg</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Color Light Background.svg" alt=""><figcaption><p>USDFC Stacked Logo.svg</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Horizontal Color Light Background.svg" alt=""><figcaption><p>USDFC Horizontal Logo.svg</p></figcaption></figure>
 
 {% file src="../../.gitbook/assets/USDFC Brand Sheet.pdf" %}
 USDFC Brand Sheet
