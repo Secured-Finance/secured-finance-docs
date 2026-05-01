@@ -14,7 +14,7 @@ Secured Finance Points (SFP) v2 is a simplified and user-friendly reward system 
 
 ## Current Status of SFP
 
-The current phase of SFP ended after April 30, 2026, UTC. Points earned through SFP v1 and v2 have not become invalid and continue to be retained. Details regarding SFP v3, tokenomics, and the timing of the TGE have not been finalized. We will share further updates once confirmed.
+The current phase of SFP ended after **April 30, 2026** (UTC). Points earned through SFP v1 and v2 have not become invalid and continue to be retained. Details regarding SFP v3, tokenomics, and the timing of the TGE have not been finalized. We will share further updates once confirmed.
 
 ## When is the SFP launch?
 
