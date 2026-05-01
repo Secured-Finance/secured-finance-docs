@@ -16,7 +16,7 @@ Secured Finance Points (SFP) v2 is a simplified and user-friendly reward system 
 
 The current phase of SFP ended after April 30, 2026, UTC. Points earned through SFP v1 and v2 have not become invalid and continue to be retained. Details regarding SFP v3, tokenomics, and the timing of the TGE have not been finalized. We will share further updates once confirmed.
 
-## **When is the SFP launch?**
+## When is the SFP launch?
 
 The point system pre-launch phase started on the Filecoin blockchain on **June 19, 2024**, at 12:00 AM (UTC). The global launch followed on **June 28, 2024**, at 12:00 AM (UTC), expanding to Ethereum, Arbitrum, Avalanche, and Polygon zkEVM. The updated **v2 system** will be implemented starting **December 27, 2024** at 12:00 AM(UTC). Accumulated points will remain intact, and new points will be added to the existing totals.
 
