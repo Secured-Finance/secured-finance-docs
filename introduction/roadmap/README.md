@@ -10,13 +10,20 @@ Token Launch timing will be TBD
 Product Release Notes on [GitHub](https://github.com/Secured-Finance/secured-finance-app/releases)
 {% endhint %}
 
-### 2026 Q2+
+### 2026 Q3+
 
 * [ ] Vault Integration for USDFC on FVM
+* [ ] PoC announcement&#x20;
 * [ ] SFC Launch & DAO Governance
 * [ ] SFC Token Sale (TBD: Private & Public)
 * [ ] SFC Tokenomics Announcement
-* [ ] Quarterly Markets Launch via Itayose & Auto-roll
+
+### 2026 Q2
+
+* [x] Joined Progmat / DCC Tokenized JGB On-Chain Repo Working Group ([Link](https://progmat.co.jp/en/news/2026-5-8-press_en/) and [Medium article](https://medium.com/secured-finance/secured-finance-joins-progmat-dcc-working-group-on-tokenized-jgb-on-chain-repo-d4a29ab34f56))
+* [x] &#x20;Lending App UX & Infrastructure Upgrade
+* [x] &#x20;USDFC Mobile UI Improvements
+* [x] Quarterly Markets Launch via Itayose & Auto-roll
 * [x] Cumulative Volume surpassed 50 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 
 ### 2026 Q1
