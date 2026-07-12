@@ -1,3 +1,53 @@
 root: ./
 structure:
   readme: introduction/overview.md
+  summary: SUMMARY.md
+
+redirects:
+  introduction/ecosystem-overview: introduction/protocol-at-a-glance.md
+  fixed-rate-lending/overview/white-paper: fixed-rate-lending/research-and-papers.md
+  fixed-rate-lending/overview/concept-paper: fixed-rate-lending/research-and-papers.md
+  fixed-rate-lending/getting-started/lending-assets: fixed-rate-lending/getting-started/quick-start-lend.md
+  fixed-rate-lending/getting-started/borrowing-assets: fixed-rate-lending/getting-started/quick-start-borrow.md
+  fixed-rate-lending/getting-started/platform-guide/trading/supported-currencies: fixed-rate-lending/core-concepts/collateral.md
+  fixed-rate-lending/getting-started/platform-guide/points: fixed-rate-lending/getting-started/platform-guide/points-and-campaigns.md
+  fixed-rate-lending/getting-started/platform-guide/campaign: fixed-rate-lending/getting-started/platform-guide/points-and-campaigns.md
+  fixed-rate-lending/core-mechanics: fixed-rate-lending/core-concepts/README.md
+  fixed-rate-lending/core-mechanics/order-book-system: fixed-rate-lending/core-concepts/order-book.md
+  fixed-rate-lending/core-mechanics/order-book-system/order-type: fixed-rate-lending/core-concepts/order-book.md
+  fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle: fixed-rate-lending/core-concepts/order-life-cycle.md
+  fixed-rate-lending/core-mechanics/order-book-system/order-life-cycle/case-study-order-status-and-transition: fixed-rate-lending/core-concepts/order-life-cycle.md
+  fixed-rate-lending/core-mechanics/standardization: fixed-rate-lending/core-concepts/README.md
+  fixed-rate-lending/core-mechanics/standardization/zero-coupon-bonds: fixed-rate-lending/core-concepts/zero-coupon-bonds.md
+  fixed-rate-lending/core-mechanics/standardization/fixed-maturity: fixed-rate-lending/core-concepts/fixed-maturity-and-auto-roll.md
+  fixed-rate-lending/core-mechanics/collateralization: fixed-rate-lending/core-concepts/collateral.md
+  fixed-rate-lending/core-mechanics/tokenization: fixed-rate-lending/core-concepts/tokenization.md
+  fixed-rate-lending/core-mechanics/liquidation: fixed-rate-lending/core-concepts/liquidation/README.md
+  fixed-rate-lending/core-mechanics/liquidation/mark-to-market: fixed-rate-lending/core-concepts/liquidation/mark-to-market.md
+  fixed-rate-lending/core-mechanics/liquidation/liquidators: fixed-rate-lending/core-concepts/liquidation/liquidators-guide.md
+  fixed-rate-lending/core-mechanics/liquidation/liquidators/how-liquidation-works: fixed-rate-lending/core-concepts/liquidation/liquidators-guide.md
+  fixed-rate-lending/core-mechanics/liquidation/liquidation-case-study: fixed-rate-lending/core-concepts/liquidation/liquidation-case-study.md
+  fixed-rate-lending/core-mechanics/protocol-fees: fixed-rate-lending/core-concepts/fees.md
+  fixed-rate-lending/advanced-topics/zc-bond-price-to-apr: fixed-rate-lending/core-concepts/zero-coupon-bonds.md
+  fixed-rate-lending/advanced-topics/discount-factor: fixed-rate-lending/core-concepts/zero-coupon-bonds.md
+  fixed-rate-lending/advanced-topics/zc-bond-collateral: fixed-rate-lending/core-concepts/zc-bonds-as-collateral.md
+  fixed-rate-lending/advanced-topics/zc-bond-collateral/zc-collateral-case-study: fixed-rate-lending/core-concepts/zc-bonds-as-collateral.md
+  fixed-rate-lending/advanced-topics/market-dynamics: fixed-rate-lending/advanced-topics/README.md
+  fixed-rate-lending/advanced-topics/market-dynamics/auto-rolling: fixed-rate-lending/core-concepts/fixed-maturity-and-auto-roll.md
+  fixed-rate-lending/advanced-topics/market-dynamics/auto-rolling/price-discovery-for-auto-rolling: fixed-rate-lending/core-concepts/auto-roll-price-discovery.md
+  fixed-rate-lending/advanced-topics/market-dynamics/new-market-listing-and-delisting: fixed-rate-lending/advanced-topics/market-listing-and-delisting.md
+  fixed-rate-lending/advanced-topics/market-dynamics/new-market-listing-and-delisting/itayose-fair-price-discovery: fixed-rate-lending/advanced-topics/itayose.md
+  fixed-rate-lending/advanced-topics/safety-measures: fixed-rate-lending/advanced-topics/README.md
+  fixed-rate-lending/advanced-topics/safety-measures/circuit-breaker: fixed-rate-lending/advanced-topics/circuit-breaker.md
+  fixed-rate-lending/advanced-topics/safety-measures/circuit-breaker/price-range-limits: fixed-rate-lending/advanced-topics/circuit-breaker.md
+  fixed-rate-lending/advanced-topics/safety-measures/base-price-adjustment: fixed-rate-lending/advanced-topics/base-price-adjustment.md
+  fixed-rate-lending/advanced-topics/safety-measures/emergency-global-settlement: fixed-rate-lending/advanced-topics/emergency-global-settlement.md
+  fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value: fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md
+  fixed-rate-lending/advanced-topics/orderbook-deep-dive/compound-factor: fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md
+  fixed-rate-lending/deployed-contracts: fixed-rate-lending/contracts-and-security.md
+  # --- Legacy URLs still hardcoded in secured-finance-app (currently 404) ---
+  platform-guide/unique-features/fair-price-discovery: fixed-rate-lending/advanced-topics/itayose.md
+  top/secured-finance-points-sfp: community/tokenomics/secured-finance-points-sfp-v2/README.md
+  technical-overview/risk-management/minimum-collateral: fixed-rate-lending/advanced-topics/base-price-adjustment.md
+  product-guide/loan-market-platform/loan-assets/listing-and-delisting: fixed-rate-lending/advanced-topics/market-listing-and-delisting.md
+  fixed-income-protocol-guide/security-and-safety-measures/emergency-global-settlement: fixed-rate-lending/advanced-topics/emergency-global-settlement.md
