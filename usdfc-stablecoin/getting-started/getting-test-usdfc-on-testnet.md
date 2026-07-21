@@ -98,7 +98,7 @@ While Bridge and SushiSwap features are not available on testnet, you can use th
 1. Visit [http://stg.secured.finance/?chain\_id=314159](http://stg.secured.finance/?chain_id=314159)
 2. Connect your wallet
 3. Navigate to the lending markets
-4. Explore lending or borrowing with your test USDFC. Learn more with [lending-assets.md](../../fixed-rate-lending/getting-started/lending-assets.md "mention")
+4. Explore lending or borrowing with your test USDFC. Learn more with [quick-start-lend.md](../../fixed-rate-lending/getting-started/quick-start-lend.md "mention")
 
 ## Testnet Limitations
 

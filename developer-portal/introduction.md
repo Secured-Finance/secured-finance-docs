@@ -43,5 +43,5 @@ For experienced developers, you can dive directly into our API and SDK reference
 ## Related Resources
 
 - [USDFC Stablecoin Documentation](../usdfc-stablecoin/overview.md)
-- [Fixed-Rate Lending Documentation](../fixed-rate-lending/overview/README.md)
+- [Fixed-Rate Lending Documentation](../fixed-rate-lending/overview.md)
 - [GitHub Repositories](https://github.com/Secured-Finance)

@@ -4,7 +4,7 @@ description: The single source of truth for every protocol number
 
 # Protocol Parameters
 
-This page is the authoritative reference for all Fixed-Rate Lending Protocol parameters. Other pages link here instead of restating values. **Last verified on-chain: 2026-07-XX.**
+This page is the authoritative reference for all Fixed-Rate Lending Protocol parameters. Other pages link here instead of restating values. **Last verified: 2026-07-16** (liquidation configuration, Base Price values, Mark Price minimum volume, and the supported asset list confirmed with the engineering team against production; remaining values match the contracts repository).
 
 {% hint style="info" %}
 Parameters may change through protocol governance. For integrations, always confirm critical values on-chain — addresses in [Contracts & Security](contracts-and-security.md).
@@ -23,8 +23,9 @@ Parameters may change through protocol governance. For integrations, always conf
 
 | Parameter | Value | Notes |
 | --- | --- | --- |
-| Liquidation threshold | LTV 80% (`getCoverage()` ≥ 8000) | Position becomes liquidatable |
-| Liquidation amount | Up to 50% of outstanding debt | Targets ~70% post-liquidation LTV |
+| Liquidation threshold | LTV above 80% (`getCoverage()` > 8000) | Position becomes liquidatable |
+| Liquidation amount | 50% of outstanding debt | While LTV is between the liquidation and full-liquidation thresholds; targets ~70% post-liquidation LTV |
+| Full liquidation threshold | ≈ LTV 85% (`fullLiquidationThresholdRate` = 11765) | Past this point, **100% of the outstanding debt** is liquidated in a single call. Protocol-wide setting — identical across networks and currencies (production value confirmed 2026-07-16; on-chain getter: `TokenVault.getLiquidationConfiguration()`) |
 | Liquidation fee (total) | 7% of liquidated value | Slashed from borrower's collateral |
 | — Liquidator share | 5% | Paid to the liquidator |
 | — Protocol reserve share | 2% | Sent to the Reserve Fund |
@@ -66,18 +67,22 @@ Interpolated linearly by time to maturity — see [Base Price Adjustment](advanc
 | E | 10–15% | 96.00 | 84.00 |
 | F | 15%+ | 96.00 | 81.00 |
 
-**Current category assignment** (reviewed quarterly): BTC — A · ETH — B · USDC — C · USDFC — C · FIL — F
+**Current category assignment** (reviewed quarterly; production values confirmed 2026-07-16): BTC — A · ETH — B · JPYC — B · USDC — C · USDFC — C · FIL / axlFIL — F
 
 ## Supported assets by network
 
 | Network | Lend / Borrow | Collateral |
 | --- | --- | --- |
-| Ethereum | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC |
+| Ethereum | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, uMINT |
 | Arbitrum | WBTC, ETH, USDC | WBTC, ETH, USDC |
-| Filecoin (FVM) | FIL, USDFC | FIL, iFIL, pFIL, wpFIL, USDFC |
+| Filecoin (FVM) | FIL, USDFC | FIL, iFIL, wpFIL, USDFC |
+
+{% hint style="info" %}
+Asset availability last confirmed with the team on 2026-07-16 (JPYC lending markets: Ethereum only; wpFIL collateral: Filecoin only; uMINT/RWA collateral: Ethereum only). The live list can be read per network from `CurrencyController.getCurrencies()`.
+{% endhint %}
 
 {% hint style="warning" %}
-Avalanche and Polygon zkEVM are **deprecated** — unwind and bridge remaining assets. Legacy addresses: [Contracts & Security](contracts-and-security.md).
+Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](contracts-and-security.md).
 {% endhint %}
 
 ## Verifying on-chain

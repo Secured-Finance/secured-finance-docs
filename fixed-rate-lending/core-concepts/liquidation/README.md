@@ -27,9 +27,9 @@ Positions are valued with [Mark to Market](mark-to-market.md) pricing for ZC bon
 
 ## What happens during liquidation
 
-1. A liquidator repays **up to 50%** of the outstanding debt.
+1. A liquidator repays **50%** of the outstanding debt — or **100%** if the position has deteriorated past the **full-liquidation threshold** (≈ LTV 85%; see [Protocol Parameters](../../protocol-parameters.md)).
 2. Collateral equal to the repaid debt **plus the liquidation fee** is transferred from the borrower. The fee — currently **7% total: 5% to the liquidator, 2% to the protocol's Reserve Fund** ([Protocol Parameters](../../protocol-parameters.md)) — compensates liquidators and builds the protocol's safety buffer.
-3. The position returns to a healthier LTV, typically around 70%.
+3. After a 50% liquidation, the position returns to a healthier LTV, typically around 70%. Past the full-liquidation threshold, the entire debt is closed out instead.
 
 ### Worked example
 
@@ -48,7 +48,7 @@ More scenarios, including liquidation caused by the *borrowed* asset rallying: [
 ## How to avoid liquidation
 
 * Watch the **risk indicator** in [Portfolio](../../getting-started/platform-guide/portfolio.md) — green → yellow → red as LTV climbs.
-* **Add collateral** or **partially unwind** debt before the threshold.
+* **Add collateral** or **reduce debt** before the threshold — unwind the position, or place an opposite order for part of the amount ([Managing Positions](../../getting-started/managing-positions.md)).
 * Remember ZC bond prices move with rates — your debt's present value changes even when spot prices don't.
 * Leave a buffer around quarterly [Auto-Rolls](../fixed-maturity-and-auto-roll.md), which restate positions at the roll price.
 * The [Base Price Adjustment](../../advanced-topics/base-price-adjustment.md) mechanism sets minimum collateral requirements that rise as bonds approach par — factor it into long-dated borrows.

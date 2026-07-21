@@ -10,7 +10,7 @@ Anyone — an EOA or a smart contract — can execute liquidations and earn the 
 
 ### 1. Find eligible positions (off-chain)
 
-Call `TokenVault.getCoverage(user)` for candidate accounts. A position is liquidatable when coverage returns **8000 or higher** (= 80%). Candidate discovery is typically done via the [subgraph](../../../developer-portal/api-reference/fixed-rate-lending-subgraph/README.md) or by indexing protocol events.
+Call `TokenVault.getCoverage(user)` for candidate accounts. A position is liquidatable when coverage returns **greater than 8000** (= LTV above 80%). Candidate discovery is typically done via the [subgraph](../../../developer-portal/api-reference/fixed-rate-lending-subgraph/README.md) or by indexing protocol events.
 
 ### 2. Choose what to liquidate
 
@@ -34,7 +34,7 @@ participant LMC as LendingMarketController
 participant TV as TokenVault
 participant FV as FutureValueVault
 
-Bot->>TV: getCoverage(target) >= 8000?
+Bot->>TV: getCoverage(target) > 8000?
 Bot->>L: liquidate(target, ccy pair, maturity)
 L->>LMC: executeLiquidationCall()
 LMC->>TV: transfer collateral + liquidator fee

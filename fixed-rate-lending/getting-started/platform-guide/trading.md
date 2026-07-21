@@ -2,9 +2,9 @@
 description: The order book interface for lending and borrowing
 ---
 
-# Trading
+# Fixed Income (Trading)
 
-The **Trading** tab is where you lend and borrow by trading Zero-Coupon bonds. If the terms *buy/sell* and *lend/borrow* feel interchangeable here, that's because they are:
+The **Fixed Income** tab is the trading interface where you lend and borrow by trading Zero-Coupon bonds. If the terms *buy/sell* and *lend/borrow* feel interchangeable here, that's because they are:
 
 | Action | Order book side | What it means |
 | --- | --- | --- |

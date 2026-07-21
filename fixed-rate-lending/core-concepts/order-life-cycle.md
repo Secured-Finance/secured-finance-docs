@@ -9,10 +9,10 @@ Track your orders' states in the **Order History** tab of the [Portfolio](../get
 | State | Applies to | Meaning |
 | --- | --- | --- |
 | **Open** | Limit | Resting on the book, waiting for a match |
-| **Partially Filled** | Both | Part executed; remainder open (limit) or terminated (market) |
+| **Partially Filled** | Both | Part executed; remainder rests (limit priced inside the circuit-breaker range) or is terminated (market, or limit priced beyond the range) |
 | **Filled** *(final)* | Both | Fully executed — now a position |
-| **Killed** *(final)* | Market | Could not fully execute due to insufficient liquidity |
-| **Blocked** *(final)* | Market | Execution stopped by the [Circuit Breaker](../advanced-topics/circuit-breaker.md) price range |
+| **Killed** *(final)* | Market / crossing limit | Could not fully execute due to insufficient liquidity |
+| **Blocked** *(final)* | Market / crossing limit | Execution stopped by the [Circuit Breaker](../advanced-topics/circuit-breaker.md) price range |
 | **Canceled** *(final)* | Limit | Canceled by you before full execution |
 | **Expired** *(final)* | Limit | Reached its expiry or the market's maturity unfilled; allocated funds return to your deposit balance |
 
@@ -43,7 +43,8 @@ Price | Amount
 **Limit orders (overlapping — price crosses existing orders)**
 
 * *Buy 10 at 91* → **Filled** immediately
-* *Buy 15 at 93* → fills 10; remaining 5 rest at 93 until the circuit-breaker range moves → **Partially Filled**, then later Filled / Canceled / Expired
+* *Buy 15 at 92* (at the upper limit) → fills 10 at 91; the remaining 5 rest on the book at 92 → **Partially Filled**, then later Filled / Canceled / Expired
+* *Buy 15 at 93* (beyond the upper limit) → fills 10 at 91; the remaining 5 would execute beyond the circuit-breaker limit, so they are **killed** and the allocated funds return to your deposit balance → **Partially Filled & Blocked**
 
 **Limit orders (non-overlapping)**
 
@@ -56,7 +57,7 @@ Price | Amount
 
 <summary>What's the difference between Killed and Blocked?</summary>
 
-**Killed** = not enough liquidity to fill the remainder. **Blocked** = the remainder would have executed outside the circuit breaker's allowed price range. Both are final states for market orders; the filled portion (if any) remains as a position.
+**Killed** = not enough liquidity to fill the remainder. **Blocked** = the remainder would have executed outside the circuit breaker's allowed price range. Both are final states for the taker side of an execution — market orders, or limit orders that cross the book; the filled portion (if any) remains as a position.
 
 </details>
 

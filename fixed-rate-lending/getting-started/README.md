@@ -14,7 +14,7 @@ You'll need:
 
 1. **A Web3 wallet** (MetaMask, WalletConnect-compatible wallets, etc.) — see the [Wallet Setup guide](../../introduction/defi-starter-guide/wallet-setup.md) if you're new to this
 2. **Assets to lend, or collateral to borrow against** — see [supported assets by network](../core-concepts/collateral.md)
-3. **Native tokens for gas** (ETH on Ethereum/Arbitrum, FIL on Filecoin) — the [Bridge](platform-guide/bridge.md) can help you obtain them
+3. **Native tokens for gas** (ETH on Ethereum/Arbitrum, FIL on Filecoin) — the in-app [Swap](platform-guide/bridge.md) can help you obtain them
 
 {% hint style="info" %}
 **One concept to understand first:** on this protocol, *lending* means *buying* a Zero-Coupon bond at a discount, and *borrowing* means *selling* one. The discount determines your fixed rate. Two minutes on [Zero-Coupon Bonds](../core-concepts/zero-coupon-bonds.md) will make everything else intuitive.

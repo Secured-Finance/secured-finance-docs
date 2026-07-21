@@ -2,9 +2,9 @@
 description: Yield curves and market data — no wallet required
 ---
 
-# Markets
+# Stats
 
-The [**Markets**](https://app.secured.finance/dashboard/) tab is the protocol's data dashboard. It works without connecting a wallet.
+The [**Stats**](https://app.secured.finance/stats/) tab is the protocol's data dashboard. It works without connecting a wallet.
 
 <!-- screenshot: markets-dashboard -->
 
@@ -18,7 +18,7 @@ The [**Markets**](https://app.secured.finance/dashboard/) tab is the protocol's 
 
 * **Upward-sloping (steep)** — the market demands a premium for longer terms; lenders may find better rates at longer maturities.
 * **Flat or inverted** — near-term rates equal or exceed long-term rates, often signaling expectations of falling rates or near-term stress.
-* Click any market to jump straight into the [Trading](trading.md) interface for that currency and maturity.
+* Click any market to jump straight into the [trading interface](trading.md) for that currency and maturity.
 
 {% hint style="info" %}
 During the 7-day pre-open window before a new market launches, the curve shows the **estimated opening APR** derived from the [Itayose](../../advanced-topics/itayose.md) order book.

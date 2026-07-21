@@ -60,7 +60,7 @@ Unfilled orders **expire** automatically and the allocated funds return to your 
 
 <summary>Why is my unwind order "Blocked" or "Partially Blocked"?</summary>
 
-Either the order book lacks matching liquidity, or execution would fall outside the [Circuit Breaker](advanced-topics/circuit-breaker.md)'s allowed price range for this block. Try a limit unwind at your acceptable price, or wait for liquidity. See [Order Life Cycle](core-concepts/order-life-cycle.md).
+Either the order book lacks matching liquidity, or execution would fall outside the [Circuit Breaker](advanced-topics/circuit-breaker.md)'s allowed price range for this block. Wait for liquidity and retry, or place an opposite **limit order** at your acceptable price — filled amounts net against your position. See [Order Life Cycle](core-concepts/order-life-cycle.md).
 
 </details>
 
@@ -86,7 +86,7 @@ Collateral replaces credit checks: it protects lenders from default because unde
 
 <summary>Which assets can be collateral?</summary>
 
-It varies by network — WBTC, ETH, and USDC on Ethereum/Arbitrum; FIL, iFIL, pFIL, wpFIL, and USDFC on Filecoin. The authoritative list, with haircuts: [Protocol Parameters](protocol-parameters.md).
+It varies by network — WBTC, ETH, USDC, and uMINT (RWA) on Ethereum; WBTC, ETH, and USDC on Arbitrum; FIL, iFIL, wpFIL, and USDFC on Filecoin. The authoritative list, with haircuts: [Protocol Parameters](protocol-parameters.md).
 
 </details>
 

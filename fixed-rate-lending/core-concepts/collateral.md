@@ -10,12 +10,16 @@ Borrowing on the Fixed-Rate Lending Protocol requires **over-collateralization**
 
 | Network | Lend / Borrow | Accepted as collateral |
 | --- | --- | --- |
-| **Ethereum** | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC |
+| **Ethereum** | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, uMINT |
 | **Arbitrum** | WBTC, ETH, USDC | WBTC, ETH, USDC |
-| **Filecoin (FVM)** | FIL, USDFC | FIL, iFIL, pFIL, wpFIL, USDFC |
+| **Filecoin (FVM)** | FIL, USDFC | FIL, iFIL, wpFIL, USDFC |
+
+{% hint style="info" %}
+Asset availability last confirmed with the team on 2026-07-16 (JPYC lending markets: Ethereum only; wpFIL collateral: Filecoin only; uMINT/RWA collateral: Ethereum only). The live list can be read per network from `CurrencyController.getCurrencies()`.
+{% endhint %}
 
 {% hint style="warning" %}
-Avalanche and Polygon zkEVM are **deprecated**. If you still hold assets or positions there, unwind and bridge them to a supported network. Legacy addresses: [Contracts & Security](../contracts-and-security.md).
+Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](../contracts-and-security.md).
 {% endhint %}
 
 Current haircuts, thresholds, and the authoritative asset list: [Protocol Parameters](../protocol-parameters.md).
@@ -23,10 +27,10 @@ Current haircuts, thresholds, and the authoritative asset list: [Protocol Parame
 ## Asset notes
 
 * **USDFC** — Secured Finance's own FIL-backed stablecoin, minted via CDP on FVM. [Learn more](../../usdfc-stablecoin/overview.md).
-* **iFIL / pFIL / wpFIL (liquid staking tokens)** — represent staked FIL that keeps earning staking rewards *while* serving as collateral. For example, stake FIL on [GLIF](https://glif.io/) to receive iFIL, then deposit the iFIL as collateral — a dual-yield position.
+* **iFIL / wpFIL (liquid staking tokens)** — represent staked FIL that keeps earning staking rewards *while* serving as collateral. For example, stake FIL on [GLIF](https://glif.io/) to receive iFIL, then deposit the iFIL as collateral — a dual-yield position. Both are accepted on Filecoin.
 * **axlFIL** — Axelar-bridged FIL on Ethereum.
-* **JPYC** — JPY-pegged stablecoin; fixed-rate JPY lending markets launched in Q4 2025.
-* **RWA collateral** — tokenized money-market fund collateral (uMINT, via DigiFT) began onboarding in Q1 2026; availability is announced per network.
+* **JPYC** — JPY-pegged stablecoin; fixed-rate JPY lending markets are live on **Ethereum** (as of July 2026).
+* **RWA collateral** — tokenized money-market fund collateral (uMINT, via DigiFT), accepted as collateral on **Ethereum** (as of July 2026).
 
 ## How collateral is monitored
 
@@ -42,7 +46,7 @@ Current haircuts, thresholds, and the authoritative asset list: [Protocol Parame
 
 <summary>What happens if my collateral value drops?</summary>
 
-Your LTV rises. If it reaches the liquidation threshold, up to 50% of your debt can be liquidated, with a fee taken from your collateral. Prevent this by adding collateral or partially unwinding debt — see [Liquidation](liquidation/README.md).
+Your LTV rises. If it reaches the liquidation threshold, 50% of your debt can be liquidated — or **100%** if LTV deteriorates past the full-liquidation threshold — with a fee taken from your collateral. Prevent this by adding collateral or reducing debt early (unwind the position, or place an opposite order for part of the amount) — see [Liquidation](liquidation/README.md).
 
 </details>
 

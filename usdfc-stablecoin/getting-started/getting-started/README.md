@@ -55,4 +55,4 @@ If you want to try USDFC on testnet first:
 * [Core Mechanics](../../core-mechanics/)
 * [Advanced Topics](../../advanced-topics/)
 * [FAQs](../../faqs.md)
-* [Fixed-Rate Lending](../../../fixed-rate-lending/overview/)
+* [Fixed-Rate Lending](../../../fixed-rate-lending/overview.md)
