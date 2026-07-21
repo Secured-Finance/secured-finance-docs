@@ -44,7 +44,7 @@ Price | Amount
 
 * *Buy 10 at 91* → **Filled** immediately
 * *Buy 15 at 92* (at the upper limit) → fills 10 at 91; the remaining 5 rest on the book at 92 → **Partially Filled**, then later Filled / Canceled / Expired
-* *Buy 15 at 93* (beyond the upper limit) → fills 10 at 91; the remaining 5 would execute beyond the circuit-breaker limit, so they are **killed** and the allocated funds return to your deposit balance → **Partially Filled & Blocked**
+* *Buy 15 at 93* (beyond the upper limit) → fills 10 at 91; the remaining 5 would execute beyond the circuit-breaker limit, so they are **blocked** and the allocated funds return to your deposit balance → **Partially Filled & Blocked**
 
 **Limit orders (non-overlapping)**
 
