@@ -56,7 +56,7 @@ Your three options as maturity approaches:
 
 * **Limit order not filling** — your rate may be off-market; adjust the price, or use a market order for immediate execution.
 * **Transaction fails** — check that you hold native tokens for gas and have sufficient deposited balance.
-* **Unwind blocked or partially filled** — the order book may lack liquidity at an acceptable price (see [Circuit Breaker](../advanced-topics/circuit-breaker.md)); wait for liquidity and retry, or place an opposite **limit order** at your acceptable price — filled amounts net against your position.
+* **Unwind blocked or partially filled** — the order book may lack liquidity at an acceptable price (see [Circuit Breaker](../advanced-topics/circuit-breaker.md)); wait for liquidity and retry, or place an opposite (borrow) **limit order** at your acceptable price — filled amounts net against your position.
 
 ## Next steps
 
