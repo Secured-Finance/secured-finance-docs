@@ -20,7 +20,7 @@ Borrowing requires **over-collateralization** — your collateral must be worth 
 
 ## Step 2 — Choose a market
 
-1. Open the **Trading** tab.
+1. Open the **Fixed Income** tab (the trading interface).
 2. Select the currency you want to borrow and a maturity date (quarterly — the last Friday of Mar/Jun/Sep/Dec).
 3. Check the current borrow rate on the order book.
 
@@ -41,7 +41,7 @@ After borrowing, monitor your **collateral coverage** in the Portfolio tab:
 
 * Your position can be **liquidated** if your Loan-to-Value ratio reaches the liquidation threshold (see [Liquidation](../core-concepts/liquidation/README.md)).
 * Both a fall in collateral value **and** a rise in the borrowed asset's value push your LTV up.
-* To reduce risk: deposit more collateral, or partially unwind the borrow position.
+* To reduce risk: deposit more collateral, or reduce the borrow — unwind it, or place an opposite (lend) order for part of the amount ([Managing Positions](managing-positions.md)).
 
 ## Step 5 — Repaying (important)
 
@@ -53,13 +53,13 @@ There is **no automatic settlement**. At maturity your debt is automatically rol
 | --- | --- |
 | Extend the loan at the new market rate | Nothing — Auto-Roll handles it (roll fee applies) |
 | Repay and close | **Unwind** the position, then withdraw remaining collateral |
-| Repay part of the loan | **Unwind** with the Partial option |
+| Repay part of the loan | Place an opposite (lend) **order** for the amount to repay — filled amounts net against your debt ([Managing Positions](managing-positions.md)) |
 
 ## Troubleshooting
 
 * **"Insufficient collateral" error** — deposit more collateral, reduce the borrow amount, or check the asset's haircut in [Protocol Parameters](../protocol-parameters.md).
 * **Order not filling** — your limit rate may be below market; adjust it or use a market order.
-* **Unwind blocked** — order book liquidity may be thin at an acceptable price; try a limit unwind.
+* **Unwind blocked** — order book liquidity may be thin at an acceptable price; wait for liquidity and retry, or place an opposite (lend) **limit order** at your acceptable price.
 
 ## Next steps
 

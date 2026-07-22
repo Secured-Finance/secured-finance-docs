@@ -365,7 +365,7 @@ try {
 ```
 
 ### How do I convert between unit price and APR?
-The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC Bond Price to APR conversion](../../fixed-rate-lending/advanced-topics/zc-bond-price-to-apr.md).
+The conversion between Zero-Coupon Bond prices and APR varies depending on the maturity period. For detailed information, refer to the [official documentation on ZC bond price ↔ APR conversion](../../fixed-rate-lending/core-concepts/zero-coupon-bonds.md).
 
 The calculation is implemented in the Price Calculations section above.
 
@@ -373,7 +373,7 @@ The calculation is implemented in the Price Calculations section above.
 The SDK supports all networks where the Fixed-Rate Lending protocol is deployed, including Ethereum, Arbitrum, and Filecoin.
 
 ## Related Resources
-- [Fixed-Rate Lending Protocol Documentation](../../fixed-rate-lending/overview/README.md)
+- [Fixed-Rate Lending Protocol Documentation](../../fixed-rate-lending/overview.md)
 - [Fixed-Rate Lending Subgraph Documentation](../api-reference/fixed-rate-lending-subgraph/README.md)
 - [GitHub Repository](https://github.com/Secured-Finance/sf-sdk)
 - [NPM Package](https://www.npmjs.com/package/@secured-finance/sf-sdk)

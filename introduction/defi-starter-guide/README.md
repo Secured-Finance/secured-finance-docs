@@ -30,4 +30,4 @@ The DeFi ecosystem consists of several interconnected components that work toget
 
 * [About Secured Finance](../overview.md)
 * [USDFC Stablecoin Overview](../../usdfc-stablecoin/overview.md)
-* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview/)
+* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview.md)

@@ -16,11 +16,11 @@ Secured Finance operates two complementary DeFi protocols with a third product l
 
 ## Traction
 
-* **$50M+ cumulative volume** on the Fixed-Rate Lending apps — verified on [DefiLlama](https://defillama.com/protocol/dexs/secured-finance)
+* **$50M+ cumulative volume** on the Fixed-Rate Lending apps (as of July 2026) — verified on [DefiLlama](https://defillama.com/protocol/dexs/secured-finance)
 * Quarterly market launches (Itayose auctions + Auto-Roll) running continuously since mainnet, with [public reports every quarter](https://medium.com/secured-finance)
-* **RWA collateral live**: the tokenized money-market fund uMINT is accepted as on-chain collateral (partnership with DigiFT, 2026 Q1)
-* **JPYC markets**: the first fixed-rate JPY-stablecoin lending markets (2025 Q4), plus a Yearn V3 JPYC strategy vault (2026 Q1)
-* USDFC payment gateway supporting HTTP 402 / EIP-3009 (2025 Q3)
+* **RWA collateral live**: the tokenized money-market fund uMINT is accepted as on-chain collateral on Ethereum (partnership with DigiFT, February 2026 — [announcement](https://medium.com/secured-finance/umint-as-eligible-on-chain-collateral-bringing-tokenized-money-markets-into-defi-financing-edfb46bf8346))
+* **JPYC markets**: the first fixed-rate JPY-stablecoin lending markets, live on Ethereum (November 2025), plus a Yearn V3 JPYC strategy vault (2026 Q1)
+* **x402-ready USDFC**: community-contributed EIP-3009 support merged and audited (2025 Q3), enabling x402 / HTTP 402 payment flows — gateway launch TBD
 
 See the [Roadmap](roadmap/README.md) for the full delivery history.
 

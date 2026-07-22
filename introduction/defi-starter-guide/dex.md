@@ -117,4 +117,4 @@ Yes, Secured Finance's protocols are designed to be accessible to both individua
 * [DeFi vs CeFi](defi-vs-cefi.md)
 * [Interacting with DApps](dapps.md)
 * [USDFC Stablecoin Overview](../../usdfc-stablecoin/overview.md)
-* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview/)
+* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview.md)

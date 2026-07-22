@@ -45,7 +45,7 @@ Liquidation can also strike when the *debt* appreciates, even if your collateral
 ## Takeaways
 
 * **Watch both sides**: collateral falling *and* debt rallying raise LTV. Borrowing a volatile asset against stablecoins is not a "safe" configuration.
-* **Partial, not total**: liquidation takes up to 50% of debt and the corresponding collateral + fee — the position survives, at a safer LTV.
+* **Usually partial — not always**: at the 80% threshold, liquidation takes 50% of debt and the corresponding collateral + fee, and the position survives at a safer LTV. If LTV deteriorates past the **full-liquidation threshold** (≈ 85% — [Protocol Parameters](../../protocol-parameters.md)), the **entire debt** is liquidated in one call. Don't treat the 50% figure as your worst case.
 * **The fee is avoidable**: adding collateral or unwinding early costs far less than the 7% liquidation fee.
 
 ## Related

@@ -18,9 +18,9 @@ Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount*
 
 ## Step 2 — Choose a market
 
-1. Open the **Trading** tab.
+1. Open the **Fixed Income** tab (the trading interface).
 2. Select the currency and the maturity date. Markets mature quarterly — the last Friday of March, June, September, and December.
-3. Check the current yield for that maturity on the order book, or compare maturities on the [Markets](https://app.secured.finance/dashboard/) yield curve.
+3. Check the current yield for that maturity on the order book, or compare maturities on the [Stats](https://app.secured.finance/stats/) yield curve.
 
 ## Step 3 — Place your lend order
 
@@ -56,7 +56,7 @@ Your three options as maturity approaches:
 
 * **Limit order not filling** — your rate may be off-market; adjust the price, or use a market order for immediate execution.
 * **Transaction fails** — check that you hold native tokens for gas and have sufficient deposited balance.
-* **Unwind blocked or partially filled** — the order book may lack liquidity at an acceptable price (see [Circuit Breaker](../advanced-topics/circuit-breaker.md)); try a limit unwind or wait for liquidity.
+* **Unwind blocked or partially filled** — the order book may lack liquidity at an acceptable price (see [Circuit Breaker](../advanced-topics/circuit-breaker.md)); wait for liquidity and retry, or place an opposite (borrow) **limit order** at your acceptable price — filled amounts net against your position.
 
 ## Next steps
 

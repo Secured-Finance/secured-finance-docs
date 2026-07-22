@@ -129,4 +129,4 @@ Research the project's team, check for security audits, look for community feedb
 * [Wallet Setup & Management](wallet-setup.md)
 * [Understanding Gas](gas-fees.md)
 * [USDFC Stablecoin Overview](../../usdfc-stablecoin/overview.md)
-* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview/)
+* [Fixed-Rate Lending Overview](../../fixed-rate-lending/overview.md)

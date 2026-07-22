@@ -25,7 +25,7 @@ Reference points depend on the asset's **yield category**:
 | E | 10–15% | 96.00 | 84.00 |
 | F | 15%+ | 96.00 | 81.00 |
 
-Current category assignments (BTC — A, ETH — B, USDC/USDFC — C, FIL — F) are reviewed **quarterly** and revised with community input based on observed APRs. Live values: [Protocol Parameters](../protocol-parameters.md).
+Current category assignments (BTC — A, ETH/JPYC — B, USDC/USDFC — C, FIL/axlFIL — F) are reviewed **quarterly** and revised with community input based on observed APRs. Live values: [Protocol Parameters](../protocol-parameters.md).
 
 ## Examples
 

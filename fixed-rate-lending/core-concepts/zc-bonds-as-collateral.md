@@ -37,7 +37,7 @@ User A holds a ZC bond with a present value of 1,000 USDC and no cash collateral
 2. ZC utilization: 800 / 1,000 = **80%**.
 3. The borrowed 800 USDC itself sits in the protocol vault, so overall collateral utilization is 800 / (1,000 + 800) ≈ **44%** — a more comfortable overall position than the ZC utilization alone suggests.
 
-**Liquidation scenario:** if the ZC bond's price falls and utilization exceeds the threshold, up to 50% of the obligation (400 USDC) can be liquidated with the standard liquidation fee taken from the ZC collateral — the same rules as any other collateral ([Liquidation](liquidation/README.md), current values in [Protocol Parameters](../protocol-parameters.md)).
+**Liquidation scenario:** if the ZC bond's price falls and utilization exceeds the threshold, 50% of the obligation (400 USDC) can be liquidated — or **100%** if utilization deteriorates past the full-liquidation threshold — with the standard liquidation fee taken from the ZC collateral. The same rules apply as for any other collateral ([Liquidation](liquidation/README.md), current values in [Protocol Parameters](../protocol-parameters.md)).
 
 ## Risks to understand
 
