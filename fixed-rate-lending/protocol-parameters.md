@@ -73,7 +73,7 @@ Interpolated linearly by time to maturity — see [Base Price Adjustment](advanc
 
 | Network | Lend / Borrow | Collateral |
 | --- | --- | --- |
-| Ethereum | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, uMINT |
+| Ethereum | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, JPYC, uMINT |
 | Arbitrum | WBTC, ETH, USDC | WBTC, ETH, USDC |
 | Filecoin (FVM) | FIL, USDFC | FIL, iFIL, wpFIL, USDFC |
 
