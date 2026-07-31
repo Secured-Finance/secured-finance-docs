@@ -1,135 +1,61 @@
 ---
-description: >-
-  A step-by-step guide to managing your positions on the Fixed-Rate Lending
-  Protocol
+description: Monitor, adjust, and exit your lending and borrowing positions
 ---
 
-# 📈 Managing Positions
+# Managing Your Positions
 
-## Prerequisites
+## Viewing your positions
 
-* Active lending or borrowing positions on the Secured Finance platform
-* A connected wallet
-* Basic understanding of fixed-rate lending concepts
+1. Open the [Portfolio](https://app.secured.finance/portfolio/) tab with your wallet connected.
+2. **Active Positions** shows each position's asset, size, maturity, present value, and P&L.
+3. **Open Orders**, **Order History**, and **My Transactions** cover everything that hasn't become (or is no longer) a position.
 
-## Overview
+<!-- screenshot: portfolio-active-positions -->
 
-Managing your positions effectively is crucial for maximizing returns and minimizing risks in the Fixed-Rate Lending Protocol. This guide will walk you through the various ways to monitor, adjust, and close your positions, helping you navigate the platform with confidence.
+## For borrowers: watch your collateral coverage
 
-## Step 1: View Your Active Positions
+* Check the **collateral utilization / liquidation risk indicator** regularly — it moves from green to red as your Loan-to-Value ratio approaches the liquidation threshold ([current values](../protocol-parameters.md)).
+* Remember that ZC bond prices move with interest rates: your debt's present value changes even when spot prices don't.
+* To reduce risk, deposit more collateral, or reduce the borrow — unwind it, or place an opposite (lend) order for part of the amount. Details: [Liquidation](../core-concepts/liquidation/README.md).
 
-1. Navigate to the [Secured Finance platform](https://app.secured.finance/)
-2. Connect your wallet if not already connected
-3. Go to the "Portfolio" tab to see all your active positions
-4. Review your positions, including:
-   * Asset type
-   * Position size
-   * Maturity date
-   * Current value
-   * Profit/loss
+## Adding to a position
 
-![Portfolio View](../../.gitbook/assets/portfolio-view.png)
+1. Open the **Fixed Income** tab and select the same currency, maturity, and side (Lend/Borrow) as the existing position.
+2. Place a new order for the additional amount — it merges into the same position.
 
-## Step 2: Monitor Collateralization Ratio (For Borrowers)
+## Reducing or closing a position
 
-If you have borrowed assets, it's essential to monitor your collateralization ratio:
+**Closing (Unwind)**
 
-1. In the Portfolio tab, locate your borrowing positions
-2. Check the current collateralization ratio for each position
-3. Ensure it stays above the minimum required ratio to avoid liquidation
-4. Set up notifications (if available) to alert you when your ratio approaches the minimum threshold
+1. In **Portfolio → Active Positions**, click **Unwind** on the position.
+2. The position is closed against the order book at the best available price. Review the estimated price and fee, then confirm — a taker fee applies ([Fees](../core-concepts/fees.md)).
 
-## Step 3: Adding to Existing Positions
+**Reducing a position partially**
 
-To increase an existing position:
-
-1. Navigate to the Trading tab
-2. Select the same asset and maturity as your existing position
-3. Choose the same position type (Lend or Borrow)
-4. Place a new order with the additional amount
-5. Confirm the transaction in your wallet
-
-![Add to Position](../../.gitbook/assets/add-position.png)
-
-## Step 4: Reducing Positions
-
-To partially close a position before maturity:
-
-1. Go to the Portfolio tab
-2. Find the position you want to reduce
-3. Click the "Unwind" button
-4. Select "Partial" unwind option
-5. Enter the amount you want to reduce
-6. Review the details and confirm the transaction
-
-![Reduce Position](../../.gitbook/assets/reduce-position.png)
-
-## Step 5: Unwinding Positions (Early Exit)
-
-To completely close a position before maturity:
-
-1. Go to the Portfolio tab
-2. Find the position you want to close
-3. Click the "Unwind" button
-4. Select "Full" unwind option
-5. Review the details, including any fees or slippage
-6. Confirm the transaction in your wallet
+The Unwind action closes the whole position. To reduce it partially, place an **opposite order** for the amount you want to reduce (e.g. a lend order against a borrow position) in the same currency and maturity — filled amounts net against your position.
 
 {% hint style="info" %}
-Unwinding positions before maturity may result in different returns than holding until maturity, depending on current market rates.
+Unwinding before maturity realizes the position at the *current* market price, which may be better or worse than holding to maturity, depending on how rates have moved.
 {% endhint %}
 
-## Step 6: Understanding Auto-Rolling
+## What happens at maturity
 
-Auto-Rolling is a protocol-wide feature that automatically transitions positions to the next maturity period:
+At maturity, every position is handled the same way — this is protocol-wide behavior, not a setting:
 
-1. All positions are subject to Auto-Rolling when they reach maturity
-2. The protocol automatically handles the transition to the next maturity period
-3. There is no need to manually select or configure Auto-Roll settings
-4. Be aware that Auto-Rolling will maintain your exposure to the market
+1. **Auto-Roll**: the position is automatically rolled into the nearest 3-month market at the [auto-roll price](../core-concepts/auto-roll-price-discovery.md). A roll fee applies ([Fees](../core-concepts/fees.md)).
+2. **No automatic settlement**: the protocol never pushes funds back to your wallet. To exit, unwind the position (before or after maturity) and then withdraw.
+3. **Liquidity note**: unwinding requires counterparties on the order book. In thin markets an unwind may only partially fill ([Order Life Cycle](../core-concepts/order-life-cycle.md)); you can retry later, or place an opposite limit order at your acceptable price.
 
-{% hint style="info" %}
-Auto-Rolling is a protocol feature that applies to all positions. You cannot opt out of Auto-Rolling directly, but you can unwind your position before maturity if you wish to exit.
-{% endhint %}
-
-## Step 7: Exiting Positions at Maturity
-
-To exit your position when it reaches maturity:
-
-1. You must manually unwind your position before or after maturity
-2. Go to the Active Positions tab
-3. Find the position you want to exit
-4. Click the "Close" button
-5. Review the details, including any fees or slippage
-6. Confirm the transaction in your wallet
-
-{% hint style="warning" %}
-There is no automatic claim system. You must manually unwind your position to exit, which means there is liquidity risk if there are insufficient counterparties in the market.
-{% endhint %}
-
-## Next Steps
-
-After mastering position management, you might want to:
-
-* [Explore advanced trading strategies](../advanced-topics/market-dynamics/)
-* [Learn about liquidation mechanics](../core-mechanics/liquidation/) to better manage risk
-* [Understand Zero-Coupon Bond tokenization](../core-mechanics/tokenization.md) for additional opportunities
+More on the mechanics: [Fixed Maturity & Auto-Roll](../core-concepts/fixed-maturity-and-auto-roll.md).
 
 ## Troubleshooting
 
-### Unwind Order Not Executing
+* **Unwind not executing or only partially filling** — insufficient order-book liquidity within the allowed price range; retry in a later block, wait for liquidity, or place an opposite limit order at your acceptable price.
+* **Values look stale** — refresh the page and confirm your wallet is on the right network.
+* **Position missing after maturity** — it has rolled into the next maturity; look for the new maturity date in Active Positions.
 
-If your unwind order isn't being executed:
+## Related
 
-* There might be insufficient liquidity in the orderbook
-* Your unwind price might not be competitive with current market rates
-* Try using a market unwind instead of a limit unwind for immediate execution
-
-### Position Not Showing Updated Values
-
-If your position values aren't updating:
-
-* Refresh the page to get the latest data
-* Check that your wallet is still connected
-* Verify that the blockchain network is functioning normally
-* Contact support if the issue persists
+* [Quick Start: Lend](quick-start-lend.md) · [Quick Start: Borrow](quick-start-borrow.md)
+* [Tokenization](../core-concepts/tokenization.md) — move a position out as an ERC-20 token
+* [Liquidation](../core-concepts/liquidation/README.md) — risk management for borrowers

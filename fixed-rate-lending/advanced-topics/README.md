@@ -1,32 +1,26 @@
 ---
-description: Explore deeper concepts and mechanisms of the Fixed-Rate Lending Protocol
-icon: 🎓
+description: Market microstructure and the engineering behind the on-chain order book
 ---
 
-# 🎓 Advanced Topics
+# Advanced Topics
 
-## Overview
+These pages go beyond day-to-day usage into how the protocol's markets operate and how the on-chain order book is engineered. Nothing here is required to lend or borrow — but if you're evaluating the protocol's design, integrating against it, or just curious, this is the good part.
 
-This section covers advanced concepts and mechanisms of the Fixed-Rate Lending Protocol that build upon the core functionality. These topics provide deeper insights into how the protocol maintains stability, handles edge cases, and implements sophisticated economic mechanisms.
+## Market operations
 
-## What You'll Learn
+* [**Itayose: Fair Price Discovery**](itayose.md) — the opening auction that prices every new market
+* [**Market Listing & Delisting**](market-listing-and-delisting.md) — how assets join and leave the platform
 
-- How Market Dynamics like Auto-Rolling and Itayose price discovery work
-- How the On-Chain Orderbook is implemented using Red-Black Tree data structures
-- How Safety Measures like Circuit Breaker protect the protocol
-- How Zero-Coupon Bond Collateral functions within the system
-- Advanced economic concepts like APR vs. APY and Discount Factors
+## Safety mechanisms
 
-## Key Components
+* [**Circuit Breaker**](circuit-breaker.md) — per-block price limits that blunt manipulation and flash-loan attacks
+* [**Base Price Adjustment**](base-price-adjustment.md) — duration-aware minimum collateral requirements
+* [**Emergency Global Settlement**](emergency-global-settlement.md) — the last-resort shutdown that returns user funds
 
-- [**Market Dynamics**](market-dynamics/README.md): Advanced features like Auto-Rolling and Itayose price discovery
-- [**Orderbook Deep Dive**](orderbook-deep-dive/README.md): Technical implementation of the on-chain orderbook
-- [**Safety Measures**](safety-measures/README.md): Protective mechanisms like Circuit Breaker
-- [**ZC Bond Collateral**](zc-bond-collateral/README.md): Using Zero-Coupon Bonds as collateral
-- [**Economic Concepts**](apr-vs-apy.md): Advanced financial concepts like APR vs. APY and Discount Factors
+## Engineering
 
-## Related Resources
+* [**Orderbook Deep Dive**](orderbook-deep-dive/README.md) — why a full on-chain order book is hard, and the three techniques that make it economical: [Red-Black Trees](orderbook-deep-dive/red-black-tree.md), [Lazy Evaluation](orderbook-deep-dive/lazy-evaluation.md), and [Genesis Value & Compound Factor](orderbook-deep-dive/genesis-value-and-compound-factor.md)
 
-- [Core Mechanics](../core-mechanics/README.md)
-- [FAQs](../faqs.md)
+## Finance background
 
+* [**APR vs APY**](apr-vs-apy.md) — why the protocol quotes APR, and how to compare rates across venues
