@@ -15,7 +15,6 @@ Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount*
 3. Choose the asset and amount you want to lend, then confirm in your wallet.
 
 <!-- screenshot: portfolio-deposit -->
-<figure><img src="../../.gitbook/assets/Deposit-x1.7mp4-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>How to deposit (previous app UI)</p></figcaption></figure>
 
 ## Step 2 — Choose a market
 
