@@ -8,6 +8,8 @@ Each order book stores its resting orders in **Red-Black Trees** — self-balanc
 
 Each order book maintains **two trees**: one for lend orders, one for borrow orders.
 
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption><p>Red-Black Tree structure in the order book</p></figcaption></figure>
+
 ## Why it saves gas
 
 * Inserting or removing an order touches only the O(log n) path to its node — never the whole book.
