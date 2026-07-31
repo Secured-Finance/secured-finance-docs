@@ -25,6 +25,8 @@ Two situations push LTV up:
 
 Positions are valued with [Mark to Market](mark-to-market.md) pricing for ZC bonds and Chainlink oracle feeds for spot prices.
 
+<figure><img src="../../../.gitbook/assets/risk-v2.gif" alt="" width="563"><figcaption><p>LTV and liquidation risk visualization</p></figcaption></figure>
+
 ## What happens during liquidation
 
 1. A liquidator repays **50%** of the outstanding debt — or **100%** if the position has deteriorated past the **full-liquidation threshold** (≈ LTV 85%; see [Protocol Parameters](../../protocol-parameters.md)).

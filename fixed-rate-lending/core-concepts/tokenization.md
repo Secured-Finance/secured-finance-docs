@@ -14,6 +14,10 @@ Lending positions can be **tokenized as standard ERC-20 tokens** — called **ZC
   * **ZC Tokens** carry a specific maturity (e.g. *ZC ETH DEC2026*) and are minted from the FutureValueVault.
   * **ZC perpetual tokens** (maturity = 0, e.g. *ZC ETH*) represent auto-rolled positions in [Genesis Value](../advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md) terms and are minted from the GenesisValueVault.
 
+<figure><img src="../../.gitbook/assets/ZCToken mint.png" alt=""><figcaption><p>ZC Token minting process</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/ZCToken burn.png" alt=""><figcaption><p>ZC Token burning process</p></figcaption></figure>
+
 ## Naming conventions
 
 Example for a December 2026 expiry:
