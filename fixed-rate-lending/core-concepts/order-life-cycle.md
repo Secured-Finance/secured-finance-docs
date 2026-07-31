@@ -20,6 +20,8 @@ Combined states such as *Partially Filled & Killed* or *Partially Filled & Cance
 
 <figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Order status transitions</p></figcaption></figure>
 
+<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption><p>Behind the scenes: a filled order becomes a position (Future Value), and an auto-rolled position is tracked in <a href="../advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md">Genesis Value</a> terms</p></figcaption></figure>
+
 ## Scenario walkthrough
 
 Consider this order book (last price 90; circuit-breaker range for the next block: 88–92, simplified for illustration):
