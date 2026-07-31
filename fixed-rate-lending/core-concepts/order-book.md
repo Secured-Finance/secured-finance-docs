@@ -2,20 +2,20 @@
 description: How lend and borrow orders meet — fully on-chain
 ---
 
-# Order Book & Order Types
+# 🧩 Order Book & Order Types
 
 Secured Finance runs a **fully on-chain order book** for every market (currency × maturity). An order book lists buy (lend) and sell (borrow) orders by price level, giving transparent price discovery and depth — the market structure used by traditional exchanges, rarely achieved on-chain because of gas costs.
 
 {% hint style="info" %}
-**Why is an on-chain order book hard?** Order data grows with every order, and Solidity storage is expensive. Most DeFi protocols use liquidity pools instead, but pool rates lack the transparency and composability of an order book. Secured Finance made the order book economical with Red-Black Trees and lazy evaluation — see the [Orderbook Deep Dive](../advanced-topics/orderbook-deep-dive/README.md).
+**Why is an on-chain order book hard?** Order data grows with every order, and Solidity storage is expensive. Most DeFi protocols use liquidity pools instead, but pool rates lack the transparency and composability of an order book. Secured Finance made the order book economical with Red-Black Trees and lazy evaluation — see the [Orderbook Deep Dive](../advanced-topics/orderbook-deep-dive/).
 {% endhint %}
 
 ## The two sides
 
-| Side | Equivalent | What happens |
-| --- | --- | --- |
-| **Lend (Buy)** | Buying a ZC bond at a discount | You pay the discounted amount now; hold a claim on par (100) at maturity |
-| **Borrow (Sell)** | Selling a ZC bond | You receive the discounted amount now (after posting [collateral](collateral.md)); owe par at maturity |
+| Side              | Equivalent                     | What happens                                                                                           |
+| ----------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| **Lend (Buy)**    | Buying a ZC bond at a discount | You pay the discounted amount now; hold a claim on par (100) at maturity                               |
+| **Borrow (Sell)** | Selling a ZC bond              | You receive the discounted amount now (after posting [collateral](collateral.md)); owe par at maturity |
 
 Orders are matched by **price-time priority**: the best-priced orders fill first; at the same price, earlier orders fill first.
 
@@ -39,9 +39,9 @@ You specify only the amount; the order executes immediately at the best availabl
 
 ### Which should I use?
 
-| Priority | Use |
-| --- | --- |
-| Exact rate control, no fee, willing to wait | **Limit order** |
+| Priority                                     | Use              |
+| -------------------------------------------- | ---------------- |
+| Exact rate control, no fee, willing to wait  | **Limit order**  |
 | Immediate execution, accepting current rates | **Market order** |
 
 ## Worked example
@@ -49,9 +49,9 @@ You specify only the amount; the order executes immediately at the best availabl
 A lender wants 2,000 USDC to earn at least 4% APR for 6 months:
 
 1. Target price: 100 / (1 + 0.04 × 0.5) ≈ **98.04**
-2. They place a **limit lend order** at 98.04 for 2,000 USDC face value.
-3. When matched, they pay 1,960.8 USDC (2,000 × 98.04/100).
-4. Held to maturity, the position is worth 2,000 USDC — 39.2 USDC of fixed interest, and no trading fee because it was a limit order.
+2. They place a **limit lend order** at 98.04 for 2,000 USDC.
+3. When matched, they lend 2,000 USDC and open a lending position with a face value of approximately 2,039.98 USDC.
+4. Held to maturity, the position earns approximately 39.98 USDC in fixed interest, with no trading fee because it was a limit order.
 
 ## Related
 
