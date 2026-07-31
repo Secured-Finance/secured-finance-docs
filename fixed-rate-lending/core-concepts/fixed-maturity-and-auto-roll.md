@@ -13,6 +13,7 @@ Markets are named by contract month: **DEC26** matures on the last Friday of Dec
 Standardized maturities concentrate liquidity: instead of fragmenting orders across arbitrary dates, everyone trades the same eight points on the curve — which is also what makes a readable [yield curve](../getting-started/platform-guide/markets.md) possible.
 
 <!-- screenshot/figure: fixed-maturity-orderbooks (redraw of former fixedmaturity.gif) -->
+<figure><img src="../../.gitbook/assets/fixedmaturity.gif" alt="" width="563"><figcaption><p>Fixed Maturity Standard of 8 distinct order books ranging from 3 months to 2 years</p></figcaption></figure>
 
 ## The quarterly cycle
 
@@ -29,6 +30,8 @@ Technical details of the rotation: [Orderbook Rotation](../advanced-topics/order
 {% hint style="warning" %}
 **Auto-Roll is protocol-wide.** Every matured position rolls automatically into the nearest 3-month market — it cannot be enabled, disabled, or configured per user. The protocol has **no automatic settlement**: to get funds back, [unwind](../getting-started/managing-positions.md) your position manually (possible before or after maturity).
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/autoroll.gif" alt="" width="563"><figcaption><p>Auto-Roll moves an open position into the nearest 3-month order book at maturity</p></figcaption></figure>
 
 ### Why Auto-Roll exists
 
