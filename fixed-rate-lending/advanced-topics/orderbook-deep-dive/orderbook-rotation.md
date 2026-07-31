@@ -15,6 +15,7 @@ Each currency runs exactly **9 order book contracts: 8 active + 1 inactive**. Ra
 **Example (ETH):** active books MAR26…DEC27, inactive book preparing MAR28. When MAR26 matures, MAR28 opens via Itayose, MAR26's positions roll into JUN26 (nearest 3-month), and the MAR26 contract is recycled to prepare JUN28.
 
 <!-- figure: market-life-cycle (redraw of former diagram) -->
+<figure><img src="../../../.gitbook/assets/Market Kife Cycle (1).png" alt=""><figcaption><p>Market Life Cycle</p></figcaption></figure>
 
 ## Why exactly 9?
 
