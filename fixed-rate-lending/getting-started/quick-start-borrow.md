@@ -17,7 +17,6 @@ Borrowing on Secured Finance means **selling a Zero-Coupon (ZC) bond**: you rece
 Borrowing requires **over-collateralization** — your collateral must be worth significantly more than the amount you borrow. Current thresholds are listed in [Protocol Parameters](../protocol-parameters.md).
 
 <!-- screenshot: portfolio-deposit-collateral -->
-<figure><img src="../../.gitbook/assets/Deposit-x1.7mp4-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>Depositing collateral (previous app UI)</p></figcaption></figure>
 
 ## Step 2 — Choose a market
 
