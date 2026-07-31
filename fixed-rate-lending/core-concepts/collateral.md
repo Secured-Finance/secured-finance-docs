@@ -10,7 +10,7 @@ Borrowing on the Fixed-Rate Lending Protocol requires **over-collateralization**
 
 | Network | Lend / Borrow | Accepted as collateral |
 | --- | --- | --- |
-| **Ethereum** | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, uMINT |
+| **Ethereum** | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, JPYC, uMINT |
 | **Arbitrum** | WBTC, ETH, USDC | WBTC, ETH, USDC |
 | **Filecoin (FVM)** | FIL, USDFC | FIL, iFIL, wpFIL, USDFC |
 
