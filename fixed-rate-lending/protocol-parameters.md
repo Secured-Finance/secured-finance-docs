@@ -71,7 +71,7 @@ Interpolated linearly by time to maturity — see [Base Price Adjustment](advanc
 
 ## Supported assets by network
 
-| Network | Lend / Borrow | Collateral |
+| Network | Lend / Borrow | Accepted as collateral |
 | --- | --- | --- |
 | Ethereum | WBTC, ETH, USDC, axlFIL, JPYC | WBTC, ETH, USDC, JPYC, uMINT |
 | Arbitrum | WBTC, ETH, USDC | WBTC, ETH, USDC |
