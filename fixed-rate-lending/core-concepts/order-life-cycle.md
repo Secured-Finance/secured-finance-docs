@@ -18,6 +18,8 @@ Track your orders' states in the **Order History** tab of the [Portfolio](../get
 
 Combined states such as *Partially Filled & Killed* or *Partially Filled & Canceled* record that part of an order executed before the remainder terminated.
 
+<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Order status transitions</p></figcaption></figure>
+
 ## Scenario walkthrough
 
 Consider this order book (last price 90; circuit-breaker range for the next block: 88–92, simplified for illustration):
