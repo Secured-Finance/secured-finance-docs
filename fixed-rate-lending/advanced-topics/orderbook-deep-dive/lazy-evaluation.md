@@ -6,6 +6,8 @@ description: Compute on read, not on write — the protocol's core gas strategy
 
 **Lazy evaluation** defers computation and storage updates until they're actually needed. Instead of rewriting state every time an order fills or a market matures, the protocol records the minimal facts and reconstructs current values **on read**. Storage writes are the most expensive operation on the EVM; reads and computation are cheap — lazy evaluation trades the former for the latter.
 
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption><p>How an order's value is converted from order amount to future value, then to genesis value</p></figcaption></figure>
+
 ## The three states of user funds
 
 | State | Representation | Lazy behavior |
