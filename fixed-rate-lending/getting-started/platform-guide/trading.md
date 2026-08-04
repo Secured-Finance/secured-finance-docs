@@ -35,7 +35,7 @@ Orders are matched by price-time priority, fully on-chain. Execution prices are 
 
 ## Managing open orders
 
-Unfilled or partially filled limit orders sit in **Open Orders**. You can cancel them anytime; funds allocated to unfilled orders return to your deposit balance. Order states (Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired) are explained in [Order Life Cycle](../../core-concepts/order-life-cycle.md).
+Limit orders with volume still resting on the book — unfilled, or partially filled with a live remainder — sit in **Open Orders**. You can cancel them anytime; funds allocated to unfilled orders return to your deposit balance. Order states (Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired) are explained in [Order Life Cycle](../../core-concepts/order-life-cycle.md).
 
 ## Exiting a position
 
