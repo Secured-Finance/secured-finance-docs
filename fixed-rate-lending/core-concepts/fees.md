@@ -8,7 +8,7 @@ The protocol charges three fees. Current values are maintained in [Protocol Para
 
 ## 1. Trading fee (takers only)
 
-**Only market orders (takers) pay a trading fee. Limit orders (makers) pay nothing.**
+**The fee depends on how your order executes, not on the order type.** Volume that rests on the order book and waits (**maker**) pays nothing. Volume that takes an existing order and executes immediately (**taker**) pays the fee — this includes the portion of a **limit order** that crosses the book and fills right away.
 
 The fee is **1% per annum of the notional, prorated by time to maturity**, and is charged in Future Value terms:
 
@@ -35,11 +35,11 @@ Charged to liquidated borrowers: **7% of the liquidated value**, taken from coll
 
 ## Where fees go
 
-Fees accrue to the protocol's **Reserve Fund**, the buffer that protects the protocol in extreme events, with the remainder allocated to ecosystem incentives. The Reserve Fund contract address is listed in [Contracts & Security](../contracts-and-security.md).
+Trading fees and Auto-Roll fees accrue to the protocol's **Reserve Fund**, the buffer that protects the protocol in extreme events. Of the liquidation fee, only the **2% protocol share** goes to the Reserve Fund; the 5% goes to the liquidator who executed the call. The Reserve Fund contract address is listed in [Contracts & Security](../contracts-and-security.md).
 
 ## Minimizing fees
 
-* Use **limit orders** — zero trading fee, and they earn [SFP points](../getting-started/platform-guide/points-and-campaigns.md) for providing liquidity
+* Use **limit orders** priced so they rest on the book rather than cross it — resting volume pays no trading fee, and it earns [SFP points](../getting-started/platform-guide/points-and-campaigns.md) for providing liquidity
 * Participate in **Itayose** pre-open windows — zero fee fills
 * If you don't want quarterly roll fees, **unwind before maturity** rather than letting positions roll
 * Avoid liquidation entirely by managing your [collateral](collateral.md) — the 7% fee is by far the most expensive in the protocol
