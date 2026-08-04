@@ -16,7 +16,7 @@ Our platform is built on three innovative products:
 
 * **USDFC Stablecoin:** A dollar-pegged token on the Filecoin blockchain that provides liquidity for Filecoin stakeholders, miners, and DeFi users alike. As the first decentralized stablecoin fully collateralized by Filecoin, USDFC strengthens liquidity across the Filecoin network and establishes a solid foundation for expanded DeFi development.
 * **Fixed-Rate Lending:** A fully on-chain, fixed-rate, fixed-term lending and borrowing platform operating across Ethereum, Arbitrum, and Filecoin chains. At its core is our unique Zero-Coupon Bond instrument, which powers secure and efficient crypto asset lending and borrowing with predictable returns.
-* **SF Yield Vault:** Curated yield strategies that put deposited assets to work through the protocol, including a JPYC fixed-income strategy, for users who prefer a managed alternative to placing their own orders.
+* **SF Yield Vault:** Curated yield strategies that put deposited assets to work through the protocol, including a JPYC lending strategy, for users who prefer a managed alternative to placing their own orders.
 
 ## Getting Started
 
