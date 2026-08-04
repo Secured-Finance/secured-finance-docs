@@ -45,7 +45,7 @@ Parameters may change through protocol governance. For integrations, always conf
 
 | Parameter | Value |
 | --- | --- |
-| Order books per currency | 8 active + 1 inactive (pre-open) |
+| Order books per currency | 8 active + 1 inactive (pre-open) — standard full set; some markets run fewer maturities |
 | Maturity cycle | Quarterly — last Friday of Mar / Jun / Sep / Dec |
 | Longest tenor | 2 years |
 | Itayose pre-open period | 7 days; order book frozen 1 hour before opening |
