@@ -14,8 +14,8 @@ Parameters may change through protocol governance. For integrations, always conf
 
 | Parameter | Value | Notes |
 | --- | --- | --- |
-| Taker fee (market order) | 1.00% p.a., prorated by duration | 0.25% for 3 months, 0.50% for 6 months, … |
-| Maker fee (limit order) | 0% | Limit orders never pay trading fees |
+| Taker fee (volume that executes immediately) | 1.00% p.a., prorated by duration | 0.25% for 3 months, 0.50% for 6 months, … |
+| Maker fee (volume that rests on the book) | 0% | A limit order pays the taker fee on any portion that crosses and fills immediately |
 | Itayose (pre-open) fill | 0% | Waived for orders matched at market opening |
 | Auto-Roll fee | Same as taker fee (0.25% per 3-month roll) | Charged in Future Value at each quarterly roll |
 
