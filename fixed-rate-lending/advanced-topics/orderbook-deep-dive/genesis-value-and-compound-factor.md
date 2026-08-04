@@ -46,8 +46,8 @@ $$
 
 ## Worked example
 
-1. Roll occurs at AutoRollPrice 98.00 with fee rate 0.001. A lender's LCF goes from 1.20 → 1.20 × (1/0.98 − 0.001) ≈ **1.2168**.
-2. A lender with GV = 500: FV moves from 600 → 500 × 1.2168 = **608.4** — the position grew through the roll with *zero* per-position computation.
+1. Roll occurs at AutoRollPrice 0.98 (a unit price of 98.00) with fee rate 0.001. A lender's LCF goes from 1.20 → 1.20 × (1/0.98 − 0.001) ≈ **1.2233**.
+2. A lender with GV = 500: FV moves from 600 → 500 × 1.2233 ≈ **611.6** — the position grew through the roll with *zero* per-position computation.
 3. For 1,000 positions, a naive roll would cost ~20M gas (20k × 1,000 writes). Updating the Compound Factor once costs ~50k gas — a **99.7% reduction** — and individual FVs are derived on read.
 
 ## Design notes
