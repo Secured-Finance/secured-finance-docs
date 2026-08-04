@@ -8,7 +8,7 @@ description: How assets join and leave the platform in an orderly way
 
 1. **Pre-open orders** — 7 days before the new asset's markets launch, users can place one-sided limit orders. The book freezes 1 hour before opening.
 2. **Itayose** — the opening auction sets a fair initial price. See [Itayose](itayose.md).
-3. **Order book expansion** — a newly listed asset starts with **four order books** (~1 year of maturities). One additional 3-month book is added **each week** until the full set of eight books (2 years) is reached, matching other assets.
+3. **Order book expansion** — a newly listed asset typically starts with **four order books** (~1 year of maturities). One additional 3-month book is added **each week** until the full set of eight books (2 years) is reached, matching other assets. The starting count is decided per market: depending on liquidity, a market may open with fewer books (for example two, covering six months).
 
 ## Delisting an asset
 
