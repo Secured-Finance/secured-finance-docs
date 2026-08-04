@@ -52,7 +52,7 @@ It **auto-rolls** into the nearest 3-month market at a fair roll price. Auto-Rol
 
 <summary>What happens to my open orders at maturity?</summary>
 
-Unfilled orders **expire** automatically and the allocated funds return to your deposit balance, ready to withdraw or reuse. Filled portions became positions and follow the Auto-Roll rules above.
+Unfilled orders **expire** automatically and the allocated funds return to your deposit balance, ready to withdraw or reuse. Filled portions become positions and follow the Auto-Roll rules above.
 
 </details>
 
@@ -68,7 +68,7 @@ Either the order book lacks matching liquidity, or execution would fall outside 
 
 <summary>What fees do I pay?</summary>
 
-Market orders pay a taker fee (1% p.a. prorated — 0.25% for 3 months). **Limit orders pay nothing.** Auto-Rolls charge the same rate as the taker fee each quarter. Liquidated borrowers pay a 7% liquidation fee. Full details: [Fees](core-concepts/fees.md) and [Protocol Parameters](protocol-parameters.md).
+The **taker side** of a fill pays the trading fee (1% p.a. prorated — 0.25% for 3 months): market orders, and the portion of a limit order that crosses the book and fills immediately. **Volume resting on the book pays nothing.** Auto-Rolls charge the same rate as the taker fee each quarter. Liquidated borrowers pay a 7% liquidation fee. Full details: [Fees](core-concepts/fees.md) and [Protocol Parameters](protocol-parameters.md).
 
 </details>
 
