@@ -4,7 +4,7 @@ description: The quarterly recycling cycle that keeps gas costs bounded
 
 # Orderbook Rotation
 
-Each currency runs exactly **9 order books (8 active + 1 inactive) inside a single lending market contract**. Rather than creating new order books each quarter, matured ones are **recycled** — a design that both avoids deployment costs and caps the data volume that [lazy evaluation](lazy-evaluation.md) must handle.
+At the full standard configuration, each currency runs **9 order books (8 active + 1 inactive) inside a single lending market contract**; a market with less liquidity may keep fewer maturities open. Rather than creating new order books each quarter, matured ones are **recycled** — a design that both avoids deployment costs and caps the data volume that [lazy evaluation](lazy-evaluation.md) must handle.
 
 ## The cycle
 
