@@ -13,10 +13,10 @@ Track your orders' states in the **Order History** tab of the [Portfolio](../get
 | **Filled** *(final)* | Both | Fully executed — now a position |
 | **Killed** *(final)* | Market / crossing limit | Could not fully execute due to insufficient liquidity |
 | **Blocked** *(final)* | Market / crossing limit | Execution stopped by the [Circuit Breaker](../advanced-topics/circuit-breaker.md) price range |
-| **Canceled** *(final)* | Limit | Canceled by you before full execution |
-| **Expired** *(final)* | Limit | Reached its expiry or the market's maturity unfilled; allocated funds return to your deposit balance |
+| **Cancelled** *(final)* | Limit | Cancelled by you before full execution |
+| **Expired** *(final)* | Limit | Still unfilled when the market reached maturity; allocated funds return to your deposit balance |
 
-Combined states such as *Partially Filled & Killed* or *Partially Filled & Canceled* record that part of an order executed before the remainder terminated.
+Combined states such as *Partially Filled & Killed* or *Partially Filled & Cancelled* record that part of an order executed before the remainder terminated.
 
 <figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption><p>Order status transitions</p></figcaption></figure>
 
@@ -47,7 +47,7 @@ Price | Amount
 **Limit orders (overlapping — price crosses existing orders)**
 
 * *Buy 10 at 91* → **Filled** immediately
-* *Buy 15 at 92* (at the upper limit) → fills 10 at 91; the remaining 5 rest on the book at 92 → **Partially Filled**, then later Filled / Canceled / Expired
+* *Buy 15 at 92* (at the upper limit) → fills 10 at 91; the remaining 5 rest on the book at 92 → **Partially Filled**, then later Filled / Cancelled / Expired
 * *Buy 15 at 93* (beyond the upper limit) → fills 10 at 91; the remaining 5 would execute beyond the circuit-breaker limit, so they are **blocked** and the allocated funds return to your deposit balance → **Partially Filled & Blocked**
 
 **Limit orders (non-overlapping)**
@@ -69,7 +69,7 @@ Price | Amount
 
 <summary>What happens to open orders when the market matures?</summary>
 
-They expire automatically and the allocated funds return to your deposit balance. Filled portions became positions and are subject to [Auto-Roll](fixed-maturity-and-auto-roll.md).
+They expire automatically and the allocated funds return to your deposit balance. Filled portions become positions and are subject to [Auto-Roll](fixed-maturity-and-auto-roll.md).
 
 </details>
 
