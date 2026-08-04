@@ -1,38 +1,40 @@
 ---
-description: Earn Secured Finance Points (SFP) for platform activity
+description: Track your Secured Finance Points (SFP) in the app
 ---
 
-# Points & Campaigns
+# Points
 
-The [**Points**](https://app.secured.finance/points/) dashboard tracks the **Secured Finance Points (SFP)** you earn by using the protocol. Points quantify your contribution to the ecosystem and are expected to play a role in future governance and rewards, including in relation to the upcoming **Secured Finance Coin (SFC)** — see [Tokenomics](../../../community/tokenomics/README.md) for the current status.
+The [**Points**](https://app.secured.finance/points/) dashboard tracks the **Secured Finance Points (SFP)** you have earned by using the protocol.
 
-## How to earn SFP
+{% hint style="warning" %}
+**The current phase of Secured Finance Points ended after April 30, 2026 (UTC).** Points earned to date are retained. For the program details and what happens next, see [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/README.md).
+{% endhint %}
 
-| Activity | How points accrue |
-| --- | --- |
-| **Deposits** | Based on value and duration of deposited assets |
-| **Limit orders** | Providing order-book liquidity; longer-resting orders earn more |
-| **Active positions** | Based on position size and duration |
-| **Referrals** | A percentage of the points earned by users you invite (your link is in the dashboard) |
-| **Daily login** | Connect your wallet daily; streaks may earn bonuses |
-| **Quests** | Time-limited challenges listed in the dashboard's Quests section |
+## What the dashboard shows
 
 <!-- screenshot: points-dashboard -->
 
-## Tracking your progress
+**Total Points** — your overall SFP balance, broken down by how it was earned:
 
-The dashboard shows your total balance, a per-activity breakdown, your activity log, and the community leaderboard.
+| Metric | What it represents |
+| --- | --- |
+| **Deposit Points** | Points from assets deposited in the protocol |
+| **Open Order Points** | Points from limit orders resting on the order book |
+| **Active Position Points** | Points from open lend and borrow positions |
+| **Refer Friend Points** | Your share of points earned by users you referred |
+| **Daily Login Points** | Points from connecting your wallet each day |
 
-## Campaigns
+Alongside the breakdown, the panel shows **Your Rank**, any **Point Boost** applied to your earnings, and your **Referral Code** to share.
 
-Campaigns are limited-time promotions with boosted rewards, announced on [X](https://x.com/secured_fi) and [Medium](https://medium.com/secured-finance) and reflected in the Quests section during their run.
+**Active Quests** lists any quests currently running. **Leaderboard** shows the community rankings and is visible without connecting a wallet.
 
-{% hint style="info" %}
-No campaign is currently active. Past campaign results are covered in our quarterly reports on Medium.
-{% endhint %}
+## How points were earned
+
+The full rules, calculations, and program history are documented in [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/README.md).
+
+For how SFP relates to the upcoming **Secured Finance Coin (SFC)**, see [Tokenomics](../../../community/tokenomics/README.md).
 
 ## Troubleshooting
 
-* **Points not appearing** — accrual can take a few minutes; confirm the activity met minimum requirements.
-* **Referral not counted** — the invitee must use your exact link and earn their first points before your share appears.
-* Details of the SFP program: [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/README.md).
+* **Balance looks wrong or is missing** — make sure your wallet is connected on a supported network, and that you are checking the same address you used to earn the points.
+* **Refer Friend Points missing** — the invitee must have used your exact referral link and earned their first points before your share appears.
