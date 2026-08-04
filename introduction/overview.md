@@ -6,8 +6,6 @@ coverY: 0
 
 # ⚜️ About Secured Finance
 
-Last edited: 28/10/2025
-
 Secured Finance is a Decentralized Finance (DeFi) protocol that empowers you to engage directly with next-generation financial infrastructure. By connecting your wallet, you can access our services without intermediaries like banks or brokers—no third-party custodians required. With Secured Finance, you hold the keys to permissionless financial freedom.
 
 Our vision emerged in the aftermath of the LIBOR scandal, guided by the belief that blockchain technology can reshape financial systems with transparency and reliability. We're building a bridge between traditional finance and the boundless possibilities of DeFi.
