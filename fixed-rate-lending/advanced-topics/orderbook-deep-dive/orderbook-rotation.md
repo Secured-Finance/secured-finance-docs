@@ -4,7 +4,7 @@ description: The quarterly recycling cycle that keeps gas costs bounded
 
 # Orderbook Rotation
 
-Each currency runs exactly **9 order book contracts: 8 active + 1 inactive**. Rather than deploying new contracts each quarter, matured order books are **recycled** — a design that both avoids deployment costs and caps the data volume that [lazy evaluation](lazy-evaluation.md) must handle.
+Each currency runs exactly **9 order books (8 active + 1 inactive) inside a single lending market contract**. Rather than creating new order books each quarter, matured ones are **recycled** — a design that both avoids deployment costs and caps the data volume that [lazy evaluation](lazy-evaluation.md) must handle.
 
 ## The cycle
 
@@ -12,7 +12,7 @@ Each currency runs exactly **9 order book contracts: 8 active + 1 inactive**. Ra
 2. At maturity: the [Itayose](../itayose.md) auction runs and the new book **activates**; the matured book's positions [auto-roll](../../core-concepts/fixed-maturity-and-auto-roll.md); the matured book itself moves to the end of the queue and becomes the new **inactive** book.
 3. The cycle repeats every quarter.
 
-**Example (ETH):** active books MAR26…DEC27, inactive book preparing MAR28. When MAR26 matures, MAR28 opens via Itayose, MAR26's positions roll into JUN26 (nearest 3-month), and the MAR26 contract is recycled to prepare JUN28.
+**Example (ETH):** active books MAR2026…DEC2027, inactive book preparing MAR2028. When MAR2026 matures, MAR2028 opens via Itayose, MAR2026's positions roll into JUN2026 (nearest 3-month), and the MAR2026 order book is recycled to prepare JUN2028.
 
 <!-- figure: market-life-cycle (redraw of former diagram) -->
 <figure><img src="../../../.gitbook/assets/Market Kife Cycle (1).png" alt=""><figcaption><p>Market Life Cycle</p></figcaption></figure>
@@ -21,7 +21,7 @@ Each currency runs exactly **9 order book contracts: 8 active + 1 inactive**. Ra
 
 * **Gas bound** — order placement and matching never consider more than 8 active books' data; lazy evaluation has a fixed-size working set.
 * **Liquidity concentration** — 8 quarterly points cover 2 years without fragmenting volume across dozens of dates.
-* **No deployment churn** — recycling reuses contracts, so the protocol's address surface stays stable.
+* **No deployment churn** — recycling reuses order books within the same contract, so the protocol's address surface stays stable.
 
 ## Related
 
