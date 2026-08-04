@@ -19,7 +19,7 @@ The fee is **1% per annum of the notional, prorated by time to maturity**, and i
 | 9 months | 0.75% |
 | 12 months | 1.00% |
 
-*Example:* borrowing 100 ETH for 6 months with a market order costs 0.50 ETH; the same trade as a limit order costs nothing.
+*Example:* borrowing 100 ETH for 6 months with a market order costs 0.50 ETH; the same trade as a limit order that rests on the book costs nothing, while any portion that crosses and fills immediately pays the taker fee.
 
 {% hint style="info" %}
 Orders filled during the [Itayose](../advanced-topics/itayose.md) opening auction are also **fee-free** — an incentive to participate in price discovery for new markets.
