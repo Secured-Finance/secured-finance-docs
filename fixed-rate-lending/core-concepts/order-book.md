@@ -23,10 +23,10 @@ Orders are matched by **price-time priority**: the best-priced orders fill first
 
 ### Limit orders
 
-You specify the price (rate). The order executes at your price or better, and rests on the book until filled, canceled, or expired (you can set an optional expiry; unfilled orders also expire at the market's maturity).
+You specify the price (rate). The order executes at your price or better. Any remainder that does not execute rests on the book until filled, cancelled, or the market matures (unfilled orders expire at maturity and the allocated funds return to your deposit balance). A remainder stopped by insufficient liquidity or the [Circuit Breaker](../advanced-topics/circuit-breaker.md) instead terminates immediately and the funds return to your deposit balance — see [Order Life Cycle](order-life-cycle.md).
 
-* You act as a **maker**, adding liquidity — limit orders pay **no trading fee**
-* If your price overlaps existing orders, the overlapping part executes immediately
+* Volume that rests on the book makes you a **maker**, adding liquidity — it pays **no trading fee**
+* If your price overlaps existing orders, the overlapping part executes immediately. That portion makes you a **taker** and pays the [taker fee](fees.md); only the remainder rests on the book
 * Orders cannot be modified — cancel and re-place to change price or size
 
 ### Market orders
@@ -41,7 +41,7 @@ You specify only the amount; the order executes immediately at the best availabl
 
 | Priority                                     | Use              |
 | -------------------------------------------- | ---------------- |
-| Exact rate control, no fee, willing to wait  | **Limit order**  |
+| Exact rate control, willing to wait (resting volume pays no fee)  | **Limit order**  |
 | Immediate execution, accepting current rates | **Market order** |
 
 ## Worked example

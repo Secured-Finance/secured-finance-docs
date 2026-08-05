@@ -42,7 +42,7 @@ $$
 APR = \left(\frac{100}{\text{Bond Price}}\right)^{1/\text{years to maturity}} - 1
 $$
 
-*Example:* an 18-month bond at 85.00 → (100/85)^(1/1.5) − 1 ≈ **11.22% APR**.
+*Example:* an 18-month bond at 85.00 → (100/85)^(1/1.5) − 1 ≈ **11.44% APR**.
 
 {% hint style="info" %}
 **Pre-open markets:** during the 7-day [Itayose](../advanced-topics/itayose.md) window, the displayed APR uses the *estimated opening price* and measures time from the trading start date (not the current date) to maturity.

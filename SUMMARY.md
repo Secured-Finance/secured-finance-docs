@@ -63,7 +63,7 @@
     * [📈 Stats](fixed-rate-lending/getting-started/platform-guide/markets.md)
     * [🐋 Portfolio](fixed-rate-lending/getting-started/platform-guide/portfolio.md)
     * [🌉 Swap (Bridge)](fixed-rate-lending/getting-started/platform-guide/bridge.md)
-    * [🚀 Points & Campaigns](fixed-rate-lending/getting-started/platform-guide/points-and-campaigns.md)
+    * [🚀 Points](fixed-rate-lending/getting-started/platform-guide/points-and-campaigns.md)
 * [🔦 Core Concepts](fixed-rate-lending/core-concepts/README.md)
   * [💠 Zero-Coupon Bonds](fixed-rate-lending/core-concepts/zero-coupon-bonds.md)
   * [🧩 Order Book & Order Types](fixed-rate-lending/core-concepts/order-book.md)

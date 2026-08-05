@@ -6,9 +6,9 @@ description: Quarterly markets, and exactly what happens to your position at mat
 
 ## Quarterly markets
 
-Each currency trades in **eight order books** at once, with maturities from 3 months to 2 years spaced 3 months apart. Maturity falls on the **last Friday of March, June, September, and December**, aligning with listed futures conventions so rates are easy to reference and hedge.
+Each currency trades in up to **eight order books** at once, with maturities from 3 months to 2 years spaced 3 months apart. Eight is the standard full set; depending on liquidity, a market may offer fewer maturities (the app shows what is currently open). Maturity falls on the **last Friday of March, June, September, and December**, aligning with listed futures conventions so rates are easy to reference and hedge.
 
-Markets are named by contract month: **DEC26** matures on the last Friday of December 2026.
+Markets are named by contract month: **DEC2026** matures on the last Friday of December 2026.
 
 Standardized maturities concentrate liquidity: instead of fragmenting orders across arbitrary dates, everyone trades the same eight points on the curve — which is also what makes a readable [yield curve](../getting-started/platform-guide/markets.md) possible.
 
@@ -45,10 +45,10 @@ Each roll charges the auto-roll fee (same rate as the taker fee, prorated — se
 
 ### Worked example
 
-1. In January, Alice lends 1,000 USDC in the MAR27 market (3-month maturity).
-2. On the last Friday of March, MAR27 matures. Alice does nothing.
-3. Her position rolls into **JUN27** — now the nearest 3-month market — at the auto-roll price, minus the roll fee.
-4. If Alice wants her USDC instead, she unwinds the JUN27 position (or unwinds before the March maturity) and withdraws.
+1. In January, Alice lends 1,000 USDC in the MAR2027 market (3-month maturity).
+2. On the last Friday of March, MAR2027 matures. Alice does nothing.
+3. Her position rolls into **JUN2027** — now the nearest 3-month market — at the auto-roll price, minus the roll fee.
+4. If Alice wants her USDC instead, she unwinds the JUN2027 position (or unwinds before the March maturity) and withdraws.
 
 ## Your choices at maturity
 

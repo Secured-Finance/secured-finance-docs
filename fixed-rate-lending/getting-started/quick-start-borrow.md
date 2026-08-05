@@ -29,7 +29,7 @@ Borrowing requires **over-collateralization** — your collateral must be worth 
 1. Select **Borrow**.
 2. Pick an order type:
    * **Market order** — fills immediately at the best available price. A taker fee applies (see [Fees](../core-concepts/fees.md)).
-   * **Limit order** — you set your maximum rate and wait to be matched. **Limit orders pay no fee.**
+   * **Limit order** — you set your maximum rate and wait to be matched. Volume that rests on the book pays **no fee**; any portion that fills immediately pays the taker fee.
 3. Enter the amount, review the implied APR, repayment amount at maturity, and collateral usage, then click **Place Order**.
 4. Confirm in your wallet. Borrowed funds are credited to your protocol account, ready to withdraw or reuse.
 

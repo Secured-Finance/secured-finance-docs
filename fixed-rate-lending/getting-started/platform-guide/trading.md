@@ -27,7 +27,7 @@ The **Fixed Income** tab is the trading interface where you lend and borrow by t
 2. Choose **Lend** or **Borrow**. Borrowing requires deposited [collateral](../../core-concepts/collateral.md).
 3. Choose the order type:
    * **Market order** — executes immediately at the best available price; pays the taker fee ([Fees](../../core-concepts/fees.md))
-   * **Limit order** — executes only at your price or better; **no fee**; you can optionally set an expiry
+   * **Limit order** — executes only at your price or better. Volume that rests on the book pays **no fee**; if your price crosses existing orders, the part that fills immediately pays the taker fee ([Fees](../../core-concepts/fees.md))
 4. Enter the amount. The form shows the implied APR, estimated fee, and (for borrows) collateral usage.
 5. **Place Order** → confirm in your wallet.
 
@@ -35,7 +35,7 @@ Orders are matched by price-time priority, fully on-chain. Execution prices are 
 
 ## Managing open orders
 
-Unfilled or partially filled limit orders sit in **Open Orders**. You can cancel them anytime; funds allocated to unfilled orders return to your deposit balance. Order states (Open, Partially Filled, Filled, Killed, Blocked, Canceled, Expired) are explained in [Order Life Cycle](../../core-concepts/order-life-cycle.md).
+Limit orders with volume still resting on the book — unfilled, or partially filled with a live remainder — sit in **Open Orders**. You can cancel them anytime; funds allocated to unfilled orders return to your deposit balance. Order states (Open, Partially Filled, Filled, Killed, Blocked, Cancelled, Expired) are explained in [Order Life Cycle](../../core-concepts/order-life-cycle.md).
 
 ## Exiting a position
 

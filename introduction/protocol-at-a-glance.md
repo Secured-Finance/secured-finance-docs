@@ -12,7 +12,7 @@ Secured Finance operates two complementary DeFi protocols with a third product l
 | --- | --- | --- |
 | **Fixed-Rate Lending** | Fully on-chain order book for fixed-rate, fixed-term lending via Zero-Coupon bonds | Ethereum, Arbitrum, Filecoin |
 | **USDFC Stablecoin** | The first decentralized stablecoin fully collateralized by FIL | Filecoin (FVM) |
-| **Yield Vault** | Curated yield strategies, including a JPYC fixed-income strategy | Ethereum |
+| **SF Yield Vault** | Curated yield strategies, including a JPYC lending strategy | Ethereum |
 
 ## Traction
 
@@ -46,6 +46,7 @@ Most DeFi lending is variable-rate: yields change block by block, which makes pl
 | --- | --- |
 | New to the protocol | [Quick Start: Lend](../fixed-rate-lending/getting-started/quick-start-lend.md) |
 | A borrower | [Quick Start: Borrow](../fixed-rate-lending/getting-started/quick-start-borrow.md) |
+| Looking for passive yield | [SF Yield Vault: Getting Started](../yield-vault/getting-started/README.md) |
 | A developer | [Developer Portal](../developer-portal/introduction.md) |
 | A researcher or investor | [Research & Papers](../fixed-rate-lending/research-and-papers.md) · [Roadmap](roadmap/README.md) |
 | Running a liquidation bot | [Liquidator's Guide](../fixed-rate-lending/core-concepts/liquidation/liquidators-guide.md) |
