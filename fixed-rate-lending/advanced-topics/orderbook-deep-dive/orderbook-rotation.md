@@ -2,7 +2,7 @@
 description: The quarterly recycling cycle that keeps gas costs bounded
 ---
 
-# Orderbook Rotation
+# 🎡 Orderbook Rotation
 
 At the full standard configuration, each currency runs **9 order books (8 active + 1 inactive) inside a single lending market contract**; a market with less liquidity may keep fewer maturities open. Rather than creating new order books each quarter, matured ones are **recycled** — a design that both avoids deployment costs and caps the data volume that [lazy evaluation](lazy-evaluation.md) must handle.
 
@@ -14,8 +14,7 @@ At the full standard configuration, each currency runs **9 order books (8 active
 
 **Example (ETH):** active books MAR2026…DEC2027, inactive book preparing MAR2028. When MAR2026 matures, MAR2028 opens via Itayose, MAR2026's positions roll into JUN2026 (nearest 3-month), and the MAR2026 order book is recycled to prepare JUN2028.
 
-<!-- figure: market-life-cycle (redraw of former diagram) -->
-<figure><img src="../../../.gitbook/assets/Market Kife Cycle (1).png" alt=""><figcaption><p>Market Life Cycle</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Market Kife Cycle.png" alt=""><figcaption><p>Market Life Cycle</p></figcaption></figure>
 
 ## Why exactly 9?
 

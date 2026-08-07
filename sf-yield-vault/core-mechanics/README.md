@@ -2,11 +2,9 @@
 
 #### Overview
 
-This section explains the **core mechanics behind Secured Finance Yield Vaults**.
+This section explains the **core mechanics behind the SF Yield Vault framework**.
 
-While the _Getting Started_ section focuses on how to use Vaults,\
-this section describes **how Vaults and strategies work internally**,\
-including how assets are managed, allocated, and how yield is generated.
+While the [Getting Started](../getting-started/) section focuses on how to use Vaults,this section describes **how Vaults and strategies work internally**,including how assets are managed, allocated, and how yield is generated.
 
 The pages in this section are intended for users who want a deeper understanding of the system,\
 as well as developers and advanced users.
@@ -29,7 +27,7 @@ Each page builds on the previous one, starting from general concepts and moving 
 
 #### Vault System Overview
 
-This page introduces the **high-level architecture** of Yield Vaults.
+This page introduces the **high-level architecture** of Vaults.
 
 It explains:
 
@@ -47,7 +45,7 @@ This page explains **how strategies are designed and connected to Vaults**.
 
 It covers:
 
-* What a strategy is in the context of Yield Vaults
+* What a strategy is in the context of Vaults
 * How Vaults allocate assets to strategies
 * How strategies are added, managed, and updated
 
@@ -59,5 +57,4 @@ The concepts in this page are shared across all current and future strategies.
 
 This page provides an overview of **Vaults and strategies that are currently available**.
 
-It serves as a navigation hub and links to detailed documentation for each strategy,\
-allowing users to explore strategy-specific behavior and characteristics.
+It serves as a navigation hub and links to detailed documentation for each strategy, allowing users to explore strategy-specific behavior and characteristics.

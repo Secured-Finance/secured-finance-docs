@@ -2,9 +2,9 @@
 description: Why the protocol quotes APR, and how to compare rates across venues
 ---
 
-# APR vs APY
+# 📈 APR vs APY
 
-**APR** (Annual Percentage Rate) is simple interest — the periodic rate scaled to a year, ignoring compounding. **APY** (Annual Percentage Yield) is the effective annual return *including* compounding:
+**APR** (Annual Percentage Rate) is simple interest — the periodic rate scaled to a year, ignoring compounding. **APY** (Annual Percentage Yield) is the effective annual return _including_ compounding:
 
 $$
 APY = \left(1 + \frac{APR}{n}\right)^{n} - 1 \qquad (n = \text{compounding periods per year})
@@ -14,7 +14,7 @@ $$
 
 * **Fixed-income convention** — bond markets quote simple rates; participants from traditional finance expect APR.
 * **Nothing to compound** — a Zero-Coupon bond has exactly two cash flows. There are no interim payments to reinvest, so a compounding assumption would be fiction.
-* **Exact by construction** — buy at 98.04, redeem at 100: your return *is* the discount. The APR label just annualizes it (see [Zero-Coupon Bonds](../core-concepts/zero-coupon-bonds.md) for the formulas).
+* **Exact by construction** — buy at 98.04, redeem at 100: your return _is_ the discount. The APR label just annualizes it (see [Zero-Coupon Bonds](../core-concepts/zero-coupon-bonds.md) for the formulas).
 
 Most variable-rate DeFi protocols quote APY because their rates float and compound continuously — the APY figure assumes today's rate holds for 365 days, which it never does. When comparing rates across venues, convert to a common basis first.
 
@@ -28,11 +28,11 @@ Bob invests 100 USD at "10%" for 6 months:
 The same nominal "10%" differs by how compounding is counted. At 12% nominal for one year:
 
 | Compounding | Effective APY |
-| --- | --- |
-| Annual | 12.00% |
-| Quarterly | 12.55% |
-| Monthly | 12.68% |
-| Daily | 12.75% |
+| ----------- | ------------- |
+| Annual      | 12.00%        |
+| Quarterly   | 12.55%        |
+| Monthly     | 12.68%        |
+| Daily       | 12.75%        |
 
 ## Converting for comparison
 

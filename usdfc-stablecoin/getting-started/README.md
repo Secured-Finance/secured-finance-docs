@@ -19,8 +19,6 @@ USDFC allows you to unlock the value of your FIL holdings while maintaining expo
 
 ## Key Components
 
-<figure><img src="../.gitbook/assets/MintUSDFCforGIF2-ezgif.com-video-to-gif-converter.gif" alt=""><figcaption><p>Overview of the USDFC protocol workflow</p></figcaption></figure>
-
 ### Core Operations
 
 | Operation            | Description                                    | Guide                                                                 |

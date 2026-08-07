@@ -2,7 +2,7 @@
 description: The opening auction that sets a fair price for every new market
 ---
 
-# Itayose: Fair Price Discovery
+# 🤝 Itayose: Fair Price Discovery
 
 **Itayose** (板寄せ — the call-auction method used by Japanese exchanges) determines the opening price whenever a new order book starts trading. Instead of letting the first trade set an arbitrary price, all pre-open orders are matched simultaneously at a single fair price.
 

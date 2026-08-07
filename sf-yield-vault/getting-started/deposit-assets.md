@@ -2,12 +2,11 @@
 
 #### Overview
 
-This page explains how to **deposit assets into a Vault** on Secured Finance.
+This page explains how to **deposit supported assets into a Vault**.
 
-By depositing assets into a Vault, users can participate in automated yield strategies without actively managing positions.\
-In return for a deposit, users receive **Vault Shares**, which represent their proportional ownership of the Vault.
+By depositing assets into a Vault, users can participate in automated yield strategies without actively managing positions. In return for a deposit, users receive **Vault Shares**, which represent their proportional ownership of the Vault.
 
-For the initial release, deposits are supported for the **JPYC Vault**.
+Deposits are currently supported for **JPYC Vault** and **USDFC Vault**.
 
 ***
 
@@ -17,7 +16,7 @@ Before depositing assets into a Vault, please ensure the following:
 
 * You have a supported wallet (e.g. MetaMask)
 * Your wallet is connected to the correct network
-* You hold the required asset (e.g. JPYC)
+* You hold the required asset for the Vault you want to use
 * You understand that Vault returns are **variable** and **not guaranteed**
 
 Depositing into a Vault is not the same as depositing into a bank account.\

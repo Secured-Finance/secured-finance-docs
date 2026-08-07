@@ -4,8 +4,7 @@
 
 This page explains how to **monitor and manage your Vault position** after depositing assets.
 
-Once assets are deposited into a Vault, users do not need to actively manage strategies.\
-However, understanding how to track performance and position status is important for a smooth experience.
+Once assets are deposited into a Vault, users do not need to actively manage strategies. However, understanding how to track performance and position status is important for a smooth experience.
 
 ***
 

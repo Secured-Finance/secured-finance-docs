@@ -16,8 +16,7 @@ Each strategy:
 * Deploys them according to its own logic
 * Reports balances and performance back to the Vault
 
-Strategies are designed to be **independent and reusable**.\
-A single strategy may be connected to multiple Vaults, depending on configuration.
+Strategies are designed to be **independent and reusable**. A single strategy may be connected to multiple Vaults, depending on configuration.
 
 ***
 

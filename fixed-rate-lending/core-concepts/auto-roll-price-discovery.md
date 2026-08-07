@@ -1,27 +1,29 @@
 ---
-description: How the quarterly roll price is determined — fairly, in any liquidity condition
+description: >-
+  How the quarterly roll price is determined — fairly, in any liquidity
+  condition
 ---
 
-# Auto-Roll Price Discovery
+# 💰 Auto-Roll Price Discovery
 
 The auto-roll price determines the rate at which matured positions roll into the nearest 3-month market. It is calculated by a **waterfall** designed to produce a fair, manipulation-resistant price whatever the liquidity conditions:
 
-| Condition | Price source |
-| --- | --- |
-| **Normal liquidity** | Volume-weighted average price (VWAP) of trades in the **6-hour window** before maturity |
-| **No trades in the window** | Current **Mark Price**, adjusted for duration |
-| **No trades for 3 months** | The **previous roll price** |
-| **First roll of a new market, no trades** | The market's **opening price**, adjusted for duration |
+| Condition                                 | Price source                                                                            |
+| ----------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Normal liquidity**                      | Volume-weighted average price (VWAP) of trades in the **6-hour window** before maturity |
+| **No trades in the window**               | Current **Mark Price**, adjusted for duration                                           |
+| **No trades for 3 months**                | The **previous roll price**                                                             |
+| **First roll of a new market, no trades** | The market's **opening price**, adjusted for duration                                   |
 
 ## Example (normal conditions)
 
 Trades in the 6-hour window before a market matures:
 
 | Volume (USDC) | Price |
-| --- | --- |
-| 10,000 | 99.20 |
-| 25,000 | 99.15 |
-| 15,000 | 99.25 |
+| ------------- | ----- |
+| 10,000        | 99.20 |
+| 25,000        | 99.15 |
+| 15,000        | 99.25 |
 
 $$
 \text{VWAP} = \frac{10{,}000 \times 99.20 + 25{,}000 \times 99.15 + 15{,}000 \times 99.25}{50{,}000} = 99.19

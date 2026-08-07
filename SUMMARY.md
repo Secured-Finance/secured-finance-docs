@@ -94,21 +94,22 @@
 * [📔 Contracts & Security](fixed-rate-lending/contracts-and-security.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
-## Yield Vault
+## SF Yield Vault
 
-* [📢 Overview](yield-vault/overview.md)
-* [🧙 Getting Started](yield-vault/getting-started/README.md)
-  * [💴 Deposit Assets](yield-vault/getting-started/deposit-assets.md)
-  * [💰 Withdrawing Assets](yield-vault/getting-started/withdrawing-assets.md)
-  * [📈 Managing Position](yield-vault/getting-started/managing-position.md)
-  * [🎮 Platform Guide](yield-vault/getting-started/platform-guide.md)
-* [🔦 Core Mechanics](yield-vault/core-mechanics/README.md)
-  * [🎬 Vault System Overview](yield-vault/core-mechanics/vault-system-overview.md)
-  * [💿 Strategy Framework and Allocation Model](yield-vault/core-mechanics/strategy-framework-and-allocation-model.md)
-  * [📏 Available Vault and Strategies](yield-vault/core-mechanics/available-vault-and-strategies/README.md)
-    * [💹 JPYC Fixed-Income Strategy](yield-vault/core-mechanics/available-vault-and-strategies/jpyc-fixed-income-strategy.md)
-* [📔 Contracts and Security](yield-vault/contracts-and-security.md)
-* [❓ FAQs](yield-vault/faqs.md)
+* [📢 Overview](sf-yield-vault/overview.md)
+* [🧙 Getting Started](sf-yield-vault/getting-started/README.md)
+  * [💴 Deposit Assets](sf-yield-vault/getting-started/deposit-assets.md)
+  * [💰 Withdrawing Assets](sf-yield-vault/getting-started/withdrawing-assets.md)
+  * [📈 Managing Position](sf-yield-vault/getting-started/managing-position.md)
+  * [🎮 Platform Guide](sf-yield-vault/getting-started/platform-guide.md)
+* [🔦 Core Mechanics](sf-yield-vault/core-mechanics/README.md)
+  * [🎬 Vault System Overview](sf-yield-vault/core-mechanics/vault-system-overview.md)
+  * [💿 Strategy Framework and Allocation Model](sf-yield-vault/core-mechanics/strategy-framework-and-allocation-model.md)
+  * [📏 Available Vault and Strategies](sf-yield-vault/core-mechanics/available-vault-and-strategies/README.md)
+    * [💹 JPYC Lending Strategy](sf-yield-vault/core-mechanics/available-vault-and-strategies/jpyc-fixed-income-strategy.md)
+    * [💲 USDFC Lending Strategy](sf-yield-vault/core-mechanics/available-vault-and-strategies/usdfc-lending-strategy.md)
+* [📔 Contracts and Security](sf-yield-vault/contracts-and-security.md)
+* [❓ FAQs](sf-yield-vault/faqs.md)
 
 ## Developer Portal
 

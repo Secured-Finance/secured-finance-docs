@@ -1,27 +1,26 @@
 # ❓ FAQs
 
-This page answers common questions about **Secured Finance Yield Vaults**.
+This page answers common questions about **SF Yield Vault**.
 
-If you are new to Vaults, we recommend starting with the **Getting Started** section before reading this page.
+If you are new to Vaults, we recommend starting with the [**Getting Started**](getting-started/) section before reading this page.
 
 ***
 
 ## General
 
-#### What is a Yield Vault?
+#### What is SF Yield Vault?
 
-A Yield Vault is a smart contract that allows users to deposit assets and earn yield automatically.
+SF Yield Vault is an automated yield management product built around asset-specific Vault smart contracts. It allows users to deposit assets into Vaults and earn variable yield through underlying strategies.
 
-When you deposit assets into a Vault, you receive **Vault shares** that represent your proportional ownership of the Vault.\
-The value of these shares changes over time based on the performance of the underlying strategy.
+When you deposit assets into a Vault, you receive **Vault shares** that represent your proportional ownership of the Vault. The value of these shares changes over time based on the performance of the underlying strategy.
 
 ***
 
-#### How is a Yield Vault different from Fixed-Rate Lending?
+#### How is SF Yield Vault different from Fixed-Rate Lending?
 
-Yield Vaults and Fixed-Rate Lending serve different purposes.
+SF Yield Vault and Fixed-Rate Lending serve different purposes.
 
-* **Yield Vaults**
+* **SF Yield Vault**
   * Variable yield
   * No fixed maturity
   * Automated strategy allocation
@@ -34,13 +33,14 @@ Users can choose between the two depending on their risk and return preferences.
 
 ***
 
-#### What assets can I deposit into a Yield Vault?
+#### What assets can I deposit into a Vault?
 
 Each Vault supports a single base asset.
 
 Currently available:
 
 * **JPYC Vault** — accepts JPYC deposits only
+* **USDFC Vault** — accepts USDFC deposits only
 
 ***
 
@@ -87,7 +87,7 @@ You can withdraw at any time by redeeming your Vault shares through the **Withdr
 
 #### Why is the amount I receive different from what I deposited?
 
-Yield Vaults generate **variable returns**.
+Vaults generate **variable returns**.
 
 * If the strategy performs well, you may receive more than your initial deposit
 * If losses occur, you may receive less
@@ -125,7 +125,7 @@ Instead, yield increases the total assets held by the Vault, which increases the
 
 #### How is the Price Per Share (PPS) calculated?
 
-The PPS represents the net asset value of a single Vault share and increases as the Vault generates yield:&#x20;
+The PPS represents the net asset value of a single Vault share and increases as the Vault generates yield:
 
 $$
 PPS = \frac{\text{Total Assets Held by the Vault}}{\text{Total Supply of Vault Shares}}
@@ -135,7 +135,7 @@ $$
 
 #### How many shares will I receive upon deposit?
 
-The number of shares minted to your wallet is determined by the PPS at the time of your deposit:&#x20;
+The number of shares minted to your wallet is determined by the PPS at the time of your deposit:
 
 $$
 \text{Shares Minted} = \frac{\text{Amount Deposited}}{PPS}
@@ -145,13 +145,11 @@ $$
 
 #### How much will I receive upon withdrawal?
 
-When you redeem your shares, the amount of the underlying asset you receive is calculated based on the latest PPS:&#x20;
+When you redeem your shares, the amount of the underlying asset you receive is calculated based on the latest PPS:
 
 $$
 \text{Amount Received} = \text{Shares Redeemed} \times PPS
 $$
-
-
 
 ***
 
@@ -188,7 +186,7 @@ This can occur during allocation updates or liquidity management and does not re
 
 No.
 
-Yield Vaults involve risks, including:
+Vaults involve risks, including:
 
 * Smart contract risk
 * Strategy risk

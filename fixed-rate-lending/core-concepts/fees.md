@@ -2,7 +2,7 @@
 description: Every fee in the protocol, and how to minimize them
 ---
 
-# Fees
+# 🧀 Fees
 
 The protocol charges three fees. Current values are maintained in [Protocol Parameters](../protocol-parameters.md); the structure is explained here.
 
@@ -12,14 +12,14 @@ The protocol charges three fees. Current values are maintained in [Protocol Para
 
 The fee is **1% per annum of the notional, prorated by time to maturity**, and is charged in Future Value terms:
 
-| Time to maturity | Fee |
-| --- | --- |
-| 3 months | 0.25% |
-| 6 months | 0.50% |
-| 9 months | 0.75% |
-| 12 months | 1.00% |
+| Time to maturity | Fee   |
+| ---------------- | ----- |
+| 3 months         | 0.25% |
+| 6 months         | 0.50% |
+| 9 months         | 0.75% |
+| 12 months        | 1.00% |
 
-*Example:* borrowing 100 ETH for 6 months with a market order costs 0.50 ETH; the same trade as a limit order that rests on the book costs nothing, while any portion that crosses and fills immediately pays the taker fee.
+_Example:_ borrowing 100 ETH for 6 months with a market order costs 0.50 ETH; the same trade as a limit order that rests on the book costs nothing, while any portion that crosses and fills immediately pays the taker fee.
 
 {% hint style="info" %}
 Orders filled during the [Itayose](../advanced-topics/itayose.md) opening auction are also **fee-free** — an incentive to participate in price discovery for new markets.
@@ -31,7 +31,7 @@ Each quarterly [Auto-Roll](fixed-maturity-and-auto-roll.md) charges the same rat
 
 ## 3. Liquidation fee
 
-Charged to liquidated borrowers: **7% of the liquidated value**, taken from collateral — **5% to the liquidator, 2% to the protocol Reserve Fund**. Details: [Liquidation](liquidation/README.md).
+Charged to liquidated borrowers: **7% of the liquidated value**, taken from collateral — **5% to the liquidator, 2% to the protocol Reserve Fund**. Details: [Liquidation](liquidation/).
 
 ## Where fees go
 

@@ -2,16 +2,14 @@
 description: The order book interface for lending and borrowing
 ---
 
-# Fixed Income (Trading)
+# 💰 Fixed Income (Trading)
 
-The **Fixed Income** tab is the trading interface where you lend and borrow by trading Zero-Coupon bonds. If the terms *buy/sell* and *lend/borrow* feel interchangeable here, that's because they are:
+The **Fixed Income** tab is the trading interface where you lend and borrow by trading Zero-Coupon bonds. If the terms _buy/sell_ and _lend/borrow_ feel interchangeable here, that's because they are:
 
-| Action | Order book side | What it means |
-| --- | --- | --- |
-| **Lend** | Buy a ZC bond | Pay a discounted price now, hold a claim on face value (100) at maturity |
-| **Borrow** | Sell a ZC bond | Receive funds now (requires collateral), owe face value at maturity |
-
-<!-- screenshot: trading-interface -->
+| Action     | Order book side | What it means                                                            |
+| ---------- | --------------- | ------------------------------------------------------------------------ |
+| **Lend**   | Buy a ZC bond   | Pay a discounted price now, hold a claim on face value (100) at maturity |
+| **Borrow** | Sell a ZC bond  | Receive funds now (requires collateral), owe face value at maturity      |
 
 ## Layout
 

@@ -1,16 +1,18 @@
 ---
-description: The instrument behind every fixed rate — price, discount factor, and APR in one page
+description: >-
+  The instrument behind every fixed rate — price, discount factor, and APR in
+  one page
 ---
 
-# Zero-Coupon Bonds
+# 💠 Zero-Coupon Bonds
 
-A **Zero-Coupon (ZC) bond** pays no periodic interest. It trades at a discount and is redeemed at its full face value at maturity — the discount *is* the interest. On Secured Finance, every ZC bond has a face value (par) of **100**, so a bond's price directly expresses its market-implied rate.
+A **Zero-Coupon (ZC) bond** pays no periodic interest. It trades at a discount and is redeemed at its full face value at maturity — the discount _is_ the interest. On Secured Finance, every ZC bond has a face value (par) of **100**, so a bond's price directly expresses its market-implied rate.
 
 The ZC structure was chosen deliberately: only two cash flows (entry and maturity) means minimal gas, no coupon tracking or reinvestment, and transparent yield math.
 
 ## Price, discount factor, and value
 
-The bond price *is* the discount factor, scaled by 100:
+The bond price _is_ the discount factor, scaled by 100:
 
 $$
 \text{ZC Bond Price} = \text{Discount Factor} \times 100
@@ -34,7 +36,7 @@ $$
 APR = \left(\frac{100}{\text{Bond Price}} - 1\right)\times\frac{\text{seconds per year}}{\text{seconds to maturity}}
 $$
 
-*Example:* a 3-month bond at 98.50 → (100/98.50 − 1) × 4.055 ≈ **6.17% APR**.
+_Example:_ a 3-month bond at 98.50 → (100/98.50 − 1) × 4.055 ≈ **6.17% APR**.
 
 **Maturities over 1 year** (annual compounding):
 
@@ -42,10 +44,10 @@ $$
 APR = \left(\frac{100}{\text{Bond Price}}\right)^{1/\text{years to maturity}} - 1
 $$
 
-*Example:* an 18-month bond at 85.00 → (100/85)^(1/1.5) − 1 ≈ **11.44% APR**.
+_Example:_ an 18-month bond at 85.00 → (100/85)^(1/1.5) − 1 ≈ **11.44% APR**.
 
 {% hint style="info" %}
-**Pre-open markets:** during the 7-day [Itayose](../advanced-topics/itayose.md) window, the displayed APR uses the *estimated opening price* and measures time from the trading start date (not the current date) to maturity.
+**Pre-open markets:** during the 7-day [Itayose](../advanced-topics/itayose.md) window, the displayed APR uses the _estimated opening price_ and measures time from the trading start date (not the current date) to maturity.
 {% endhint %}
 
 ## Price bounds

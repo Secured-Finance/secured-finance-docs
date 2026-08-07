@@ -2,11 +2,9 @@
 description: Yield curves and market data — no wallet required
 ---
 
-# Stats
+# 📈 Stats
 
 The [**Stats**](https://app.secured.finance/stats/) tab is the protocol's data dashboard. It works without connecting a wallet.
-
-<!-- screenshot: markets-dashboard -->
 
 ## What you'll find
 

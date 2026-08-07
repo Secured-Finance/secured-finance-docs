@@ -1,6 +1,6 @@
 # Roadmap 2025
 
-### 2025 Q4&#x20;
+### 2025 Q4
 
 * [x] JPYC Integration on Lending Apps
 * [x] Quarterly Markets Launch via Itayose & Auto-roll ([Report](https://medium.com/secured-finance/itayose-auto-rolling-report-q4-2025-02dece8e1abb))
@@ -8,7 +8,7 @@
 
 ### 2025 Q3
 
-* [x] USDFC Payment Gateway (HTTP 402 & EIP-3009)
+* [x] USDFC x402-Ready EIP-3009 Support Merged & Audited ([Report](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/audits/2025-08-Hexens.pdf))
 * [x] PL Genesis Hackathon ([recap](https://medium.com/secured-finance/hack-the-decentralized-economy-with-usdfc-on-filecoin-f52c095928b1))
 * [x] Cumulative Volume surpassed 3.0 million dollar on Lending Apps ([DeFi Llama](https://defillama.com/protocol/dexs/secured-finance))
 * [x] Quarterly Markets Launch via Itayose & Auto-roll

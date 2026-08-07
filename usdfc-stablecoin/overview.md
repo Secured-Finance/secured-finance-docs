@@ -2,9 +2,9 @@
 description: The Role of USDFC Stablecoin
 ---
 
-# 📢 Overview & Benefits
+# 📢 Overview
 
-<figure><img src="../.gitbook/assets/Color Light Background (1).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Color Light Background.svg" alt=""><figcaption></figcaption></figure>
 
 ## Why **Secured Finance launch Stablecoin protocol?**
 

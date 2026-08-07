@@ -2,9 +2,9 @@
 description: How every position rolls at maturity with a single storage update
 ---
 
-# Genesis Value & Compound Factor
+# ⏮️ Genesis Value & Compound Factor
 
-These two constructs let the protocol roll *all* positions at maturity by updating **one number per market**, instead of touching every position — the accounting core of [Auto-Roll](../../core-concepts/fixed-maturity-and-auto-roll.md) and [Lazy Evaluation](lazy-evaluation.md).
+These two constructs let the protocol roll _all_ positions at maturity by updating **one number per market**, instead of touching every position — the accounting core of [Auto-Roll](../../core-concepts/fixed-maturity-and-auto-roll.md) and [Lazy Evaluation](lazy-evaluation.md).
 
 ## Compound Factor
 
@@ -47,8 +47,8 @@ $$
 ## Worked example
 
 1. Roll occurs at AutoRollPrice 0.98 (a unit price of 98.00) with fee rate 0.001. A lender's LCF goes from 1.20 → 1.20 × (1/0.98 − 0.001) ≈ **1.2233**.
-2. A lender with GV = 500: FV moves from 600 → 500 × 1.2233 ≈ **611.6** — the position grew through the roll with *zero* per-position computation.
-3. For 1,000 positions, a naive roll would cost ~20M gas (20k × 1,000 writes). Updating the Compound Factor once costs ~50k gas — a **99.7% reduction** — and individual FVs are derived on read.
+2. A lender with GV = 500: FV moves from 600 → 500 × 1.2233 ≈ **611.6** — the position grew through the roll with _zero_ per-position computation.
+3. For 1,000 positions, a naive roll would cost \~20M gas (20k × 1,000 writes). Updating the Compound Factor once costs \~50k gas — a **99.7% reduction** — and individual FVs are derived on read.
 
 ## Design notes
 

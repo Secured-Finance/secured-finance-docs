@@ -24,6 +24,6 @@ Ready to experience the future of decentralized finance? Choose your path:
 
 * **USDFC Stablecoin:** Mint, borrow, and manage your USDFC by opening a Trove - [Beginners Guide](../usdfc-stablecoin/getting-started/getting-started/)
 * **Fixed-Rate Lending:** Lend and borrow at fixed rates with tokenized debt - [Beginners Guide](../fixed-rate-lending/getting-started/)
-* **SF Yield Vault:** Deposit into curated yield strategies - [Beginners Guide](../yield-vault/getting-started/)
+* **SF Yield Vault:** Deposit into curated yield strategies - [Beginners Guide](../sf-yield-vault/getting-started/)
 
 Visit our [app](https://app.secured.finance/) to start your journey with Secured Finance today!

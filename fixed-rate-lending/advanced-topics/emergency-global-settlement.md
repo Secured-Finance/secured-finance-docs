@@ -2,7 +2,7 @@
 description: The last-resort shutdown that returns user funds
 ---
 
-# Emergency Global Settlement
+# 🌎 Emergency Global Settlement
 
 Emergency Global Settlement is the protocol's last-resort safeguard for catastrophic events — a critical exploit, an unrecoverable bug, or a systemic oracle failure. When executed by the protocol admin, **all markets halt permanently** and the protocol enters a redemption-only state.
 

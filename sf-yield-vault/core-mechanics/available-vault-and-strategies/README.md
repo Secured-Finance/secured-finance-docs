@@ -6,10 +6,9 @@ description: Available Strategies
 
 #### Overview
 
-This section introduces the **strategies currently available within Secured Finance Vaults**.
+This section introduces the **strategies currently available within Vaults**.
 
-A strategy defines _how assets deposited into a Vault are deployed to generate yield_.\
-Vaults may support one or multiple strategies, and strategies may evolve over time as the protocol expands.
+A strategy defines how assets deposited into a Vault are deployed to generate yield. Vaults may support one or multiple strategies, and strategies may evolve over time as the protocol expands.
 
 This page serves as a **navigation hub** for strategy-specific documentation.
 
@@ -24,15 +23,16 @@ For each strategy, you will find a dedicated page that explains:
 * Key characteristics and constraints
 * Risk considerations relevant to users
 
-Strategy pages are written to complement the **Core Mechanics** section and focus on _strategy-specific behavior_, rather than Vault infrastructure.
+Strategy pages are written to complement the **Core Mechanics** section and focus on strategy-specific behavior, rather than Vault infrastructure.
 
 ***
 
 #### Currently Available Strategies
 
-* **JPYC Lending Strategy**\
-  &#xNAN;_&#x41; lending-based strategy that deploys JPYC to generate variable yield._\
-  → [View details](jpyc-fixed-income-strategy.md)
+* [**JPYC Lending Strategy**](jpyc-fixed-income-strategy.md)\
+  A lending-based strategy that deploys JPYC to generate variable yield.
+* [**USDFC Lending Strategy**](usdfc-lending-strategy.md)\
+  A lending-based strategy that deploys USDFC to generate variable yield.
 
 Additional strategies may be introduced in the future and will be listed here as they become available.
 
@@ -49,5 +49,6 @@ Over time, strategies may be:
 * Paused
 * Deprecated
 
-Such changes are handled through governance or operational processes.\
+Such changes are handled through governance or operational processes.
+
 Vaults are designed so that strategy changes do not require users to change how they interact with the Vault.

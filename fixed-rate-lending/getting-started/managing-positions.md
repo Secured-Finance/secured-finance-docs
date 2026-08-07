@@ -2,21 +2,19 @@
 description: Monitor, adjust, and exit your lending and borrowing positions
 ---
 
-# Managing Your Positions
+# 📈 Managing Your Positions
 
 ## Viewing your positions
 
 1. Open the [Portfolio](https://app.secured.finance/portfolio/) tab with your wallet connected.
-2. **Active Positions** shows each position's asset, size, maturity, present value, and P&L.
+2. **Active Positions** shows each position's asset, size, maturity, present value, and P\&L.
 3. **Open Orders**, **Order History**, and **My Transactions** cover everything that hasn't become (or is no longer) a position.
-
-<!-- screenshot: portfolio-active-positions -->
 
 ## For borrowers: watch your collateral coverage
 
 * Check the **collateral utilization / liquidation risk indicator** regularly — it moves from green to red as your Loan-to-Value ratio approaches the liquidation threshold ([current values](../protocol-parameters.md)).
 * Remember that ZC bond prices move with interest rates: your debt's present value changes even when spot prices don't.
-* To reduce risk, deposit more collateral, or reduce the borrow — unwind it, or place an opposite (lend) order for part of the amount. Details: [Liquidation](../core-concepts/liquidation/README.md).
+* To reduce risk, deposit more collateral, or reduce the borrow — unwind it, or place an opposite (lend) order for part of the amount. Details: [Liquidation](../core-concepts/liquidation/).
 
 ## Adding to a position
 
@@ -35,7 +33,7 @@ description: Monitor, adjust, and exit your lending and borrowing positions
 The Unwind action closes the whole position. To reduce it partially, place an **opposite order** for the amount you want to reduce (e.g. a lend order against a borrow position) in the same currency and maturity — filled amounts net against your position.
 
 {% hint style="info" %}
-Unwinding before maturity realizes the position at the *current* market price, which may be better or worse than holding to maturity, depending on how rates have moved.
+Unwinding before maturity realizes the position at the _current_ market price, which may be better or worse than holding to maturity, depending on how rates have moved.
 {% endhint %}
 
 ## What happens at maturity
@@ -58,4 +56,4 @@ More on the mechanics: [Fixed Maturity & Auto-Roll](../core-concepts/fixed-matur
 
 * [Quick Start: Lend](quick-start-lend.md) · [Quick Start: Borrow](quick-start-borrow.md)
 * [Tokenization](../core-concepts/tokenization.md) — move a position out as an ERC-20 token
-* [Liquidation](../core-concepts/liquidation/README.md) — risk management for borrowers
+* [Liquidation](../core-concepts/liquidation/) — risk management for borrowers

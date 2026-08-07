@@ -38,7 +38,7 @@ To mint additional USDFC, you need to adjust your Trove.
 1. Click the "Update Trove" tab
 2. This will open the Trove adjustment interface
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.11.56 (1).png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.11.56.png" alt=""><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
 
 ## Step 3: Specify Minting Amount
 

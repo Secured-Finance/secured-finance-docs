@@ -2,9 +2,9 @@
 description: How ZC bond positions are valued for P&L and LTV
 ---
 
-# Mark to Market
+# ⚖️ Mark to Market
 
-Positions are valued at current market prices — not book value — for both P\&L display and [liquidation](README.md) LTV calculations. The reference price is called the **Mark Price**.
+Positions are valued at current market prices — not book value — for both P\&L display and [liquidation](./) LTV calculations. The reference price is called the **Mark Price**.
 
 ## How Mark Price is computed
 
@@ -12,11 +12,11 @@ The Mark Price is a **volume-weighted average price (VWAP) per block**, computed
 
 **Example** — two trades in one block:
 
-| Trade | PV amount | Price | FV amount |
-| --- | --- | --- | --- |
-| A | 1,000 | 94.00 | 1,063.83 |
-| B | 1,000 | 92.00 | 1,086.96 |
-| **Total** | **2,000** | | **2,150.79** |
+| Trade     | PV amount | Price | FV amount    |
+| --------- | --------- | ----- | ------------ |
+| A         | 1,000     | 94.00 | 1,063.83     |
+| B         | 1,000     | 92.00 | 1,086.96     |
+| **Total** | **2,000** |       | **2,150.79** |
 
 $$
 \text{Mark Price} = \frac{\text{Total PV}}{\text{Total FV}} \times 100 = \frac{2{,}000}{2{,}150.79} \times 100 = 92.99
@@ -40,6 +40,6 @@ This guarantees a valid valuation exists in every market at all times.
 
 ## Related
 
-* [Liquidation](README.md) — where Mark Price is consumed
+* [Liquidation](./) — where Mark Price is consumed
 * [Auto-Roll Price Discovery](../auto-roll-price-discovery.md) — a related but distinct pricing process
 * [Circuit Breaker](../../advanced-topics/circuit-breaker.md) — bounds the trades that feed the VWAP

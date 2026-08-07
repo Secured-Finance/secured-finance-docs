@@ -2,7 +2,7 @@
 description: Lock in a fixed borrowing cost in five steps
 ---
 
-# Quick Start: Borrow
+# 🏦 Quick Start: Borrow
 
 Borrowing on Secured Finance means **selling a Zero-Coupon (ZC) bond**: you receive funds today and repay the bond's face value at maturity. Your borrowing cost is fixed at execution — no floating-rate surprises.
 
@@ -15,8 +15,6 @@ Borrowing on Secured Finance means **selling a Zero-Coupon (ZC) bond**: you rece
 3. Deposit an accepted collateral asset (see [Collateral](../core-concepts/collateral.md) for the list per network) and confirm in your wallet.
 
 Borrowing requires **over-collateralization** — your collateral must be worth significantly more than the amount you borrow. Current thresholds are listed in [Protocol Parameters](../protocol-parameters.md).
-
-<!-- screenshot: portfolio-deposit-collateral -->
 
 ## Step 2 — Choose a market
 
@@ -33,13 +31,11 @@ Borrowing requires **over-collateralization** — your collateral must be worth 
 3. Enter the amount, review the implied APR, repayment amount at maturity, and collateral usage, then click **Place Order**.
 4. Confirm in your wallet. Borrowed funds are credited to your protocol account, ready to withdraw or reuse.
 
-<!-- screenshot: place-borrow-order -->
-
 ## Step 4 — Watch your position health
 
 After borrowing, monitor your **collateral coverage** in the Portfolio tab:
 
-* Your position can be **liquidated** if your Loan-to-Value ratio reaches the liquidation threshold (see [Liquidation](../core-concepts/liquidation/README.md)).
+* Your position can be **liquidated** if your Loan-to-Value ratio reaches the liquidation threshold (see [Liquidation](../core-concepts/liquidation/)).
 * Both a fall in collateral value **and** a rise in the borrowed asset's value push your LTV up.
 * To reduce risk: deposit more collateral, or reduce the borrow — unwind it, or place an opposite (lend) order for part of the amount ([Managing Positions](managing-positions.md)).
 
@@ -49,11 +45,11 @@ After borrowing, monitor your **collateral coverage** in the Portfolio tab:
 There is **no automatic settlement**. At maturity your debt is automatically rolled into the nearest 3-month market (**Auto-Roll** — protocol-wide, not configurable), and the rolled debt accrues the new market rate plus a roll fee. To close your debt, **unwind the position manually**: Portfolio → select the position → **Unwind** (buy back the bond).
 {% endhint %}
 
-| You want to… | Do this |
-| --- | --- |
-| Extend the loan at the new market rate | Nothing — Auto-Roll handles it (roll fee applies) |
-| Repay and close | **Unwind** the position, then withdraw remaining collateral |
-| Repay part of the loan | Place an opposite (lend) **order** for the amount to repay — filled amounts net against your debt ([Managing Positions](managing-positions.md)) |
+| You want to…                           | Do this                                                                                                                                         |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Extend the loan at the new market rate | Nothing — Auto-Roll handles it (roll fee applies)                                                                                               |
+| Repay and close                        | **Unwind** the position, then withdraw remaining collateral                                                                                     |
+| Repay part of the loan                 | Place an opposite (lend) **order** for the amount to repay — filled amounts net against your debt ([Managing Positions](managing-positions.md)) |
 
 ## Troubleshooting
 
@@ -64,5 +60,5 @@ There is **no automatic settlement**. At maturity your debt is automatically rol
 ## Next steps
 
 * [Collateral](../core-concepts/collateral.md) — accepted assets and haircuts per network
-* [Liquidation](../core-concepts/liquidation/README.md) — thresholds, fees, and how to stay safe
+* [Liquidation](../core-concepts/liquidation/) — thresholds, fees, and how to stay safe
 * [Managing Your Positions](managing-positions.md) — day-to-day position management

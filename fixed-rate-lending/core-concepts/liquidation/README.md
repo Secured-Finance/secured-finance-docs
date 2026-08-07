@@ -2,7 +2,7 @@
 description: How under-collateralized positions are handled — the single source of truth
 ---
 
-# Liquidation
+# 🚰 Liquidation
 
 Liquidation keeps the protocol solvent. When a borrower's collateral no longer sufficiently covers their debt, anyone may repay part of that debt in exchange for the borrower's collateral plus a fee. This protects lenders from default risk without credit checks or intermediaries.
 
@@ -37,15 +37,15 @@ Positions are valued with [Mark to Market](mark-to-market.md) pricing for ZC bon
 
 Alice deposits 10 ETH ($20,000) and borrows 12,000 USDC (LTV 60%).
 
-| Event | Collateral value | LTV | Status |
-| --- | --- | --- | --- |
-| Entry | $20,000 | 60% | Healthy |
-| ETH → $1,600 | $16,000 | 75% | At risk |
-| ETH → $1,500 | $15,000 | 80% | **Liquidatable** |
+| Event        | Collateral value | LTV | Status           |
+| ------------ | ---------------- | --- | ---------------- |
+| Entry        | $20,000          | 60% | Healthy          |
+| ETH → $1,600 | $16,000          | 75% | At risk          |
+| ETH → $1,500 | $15,000          | 80% | **Liquidatable** |
 
-A liquidator repays 6,000 USDC (50% of debt). Collateral seized: 6,000 × 1.07 = $6,420 of ETH (4.28 ETH). Alice keeps 5.72 ETH against 6,000 USDC of debt — LTV back to ~70%.
+A liquidator repays 6,000 USDC (50% of debt). Collateral seized: 6,000 × 1.07 = $6,420 of ETH (4.28 ETH). Alice keeps 5.72 ETH against 6,000 USDC of debt — LTV back to \~70%.
 
-More scenarios, including liquidation caused by the *borrowed* asset rallying: [Liquidation Case Study](liquidation-case-study.md).
+More scenarios, including liquidation caused by the _borrowed_ asset rallying: [Liquidation Case Study](liquidation-case-study.md).
 
 ## How to avoid liquidation
 

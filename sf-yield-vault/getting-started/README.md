@@ -1,12 +1,14 @@
 ---
-description: Vault Basic
+description: SF Yield Vault Basic
 ---
 
 # 🧙 Getting Started
 
-#### What is a Vault?
+#### What is SF Yield Vault?
 
-A Vault is an ERC-4626–compliant smart contract that:
+SF Yield Vault is an automated yield management product that allows users to deposit assets into asset-specific Vaults and earn variable yield through underlying strategies.
+
+At the technical level, a Vault is an asset-specific ERC-4626–compliant smart contract that:
 
 * Accepts deposits of a specific asset
 * Issues Vault shares representing proportional ownership
@@ -21,6 +23,7 @@ Users do not interact with strategies directly. Instead, they hold Vault shares,
 Each Vault supports a single base asset.
 
 * JPYC Vault: JPYC
+* USDFC Vault: USDFC
 
 Additional Vaults with different base assets may be introduced in the future.
 

@@ -80,7 +80,7 @@ You can generally withdraw your USDFC from the Stability Pool at any time.
 As a general rule, deposits in the Stability Pool can be withdrawn at any time, and there is no minimum lockup period. However, withdrawals are temporarily suspended while there are Troves below the minimum collateral ratio of 110% that have not yet been liquidated.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
 
 ## How Stability Pool Rewards Work
 

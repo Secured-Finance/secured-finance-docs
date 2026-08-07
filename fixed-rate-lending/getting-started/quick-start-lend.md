@@ -2,7 +2,7 @@
 description: Earn a fixed, predictable yield in five steps
 ---
 
-# Quick Start: Lend
+# 💵 Quick Start: Lend
 
 Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount** — you pay less than face value today, and the position is worth full face value at maturity. The difference is your yield, locked in at execution.
 
@@ -13,8 +13,6 @@ Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount*
 1. Open [app.secured.finance](https://app.secured.finance/) and click **Connect Wallet**.
 2. Go to the **Portfolio** tab and click **Deposit**.
 3. Choose the asset and amount you want to lend, then confirm in your wallet.
-
-<!-- screenshot: portfolio-deposit -->
 
 ## Step 2 — Choose a market
 
@@ -31,8 +29,6 @@ Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount*
 3. Enter the amount, review the implied APR and estimated fee, and click **Place Order**.
 4. Confirm in your wallet.
 
-<!-- screenshot: place-lend-order -->
-
 ## Step 4 — What happens next
 
 * **Filled order** → you now hold a ZC bond position, visible in **Portfolio → Active Positions**. Its value accrues toward face value (100) as maturity approaches.
@@ -46,11 +42,11 @@ There is **no automatic settlement**. At maturity your position is automatically
 
 Your three options as maturity approaches:
 
-| You want to… | Do this |
-| --- | --- |
+| You want to…                        | Do this                                                                                   |
+| ----------------------------------- | ----------------------------------------------------------------------------------------- |
 | Keep earning at the new market rate | Nothing — Auto-Roll handles it (a roll fee applies, see [Fees](../core-concepts/fees.md)) |
-| Exit and withdraw | **Unwind**, then **Withdraw** from Portfolio |
-| Move the position elsewhere | Tokenize it as a [ZC Token](../core-concepts/tokenization.md) (ERC-20) |
+| Exit and withdraw                   | **Unwind**, then **Withdraw** from Portfolio                                              |
+| Move the position elsewhere         | Tokenize it as a [ZC Token](../core-concepts/tokenization.md) (ERC-20)                    |
 
 ## Troubleshooting
 

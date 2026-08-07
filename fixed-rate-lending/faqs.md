@@ -2,7 +2,7 @@
 description: Frequently asked questions about the Fixed-Rate Lending Protocol
 ---
 
-# FAQs
+# ❓ FAQs
 
 ## Platform basics
 
@@ -26,7 +26,7 @@ A debt instrument sold at a discount and worth its full face value (100) at matu
 
 <summary>What asset underlies each ZC bond?</summary>
 
-The specific currency of that market: lending ETH in the DEC2026 market gives you a claim denominated in ETH (*ZC ETH DEC2026*). Each bond is asset-specific, maturity-specific, and can be [tokenized as an ERC-20](core-concepts/tokenization.md) for use across DeFi.
+The specific currency of that market: lending ETH in the DEC2026 market gives you a claim denominated in ETH (_ZC ETH DEC2026_). Each bond is asset-specific, maturity-specific, and can be [tokenized as an ERC-20](core-concepts/tokenization.md) for use across DeFi.
 
 </details>
 
@@ -94,7 +94,7 @@ It varies by network — WBTC, ETH, USDC, and uMINT (RWA) on Ethereum; WBTC, ETH
 
 <summary>What happens if my collateral value falls?</summary>
 
-Your LTV rises. At the liquidation threshold (80%), up to 50% of your debt can be liquidated with a 7% fee taken from collateral. Watch the risk indicator in [Portfolio](getting-started/platform-guide/portfolio.md) and add collateral or reduce debt early. See [Liquidation](core-concepts/liquidation/README.md).
+Your LTV rises. At the liquidation threshold (80%), up to 50% of your debt can be liquidated with a 7% fee taken from collateral. Watch the risk indicator in [Portfolio](getting-started/platform-guide/portfolio.md) and add collateral or reduce debt early. See [Liquidation](core-concepts/liquidation/).
 
 </details>
 
@@ -112,7 +112,7 @@ The opening auction that sets a fair price whenever a new quarterly market launc
 
 <summary>How can the order book be fully on-chain? Isn't that too expensive?</summary>
 
-It's economical thanks to three techniques: Red-Black Trees for O(log n) order management, lazy evaluation to defer storage writes, and Genesis Value accounting to roll all positions with one update. See the [Orderbook Deep Dive](advanced-topics/orderbook-deep-dive/README.md).
+It's economical thanks to three techniques: Red-Black Trees for O(log n) order management, lazy evaluation to defer storage writes, and Genesis Value accounting to roll all positions with one update. See the [Orderbook Deep Dive](advanced-topics/orderbook-deep-dive/).
 
 </details>
 
@@ -126,6 +126,6 @@ Yes — liquidation is permissionless and pays a 5% fee to the liquidator. Start
 
 ## Still stuck?
 
-* Guides: [Getting Started](getting-started/README.md)
+* Guides: [Getting Started](getting-started/)
 * Developers: [Developer Portal](../developer-portal/introduction.md)
 * Community support: [Support & Contacts](../community/support-and-contacts.md)

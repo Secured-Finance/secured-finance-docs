@@ -2,10 +2,9 @@
 
 #### Overview
 
-This page explains how to **withdraw assets from a Vault** on Secured Finance.
+This page explains how to **withdraw assets from a Vault**.
 
-Withdrawing assets involves redeeming your **Vault Shares** in exchange for the underlying asset.\
-The amount you receive depends on the current **value per share** at the time of withdrawal.
+Withdrawing assets involves redeeming your **Vault Shares** in exchange for the underlying asset. The amount you receive depends on the current **value per share** at the time of withdrawal.
 
 ***
 
@@ -51,7 +50,7 @@ Your active Vault positions will be displayed once connected.
 
 * Navigate to **Vaults** or **Portfolio**
 * Select the Vault you wish to withdraw from
-  * For example: **JPYC Lending Vault**
+  * For example: **JPYC Vault**
 * Review your current:
   * Vault Share balance
   * Estimated asset value

@@ -2,7 +2,7 @@
 description: Quarterly markets, and exactly what happens to your position at maturity
 ---
 
-# Fixed Maturity & Auto-Roll
+# ⏳ Fixed Maturity & Auto-Roll
 
 ## Quarterly markets
 
@@ -12,7 +12,6 @@ Markets are named by contract month: **DEC2026** matures on the last Friday of D
 
 Standardized maturities concentrate liquidity: instead of fragmenting orders across arbitrary dates, everyone trades the same eight points on the curve — which is also what makes a readable [yield curve](../getting-started/platform-guide/markets.md) possible.
 
-<!-- screenshot/figure: fixed-maturity-orderbooks (redraw of former fixedmaturity.gif) -->
 <figure><img src="../../.gitbook/assets/fixedmaturity.gif" alt="" width="563"><figcaption><p>Fixed Maturity Standard of 8 distinct order books ranging from 3 months to 2 years</p></figcaption></figure>
 
 ## The quarterly cycle
@@ -52,12 +51,12 @@ Each roll charges the auto-roll fee (same rate as the taker fee, prorated — se
 
 ## Your choices at maturity
 
-| You want to… | Action |
-| --- | --- |
-| Stay invested at the new market rate | Nothing — Auto-Roll continues each quarter |
-| Exit | **Unwind** (before or after maturity), then withdraw |
-| Choose a *different* maturity | Unwind, then place a new order in the market you prefer |
-| Use the position elsewhere in DeFi | [Tokenize](tokenization.md) it as an ERC-20 ZC Token before maturity |
+| You want to…                         | Action                                                               |
+| ------------------------------------ | -------------------------------------------------------------------- |
+| Stay invested at the new market rate | Nothing — Auto-Roll continues each quarter                           |
+| Exit                                 | **Unwind** (before or after maturity), then withdraw                 |
+| Choose a _different_ maturity        | Unwind, then place a new order in the market you prefer              |
+| Use the position elsewhere in DeFi   | [Tokenize](tokenization.md) it as an ERC-20 ZC Token before maturity |
 
 ## Related
 

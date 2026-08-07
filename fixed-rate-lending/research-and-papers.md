@@ -2,7 +2,7 @@
 description: The research foundations of the Fixed-Rate Lending Protocol
 ---
 
-# Research & Papers
+# 📖 Research & Papers
 
 ## White Paper — A Decentralized Solution to Long-Term Capital Markets
 
@@ -17,5 +17,5 @@ Eurocurrency (offshore, non-regulated fiat) and cryptocurrency share defining tr
 📄 [Read the full concept paper](https://blog.secured.finance/the-intersection-of-the-eurocurrency-and-cryptocurrency-markets-f933418ae349)
 
 {% hint style="info" %}
-These papers describe the founding thesis (2020–2023). For the current protocol design, see [Core Concepts](core-concepts/README.md); for the current product line-up and traction, see [Protocol at a Glance](../introduction/protocol-at-a-glance.md).
+These papers describe the founding thesis (2020–2023). For the current protocol design, see [Core Concepts](core-concepts/); for the current product line-up and traction, see [Protocol at a Glance](../introduction/protocol-at-a-glance.md).
 {% endhint %}

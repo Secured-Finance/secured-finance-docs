@@ -2,7 +2,7 @@
 description: Running liquidations — permissionless, incentivized, automatable
 ---
 
-# Liquidator's Guide
+# 👮‍♂️ Liquidator's Guide
 
 Anyone — an EOA or a smart contract — can execute liquidations and earn the liquidator's share of the liquidation fee (currently 5% of the liquidated value; the remaining 2% goes to the protocol Reserve Fund — see [Protocol Parameters](../../protocol-parameters.md)). No registration or permission is required.
 
@@ -10,7 +10,7 @@ Anyone — an EOA or a smart contract — can execute liquidations and earn the 
 
 ### 1. Find eligible positions (off-chain)
 
-Call `TokenVault.getCoverage(user)` for candidate accounts. A position is liquidatable when coverage returns **greater than 8000** (= LTV above 80%). Candidate discovery is typically done via the [subgraph](../../../developer-portal/api-reference/fixed-rate-lending-subgraph/README.md) or by indexing protocol events.
+Call `TokenVault.getCoverage(user)` for candidate accounts. A position is liquidatable when coverage returns **greater than 8000** (= LTV above 80%). Candidate discovery is typically done via the [subgraph](../../../developer-portal/api-reference/fixed-rate-lending-subgraph/) or by indexing protocol events.
 
 ### 2. Choose what to liquidate
 
@@ -66,6 +66,6 @@ For a liquidation repaying debt worth `D`:
 
 ## Related
 
-* [Liquidation](README.md) — mechanism and borrower's view
+* [Liquidation](./) — mechanism and borrower's view
 * [Contracts & Security](../../contracts-and-security.md) — contract addresses
 * [Developer Portal](../../../developer-portal/introduction.md) — subgraph and SDK

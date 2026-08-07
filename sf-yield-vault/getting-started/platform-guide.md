@@ -2,7 +2,7 @@
 
 #### Overview
 
-This page explains the **Vault interface** on Secured Finance.
+This page explains the **Vault interface**.
 
 At this stage, the Vault interface allows users to perform **two actions only**:
 
@@ -22,7 +22,7 @@ This section displays:
 * **Vault name**\
   Example: `JPYC`
 * **Vault contract address**\
-  The on-chain address of the Vault contract
+  Example: `0x7a6E3635694952dC00F6bA4d4AD1a7B892028789`
 * **Network and asset information**\
   Example: JPYC on Ethereum
 * **Summary metrics**

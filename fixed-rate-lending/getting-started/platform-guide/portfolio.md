@@ -2,11 +2,9 @@
 description: Your assets, collateral, positions, and history in one place
 ---
 
-# Portfolio
+# 🐋 Portfolio
 
 The [**Portfolio**](https://app.secured.finance/portfolio/) tab is your account home: deposits, withdrawals, collateral health, positions, and full history.
-
-<!-- screenshot: portfolio-overview -->
 
 ## Overview metrics
 
@@ -25,7 +23,7 @@ The [**Portfolio**](https://app.secured.finance/portfolio/) tab is your account 
 * **Collateral utilization** — how much of your capacity is in use
 * **Liquidation risk indicator** — green → yellow → red as your LTV approaches the liquidation threshold ([current values](../../protocol-parameters.md))
 
-When the indicator trends red: deposit more collateral or partially [unwind](../managing-positions.md) borrow positions. See [Liquidation](../../core-concepts/liquidation/README.md).
+When the indicator trends red: deposit more collateral or partially [unwind](../managing-positions.md) borrow positions. See [Liquidation](../../core-concepts/liquidation/).
 
 ## Transactions
 
