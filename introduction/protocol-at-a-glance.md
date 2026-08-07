@@ -13,8 +13,8 @@ Secured Finance operates two complementary DeFi protocols with a third product l
 | Product                | What it does                                                                       | Networks                     |
 | ---------------------- | ---------------------------------------------------------------------------------- | ---------------------------- |
 | **Fixed-Rate Lending** | Fully on-chain order book for fixed-rate, fixed-term lending via Zero-Coupon bonds | Ethereum, Arbitrum, Filecoin |
-| **USDFC Stablecoin**   | The first decentralized stablecoin fully collateralized by FIL                     | Filecoin (FVM)               |
 | **SF Yield Vault**     | Curated yield strategies, including a JPYC lending strategy                        | Ethereum                     |
+| **USDFC Stablecoin**   | The first decentralized stablecoin fully collateralized by FIL                     | Filecoin (FVM)               |
 
 ## Traction
 
