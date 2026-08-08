@@ -30,7 +30,7 @@ At a high level, the strategy generates yield by:
 * Earning interest from borrowers over time
 * Returning accrued interest to the Vault
 
-The resulting yield is reflected as an increase in the Vault’s total assets, which in turn increases the value of Vault shares.
+The resulting yield is reflected as an increase in the Vault's total assets, which in turn increases the value of Vault shares.
 
 Returns are **variable** and depend on market conditions.
 
@@ -38,7 +38,7 @@ Returns are **variable** and depend on market conditions.
 
 #### User Experience
 
-From the user’s perspective:
+From the user's perspective:
 
 * USDFC is deposited into the Vault
 * Vault shares are received
@@ -51,7 +51,7 @@ Users do not need to select lending terms, manage maturities, or rebalance posit
 
 #### Relationship to Fixed-Rate Lending
 
-The USDFC Lending Strategy differs from Secured Finance’s Fixed-Rate Lending product in several key ways:
+The USDFC Lending Strategy differs from Secured Finance's Fixed-Rate Lending product in several key ways:
 
 * **USDFC Lending Strategy**
   * Variable yield
