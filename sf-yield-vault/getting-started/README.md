@@ -1,50 +1,18 @@
 ---
-description: SF Yield Vault Basic
+description: Deposit, withdraw, and track your vault position
 ---
 
 # 🧙 Getting Started
 
-#### What is SF Yield Vault?
+This section walks you through using the [**SF Yield Vault app**](https://vaults.secured.finance/) — from your first deposit to tracking and withdrawing your position. If you want the concepts first, start with the [Overview](../overview.md).
 
-SF Yield Vault is an automated yield management product that allows users to deposit assets into asset-specific Vaults and earn variable yield through underlying strategies.
+| Guide | What it covers |
+| --- | --- |
+| [Deposit assets](deposit-assets.md) | Connect a wallet, approve the asset, and make your first deposit |
+| [Withdraw assets](withdrawing-assets.md) | Redeem vault shares for the underlying asset |
+| [Manage your position](managing-position.md) | What to monitor, how yield shows up, when to act |
+| [Platform guide](platform-guide.md) | Every tab and field of the vault interface |
 
-At the technical level, a Vault is an asset-specific ERC-4626–compliant smart contract that:
-
-* Accepts deposits of a specific asset
-* Issues Vault shares representing proportional ownership
-* Allocates deposited assets to one or more yield strategies
-
-Users do not interact with strategies directly. Instead, they hold Vault shares, whose value increases as yield is generated.
-
-***
-
-#### Supported Assets
-
-Each Vault supports a single base asset.
-
-* JPYC Vault: JPYC
-* USDFC Vault: USDFC
-
-Additional Vaults with different base assets may be introduced in the future.
-
-***
-
-#### Depositing into a Vault
-
-When a user deposits assets into a Vault:
-
-1. The Vault receives the asset
-2. Vault shares are minted to the user
-3. Assets are allocated to one or more strategies according to the Vault configuration
-
-Deposits are permissionless unless explicitly restricted.
-
-***
-
-#### Withdrawing from a Vault
-
-Users can withdraw by redeeming their Vault shares.
-
-* Withdrawals return the underlying asset
-* The amount received depends on the current share price
-* Withdrawals may be subject to limits or delays, depending on strategy liquidity
+{% hint style="info" %}
+Each vault accepts a single base asset — JPYC for the **JPYC Vault** (Ethereum), USDFC for the **USDFC Vault** (Filecoin). Make sure your wallet is on the right network and holds the asset before you start.
+{% endhint %}
