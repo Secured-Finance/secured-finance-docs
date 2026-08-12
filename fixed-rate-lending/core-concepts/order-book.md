@@ -51,7 +51,7 @@ A lender wants 2,000 USDC to earn at least 4% APR for 6 months:
 1. Target price: 100 / (1 + 0.04 × 0.5) ≈ **98.04**
 2. They place a **limit lend order** at 98.04 for 2,000 USDC.
 3. When matched, they lend 2,000 USDC and open a lending position with a face value of approximately 2,039.98 USDC.
-4. Held to maturity, the position earns approximately 39.98 USDC in fixed interest, with no trading fee because it was a limit order.
+4. Held to maturity, the position earns approximately 39.98 USDC in fixed interest, with no trading fee because the order rested on the book rather than crossing it.
 
 ## Related
 
