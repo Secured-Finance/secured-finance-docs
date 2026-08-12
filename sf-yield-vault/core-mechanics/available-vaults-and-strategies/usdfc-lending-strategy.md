@@ -10,7 +10,7 @@ The **USDFC Lending Strategy** is the strategy deployed within the [**USDFC Vaul
 
 This strategy is designed to generate yield by deploying **USDFC** into the Secured Finance fixed-rate lending markets on Filecoin, allowing Vault participants to earn variable returns without actively managing positions.
 
-The strategy is **fully rule-based**: every rule described on this page is encoded in the deployed strategy contract, which can be inspected on-chain directly from the Vault page.
+The strategy is **fully rule-based**: every rule described on this page is encoded in the deployed strategy contract.
 
 | | |
 | --- | --- |
