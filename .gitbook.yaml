@@ -45,6 +45,9 @@ redirects:
   fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value: fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md
   fixed-rate-lending/advanced-topics/orderbook-deep-dive/compound-factor: fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md
   fixed-rate-lending/deployed-contracts: fixed-rate-lending/contracts-and-security.md
+  sf-yield-vault/core-mechanics/available-vault-and-strategies: sf-yield-vault/core-mechanics/available-vaults-and-strategies/README.md
+  sf-yield-vault/core-mechanics/available-vault-and-strategies/jpyc-fixed-income-strategy: sf-yield-vault/core-mechanics/available-vaults-and-strategies/jpyc-lending-strategy.md
+  sf-yield-vault/core-mechanics/available-vault-and-strategies/usdfc-lending-strategy: sf-yield-vault/core-mechanics/available-vaults-and-strategies/usdfc-lending-strategy.md
   # --- Legacy URLs still hardcoded in secured-finance-app (currently 404) ---
   platform-guide/unique-features/fair-price-discovery: fixed-rate-lending/advanced-topics/itayose.md
   top/secured-finance-points-sfp: community/tokenomics/secured-finance-points-sfp-v2/README.md
