@@ -22,7 +22,7 @@ Each strategy periodically **reports** its gains or losses to the vault — the 
 
 ## Liquidity and withdrawals
 
-A strategy keeps part of its capital deployed in yield-generating positions, so instant liquidity can be lower than total assets. When you withdraw, the vault first uses idle balances, then frees capital from the strategy. Under normal conditions this is seamless; in stressed conditions — for example when deployed positions cannot be unwound at acceptable prices — a withdrawal may be limited to available liquidity or take longer.
+A strategy keeps part of its capital deployed in yield-generating positions, so instant liquidity can be lower than total assets. When you withdraw, the vault first uses idle balances, then frees capital from the strategy. Under normal conditions this is seamless. In stressed conditions — when deployed positions cannot be unwound against the live order book — **the withdrawal transaction reverts** rather than executing at a distorted price: your funds stay in the vault and you can retry later or in a smaller size. Withdrawal availability is therefore not guaranteed at all times.
 
 {% hint style="info" %}
 The current lending strategies deploy into [Fixed-Rate Lending](../../fixed-rate-lending/overview.md) order books, so their liquidity ultimately depends on those markets — the strategy unwinds positions there to free capital for withdrawals.
