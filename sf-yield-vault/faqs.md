@@ -38,7 +38,7 @@ Each vault takes a single base asset: the **JPYC Vault** accepts JPYC (Ethereum)
 
 <summary>What happens when I deposit?</summary>
 
-Your assets transfer to the vault contract, vault shares are minted to your wallet, and the vault allocates the assets to its strategy. You never interact with the strategy directly. Walkthrough: [Deposit assets](getting-started/deposit-assets.md).
+Your assets transfer to the vault contract and vault shares are minted to your wallet. The vault may then allocate the assets to its strategy — funds can also sit unallocated for a time during allocation updates or liquidity management. You never interact with the strategy directly. Walkthrough: [Deposit assets](getting-started/deposit-assets.md).
 
 </details>
 
@@ -56,7 +56,7 @@ Yes — a one-time approval per asset per vault, before your first deposit. The 
 
 <summary>Can I withdraw at any time?</summary>
 
-Yes — there is no lock-up or fixed term. Withdrawals depend on strategy liquidity, so in stressed markets an amount may be limited or take longer. See [Withdraw assets](getting-started/withdrawing-assets.md).
+Yes in the sense that there is no lock-up or fixed term — you can request a withdrawal whenever you like. Completion depends on strategy liquidity: if the underlying order book cannot absorb the unwind, the transaction reverts and you can retry later or in a smaller size. See [Withdraw assets](getting-started/withdrawing-assets.md).
 
 </details>
 
@@ -91,7 +91,7 @@ By design. Yield appears in the **value of each share**, not the share count —
 <summary>How is the price per share (PPS) calculated?</summary>
 
 $$
-PPS = \frac{\text{Total Assets Held by the Vault}}{\text{Total Supply of Vault Shares}}
+PPS = \frac{\text{Total Assets (idle + reported strategy balances)}}{\text{Total Supply of Vault Shares}}
 $$
 
 Deposits mint $$\text{Amount} / PPS$$ shares; withdrawals return $$\text{Shares} \times PPS$$ assets, always at the PPS current at execution.
@@ -122,7 +122,7 @@ Assets temporarily not deployed to a strategy — normal during allocation updat
 
 <summary>Are there any fees?</summary>
 
-No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on harvested yield**, deducted before gains reach the vault — the value per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
+No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on realized profits**, deducted before gains reach the vault — the value per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
 
 </details>
 
