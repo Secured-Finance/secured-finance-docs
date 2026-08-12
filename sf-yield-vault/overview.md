@@ -10,9 +10,9 @@ The [**SF Yield Vault**](https://vaults.secured.finance/) is Secured Finance's a
 
 * Each vault accepts a **single base asset** and allocates it to one or more yield strategies.
 * Your share count stays constant; the **value per share** rises as yield accrues (and can fall if the strategy takes losses).
-* You can withdraw at any time by redeeming shares, subject to strategy liquidity.
+* You can redeem shares at any time, but a withdrawal depends on available strategy liquidity — if the underlying order book cannot absorb the unwind, the transaction reverts and can be retried later or in a smaller size.
 
-The architecture is a fork of **Yearn V3** and follows the **ERC-4626** vault standard: custody and accounting live in the vault, yield generation lives in the strategies, so strategies can evolve without changing how you interact.
+The vaults run on **Yearn V3** and follow the **ERC-4626** vault standard: custody and accounting live in the vault, yield generation lives in the strategies, so strategies can evolve without changing how you interact.
 
 ## Available vaults
 
@@ -28,7 +28,7 @@ The current strategies lend into Secured Finance's own [Fixed-Rate Lending](../f
 | | SF Yield Vault | Fixed-Rate Lending |
 | --- | --- | --- |
 | Yield | Variable | Fixed at trade time |
-| Maturity | None — deposit and withdraw anytime | Fixed terms up to 2 years |
+| Maturity | None — no user-facing fixed maturity; withdrawals depend on strategy liquidity and may revert | Fixed terms up to 2 years |
 | Management | Fully automated | You place and manage orders |
 
 Both products coexist: the vault is the hands-off way to access lending yield; Fixed-Rate Lending gives you direct control over rate and term.
