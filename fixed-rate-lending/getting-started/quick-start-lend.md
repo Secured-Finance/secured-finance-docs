@@ -32,7 +32,7 @@ Lending on Secured Finance means **buying a Zero-Coupon (ZC) bond at a discount*
 ## Step 4 — What happens next
 
 * **Filled order** → you now hold a ZC bond position, visible in **Portfolio → Active Positions**. Its value accrues toward face value (100) as maturity approaches.
-* **Open limit order** → it stays on the order book until matched, canceled, or the market matures. Track it under **Open Orders**.
+* **Open limit order** → it stays on the order book until matched, cancelled, or the market matures. Track it under **Open Orders**.
 
 ## Step 5 — At maturity (important)
 
