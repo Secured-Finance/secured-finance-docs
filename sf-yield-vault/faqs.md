@@ -1,224 +1,147 @@
+---
+description: Frequently asked questions about SF Yield Vault
+---
+
 # ❓ FAQs
 
-This page answers common questions about **SF Yield Vault**.
-
-If you are new to Vaults, we recommend starting with the [**Getting Started**](getting-started/) section before reading this page.
-
-***
+Common questions about **SF Yield Vault**. New to vaults? Start with [Getting Started](getting-started/README.md).
 
 ## General
 
-#### What is SF Yield Vault?
+<details>
 
-SF Yield Vault is an automated yield management product built around asset-specific Vault smart contracts. It allows users to deposit assets into Vaults and earn variable yield through underlying strategies.
+<summary>What is SF Yield Vault?</summary>
 
-When you deposit assets into a Vault, you receive **Vault shares** that represent your proportional ownership of the Vault. The value of these shares changes over time based on the performance of the underlying strategy.
+An automated yield product built on asset-specific, ERC-4626 vault contracts. You deposit an asset, receive **vault shares** representing proportional ownership, and earn variable yield as the vault's strategies deploy the assets. The value of your shares changes with strategy performance. See the [Overview](overview.md).
 
-***
+</details>
 
-#### How is SF Yield Vault different from Fixed-Rate Lending?
+<details>
 
-SF Yield Vault and Fixed-Rate Lending serve different purposes.
+<summary>How is SF Yield Vault different from Fixed-Rate Lending?</summary>
 
-* **SF Yield Vault**
-  * Variable yield
-  * No fixed maturity
-  * Automated strategy allocation
-* **Fixed-Rate Lending**
-  * Fixed interest rate
-  * Defined maturity
-  * Manual position management
+The vault gives you **variable** yield with no maturity and fully automated management; Fixed-Rate Lending gives you a **fixed** rate for a defined term with direct position management. The current vault strategies actually lend into the Fixed-Rate Lending markets on your behalf — the vault is the hands-off way in. Comparison table in the [Overview](overview.md#sf-yield-vault-or-fixed-rate-lending).
 
-Users can choose between the two depending on their risk and return preferences.
+</details>
 
-***
+<details>
 
-#### What assets can I deposit into a Vault?
+<summary>What assets can I deposit?</summary>
 
-Each Vault supports a single base asset.
+Each vault takes a single base asset: the **JPYC Vault** accepts JPYC (Ethereum), the **USDFC Vault** accepts USDFC (Filecoin). See [Available Vaults and Strategies](core-mechanics/available-vaults-and-strategies/README.md).
 
-Currently available:
-
-* **JPYC Vault** — accepts JPYC deposits only
-* **USDFC Vault** — accepts USDFC deposits only
-
-***
+</details>
 
 ## Deposits
 
-#### What happens when I deposit into a Vault?
+<details>
 
-When you deposit into a Vault:
+<summary>What happens when I deposit?</summary>
 
-1. Your assets are transferred to the Vault contract
-2. Vault shares are minted to your wallet
-3. Deposited assets are allocated to the Vault’s strategy
+Your assets transfer to the vault contract, vault shares are minted to your wallet, and the vault allocates the assets to its strategy. You never interact with the strategy directly. Walkthrough: [Deposit assets](getting-started/deposit-assets.md).
 
-You do not interact with the strategy directly.
+</details>
 
-***
+<details>
 
-#### What do I receive after depositing?
+<summary>Do I need to approve tokens before depositing?</summary>
 
-You receive **Vault shares**.
+Yes — a one-time approval per asset per vault, before your first deposit. The app prompts you with **Approve** when it's needed.
 
-Vault shares represent your ownership of the Vault and can be redeemed for the underlying asset at any time.
-
-***
-
-#### Do I need to approve tokens before depositing?
-
-Yes.
-
-Before your first deposit, you must approve the Vault to use your assets.\
-This is a standard requirement for ERC-20 tokens.
-
-***
+</details>
 
 ## Withdrawals
 
-#### Can I withdraw my assets at any time?
+<details>
 
-Yes.
+<summary>Can I withdraw at any time?</summary>
 
-You can withdraw at any time by redeeming your Vault shares through the **Withdraw** tab.
+Yes — there is no lock-up or fixed term. Withdrawals depend on strategy liquidity, so in stressed markets an amount may be limited or take longer. See [Withdraw assets](getting-started/withdrawing-assets.md).
 
-***
+</details>
 
-#### Why is the amount I receive different from what I deposited?
+<details>
 
-Vaults generate **variable returns**.
+<summary>Why is the amount I receive different from what I deposited?</summary>
 
-* If the strategy performs well, you may receive more than your initial deposit
-* If losses occur, you may receive less
+You receive shares × current value per share. If yield accrued, you get more than you put in; if the strategy took losses, less. Small differences from the on-screen estimate are timing effects between quote and execution.
 
-Vaults do not guarantee principal or returns.
+</details>
 
-***
+<details>
 
-#### Can I partially withdraw my position?
+<summary>Can I withdraw only part of my position?</summary>
 
-Yes.
+Yes. Redeem any portion of your shares; the rest keeps accruing yield.
 
-You can withdraw part of your Vault shares.\
-The remaining shares will continue to accrue yield.
+</details>
 
-***
+## Shares and yield
 
-## Vault Shares and Yield
+<details>
 
-#### Why does my Vault share balance not change?
+<summary>Why doesn't my share balance change?</summary>
 
-Yield is reflected in the **value of each share**, not in the number of shares.
+By design. Yield appears in the **value of each share**, not the share count — your balance moves only when you deposit or withdraw. Because gains fold into the share price, yield also **compounds automatically**.
 
-Your share balance changes only when you deposit or withdraw.
+</details>
 
-***
+<details>
 
-#### How is yield distributed?
-
-Yield is not paid out separately.
-
-Instead, yield increases the total assets held by the Vault, which increases the value of Vault shares.
-
-***
-
-#### How is the Price Per Share (PPS) calculated?
-
-The PPS represents the net asset value of a single Vault share and increases as the Vault generates yield:
+<summary>How is the price per share (PPS) calculated?</summary>
 
 $$
 PPS = \frac{\text{Total Assets Held by the Vault}}{\text{Total Supply of Vault Shares}}
 $$
 
-***
+Deposits mint $$\text{Amount} / PPS$$ shares; withdrawals return $$\text{Shares} \times PPS$$ assets, always at the PPS current at execution.
 
-#### How many shares will I receive upon deposit?
+</details>
 
-The number of shares minted to your wallet is determined by the PPS at the time of your deposit:
+## Strategy and allocation
 
-$$
-\text{Shares Minted} = \frac{\text{Amount Deposited}}{PPS}
-$$
+<details>
 
-***
+<summary>Can I choose or change the strategy?</summary>
 
-#### How much will I receive upon withdrawal?
+No. Strategy selection and allocation are part of the vault's configuration — you interact only with the vault. What each strategy does is documented in [Available Vaults and Strategies](core-mechanics/available-vaults-and-strategies/README.md).
 
-When you redeem your shares, the amount of the underlying asset you receive is calculated based on the latest PPS:
+</details>
 
-$$
-\text{Amount Received} = \text{Shares Redeemed} \times PPS
-$$
+<details>
 
-***
+<summary>Why does the app show "Unallocated" assets?</summary>
 
-#### Does yield compound automatically?
+Assets temporarily not deployed to a strategy — normal during allocation updates or liquidity management, and no action is needed from you.
 
-Yes.
-
-Because yield is reflected in share value, it compounds automatically without any user action.
-
-***
-
-## Strategy and Allocation
-
-#### Can I choose or change the strategy?
-
-No.
-
-Strategy selection and allocation are managed by the Vault configuration.\
-Users interact only with the Vault.
-
-***
-
-#### Why does the UI show “Unallocated” assets?
-
-“Unallocated” assets are assets temporarily not deployed into a strategy.
-
-This can occur during allocation updates or liquidity management and does not require user action.
-
-***
-
-## Risks
-
-#### Is my deposit guaranteed?
-
-No.
-
-Vaults involve risks, including:
-
-* Smart contract risk
-* Strategy risk
-* Liquidity risk
-* Market risk
-
-Users should understand these risks before depositing.
-
-***
-
-#### Can the value of my position decrease?
-
-Yes.
-
-If the underlying strategy incurs losses or market conditions change, the value of Vault shares may decrease.
-
-***
+</details>
 
 ## Fees
 
-#### Are there any fees?
+<details>
 
-Fee information, if applicable, is displayed in the Vault interface under the **About** tab.
+<summary>Are there any fees?</summary>
 
-Fees are reflected in Vault performance and do not require separate user action.
+No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on harvested yield**, deducted before gains reach the vault — the value per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
 
-***
+</details>
+
+## Risks
+
+<details>
+
+<summary>Is my deposit guaranteed?</summary>
+
+No. Vault positions carry smart contract, strategy, liquidity, and market risk — the value of your position can decrease if the strategy takes losses or conditions turn. Withdrawals are not guaranteed at all times either: they depend on order-book liquidity. Each strategy's page lists its specific risks — [JPYC](core-mechanics/available-vaults-and-strategies/jpyc-lending-strategy.md#risk-considerations), [USDFC](core-mechanics/available-vaults-and-strategies/usdfc-lending-strategy.md#risk-considerations) — and the protocol-wide [Risk Disclaimer](../resources/legal/risk-disclaimer.md) applies.
+
+</details>
 
 ## Technical
 
-#### Do Vaults custody my assets?
+<details>
 
-Vaults are non-custodial smart contracts.
+<summary>Do vaults custody my assets?</summary>
 
-You always interact with Vaults directly through your wallet, and all transactions require your approval.
+Vaults are **non-custodial** smart contracts. You interact with them directly from your wallet, and every transaction requires your signature. Addresses are listed in [Contracts and Security](contracts-and-security.md).
+
+</details>
