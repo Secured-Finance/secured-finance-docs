@@ -6,11 +6,11 @@ description: Redeem vault shares for the underlying asset
 
 Withdrawing means redeeming your **vault shares** for the vault's base asset. What you receive depends on the **value per share** at the moment of withdrawal — more than you deposited if yield has accrued, less if the strategy has taken losses.
 
-There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: under some market conditions a withdrawal may be limited or take longer — see [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
+There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: if the underlying market cannot absorb the unwind, the withdrawal transaction reverts and can be retried later or in a smaller size — see [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
 
 ## Step 1 — Connect your wallet
 
-Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect the wallet that holds your position. Your active positions appear once connected.
+Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect the wallet that holds your position. Your active positions appear once connected. You will need a little of the network's native token (ETH on Ethereum, FIL on Filecoin) for gas.
 
 ## Step 2 — Open your vault position
 
@@ -30,7 +30,7 @@ Click **Withdraw** and confirm in your wallet. Your shares are redeemed, the vau
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.21.09.png" alt="Withdrawal confirmation"><figcaption><p>Confirming the withdrawal</p></figcaption></figure>
 
-Any shares you keep continue to accrue yield — partial withdrawals do not affect the rest of your position.
+Partial withdrawals do not affect the rest of your position: any shares you keep stay invested and remain exposed to strategy performance, gaining or losing value with it.
 
 ## Troubleshooting
 
