@@ -8,7 +8,7 @@ Every vault follows the same system model, independent of its strategy. This pag
 
 ## The vault as capital container
 
-A vault is an **ERC-4626** smart contract that accepts deposits of a single asset, issues **vault shares** representing ownership, tracks total assets, and delegates capital deployment to strategies. The vault itself does not generate yield — it is a capital coordinator and accounting layer. This design is inherited from **Yearn V3** and keeps the vault interface stable while strategies evolve.
+A vault is an **ERC-4626** smart contract that accepts deposits of a single asset, issues **vault shares** representing ownership, tracks total assets, and delegates capital deployment to strategies. The vault itself does not generate yield — it is a capital coordinator and accounting layer. This separation comes from the **Yearn V3** architecture the vaults run on, and keeps the vault interface stable while strategies evolve.
 
 Responsibilities are deliberately separated:
 
@@ -44,9 +44,9 @@ The vault makes no assumptions about how a strategy earns — all strategy-speci
 | Deposit / withdrawal fee | **None** | — |
 | Vault management fee | **0%** | Vault level |
 | Vault performance fee | **0%** | Vault level |
-| Strategy performance fee | **5%** of harvested yield | Strategy level, both current strategies |
+| Strategy performance fee | **5%** of realized profits | Strategy level, both current strategies |
 
-The strategy performance fee is deducted when the strategy reports its gains, before those gains reach the vault — the value per share you see is always **net of fees**. There is nothing to pay separately; the only other cost is blockchain gas. Current values are also shown in the app under each vault's **About** and **Strategies** tabs.
+The strategy performance fee — **5% of realized profits** — is deducted when the strategy reports its gains, before those gains reach the vault, so the value per share you see is always **net of fees**. You pay no separate deposit or withdrawal fee; you pay blockchain gas for your own transactions, and the strategy's own order fees in the underlying fixed-rate market are reflected in its net returns. Current values are also shown in the app under each vault's **About** and **Strategies** tabs.
 
 ## Related
 
