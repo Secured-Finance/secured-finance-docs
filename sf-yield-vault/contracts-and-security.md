@@ -9,7 +9,7 @@ description: Deployed contract addresses and the security model
 | Contract | Network | Address |
 | --- | --- | --- |
 | **JPYC Vault** | Ethereum Mainnet | `0x7a6E3635694952dC00F6bA4d4AD1a7B892028789` |
-| **Secured Finance JPYC Lender** | Ethereum Mainnet | `0x6F6046e59501E484152d46045bA5eECf1Cab8935` |
+| **Secured Finance JPYC Lender** | Ethereum Mainnet | `0x97625424Cef06Ab562496d3395A2497031f31D3a` |
 | **USDFC Vault** | Filecoin | `0x9f59bB0A1dbfad10443Fba08D41c75b0664Bf41B` |
 | **Secured Finance USDFC Lender** | Filecoin | `0xE77d238A707762073836351c6E83245C0aE4339d` |
 
