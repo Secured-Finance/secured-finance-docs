@@ -38,7 +38,7 @@ The strategy places limit lend orders in the JPYC fixed-rate markets according t
 * **Eligibility:** a maturity is excluded automatically when it is within the **maturity exclusion period (default: 7 days)** of expiry, or its order book is in Itayose / pre-order state, or the market is closed. When the nearest maturity enters the exclusion window, allocation shifts to the next eligible pair automatically.
 * **Order placement:** one limit lend order per eligible maturity, priced just below the current best lend price (or at the market mid where more favorable), subject to a **minimum APR floor of 1%**.
 * **Rebalancing:** orders are re-placed only when recalculated target rates deviate from resting orders by more than **25 bps**, or when idle funds are at least **100 JPYC**. These conditions are publicly computable on-chain.
-* **Capacity:** the vault has a deposit limit (currently **50,000,000 JPYC**).
+* **Capacity:** total deposits into this vault are capped at **5,000,000 JPYC**.
 
 Interest earned on filled positions increases the Vault's total assets, which increases the value of Vault shares. Returns are **variable** and depend on market conditions.
 
