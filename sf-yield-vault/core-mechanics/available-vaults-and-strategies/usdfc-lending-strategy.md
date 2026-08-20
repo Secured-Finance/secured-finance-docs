@@ -28,7 +28,7 @@ The strategy places limit lend orders in the USDFC fixed-rate markets according 
 * **Eligibility:** a maturity is excluded automatically when it is within the **maturity exclusion period (default: 7 days)** of expiry, or its order book is in Itayose / pre-order state, or the market is closed. When the nearest maturity enters the exclusion window, allocation shifts to the next eligible pair automatically.
 * **Order placement:** **two limit lend orders per eligible maturity**, with the maturity's funds split **60% / 40%** between them. The first order is priced just below the current best lend price (or at the market mid where more favorable); additional orders are placed at **0.5% interest-rate increments** above the first (i.e. at slightly lower prices). All orders are subject to a **minimum APR floor of 3%**.
 * **Rebalancing:** orders are re-placed only when recalculated target rates deviate from resting orders by more than **25 bps**, or when idle funds are at least **1 USDFC**. These conditions are publicly computable on-chain.
-* **Capacity:** the vault has a deposit limit (currently **50,000 USDFC**).
+* **Capacity:** total deposits into this vault are capped at **50,000 USDFC**.
 
 *Example:* with 10,000 USDFC under management, 4,000 USDFC targets the nearest eligible maturity (placed as orders of 2,400 and 1,600) and 6,000 USDFC targets the next (3,600 and 2,400).
 
