@@ -8,7 +8,7 @@ This page tours the vault view in the [**SF Yield Vault app**](https://vaults.se
 
 ## Vault header
 
-The top of the vault page shows the vault's identity and headline numbers: the vault name and contract address, the network and asset (for example, JPYC on Ethereum), **Total deposited**, **Historical APY**, and — once connected — the current **Value in asset** of your position. All values update from on-chain data.
+The top of the vault page shows the vault's identity and headline numbers: the vault name and contract address, the network and asset (for example, JPYC on Ethereum), **TVL**, **Historical APY** and **Estimated APY**, and — once connected — **Your Holdings**, your position in asset terms. All values update from on-chain data.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.24.06.png" alt="Vault header with summary metrics"><figcaption><p>Vault header</p></figcaption></figure>
 
@@ -50,7 +50,7 @@ How the vault's assets are allocated: each strategy's name (for example, **Secur
 
 ## Info
 
-Vault metadata and on-chain references for those who want the technical context.
+Vault metadata and on-chain references for those who want the technical context, including the current **Price Per Share**.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.26.22.png" alt="Info tab"><figcaption><p>The Info tab</p></figcaption></figure>
 
