@@ -6,7 +6,7 @@ description: Redeem vault shares for the underlying asset
 
 Withdrawing means redeeming your **vault shares** for the vault's base asset. What you receive depends on the **value per share** at the moment of withdrawal — more than you deposited if yield has accrued, less if the strategy has taken losses.
 
-There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: if the underlying market cannot absorb the unwind, the withdrawal transaction reverts and can be retried later or in a smaller size — see [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
+There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: if the underlying market cannot absorb the unwind, the withdrawal transaction reverts and no funds move — you can try a smaller amount, or try again once liquidity recovers. See [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
 
 ## Step 1 — Connect your wallet
 
@@ -34,7 +34,7 @@ Partial withdrawals do not affect the rest of your position: any shares you keep
 
 ## Troubleshooting
 
-* **Withdrawal reverts or is capped below your balance** — strategy liquidity is temporarily short; try a smaller amount or retry later.
+* **Withdrawal reverts or is capped below your balance** — strategy liquidity is temporarily short; try a smaller amount, or try again once liquidity recovers.
 * **Received amount differs from the estimate** — the value per share moved between the estimate and execution; small differences are normal.
 * **Position not visible** — confirm you are connected with the depositing address on the vault's network.
 
