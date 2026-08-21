@@ -76,7 +76,7 @@ Withdrawals are served in a fixed order:
 2. **Cancellation of the strategy's own resting orders**, starting from the farthest maturity (preserving near-term positions);
 3. **Unwinding of positions**, starting from the nearest maturity, executed against the live order book.
 
-**Material limitation:** step 3 depends on order-book liquidity. If the book cannot absorb the unwind, **the withdrawal transaction reverts** ("Not enough funds freed") rather than executing at a distorted price or realizing an artificial loss. Funds remain in the vault; the withdrawal can be retried later or in smaller size. Withdrawal availability is therefore **not guaranteed at all times** and depends on market liquidity at the moment of withdrawal.
+**Material limitation:** step 3 depends on order-book liquidity. If the book cannot absorb the unwind, **the withdrawal transaction reverts** ("Not enough funds freed") rather than executing at a distorted price or realizing an artificial loss. Funds remain in the vault; you can try a smaller amount, or try again once liquidity recovers. Withdrawal availability is therefore **not guaranteed at all times** and depends on market liquidity at the moment of withdrawal.
 
 Positions held to maturity are auto-rolled into the next maturity by the protocol's rotation mechanism; roll pricing is determined by the next maturity's order book at rotation time, with no strategy discretion.
 
