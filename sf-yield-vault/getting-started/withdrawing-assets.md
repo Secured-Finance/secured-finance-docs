@@ -12,7 +12,7 @@ There is no lock-up or fixed term, but withdrawals depend on liquidity available
 
 Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect the wallet that holds your position. Your active positions appear once connected. You will need a little of the network's native token (ETH on Ethereum, FIL on Filecoin) for gas.
 
-## Step 2 — Open your vault position
+## Step 2 — Select your vault
 
 Select the vault you deposited into and switch to the **Withdraw** tab.
 
@@ -26,11 +26,13 @@ Enter how much to withdraw — a partial amount or your full position. The app s
 
 ## Step 4 — Confirm the withdrawal
 
-Click **Withdraw** and confirm in your wallet. Your shares are redeemed, the vault frees assets from the strategy, and the base asset is transferred to your wallet.
+Click **Withdraw** and confirm in your wallet.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.21.09.png" alt="Withdrawal confirmation"><figcaption><p>Confirming the withdrawal</p></figcaption></figure>
 
-Partial withdrawals do not affect the rest of your position: any shares you keep stay invested and remain exposed to strategy performance, gaining or losing value with it.
+## What happens next
+
+Your shares are redeemed, the vault frees assets from the strategy, and the base asset arrives in your wallet once the transaction finalizes. Partial withdrawals do not affect the rest of your position: any shares you keep stay invested and remain exposed to strategy performance, gaining or losing value with it.
 
 ## Troubleshooting
 
