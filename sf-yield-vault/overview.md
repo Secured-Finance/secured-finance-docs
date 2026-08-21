@@ -10,7 +10,7 @@ The [**SF Yield Vault**](https://vaults.secured.finance/) is Secured Finance's a
 
 * Each vault accepts a **single base asset** and allocates it to one or more yield strategies.
 * Your share count stays constant; the **value per share** rises as yield accrues (and can fall if the strategy takes losses).
-* You can redeem shares at any time, but a withdrawal depends on available strategy liquidity — if the underlying order book cannot absorb the unwind, the transaction reverts and can be retried later or in a smaller size.
+* You can redeem shares at any time, but a withdrawal depends on available strategy liquidity — if the underlying order book cannot absorb the unwind, the transaction reverts and no funds move. You can try a smaller amount, or try again once liquidity recovers; withdrawal is not guaranteed at any given moment.
 
 The vaults run on **Yearn V3** and follow the **ERC-4626** vault standard: custody and accounting live in the vault, yield generation lives in the strategies, so strategies can evolve without changing how you interact.
 
