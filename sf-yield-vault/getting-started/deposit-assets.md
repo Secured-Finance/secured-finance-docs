@@ -33,7 +33,7 @@ Enter how much you want to deposit and review the estimated vault shares you wil
 
 ## Step 4 — Approve the asset
 
-Before your first deposit, approve the vault to use your asset: click **Approve**, confirm in your wallet, and wait for confirmation. This is needed only once per asset per vault.
+Before the deposit, approve the vault to use your asset: click **Approve**, confirm in your wallet, and wait for confirmation. Approvals are granted for the exact amount, so the app will ask again when a future deposit exceeds what you've already approved.
 
 ## Step 5 — Confirm the deposit
 
