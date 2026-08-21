@@ -1,6 +1,10 @@
+---
+description: Automated, rule-based JPYC lending into Fixed-Rate Lending markets
+---
+
 # 💹 JPYC Lending Strategy
 
-#### Overview
+## Overview
 
 The **JPYC Lending Strategy** is the first strategy deployed within the [**JPYC Vault**](https://vaults.secured.finance/1/0x7a6E3635694952dC00F6bA4d4AD1a7B892028789) under the Secured Finance framework.
 
@@ -8,9 +12,15 @@ This strategy is designed to generate yield by deploying **JPYC** into the Secur
 
 The strategy is **fully rule-based**: every rule described on this page is encoded in the deployed strategy contract, which can be inspected on-chain directly from the Vault page.
 
-***
+| | |
+| --- | --- |
+| Base asset | JPYC |
+| Network | Ethereum |
+| Strategy contract | **Secured Finance JPYC Lender** — see [Contracts and Security](../../contracts-and-security.md) |
+| Vault share token | yvJPYC |
+| Yield type | Variable |
 
-#### Purpose of the Strategy
+## Purpose of the strategy
 
 The primary objectives of the JPYC Lending Strategy are:
 
@@ -20,23 +30,19 @@ The primary objectives of the JPYC Lending Strategy are:
 
 Users interact with the Vault, not the strategy directly.
 
-***
-
-#### How Yield Is Generated
+## How yield is generated
 
 The strategy places limit lend orders in the JPYC fixed-rate markets according to fixed rules:
 
 * **Allocation:** deposits are split across the **two nearest eligible maturities** at a fixed **40% / 60%** ratio (nearest / next), set immutably at deployment.
 * **Eligibility:** a maturity is excluded automatically when it is within the **maturity exclusion period (default: 7 days)** of expiry, or its order book is in Itayose / pre-order state, or the market is closed. When the nearest maturity enters the exclusion window, allocation shifts to the next eligible pair automatically.
 * **Order placement:** one limit lend order per eligible maturity, priced just below the current best lend price (or at the market mid where more favorable), subject to a **minimum APR floor of 1%**.
-* **Rebalancing:** orders are re-placed only when recalculated target rates deviate from resting orders by more than **25 bps**, or when idle funds exceed **100,000 JPYC**. These conditions are publicly computable on-chain.
-* **Capacity:** the vault has a deposit limit (currently **50,000,000 JPYC**).
+* **Rebalancing:** orders are re-placed only when recalculated target rates deviate from resting orders by more than **25 bps**, or when idle funds are at least **100 JPYC**. These conditions are publicly computable on-chain.
+* **Capacity:** total deposits into this vault are capped at **5,000,000 JPYC**.
 
 Interest earned on filled positions increases the Vault's total assets, which increases the value of Vault shares. Returns are **variable** and depend on market conditions.
 
-***
-
-#### User Experience
+## User experience
 
 From the user's perspective:
 
@@ -47,9 +53,7 @@ From the user's perspective:
 
 Users do not need to select lending terms, manage maturities, or rebalance positions.
 
-***
-
-#### Relationship to Fixed-Rate Lending
+## Relationship to Fixed-Rate Lending
 
 The JPYC Lending Strategy differs from Secured Finance's Fixed-Rate Lending product in several key ways:
 
@@ -64,9 +68,7 @@ The JPYC Lending Strategy differs from Secured Finance's Fixed-Rate Lending prod
 
 Both products coexist within the ecosystem and serve different user preferences.
 
-***
-
-#### Liquidity and Withdrawals — please read
+## Liquidity and withdrawals — please read
 
 Withdrawals are served in a fixed order:
 
@@ -78,9 +80,7 @@ Withdrawals are served in a fixed order:
 
 Positions held to maturity are auto-rolled into the next maturity by the protocol's rotation mechanism; roll pricing is determined by the next maturity's order book at rotation time, with no strategy discretion.
 
-***
-
-#### Fees
+## Fees
 
 * **Performance fee: 5% (500 bps) of realized profits**, accrued at report time to the on-chain designated fee recipient.
 * The strategy charges **no fees on deposits or withdrawals**.
@@ -88,9 +88,7 @@ Positions held to maturity are auto-rolled into the next maturity by the protoco
 
 Current fee parameters are readable directly from the strategy contract.
 
-***
-
-#### Automated Execution and Governance
+## Automated execution and governance
 
 * Execution involves **no per-trade discretionary decisions**: no person selects individual trades, counterparties, timing, or prices.
 * Strategy parameters are either **fixed at deployment** (maturity split, order count, minimum APR, maintenance threshold) or adjustable **only** through disclosed governance functions restricted to the management role (**deposit limit; maturity exclusion period**). Every parameter change is an on-chain transaction, publicly visible and permanently auditable.
@@ -99,9 +97,7 @@ Current fee parameters are readable directly from the strategy contract.
 
 The strategy cannot lend outside the Secured Finance JPYC markets defined above, and cannot access depositor funds for any purpose other than the lending flows described here.
 
-***
-
-#### Risk Considerations
+## Risk considerations
 
 The JPYC Lending Strategy involves several types of risk, including but not limited to:
 
@@ -113,8 +109,14 @@ The JPYC Lending Strategy involves several types of risk, including but not limi
 
 Users should understand that principal is not guaranteed, returns may fluctuate, and losses are possible under adverse conditions.
 
-***
+See also the protocol-wide [Risk Disclaimer](../../../resources/legal/risk-disclaimer.md).
 
-#### Future Evolution
+## Future evolution
 
 The strategy may be complemented or replaced by additional strategies over time. Any strategy deployment or parameter change is an on-chain transaction and will be reflected in updated documentation.
+
+## Related
+
+* [USDFC Lending Strategy](usdfc-lending-strategy.md) — the same framework on Filecoin
+* [Strategy Framework and Allocation Model](../strategy-framework-and-allocation-model.md) — how strategies plug into vaults
+* [Fixed-Rate Lending](../../../fixed-rate-lending/overview.md) — the markets this strategy lends into

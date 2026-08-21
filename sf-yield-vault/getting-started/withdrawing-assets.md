@@ -1,142 +1,45 @@
-# 💰 Withdrawing Assets
+---
+description: Redeem vault shares for the underlying asset
+---
 
-#### Overview
+# 💰 Withdraw assets
 
-This page explains how to **withdraw assets from a Vault**.
+Withdrawing means redeeming your **vault shares** for the vault's base asset. What you receive depends on the **value per share** at the moment of withdrawal — more than you deposited if yield has accrued, less if the strategy has taken losses.
 
-Withdrawing assets involves redeeming your **Vault Shares** in exchange for the underlying asset. The amount you receive depends on the current **value per share** at the time of withdrawal.
+There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: if the underlying market cannot absorb the unwind, the withdrawal transaction reverts and can be retried later or in a smaller size — see [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
 
-***
+## Step 1 — Connect your wallet
 
-### Before You Withdraw
+Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect the wallet that holds your position. Your active positions appear once connected. You will need a little of the network's native token (ETH on Ethereum, FIL on Filecoin) for gas.
 
-Before withdrawing from a Vault, please note the following:
+## Step 2 — Open your vault position
 
-* You must have an active Vault position
-* Your wallet must be connected to the correct network
-* The amount you receive may differ from your original deposit
-* Vault withdrawals are **not fixed-rate** and **not guaranteed**
+Select the vault you deposited into and switch to the **Withdraw** tab.
 
-Withdrawals are processed on-chain and are subject to network conditions and strategy liquidity.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.34.png" alt="Withdraw tab in the vault view"><figcaption><p>The Withdraw tab</p></figcaption></figure>
 
-***
+## Step 3 — Enter the amount
 
-### What Happens When You Withdraw
+Enter how much to withdraw — a partial amount or your full position. The app shows the estimated amount of the base asset you will receive at the current value per share.
 
-When you withdraw assets from a Vault:
+<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.54.png" alt="Withdrawal amount entry"><figcaption><p>Entering a withdrawal amount</p></figcaption></figure>
 
-1. Your Vault Shares are redeemed
-2. The Vault retrieves assets from the underlying strategy
-3. The corresponding amount of the base asset is transferred to your wallet
+## Step 4 — Confirm the withdrawal
 
-If yield has been generated, you may receive **more** than your initial deposit.\
-If losses occurred, you may receive **less**.
+Click **Withdraw** and confirm in your wallet. Your shares are redeemed, the vault frees assets from the strategy, and the base asset is transferred to your wallet.
 
-***
+<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.21.09.png" alt="Withdrawal confirmation"><figcaption><p>Confirming the withdrawal</p></figcaption></figure>
 
-### Step-by-Step: Withdrawing Assets
+Partial withdrawals do not affect the rest of your position: any shares you keep stay invested and remain exposed to strategy performance, gaining or losing value with it.
 
-#### Step 1: Connect Your Wallet
+## Troubleshooting
 
-* Open the Secured Finance application
-* Click **Connect Wallet**
-* Confirm the connection in your wallet
+* **Withdrawal reverts or is capped below your balance** — strategy liquidity is temporarily short; try a smaller amount or retry later.
+* **Received amount differs from the estimate** — the value per share moved between the estimate and execution; small differences are normal.
+* **Position not visible** — confirm you are connected with the depositing address on the vault's network.
 
-Your active Vault positions will be displayed once connected.
+## Related
 
-***
-
-#### Step 2: Locate Your Vault Position
-
-* Navigate to **Vaults** or **Portfolio**
-* Select the Vault you wish to withdraw from
-  * For example: **JPYC Vault**
-* Review your current:
-  * Vault Share balance
-  * Estimated asset value
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.34.png" alt=""><figcaption></figcaption></figure>
-
-***
-
-#### Step 3: Choose Withdrawal Amount
-
-* Enter the amount you wish to withdraw
-  * Some interfaces allow withdrawing by **asset amount**
-  * Others allow withdrawing by **share amount**
-* Review the estimated amount you will receive
-
-The estimate is based on the current Vault share price.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.54.png" alt=""><figcaption></figcaption></figure>
-
-***
-
-#### Step 4: Confirm Withdrawal
-
-* Click **Withdraw**
-* Confirm the transaction in your wallet
-* Wait for the transaction to be confirmed on-chain
-
-Once confirmed, the redeemed assets will be sent to your wallet.
-
-***
-
-### Partial vs Full Withdrawals
-
-* **Partial withdrawal**
-  * Redeems a portion of your Vault Shares
-  * Remaining shares continue to earn yield
-* **Full withdrawal**
-  * Redeems all Vault Shares
-  * Closes your Vault position
-
-Both options follow the same withdrawal process.
-
-***
-
-### Liquidity Considerations
-
-Withdrawals depend on the liquidity available within the strategy.
-
-In certain market conditions:
-
-* Withdrawals may take longer to process
-* The amount received may be affected by liquidity constraints
-
-These behaviors are strategy-dependent and are covered in more detail in the **Core Mechanics** section.
-
-***
-
-### After Withdrawing
-
-After a successful withdrawal:
-
-* Your Vault Share balance will be updated
-* Your wallet will receive the withdrawn assets
-* Any remaining shares will continue to accrue yield
-
-All transactions can be reviewed on-chain using a block explorer.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.21.09.png" alt=""><figcaption></figcaption></figure>
-
-***
-
-### Important Notes
-
-* Withdrawals incur blockchain transaction fees
-* Vaults do not enforce fixed lock-up periods by default
-* Share value may fluctuate between deposit and withdrawal
-* Withdrawing does not retroactively lock in past yields
-
-***
-
-### Next Steps
-
-After withdrawing assets, you may want to:
-
-* Monitor remaining Vault positions
-* Re-deposit assets
-* Learn how to manage and track your Vault performance
-
-These topics are covered in the following sections.
+* [Manage your position](managing-position.md) — deciding when to withdraw
+* [Vault System Overview](../core-mechanics/vault-system-overview.md) — how redemption and accounting work
+* [FAQs](../faqs.md#withdrawals) — common withdrawal questions
