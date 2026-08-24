@@ -50,6 +50,14 @@ Yes. The app requests an **Approve** transaction before each deposit — approva
 
 </details>
 
+<details>
+
+<summary>I deposited, but the numbers haven't changed. Is something wrong?</summary>
+
+Probably not. If the transaction succeeded in your wallet, your deposit is on-chain. Displayed figures like TVL and APY come from an indexing service and can lag by a few minutes — refresh after a short wait. Your Holdings is read directly from the vault contract, so it typically updates first.
+
+</details>
+
 ## Withdrawals
 
 <details>
