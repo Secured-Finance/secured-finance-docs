@@ -142,7 +142,7 @@ Assets temporarily not deployed to a strategy — normal during allocation updat
 
 <summary>Are there any fees?</summary>
 
-No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on realized profits**, deducted before gains reach the vault — the value per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
+No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on realized profits**, deducted before gains reach the vault — the price per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
 
 </details>
 
