@@ -4,7 +4,7 @@ description: Redeem vault shares for the underlying asset
 
 # 💰 Withdraw assets
 
-Withdrawing means redeeming your **vault shares** for the vault's base asset. What you receive depends on the **value per share** at the moment of withdrawal — more than you deposited if yield has accrued, less if the strategy has taken losses.
+Withdrawing means redeeming your **vault shares** for the vault's base asset. What you receive depends on the **price per share** at the moment of withdrawal — more than you deposited if yield has accrued, less if the strategy has taken losses.
 
 There is no lock-up or fixed term, but withdrawals depend on liquidity available in the strategy: if the underlying market cannot absorb the unwind, the withdrawal transaction reverts and no funds move — you can try a smaller amount, or try again once liquidity recovers. See [Strategy Framework and Allocation Model](../core-mechanics/strategy-framework-and-allocation-model.md#liquidity-and-withdrawals).
 
@@ -22,7 +22,7 @@ Select the vault you deposited into and switch to the **Withdraw** tab.
 
 ## Step 3 — Enter the amount
 
-Enter how much to withdraw — a partial amount or your full position. **Max** fills in the largest amount the vault can currently release, which may be less than your full balance when strategy liquidity is short (the app leaves a small margin below the limit so the transaction does not fail on rounding). The app shows the estimated amount of the base asset you will receive at the current value per share.
+Enter how much to withdraw — a partial amount or your full position. **Max** fills in the largest amount you can safely withdraw right now: slightly below the vault's current liquidity limit, so the transaction does not fail on rounding. This may be less than your full balance when strategy liquidity is short. The app shows the estimated amount of the base asset you will receive at the current price per share.
 
 ## Step 4 — Confirm the withdrawal
 
@@ -38,9 +38,9 @@ Your shares are redeemed, the vault frees assets from the strategy, and the base
 
 ## Troubleshooting
 
-* **Max fills in less than your balance** — the vault cannot release your full position right now; withdraw the suggested amount, or try again once liquidity recovers.
+* **Max fills in less than your balance** — normally Max fills in your full balance; when it fills in less, the vault cannot release your full position right now. Withdraw the suggested amount, or try again once liquidity recovers.
 * **Withdrawal reverts** — strategy liquidity is temporarily short; try a smaller amount, or try again once liquidity recovers.
-* **Received amount differs from the estimate** — the value per share moved between the estimate and execution; small differences are normal.
+* **Received amount differs from the estimate** — the price per share moved between the estimate and execution; small differences are normal.
 * **Position not visible** — confirm you are connected with the depositing address on the vault's network.
 
 ## Related
