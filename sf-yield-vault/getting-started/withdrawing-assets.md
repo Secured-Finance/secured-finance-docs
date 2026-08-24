@@ -16,23 +16,23 @@ Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect t
 
 Select the vault you deposited into and switch to the **Withdraw** tab.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.34.png" alt="Withdraw tab in the vault view"><figcaption><p>The Withdraw tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-vault-list-position.png" alt="Vault list showing your position"><figcaption><p>Selecting the vault you deposited into</p></figcaption></figure>
 
 ## Step 3 — Enter the amount
 
 Enter how much to withdraw — a partial amount or your full position. The app shows the estimated amount of the base asset you will receive at the current value per share.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.15.54.png" alt="Withdrawal amount entry"><figcaption><p>Entering a withdrawal amount</p></figcaption></figure>
-
 ## Step 4 — Confirm the withdrawal
 
 Click **Withdraw** and confirm in your wallet.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.21.09.png" alt="Withdrawal confirmation"><figcaption><p>Confirming the withdrawal</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-withdraw-confirm.png" alt="Withdraw ready to confirm"><figcaption><p>Confirming the withdrawal</p></figcaption></figure>
 
 ## What happens next
 
 Your shares are redeemed, the vault frees assets from the strategy, and the base asset arrives in your wallet once the transaction finalizes. Partial withdrawals do not affect the rest of your position: any shares you keep stay invested and remain exposed to strategy performance, gaining or losing value with it.
+
+<figure><img src="../../.gitbook/assets/yv-position-after-withdraw.png" alt="Position after withdrawing"><figcaption><p>Your position after withdrawing</p></figcaption></figure>
 
 ## Troubleshooting
 
