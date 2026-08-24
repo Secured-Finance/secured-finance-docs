@@ -45,7 +45,7 @@ Once approved, the same button turns into **Deposit**. Click it and confirm in y
 
 ## What happens next
 
-Your position appears in the app and yield starts accruing automatically — no further action needed. Your share count stays the same; it is the **value per share** that grows as the strategy earns.
+Your position appears in the app and yield starts accruing automatically — no further action needed. Your share count stays the same; it is the **price per share** that grows as the strategy earns.
 
 <figure><img src="../../.gitbook/assets/yv-position-after-deposit.png" alt="Position shown after deposit"><figcaption><p>Your position after depositing</p></figcaption></figure>
 
