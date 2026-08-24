@@ -18,7 +18,7 @@ Both current vaults run a single lending strategy at 100% target allocation — 
 
 Strategies move through a managed lifecycle: deployment → registration → activation → ongoing operation and reporting → allocation reduction or pause → removal if necessary. Because the vault interface never changes, none of these steps require you to migrate or exit.
 
-Each strategy periodically **reports** its gains or losses to the vault — the app shows the time of the last report. Reporting is when the [strategy performance fee](vault-system-overview.md#fees) is charged and when the value per share updates to reflect performance.
+Each strategy periodically **reports** its gains or losses to the vault — the app shows the time of the last report. Reporting is when the [strategy performance fee](vault-system-overview.md#fees) is charged and when the price per share updates to reflect performance.
 
 ## Liquidity and withdrawals
 
@@ -29,7 +29,7 @@ The current lending strategies deploy into [Fixed-Rate Lending](../../fixed-rate
 {% endhint %}
 
 {% hint style="warning" %}
-**Risk is shared, not eliminated.** Vaults guarantee neither principal nor yield — a strategy can gain, earn nothing, or lose, and every outcome flows through to the value per share, borne collectively by the vault's participants.
+**Risk is shared, not eliminated.** Vaults guarantee neither principal nor yield — a strategy can gain, earn nothing, or lose, and every outcome flows through to the price per share, borne collectively by the vault's participants.
 {% endhint %}
 
 ## Related
