@@ -33,7 +33,7 @@ Enter how much you want to deposit and review the estimated vault shares you wil
 
 ## Step 4 — Approve the asset
 
-If the amount exceeds what you have previously approved, the app shows **Approve** first. Click it and confirm in your wallet. Approvals are granted for the exact amount, so this step typically appears before each new deposit.
+The app asks you to approve the deposit amount first: click **Approve** and confirm in your wallet. Approvals are granted for the exact amount, so this step appears before every deposit.
 
 <figure><img src="../../.gitbook/assets/yv-deposit-approve.png" alt="Approve shown before the deposit"><figcaption><p>Approving the asset</p></figcaption></figure>
 
