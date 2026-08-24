@@ -10,7 +10,9 @@ There is no lock-up or fixed term, but withdrawals depend on liquidity available
 
 ## Step 1 — Connect your wallet
 
-Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and connect the wallet that holds your position. Your active positions appear once connected. You will need a little of the network's native token (ETH on Ethereum, FIL on Filecoin) for gas.
+Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and click **Connect Wallet** — either in the top-right corner or in the **Portfolio** card — connecting the wallet that holds your position. Your active positions appear once connected. You will need a little of the network's native token (ETH on Ethereum, FIL on Filecoin) for gas.
+
+<figure><img src="../../.gitbook/assets/yv-connect-wallet.png" alt="Vault app before connecting a wallet"><figcaption><p>Connecting your wallet</p></figcaption></figure>
 
 ## Step 2 — Select your vault
 
