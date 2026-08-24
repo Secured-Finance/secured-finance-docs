@@ -22,7 +22,7 @@ Select the vault you deposited into and switch to the **Withdraw** tab.
 
 ## Step 3 — Enter the amount
 
-Enter how much to withdraw — a partial amount or your full position. The app shows the estimated amount of the base asset you will receive at the current value per share.
+Enter how much to withdraw — a partial amount or your full position. **Max** fills in the largest amount the vault can currently release, which may be less than your full balance when strategy liquidity is short (the app leaves a small margin below the limit so the transaction does not fail on rounding). The app shows the estimated amount of the base asset you will receive at the current value per share.
 
 ## Step 4 — Confirm the withdrawal
 
@@ -38,7 +38,8 @@ Your shares are redeemed, the vault frees assets from the strategy, and the base
 
 ## Troubleshooting
 
-* **Withdrawal reverts or is capped below your balance** — strategy liquidity is temporarily short; try a smaller amount, or try again once liquidity recovers.
+* **Max fills in less than your balance** — the vault cannot release your full position right now; withdraw the suggested amount, or try again once liquidity recovers.
+* **Withdrawal reverts** — strategy liquidity is temporarily short; try a smaller amount, or try again once liquidity recovers.
 * **Received amount differs from the estimate** — the value per share moved between the estimate and execution; small differences are normal.
 * **Position not visible** — confirm you are connected with the depositing address on the vault's network.
 
