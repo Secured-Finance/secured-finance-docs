@@ -26,15 +26,15 @@ Two tabs below the header handle the actions you can take.
 | --- | --- |
 | **From wallet** | The asset you send (e.g. JPYC). **Max** uses your full balance |
 | **To vault** | The vault share token you receive (e.g. yvJPYC) |
-| **You will receive** | Estimated shares at the current value per share |
+| **You will receive** | Estimated shares at the current price per share |
 
 **Withdraw** redeems shares back to your wallet:
 
 | Field | Meaning |
 | --- | --- |
-| **From vault** | The share token you redeem (e.g. yvJPYC). **Max** redeems everything |
+| **From vault** | The share token you redeem (e.g. yvJPYC). **Max** fills in the largest amount currently withdrawable — your full position when liquidity allows ([details](withdrawing-assets.md)) |
 | **To wallet** | The asset returned (e.g. JPYC) |
-| **You will receive** | Estimated assets at the current value per share |
+| **You will receive** | Estimated assets at the current price per share |
 
 Every action — approvals, deposits, withdrawals — is confirmed through your wallet and completes on-chain.
 
