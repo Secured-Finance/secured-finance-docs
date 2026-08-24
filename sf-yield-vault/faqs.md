@@ -46,7 +46,7 @@ Your assets transfer to the vault contract and vault shares are minted to your w
 
 <summary>Do I need to approve tokens before depositing?</summary>
 
-Yes. The app requests an **Approve** transaction whenever your deposit amount exceeds the vault's current allowance — typically before each new deposit, since approvals are granted for the exact amount. Just follow the prompt when it appears.
+Yes. The app requests an **Approve** transaction before each deposit — approvals are granted for the exact amount of that deposit, so every new deposit needs its own approval. Just follow the prompt when it appears.
 
 </details>
 
