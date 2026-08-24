@@ -17,7 +17,9 @@ Before you start, make sure:
 
 ## Step 1 — Connect your wallet
 
-Open the [**SF Yield Vault app**](https://vaults.secured.finance/), click **Connect Wallet**, and approve the connection. Your address and balances appear once connected.
+Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and click **Connect Wallet** — either in the top-right corner or in the **Portfolio** card — then approve the connection. Your address and balances appear once connected.
+
+<figure><img src="../../.gitbook/assets/yv-connect-wallet.png" alt="Vault app before connecting a wallet"><figcaption><p>Connecting your wallet</p></figcaption></figure>
 
 ## Step 2 — Select a vault
 
