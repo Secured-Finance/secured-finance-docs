@@ -8,15 +8,15 @@ This page tours the vault view in the [**SF Yield Vault app**](https://vaults.se
 
 ## Vault header
 
-The top of the vault page shows the vault's identity and headline numbers: the vault name and contract address, the network and asset (for example, JPYC on Ethereum), **TVL**, **Historical APY** and **Estimated APY**, and — once connected — **Your Holdings**, your position in asset terms. All values update from on-chain data.
+The top of the vault page shows the vault's identity and headline numbers: the vault name and contract address, the network and asset (for example, JPYC on Ethereum), **TVL**, **Estimated APY** (with the historical APY shown beneath it), and — once connected — **Your Holdings**, your position in asset terms. All values update from on-chain data.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.24.06.png" alt="Vault header with summary metrics"><figcaption><p>Vault header</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-vault-header.png" alt="Vault header with summary metrics"><figcaption><p>Vault header</p></figcaption></figure>
 
 ## Deposit and Withdraw
 
 Two tabs below the header handle the actions you can take.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.24.43.png" alt="Deposit and Withdraw tabs"><figcaption><p>The action tabs</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-action-tabs.png" alt="Deposit and Withdraw tabs"><figcaption><p>The action tabs</p></figcaption></figure>
 
 **Deposit** moves assets from your wallet into the vault:
 
@@ -40,25 +40,25 @@ Every action — approvals, deposits, withdrawals — is confirmed through your 
 
 A short description of the vault, its APY over **Last 7 days / Last 30 days / Inception**, and its **Fees** (management and performance). Current fee values for both vaults are listed in [Fees](../core-mechanics/vault-system-overview.md#fees).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.25.58.png" alt="About tab with APY and fees"><figcaption><p>The About tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-about-tab.png" alt="About tab with APY and fees"><figcaption><p>The About tab</p></figcaption></figure>
 
 ## Strategies
 
-How the vault's assets are allocated: each strategy's name (for example, **Secured Finance JPYC Lender**), its contract address, **Allocation %**, allocation in dollar terms, **Est. APY**, per-strategy fees, and the time of the last report. Assets not yet deployed appear as an unallocated balance. This tab is informational — allocation cannot be changed by users.
+How the vault's assets are allocated: each strategy's name (for example, **Secured Finance JPYC Lender**), its **Allocation %**, allocation in dollar terms, and **Est. APY**. Expanding a strategy row reveals its contract address, per-strategy fees, and the time of the last report. Assets not yet deployed appear as an **Unallocated** balance. This tab is informational — allocation cannot be changed by users.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.26.10.png" alt="Strategies tab with allocation"><figcaption><p>The Strategies tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-strategies-tab.png" alt="Strategies tab with an expanded strategy and unallocated balance"><figcaption><p>The Strategies tab</p></figcaption></figure>
 
 ## Info
 
 Vault metadata and on-chain references for those who want the technical context, including the current **Price Per Share**.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.26.22.png" alt="Info tab"><figcaption><p>The Info tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-info-tab.png" alt="Info tab"><figcaption><p>The Info tab</p></figcaption></figure>
 
 ## Risk
 
 The risks of depositing — smart contract, strategy, and liquidity risk. Review this tab before depositing; it complements the strategy pages' [risk notes](../core-mechanics/available-vaults-and-strategies/README.md).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.26.31.png" alt="Risk tab"><figcaption><p>The Risk tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-risk-tab.png" alt="Risk tab"><figcaption><p>The Risk tab</p></figcaption></figure>
 
 ## Related
 
