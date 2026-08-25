@@ -17,35 +17,37 @@ Before you start, make sure:
 
 ## Step 1 — Connect your wallet
 
-Open the [**SF Yield Vault app**](https://vaults.secured.finance/), click **Connect Wallet**, and approve the connection. Your address and balances appear once connected.
+Open the [**SF Yield Vault app**](https://vaults.secured.finance/) and click **Connect Wallet** — either in the top-right corner or in the **Portfolio** card — then approve the connection. Your address and balances appear once connected.
+
+<figure><img src="../../.gitbook/assets/yv-connect-wallet.png" alt="Vault app before connecting a wallet"><figcaption><p>Connecting your wallet</p></figcaption></figure>
 
 ## Step 2 — Select a vault
 
 Pick the vault for your asset — for example, **JPYC Vault**.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.22.17.png" alt="Vault list in the SF Yield Vault app"><figcaption><p>Selecting a vault</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-vault-list.png" alt="Vault list in the SF Yield Vault app"><figcaption><p>Selecting a vault</p></figcaption></figure>
 
 ## Step 3 — Enter the amount
 
 Enter how much you want to deposit and review the estimated vault shares you will receive.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.10.23.png" alt="Deposit amount entry"><figcaption><p>Entering a deposit amount</p></figcaption></figure>
-
 ## Step 4 — Approve the asset
 
-Before your first deposit, approve the vault to use your asset: click **Approve**, confirm in your wallet, and wait for confirmation. This is needed only once per asset per vault.
+The app asks you to approve the deposit amount first: click **Approve** and confirm in your wallet. Approvals are granted for the exact amount, so this step appears before every deposit.
+
+<figure><img src="../../.gitbook/assets/yv-deposit-approve.png" alt="Approve shown before the deposit"><figcaption><p>Approving the asset</p></figcaption></figure>
 
 ## Step 5 — Confirm the deposit
 
-Click **Deposit** and confirm in your wallet. Once the transaction finalizes, your vault shares are credited.
+Once approved, the same button turns into **Deposit**. Click it and confirm in your wallet — when the transaction finalizes, your vault shares are credited.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.12.47.png" alt="Deposit confirmation"><figcaption><p>Confirming the deposit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-deposit-confirm.png" alt="Deposit ready to confirm"><figcaption><p>Confirming the deposit</p></figcaption></figure>
 
 ## What happens next
 
-Your position appears in the app and yield starts accruing automatically — no further action needed. Your share count stays the same; it is the **value per share** that grows as the strategy earns.
+Your position appears in the app and yield starts accruing automatically — no further action needed. Your share count stays the same; it is the **price per share** that grows as the strategy earns.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-02-27 23.13.57.png" alt="Position shown after deposit"><figcaption><p>Your position after depositing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/yv-position-after-deposit.png" alt="Position shown after deposit"><figcaption><p>Your position after depositing</p></figcaption></figure>
 
 ## Troubleshooting
 

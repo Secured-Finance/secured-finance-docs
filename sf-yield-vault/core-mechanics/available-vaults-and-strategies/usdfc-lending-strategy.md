@@ -49,7 +49,7 @@ Users do not need to select lending terms, manage maturities, or rebalance posit
 
 Withdrawals are served in the same fixed order as the JPYC strategy — idle funds, then cancellation of the strategy's resting orders from the farthest maturity, then unwinding of positions from the nearest maturity against the live order book.
 
-**Material limitation:** the final step depends on order-book liquidity. If the book cannot absorb the unwind, **the withdrawal transaction reverts** rather than executing at a distorted price. Funds remain in the vault; the withdrawal can be retried later or in smaller size. Withdrawal availability is therefore **not guaranteed at all times** and depends on market liquidity at the moment of withdrawal.
+**Material limitation:** the final step depends on order-book liquidity. If the book cannot absorb the unwind, **the withdrawal transaction reverts** rather than executing at a distorted price. Funds remain in the vault; you can try a smaller amount, or try again once liquidity recovers. Withdrawal availability is therefore **not guaranteed at all times** and depends on market liquidity at the moment of withdrawal.
 
 ## Fees
 

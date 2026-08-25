@@ -46,7 +46,15 @@ Your assets transfer to the vault contract and vault shares are minted to your w
 
 <summary>Do I need to approve tokens before depositing?</summary>
 
-Yes — a one-time approval per asset per vault, before your first deposit. The app prompts you with **Approve** when it's needed.
+Yes. The app requests an **Approve** transaction before each deposit — approvals are granted for the exact amount of that deposit, so every new deposit needs its own approval. Just follow the prompt when it appears.
+
+</details>
+
+<details>
+
+<summary>I deposited, but the numbers haven't changed. Is something wrong?</summary>
+
+Probably not. If the transaction succeeded in your wallet, your deposit is on-chain. Displayed figures like TVL and APY come from an indexing service and can lag by a few minutes — refresh after a short wait. Your Holdings is read directly from the vault contract, so it typically updates first.
 
 </details>
 
@@ -56,7 +64,7 @@ Yes — a one-time approval per asset per vault, before your first deposit. The 
 
 <summary>Can I withdraw at any time?</summary>
 
-Yes in the sense that there is no lock-up or fixed term — you can request a withdrawal whenever you like. Completion depends on strategy liquidity: if the underlying order book cannot absorb the unwind, the transaction reverts and you can retry later or in a smaller size. See [Withdraw assets](getting-started/withdrawing-assets.md).
+Yes in the sense that there is no lock-up or fixed term — you can request a withdrawal whenever you like. Completion depends on strategy liquidity: if the underlying order book cannot absorb the unwind, the transaction reverts and no funds move. You can try a smaller amount, or try again once liquidity recovers — withdrawal is not guaranteed at any given moment. See [Withdraw assets](getting-started/withdrawing-assets.md).
 
 </details>
 
@@ -64,7 +72,7 @@ Yes in the sense that there is no lock-up or fixed term — you can request a wi
 
 <summary>Why is the amount I receive different from what I deposited?</summary>
 
-You receive shares × current value per share. If yield accrued, you get more than you put in; if the strategy took losses, less. Small differences from the on-screen estimate are timing effects between quote and execution.
+The on-screen figure is an estimate at the current PPS; execution uses the PPS at that exact moment, so small differences are normal timing effects. Larger differences reflect strategy performance since you deposited.
 
 </details>
 
@@ -88,13 +96,25 @@ By design. Yield appears in the **value of each share**, not the share count —
 
 <details>
 
+<summary>How many shares do I receive when I deposit?</summary>
+
+Your deposit amount divided by the price per share (PPS) at execution: $$\text{Shares minted} = \text{Amount} \div PPS$$
+
+</details>
+
+<details>
+
+<summary>How much do I get back when I withdraw?</summary>
+
+Your redeemed shares multiplied by the PPS at execution: $$\text{Assets returned} = \text{Shares} \times PPS$$ — more than you deposited if yield has accrued, less if the strategy has taken losses.
+
+</details>
+
+<details>
+
 <summary>How is the price per share (PPS) calculated?</summary>
 
-$$
-PPS = \frac{\text{Total Assets (idle + reported strategy balances)}}{\text{Total Supply of Vault Shares}}
-$$
-
-Deposits mint $$\text{Amount} / PPS$$ shares; withdrawals return $$\text{Shares} \times PPS$$ assets, always at the PPS current at execution.
+Total assets divided by total shares: $$PPS = \text{Total Assets (idle + reported strategy balances)} \div \text{Total Supply of Vault Shares}$$
 
 </details>
 
@@ -122,7 +142,7 @@ Assets temporarily not deployed to a strategy — normal during allocation updat
 
 <summary>Are there any fees?</summary>
 
-No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on realized profits**, deducted before gains reach the vault — the value per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
+No deposit, withdrawal, or management fees. The strategies charge a **5% performance fee on realized profits**, deducted before gains reach the vault — the price per share is always net of fees. Details in [Fees](core-mechanics/vault-system-overview.md#fees); current values also appear in the app's **About** tab.
 
 </details>
 

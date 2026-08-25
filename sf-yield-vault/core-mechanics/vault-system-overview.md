@@ -20,10 +20,10 @@ Responsibilities are deliberately separated:
 
 ## Vault shares
 
-When you deposit, the vault mints shares at the current value per share. From then on:
+When you deposit, the vault mints shares at the current price per share. From then on:
 
 * Your **share count stays constant** unless you deposit or withdraw.
-* The **value per share** changes as strategies gain or lose — this is where yield appears.
+* The **price per share** changes as strategies gain or lose — this is where yield appears.
 
 No rebasing, no separate reward tokens: gains compound in the share price. The share token is visible in your wallet (for example, **yvJPYC** for the JPYC Vault).
 
@@ -32,7 +32,7 @@ No rebasing, no separate reward tokens: gains compound in the share price. The s
 1. You deposit assets; the vault mints shares.
 2. The vault allocates assets to one or more strategies.
 3. Strategies generate yield over time and report back.
-4. Yield increases the vault's total assets, raising the value per share.
+4. Yield increases the vault's total assets, raising the price per share.
 5. You redeem shares to withdraw; the vault frees assets from strategies as needed.
 
 The vault makes no assumptions about how a strategy earns — all strategy-specific logic lives outside it, which is what makes the system extensible.
@@ -46,7 +46,7 @@ The vault makes no assumptions about how a strategy earns — all strategy-speci
 | Vault performance fee | **0%** | Vault level |
 | Strategy performance fee | **5%** of realized profits | Strategy level, both current strategies |
 
-The strategy performance fee — **5% of realized profits** — is deducted when the strategy reports its gains, before those gains reach the vault, so the value per share you see is always **net of fees**. You pay no separate deposit or withdrawal fee; you pay blockchain gas for your own transactions, and the strategy's own order fees in the underlying fixed-rate market are reflected in its net returns. Current values are also shown in the app under each vault's **About** and **Strategies** tabs.
+The strategy performance fee — **5% of realized profits** — is deducted when the strategy reports its gains, before those gains reach the vault, so the price per share you see is always **net of fees**. You pay no separate deposit or withdrawal fee; you pay blockchain gas for your own transactions, and the strategy's own order fees in the underlying fixed-rate market are reflected in its net returns. Current values are also shown in the app under each vault's **About** and **Strategies** tabs.
 
 ## Related
 

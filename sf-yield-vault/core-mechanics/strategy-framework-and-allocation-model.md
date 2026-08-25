@@ -18,18 +18,18 @@ Both current vaults run a single lending strategy at 100% target allocation — 
 
 Strategies move through a managed lifecycle: deployment → registration → activation → ongoing operation and reporting → allocation reduction or pause → removal if necessary. Because the vault interface never changes, none of these steps require you to migrate or exit.
 
-Each strategy periodically **reports** its gains or losses to the vault — the app shows the time of the last report. Reporting is when the [strategy performance fee](vault-system-overview.md#fees) is charged and when the value per share updates to reflect performance.
+Each strategy periodically **reports** its gains or losses to the vault — the app shows the time of the last report. Reporting is when the [strategy performance fee](vault-system-overview.md#fees) is charged and when the price per share updates to reflect performance.
 
 ## Liquidity and withdrawals
 
-A strategy keeps part of its capital deployed in yield-generating positions, so instant liquidity can be lower than total assets. When you withdraw, the vault first uses idle balances, then frees capital from the strategy. Under normal conditions this is seamless. In stressed conditions — when deployed positions cannot be unwound against the live order book — **the withdrawal transaction reverts** rather than executing at a distorted price: your funds stay in the vault and you can retry later or in a smaller size. Withdrawal availability is therefore not guaranteed at all times.
+A strategy keeps part of its capital deployed in yield-generating positions, so instant liquidity can be lower than total assets. When you withdraw, the vault first uses idle balances, then frees capital from the strategy. Under normal conditions this is seamless. In stressed conditions — when deployed positions cannot be unwound against the live order book — **the withdrawal transaction reverts** rather than executing at a distorted price: no funds move and your position stays in the vault. You can try a smaller amount, or try again once liquidity recovers. Withdrawal availability is therefore not guaranteed at any given moment.
 
 {% hint style="info" %}
 The current lending strategies deploy into [Fixed-Rate Lending](../../fixed-rate-lending/overview.md) order books, so their liquidity ultimately depends on those markets — the strategy unwinds positions there to free capital for withdrawals.
 {% endhint %}
 
 {% hint style="warning" %}
-**Risk is shared, not eliminated.** Vaults guarantee neither principal nor yield — a strategy can gain, earn nothing, or lose, and every outcome flows through to the value per share, borne collectively by the vault's participants.
+**Risk is shared, not eliminated.** Vaults guarantee neither principal nor yield — a strategy can gain, earn nothing, or lose, and every outcome flows through to the price per share, borne collectively by the vault's participants.
 {% endhint %}
 
 ## Related
