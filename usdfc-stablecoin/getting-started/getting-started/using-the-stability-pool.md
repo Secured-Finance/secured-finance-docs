@@ -100,7 +100,6 @@ $$
 \text{Your Reward} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
 
-\[Image: Visual representation of the reward distribution mechanism]
 
 ### Deposit Dilution
 
@@ -110,7 +109,6 @@ It's important to understand that your deposit may be "diluted" over time:
 2. Your deposit amount decreases, but you receive FIL collateral in return
 3. This is not a loss but a conversion from USDFC to FIL at a potentially favorable rate
 
-\[Image: Diagram explaining deposit dilution during liquidations]
 
 ## Strategies for Stability Pool Participation
 
@@ -132,12 +130,11 @@ It's important to understand that your deposit may be "diluted" over time:
 * Higher potential rewards during periods of liquidations
 * Less liquidity for other opportunities
 
-\[Image: Comparison chart of different Stability Pool strategies]
 
 ## Next Steps
 
 * Learn about [redeeming USDFC](redeeming-usdfc.md) when you're ready to exit
-* Understand [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects the Stability Pool
+* Understand [Recovery Mode](../../core-mechanics/recovery-mode.md) and how it affects the Stability Pool
 * Explore other ways to use your USDFC in the ecosystem
 
 ## Troubleshooting
@@ -163,6 +160,6 @@ A: Monitor the liquidation history and current system health. More liquidations 
 ## Related Topics
 
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
 * [Protocol Fees](../../core-mechanics/protocol-fees.md)
 * [The Trove System](../../core-mechanics/the-trove-system.md)
