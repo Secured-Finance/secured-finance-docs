@@ -1,103 +1,54 @@
 ---
-description: The mechanism that maintains USDFC's 1:1 peg to the US Dollar
+description: The face-value exchange that anchors USDFC's peg
 ---
 
 # 💸 Redemption
 
-## Overview
-
-The Redemption Mechanism is a critical component of the USDFC Stablecoin Protocol that allows USDFC holders to exchange their tokens for Filecoin (FIL) at face value. This direct conversion path creates arbitrage opportunities that help maintain USDFC's peg to the US Dollar, especially when the market price falls below $1.
+Redemption is the protocol's promise that 1 USDFC can always be exchanged for $1 worth of FIL. Any holder can invoke it at any time, and the FIL comes from the collateral of the lowest-ratio Troves. That standing promise is what puts a floor under the price: whenever USDFC trades below $1, redeeming it is free money, and the resulting arbitrage pulls the price back up.
 
 {% hint style="success" %}
-**Benefits of Redemption**
+**What redemption gives holders**
 
-* **Arbitrage Opportunity**: If USDFC dips below $1, buying and redeeming it for FIL can lock in potential gains and help restore the peg
-* **Direct FIL Access**: Redemption guarantees a way to swap USDFC for FIL, even when external exchange liquidity is low
-* **Reduced Market Impact**: Converting large FIL positions into USDFC through redemption avoids triggering selling pressure on open markets
+* **Arbitrage** — buy USDFC below $1, redeem it for $1 of FIL, keep the difference
+* **Guaranteed exit** — convert USDFC to FIL at oracle price even when DEX liquidity is thin
 {% endhint %}
 
-## How It Works
+## How it works
 
-The redemption process allows any USDFC holder to exchange their tokens for FIL at the current USD value, targeting Troves with the lowest collateral ratios first:
+1. A holder submits USDFC for redemption.
+2. The protocol pairs it against the Trove with the **lowest collateral ratio** (of those at 110% or above — Troves below that are left for [liquidation](liquidation.md)): the Trove's debt is reduced by the redeemed amount and an equal USD value of its FIL is released.
+3. If one Trove isn't enough, the redemption continues into the next-lowest, until fulfilled.
+4. The redeemer receives the FIL minus the [redemption fee](#redemption-fee); the fee itself is taken in FIL.
 
-1. A user submits a redemption request to the protocol
-2. The protocol uses the FIL collateral from the most under-collateralized Troves to fulfill the request
-3. The user receives FIL, while the targeted Troves have their debt reduced but also lose collateral
-
-{% hint style="info" %}
-Redemptions target the Troves with the **lowest collateral ratios** among those with a collateral ratio of 110% or higher. Troves below 110% are subject to liquidation rather than redemption. Trove owners are advised to keep their collateral ratios well above the 110% minimum (ideally 150% or higher) to reduce the likelihood of being affected by redemptions or liquidation. Troves affected by redemptions undergo **a forced swap** of USDFC for their collateral at the current spot rate, impacting their collateral balance.
-{% endhint %}
-
-### Important Distinction
-
-<mark style="background-color:yellow;">**Not Debt Repayment**</mark><mark style="background-color:yellow;">: Redemption does not mean repaying borrowed USDFC.</mark> Instead, it allows the holder to exchange USDFC for FIL directly. Borrowers must repay their debt separately if they wish to close or manage their positions.
+For the affected Trove owner this is a **forced swap, not a loss**: debt falls by exactly the USD value of the collateral taken, so net position value is unchanged — but FIL exposure is gone from that slice, and if FIL later rises, that upside was surrendered. Keeping a higher ratio than the crowd keeps you out of the queue; the app's **Debt in front** figure shows how much debt stands between you and it ([details](../getting-started/monitoring-your-position.md#debt-in-front)).
 
 {% hint style="warning" %}
-The system requires a minimum borrowed amount of 180 USDFC and reserves an additional 20 USDFC as long as trove exists. **You cannot redeem** to reduce a trove's borrowed amount below 180 USDFC; if it would, the redemption amount will be automatically adjusted. However, you may redeem enough to fully close a trove (reducing the borrowed amount to 0). Redemption can span multiple troves, but the same minimum-borrow rule applies to each.
+**Redemption is not repayment.** Redeeming reduces *someone else's* Trove. To reduce your own debt, repay via Update Trove — which has no fee at all.
 {% endhint %}
 
-## Key Parameters
-
-| Parameter          | Description                                                | Default Value    |
-| ------------------ | ---------------------------------------------------------- | ---------------- |
-| Redemption Fee     | Fee charged on redemption transactions                     | Base Rate + 0.5% |
-| Minimum Fee        | Minimum fee regardless of Base Rate                        | 0.5%             |
-| Base Rate          | Variable component that increases with redemption activity | 0% to 4.5%       |
-| Minimum Trove Size | Minimum USDFC debt a Trove must maintain                   | 180 USDFC        |
+A redemption cannot leave a Trove's borrowed amount below the 200 USDFC minimum — it either stays above it (the redemption amount is adjusted down) or pays the Trove off entirely.
 
 ## Redemption Fee
 
-The **Redemption Fee** is calculated as [**Base Rate**](mint-and-borrow.md#base-rate) + 0.5%, which ensures a minimum fee of **0.5%**. This fee dynamically adjusts depending on redemption activity:
+$$
+\text{Redemption Fee} = (\text{Base Rate} + 0.5\%) \times \text{Redeemed USDFC}
+$$
 
-$$\text{Redemption Fee} = (\text{Base Rate} + 0.5\%) \times \text{Redeemed USDFC}$$
+* **0.5%** is the floor. The [**Base Rate**](mint-and-borrow.md#base-rate-explanation) rises with each redemption — by 0.5 × (redeemed amount / total supply) — and decays with a 12-hour half-life. Unlike the minting fee, the redemption fee has **no upper cap**, so a wave of redemptions makes further redemptions progressively more expensive.
+* The fee is deducted from the FIL you receive.
+* Redemptions are unavailable while the system's total collateral ratio is below 110%.
 
-* **Base Rate** increases with frequent redemptions and decays over time when redemptions are low
-* The more redemptions occur, the higher the **Base Rate** will rise, while a lack of redemptions leads the rate to decay back to the **0.5% minimum**
+This dynamic fee is deliberate: it lets ordinary peg-restoring arbitrage through cheaply, but makes it prohibitively expensive to strip large amounts of collateral out of the system in a short window.
 
-{% hint style="info" %}
-Note that the redeemed amount is taken into account for calculating the base rate and might have an impact on the redemption fee, especially if the amount is large.
-{% endhint %}
+## The peg, from both sides
 
-## Peg Mechanism
+* **Below $1:** redemption arbitrage burns USDFC supply and pushes the price up (as long as the discount exceeds the current fee).
+* **Above $1:** minting becomes the arbitrage — borrow at $1 of value per USDFC, sell at the premium — expanding supply and pushing the price down. The 110% collateral requirement is why the ceiling is softer than the floor.
 
-The redemption mechanism works alongside minting to maintain USDFC's stability around **1.0 USD**:
+**Worked example:** USDFC trades at $0.98 and the Base Rate is 1.0%. Buy 1,000 USDFC for $980, redeem: fee = 1.5% = 15 USDFC-worth, so you receive $985 of FIL. Profit ≈ $5 — and shrinking, as your own redemption nudges the Base Rate up for the next arbitrageur.
 
-### Below Peg (USDFC < 1.0 USD)
+## Where next
 
-* When USDFC trades below 1.0 USD, users can redeem USDFC for FIL at a 1:1 rate, profiting from arbitrage
-* This reduces the circulating supply of USDFC, pushing its price back toward the peg
-* The redemption fee (Base Rate + 0.5%) still applies, meaning users should factor in the cost when calculating arbitrage opportunities
-
-### Above Peg (USDFC > 1.0 USD)
-
-* In this scenario, minting USDFC by depositing FIL becomes attractive because users can borrow USDFC at the 1:1 rate and sell it at a premium
-* This increases the circulating supply and pushes the price back toward 1.0 USD
-* Minting requires over-collateralization (at least 110% FIL) and incurs a one-time minting fee (Base Rate + 0.5%)
-
-## Example of a Redemption
-
-1. **Market Situation**: USDFC trades at **0.98 USD**
-2. **Redemption Initiation**: Buy 1,000 USDFC with **980 USD** and user redeems **1,000 USDFC**
-3. **Redemption Fee**: Assume the **Base Rate** is **1.0%**
-   * Redemption Fee = **(1.0% + 0.5%) of 1,000 USDFC** = **15 USDFC**
-4. **Net Redemption**: The user receives FIL equivalent to **985 USD** after the fee is deducted. Net profit of **5 USD**
-
-## Common Questions
-
-**Can I redeem USDFC to pay back my own debt?**\
-No, redemption is not a debt repayment mechanism. It's a separate process that allows USDFC holders to exchange their tokens for FIL at face value.
-
-**How can I avoid having my Trove targeted by redemptions?**\
-Maintain a higher collateral ratio than other eligible Troves in the system. Redemptions always target Troves with the lowest collateral ratios among Troves that are at or above 110%. Troves below 110% are subject to liquidation rather than redemption.
-
-**Is there a limit to how much USDFC can be redeemed at once?**\
-There's no hard cap, but large redemptions may be limited by the available collateral in under-collateralized Troves and will incur higher fees as the Base Rate increases.
-
-[Learn more in the FAQs section](../faqs.md)
-
-## Related Topics
-
-* [The Trove System](the-trove-system.md)
-* [Mint & Borrow](mint-and-borrow.md)
-* [Liquidation](liquidation.md)
-* [Protocol Fees](protocol-fees.md)
+* [Redeeming USDFC](../getting-started/redeeming-usdfc.md) — the hands-on guide
+* [Mint & Borrow](mint-and-borrow.md#base-rate-explanation) — the Base Rate mechanics shared by both fees
+* [Monitoring Your Position](../getting-started/monitoring-your-position.md) — how Trove owners track redemption risk
