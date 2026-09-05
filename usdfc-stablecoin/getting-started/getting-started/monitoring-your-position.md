@@ -42,7 +42,6 @@ $$
 * **Danger Zone**: 110% to 150% (High risk)
 * **Liquidation Zone**: Below 110% (Immediate risk)
 
-\[Image: Visual representation of collateral ratio zones]
 
 ### Liquidation Price
 
@@ -52,7 +51,6 @@ $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
 
-\[Image: Visualization of liquidation price calculation]
 
 ### Current FIL Price
 
@@ -126,13 +124,12 @@ Develop a plan for responding to different market scenarios.
 2. Consider minting additional USDFC
 3. Rebalance your position to maintain your target collateral ratio
 
-\[Image: Flowchart showing decision paths for different market scenarios]
 
 ## Next Steps
 
 * Learn how to [manage your collateral effectively](managing-collateral-effectively.md)
 * Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Understand [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects your Trove
+* Understand [Recovery Mode](../../core-mechanics/recovery-mode.md) and how it affects your Trove
 
 ## Troubleshooting
 
@@ -158,5 +155,4 @@ A: The dashboard will display a prominent notification when the system enters Re
 
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Collateral Ratio](../broken-reference/)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
