@@ -25,7 +25,7 @@ Before minting test USDFC, you'll need test Filecoin (tFIL) to use as collateral
 1. Visit the Filecoin Calibration testnet faucet at [https://faucet.calibnet.chainsafe-fil.io/funds.html](https://faucet.calibnet.chainsafe-fil.io/funds.html)
 2. Enter your wallet address
 3. Complete any verification steps required by the faucet
-4. Request tFIL (you will receive 100 tFIL twice a day)
+4. Request tFIL — the faucet dispenses about 100 tFIL per request and limits how often you can request
 5. Wait for the transaction to complete (this usually takes a few minutes)
 
 <figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption><p>Filecoin Calibration testnet faucet interface</p></figcaption></figure>
