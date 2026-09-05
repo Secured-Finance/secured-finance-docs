@@ -103,7 +103,6 @@ $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
 
-\[Image: Visual representation of the liquidation price calculation]
 
 ## Strategies for Collateral Management
 
@@ -125,13 +124,12 @@ $$
 * Requires very active monitoring and quick reactions to price changes
 * Maximizes capital efficiency but has higher liquidation risk
 
-\[Image: Visual comparison of different collateral management strategies]
 
 ## Next Steps
 
 * [Monitor your position](monitoring-your-position.md) regularly to stay informed about your Trove's health
 * Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Learn about [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects your Trove
+* Learn about [Recovery Mode](../../core-mechanics/recovery-mode.md) and how it affects your Trove
 
 ## Troubleshooting
 
@@ -151,11 +149,10 @@ A: If the price drop causes your collateral ratio to fall below the minimum requ
 A: Yes, you can add collateral without changing your debt amount to increase your collateral ratio.
 
 **Q: Is there a fee for adjusting my collateral?**\
-A: Adding collateral only incurs gas fees. Withdrawing collateral may incur both gas fees and a small protocol fee.
+A: No protocol fee either way — adding or withdrawing collateral costs only gas.
 
 ## Related Topics
 
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Collateral Ratio](../broken-reference/)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
