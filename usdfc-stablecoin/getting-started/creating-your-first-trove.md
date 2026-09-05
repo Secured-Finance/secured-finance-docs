@@ -1,112 +1,53 @@
 ---
-description: Learn how to create your first Trove to start using USDFC
+description: Connect a wallet, deposit FIL, and mint your first USDFC
 ---
 
 # ⛽ Creating Your First Trove
 
-<figure><img src="../../.gitbook/assets/step1.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+A **Trove** is your personal collateralized debt position: you lock FIL in it and mint USDFC against it. Each address can have one Trove at a time. You'll need a wallet holding FIL — enough for the collateral plus gas.
 
-## Prerequisites
+<figure><img src="../../.gitbook/assets/step1.gif" alt=""><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
-* A wallet with FIL tokens (Filecoin's native cryptocurrency)
-* Basic understanding of blockchain transactions
-* Access to the [USDFC application](https://app.usdfc.net)
+## Step 1 — Connect your wallet
 
-## Overview
+Open the [USDFC app](https://app.usdfc.net), click **Connect Wallet** in the top-right corner, and pick your wallet provider (MetaMask, WalletConnect, etc.).
 
-A Trove is your personal collateralized debt position in the USDFC protocol. By creating a Trove, you can deposit FIL as collateral and mint USDFC stablecoins against it. This guide will walk you through the process of creating your first Trove.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 18.56.02.png" alt=""><figcaption><p>The wallet connection dialog</p></figcaption></figure>
 
-## Step 1: Connect Your Wallet
+## Step 2 — Open the Trove page
 
-Before you can create a Trove, you need to connect your wallet to the USDFC application.
+Go to the **Trove** page. Since you don't have a Trove yet, you'll see the creation form.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
-2. Click on the "Connect Wallet" button in the top right corner
-3. Select your wallet provider (MetaMask, WalletConnect, etc.)
-4. Confirm the connection
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.01.26.png" alt=""><figcaption><p>The Trove creation form</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 18.56.02.png" alt=""><figcaption><p>The wallet connection interface after the "Connect Wallet" button</p></figcaption></figure>
+## Step 3 — Set collateral and borrow amounts
 
-## Step 2: Navigate to the Trove Management Section
+Enter how much FIL to deposit and how much USDFC to borrow. The app calculates your **collateral ratio** as you type.
 
-Once your wallet is connected, you need to navigate to the Trove management section.
+* The minimum you can borrow is **200 USDFC**.
+* The minimum collateral ratio is **110%** (150% while the system is in [Recovery Mode](../core-mechanics/recovery-mode.md)), but leave yourself a buffer — the app flags ratios below 150% as risky, and many users stay above 200%.
+* Your **Total debt** will be: borrowed amount + one-time [borrowing fee](../core-mechanics/protocol-fees.md) (0.5% or more) + 20 USDFC **Liquidation Reserve**, which is refunded when you close the Trove.
 
-1. On the USDFC application, navigate to the "Trove" page
-2. You'll see the Trove creation section
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.01.36.png" alt=""><figcaption><p>Collateral and borrow inputs with the live collateral ratio</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.01.26.png" alt=""><figcaption><p>The USDFC dashboard with the Trove/Mint USDFC section</p></figcaption></figure>
+## Step 4 — Confirm
 
-## Step 3: Set Your Collateral and Debt Amounts
+Review the amounts, fee, and resulting ratio, then click **Create Trove and Borrow USDFC** and confirm in your wallet. The USDFC you requested is sent to your wallet in full — the fee and reserve are added to your debt, not deducted from what you receive.
 
-Now you need to decide how much FIL to deposit and how much USDFC to mint.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.07.51.png" alt=""><figcaption><p>Review screen before the Create Trove and Borrow USDFC transaction</p></figcaption></figure>
 
-1. Enter the amount of FIL you want to deposit as collateral
-2. Enter the amount of USDFC you want to mint & borrow
-3. The system will automatically calculate your collateral ratio
-4. Ensure your collateral ratio is above the minimum required (typically 110%)
+## Step 5 — Verify
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.01.36.png" alt=""><figcaption><p>The collateral and debt input fields with the collateral ratio calculation</p></figcaption></figure>
+Once the transaction confirms, your Trove appears on the dashboard and the USDFC lands in your wallet balance.
 
-## Step 4: Review Transaction Details
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.10.48.png" alt=""><figcaption><p>A newly created Trove on the dashboard</p></figcaption></figure>
 
-Before confirming, review all transaction details carefully.
+{% hint style="info" %}
+**USDFC not showing in your wallet?** On the Dashboard, find "Add USDFC to Wallet" and click **Click here** — or add it manually with the address from [Contracts and Security](../deployed-contracts.md).
+{% endhint %}
 
-1. Check the collateral amount (FIL)
-2. Verify the debt amount (USDFC)
-3. Review the collateral ratio
-4. Note any fees that will be applied (including the Liquidation Reserve of 20 USDFC)
+## Where next
 
-## Step 5: Confirm and Create Your Trove
-
-Once you're satisfied with the details, you can create your Trove.
-
-1. Click the "Create Trove and Borrow USDFC" button
-2. Confirm the transaction in your wallet
-3. Wait for the transaction to be processed on the blockchain
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.07.51.png" alt=""><figcaption><p>The confirmation screen with the "Confirm" button highlighted</p></figcaption></figure>
-
-## Step 6: Verify Your Trove Creation
-
-After the transaction is confirmed, verify that your Trove was created successfully.
-
-1. Check that your Trove appears in the dashboard
-2. Verify that the USDFC has been added to your wallet balance
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.10.48.png" alt=""><figcaption><p>Screenshot showing a successfully created Trove in the dashboard</p></figcaption></figure>
-
-## Next Steps
-
-Now that you've created your first Trove, you can:
-
-* [Mint additional USDFC](minting-usdfc-step-by-step.md)
-* [Manage your collateral](managing-collateral-effectively.md)
-* [Monitor your position](monitoring-your-position.md)
-* [Deposit USDFC into the Stability Pool](using-the-stability-pool.md)
-
-## Troubleshooting
-
-* **Transaction Failed**: Ensure you have enough FIL for gas fees and that your collateral ratio meets the minimum requirement
-* **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../deployed-contracts.md) page, or click the wallet icon near the USDFC contract info on the USDFC app
-* **High Gas Fees**: Try again when network congestion is lower or adjust your gas settings
-
-## Common Questions
-
-**Q: What is the minimum amount of FIL I can deposit?**\
-A: You need to deposit enough FIL to borrow at least 200 USDFC (the minimum borrowing amount) while maintaining at least a 110% collateral ratio. The exact FIL amount will depend on the current FIL price.
-
-**Q: What is the Liquidation Reserve?**\
-A: The Liquidation Reserve is a small amount of USDFC (20 USDFC) that is set aside to cover potential gas costs in case your Trove needs to be liquidated.
-
-**Q: Can I create multiple Troves?**\
-A: No, each wallet address can only have one Trove at a time.
-
-**Q: What happens if my collateral ratio falls below the minimum?**\
-A: Your Trove may be liquidated. Learn more in the [Liquidation](../core-mechanics/liquidation.md) section.
-
-## Related Topics
-
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Mint & Borrow](../core-mechanics/mint-and-borrow.md)
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Mint additional USDFC](minting-usdfc-step-by-step.md) from the same Trove
+* [Manage your collateral](managing-collateral-effectively.md) and understand the ratio thresholds
+* [Monitor your position](monitoring-your-position.md) so a FIL price drop doesn't catch you off guard — if your ratio falls below 110%, your Trove can be [liquidated](../core-mechanics/liquidation.md)
