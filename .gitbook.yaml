@@ -54,3 +54,7 @@ redirects:
   technical-overview/risk-management/minimum-collateral: fixed-rate-lending/advanced-topics/base-price-adjustment.md
   product-guide/loan-market-platform/loan-assets/listing-and-delisting: fixed-rate-lending/advanced-topics/market-listing-and-delisting.md
   fixed-income-protocol-guide/security-and-safety-measures/emergency-global-settlement: fixed-rate-lending/advanced-topics/emergency-global-settlement.md
+  # USDFC docs restructure (2026-09)
+  stablecoin-protocol-guide/key-features/stability-pool-and-liquidation: usdfc-stablecoin/core-mechanics/liquidation.md
+  usdfc-stablecoin/advanced-topics/recovery-mode: usdfc-stablecoin/core-mechanics/recovery-mode.md
+  usdfc-stablecoin/advanced-topics: usdfc-stablecoin/core-mechanics/README.md
