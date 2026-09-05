@@ -73,7 +73,6 @@ Once you're satisfied with the details, you can proceed with the redemption.
 
 <figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption><p>Screenshot showing updated wallet balances after redemption</p></figcaption></figure>
 
-\[Image: Screenshot of the confirmation screen with the "Redeem" button highlighted]
 
 ## Step 6: Verify Redemption
 
@@ -99,12 +98,11 @@ After the transaction is confirmed, verify that your redemption was successful.
 The redemption fee is variable and depends on the current base rate:
 
 $$
-\text{Redemption Fee} = \text{Base Rate} + \text{Redemption Fee Multiplier}
+\text{Redemption Fee} = (\text{Base Rate} + 0.5\%) \times \text{Redeemed USDFC}
 $$
 
 The base rate increases with each redemption and decays over time, which helps prevent large-scale redemptions that could destabilize the system.
 
-\[Image: Graph showing how the base rate changes with redemptions]
 
 ### When to Redeem
 
@@ -114,7 +112,6 @@ Redemption is most beneficial in the following scenarios:
 2. When you want to exit the USDFC system entirely
 3. When you believe FIL price will increase and want to acquire it at the current price
 
-\[Image: Decision flowchart for when to consider redemption]
 
 ## Next Steps
 
@@ -125,7 +122,7 @@ Redemption is most beneficial in the following scenarios:
 ## Troubleshooting
 
 * **Transaction Failed**: Ensure you have enough FIL for gas fees
-* **Cannot Redeem**: There may not be enough Troves available for redemption, or the system might be in Recovery Mode
+* **Cannot Redeem**: There may not be enough Troves available for redemption, or the system's total collateral ratio might be below 110%
 * **High Redemption Fee**: The base rate might be elevated due to recent redemptions; consider waiting for it to decay
 
 ## Common Questions
@@ -140,11 +137,11 @@ A: Redemptions start from the Troves with the lowest collateral ratios and move 
 A: No, redemptions can be processed immediately, but the redemption fee increases with each redemption to prevent large-scale redemptions in a short period.
 
 **Q: Can redemptions be blocked?**\
-A: Yes, redemptions are disabled during Recovery Mode to protect the system's stability.
+A: Redemptions are unavailable while the system's total collateral ratio is below 110%. They remain available during Recovery Mode.
 
 ## Related Topics
 
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Redemption](../../core-mechanics/redemption.md)
 * [Protocol Fees](../../core-mechanics/protocol-fees.md)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
