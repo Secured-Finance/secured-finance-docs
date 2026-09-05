@@ -1,152 +1,61 @@
 ---
-description: Learn how to redeem your USDFC for FIL collateral under certain conditions
+description: Exchange USDFC for FIL at face value
 ---
 
 # 💸 Redeeming USDFC
 
-<figure><img src="../../.gitbook/assets/step6.gif" alt=""><figcaption></figcaption></figure>
-
-## Prerequisites
-
-* USDFC tokens in your wallet
-* Access to the [USDFC application](https://app.usdfc.net)
-* Connected wallet with enough FIL for gas fees
-* Understanding of repayment with trove adjustments
-* Understanding of redemption mechanics and fees
-
-## Overview
-
-Redemption is a process that allows you to exchange your USDFC for FIL collateral at face value (1 USDFC = $1 worth of FIL). This mechanism helps maintain the USDFC peg to the US dollar. This guide will walk you through the redemption process and help you understand when redemption is beneficial.
+Redemption lets any USDFC holder exchange USDFC for $1 worth of FIL directly from the protocol — this arbitrage path is what anchors the peg. The FIL comes from the Troves with the lowest collateral ratios, so redemption is also something Trove owners want to understand from the receiving end. You'll need USDFC in your wallet and FIL for gas.
 
 {% hint style="warning" %}
-Repayment is adjusting your trove. However, the redemption is adjusting 3rd party's lowest collateral trove.\
-To avoid getting redemption, please watch 'Debt in front' amount and increase the collateral ratio.
+**Redemption is not repayment.** Repaying reduces *your own* Trove's debt (via Update Trove). Redeeming reduces *other people's* Troves — starting from the lowest collateral ratio in the system. If you own a Trove, watch your **Debt in front** figure and keep your ratio up to stay out of the redemption queue.
 {% endhint %}
 
-## Step 1: Access the Redemption Feature
+<figure><img src="../../.gitbook/assets/step6.gif" alt=""><figcaption></figcaption></figure>
 
-First, you need to navigate to the redemption section in the USDFC application.
+## Step 1 — Open the Redeem page
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
-2. Connect your wallet if not already connected
-3. Locate the "Redeem USDFC" page in the "More" tab in the USDFC application
+In the [USDFC app](https://app.usdfc.net), open the **More** tab and select **Redeem USDFC**.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.11.png" alt=""><figcaption><p>The Redemption page location in the "More" tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.11.png" alt=""><figcaption><p>Redeem USDFC in the More tab</p></figcaption></figure>
 
-## Step 2: Review Redemption Information
+## Step 2 — Review the current conditions
 
-Before proceeding, review the current redemption information.
+Check the current [redemption fee](../core-mechanics/protocol-fees.md) — it's **0.5% + the Base Rate**, and the Base Rate rises with each redemption and decays over time. If a large redemption just happened, waiting for the rate to decay can save you money.
 
-1. Check the current redemption fee (variable based on the base rate)
-2. Understand which Troves will be affected by your redemption
-3. Review the current FIL price and calculate how much FIL you'll receive
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.41.png" alt=""><figcaption><p>Redemption conditions</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.41.png" alt=""><figcaption><p>Screenshot of the redemption information page</p></figcaption></figure>
+## Step 3 — Enter the amount
 
-## Step 3: Enter Redemption Amount
+Enter how much USDFC to redeem. The app shows the FIL you'll receive at the current oracle price, minus the fee.
 
-Now you can specify how much USDFC you want to redeem.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.27.png" alt=""><figcaption><p>The lowest collateral ratio Troves are redeemed against first</p></figcaption></figure>
 
-1. Enter the amount of USDFC you want to redeem
-2. The system will calculate the amount of FIL you will receive based on the current FIL price
-3. Review the redemption fee that will be applied
-4. Understand which Troves will be affected (redemptions start from the lowest collateral ratio Troves)
+## Step 4 — Confirm
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.42.27.png" alt=""><figcaption><p>The lowest Collateral Ratio Troves get redeemed</p></figcaption></figure>
+Click **Redeem USDFC** and confirm in your wallet.
 
-## Step 4: Review Transaction Details
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.44.20.png" alt=""><figcaption><p>Reviewing the redemption details</p></figcaption></figure>
 
-Before confirming, review all transaction details carefully.
+## Step 5 — Verify
 
-1. Check the USDFC amount you're redeeming
-2. Verify the FIL amount you'll receive
-3. Review the redemption fee
-4. Understand the gas costs for the transaction
+Your USDFC balance decreases and the FIL arrives in your wallet. On-chain, the affected Troves' debt and collateral both shrink by the corresponding amounts.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.44.20.png" alt=""><figcaption><p>The Redemption section shows all relevant details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.47.24.png" alt=""><figcaption><p>Wallet balances after redemption</p></figcaption></figure>
 
-## Step 5: Confirm and Execute Redemption
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.46.20.png" alt=""><figcaption><p>The lowest-ratio Trove's collateral and debt were reduced</p></figcaption></figure>
 
-Once you're satisfied with the details, you can proceed with the redemption.
+## When redemption makes sense
 
-1. Click the "Redeem USDFC" button
-2. Confirm the transaction in your wallet
-3. Wait for the transaction to be processed on the blockchain
+* **USDFC trades below $1** — buy cheap, redeem at face value, pocket the difference (minus the fee). This is the arbitrage that restores the peg.
+* **You want FIL, not USDFC** — redemption converts at the oracle price without a DEX spread, though the redemption fee applies.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.47.24.png" alt=""><figcaption><p>Screenshot showing updated wallet balances after redemption</p></figcaption></figure>
+Redemption is **not** the cheapest exit if you have your own Trove — repaying your own debt has no fee at all.
 
-\[Image: Screenshot of the confirmation screen with the "Redeem" button highlighted]
+{% hint style="info" %}
+Redemptions are unavailable while the system's total collateral ratio is below 110%. Troves that are themselves below 110% are skipped by redemption — they're left for [liquidation](../core-mechanics/liquidation.md) instead.
+{% endhint %}
 
-## Step 6: Verify Redemption
+## Where next
 
-After the transaction is confirmed, verify that your redemption was successful.
-
-1. Check that your USDFC balance has decreased by the redeemed amount
-2. Verify that the FIL has been added to your wallet balance
-3. Review the transaction details in your wallet history or on a blockchain explorer
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.46.20.png" alt=""><figcaption><p>Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced</p></figcaption></figure>
-
-## Understanding Redemption Mechanics
-
-### How Redemption Works
-
-1. When you redeem USDFC, the system identifies Troves starting from the lowest collateral ratio
-2. Your USDFC is used to repay the debt of these Troves
-3. In return, you receive an equivalent value of FIL collateral (minus the redemption fee)
-4. This process continues until your redemption amount is fulfilled or no more Troves can be redeemed from
-
-### Redemption Fee
-
-The redemption fee is variable and depends on the current base rate:
-
-$$
-\text{Redemption Fee} = \text{Base Rate} + \text{Redemption Fee Multiplier}
-$$
-
-The base rate increases with each redemption and decays over time, which helps prevent large-scale redemptions that could destabilize the system.
-
-\[Image: Graph showing how the base rate changes with redemptions]
-
-### When to Redeem
-
-Redemption is most beneficial in the following scenarios:
-
-1. When USDFC is trading below its $1 peg (arbitrage opportunity)
-2. When you want to exit the USDFC system entirely
-3. When you believe FIL price will increase and want to acquire it at the current price
-
-\[Image: Decision flowchart for when to consider redemption]
-
-## Next Steps
-
-* Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) as an alternative to redemption
-* Learn about [managing collateral effectively](managing-collateral-effectively.md) if you have your own Trove
-* Explore other ways to use your USDFC in the ecosystem
-
-## Troubleshooting
-
-* **Transaction Failed**: Ensure you have enough FIL for gas fees
-* **Cannot Redeem**: There may not be enough Troves available for redemption, or the system might be in Recovery Mode
-* **High Redemption Fee**: The base rate might be elevated due to recent redemptions; consider waiting for it to decay
-
-## Common Questions
-
-**Q: Can I redeem any amount of USDFC?**\
-A: Yes, but smaller amounts may not be cost-effective due to gas fees and the redemption fee.
-
-**Q: Which Troves are affected by my redemption?**\
-A: Redemptions start from the Troves with the lowest collateral ratios and move upward.
-
-**Q: Is there a waiting period for redemption?**\
-A: No, redemptions can be processed immediately, but the redemption fee increases with each redemption to prevent large-scale redemptions in a short period.
-
-**Q: Can redemptions be blocked?**\
-A: Yes, redemptions are disabled during Recovery Mode to protect the system's stability.
-
-## Related Topics
-
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Redemption](../core-mechanics/redemption.md)
-* [Protocol Fees](../core-mechanics/protocol-fees.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Redemption](../core-mechanics/redemption.md) — the full mechanics, including how the Base Rate moves
+* [Monitoring Your Position](monitoring-your-position.md) — how Trove owners track their place in the redemption queue
