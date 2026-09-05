@@ -1,166 +1,69 @@
 ---
-description: Learn how to track and manage your Trove's health
+description: Track your Trove's health and react to price moves
 ---
 
 # 🏦 Monitoring Your Position
 
+A Trove is not a set-and-forget position: FIL moves, and your collateral ratio moves with it. This guide covers what to watch and how to stay ahead of liquidation.
+
 <figure><img src="../../.gitbook/assets/step4.gif" alt=""><figcaption></figcaption></figure>
 
-## Prerequisites
+## Step 1 — Check the Dashboard
 
-* An active Trove with FIL collateral
-* Access to the [USDFC application](https://app.usdfc.net)
-* Basic understanding of collateral ratios and liquidation risk
+The **Dashboard** page of the [USDFC app](https://app.usdfc.net) shows your Trove and Stability Pool positions alongside protocol-wide statistics.
 
-## Overview
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt=""><figcaption><p>The Dashboard with your position and protocol statistics</p></figcaption></figure>
 
-Monitoring your position is essential for maintaining a healthy Trove and avoiding liquidation. This guide will show you how to track your Trove's health, understand key metrics, and set up alerts to stay informed about changes that could affect your position.
-
-## Step 1: Access Your Trove Dashboard
-
-The Trove dashboard is your primary tool for monitoring your position.
-
-1. Navigate to the [USDFC application](https://app.usdfc.net)
-2. Connect your wallet if not already connected
-3. Go to the "Dashboard" page on the USDFC application
-4. Review your current Trove or Stability Pool details
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt=""><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
-
-## Step 2: Understand Key Metrics
-
-To effectively monitor your position, you need to understand the key metrics displayed on your dashboard.
+## Step 2 — Know your metrics
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt=""><figcaption></figcaption></figure>
 
 ### Collateral Ratio
 
-The collateral ratio is the most important metric to monitor. It represents the value of your collateral relative to your debt.
+The value of your collateral relative to your debt — the single most important number for your Trove:
 
 $$
 \text{Collateral Ratio} = \frac{\text{Collateral Value in USD}}{\text{Debt in USDFC}} \times 100\%
 $$
 
-* **Safe Zone**: Above 200% (Conservative)
-* **Caution Zone**: 150% to 200% (Moderate risk)
-* **Danger Zone**: 110% to 150% (High risk)
-* **Liquidation Zone**: Below 110% (Immediate risk)
-
-\[Image: Visual representation of collateral ratio zones]
+The app labels the ranges: **200%+** very low risk, **150–200%** low, **120–150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below **150%** can be liquidated.
 
 ### Liquidation Price
 
-The liquidation price is the FIL price at which your Trove would reach the minimum collateral ratio (110%) and become eligible for liquidation.
+The FIL price at which your Trove reaches 110%:
 
 $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
 
-\[Image: Visualization of liquidation price calculation]
+Compare it to the current FIL price on the Dashboard to see your real buffer.
 
-### Current FIL Price
+### Debt in front
 
-The current price of FIL relative to USD is displayed to help you understand how close you are to your liquidation price.
+Shown on the Trove page: the total debt of Troves with lower collateral ratios than yours. [Redemptions](redeeming-usdfc.md) hit the lowest-ratio Troves first, so a small "debt in front" means your Trove is near the front of the redemption queue — being redeemed doesn't cost you money, but it converts your collateral to debt reduction whether you wanted it or not. Raising your ratio moves you back in the queue.
 
-### Available Actions
+### Recovery Mode
 
-Based on your current metrics, the dashboard may suggest available actions to improve your position's health.
+When the system enters Recovery Mode, the app displays a prominent notice on the Dashboard — you don't need an external source to know.
 
-## Step 3: Set Up External Alerts
+## Step 3 — Set up price alerts
 
-While the USDFC application doesn't currently offer built-in alerts, you can set up external alerts to monitor your position.
+The app doesn't send notifications, so put an alert where you'll see it:
 
-### Price Alerts
+1. Calculate your liquidation price.
+2. Set a FIL price alert comfortably above it (for example 20–30% above) in whatever tracking app or exchange you already use.
+3. Treat the alert as the trigger to act — add collateral or repay — not as the moment to start thinking about it.
 
-Set up price alerts for FIL using cryptocurrency tracking apps or exchanges.
+## Step 4 — Match your check-in rhythm to your risk
 
-1. Calculate your liquidation price
-2. Set an alert for when FIL price approaches this threshold (e.g., 20% above liquidation price)
-3. Popular platforms for price alerts include [CoinGecko](https://www.coingecko.com/learn/how-to-set-up-the-price-alert-function-on-coingecko), CoinMarketCap, or exchange apps
+* **Ratio below 150%:** check daily, and during volatile markets, intraday. Keep FIL ready to add on short notice.
+* **Ratio 150–200%:** check weekly and after any sharp FIL move.
+* **Ratio above 200%:** a monthly check is usually enough — and consider whether the idle buffer could be smaller.
 
-### Blockchain Monitoring Tools
+When FIL falls, your options are to **add collateral** or **repay debt** ([Update Trove](managing-collateral-effectively.md)) — both raise your ratio. When FIL rises, you can withdraw excess collateral or [mint more USDFC](minting-usdfc-step-by-step.md), at the cost of a thinner buffer.
 
-Use blockchain monitoring tools to track your Trove's health.
+## Where next
 
-1. Find your Trove's address or ID
-2. Set up monitoring using tools like [Filfox](https://filfox.info/en), Tenderly, or DeFi-specific monitoring platforms
-3. Configure alerts for significant changes to your Trove
-
-## Step 4: Regular Check-ins
-
-Establish a routine for checking your Trove's health.
-
-### Daily Checks (High-Risk Positions)
-
-If your collateral ratio is close to the minimum (110%-150%):
-
-* Check your position at least once daily
-* Monitor FIL price movements throughout the day
-* Be prepared to add collateral quickly if needed
-
-### Weekly Checks (Moderate-Risk Positions)
-
-If your collateral ratio is in a safer range (150%-200%):
-
-* Check your position at least once weekly
-* Review FIL price trends for the week
-* Adjust collateral as needed based on market outlook
-
-### Monthly Checks (Low-Risk Positions)
-
-If your collateral ratio is very high (>200%):
-
-* Check your position at least once monthly
-* Evaluate if you're being too conservative with your capital
-* Consider strategies to optimize your position
-
-## Step 5: Respond to Market Changes
-
-Develop a plan for responding to different market scenarios.
-
-### During FIL Price Decreases
-
-1. Calculate how much the price can drop before reaching your comfort threshold
-2. Prepare additional FIL for collateral if needed
-3. Consider reducing your debt by repaying some USDFC
-
-### During FIL Price Increases
-
-1. Evaluate if you want to withdraw some collateral
-2. Consider minting additional USDFC
-3. Rebalance your position to maintain your target collateral ratio
-
-\[Image: Flowchart showing decision paths for different market scenarios]
-
-## Next Steps
-
-* Learn how to [manage your collateral effectively](managing-collateral-effectively.md)
-* Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Understand [Recovery Mode](../advanced-topics/recovery-mode.md) and how it affects your Trove
-
-## Troubleshooting
-
-* **Dashboard Not Loading**: Try refreshing the page or reconnecting your wallet
-* **Metrics Not Updating**: Check if there are pending transactions or network congestion
-* **Unexpected Collateral Ratio**: Verify the current FIL price from multiple sources
-
-## Common Questions
-
-**Q: How often does the dashboard update?**\
-A: The dashboard updates in real-time based on blockchain data and current price feeds.
-
-**Q: Will I receive notifications if my Trove is at risk?**\
-A: The USDFC application doesn't currently send automatic notifications. You should set up external alerts as described above.
-
-**Q: What should I do if I can't access the application but know my position is at risk?**\
-A: You can interact with the USDFC protocol directly through the smart contracts if necessary. Keep emergency funds ready to add collateral when needed.
-
-**Q: How can I tell if the system is in Recovery Mode?**\
-A: The dashboard will display a prominent notification when the system enters Recovery Mode.
-
-## Related Topics
-
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Collateral Ratio](broken-reference/)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Managing Collateral Effectively](managing-collateral-effectively.md) — the mechanics of adjusting your position
+* [Redeeming USDFC](redeeming-usdfc.md) — what redemption means for Trove owners
+* [Recovery Mode](../core-mechanics/recovery-mode.md) — the rules that apply system-wide
