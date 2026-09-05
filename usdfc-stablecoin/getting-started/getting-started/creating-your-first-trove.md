@@ -108,4 +108,4 @@ A: Your Trove may be liquidated. Learn more in the [Liquidation](../../core-mech
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Mint & Borrow](../../core-mechanics/mint-and-borrow.md)
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
