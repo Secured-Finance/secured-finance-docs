@@ -6,19 +6,19 @@ description: Deposit USDFC and earn liquidation gains
 
 The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because a Trove is liquidated as soon as it falls below 110%, its collateral is normally still worth more than its debt — so depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
 
-<figure><img src="../../.gitbook/assets/step5.gif" alt=""><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step5.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Open the Stability Pool page
 
 In the [USDFC app](https://app.usdfc.net), go to the **Stability Pool** page. Pool-wide statistics (total deposits and your share) are also visible in the **Protocol Overview** section of the Dashboard.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.22.png" alt=""><figcaption><p>The Stability Pool page and protocol statistics</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.22.png" alt="The Stability Pool page and protocol statistics"><figcaption><p>The Stability Pool page and protocol statistics</p></figcaption></figure>
 
 ## Step 2 — Deposit USDFC
 
 Enter the amount to deposit, click **Deposit USDFC**, and confirm in your wallet. There is no deposit fee and no minimum, though very small deposits may not justify the gas.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.23.48.png" alt=""><figcaption><p>The deposit form</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.23.48.png" alt="The deposit form"><figcaption><p>The deposit form</p></figcaption></figure>
 
 ## Step 3 — Watch your deposit work
 
@@ -29,7 +29,7 @@ Liquidation gains accrue only when liquidations happen, so don't expect steady d
 
 This is a conversion, not a loss: your USDFC becomes FIL, usually at a discount, since a liquidated Trove hands over more than $1 of collateral per $1 of debt repaid. Note the flip side — you're accumulating a volatile asset, and its price can fall after you receive it.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt=""><figcaption><p>Deposit and liquidation gains on the Stability Pool page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt="Deposit and liquidation gains on the Stability Pool page"><figcaption><p>Deposit and liquidation gains on the Stability Pool page</p></figcaption></figure>
 
 ## Step 4 — Claim your FIL gains
 
@@ -43,7 +43,7 @@ Click **Adjust** on your deposit, switch to the **Withdraw** tab, and enter the 
 There is no lockup, but withdrawals are temporarily suspended whenever there are Troves below 110% that haven't been liquidated yet — the pool has to do its job first. You can withdraw once those liquidations clear.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt=""><figcaption><p>Withdrawing from the Stability Pool</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt="Withdrawing from the Stability Pool"><figcaption><p>Withdrawing from the Stability Pool</p></figcaption></figure>
 
 ## How your share is calculated
 

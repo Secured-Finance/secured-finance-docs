@@ -4,7 +4,7 @@ description: A decentralized, over-collateralized stablecoin backed by FIL
 
 # 📢 Overview
 
-<figure><img src="../.gitbook/assets/Color Light Background.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Color Light Background.svg" alt="USDFC logo"><figcaption></figcaption></figure>
 
 [**USDFC**](https://app.usdfc.net) is a USD-pegged stablecoin backed entirely by Filecoin (FIL) and running on the Filecoin Virtual Machine (FVM). You lock FIL as collateral in a **Trove**, mint USDFC against it, and repay whenever you like — no counterparty, no credit check, and no ongoing interest. It is the first decentralized stablecoin fully collateralized by FIL.
 

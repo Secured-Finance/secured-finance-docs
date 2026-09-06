@@ -6,17 +6,17 @@ description: Track your Trove's health and react to price moves
 
 A Trove is not a set-and-forget position: FIL moves, and your collateral ratio moves with it. This guide covers what to watch and how to stay ahead of liquidation.
 
-<figure><img src="../../.gitbook/assets/step4.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step4.gif" alt="Animated walkthrough of the monitoring steps"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Check the Dashboard
 
 The **Dashboard** page of the [USDFC app](https://app.usdfc.net) shows your Trove and Stability Pool positions alongside protocol-wide statistics.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt=""><figcaption><p>The Dashboard with your position and protocol statistics</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt="The Dashboard with your position and protocol statistics"><figcaption><p>The Dashboard with your position and protocol statistics</p></figcaption></figure>
 
 ## Step 2 — Know your metrics
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt="Trove metrics: collateral, debt, collateral ratio, and liquidation price"><figcaption><p>Your Trove metrics</p></figcaption></figure>
 
 ### Collateral Ratio
 

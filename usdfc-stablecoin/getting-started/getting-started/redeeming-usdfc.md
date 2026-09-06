@@ -29,7 +29,7 @@ First, you need to navigate to the redemption section in the USDFC application.
 2. Connect your wallet if not already connected
 3. Locate the "Redemption" page in the "More" tab in the USDFC application
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption><p>The Redemption page location in the "More" tab</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136).png" alt="The Redemption page location in the 'More' tab"><figcaption><p>The Redemption page location in the "More" tab</p></figcaption></figure>
 
 ## Step 2: Review Redemption Information
 
@@ -39,7 +39,7 @@ Before proceeding, review the current redemption information.
 2. Understand which Troves will be affected by your redemption
 3. Review the current FIL price and calculate how much FIL you'll receive
 
-<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption><p>Screenshot of the redemption information page</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (137).png" alt="Screenshot of the redemption information page"><figcaption><p>Screenshot of the redemption information page</p></figcaption></figure>
 
 ## Step 3: Enter Redemption Amount
 
@@ -50,7 +50,7 @@ Now you can specify how much USDFC you want to redeem.
 3. Review the redemption fee that will be applied
 4. Understand which Troves will be affected (redemptions start from the lowest collateral ratio Troves)
 
-<figure><img src="../../../.gitbook/assets/image (138).png" alt=""><figcaption><p>The lowest Collateral Ratio Troves get redeemed</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (138).png" alt="The lowest Collateral Ratio Troves get redeemed"><figcaption><p>The lowest Collateral Ratio Troves get redeemed</p></figcaption></figure>
 
 ## Step 4: Review Transaction Details
 
@@ -61,7 +61,7 @@ Before confirming, review all transaction details carefully.
 3. Review the redemption fee
 4. Understand the gas costs for the transaction
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption><p>The Redemption section shows all relevant details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (139).png" alt="The Redemption section shows all relevant details"><figcaption><p>The Redemption section shows all relevant details</p></figcaption></figure>
 
 ## Step 5: Confirm and Execute Redemption
 
@@ -71,7 +71,7 @@ Once you're satisfied with the details, you can proceed with the redemption.
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption><p>Screenshot showing updated wallet balances after redemption</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (140).png" alt="Screenshot showing updated wallet balances after redemption"><figcaption><p>Screenshot showing updated wallet balances after redemption</p></figcaption></figure>
 
 
 ## Step 6: Verify Redemption
@@ -82,7 +82,7 @@ After the transaction is confirmed, verify that your redemption was successful.
 2. Verify that the FIL has been added to your wallet balance
 3. Review the transaction details in your wallet history or on a blockchain explorer
 
-<figure><img src="../../../.gitbook/assets/image (141).png" alt=""><figcaption><p>Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (141).png" alt="Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced"><figcaption><p>Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced</p></figcaption></figure>
 
 ## Understanding Redemption Mechanics
 

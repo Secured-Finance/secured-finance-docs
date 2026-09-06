@@ -28,7 +28,7 @@ Before minting test USDFC, you'll need test Filecoin (tFIL) to use as collateral
 4. Request tFIL — the faucet dispenses about 100 tFIL per request and limits how often you can request
 5. Wait for the transaction to complete (this usually takes a few minutes)
 
-<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption><p>Filecoin Calibration testnet faucet interface</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (143).png" alt="Filecoin Calibration testnet faucet interface"><figcaption><p>Filecoin Calibration testnet faucet interface</p></figcaption></figure>
 
 ## Step 2: Access the USDFC Testnet Application
 
@@ -38,7 +38,7 @@ The USDFC testnet application is separate from the mainnet application.
 2. Connect your wallet by clicking the "Connect Wallet" button in the top right corner
 3. Ensure your wallet is set to the Filecoin Calibration testnet network
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2026-03-31 2.34.59.png" alt=""><figcaption><p>USDFC testnet application page with adding Calibration network</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-03-31 2.34.59.png" alt="USDFC testnet application page with adding Calibration network"><figcaption><p>USDFC testnet application page with adding Calibration network</p></figcaption></figure>
 
 > **Note:** The testnet application (https://stg-legacy.usdfc.net/) is different from the mainnet application (https://legacy.usdfc.net/). Make sure you're using the correct URL for testing.
 
@@ -53,7 +53,7 @@ Now that you have tFIL and are connected to the testnet application, you can min
 5. Confirm the transaction in your wallet
 6. Wait for the transaction to be confirmed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/image (145).png" alt=""><figcaption><p>Minting USDFC</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (145).png" alt="Minting USDFC"><figcaption><p>Minting USDFC</p></figcaption></figure>
 
 ## Step 4: Add Test USDFC to Your Wallet
 
@@ -64,7 +64,7 @@ After minting, you'll want to see your test USDFC in your wallet.
 3. The token symbol (USDFC) and decimals should be added
 4. Click "Add" or "Import" to add test USDFC to your wallet ([video](https://gyazo.com/4102e760883c7c413ee1161a851d5712))
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-30 at 1.53.26.png" alt=""><figcaption><p>Adding USDFC to Wallet</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-30 at 1.53.26.png" alt="Adding USDFC to Wallet"><figcaption><p>Adding USDFC to Wallet</p></figcaption></figure>
 
 ## Step 5: Closing Your Trove
 
@@ -80,7 +80,7 @@ Don't forget to repay the borrowing fees. If you wish to close the trove with th
 4. If you just wish to withdraw FIL as much as possible, you can cancel closing and click "Adjust"
 5. Click "Confirm" to send the transaction with your wallet
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Closing Your Trove requires repayment of the borrowed amount and fees in USDFC</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt="Closing Your Trove requires repayment of the borrowed amount and fees in USDFC"><figcaption><p>Closing Your Trove requires repayment of the borrowed amount and fees in USDFC</p></figcaption></figure>
 
 ## Using Test USDFC on Testnet
 
@@ -90,7 +90,7 @@ Now that you have test USDFC, you can explore various features of the USDFC ecos
 
 You can deposit your test USDFC into the Stability Pool to help secure the protocol and potentially earn rewards from liquidations. Learn more with [using-the-stability-pool.md](using-the-stability-pool.md "mention")
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption><p>Stability Pool</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (146).png" alt="Stability Pool"><figcaption><p>Stability Pool</p></figcaption></figure>
 
 ### Fixed Rate Lending Market
 

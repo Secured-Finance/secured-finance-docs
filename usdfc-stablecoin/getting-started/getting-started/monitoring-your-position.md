@@ -23,7 +23,7 @@ The Trove dashboard is your primary tool for monitoring your position.
 3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current Trove details
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt="Screenshot of the Trove dashboard showing key metrics"><figcaption><p>Screenshot of the Trove dashboard showing key metrics</p></figcaption></figure>
 
 ## Step 2: Understand Key Metrics
 

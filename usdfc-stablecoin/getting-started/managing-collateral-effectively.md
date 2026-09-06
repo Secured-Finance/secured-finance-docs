@@ -6,19 +6,19 @@ description: Add or withdraw FIL and keep a healthy collateral ratio
 
 Your collateral ratio is what stands between your Trove and liquidation. This guide covers adjusting collateral in the app and choosing a ratio that fits your risk tolerance.
 
-<figure><img src="../../.gitbook/assets/step3.gif" alt=""><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step3.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Open your Trove
 
 In the [USDFC app](https://app.usdfc.net), go to the **Trove** page and review your current collateral, debt, and ratio.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.37.png" alt=""><figcaption><p>Your current position on the Trove page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.37.png" alt="Your current position on the Trove page"><figcaption><p>Your current position on the Trove page</p></figcaption></figure>
 
 ## Step 2 — Open the Update Trove form
 
 With an open Trove, the **Update Trove** tab is already selected when you land on the Trove page — the adjustment form shows your current collateral and debt.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.54.png" alt=""><figcaption><p>The Update Trove form</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.54.png" alt="The Update Trove form"><figcaption><p>The Update Trove form</p></figcaption></figure>
 
 ## Step 3 — Adjust the collateral amount
 
@@ -27,17 +27,17 @@ In the **Collateral** field, enter the new total:
 * **To add:** increase the FIL amount. Your ratio rises and your liquidation price falls. Adding collateral costs only gas — no protocol fee.
 * **To withdraw:** decrease the FIL amount. The transaction will revert if it would push your ratio below 110% (and no collateral can be withdrawn while the system is in [Recovery Mode](../core-mechanics/recovery-mode.md)). Withdrawing also costs only gas.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.33.png" alt=""><figcaption><p>Adding collateral</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.33.png" alt="Adding collateral"><figcaption><p>Adding collateral</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.46.png" alt=""><figcaption><p>Withdrawing collateral</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.46.png" alt="Withdrawing collateral"><figcaption><p>Withdrawing collateral</p></figcaption></figure>
 
 ## Step 4 — Confirm and verify
 
 Click **Update Trove**, confirm in your wallet, and check the updated position. Withdrawn FIL goes straight to your wallet balance.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.19.35.png" alt=""><figcaption><p>Wallet confirmation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.19.35.png" alt="Wallet confirmation"><figcaption><p>Wallet confirmation</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.20.53 (1).png" alt=""><figcaption><p>Updated Trove details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.20.53 (1).png" alt="Updated Trove details"><figcaption><p>Updated Trove details</p></figcaption></figure>
 
 ## Choosing a collateral ratio
 
