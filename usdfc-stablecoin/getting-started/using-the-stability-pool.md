@@ -4,7 +4,7 @@ description: Deposit USDFC and earn liquidation gains
 
 # 🏊 Using the Stability Pool
 
-The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because liquidation happens below 110% but above-water collateral is seized, depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
+The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because a Trove is liquidated as soon as it falls below 110%, its collateral is normally still worth more than its debt — so depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
 
 <figure><img src="../../.gitbook/assets/step5.gif" alt=""><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
@@ -33,17 +33,17 @@ This is a conversion, not a loss: your USDFC becomes FIL, usually at a discount,
 
 ## Step 4 — Claim your FIL gains
 
-Click **Claim Gains** and confirm in your wallet. The FIL is sent to your wallet balance; your remaining USDFC deposit stays in the pool.
+On the Stability Pool page, click **Claim FIL** and confirm in your wallet (the same action appears as **Claim Gains** on the Dashboard). The FIL is sent to your wallet balance; your remaining USDFC deposit stays in the pool.
 
 ## Step 5 — Withdraw when you want
 
-The withdrawal form works by setting your new deposit total: enter current deposit minus the amount you want out, click **Withdraw USDFC**, and confirm. The difference plus any unclaimed FIL gains go to your wallet.
+Click **Adjust** on your deposit, switch to the **Withdraw** tab, and enter the amount to withdraw (the app caps it at your current deposit). Click **Withdraw USDFC** and confirm. The USDFC plus any unclaimed FIL gains go to your wallet.
 
 {% hint style="warning" %}
 There is no lockup, but withdrawals are temporarily suspended whenever there are Troves below 110% that haven't been liquidated yet — the pool has to do its job first. You can withdraw once those liquidations clear.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt=""><figcaption><p>Withdrawing by adjusting the deposit amount</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt=""><figcaption><p>Withdrawing from the Stability Pool</p></figcaption></figure>
 
 ## How your share is calculated
 
@@ -55,8 +55,14 @@ $$
 
 The same fraction of your deposit is consumed to repay the liquidated debt. Everything is automatic — there's nothing to trigger or compound manually.
 
+## Troubleshooting
+
+* **Withdraw USDFC is disabled or reverts** — there are Troves below 110% waiting to be liquidated; withdrawals reopen once they clear.
+* **Claim FIL is greyed out** — no liquidation has credited your deposit yet; gains only appear after liquidations occur.
+* **My deposit is smaller than what I put in** — expected: part of it was used to repay liquidated debt, and the corresponding FIL is in your liquidation gain.
+
 ## Where next
 
 * [Liquidation](../core-mechanics/liquidation.md) — the full mechanics behind the gains
-* [Recovery Mode](../core-mechanics/recovery-mode.md) — liquidations extend up to 150% collateral ratio during Recovery Mode, which typically means more pool activity
+* [Recovery Mode](../core-mechanics/recovery-mode.md) — liquidations extend to Troves below the system ratio (up to 150%) during Recovery Mode, which typically means more pool activity
 * [Redeeming USDFC](redeeming-usdfc.md) — a different way to convert USDFC to FIL

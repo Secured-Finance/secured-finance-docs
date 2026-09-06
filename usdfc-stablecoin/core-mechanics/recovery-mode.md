@@ -21,9 +21,12 @@ The app shows a prominent Recovery Mode notice on the Dashboard whenever it is a
 | Minimum ratio for a new Trove | 110% | 150% |
 | Collateral withdrawal | Allowed (above 110%) | **Not allowed** |
 | Debt increase | Allowed (above 110%) | Only if the Trove ends at ≥ 150% and the adjustment improves its ratio |
-| Closing a Trove | Allowed | Allowed (full repayment always works) |
+| Repaying debt | Allowed | Allowed (down to the 200 USDFC minimum) |
+| Closing a Trove | Allowed (unless it would push the TCR below 150%) | **Not allowed** |
 
-Every restriction points the same direction: adjustments that push the system back above 150% are free and easy; adjustments that would drain collateral are blocked. The fee waiver removes any cost friction from repairing your position, and the 150% floor on new borrowing ensures new activity strengthens the TCR rather than diluting it.
+Every restriction points the same direction: adjustments that push the system back above 150% are free and easy; adjustments that would drain collateral — including closing a Trove, which returns its collateral — are blocked. The fee waiver removes any cost friction from repairing your position, and the 150% floor on new borrowing ensures new activity strengthens the TCR rather than diluting it.
+
+The 150% line is guarded in Normal Mode too: any operation that would push the TCR below 150% — opening a Trove, increasing debt, withdrawing collateral, or closing a Trove — is rejected before it can trigger Recovery Mode.
 
 ## Liquidation behavior in Recovery Mode
 
@@ -45,7 +48,7 @@ Note the important protection in the fourth row: a Trove liquidated **above 110%
 
 * **Before:** the real defense happens in Normal Mode — keeping your ratio well above 150% (the app labels 200%+ as very low risk) means Recovery Mode is something you observe, not suffer.
 * **During:** add collateral or repay debt immediately if you're below the TCR; both improve your ratio and the system's. Remember collateral withdrawal is blocked, so you cannot rebalance out — only in.
-* **Always available:** closing your Trove by full repayment works in any mode.
+* **Not available:** closing your Trove. Closing returns collateral to you, so it is blocked until Recovery Mode ends — you can repay debt down to the 200 USDFC minimum in the meantime.
 
 ## Where next
 

@@ -26,7 +26,7 @@ $$
 \text{Collateral Ratio} = \frac{\text{Collateral Value in USD}}{\text{Debt in USDFC}} \times 100\%
 $$
 
-The app labels the ranges: **200%+** very low risk, **150–200%** low, **120–150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below **150%** can be liquidated.
+The app labels the ranges: **200%+** very low risk, **150–200%** low, **120–150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below the **system's total ratio** (up to 150%) can be liquidated.
 
 ### Liquidation Price
 

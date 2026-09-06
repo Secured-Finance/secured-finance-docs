@@ -33,7 +33,7 @@ The causal chain: the oracle prices the collateral → ratios determine which Tr
 | --- | --- | --- |
 | Minimum Collateral Ratio (MCR) | Per-Trove ratio below which liquidation is possible | 110% |
 | Critical Collateral Ratio (CCR) | System-wide ratio that triggers Recovery Mode | 150% |
-| Minimum debt | Smallest amount a Trove can borrow | 200 USDFC |
+| Minimum borrow amount | Smallest amount a Trove can borrow (total debt is higher: this plus fee and reserve) | 200 USDFC |
 | Liquidation Reserve | Set aside per Trove for liquidation gas; refunded on close | 20 USDFC |
 | Borrowing fee | One-time, (Base Rate + 0.5%), capped at 5% | 0.5% – 5% |
 | Redemption fee | (Base Rate + 0.5%) of the redeemed amount, paid in FIL | 0.5% minimum |

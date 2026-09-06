@@ -8,7 +8,7 @@ description: How under-collateralized Troves are resolved
 
 Liquidation is how the protocol removes under-collateralized debt before it can threaten the system. When a Trove's collateral ratio falls below **110%**, anyone can trigger its liquidation: the Trove's debt is repaid by the [Stability Pool](stability-pool.md) and its FIL collateral is distributed to the pool's depositors. The Trove is closed in the process.
 
-The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio is below 150%, Troves under **150%** can also be liquidated — though for a Trove above 110%, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner.
+The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio (TCR) is below 150%, any Trove **below the current TCR** can also be liquidated — though for a Trove above 110%, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner.
 
 ## The process
 
@@ -20,7 +20,7 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 | Parameter | Description | Value |
 | --- | --- | --- |
-| Liquidation threshold | Per-Trove ratio below which liquidation is possible | 110% (up to 150% in Recovery Mode) |
+| Liquidation threshold | Per-Trove ratio below which liquidation is possible | 110% (the current TCR, up to 150%, in Recovery Mode) |
 | Liquidator reward | Share of the liquidated collateral paid to the liquidator | 0.5% |
 | Gas compensation | Paid to the liquidator from the Trove's Liquidation Reserve | 20 USDFC |
 
@@ -34,7 +34,7 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 ## Becoming a liquidator
 
-Liquidation is permissionless, and the app makes it accessible: the **Risky Troves** page (under the **More** tab) lists Troves ordered by collateral ratio with a **Liquidate** button next to any that are eligible. The 20 USDFC + 0.5% compensation is designed to cover gas with a margin, so watching the risky list during sharp FIL drops can be profitable — but you're competing with bots, and a transaction that loses the race still costs gas.
+Liquidation is permissionless, and the app makes it accessible: the **Risky Troves** page (under the **More** tab) lists Troves ordered by collateral ratio with a **Liquidate** action next to any that are eligible, plus a control to liquidate several at once. The 20 USDFC + 0.5% compensation is designed to cover gas with a margin, so watching the risky list during sharp FIL drops can be profitable — but you're competing with bots, and a transaction that loses the race still costs gas.
 
 {% hint style="info" %}
 Liquidation depends on the oracle price, not any exchange's price — a Trove that looks under-water on a DEX chart isn't liquidatable until the [protocol's price feed](price-oracle.md) says so.

@@ -1,5 +1,5 @@
 ---
-description: A decentralized, over-collateralized stablecoin backed by Filecoin
+description: A decentralized, over-collateralized stablecoin backed by FIL
 ---
 
 # 📢 Overview
@@ -23,7 +23,7 @@ The mechanics are covered in depth in [Core Mechanics](core-mechanics/README.md)
 | --- | --- |
 | Minimum Collateral Ratio (MCR) | 110% |
 | Recovery Mode threshold (system-wide) | 150% |
-| Minimum debt per Trove | 200 USDFC |
+| Minimum borrow amount per Trove | 200 USDFC |
 | Liquidation Reserve (refunded on close) | 20 USDFC |
 | Borrowing fee (one-time) | 0.5% – 5%, varies with the Base Rate |
 | Redemption fee | 0.5% + Base Rate |

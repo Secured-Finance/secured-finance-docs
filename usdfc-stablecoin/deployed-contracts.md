@@ -17,12 +17,13 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 
 ### Protocol contracts (Filecoin Mainnet)
 
+<!-- TODO(マージ前): RedStoneのFIL/USDフィードアドレスを確認して1行追加（例：RedStone FIL/USD feed | Primary oracle | アドレス） -->
+
 | Contract | Role | Address |
 | --- | --- | --- |
 | BorrowerOperations | Opening, adjusting, and closing Troves | [`0x1dE3c2e21DD5AF7e5109D2502D0d570D57A1abb0`](https://filfox.info/en/address/0x1dE3c2e21DD5AF7e5109D2502D0d570D57A1abb0) |
 | TroveManager | Liquidations, redemptions, Trove state | [`0x5aB87c2398454125Dd424425e39c8909bBE16022`](https://filfox.info/en/address/0x5aB87c2398454125Dd424425e39c8909bBE16022) |
 | StabilityPool | Stability Pool deposits and gains | [`0x791Ad78bBc58324089D3E0A8689E7D045B9592b5`](https://filfox.info/en/address/0x791Ad78bBc58324089D3E0A8689E7D045B9592b5) |
-<!-- TODO(マージ前): RedStoneのFIL/USDフィードアドレスを確認して1行追加（例：RedStone FIL/USD feed | Primary oracle | アドレス） -->
 | PriceFeed | FIL/USD price with fallback logic | [`0x80e651c9739C1ed15A267c11b85361780164A368`](https://filfox.info/en/address/0x80e651c9739C1ed15A267c11b85361780164A368) |
 | TellorCaller | Fallback oracle adapter | [`0x3eA890431C85F40405BBF5BE74D03802672aFe3b`](https://filfox.info/en/address/0x3eA890431C85F40405BBF5BE74D03802672aFe3b) |
 | ActivePool | Collateral and debt of active Troves | [`0x8637Ac7FdBB4c763B72e26504aFb659df71c7803`](https://filfox.info/en/address/0x8637Ac7FdBB4c763B72e26504aFb659df71c7803) |

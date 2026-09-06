@@ -4,7 +4,7 @@ description: The face-value exchange that anchors USDFC's peg
 
 # 💸 Redemption
 
-Redemption is the protocol's promise that 1 USDFC can always be exchanged for $1 worth of FIL. Any holder can invoke it at any time, and the FIL comes from the collateral of the lowest-ratio Troves. That standing promise is what puts a floor under the price: whenever USDFC trades below $1, redeeming it is free money, and the resulting arbitrage pulls the price back up.
+Redemption is the protocol's promise that 1 USDFC can always be exchanged for $1 worth of FIL. Any holder can invoke it at will (as long as the system is above 110% total collateralization), and the FIL comes from the collateral of the lowest-ratio Troves. That standing promise is what puts a floor under the price: whenever USDFC trades below $1, redeeming it is free money, and the resulting arbitrage pulls the price back up.
 
 {% hint style="success" %}
 **What redemption gives holders**
@@ -26,7 +26,7 @@ For the affected Trove owner this is a **forced swap, not a loss**: debt falls b
 **Redemption is not repayment.** Redeeming reduces *someone else's* Trove. To reduce your own debt, repay via Update Trove — which has no fee at all.
 {% endhint %}
 
-A redemption cannot leave a Trove's borrowed amount below the 200 USDFC minimum — it either stays above it (the redemption amount is adjusted down) or pays the Trove off entirely.
+A redemption cannot leave a Trove's borrowed amount below the 200 USDFC minimum: a partial redemption that would do so is skipped for that Trove, so each affected Trove is either reduced to at least 200 USDFC or paid off entirely.
 
 ## Redemption Fee
 

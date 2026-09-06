@@ -90,7 +90,9 @@ Yes — increase the borrowed amount via **Update Trove** any time your resultin
 
 <summary>How do I close my Trove?</summary>
 
-Repay the full debt in one transaction (partial closure isn't a thing — but partial *repayment* via Update Trove is). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+Repay the full debt in one transaction via the **Close Trove** tab (partial closure isn't a thing — but partial *repayment* via Update Trove is). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+
+Two cases where closing is refused: during [Recovery Mode](core-mechanics/recovery-mode.md), and when closing would push the system's total collateral ratio below 150%. In both cases you can still repay debt; you just can't withdraw the collateral until conditions improve.
 
 </details>
 
@@ -150,7 +152,7 @@ Liquidations fire on the Troves that fall below threshold, the Stability Pool ab
 
 </details>
 
-## Advanced Topics
+## Protocol Mechanics
 
 <details>
 
@@ -168,7 +170,7 @@ If you own a Trove, keeping your ratio above the crowd's — and watching the ap
 
 <summary>What is Recovery Mode?</summary>
 
-A system-wide state that activates when total collateralization falls below 150%: the liquidation threshold extends up to the TCR, new Troves need 150%+, collateral withdrawal is blocked, and the borrowing fee drops to 0% so repairing positions is frictionless. It ends automatically once the TCR recovers above 150%. The app shows a banner while it's active.
+A system-wide state that activates when total collateralization falls below 150%: the liquidation threshold extends up to the TCR, new Troves need 150%+, collateral withdrawal and Trove closure are blocked, and the borrowing fee drops to 0% so repairing positions is frictionless. It ends automatically once the TCR recovers above 150%. The app shows a banner while it's active.
 
 **Related:** [Recovery Mode](core-mechanics/recovery-mode.md)
 

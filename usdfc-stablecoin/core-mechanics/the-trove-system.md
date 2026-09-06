@@ -10,7 +10,7 @@ A **Trove** is a personal position inside the protocol: FIL collateral on one si
 
 1. **Open** — deposit FIL and borrow at least 200 USDFC. The [borrowing fee](protocol-fees.md) and the 20 USDFC Liquidation Reserve are added to your debt.
 2. **Manage** — add or withdraw collateral, borrow more, or repay, in any combination, as long as the ratio stays above the minimum.
-3. **Close** — repay the debt in full; your collateral returns and the Liquidation Reserve is refunded.
+3. **Close** — repay the debt in full; your collateral returns and the Liquidation Reserve is refunded. Closing is refused during [Recovery Mode](recovery-mode.md), or if it would push the system-wide ratio below 150%.
 4. **Involuntary changes** — two mechanisms can alter your Trove without your consent: [liquidation](liquidation.md) if your ratio falls below 110%, and [redemption](redemption.md), which pays down the lowest-ratio Troves' debt in exchange for their collateral.
 
 ## Debt Calculations
@@ -36,7 +36,7 @@ $$
 $$
 
 * **110%** is the liquidation threshold in Normal Mode.
-* **150%** matters twice: it is the system-wide Recovery Mode trigger, and during Recovery Mode, Troves below 150% can themselves be liquidated.
+* **150%** matters twice: it is the system-wide Recovery Mode trigger, and during Recovery Mode, Troves below the system's total ratio (which can be anywhere up to 150%) can themselves be liquidated.
 * The app labels ratios below 150% as elevated risk; see [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md#choosing-a-collateral-ratio) for the full risk bands.
 
 {% hint style="info" %}

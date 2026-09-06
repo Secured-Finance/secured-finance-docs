@@ -43,18 +43,18 @@ Click **Update Trove**, confirm in your wallet, and check the updated position. 
 
 The app classifies your ratio the same way it displays risk:
 
-| Ratio | App label | What it means |
+| Ratio | App label | FIL drop before liquidation (from 110%) |
 | --- | --- | --- |
-| 200% and above | Very Low risk | Large buffer; survives most single-day FIL moves |
-| 150% – 200% | Low risk | Reasonable buffer; check in on it regularly |
-| 120% – 150% | Medium risk | Thin buffer; requires active monitoring |
-| Below 120% | High risk | A small price drop can trigger liquidation |
+| 200% and above | Very Low risk | 45% or more |
+| 150% – 200% | Low risk | 27% – 45% |
+| 120% – 150% | Medium risk | 8% – 27% |
+| Below 120% | High risk | Less than 8% |
 | Below 110% | — | Eligible for [liquidation](../core-mechanics/liquidation.md) |
 
 Two numbers worth knowing by heart:
 
 * **110%** — the Minimum Collateral Ratio. Below it, your Trove can be liquidated.
-* **150%** — the system-wide threshold. If the *total* collateral ratio of all Troves falls below it, [Recovery Mode](../core-mechanics/recovery-mode.md) begins and Troves below 150% can be liquidated too.
+* **150%** — the system-wide threshold. If the *total* collateral ratio of all Troves falls below it, [Recovery Mode](../core-mechanics/recovery-mode.md) begins and Troves below that total ratio (up to 150%) can be liquidated too.
 
 Your **liquidation price** — the FIL price at which your Trove hits 110% — is:
 
@@ -65,6 +65,12 @@ $$
 {% hint style="warning" %}
 There is no ratio that removes risk entirely — a deep enough FIL drop can threaten any Trove. Decide how closely you can realistically monitor the market, and size your buffer to match. See the [Risk Disclaimer](../../resources/legal/risk-disclaimer.md).
 {% endhint %}
+
+## Troubleshooting
+
+* **Withdrawal reverts** — the new ratio would fall below 110%, the system is in Recovery Mode, or the withdrawal would push the system-wide ratio below 150%. Withdraw less, or add collateral first.
+* **Update Trove is disabled** — check that the amounts changed and that your wallet has enough FIL for gas.
+* **Ratio didn't update after the transaction** — refresh the page; the app re-reads your Trove on load.
 
 ## Where next
 

@@ -16,7 +16,7 @@ Minting is how USDFC comes into existence: you lock FIL in a [Trove](the-trove-s
 
 ## The flow
 
-1. **Open a Trove** with FIL collateral and choose a borrow amount (minimum 200 USDFC), keeping the collateral ratio above **110%** — e.g. $1,000 of FIL supports at most ~909 USDFC.
+1. **Open a Trove** with FIL collateral and choose a borrow amount (minimum 200 USDFC), keeping the collateral ratio above **110%** — e.g. $1,000 of FIL supports at most ~909 USDFC of total debt.
 2. **Receive the full amount.** The USDFC you requested arrives in your wallet; the fee and Liquidation Reserve are added to your *debt*, not deducted from the transfer.
 3. **Maintain the ratio.** If FIL falls, add collateral or repay to stay clear of [liquidation](liquidation.md). Be aware your Trove can also be affected by [redemption](redemption.md) if its ratio is among the lowest.
 4. **Adjust or close whenever.** Borrow more, repay, or close entirely by repaying the total debt (see the [walkthrough](../getting-started/minting-usdfc-step-by-step.md)).
@@ -46,7 +46,7 @@ $$
 * Liquidation Reserve: 20 USDFC
 * **Total Debt: 4,060 USDFC**, while 4,000 USDFC arrives in your wallet
 
-The Base Rate is 0% most of the time, making the typical fee exactly 0.5%.
+In calm conditions the Base Rate sits at 0%, making the typical fee exactly 0.5%.
 
 ## Base Rate Explanation
 
@@ -61,7 +61,6 @@ The **Base Rate** is a single system-wide variable that couples fees to redempti
 ## Interest Rate
 
 The protocol charges **no ongoing interest** on USDFC debt — the borrowing fee is the entire cost of a loan, however long you hold it. This is a deliberate choice to make USDFC cheap to hold and encourage adoption across the Filecoin ecosystem.
-
 
 {% hint style="info" %}
 An interest rate on borrowed USDFC may be introduced in the future to support the protocol's long-term sustainability. Any such change would be announced in advance.

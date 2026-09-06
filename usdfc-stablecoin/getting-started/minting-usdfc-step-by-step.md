@@ -43,6 +43,12 @@ Over the life of a Trove: wallet balance received = total debt − Liquidation R
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.15.20.png" alt=""><figcaption><p>Updated Trove details and wallet balance</p></figcaption></figure>
 
+## Troubleshooting
+
+* **Update Trove is disabled** — the new ratio would fall below 110%, or (in Recovery Mode) the adjustment doesn't leave the Trove at 150%+ with an improved ratio.
+* **Transaction reverts** — the FIL price may have moved; refresh and re-check the resulting ratio before confirming again.
+* **USDFC not in your wallet** — add the token via "Add USDFC to Wallet" on the Dashboard, or check the transaction on Filfox.
+
 ## Where next
 
 * [Manage your collateral](managing-collateral-effectively.md) if the new ratio is tighter than you'd like

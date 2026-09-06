@@ -49,4 +49,10 @@ Closing is worth practicing on testnet because of one catch: you must repay your
 
 **Bridge and SushiSwap are mainnet-only.** And testnet tokens can never move to mainnet — they're separate networks.
 
+## Troubleshooting
+
+* **Faucet says you've already claimed** — it rate-limits per address; wait for the cooldown or test with a different address.
+* **App shows the wrong network** — switch your wallet to Filecoin Calibration (chain ID 314159) and reconnect.
+* **Can't close the Trove** — you need slightly more USDFC than you minted to cover the borrowing fee; see Step 5.
+
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.57.06.png" alt=""><figcaption><p>The Stability Pool on testnet</p></figcaption></figure>

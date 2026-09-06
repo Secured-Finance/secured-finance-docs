@@ -55,6 +55,12 @@ Redemption is **not** the cheapest exit if you have your own Trove — repaying 
 Redemptions are unavailable while the system's total collateral ratio is below 110%. Troves that are themselves below 110% are skipped by redemption — they're left for [liquidation](../core-mechanics/liquidation.md) instead.
 {% endhint %}
 
+## Troubleshooting
+
+* **Redeem USDFC is disabled** — the system's total collateral ratio is below 110%, or you have no USDFC in the connected wallet.
+* **You received less FIL than expected** — the redemption fee (0.5% + Base Rate) is deducted in FIL; a recent large redemption raises the Base Rate.
+* **Only part of the amount was redeemed** — a partial redemption that would leave a Trove below 200 USDFC is skipped; try a slightly different amount.
+
 ## Where next
 
 * [Redemption](../core-mechanics/redemption.md) — the full mechanics, including how the Base Rate moves
