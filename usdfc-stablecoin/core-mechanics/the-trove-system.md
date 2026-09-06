@@ -1,38 +1,17 @@
 ---
-description: Understanding the core vault system for managing collateral and debt
+description: Collateralized debt positions and their lifecycle
 ---
 
 # ✏️ The Trove System
 
-## Overview
+A **Trove** is a personal position inside the protocol: FIL collateral on one side, USDFC debt on the other, and a collateral ratio connecting them. Every USDFC in existence was minted from some Trove, so the solvency of the system is the solvency of its Troves. Each address can hold one Trove at a time.
 
-The Trove System is the foundation of the USDFC Stablecoin Protocol, providing users with personal vaults to deposit Filecoin (FIL) collateral and borrow USDFC. Each Trove tracks your collateral, debt, and maintains a collateralization ratio that must stay above the minimum threshold to avoid liquidation.
+## Lifecycle
 
-## How It Works
-
-A Trove is your personal vault within the protocol where you lock up Filecoin (FIL) as collateral in order to borrow USDFC. The system carefully tracks the relationship between your collateral value and debt to ensure the protocol remains solvent.
-
-### Key Components
-
-1. **Collateral**: The amount of FIL you deposit to secure your borrowed USDFC
-2. **Total Debt**: The sum of your borrowed USDFC, liquidation reserve, and any applicable fees
-3. **Collateral Ratio**: The ratio of your collateral value (in USD) to your total debt (in USDFC)
-
-### Trove Lifecycle
-
-1. **Opening a Trove**: Deposit FIL collateral and specify how much USDFC to borrow
-2. **Managing a Trove**: Add collateral or repay debt to maintain a healthy collateral ratio
-3. **Closing a Trove**: Repay all debt to reclaim your collateral
-4. **Liquidation**: If your collateral ratio falls below the minimum threshold, your Trove may be liquidated
-
-## Key Parameters
-
-| Parameter                | Description                                        | Default Value |
-| ------------------------ | -------------------------------------------------- | ------------- |
-| Minimum Collateral Ratio | Minimum required ratio in Normal Mode              | 110%          |
-| Recovery Mode Threshold  | System-wide ratio that triggers Recovery Mode      | 150%          |
-| Minimum Borrow Amount    | Minimum USDFC that can be borrowed                 | 180 USDFC     |
-| Liquidation Reserve      | USDFC reserved for potential liquidation gas costs | 20 USDFC      |
+1. **Open** — deposit FIL and borrow at least 200 USDFC. The [borrowing fee](protocol-fees.md) and the 20 USDFC Liquidation Reserve are added to your debt.
+2. **Manage** — add or withdraw collateral, borrow more, or repay, in any combination, as long as the ratio stays above the minimum.
+3. **Close** — repay the debt in full; your collateral returns and the Liquidation Reserve is refunded. Closing is refused during [Recovery Mode](recovery-mode.md), or if it would push the system-wide ratio below 150%.
+4. **Involuntary changes** — two mechanisms can alter your Trove without your consent: [liquidation](liquidation.md) if your ratio falls below 110%, and [redemption](redemption.md), which pays down the lowest-ratio Troves' debt in exchange for their collateral.
 
 ## Debt Calculations
 
@@ -42,11 +21,13 @@ $$
 \text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})
 $$
 
-The Total Debt represents the full amount you owe to the protocol, including:
+* **Borrowed Amount** — the USDFC sent to your wallet (minimum 200 USDFC).
+* **Liquidation Reserve** — 20 USDFC set aside to compensate whoever triggers a liquidation of your Trove; refunded when you close it normally.
+* **Borrowing Fee** — one-time, (Base Rate + 0.5%) of the borrowed amount; waived entirely during [Recovery Mode](recovery-mode.md). There is no ongoing interest.
 
-* **Borrowed Amount**: The USDFC you receive (minimum 180 USDFC)
-* **Liquidation Reserve**: 20 USDFC set aside to cover potential liquidation costs (refunded when you close your Trove)
-* **Borrowing Fee**: One-time fee based on your borrowed amount (waived in Recovery Mode)
+**Example (Normal Mode, Base Rate 0%):** borrow 200 USDFC → fee 1.00 USDFC → Total Debt = 200 + 20 + 1.00 = **221.00 USDFC**.
+
+**Closing that Trove:** you repay the Total Debt, but the 20 USDFC reserve is netted out in the same transaction — so the USDFC you must actually hold is **201.00**. Note that this is 1.00 more than you received: the fee has to come from somewhere (mint slightly more up front, or acquire the difference).
 
 ### Collateral Ratio Formula
 
@@ -54,61 +35,16 @@ $$
 \text{Collateral Ratio} = \frac{\text{Collateral Value (USD)}}{\text{Total Debt (USDFC)}}
 $$
 
-* Must remain above 110% in Normal Mode
-* Recommended to maintain above 150% to avoid liquidation in Recovery Mode
-* Many users maintain 200-250% as an extra safety buffer
+* **110%** is the liquidation threshold in Normal Mode.
+* **150%** matters twice: it is the system-wide Recovery Mode trigger, and during Recovery Mode, Troves below the system's total ratio (which can be anywhere up to 150%) can themselves be liquidated.
+* The app labels ratios below 150% as elevated risk; see [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md#choosing-a-collateral-ratio) for the full risk bands.
 
-## Action-Specific Calculations
+{% hint style="info" %}
+**Why a Liquidation Reserve?** Liquidation is performed by third parties who pay gas to do it. The 20 USDFC reserve guarantees that liquidating even a small Trove is worth the gas — which is also why it exists as a *reserve* rather than a fee: if your Trove is never liquidated, you get it back.
+{% endhint %}
 
-### Opening a Trove
+## Where next
 
-**Normal Mode**:
-
-$$
-\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})
-$$
-
-**Recovery Mode**:
-
-$$
-\text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve})
-$$
-
-(Borrowing Fee is waived)
-
-**Example (Normal Mode)**:
-
-* Borrowed Amount: 180 USDFC
-* Liquidation Reserve: 20 USDFC
-* Borrowing Fee: 0.90 USDFC (0.5% of 180)
-* **Total Debt**: 200.90 USDFC
-
-### Closing a Trove
-
-To close your Trove, you must repay your Total Debt. However, the protocol immediately refunds the Liquidation Reserve, so you only need to prepare the net amount.
-
-**Example**:
-
-* Total Debt: 200.90 USDFC
-* Liquidation Reserve: 20 USDFC
-* **Amount You Need to Prepare**: 180.90 USDFC
-
-## Common Questions
-
-**Is there any ongoing interest on my borrowed USDFC?**\
-No, the protocol only charges a one-time Borrowing Fee when you mint USDFC. There are no recurring interest charges.
-
-**What collateral ratio should I maintain to be safe?**\
-While the minimum is 110%, it's recommended to maintain at least 150% to avoid liquidation during Recovery Mode. Many users maintain 200-250% as an extra safety buffer.
-
-**What happens to my Liquidation Reserve?**\
-The 20 USDFC Liquidation Reserve is automatically refunded when you close your Trove. If your Trove is liquidated, this reserve is used to compensate the liquidator for gas costs.
-
-[Learn more in the FAQs section](../faqs.md)
-
-## Related Topics
-
-* [Mint & Borrow](mint-and-borrow.md)
-* [Liquidation](liquidation.md)
-* [Redemption](redemption.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Mint & Borrow](mint-and-borrow.md) — fees and the Base Rate in detail
+* [Liquidation](liquidation.md) — what happens below 110%
+* [Redemption](redemption.md) — why low-ratio Troves get redeemed against first

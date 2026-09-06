@@ -1,132 +1,58 @@
 ---
-description: Learn how to get and use test USDFC on the Filecoin Calibration testnet
+description: Try everything risk-free on the Filecoin Calibration testnet
 ---
 
 # 🧪 Getting Test USDFC on Testnet
 
-## Overview
+Everything in the previous guides can be practiced with worthless test tokens on the Filecoin Calibration testnet. The testnet app lives at [**stg.usdfc.net**](https://stg.usdfc.net) — a separate deployment from mainnet ([app.usdfc.net](https://app.usdfc.net)). All you need is a web3 wallet.
 
-This tutorial guides you through the process of obtaining and using test USDFC on the Filecoin Calibration testnet. Testing on the testnet allows you to experiment with USDFC's features without using real assets. You'll learn how to:
+## Step 1 — Get test FIL (tFIL) from the faucet
 
-* Obtain test Filecoin (tFIL) from a faucet
-* Access the USDFC testnet application
-* Mint test USDFC using tFIL as collateral
-* Add test USDFC to your wallet
+1. Visit the [Calibration testnet faucet](https://faucet.calibnet.chainsafe-fil.io/funds.html).
+2. Enter your wallet address and complete any verification.
+3. Request tFIL — the faucet dispenses about 100 tFIL per request and limits how often you can request, so grab it once and it will cover plenty of testing.
 
-## Prerequisites
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.49.16.png" alt="The Calibration faucet"><figcaption><p>The Calibration faucet</p></figcaption></figure>
 
-* A web3 wallet (like MetaMask) installed and have your wallet address
-* Basic understanding of blockchain transactions
+## Step 2 — Connect to the testnet app
 
-## Step 1: Get Test Filecoin (tFIL) from the Faucet
+Open [stg.usdfc.net](https://stg.usdfc.net), click **Connect Wallet**, and make sure your wallet is on the **Filecoin Calibration** network — the app will prompt you to add it if it's missing.
 
-Before minting test USDFC, you'll need test Filecoin (tFIL) to use as collateral.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.48.02.png" alt="Connecting and adding the Calibration network"><figcaption><p>Connecting and adding the Calibration network</p></figcaption></figure>
 
-1. Visit the Filecoin Calibration testnet faucet at [https://faucet.calibnet.chainsafe-fil.io/funds.html](https://faucet.calibnet.chainsafe-fil.io/funds.html)
-2. Enter your wallet address
-3. Complete any verification steps required by the faucet
-4. Request tFIL (you will receive 100 tFIL twice a day)
-5. Wait for the transaction to complete (this usually takes a few minutes)
+## Step 3 — Open a Trove and mint test USDFC
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.49.16.png" alt=""><figcaption><p>Filecoin Calibration testnet faucet interface</p></figcaption></figure>
+On the **Trove** page, deposit tFIL and mint USDFC exactly as described in [Creating Your First Trove](creating-your-first-trove.md) — same minimums, same fees, same collateral ratio rules, just with valueless tokens.
 
-## Step 2: Access the USDFC Testnet Application
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.52.09.png" alt="Minting test USDFC"><figcaption><p>Minting test USDFC</p></figcaption></figure>
 
-The USDFC testnet application is separate from the mainnet application.
+## Step 4 — Add test USDFC to your wallet
 
-1. Go to the USDFC testnet application at [https://stg.usdfc.net](https://stg.usdfc.net)
-2. Connect your wallet by clicking the "Connect Wallet" button in the top right corner
-3. Ensure your wallet is set to the Filecoin Calibration testnet network
+On the Dashboard, find "Add USDFC to Wallet" and click **Click here**; approve the token in your wallet.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.48.02.png" alt=""><figcaption><p>USDFC testnet application page with adding Calibration network</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.54.45.png" alt="Adding USDFC to the wallet"><figcaption><p>Adding USDFC to the wallet</p></figcaption></figure>
 
-> **Note:** The testnet application (https://stg.usdfc.net) is different from the mainnet application (https://app.usdfc.net). Make sure you're using the correct URL for testing.
+## Step 5 — Practice closing the Trove
 
-## Step 3: Mint Test USDFC Using tFIL
+Closing is worth practicing on testnet because of one catch: you must repay your **total debt**, which includes the borrowing fee — so the USDFC you minted isn't quite enough on its own.
 
-Now that you have tFIL and are connected to the testnet application, you can mint test USDFC.
+1. On the **Trove** page, open the **Close Trove** tab.
+2. If the app says you need more USDFC to cover the fees, get the shortfall from another account or a swap.
+3. Click **Repay & Close Trove** and confirm. Your collateral returns, and the 20 USDFC Liquidation Reserve is refunded as part of closing.
 
-1. On the USDFC testnet application, navigate to the "Trove" page
-2. Enter the amount of tFIL you want to use as collateral
-3. The application will calculate the amount of USDFC you can mint based on your collateral
-4. Adjust the collateral ratio as needed (higher ratios provide more protection against liquidation)
-5. Confirm the transaction in your wallet
-6. Wait for the transaction to be confirmed on the blockchain
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.56.26.png" alt="Closing a Trove repays the borrowed amount plus fees"><figcaption><p>Closing a Trove repays the borrowed amount plus fees</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.52.09.png" alt=""><figcaption><p>Minting USDFC</p></figcaption></figure>
+## What else works on testnet
 
-## Step 4: Add Test USDFC to Your Wallet
+* **Stability Pool** — deposit your test USDFC exactly as in [Using the Stability Pool](using-the-stability-pool.md).
+* **Fixed-Rate Lending** — the testnet market runs at [stg.secured.finance](https://stg.secured.finance/?chain_id=314159); see the [lending quick-start](../../fixed-rate-lending/getting-started/quick-start-lend.md).
 
-After minting, you'll want to see your test USDFC in your wallet.
+**Bridge and SushiSwap are mainnet-only.** And testnet tokens can never move to mainnet — they're separate networks.
 
-1. On the Dashboard page, find "Add USDFC to Wallet, Click here"
-2. Click "Click here"
-3. The token symbol (USDFC) and decimals should be added
-4. Click "Add" or "Import" to add test USDFC to your wallet
+## Troubleshooting
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.54.45.png" alt=""><figcaption><p>Adding USDFC to Wallet</p></figcaption></figure>
+* **Faucet says you've already claimed** — it rate-limits per address; wait for the cooldown or test with a different address.
+* **App shows the wrong network** — switch your wallet to Filecoin Calibration (chain ID 314159) and reconnect.
+* **Can't close the Trove** — you need slightly more USDFC than you minted to cover the borrowing fee; see Step 5.
 
-## Step 5: Closing Your Trove
-
-Most cases, 'Update Trove' should allow withdrawing collateralized FIL, but if you no longer need to use USDFC system, you can close your trove and you can reopen a trove again.
-
-{% hint style="warning" %}
-Don't forget to repay the borrowing fees. If you wish to close the trove with the USDFC amount you just borrowed, it doesn't work. You should repay borrowing fees. Please get additional USDFC from another account or via swap.
-{% endhint %}
-
-1. On the USDFC testnet application, navigate to the "Trove" page
-2. Click the "Close Trove" tab
-3. If you see error message that you need more USDFC to pay borrowing fees, please get it
-4. Click "Repay & Close Trove" to send the transaction with your wallet
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.56.26.png" alt=""><figcaption><p>Closing Your Trove requires repayment of the borrowed amount and fees in USDFC</p></figcaption></figure>
-
-## Using Test USDFC on Testnet
-
-Now that you have test USDFC, you can explore various features of the USDFC ecosystem on testnet:
-
-### Stability Pool
-
-You can deposit your test USDFC into the Stability Pool to help secure the protocol and potentially earn rewards from liquidations. Learn more with [using-the-stability-pool.md](using-the-stability-pool.md "mention")
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.57.06.png" alt=""><figcaption><p>Stability Pool</p></figcaption></figure>
-
-### Fixed Rate Lending Market
-
-While Bridge and SushiSwap features are not available on testnet, you can use the USDFC fixed rate lending market.
-
-1. Visit [http://stg.secured.finance/?chain\_id=314159](http://stg.secured.finance/?chain_id=314159)
-2. Connect your wallet
-3. Navigate to the lending markets
-4. Explore lending or borrowing with your test USDFC. Learn more with [quick-start-lend.md](../../fixed-rate-lending/getting-started/quick-start-lend.md "mention") and [quick-start-borrow.md](../../fixed-rate-lending/getting-started/quick-start-borrow.md "mention")
-
-## Testnet Limitations
-
-It's important to understand the differences between testnet and mainnet:
-
-* **Bridge functionality** is not available on testnet
-* **SushiSwap integration** is not available on testnet
-* Test tokens have no real-world value
-* Transaction times and network behavior may differ from mainnet
-* The USDFC fixed rate lending market is available at [https://stg.secured.finance](http://stg.secured.finance/?chain_id=314159)
-
-## Common Questions
-
-**Q: How often can I request test FIL from the faucet?**\
-A: Faucet limitations vary, but typically you can request once every 24 hours.
-
-**Q: Are there any fees for transactions on testnet?**\
-A: Yes, you'll need to pay gas fees in tFIL, but since tFIL has no real value, these fees are effectively free.
-
-**Q: Can I transfer my test USDFC to mainnet?**\
-A: No, testnet tokens cannot be transferred to mainnet as they exist on separate networks.
-
-**Q: What should I do if my transaction fails?**\
-A: Check that you have enough tFIL for gas fees, ensure your wallet is connected to the Filecoin Calibration testnet, and try again with a higher gas limit if necessary.
-
-## Related Resources
-
-* [USDFC Overview](../overview.md)
-* [Creating Your First Trove](creating-your-first-trove.md)
-* [Minting USDFC Step-by-Step](minting-usdfc-step-by-step.md)
-* [Using the Stability Pool](using-the-stability-pool.md)
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.57.06.png" alt="The Stability Pool on testnet"><figcaption><p>The Stability Pool on testnet</p></figcaption></figure>

@@ -1,170 +1,68 @@
 ---
-description: Learn how to deposit USDFC into the Stability Pool and earn rewards
+description: Deposit USDFC and earn liquidation gains
 ---
 
 # 🏊 Using the Stability Pool
 
-<figure><img src="../../.gitbook/assets/step5.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because a Trove is liquidated as soon as it falls below 110%, its collateral is normally still worth more than its debt — so depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
 
-## Prerequisites
+<figure><img src="../../.gitbook/assets/step5.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
-* USDFC tokens in your wallet
-* Access to the [USDFC application](https://app.usdfc.net)
-* Connected wallet with enough FIL for gas fees
+## Step 1 — Open the Stability Pool page
 
-## Overview
+In the [USDFC app](https://app.usdfc.net), go to the **Stability Pool** page. Pool-wide statistics (total deposits and your share) are also visible in the **Protocol Overview** section of the Dashboard.
 
-The Stability Pool is a key component of the USDFC protocol that helps maintain system stability. By depositing your USDFC into the Stability Pool, you contribute to the liquidation mechanism and earn rewards in the form of liquidated FIL collateral. This guide will walk you through the process of depositing USDFC into the Stability Pool and understanding how rewards work.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.22.png" alt="The Stability Pool page and protocol statistics"><figcaption><p>The Stability Pool page and protocol statistics</p></figcaption></figure>
 
-## Step 1: Access the Stability Pool
+## Step 2 — Deposit USDFC
 
-First, you need to navigate to the Stability Pool page in the USDFC application.
+Enter the amount to deposit, click **Deposit USDFC**, and confirm in your wallet. There is no deposit fee and no minimum, though very small deposits may not justify the gas.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
-2. Connect your wallet if not already connected
-3. Go to the "Stability Pool" page on the USDFC application
-4. See the "Protocol Overview" section on the Dashboard page to check the Stability Pool information
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.23.48.png" alt="The deposit form"><figcaption><p>The deposit form</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.22.png" alt=""><figcaption><p>Stability Pool section and Protocol Statistics section</p></figcaption></figure>
+## Step 3 — Watch your deposit work
 
-## Step 2: Review Stability Pool Information
+Liquidation gains accrue only when liquidations happen, so don't expect steady drip income — activity clusters around FIL price drops. Two numbers change over time:
 
-Before depositing, review the current Stability Pool information.
+* **Your deposit** shrinks as its share of USDFC is used to repay liquidated debt.
+* **Your liquidation gain** (FIL) grows as you receive your share of seized collateral.
 
-1. Check the total USDFC deposited in the Stability Pool
-2. Review the current rewards (if displayed)
-3. Note that liquidation rewards are automatically calculated and distributed on a pro rata basis based on your Stability Pool contribution
-4. Be aware that liquidation history is not displayed in the app but may be available through external on-chain analytics tools
+This is a conversion, not a loss: your USDFC becomes FIL, usually at a discount, since a liquidated Trove hands over more than $1 of collateral per $1 of debt repaid. Note the flip side — you're accumulating a volatile asset, and its price can fall after you receive it.
 
-## Step 3: Deposit USDFC
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt="Deposit and liquidation gains on the Stability Pool page"><figcaption><p>Deposit and liquidation gains on the Stability Pool page</p></figcaption></figure>
 
-Now you can deposit your USDFC into the Stability Pool.
+## Step 4 — Claim your FIL gains
 
-1. Enter the amount of USDFC you want to deposit
-2. Review any fees or conditions associated with the deposit
-3. Click the "Deposit USDFC" button
-4. Confirm the transaction in your wallet
-5. Wait for the transaction to be processed on the blockchain
+On the Stability Pool page, click **Claim FIL** and confirm in your wallet (the same action appears as **Claim Gains** on the Dashboard). The FIL is sent to your wallet balance; your remaining USDFC deposit stays in the pool.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.23.48.png" alt=""><figcaption><p>The Stability Pool deposit interface with the amount input field</p></figcaption></figure>
+## Step 5 — Withdraw when you want
 
-## Step 4: Monitor Your Deposit and Rewards
-
-After depositing, you can monitor your position and earned rewards.
-
-1. Your deposit amount will be displayed in the Stability Pool dashboard
-2. Any earned FIL rewards will accumulate over time
-3. The dashboard will show your share of the Stability Pool and Liquidation gain as rewards
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt=""><figcaption><p>Screenshot showing deposit and rewards information</p></figcaption></figure>
-
-## Step 5: Claim Rewards (When Available)
-
-When you've earned rewards, you can claim them.
-
-1. Locate the "Claim Gains" or similar button in the Stability Pool dashboard
-2. Click the button to claim your earned FIL rewards
-3. Confirm the transaction in your wallet
-4. Wait for the transaction to be processed
-5. Verify that the FIL rewards have been added to your&#x20;
-
-## Step 6: Withdraw USDFC (When Desired)
-
-You can generally withdraw your USDFC from the Stability Pool at any time.
-
-1. Enter the amount of USDFC you want to keep in the Stability Pool by subtracting the amount of USDFC you want to withdraw
-2. Click the "Withdraw USDFC" button
-3. Confirm the transaction in your wallet
-4. Wait for the transaction to be processed
-5. Verify that the USDFC has been returned to your Liquidation Gains
+Click **Adjust** on your deposit, switch to the **Withdraw** tab, and enter the amount to withdraw (the app caps it at your current deposit). Click **Withdraw USDFC** and confirm. The USDFC plus any unclaimed FIL gains go to your wallet.
 
 {% hint style="warning" %}
-As a general rule, deposits in the Stability Pool can be withdrawn at any time, and there is no minimum lockup period. However, withdrawals are temporarily suspended while there are Troves below the minimum collateral ratio of 110% that have not yet been liquidated.
+There is no lockup, but withdrawals are temporarily suspended whenever there are Troves below 110% that haven't been liquidated yet — the pool has to do its job first. You can withdraw once those liquidations clear.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.58.png" alt="Withdrawing from the Stability Pool"><figcaption><p>Withdrawing from the Stability Pool</p></figcaption></figure>
 
-## How Stability Pool Rewards Work
+## How your share is calculated
 
-### Liquidation Process
-
-When a Trove is liquidated, the following happens:
-
-1. The system identifies Troves with collateral ratios below the minimum requirement
-2. USDFC from the Stability Pool is used to repay the debt of the liquidated Trove
-3. The liquidated Trove's collateral is distributed to Stability Pool depositors proportionally
-
-### Reward Distribution
-
-Rewards are distributed based on your share of the Stability Pool:
+When a liquidation occurs, both the debt repayment and the collateral gain are split across depositors pro rata:
 
 $$
-\text{Your Reward} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
+\text{Your Gain} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
 
-\[Image: Visual representation of the reward distribution mechanism]
-
-### Deposit Dilution
-
-It's important to understand that your deposit may be "diluted" over time:
-
-1. When liquidations occur, some of your deposited USDFC is used to repay debt
-2. Your deposit amount decreases, but you receive FIL collateral in return
-3. This is not a loss but a conversion from USDFC to FIL at a potentially favorable rate
-
-\[Image: Diagram explaining deposit dilution during liquidations]
-
-## Strategies for Stability Pool Participation
-
-### Conservative Strategy
-
-* Deposit a small portion of your USDFC (10-20%)
-* Lower risk and lower potential rewards
-* Good for those who want to maintain liquidity
-
-### Balanced Strategy
-
-* Deposit a moderate portion of your USDFC (30-60%)
-* Balance between liquidity and potential rewards
-* Monitor the system health regularly
-
-### Aggressive Strategy
-
-* Deposit a large portion of your USDFC (70-100%)
-* Higher potential rewards during periods of liquidations
-* Less liquidity for other opportunities
-
-\[Image: Comparison chart of different Stability Pool strategies]
-
-## Next Steps
-
-* Learn about [redeeming USDFC](redeeming-usdfc.md) when you're ready to exit
-* Understand [Recovery Mode](../advanced-topics/recovery-mode.md) and how it affects the Stability Pool
-* Explore other ways to use your USDFC in the ecosystem
+The same fraction of your deposit is consumed to repay the liquidated debt. Everything is automatic — there's nothing to trigger or compound manually.
 
 ## Troubleshooting
 
-* **Transaction Failed**: Ensure you have enough FIL for gas fees
-* **Cannot Deposit**: Verify that you have the USDFC amount you're trying to deposit
-* **Rewards Not Showing**: Rewards only accumulate when liquidations occur; there may not have been recent liquidations
+* **Withdraw USDFC is disabled or reverts** — there are Troves below 110% waiting to be liquidated; withdrawals reopen once they clear.
+* **Claim FIL is greyed out** — no liquidation has credited your deposit yet; gains only appear after liquidations occur.
+* **My deposit is smaller than what I put in** — expected: part of it was used to repay liquidated debt, and the corresponding FIL is in your liquidation gain.
 
-## Common Questions
+## Where next
 
-**Q: Is there a minimum amount I need to deposit?**\
-A: There is typically no minimum amount, but very small deposits may result in gas fees outweighing potential rewards.
-
-**Q: How often are rewards distributed?**\
-A: Rewards are distributed automatically during liquidation events. The frequency depends on market conditions and system health.
-
-**Q: Can I lose my deposited USDFC?**\
-A: Your deposit is used to repay liquidated debt, but you receive FIL collateral in return, often at a discount to market value.
-
-**Q: How do I know if the Stability Pool is profitable?**\
-A: Monitor the liquidation history and current system health. More liquidations generally mean more rewards for depositors.
-
-## Related Topics
-
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
-* [Protocol Fees](../core-mechanics/protocol-fees.md)
-* [The Trove System](../core-mechanics/the-trove-system.md)
+* [Liquidation](../core-mechanics/liquidation.md) — the full mechanics behind the gains
+* [Recovery Mode](../core-mechanics/recovery-mode.md) — liquidations extend to Troves below the system ratio (up to 150%) during Recovery Mode, which typically means more pool activity
+* [Redeeming USDFC](redeeming-usdfc.md) — a different way to convert USDFC to FIL

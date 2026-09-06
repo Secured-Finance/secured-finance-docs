@@ -1,27 +1,65 @@
 ---
-description: The Role of USDFC Stablecoin
+description: A decentralized, over-collateralized stablecoin backed by FIL
 ---
 
 # 📢 Overview
 
-<figure><img src="../.gitbook/assets/Color Light Background.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Color Light Background.svg" alt="USDFC logo"><figcaption></figcaption></figure>
 
-## Why **Secured Finance launch Stablecoin protocol?**
+[**USDFC**](https://app.usdfc.net) is a USD-pegged stablecoin backed entirely by Filecoin (FIL) and running on the Filecoin Virtual Machine (FVM). You lock FIL as collateral in a **Trove**, mint USDFC against it, and repay whenever you like — no counterparty, no credit check, and no ongoing interest. It is the first decentralized stablecoin fully collateralized by FIL.
 
-Secured Finance is a decentralized financial platform that aims to provide institutional-grade capabilities and greater financial flexibility for everyone, offering more liquidity and new ways to grow your digital assets.
+## How it works in brief
 
-We have two core protocols: [**Fixed Income Lending**](https://app.secured.finance/) and the [**USDFC** **Stablecoin**](https://usdfc.secured.finance/). Each protocol addresses the distinct needs of DeFi users by delivering both fixed-income investment opportunities and flexible borrowing solutions for digital assets.
+* **Open a Trove and mint.** Deposit FIL, choose how much USDFC to borrow, and keep your collateral ratio above the **110% minimum**. A one-time borrowing fee (0.5% or more) is added to your debt; there is no interest.
+* **Stay collateralized.** If FIL falls and a Trove drops below 110%, it is liquidated: its debt is repaid from the **Stability Pool** and its collateral is distributed to the pool's depositors.
+* **Redeem at face value.** Any holder can redeem USDFC for $1 worth of FIL directly from the protocol. This is what anchors the peg — if USDFC trades below $1, redemption arbitrage pushes it back.
+* **Recovery Mode.** If the whole system's collateral ratio falls below 150%, stricter rules kick in until it recovers.
 
-Through **Fixed Income Lending**, users can borrow and lend at fixed rates, structured as zero-coupon bonds and tokenized debt. This setup ensures predictable and stable returns for specific time periods, appealing to those seeking secure, fixed-rate yields.
+The mechanics are covered in depth in [Core Mechanics](core-mechanics/README.md).
 
-We introduce the **USDFC Stablecoin** to provide immediate access to a USD-pegged stablecoin without requiring a traditional counterparty or relying on external liquidity for exchange. The system enables you to open a **Trove** where you can manage your collateral and debt, offering a decentralized and efficient way to mint, borrow, and repay **USDFC**.
+## Key parameters
 
-By integrating a stablecoin into the Secured Finance ecosystem, USDFC can seamlessly connect with Fixed Income Lending market, serving as a ready source of order book liquidity. In turn, this gives USDFC added utility, allowing it to earn stable returns within the protocol.
+| Parameter | Value |
+| --- | --- |
+| Minimum Collateral Ratio (MCR) | 110% |
+| Recovery Mode threshold (system-wide) | 150% |
+| Minimum borrow amount per Trove | 200 USDFC |
+| Liquidation Reserve (refunded on close) | 20 USDFC |
+| Borrowing fee (one-time) | 0.5% – 5%, varies with the Base Rate |
+| Redemption fee | 0.5% + Base Rate |
+| Interest | None |
 
-## **The Role of USDFC in the Filecoin Ecosystem**
+## Putting USDFC to work
 
-USDFC is exclusively backed by **Filecoin**, with all operations occurring on the **Filecoin Virtual Machine** (FVM). By choosing Filecoin as collateral, we leverage its robust ecosystem, which is poised for growth amid rising data storage needs in the AI-driven era.
+Once minted, USDFC is the liquidity layer of Secured Finance's products on Filecoin — and usable across the wider ecosystem:
 
-Through direct integration of **USDFC** stablecoin on the FVM, Secured Finance aims to boost Filecoin’s DeFi landscape as MakerDAO's DAI did for Ethereum DeFi ecosystem. As the first decentralized stablecoin fully collateralized by Filecoin, USDFC provides liquidity for Filecoin stakeholders, miners, and DeFi users alike. This, in turn, strengthens liquidity across the Filecoin network and establishes a solid basis for expanded DeFi development.
+| Use | Where |
+| --- | --- |
+| Earn liquidation gains by backing the protocol | [Stability Pool](getting-started/using-the-stability-pool.md) |
+| Lend at a fixed rate | [Fixed-Rate Lending](../fixed-rate-lending/overview.md) |
+| Earn automated, variable yield | [SF Yield Vault — USDFC Vault](../sf-yield-vault/core-mechanics/available-vaults-and-strategies/usdfc-lending-strategy.md) |
+| Trade or provide liquidity | SushiSwap on Filecoin |
+| Move to other chains | Bridge (Squid) in the USDFC app |
 
-Secured Finance envisions delivering financial flexibility to everyone and spurring DeFi sector growth via stablecoin and fixed-income markets—supported by Filecoin and the wider blockchain community. By leveraging the FVM, our protocol promotes stability and composability for Filecoin assets, adding another layer of utility to the network and advancing the sustainable, long-term development of the Filecoin economy.
+For a side-by-side view of all Secured Finance products, see [Protocol at a Glance](../introduction/protocol-at-a-glance.md).
+
+## Token standards
+
+USDFC is an ERC-20 token that also implements **EIP-2612** (`permit`) and **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`). Both let a holder authorize a transfer with a signature instead of an on-chain transaction, so a third party can submit it and pay the gas. This is what makes USDFC usable in gasless flows and **x402** (HTTP 402) payment flows. Developers can find the interfaces in the [USDFC SDK](../developer-portal/sdk-reference/usdfc-sdk.md).
+
+## Why Filecoin
+
+FIL is the native asset of the Filecoin network, whose storage economy is growing with AI-era data demand — yet until USDFC there was no way to unlock dollar liquidity from FIL without selling it. USDFC gives storage providers, FIL holders, and DeFi users a decentralized stablecoin native to the FVM, in the way DAI did for Ethereum. Every USDFC in circulation is backed by FIL locked on-chain, adding a layer of utility and composability to the Filecoin economy.
+
+{% hint style="warning" %}
+**Borrowing against volatile collateral carries liquidation risk.** If FIL falls far enough, your Trove can be liquidated and you lose your collateral. Read [Liquidation](core-mechanics/liquidation.md) and the [Risk Disclaimer](../resources/legal/risk-disclaimer.md) before opening a Trove.
+{% endhint %}
+
+## Where next
+
+| You are | Start here |
+| --- | --- |
+| New to USDFC | [Getting Started](getting-started/README.md) |
+| Ready to mint | [Creating Your First Trove](getting-started/creating-your-first-trove.md) |
+| Curious how it works inside | [Core Mechanics](core-mechanics/README.md) |
+| Looking for addresses and audits | [Contracts and Security](deployed-contracts.md) |

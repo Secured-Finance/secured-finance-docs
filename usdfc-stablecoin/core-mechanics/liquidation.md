@@ -1,101 +1,47 @@
 ---
-description: >-
-  Understanding how under-collateralized positions are handled in the USDFC
-  protocol
+description: How under-collateralized Troves are resolved
 ---
 
 # 🚰 Liquidation
 
-## Overview
+## What are Liquidations?
 
-Liquidation is a critical mechanism in the USDFC Stablecoin Protocol that ensures the system remains solvent by handling under-collateralized positions. When a Trove's collateral ratio falls below 110%, it becomes eligible for liquidation, allowing the protocol to use the Stability Pool to cover the debt and distribute the collateral to depositors.
+Liquidation is how the protocol removes under-collateralized debt before it can threaten the system. When a Trove's collateral ratio falls below **110%**, anyone can trigger its liquidation: the Trove's debt is repaid by the [Stability Pool](stability-pool.md) and its FIL collateral is distributed to the pool's depositors. The Trove is closed in the process.
 
-## How It Works
+The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio (TCR) is below 150%, any Trove **below the current TCR** can also be liquidated — though for a Trove above 110%, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner.
 
-Liquidations occur when a Trove's collateral ratio falls below the minimum threshold of 110%. The process involves using USDFC from the Stability Pool to repay the debt of the liquidated Trove, while distributing the Trove's collateral to Stability Pool depositors at a discount.
+## The process
 
-### Liquidation Process
+1. **Trigger** — a Trove's ratio drops below the threshold and a **liquidator** (any address) calls the liquidation function.
+2. **Debt repayment** — USDFC equal to the Trove's debt is burned from the Stability Pool.
+3. **Collateral distribution** — the Trove's FIL, minus the liquidator's 0.5% share, goes to Stability Pool depositors pro rata. If the pool can't cover the debt, the remainder is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) across all active Troves in proportion to their collateral.
 
-1. **Triggering Liquidation**: When a Trove's collateral ratio falls below 110%, a Liquidator triggers the liquidation
-2. **Debt Repayment**: The Stability Pool covers the Trove's debt by burning the corresponding amount of USDFC
-3. **Collateral Distribution**: The collateral (FIL) from the liquidated Trove is distributed to the Stability Pool depositors based on their pool share, minus the Liquidator's compensation
+## Key parameters
 
-### The Stability Pool
+| Parameter | Description | Value |
+| --- | --- | --- |
+| Liquidation threshold | Per-Trove ratio below which liquidation is possible | 110% (the current TCR, up to 150%, in Recovery Mode) |
+| Liquidator reward | Share of the liquidated collateral paid to the liquidator | 0.5% |
+| Gas compensation | Paid to the liquidator from the Trove's Liquidation Reserve | 20 USDFC |
 
-The Stability Pool is a reserve of USDFC dedicated to absorbing liquidations when a borrower's collateral ratio falls below the required 110%. The pool serves several important functions:
+## What each party experiences
 
-* **Purpose**: The Stability Pool repays the debt of liquidated borrowers using the deposited USDFC
-* **Depositor Rewards**: When USDFC from the pool is used, depositors receive Filecoin (FIL) from the liquidated collateral at a discount
-* **System Stability**: By providing a mechanism to handle under-collateralized positions, the Stability Pool helps maintain the overall stability of the protocol
+**The liquidated borrower** loses their collateral but keeps every USDFC they borrowed, and their debt is gone — the Trove is simply closed. Since liquidation happens just below 110%, the collateral lost is worth roughly 10% more than the debt cleared: that gap is the borrower's loss and the system's safety margin.
 
-## Key Parameters
+**Stability Pool depositors** acquire the FIL at that same discount — see [Stability Pool](stability-pool.md) for the economics.
 
-| Parameter             | Description                                                 | Default Value |
-| --------------------- | ----------------------------------------------------------- | ------------- |
-| Liquidation Threshold | Collateral ratio below which a Trove can be liquidated      | 110%          |
-| Liquidator Reward     | Percentage of liquidated collateral given to the liquidator | 0.5%          |
-| Liquidation Reserve   | USDFC reserved for potential liquidation gas costs          | 20 USDFC      |
+**The liquidator** is whoever pays the gas to trigger it, compensated with the 20 USDFC reserve plus 0.5% of the collateral.
 
-## Stakeholders in the Liquidation Process
+## Becoming a liquidator
 
-### 1. Stability Pool Depositors
+Liquidation is permissionless, and the app makes it accessible: the **Risky Troves** page (under the **More** tab) lists Troves ordered by collateral ratio with a **Liquidate** action next to any that are eligible, plus a control to liquidate several at once. The 20 USDFC + 0.5% compensation is designed to cover gas with a margin, so watching the risky list during sharp FIL drops can be profitable — but you're competing with bots, and a transaction that loses the race still costs gas.
 
-* Provide USDFC to the pool and receive FIL at a discount when liquidations occur
-* Effectively "buy FIL cheaper" than market price through the liquidation process
-* Earn passive rewards by helping maintain system stability
+{% hint style="info" %}
+Liquidation depends on the oracle price, not any exchange's price — a Trove that looks under-water on a DEX chart isn't liquidatable until the [protocol's price feed](price-oracle.md) says so.
+{% endhint %}
 
-### 2. Liquidated Borrowers
+## Where next
 
-* Have their Trove liquidated when their collateral ratio falls below 110%
-* Lose collateral to repay their debt
-* Trove will be closed, but they keep their borrowed USDFC
-* Typically incur around a 10% loss in the process
-
-### 3. Liquidators
-
-* Trigger the liquidation process by calling the liquidation function
-* Receive the Liquidation Reserve (20 USDFC) as gas compensation
-* Earn 0.5% of the liquidated collateral as an incentive
-
-## Price Oracle
-
-Secured Finance uses Pyth as the primary oracle to determine the FIL price. Pyth provides accurate and reliable real-time price feeds essential for system operations.
-
-### Fallback Mechanism
-
-In case of extreme conditions where the Pyth price feed is unavailable, the protocol switches to Tellor as a backup:
-
-* Pyth price not updated for over 4 hours
-* Pyth response reverts, returns invalid data, or shows an invalid timestamp
-* Price change between consecutive updates exceeds 50%
-
-This dual-oracle approach ensures that the protocol maintains accurate pricing and stability, even under extreme conditions.
-
-## What Happens If the Stability Pool Is Empty?
-
-If the Stability Pool is empty during a liquidation, the protocol switches to a redistribution mechanism:
-
-1. **Trove Liquidation**: A Trove is liquidated, but the Stability Pool has insufficient USDFC
-2. **Debt and Collateral Redistribution**: The debt and collateral are proportionally distributed to other active Troves
-3. **Impact on Troves**: Troves receiving the redistributed collateral and debt may see their collateral ratio lower, while the net USD value increases
-
-## Common Questions
-
-**How can I avoid liquidation?**\
-Maintain a collateral ratio well above 110%. A buffer of 150% or higher is recommended to account for FIL price volatility.
-
-**What happens to my borrowed USDFC if my Trove is liquidated?**\
-You keep your borrowed USDFC, but lose your collateral. The liquidation effectively closes your Trove.
-
-**How can I benefit from liquidations?**\
-You can deposit USDFC into the Stability Pool to receive discounted FIL when liquidations occur, or become a liquidator to earn rewards for triggering liquidations.
-
-[Learn more in the FAQs section](../faqs.md)
-
-## Related Topics
-
-* [The Trove System](the-trove-system.md)
-* [Collateral Ratio](liquidation/collateral-ratio.md)
-* [Liquidators](liquidation/liquidators.md)
-* [Liquidation Case Study](liquidation/case-study.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Stability Pool](stability-pool.md) — where the debt and collateral go
+* [Price Oracle](price-oracle.md) — the price that decides eligibility
+* [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md) — staying out of liquidation range

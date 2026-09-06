@@ -23,7 +23,7 @@ First, you need to access your existing Trove in the USDFC application.
 3. Go to the "Trove" section on the USDFC Dashboard page
 4. Review your current collateral amount, debt, and collateral ratio
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Trove dashboard showing current position details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt="Trove dashboard showing current position details"><figcaption><p>Trove dashboard showing current position details</p></figcaption></figure>
 
 ## Step 2: Select "Adjust Trove"
 
@@ -32,7 +32,7 @@ To manage your collateral, you need to adjust your Trove.
 1. Click on the "Adjust" button
 2. This will open the Trove adjustment interface
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="'Adjust Trove' interface"><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
 
 ## Step 3: Add or Withdraw Collateral
 
@@ -45,7 +45,7 @@ Now you can add more collateral or withdraw some of your existing collateral.
 3. The system will automatically calculate your new collateral ratio
 4. Adding collateral increases your collateral ratio and reduces liquidation risk
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Screenshot of the interface for adding collateral</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt="Screenshot of the interface for adding collateral"><figcaption><p>Screenshot of the interface for adding collateral</p></figcaption></figure>
 
 ### To Withdraw Collateral:
 
@@ -54,7 +54,7 @@ Now you can add more collateral or withdraw some of your existing collateral.
 3. The system will automatically calculate your new collateral ratio
 4. Ensure your new collateral ratio remains above the minimum required (110%)
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Screenshot of the interface for withdrawing collateral</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt="Screenshot of the interface for withdrawing collateral"><figcaption><p>Screenshot of the interface for withdrawing collateral</p></figcaption></figure>
 
 ## Step 4: Review Transaction Details
 
@@ -73,7 +73,7 @@ Once you're satisfied with the details, you can proceed with the adjustment.
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 8.06.11.png" alt=""><figcaption><p>Screenshot of the wallet confirmation screen</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 8.06.11.png" alt="Screenshot of the wallet confirmation screen"><figcaption><p>Screenshot of the wallet confirmation screen</p></figcaption></figure>
 
 ## Step 6: Verify the Adjustment
 
@@ -83,7 +83,7 @@ After the transaction is confirmed, verify that your collateral was adjusted suc
 2. Verify your new collateral ratio
 3. If withdrawing collateral, confirm that the FIL has been added to your wallet balance
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Screenshot showing updated Trove details</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt="Screenshot showing updated Trove details"><figcaption><p>Screenshot showing updated Trove details</p></figcaption></figure>
 
 ## Understanding Collateral Ratios
 
@@ -103,7 +103,6 @@ $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
 
-\[Image: Visual representation of the liquidation price calculation]
 
 ## Strategies for Collateral Management
 
@@ -125,13 +124,12 @@ $$
 * Requires very active monitoring and quick reactions to price changes
 * Maximizes capital efficiency but has higher liquidation risk
 
-\[Image: Visual comparison of different collateral management strategies]
 
 ## Next Steps
 
 * [Monitor your position](monitoring-your-position.md) regularly to stay informed about your Trove's health
 * Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Learn about [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects your Trove
+* Learn about [Recovery Mode](../../core-mechanics/recovery-mode.md) and how it affects your Trove
 
 ## Troubleshooting
 
@@ -151,11 +149,10 @@ A: If the price drop causes your collateral ratio to fall below the minimum requ
 A: Yes, you can add collateral without changing your debt amount to increase your collateral ratio.
 
 **Q: Is there a fee for adjusting my collateral?**\
-A: Adding collateral only incurs gas fees. Withdrawing collateral may incur both gas fees and a small protocol fee.
+A: No protocol fee either way — adding or withdrawing collateral costs only gas.
 
 ## Related Topics
 
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Collateral Ratio](../broken-reference/)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)

@@ -1,163 +1,78 @@
 ---
-description: Learn how to manage your collateral to maintain a healthy Trove
+description: Add or withdraw FIL and keep a healthy collateral ratio
 ---
 
 # 🤝 Managing Collateral Effectively
 
-<figure><img src="../../.gitbook/assets/step3.gif" alt=""><figcaption><p>Watch a quick walkthrough of this step</p></figcaption></figure>
+Your collateral ratio is what stands between your Trove and liquidation. This guide covers adjusting collateral in the app and choosing a ratio that fits your risk tolerance.
 
-## Prerequisites
+<figure><img src="../../.gitbook/assets/step3.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
-* An active Trove with FIL collateral
-* Access to the [USDFC application](https://app.usdfc.net)
-* Connected wallet with FIL for additional collateral (if adding)
+## Step 1 — Open your Trove
 
-## Overview
+In the [USDFC app](https://app.usdfc.net), go to the **Trove** page and review your current collateral, debt, and ratio.
 
-Managing your collateral effectively is crucial for maintaining a healthy Trove and avoiding liquidation. This guide will show you how to add or withdraw collateral, and how to determine the optimal collateral ratio for your risk tolerance.
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.37.png" alt="Your current position on the Trove page"><figcaption><p>Your current position on the Trove page</p></figcaption></figure>
 
-## Step 1: Access Your Trove
+## Step 2 — Open the Update Trove form
 
-First, you need to access your existing Trove in the USDFC application.
+With an open Trove, the **Update Trove** tab is already selected when you land on the Trove page — the adjustment form shows your current collateral and debt.
 
-1. Navigate to the [USDFC application](https://app.usdfc.net)
-2. Connect your wallet if not already connected
-3. Go to the "Trove" page on the USDFC application
-4. Review your current collateral amount, debt, and collateral ratio
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.54.png" alt="The Update Trove form"><figcaption><p>The Update Trove form</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/ Screenshot 2026-03-27 19.16.37.png" alt=""><figcaption><p>Trove dashboard showing current position details</p></figcaption></figure>
+## Step 3 — Adjust the collateral amount
 
-## Step 2: Select "Update Trove"
+In the **Collateral** field, enter the new total:
 
-To manage your collateral, you need to adjust your Trove.
+* **To add:** increase the FIL amount. Your ratio rises and your liquidation price falls. Adding collateral costs only gas — no protocol fee.
+* **To withdraw:** decrease the FIL amount. The transaction will revert if it would push your ratio below 110% (and no collateral can be withdrawn while the system is in [Recovery Mode](../core-mechanics/recovery-mode.md)). Withdrawing also costs only gas.
 
-1. Click on the "Update Trove" tab
-2. This will open the Trove adjustment interface
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.33.png" alt="Adding collateral"><figcaption><p>Adding collateral</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.16.54.png" alt=""><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.46.png" alt="Withdrawing collateral"><figcaption><p>Withdrawing collateral</p></figcaption></figure>
 
-## Step 3: Add or Withdraw Collateral
+## Step 4 — Confirm and verify
 
-Now you can add more collateral or withdraw some of your existing collateral.
+Click **Update Trove**, confirm in your wallet, and check the updated position. Withdrawn FIL goes straight to your wallet balance.
 
-### To Add Collateral:
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.19.35.png" alt="Wallet confirmation"><figcaption><p>Wallet confirmation</p></figcaption></figure>
 
-1. In the adjustment interface, locate the "Collateral" input field
-2. Increase the amount of FIL from your current value
-3. The system will automatically calculate your new collateral ratio
-4. Adding collateral increases your collateral ratio and reduces liquidation risk
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.20.53 (1).png" alt="Updated Trove details"><figcaption><p>Updated Trove details</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.33.png" alt=""><figcaption><p>Screenshot of the interface for adding collateral</p></figcaption></figure>
+## Choosing a collateral ratio
 
-### To Withdraw Collateral:
+The app classifies your ratio the same way it displays risk:
 
-1. In the adjustment interface, locate the "Collateral" input field
-2. Decrease the amount of FIL from your current value
-3. The system will automatically calculate your new collateral ratio
-4. Ensure your new collateral ratio remains above the minimum required (110%)
+| Ratio | App label | FIL drop before liquidation (from 110%) |
+| --- | --- | --- |
+| 200% and above | Very Low risk | 45% or more |
+| 150% – 200% | Low risk | 27% – 45% |
+| 120% – 150% | Medium risk | 8% – 27% |
+| Below 120% | High risk | Less than 8% |
+| Below 110% | — | Eligible for [liquidation](../core-mechanics/liquidation.md) |
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.18.46.png" alt=""><figcaption><p>Screenshot of the interface for withdrawing collateral</p></figcaption></figure>
+Two numbers worth knowing by heart:
 
-## Step 4: Review Transaction Details
+* **110%** — the Minimum Collateral Ratio. Below it, your Trove can be liquidated.
+* **150%** — the system-wide threshold. If the *total* collateral ratio of all Troves falls below it, [Recovery Mode](../core-mechanics/recovery-mode.md) begins and Troves below that total ratio (up to 150%) can be liquidated too.
 
-Before confirming, review all transaction details carefully.
-
-1. Check the collateral adjustment amount
-2. Verify your new collateral ratio
-3. Understand how this affects your liquidation risk
-4. Review any fees that will be applied
-
-## Step 5: Confirm and Execute
-
-Once you're satisfied with the details, you can proceed with the adjustment.
-
-1. Click the "Update Trove" button
-2. Confirm the transaction in your wallet
-3. Wait for the transaction to be processed on the blockchain
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.19.35.png" alt=""><figcaption><p>Screenshot of the wallet confirmation screen</p></figcaption></figure>
-
-## Step 6: Verify the Adjustment
-
-After the transaction is confirmed, verify that your collateral was adjusted successfully.
-
-1. Check that your Trove details have been updated with the new collateral amount
-2. Verify your new collateral ratio
-3. If withdrawing collateral, confirm that the FIL has been added to your wallet balance
-
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.20.53 (1).png" alt=""><figcaption><p>Screenshot showing updated Trove details</p></figcaption></figure>
-
-## Understanding Collateral Ratios
-
-### Key Collateral Ratio Thresholds
-
-| Threshold                      | Value | Description                                                                         |
-| ------------------------------ | ----- | ----------------------------------------------------------------------------------- |
-| Minimum Collateral Ratio (MCR) | 110%  | The absolute minimum ratio required to avoid liquidation                            |
-| Recovery Mode Threshold        | 150%  | When the system enters Recovery Mode if the Total Collateral Ratio falls below this |
-| Recommended Safe Ratio         | 200%+ | A conservative ratio that provides a good buffer against price fluctuations         |
-
-### Calculating Your Liquidation Price
-
-To calculate the FIL price at which your Trove would reach the minimum collateral ratio (110%):
+Your **liquidation price** — the FIL price at which your Trove hits 110% — is:
 
 $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
 
-\[Image: Visual representation of the liquidation price calculation]
-
-## Strategies for Collateral Management
-
-### Conservative Strategy (Low Risk)
-
-* Maintain a collateral ratio of 200% or higher
-* Add collateral proactively when FIL price starts to decline
-* Smaller USDFC minting relative to collateral value
-
-### Balanced Strategy (Medium Risk)
-
-* Maintain a collateral ratio between 150% and 200%
-* Monitor FIL price regularly and adjust as needed
-* Balance between capital efficiency and safety
-
-### Aggressive Strategy (High Risk)
-
-* Maintain a collateral ratio between 110% and 150%
-* Requires very active monitoring and quick reactions to price changes
-* Maximizes capital efficiency but has higher liquidation risk
-
-\[Image: Visual comparison of different collateral management strategies]
-
-## Next Steps
-
-* [Monitor your position](monitoring-your-position.md) regularly to stay informed about your Trove's health
-* Consider [depositing USDFC into the Stability Pool](using-the-stability-pool.md) to earn rewards
-* Learn about [Recovery Mode](../advanced-topics/recovery-mode.md) and how it affects your Trove
+{% hint style="warning" %}
+There is no ratio that removes risk entirely — a deep enough FIL drop can threaten any Trove. Decide how closely you can realistically monitor the market, and size your buffer to match. See the [Risk Disclaimer](../../resources/legal/risk-disclaimer.md).
+{% endhint %}
 
 ## Troubleshooting
 
-* **Cannot Withdraw Collateral**: Your withdrawal might push your collateral ratio below the minimum requirement
-* **Transaction Failed**: Ensure you have enough FIL for gas fees
-* **Collateral Not Showing**: Refresh the page or check your transaction history
+* **Withdrawal reverts** — the new ratio would fall below 110%, the system is in Recovery Mode, or the withdrawal would push the system-wide ratio below 150%. Withdraw less, or add collateral first.
+* **Update Trove is disabled** — check that the amounts changed and that your wallet has enough FIL for gas.
+* **Ratio didn't update after the transaction** — refresh the page; the app re-reads your Trove on load.
 
-## Common Questions
+## Where next
 
-**Q: How often should I adjust my collateral?**\
-A: This depends on your risk tolerance and FIL price volatility. More volatile markets require more frequent adjustments.
-
-**Q: What happens if FIL price drops suddenly?**\
-A: If the price drop causes your collateral ratio to fall below the minimum requirement (110%), your Trove may be liquidated.
-
-**Q: Can I add collateral without minting more USDFC?**\
-A: Yes, you can add collateral without changing your debt amount to increase your collateral ratio.
-
-**Q: Is there a fee for adjusting my collateral?**\
-A: Adding collateral only incurs gas fees. Withdrawing collateral may incur both gas fees and a small protocol fee.
-
-## Related Topics
-
-* [The Trove System](../core-mechanics/the-trove-system.md)
-* [Liquidation](../core-mechanics/liquidation.md)
-* [Collateral Ratio](broken-reference/)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+* [Monitor your position](monitoring-your-position.md) — thresholds only help if you're watching them
+* [Recovery Mode](../core-mechanics/recovery-mode.md) — what changes when the whole system is under-collateralized

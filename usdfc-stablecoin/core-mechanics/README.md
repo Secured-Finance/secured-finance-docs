@@ -1,31 +1,19 @@
 ---
-description: Explore the fundamental mechanisms of the USDFC Stablecoin Protocol
+description: How the USDFC protocol works under the hood
 ---
 
 # 🔦 Core Mechanics
 
-## Overview
+This section explains the mechanisms behind USDFC — how minting, liquidation, and redemption interact to keep every USDFC backed by more than $1 of FIL and the peg anchored to $1. If you want to *do* things rather than understand them, start with [Getting Started](../getting-started/README.md).
 
-The USDFC Stablecoin Protocol introduces a variety of innovative features that enable users to efficiently mint, manage, and utilize **USDFC**, our decentralized, Filecoin-backed stablecoin. These core mechanics work together to ensure the stability, security, and usability of the protocol.
-
-## What You'll Learn
-
-* How to mint USDFC using Filecoin (FIL) as collateral
-* How the Trove system manages individual collateralized debt positions
-* How liquidations protect the protocol from undercollateralization
-* How the redemption mechanism maintains USDFC's peg to the US Dollar
-* How protocol fees contribute to the system's sustainability
-
-## Key Components
-
-* [**The Trove System**](the-trove-system.md): Individual vaults where users deposit FIL collateral and mint USDFC
-* [**Mint & Borrow**](mint-and-borrow.md): The process of creating new USDFC backed by FIL collateral
-* [**Liquidation**](liquidation.md): The mechanism for handling undercollateralized positions
-* [**Redemption**](redemption.md): The process allowing USDFC holders to exchange for FIL at face value
-* [**Protocol Fees**](protocol-fees.md): The fee structure supporting the protocol's long-term sustainability
-
-## Related Resources
-
-* [System Overview](system-overview.md)
-* [Advanced Topics](../advanced-topics/)
-* [FAQs](../faqs.md)
+| Page | What it explains |
+| --- | --- |
+| [System Overview](system-overview.md) | The components and how they fit together |
+| [The Trove System](the-trove-system.md) | Collateralized debt positions and their lifecycle |
+| [Mint & Borrow](mint-and-borrow.md) | Creating USDFC, fees, and the Base Rate |
+| [Stability Pool](stability-pool.md) | The pool that absorbs liquidations |
+| [Liquidation](liquidation.md) | How under-collateralized Troves are resolved |
+| [Redemption](redemption.md) | The face-value exchange that defends the peg |
+| [Recovery Mode](recovery-mode.md) | The stricter rules under system-wide stress |
+| [Price Oracle](price-oracle.md) | Where the FIL/USD price comes from |
+| [Protocol Fees](protocol-fees.md) | What is charged, when, and where it goes |

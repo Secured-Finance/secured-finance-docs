@@ -23,7 +23,7 @@ First, you need to navigate to the Stability Pool section in the USDFC applicati
 3. Locate the "Stability Pool" section on the Dashboard page
 4. See the "Protocol Statistics" section to check the Stability Pool information
 
-<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Stability Pool section and Protocol Statistics section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt="Stability Pool section and Protocol Statistics section"><figcaption><p>Stability Pool section and Protocol Statistics section</p></figcaption></figure>
 
 ## Step 2: Review Stability Pool Information
 
@@ -44,7 +44,7 @@ Now you can deposit your USDFC into the Stability Pool.
 4. Confirm the transaction in your wallet
 5. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/image (132).png" alt=""><figcaption><p>The Stability Pool deposit interface with the amount input field</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (132).png" alt="The Stability Pool deposit interface with the amount input field"><figcaption><p>The Stability Pool deposit interface with the amount input field</p></figcaption></figure>
 
 ## Step 4: Monitor Your Deposit and Rewards
 
@@ -54,7 +54,7 @@ After depositing, you can monitor your position and earned rewards.
 2. Any earned FIL rewards will accumulate over time
 3. The dashboard will show your share of the Stability Pool and Liquidation gain as rewards
 
-<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption><p>Screenshot showing deposit and rewards information</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (133).png" alt="Screenshot showing deposit and rewards information"><figcaption><p>Screenshot showing deposit and rewards information</p></figcaption></figure>
 
 ## Step 5: Claim Rewards (When Available)
 
@@ -80,7 +80,7 @@ You can generally withdraw your USDFC from the Stability Pool at any time.
 As a general rule, deposits in the Stability Pool can be withdrawn at any time, and there is no minimum lockup period. However, withdrawals are temporarily suspended while there are Troves below the minimum collateral ratio of 110% that have not yet been liquidated.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (134).png" alt="The withdrawal by deposit amount adjustment"><figcaption><p>The withdrawal by deposit amount adjustment</p></figcaption></figure>
 
 ## How Stability Pool Rewards Work
 
@@ -100,7 +100,6 @@ $$
 \text{Your Reward} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
 
-\[Image: Visual representation of the reward distribution mechanism]
 
 ### Deposit Dilution
 
@@ -110,7 +109,6 @@ It's important to understand that your deposit may be "diluted" over time:
 2. Your deposit amount decreases, but you receive FIL collateral in return
 3. This is not a loss but a conversion from USDFC to FIL at a potentially favorable rate
 
-\[Image: Diagram explaining deposit dilution during liquidations]
 
 ## Strategies for Stability Pool Participation
 
@@ -132,12 +130,11 @@ It's important to understand that your deposit may be "diluted" over time:
 * Higher potential rewards during periods of liquidations
 * Less liquidity for other opportunities
 
-\[Image: Comparison chart of different Stability Pool strategies]
 
 ## Next Steps
 
 * Learn about [redeeming USDFC](redeeming-usdfc.md) when you're ready to exit
-* Understand [Recovery Mode](../../advanced-topics/recovery-mode.md) and how it affects the Stability Pool
+* Understand [Recovery Mode](../../core-mechanics/recovery-mode.md) and how it affects the Stability Pool
 * Explore other ways to use your USDFC in the ecosystem
 
 ## Troubleshooting
@@ -163,6 +160,6 @@ A: Monitor the liquidation history and current system health. More liquidations 
 ## Related Topics
 
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
 * [Protocol Fees](../../core-mechanics/protocol-fees.md)
 * [The Trove System](../../core-mechanics/the-trove-system.md)

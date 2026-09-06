@@ -1,60 +1,42 @@
 ---
-description: Understanding the USDFC Stablecoin Protocol Architecture
+description: The components of the USDFC protocol and how they fit together
 ---
 
 # 🏗️ System Overview
 
-## Overview
+USDFC is a decentralized protocol that mints a USD-pegged stablecoin against FIL collateral. Its stability rests on a small set of interlocking mechanisms — each has its own page in this section; this one shows how they connect.
 
-The USDFC Stablecoin Protocol is a decentralized system that enables users to mint a USD-pegged stablecoin (USDFC) by depositing Filecoin (FIL) as collateral. The protocol maintains stability through a series of interconnected mechanisms that ensure USDFC maintains its 1:1 peg to the US Dollar.
+## The components
 
-## How It Works
+1. **[Troves](the-trove-system.md)** — individual positions where users lock FIL and mint USDFC, each keeping a collateral ratio above 110%.
+2. **[Stability Pool](stability-pool.md)** — a reserve of USDFC that repays the debt of liquidated Troves; depositors receive the seized FIL.
+3. **[Liquidation](liquidation.md)** — resolves any Trove that falls below the minimum ratio, keeping the system solvent.
+4. **[Redemption](redemption.md)** — lets any holder exchange USDFC for $1 of FIL from the lowest-ratio Troves, anchoring the peg from below.
+5. **[Price Oracle](price-oracle.md)** — supplies the FIL/USD price that all ratio checks depend on.
+6. **[Recovery Mode](recovery-mode.md)** — stricter rules that activate when the system-wide collateral ratio falls below 150%.
 
-The protocol operates through several key components that work together to maintain stability, manage collateral, and ensure the proper functioning of the system:
+The causal chain: the oracle prices the collateral → ratios determine which Troves are safe → liquidation and the Stability Pool remove unsafe debt → redemption ties the token's floor to $1 → Recovery Mode hardens all of it when the whole system is stressed.
 
-1. **Trove System**: Individual vaults where users deposit FIL collateral and mint USDFC
-2. **Stability Pool**: A reserve of USDFC that absorbs liquidations of under-collateralized Troves
-3. **Redemption Mechanism**: Allows USDFC holders to exchange their tokens for FIL at face value
-4. **Recovery Mode**: A special state that activates when the system's overall collateral ratio falls below 150%
-5. **Price Oracle**: Provides accurate FIL/USD price data to determine collateral values
-
-## System Architecture
+## Architecture
 
 ### Normal Mode
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Normal Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Normal Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Normal Mode Architecture"><figcaption><p>USDFC protocol architecture in Normal Mode</p></figcaption></figure>
 
 ### Recovery Mode
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC Protocol Architecture in Recovery Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Recovery Mode Architecture"><figcaption><p>USDFC protocol architecture in Recovery Mode</p></figcaption></figure>
 
-## Key Parameters
+## Key parameters
 
-| Parameter                      | Description                                        | Default Value |
-| ------------------------------ | -------------------------------------------------- | ------------- |
-| Minimum Collateral Ratio (MCR) | Minimum required ratio of collateral to debt       | 110%          |
-| Recovery Mode Threshold        | TCR level that triggers Recovery Mode              | 150%          |
-| Liquidation Reserve            | USDFC reserved for potential liquidation gas costs | 20 USDFC      |
-| Minimum Borrow Amount          | Minimum USDFC that can be borrowed                 | 180 USDFC     |
-| Base Rate                      | Variable component of minting and redemption fees  | 0% to 4.5%    |
+| Parameter | Description | Value |
+| --- | --- | --- |
+| Minimum Collateral Ratio (MCR) | Per-Trove ratio below which liquidation is possible | 110% |
+| Critical Collateral Ratio (CCR) | System-wide ratio that triggers Recovery Mode | 150% |
+| Minimum borrow amount | Smallest amount a Trove can borrow (total debt is higher: this plus fee and reserve) | 200 USDFC |
+| Liquidation Reserve | Set aside per Trove for liquidation gas; refunded on close | 20 USDFC |
+| Borrowing fee | One-time, (Base Rate + 0.5%), capped at 5% | 0.5% – 5% |
+| Redemption fee | (Base Rate + 0.5%) of the redeemed amount, paid in FIL | 0.5% minimum |
+| Interest | Ongoing charge on debt | None |
 
-## Common Questions
-
-**What happens if the price of FIL drops significantly?**\
-If FIL price drops, Troves with lower collateral ratios may become eligible for liquidation. The protocol prioritizes liquidating the riskiest Troves first to maintain system solvency.
-
-**How does the protocol maintain the USDFC peg?**\
-The redemption mechanism allows USDFC holders to exchange their tokens for FIL at face value, creating arbitrage opportunities that help maintain the peg.
-
-**What is the difference between Normal Mode and Recovery Mode?**\
-In Normal Mode, Troves require a minimum 110% collateral ratio. In Recovery Mode, stricter rules apply, including higher liquidation thresholds and restrictions on borrowing.
-
-[Learn more in the FAQs section](../faqs.md)
-
-## Related Topics
-
-* [The Trove System](the-trove-system.md)
-* [Mint & Borrow](mint-and-borrow.md)
-* [Liquidation](liquidation.md)
-* [Redemption](redemption.md)
-* [Recovery Mode](../advanced-topics/recovery-mode.md)
+The **Base Rate** is a single system-wide variable that rises with redemption volume and decays with a 12-hour half-life — the full mechanics are in [Mint & Borrow](mint-and-borrow.md#base-rate-explanation).

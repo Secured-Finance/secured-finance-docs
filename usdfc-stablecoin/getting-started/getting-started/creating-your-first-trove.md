@@ -23,7 +23,7 @@ Before you can create a Trove, you need to connect your wallet to the USDFC appl
 3. Select your wallet provider (MetaMask, WalletConnect, etc.)
 4. Confirm the connection
 
-<figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption><p>The wallet connection interface after the "Connect Wallet" button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124).png" alt="The wallet connection interface after the 'Connect Wallet' button"><figcaption><p>The wallet connection interface after the "Connect Wallet" button</p></figcaption></figure>
 
 ## Step 2: Navigate to the Trove Management Section
 
@@ -32,7 +32,7 @@ Once your wallet is connected, you need to navigate to the Trove management sect
 1. On the USDFC dashboard, locate and click on the "Open Trove" button
 2. You'll see the Trove creation section on the same page
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption><p>The USDFC dashboard with the Trove/Mint USDFC section</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126).png" alt="The USDFC dashboard with the Trove/Mint USDFC section"><figcaption><p>The USDFC dashboard with the Trove/Mint USDFC section</p></figcaption></figure>
 
 ## Step 3: Set Your Collateral and Debt Amounts
 
@@ -43,7 +43,7 @@ Now you need to decide how much FIL to deposit and how much USDFC to mint.
 3. The system will automatically calculate your collateral ratio
 4. Ensure your collateral ratio is above the minimum required (typically 110%)
 
-<figure><img src="../../../.gitbook/assets/image (129).png" alt=""><figcaption><p>The collateral and debt input fields with the collateral ratio calculation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129).png" alt="The collateral and debt input fields with the collateral ratio calculation"><figcaption><p>The collateral and debt input fields with the collateral ratio calculation</p></figcaption></figure>
 
 ## Step 4: Review Transaction Details
 
@@ -62,7 +62,7 @@ Once you're satisfied with the details, you can create your Trove.
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption><p>The confirmation screen with the "Confirm" button highlighted</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130).png" alt="The confirmation screen with the 'Confirm' button highlighted"><figcaption><p>The confirmation screen with the "Confirm" button highlighted</p></figcaption></figure>
 
 ## Step 6: Verify Your Trove Creation
 
@@ -72,7 +72,7 @@ After the transaction is confirmed, verify that your Trove was created successfu
 2. Verify that the USDFC has been added to your wallet balance
 3. If you don't see USDFC in your wallet, you may need to add it as a custom token (see a [wallet icon](https://gyazo.com/4102e760883c7c413ee1161a851d5712) in the Protocol Statistics section)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 5.58.15.png" alt=""><figcaption><p>Screenshot showing a successfully created Trove in the dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 5.58.15.png" alt="Screenshot showing a successfully created Trove in the dashboard"><figcaption><p>Screenshot showing a successfully created Trove in the dashboard</p></figcaption></figure>
 
 ## Next Steps
 
@@ -108,4 +108,4 @@ A: Your Trove may be liquidated. Learn more in the [Liquidation](../../core-mech
 * [The Trove System](../../core-mechanics/the-trove-system.md)
 * [Mint & Borrow](../../core-mechanics/mint-and-borrow.md)
 * [Liquidation](../../core-mechanics/liquidation.md)
-* [Recovery Mode](../../advanced-topics/recovery-mode.md)
+* [Recovery Mode](../../core-mechanics/recovery-mode.md)
