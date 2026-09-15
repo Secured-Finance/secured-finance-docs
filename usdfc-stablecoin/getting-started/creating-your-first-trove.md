@@ -11,7 +11,7 @@ Before you start, make sure:
 * Your wallet is connected to **Filecoin Mainnet**
 * You hold enough FIL for the collateral you plan to deposit, plus a little for gas
 
-<figure><img src="../../.gitbook/assets/step1.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step1.gif" alt="Animated walkthrough of creating a Trove"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Connect your wallet
 
@@ -31,7 +31,7 @@ Enter how much FIL to deposit and how much USDFC to borrow. The app calculates y
 
 * The minimum you can borrow is **200 USDFC**.
 * The minimum collateral ratio is **110%** (150% while the system is in [Recovery Mode](../core-mechanics/recovery-mode.md)), but leave yourself a buffer — the app labels ratios below 150% as elevated risk and 200%+ as very low risk.
-* Your **Total debt** will be: borrowed amount + one-time [borrowing fee](../core-mechanics/protocol-fees.md) (0.5% or more) + 20 USDFC **Liquidation Reserve**, which is refunded when you close the Trove.
+* Your **Total debt** will be: borrowed amount + one-time [borrowing fee](../core-mechanics/protocol-fees.md) (0.5% or more; waived in Recovery Mode) + 20 USDFC **Liquidation Reserve**, which you don't repay when you close the Trove.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.01.36.png" alt="Collateral and borrow inputs with the live collateral ratio"><figcaption><p>Collateral and borrow inputs with the live collateral ratio</p></figcaption></figure>
 

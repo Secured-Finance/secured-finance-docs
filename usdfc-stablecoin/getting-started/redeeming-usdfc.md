@@ -7,7 +7,7 @@ description: Exchange USDFC for FIL at face value
 Redemption lets any USDFC holder exchange USDFC for $1 worth of FIL directly from the protocol — this arbitrage path is what anchors the peg. The FIL comes from the Troves with the lowest collateral ratios, so redemption is also something Trove owners want to understand from the receiving end. You'll need USDFC in your wallet and FIL for gas.
 
 {% hint style="warning" %}
-**Redemption is not repayment.** Repaying reduces *your own* Trove's debt (via Update Trove). Redeeming reduces *other people's* Troves — starting from the lowest collateral ratio in the system. If you own a Trove, watch your **Debt in front** figure and keep your ratio up to stay out of the redemption queue.
+**Redemption is not repayment.** Repaying reduces *your own* Trove's debt (via Update Trove). Redeeming reduces whichever Troves have the lowest collateral ratios in the system — you don't get to choose, and it isn't a way to pay down your own debt. If you own a Trove, watch your **Debt in front** figure and keep your ratio up to stay out of the redemption queue.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/step6.gif" alt="Animated walkthrough of the redemption steps"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
@@ -38,7 +38,7 @@ Click **Redeem USDFC** and confirm in your wallet.
 
 ## Step 5 — Verify
 
-Your USDFC balance decreases and the FIL arrives in your wallet. On-chain, the affected Troves' debt and collateral both shrink by the corresponding amounts.
+Your USDFC balance decreases and the FIL arrives in your wallet. On-chain, the affected Troves' debt and collateral both shrink by the corresponding amounts; a Trove that is redeemed in full is closed, and its owner can claim the remaining collateral from the app.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 20.47.24.png" alt="Wallet balances after redemption"><figcaption><p>Wallet balances after redemption</p></figcaption></figure>
 
@@ -59,7 +59,7 @@ Redemptions are unavailable while the system's total collateral ratio is below 1
 
 * **Redeem USDFC is disabled** — the system's total collateral ratio is below 110%, or you have no USDFC in the connected wallet.
 * **You received less FIL than expected** — the redemption fee (0.5% + Base Rate) is deducted in FIL; a recent large redemption raises the Base Rate.
-* **Only part of the amount was redeemed** — a partial redemption that would leave a Trove below 200 USDFC is skipped; try a slightly different amount.
+* **Only part of the amount was redeemed** — the redemption stops before any partial redemption that would leave a Trove below the 200 USDFC minimum; the unprocessed USDFC stays in your wallet. Try a slightly different amount.
 
 ## Where next
 

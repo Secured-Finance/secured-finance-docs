@@ -39,7 +39,7 @@ Secured Finance is the DeFi platform behind USDFC. It runs three products: the *
 
 Through interlocking mechanisms rather than a single lever:
 
-1. **Over-collateralization** — at least 110% FIL backing at all times
+1. **Over-collateralization** — every Trove must be opened above the 110% minimum and is liquidated if it falls below it
 2. **Redemption** — anyone can exchange USDFC for $1 of FIL, so trading below $1 creates instant arbitrage that burns supply and lifts the price
 3. **Minting arbitrage** — trading above $1 makes minting-and-selling profitable, expanding supply and lowering the price
 4. **Liquidation and the Stability Pool** — remove under-collateralized debt before it can undermine the backing
@@ -65,7 +65,7 @@ You need a web3 wallet (e.g. MetaMask) holding FIL. Connect it to the [USDFC app
 Open a Trove with FIL collateral and choose how much to borrow (minimum 200 USDFC, ratio above 110%). Costs:
 
 * **Borrowing fee** — (Base Rate + 0.5%) of the minted amount, typically 0.5%, capped at 5%. Added to your debt.
-* **Liquidation Reserve** — 20 USDFC added to your debt and refunded when you close the Trove.
+* **Liquidation Reserve** — 20 USDFC added to your debt; you don't repay it when you close the Trove.
 * **Gas** — network fees in FIL.
 
 There is **no interest** — the borrowing fee is the entire cost, however long you keep the loan.
@@ -90,7 +90,7 @@ Yes — increase the borrowed amount via **Update Trove** any time your resultin
 
 <summary>How do I close my Trove?</summary>
 
-Repay the full debt in one transaction via the **Close Trove** tab (partial closure isn't a thing — but partial *repayment* via Update Trove is). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is always available). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
 
 Two cases where closing is refused: during [Recovery Mode](core-mechanics/recovery-mode.md), and when closing would push the system's total collateral ratio below 150%. In both cases you can still repay debt; you just can't withdraw the collateral until conditions improve.
 
@@ -104,7 +104,7 @@ Two cases where closing is refused: during [Recovery Mode](core-mechanics/recove
 
 The hard minimum is **110%** — below it your Trove can be liquidated. During [Recovery Mode](core-mechanics/recovery-mode.md), Troves below the system's total collateral ratio (up to 150%) can be liquidated too, and new Troves must open at 150%+.
 
-The app labels **200%+** as very low risk, **150–200%** low, **120–150%** medium, and below 120% high. Where you sit is a trade-off between capital efficiency and how closely you can monitor the market.
+The app labels **200% and above** as very low risk, **150% to under 200%** low, **120% to under 150%** medium, and **below 120%** high. Where you sit is a trade-off between capital efficiency and how closely you can monitor the market.
 
 **Related:** [Managing Collateral Effectively](getting-started/managing-collateral-effectively.md)
 
@@ -114,9 +114,9 @@ The app labels **200%+** as very low risk, **150–200%** low, **120–150%** me
 
 <summary>How do liquidations work?</summary>
 
-When a Trove falls below 110%, anyone can trigger its liquidation: its debt is repaid by burning USDFC from the [Stability Pool](core-mechanics/stability-pool.md), its FIL goes to the pool's depositors, and the trigger-er collects the 20 USDFC reserve plus 0.5% of the collateral.
+When a Trove falls below 110%, anyone can trigger its liquidation: its debt is repaid by burning USDFC from the [Stability Pool](core-mechanics/stability-pool.md), its FIL goes to the pool's depositors, and the liquidator collects the 20 USDFC reserve plus 0.5% of the collateral.
 
-**Worked example:** a Trove holds 100 FIL worth $400 against 380 USDFC of debt — ratio 105%. On liquidation, the pool burns 380 USDFC and receives roughly $398 of FIL (after the liquidator's 0.5%). The borrower keeps the 380 USDFC they borrowed but loses the $400 of collateral.
+**Worked example:** a Trove holds 100 FIL worth $400 against 380 USDFC of total debt — ratio 105%. On liquidation, the pool burns 380 USDFC and receives roughly $398 of FIL (after the liquidator's 0.5%). The borrower keeps the USDFC they originally borrowed but loses the $400 of collateral.
 
 **Related:** [Liquidation](core-mechanics/liquidation.md)
 
@@ -138,7 +138,7 @@ The risks: your stable deposit gradually converts into **volatile FIL** at times
 
 <summary>What happens if the Stability Pool is empty during a liquidation?</summary>
 
-The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral — the USD value received exceeds the debt taken on, but their collateral *ratio* drops. Everything is automatic; no action is required from Trove owners.
+The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio (above 100%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
 
 **Related:** [Stability Pool](core-mechanics/stability-pool.md#if-the-pool-runs-dry-redistribution)
 
@@ -170,7 +170,7 @@ If you own a Trove, keeping your ratio above the crowd's — and watching the ap
 
 <summary>What is Recovery Mode?</summary>
 
-A system-wide state that activates when total collateralization falls below 150%: the liquidation threshold extends up to the TCR, new Troves need 150%+, collateral withdrawal and Trove closure are blocked, and the borrowing fee drops to 0% so repairing positions is frictionless. It ends automatically once the TCR recovers above 150%. The app shows a banner while it's active.
+A system-wide state that activates when total collateralization falls below 150%: the liquidation threshold extends up to the TCR, new Troves need 150%+, collateral withdrawal and Trove closure are blocked, and the borrowing fee drops to 0% so repairing positions is frictionless. It ends automatically once the TCR is back at or above 150%. The app shows a banner while it's active.
 
 **Related:** [Recovery Mode](core-mechanics/recovery-mode.md)
 
@@ -180,7 +180,7 @@ A system-wide state that activates when total collateralization falls below 150%
 
 <summary>Can I use USDFC for gasless transfers or x402 payments?</summary>
 
-Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can authorize a transfer with an off-chain signature and let any party submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. For integration details, see the [USDFC SDK](../developer-portal/sdk-reference/usdfc-sdk.md).
+Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can sign a transfer off-chain and let another party (anyone for `transferWithAuthorization`, the recipient for `receiveWithAuthorization`) submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. See [Token standards](deployed-contracts.md#token-standards) and the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol).
 
 **Related:** [Contracts and Security](deployed-contracts.md#token-standards)
 
@@ -190,6 +190,6 @@ Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAu
 
 <summary>Where does the FIL/USD price come from?</summary>
 
-From the protocol's PriceFeed contract, which uses Secured Finance's own price oracle as the primary source with Tellor as fallback — including defined behavior when prices go stale. See [Price Oracle](core-mechanics/price-oracle.md) for the mechanics and trust assumptions.
+From the protocol's PriceFeed contract, which uses RedStone as the primary FIL/USD source with Tellor as fallback — including defined behavior when prices go stale. See [Price Oracle](core-mechanics/price-oracle.md) for the mechanics and trust assumptions.
 
 </details>

@@ -6,7 +6,7 @@ description: Borrow more USDFC from an existing Trove
 
 If you already have a Trove, you can mint more USDFC against it at any time — as long as your collateral ratio stays above the minimum. You'll need your Trove open and some FIL for gas.
 
-<figure><img src="../../.gitbook/assets/step2.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step2.gif" alt="Animated walkthrough of minting more USDFC"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Open your Trove
 
@@ -22,7 +22,7 @@ In the [USDFC app](https://app.usdfc.net), go to the **Trove** page. You'll see 
 
 With an open Trove, the **Update Trove** tab is already selected when you land on the Trove page. Increase the **Borrowed Amount** by the extra USDFC you want to mint (you can adjust collateral in the same transaction). The app shows your new collateral ratio as you type.
 
-* A one-time [borrowing fee](../core-mechanics/protocol-fees.md) (0.5% or more of the newly minted amount) is added to your debt.
+* A one-time [borrowing fee](../core-mechanics/protocol-fees.md) (0.5% or more of the newly minted amount; waived in Recovery Mode) is added to your debt.
 * Minting without adding collateral lowers your ratio — check where it lands before confirming. The app flags ratios below 150% as risky.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.12.44.png" alt="The Update Trove form with the new amounts and resulting ratio"><figcaption><p>The Update Trove form with the new amounts and resulting ratio</p></figcaption></figure>
@@ -38,14 +38,14 @@ Click **Update Trove** and confirm in your wallet. The newly minted USDFC is sen
 Your Trove's debt updates and the new USDFC appears in your wallet. If it doesn't show, refresh the page or check the transaction on [Filfox](https://filfox.info/en).
 
 {% hint style="info" %}
-Over the life of a Trove: wallet balance received = total debt − Liquidation Reserve − accumulated borrowing fees. The reserve comes back when you close the Trove; the fees don't.
+For each borrowing operation, your wallet receives the requested amount and your debt increases by that amount plus the borrowing fee. When you close the Trove you don't repay the Liquidation Reserve, but the fees stay owed.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.15.20.png" alt="Updated Trove details and wallet balance"><figcaption><p>Updated Trove details and wallet balance</p></figcaption></figure>
 
 ## Troubleshooting
 
-* **Update Trove is disabled** — the new ratio would fall below 110%, or (in Recovery Mode) the adjustment doesn't leave the Trove at 150%+ with an improved ratio.
+* **Update Trove is disabled** — the new ratio would fall below 110%, or (in Recovery Mode) the adjustment doesn't leave the Trove at 150%+ without lowering its ratio.
 * **Transaction reverts** — the FIL price may have moved; refresh and re-check the resulting ratio before confirming again.
 * **USDFC not in your wallet** — add the token via "Add USDFC to Wallet" on the Dashboard, or check the transaction on Filfox.
 

@@ -10,7 +10,7 @@ description: A decentralized, over-collateralized stablecoin backed by FIL
 
 ## How it works in brief
 
-* **Open a Trove and mint.** Deposit FIL, choose how much USDFC to borrow, and keep your collateral ratio above the **110% minimum**. A one-time borrowing fee (0.5% or more) is added to your debt; there is no interest.
+* **Open a Trove and mint.** Deposit FIL, choose how much USDFC to borrow, and keep your collateral ratio above the **110% minimum**. A one-time borrowing fee (0.5% or more in Normal Mode; waived in Recovery Mode) is added to your debt; there is no interest.
 * **Stay collateralized.** If FIL falls and a Trove drops below 110%, it is liquidated: its debt is repaid from the **Stability Pool** and its collateral is distributed to the pool's depositors.
 * **Redeem at face value.** Any holder can redeem USDFC for $1 worth of FIL directly from the protocol. This is what anchors the peg — if USDFC trades below $1, redemption arbitrage pushes it back.
 * **Recovery Mode.** If the whole system's collateral ratio falls below 150%, stricter rules kick in until it recovers.
@@ -24,9 +24,9 @@ The mechanics are covered in depth in [Core Mechanics](core-mechanics/README.md)
 | Minimum Collateral Ratio (MCR) | 110% |
 | Recovery Mode threshold (system-wide) | 150% |
 | Minimum borrow amount per Trove | 200 USDFC |
-| Liquidation Reserve (refunded on close) | 20 USDFC |
+| Liquidation Reserve (not repaid by you on close) | 20 USDFC |
 | Borrowing fee (one-time) | 0.5% – 5%, varies with the Base Rate |
-| Redemption fee | 0.5% + Base Rate |
+| Redemption fee | 0.5% + Base Rate, paid in FIL |
 | Interest | None |
 
 ## Putting USDFC to work
@@ -45,7 +45,7 @@ For a side-by-side view of all Secured Finance products, see [Protocol at a Glan
 
 ## Token standards
 
-USDFC is an ERC-20 token that also implements **EIP-2612** (`permit`) and **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`). Both let a holder authorize a transfer with a signature instead of an on-chain transaction, so a third party can submit it and pay the gas. This is what makes USDFC usable in gasless flows and **x402** (HTTP 402) payment flows. Developers can find the interfaces in the [USDFC SDK](../developer-portal/sdk-reference/usdfc-sdk.md).
+USDFC is an ERC-20 token that also implements **EIP-2612** (`permit`) and **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`). `permit` lets a holder grant a spending allowance with a signature instead of an approval transaction. `transferWithAuthorization` lets a holder sign a transfer that anyone can submit and pay gas for; `receiveWithAuthorization` does the same but must be submitted by the recipient. Together these make USDFC usable in gasless flows and **x402** (HTTP 402) payment flows. The interfaces are in the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol); see [Contracts and Security](deployed-contracts.md#token-standards).
 
 ## Why Filecoin
 

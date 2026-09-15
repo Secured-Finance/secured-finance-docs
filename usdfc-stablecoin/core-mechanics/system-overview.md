@@ -33,10 +33,10 @@ The causal chain: the oracle prices the collateral → ratios determine which Tr
 | --- | --- | --- |
 | Minimum Collateral Ratio (MCR) | Per-Trove ratio below which liquidation is possible | 110% |
 | Critical Collateral Ratio (CCR) | System-wide ratio that triggers Recovery Mode | 150% |
-| Minimum borrow amount | Smallest amount a Trove can borrow (total debt is higher: this plus fee and reserve) | 200 USDFC |
-| Liquidation Reserve | Set aside per Trove for liquidation gas; refunded on close | 20 USDFC |
+| Minimum net debt | Borrowed amount plus borrowing fee, excluding the 20 USDFC reserve (the app enforces this as a 200 USDFC minimum borrow) | 200 USDFC |
+| Liquidation Reserve | Added to each Trove's debt to cover liquidation gas; not repaid by you when you close | 20 USDFC |
 | Borrowing fee | One-time, (Base Rate + 0.5%), capped at 5% | 0.5% – 5% |
-| Redemption fee | (Base Rate + 0.5%) of the redeemed amount, paid in FIL | 0.5% minimum |
+| Redemption fee | (Base Rate + 0.5%) of the FIL drawn, paid in FIL; not capped at 5% | 0.5% minimum |
 | Interest | Ongoing charge on debt | None |
 
 The **Base Rate** is a single system-wide variable that rises with redemption volume and decays with a 12-hour half-life — the full mechanics are in [Mint & Borrow](mint-and-borrow.md#base-rate-explanation).

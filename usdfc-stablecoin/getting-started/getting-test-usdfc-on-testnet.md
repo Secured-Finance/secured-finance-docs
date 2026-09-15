@@ -38,7 +38,7 @@ Closing is worth practicing on testnet because of one catch: you must repay your
 
 1. On the **Trove** page, open the **Close Trove** tab.
 2. If the app says you need more USDFC to cover the fees, get the shortfall from another account or a swap.
-3. Click **Repay & Close Trove** and confirm. Your collateral returns, and the 20 USDFC Liquidation Reserve is refunded as part of closing.
+3. Click **Repay & Close Trove** and confirm. Your collateral returns; the 20 USDFC Liquidation Reserve is not something you repay — it is netted out of the amount due.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.56.26.png" alt="Closing a Trove repays the borrowed amount plus fees"><figcaption><p>Closing a Trove repays the borrowed amount plus fees</p></figcaption></figure>
 

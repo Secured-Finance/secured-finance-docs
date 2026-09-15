@@ -26,7 +26,7 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 ## What each party experiences
 
-**The liquidated borrower** loses their collateral but keeps every USDFC they borrowed, and their debt is gone — the Trove is simply closed. Since liquidation happens just below 110%, the collateral lost is worth roughly 10% more than the debt cleared: that gap is the borrower's loss and the system's safety margin.
+**The liquidated borrower** (in Normal Mode) loses their collateral but keeps every USDFC they borrowed, and their debt is gone — the Trove is simply closed. Since liquidation happens just below 110%, the collateral lost is worth roughly 10% more than the debt cleared: that gap is the borrower's loss and the system's safety margin. In a capped Recovery Mode liquidation of a Trove above 110%, only collateral worth 110% of the debt is taken and the rest is claimable by the owner.
 
 **Stability Pool depositors** acquire the FIL at that same discount — see [Stability Pool](stability-pool.md) for the economics.
 

@@ -6,7 +6,7 @@ description: Add or withdraw FIL and keep a healthy collateral ratio
 
 Your collateral ratio is what stands between your Trove and liquidation. This guide covers adjusting collateral in the app and choosing a ratio that fits your risk tolerance.
 
-<figure><img src="../../.gitbook/assets/step3.gif" alt="Quick walkthrough of this step"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/step3.gif" alt="Animated walkthrough of adjusting collateral"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
 ## Step 1 — Open your Trove
 
@@ -43,13 +43,15 @@ Click **Update Trove**, confirm in your wallet, and check the updated position. 
 
 The app classifies your ratio the same way it displays risk:
 
-| Ratio | App label | FIL drop before liquidation (from 110%) |
+| Ratio | App label | Approx. FIL drop before reaching 110% |
 | --- | --- | --- |
 | 200% and above | Very Low risk | 45% or more |
-| 150% – 200% | Low risk | 27% – 45% |
-| 120% – 150% | Medium risk | 8% – 27% |
+| 150% to under 200% | Low risk | 27% – 45% |
+| 120% to under 150% | Medium risk | 8% – 27% |
 | Below 120% | High risk | Less than 8% |
 | Below 110% | — | Eligible for [liquidation](../core-mechanics/liquidation.md) |
+
+The drop figures assume Normal Mode and unchanged collateral and debt; during Recovery Mode, liquidation can start at the system's total ratio (up to 150%).
 
 Two numbers worth knowing by heart:
 
@@ -71,6 +73,12 @@ There is no ratio that removes risk entirely — a deep enough FIL drop can thre
 * **Withdrawal reverts** — the new ratio would fall below 110%, the system is in Recovery Mode, or the withdrawal would push the system-wide ratio below 150%. Withdraw less, or add collateral first.
 * **Update Trove is disabled** — check that the amounts changed and that your wallet has enough FIL for gas.
 * **Ratio didn't update after the transaction** — refresh the page; the app re-reads your Trove on load.
+
+## Repaying debt and closing your Trove
+
+* **Partial repayment** — in the **Update Trove** form, reduce the **Borrowed Amount** by the USDFC you want to repay and click **Update Trove**. Net debt (excluding the 20 USDFC reserve) must stay at or above 200 USDFC. Repaying has no fee.
+* **Closing** — open the **Close Trove** tab and click **Repay & Close Trove**. You repay your total debt minus the 20 USDFC reserve, and all collateral returns to your wallet. Because the borrowing fees are part of your debt, you need slightly more USDFC than you originally minted — the difference has to come from a swap, another account, or Stability Pool gains.
+* **When closing is refused** — during [Recovery Mode](../core-mechanics/recovery-mode.md), or when closing would push the system's total collateral ratio below 150%. Partial repayment still works in both cases.
 
 ## Where next
 

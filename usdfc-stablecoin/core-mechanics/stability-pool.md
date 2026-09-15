@@ -15,8 +15,10 @@ The Stability Pool is the protocol's liquidation engine: a shared reserve of USD
 Both effects are shared **pro rata**: if you hold 2% of the pool, 2% of the burned USDFC comes from your deposit and 2% of the seized FIL becomes yours:
 
 $$
-\text{Your Gain} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
+\text{Your Gain} = \text{FIL allocated to the pool} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
+
+where "FIL allocated to the pool" is the liquidated collateral after the liquidator's 0.5% share — and, when the pool only partly covers a debt or a Recovery Mode liquidation is capped at 110%, only the corresponding fraction of it. Your share is measured immediately before the liquidation.
 
 ## Why depositing is attractive
 
@@ -28,7 +30,7 @@ Deposits are never locked, with one exception: **withdrawals are suspended while
 
 The Stability Pool can only absorb debt it actually holds. If a liquidation exceeds the pool's balance, the protocol falls back to **redistribution**: the remaining debt and collateral of the liquidated Trove are spread across all active Troves, proportionally to their collateral.
 
-For a receiving Trove, this means both its debt and its collateral increase. Because the liquidated Trove was below 110% while receivers are above it, the net USD value received exceeds the debt taken on — but every receiving Trove's collateral *ratio* drops, so a deep cascade pushes the whole system toward [Recovery Mode](recovery-mode.md). A well-funded Stability Pool is what keeps that scenario theoretical.
+For a receiving Trove, this means both its debt and its collateral increase. Whether that is a net gain depends on the liquidated Trove's ratio: below 110% but above 100%, the collateral received is worth more than the debt taken on; below 100%, receivers absorb a shortfall. Either way, a Trove that was healthier than the liquidated one sees its own collateral *ratio* drop, so a deep cascade pushes the whole system toward [Recovery Mode](recovery-mode.md). A well-funded Stability Pool is what keeps that scenario theoretical.
 
 ## Where next
 

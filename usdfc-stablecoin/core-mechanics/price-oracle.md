@@ -21,13 +21,13 @@ The PriceFeed falls back from the primary to Tellor when any of these occur:
 
 * The primary price hasn't been updated for longer than the **oracle timeout (16 hours)**
 * The primary call reverts, or returns invalid data or an invalid timestamp
-* The price moves more than **50%** between consecutive updates (treated as a glitch unless Tellor confirms it)
+* The primary price is **more than double, or less than half,** the last good price the PriceFeed stored (treated as a glitch unless Tellor confirms it)
 
-Returning to the primary requires the two sources to agree within **5%** — after an incident, the protocol may stay on the fallback for a while even once the primary is healthy again.
+Returning to the primary generally requires the two sources to agree within **5%** — the exact conditions depend on which state the PriceFeed is in — so after an incident, the protocol may stay on the fallback for a while even once the primary is healthy again.
 
 ## When both sources are stale
 
-If Tellor is also stale, the protocol keeps operating on the **last good price** it recorded — for up to **48 hours**. Past that, price fetches revert and protocol operations that need a price — opening, adjusting, liquidating, redeeming — halt until a fresh price lands on-chain.
+If Tellor is also stale, the protocol keeps operating on the **last good price** it recorded — until **48 hours** after that price was stored. Past that, price fetches revert and protocol operations that need a price — opening, adjusting, liquidating, redeeming — halt until a fresh price lands on-chain.
 
 For a Trove owner, the practical implication: during an oracle outage the price the protocol uses can lag the real market. A liquidation that "should" have happened may be delayed — and conversely, you cannot assume a market recovery protects you until the on-chain price reflects it.
 

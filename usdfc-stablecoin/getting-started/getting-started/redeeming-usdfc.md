@@ -18,7 +18,7 @@ Redemption is a process that allows you to exchange your USDFC for FIL collatera
 
 {% hint style="warning" %}
 Repayment is adjusting your trove. However, the redemption is adjusting 3rd party's lowest collateral trove.\
-To avoid getting redemption, please watch 'Debt in front' amount and increase the collateral ratio.
+To reduce the risk of your Trove being redeemed against, watch the 'Debt in front' amount and keep your collateral ratio up.
 {% endhint %}
 
 ## Step 1: Access the Redemption Feature

@@ -9,7 +9,7 @@ The protocol charges exactly two fees — one when USDFC is minted, one when it 
 | Fee | When | Calculation | Range | Paid in |
 | --- | --- | --- | --- | --- |
 | Borrowing (minting) fee | Each time USDFC is minted | (Base Rate + 0.5%) × minted amount | 0.5% – 5% (capped) | USDFC (added to debt) |
-| Redemption fee | Each redemption | (Base Rate + 0.5%) × redeemed amount | 0.5% minimum, no cap | FIL (deducted from proceeds) |
+| Redemption fee | Each redemption | (Base Rate + 0.5%) × FIL drawn | 0.5% minimum, not capped at 5% | FIL (deducted from proceeds) |
 
 Both fees share the same [**Base Rate**](mint-and-borrow.md#base-rate-explanation), which rises with redemption activity and decays with a 12-hour half-life — so in calm conditions both sit at the 0.5% floor. The borrowing fee is **waived during [Recovery Mode](recovery-mode.md)**; the 20 USDFC Liquidation Reserve is not a fee (it's refunded on close — see [The Trove System](the-trove-system.md#debt-calculations)).
 

@@ -26,7 +26,7 @@ $$
 \text{Collateral Ratio} = \frac{\text{Collateral Value in USD}}{\text{Debt in USDFC}} \times 100\%
 $$
 
-The app labels the ranges: **200%+** very low risk, **150–200%** low, **120–150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below the **system's total ratio** (up to 150%) can be liquidated.
+The app labels the ranges: **200% and above** very low risk, **150% to under 200%** low, **120% to under 150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below the **system's total ratio** (up to 150%) can be liquidated.
 
 ### Liquidation Price
 
@@ -58,7 +58,7 @@ The app doesn't send notifications, so put an alert where you'll see it:
 
 * **Ratio below 150%:** check daily, and during volatile markets, intraday. Keep FIL ready to add on short notice.
 * **Ratio 150–200%:** check weekly and after any sharp FIL move.
-* **Ratio above 200%:** a monthly check is usually enough — and consider whether the idle buffer could be smaller.
+* **Ratio above 200%:** less frequent checks are reasonable, but keep the price alert in place and re-check after any sharp FIL move or a Recovery Mode notice — and consider whether the idle buffer could be smaller.
 
 When FIL falls, your options are to **add collateral** or **repay debt** ([Update Trove](managing-collateral-effectively.md)) — both raise your ratio. When FIL rises, you can withdraw excess collateral or [mint more USDFC](minting-usdfc-step-by-step.md), at the cost of a thinner buffer.
 

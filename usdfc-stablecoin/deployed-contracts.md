@@ -43,8 +43,8 @@ Testnet addresses for every contract are in the repository's [`deployments/outpu
 USDFC implements:
 
 * **ERC-20** — the standard token interface.
-* **EIP-2612 (`permit`)** — signature-based approvals, so an approval doesn't require its own transaction.
-* **EIP-3009 (`transferWithAuthorization` / `receiveWithAuthorization`)** — signature-authorized transfers that anyone can submit and pay gas for, enabling gasless transfers and **x402** payment flows.
+* **EIP-2612 (`permit`)** — signature-based allowances, so granting an approval doesn't require its own transaction (a `transferFrom` still moves the tokens).
+* **EIP-3009 (`transferWithAuthorization` / `receiveWithAuthorization`)** — signature-authorized transfers. `transferWithAuthorization` can be submitted by anyone (who pays the gas); `receiveWithAuthorization` must be submitted by the recipient. Together they enable gasless transfers and **x402** payment flows.
 
 EIP-2612 and EIP-3009 support was added by a contract upgrade in September 2025 (the token address did not change) and audited by Hexens in August 2025 — the third report below.
 

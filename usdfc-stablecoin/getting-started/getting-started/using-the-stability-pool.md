@@ -64,7 +64,7 @@ When you've earned rewards, you can claim them.
 2. Click the button to claim your earned FIL rewards
 3. Confirm the transaction in your wallet
 4. Wait for the transaction to be processed
-5. Verify that the FIL rewards have been added to your trove
+5. Verify that the FIL has been added to your wallet balance (to add it to your Trove as collateral instead, use the separate "Move FIL to Trove" option)
 
 ## Step 6: Withdraw USDFC (When Desired)
 

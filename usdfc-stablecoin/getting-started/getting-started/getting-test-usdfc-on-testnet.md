@@ -68,7 +68,7 @@ After minting, you'll want to see your test USDFC in your wallet.
 
 ## Step 5: Closing Your Trove
 
-Most cases, 'Adjust' should allow withdrawing collateralized FIL, but if you no longer need to use USDFC system, you can close your trove and you can reopen a trove again.
+In most cases, 'Adjust' should allow withdrawing collateralized FIL, but if you no longer need to use USDFC system, you can close your trove and you can reopen a trove again.
 
 {% hint style="warning" %}
 Don't forget to repay the borrowing fees. If you wish to close the trove with the USDFC amount you just borrowed, it doesn't work. You should repay borrowing fees. Please get additional USDFC from another account or via swap.

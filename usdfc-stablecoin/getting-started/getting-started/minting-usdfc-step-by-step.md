@@ -24,7 +24,7 @@ First, you need to access your existing Trove in the USDFC application.
 4. You should see your current Trove details including collateral amount, debt, and collateral ratio
 
 {% hint style="warning" %}
-"Debt" is the Total debt = Borrowed amount + Borrowing Fees (cumulative)
+"Debt" is the Total debt = Borrowed amount + Borrowing Fees (cumulative) + 20 USDFC Liquidation Reserve
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/image (7).png" alt="The Trove dashboard showing current position details"><figcaption><p>The Trove dashboard showing current position details</p></figcaption></figure>
@@ -83,7 +83,7 @@ After the transaction is confirmed, verify that your USDFC was minted successful
 1. Check that your Trove details have been updated with the new debt amount
 2. Verify that the additional USDFC has been added to your wallet balance
 3. If you don't see the additional USDFC in your wallet, you may need to refresh or check your transaction history on your wallet or [a blockchain explorer](https://filfox.info/en)
-4. Check that your wallet balance reflects Borrowing Fee subtracted
+4. Check that your wallet balance increased by the full amount you minted (the borrowing fee is added to your debt, not deducted from what you receive)
 
 {% hint style="info" %}
 Wallet balance = Total debt - Liquidation Reserve - Borrowing Fees (cumulative). In this example, 240.10 - 20 - 0.10 (this mint fee) - 1.02 (prev mint fee) = 218.98 USDFC.
