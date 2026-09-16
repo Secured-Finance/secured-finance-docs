@@ -34,7 +34,7 @@ The **Dashboard** page of the [USDFC app](https://app.usdfc.net) shows your Trov
 | Total Active Troves | Number of open Troves |
 | USDFC Supply | Total USDFC in circulation |
 | USDFC in Stability Pool | How much of the supply is backing liquidations (and the percentage) |
-| Borrowing Fee | The fee you'd pay to mint right now — 0.5% + Base Rate, or 0.00% during Recovery Mode |
+| Borrowing Fee | The fee you'd pay to mint right now — 0.5% + Base Rate, capped at 5%; 0.00% during Recovery Mode |
 | Total Collateral Ratio | The system-wide ratio. Below 150% triggers Recovery Mode, and during Recovery Mode Troves below this number can be liquidated |
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt="The Dashboard with your position and protocol statistics"><figcaption><p>The Dashboard with your position and protocol statistics</p></figcaption></figure>

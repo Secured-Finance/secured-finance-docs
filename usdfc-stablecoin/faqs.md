@@ -138,7 +138,7 @@ The risks: your stable deposit gradually converts into **volatile FIL** at times
 
 <summary>What happens if the Stability Pool is empty during a liquidation?</summary>
 
-The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio after the liquidator's 0.5% cut (roughly above 100.5%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
+The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio before the liquidator's 0.5% cut (roughly above 100.5%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
 
 **Related:** [Stability Pool](core-mechanics/stability-pool.md#if-the-pool-runs-dry-redistribution)
 

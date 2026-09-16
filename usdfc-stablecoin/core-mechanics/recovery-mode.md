@@ -17,7 +17,7 @@ The app shows a prominent Recovery Mode notice on the Dashboard whenever it is a
 | | Normal Mode | Recovery Mode |
 | --- | --- | --- |
 | Liquidation threshold | 110% | Current TCR (< 150%) |
-| Borrowing fee | Base Rate + 0.5% | **0%** |
+| Borrowing fee | Base Rate + 0.5% (capped at 5%) | **0%** |
 | Minimum ratio for a new Trove | 110% | 150% |
 | Collateral withdrawal | Allowed (above 110%) | **Not allowed** |
 | Debt increase | Allowed (above 110%) | Only if the Trove ends at ≥ 150% and its ratio does not decrease |

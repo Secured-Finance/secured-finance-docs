@@ -23,7 +23,7 @@ $$
 
 * **Borrowed Amount** — the USDFC sent to your wallet. The protocol requires a **net debt** (borrowed amount + fee) of at least 200 USDFC, which the app enforces as a 200 USDFC minimum borrow; partial repayments must also keep net debt at or above 200.
 * **Liquidation Reserve** — 20 USDFC set aside to compensate whoever triggers a liquidation of your Trove. If you close the Trove normally, you don't repay it — it is burned from the protocol's gas pool and netted out of what you owe.
-* **Borrowing Fee** — one-time, (Base Rate + 0.5%) of the borrowed amount; waived entirely during [Recovery Mode](recovery-mode.md). There is no ongoing interest.
+* **Borrowing Fee** — one-time, (Base Rate + 0.5%) of the borrowed amount, capped at 5%; waived entirely during [Recovery Mode](recovery-mode.md). There is no ongoing interest.
 
 **Example (Normal Mode, Base Rate 0%):** borrow 200 USDFC → fee 1.00 USDFC → Total Debt = 200 + 20 + 1.00 = **221.00 USDFC**.
 

@@ -30,7 +30,7 @@ Deposits are never locked, with one exception: **withdrawals are suspended while
 
 The Stability Pool can only absorb debt it actually holds. If a liquidation exceeds the pool's balance, the protocol falls back to **redistribution**: the remaining debt and collateral of the liquidated Trove are spread across all active Troves, proportionally to their collateral.
 
-For a receiving Trove, this means both its debt and its collateral increase. Whether that is a net gain depends on the liquidated Trove's ratio after the liquidator's 0.5% cut: roughly above 100.5%, the collateral received is worth more than the debt taken on; below that, receivers absorb a shortfall. Either way, a Trove that was healthier than the liquidated one sees its own collateral *ratio* drop, so a deep cascade pushes the whole system toward [Recovery Mode](recovery-mode.md). A well-funded Stability Pool is what keeps that scenario theoretical.
+For a receiving Trove, this means both its debt and its collateral increase. Whether that is a net gain depends on the liquidated Trove's ratio: measured before the liquidator's 0.5% cut, redistribution breaks even at roughly 100.5% — above that, the collateral received is worth more than the debt taken on; below it, receivers absorb a shortfall. Either way, a Trove that was healthier than the liquidated one sees its own collateral *ratio* drop, so a deep cascade pushes the whole system toward [Recovery Mode](recovery-mode.md). A well-funded Stability Pool is what keeps that scenario theoretical.
 
 ## Where next
 
