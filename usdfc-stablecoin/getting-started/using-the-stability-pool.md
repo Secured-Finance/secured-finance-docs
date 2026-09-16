@@ -53,7 +53,7 @@ $$
 \text{Your Gain} = \text{FIL allocated to the pool} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
 
-"FIL allocated to the pool" is the liquidated collateral after the liquidator's 0.5% share — only the covered fraction if the pool doesn't hold the full debt, and capped at collateral worth 110% of the debt for Recovery Mode liquidations of Troves between 110% and the TCR. Your deposit decreases by your pool share multiplied by the debt the pool repaid. Everything is automatic — there's nothing to trigger or compound manually.
+"FIL allocated to the pool" is the liquidated collateral minus the liquidator's 0.5% share — only the covered fraction if the pool doesn't hold the full debt. For Recovery Mode liquidations of Troves between 110% and the TCR, the collateral is first capped at 110% of the debt and the 0.5% is then taken from that amount, so the pool receives collateral worth about 109.45% of the debt. Your deposit decreases by your pool share multiplied by the debt the pool repaid. Everything is automatic — there's nothing to trigger or compound manually.
 
 ## Troubleshooting
 

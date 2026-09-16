@@ -100,7 +100,7 @@ $$
 \text{Your Reward} = \text{FIL allocated to the pool} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
 
-"FIL allocated to the pool" is the liquidated collateral after the liquidator's 0.5% share — only the fraction matching the debt the pool actually repaid, and capped at collateral worth 110% of the debt for Recovery Mode liquidations of Troves between 110% and the TCR.
+"FIL allocated to the pool" is the liquidated collateral minus the liquidator's 0.5% share — only the fraction matching the debt the pool actually repaid. For Recovery Mode liquidations of Troves between 110% and the TCR, the collateral is first capped at 110% of the debt and the 0.5% is then taken from that amount, so the pool receives collateral worth about 109.45% of the debt.
 
 
 ### Deposit Dilution
