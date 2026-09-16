@@ -4,7 +4,7 @@ description: The face-value exchange that anchors USDFC's peg
 
 # 💸 Redemption
 
-Redemption is the protocol's mechanism for exchanging 1 USDFC for $1 worth of FIL. Any holder can invoke it (as long as the system is above 110% total collateralization), and the FIL comes from the collateral of the lowest-ratio Troves. That standing mechanism is what puts a floor under the price: whenever USDFC trades far enough below $1 that the discount exceeds the redemption fee and transaction costs, redeeming becomes profitable, and the resulting arbitrage pulls the price back up.
+Redemption is the protocol's mechanism for exchanging 1 USDFC for $1 worth of FIL. Any holder can invoke it (as long as the system's total collateral ratio is at or above 110%), and the FIL comes from the collateral of the lowest-ratio Troves. That standing mechanism is what puts a floor under the price: whenever USDFC trades far enough below $1 that the discount exceeds the redemption fee and transaction costs, redeeming becomes profitable, and the resulting arbitrage pulls the price back up.
 
 {% hint style="success" %}
 **What redemption gives holders**

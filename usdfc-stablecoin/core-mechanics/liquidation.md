@@ -14,7 +14,7 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 1. **Trigger** — a Trove's ratio drops below the threshold and a **liquidator** (any address) calls the liquidation function.
 2. **Debt repayment** — USDFC equal to the Trove's debt is burned from the Stability Pool.
-3. **Collateral distribution** — the Trove's FIL, minus the liquidator's 0.5% share, goes to Stability Pool depositors pro rata. If the pool can't cover the debt, the remainder is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) across all active Troves in proportion to their collateral.
+3. **Collateral distribution** — the Trove's FIL, minus the liquidator's 0.5% share, goes to Stability Pool depositors pro rata. If the pool can't cover the debt, the remainder is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) across all active Troves in proportion to their collateral — except in Recovery Mode for Troves between 110% and the TCR, which are only liquidated if the pool can absorb their entire debt.
 
 ## Key parameters
 

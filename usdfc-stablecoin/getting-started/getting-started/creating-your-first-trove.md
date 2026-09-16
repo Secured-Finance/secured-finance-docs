@@ -52,7 +52,7 @@ Before confirming, review all transaction details carefully.
 1. Check the collateral amount (FIL)
 2. Verify the debt amount (USDFC)
 3. Review the collateral ratio
-4. Note any fees that will be applied (including the Liquidation Reserve of 20 USDFC)
+4. Note the borrowing fee that will be applied, and the 20 USDFC Liquidation Reserve that is added to your debt (not a fee — you don't repay it when closing)
 
 ## Step 5: Confirm and Create Your Trove
 

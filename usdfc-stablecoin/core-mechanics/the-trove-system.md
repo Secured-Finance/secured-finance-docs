@@ -27,7 +27,7 @@ $$
 
 **Example (Normal Mode, Base Rate 0%):** borrow 200 USDFC → fee 1.00 USDFC → Total Debt = 200 + 20 + 1.00 = **221.00 USDFC**.
 
-**Closing that Trove:** you repay Total Debt minus the 20 USDFC reserve — so the USDFC you must actually hold is **201.00**. Note that this is 1.00 more than you received: minting more from the same Trove can't cover it (every extra USDFC minted adds its own fee), so the difference has to come from elsewhere — a swap, another account, or Stability Pool gains.
+**Closing that Trove:** you repay Total Debt minus the 20 USDFC reserve — so the USDFC you must actually hold is **201.00**. Note that this is 1.00 more than you received: minting more from the same Trove can't cover it (every extra USDFC minted adds its own fee), so the difference has to come from elsewhere — a swap, another account, or Stability Pool gains swapped into USDFC.
 
 ### Collateral Ratio Formula
 
@@ -40,7 +40,7 @@ $$
 * The app labels ratios below 150% as elevated risk; see [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md#choosing-a-collateral-ratio) for the full risk bands.
 
 {% hint style="info" %}
-**Why a Liquidation Reserve?** Liquidation is performed by third parties who pay gas to do it. The 20 USDFC reserve guarantees that liquidating even a small Trove is worth the gas — which is also why it exists as a *reserve* rather than a fee: if your Trove is never liquidated, you get it back.
+**Why a Liquidation Reserve?** Liquidation is performed by third parties who pay gas to do it. The 20 USDFC reserve guarantees that liquidating even a small Trove is worth the gas — which is also why it exists as a *reserve* rather than a fee: if your Trove is never liquidated, you never repay it.
 {% endhint %}
 
 ## Where next

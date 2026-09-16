@@ -14,8 +14,8 @@ USDFC is a decentralized stablecoin pegged to the US Dollar and backed entirely 
 
 **Key properties:**
 
-* **Over-collateralized** — every USDFC is backed by at least 110% of its value in FIL
-* **Redeemable** — exchangeable for $1 of FIL directly from the protocol (whenever the system's total collateral ratio is above 110%)
+* **Over-collateralized** — every Trove must open above the 110% minimum collateral ratio and is liquidated if it falls below it
+* **Redeemable** — exchangeable for $1 of FIL directly from the protocol (whenever the system's total collateral ratio is at or above 110%)
 * **Interest-free** — a one-time borrowing fee, no ongoing charges
 * **No central issuer** — minting, liquidation, and redemption are all on-chain mechanisms
 
@@ -40,8 +40,8 @@ Secured Finance is the DeFi platform behind USDFC. It runs three products: the *
 Through interlocking mechanisms rather than a single lever:
 
 1. **Over-collateralization** — every Trove must be opened above the 110% minimum and is liquidated if it falls below it
-2. **Redemption** — anyone can exchange USDFC for $1 of FIL, so trading below $1 creates instant arbitrage that burns supply and lifts the price
-3. **Minting arbitrage** — trading above $1 makes minting-and-selling profitable, expanding supply and lowering the price
+2. **Redemption** — anyone can exchange USDFC for $1 of FIL, so once the discount below $1 exceeds the redemption fee and transaction costs, arbitrage burns supply and lifts the price
+3. **Minting arbitrage** — once the premium above $1 exceeds the borrowing fee and costs, minting-and-selling becomes profitable, expanding supply and lowering the price
 4. **Liquidation and the Stability Pool** — remove under-collateralized debt before it can undermine the backing
 
 **Related:** [System Overview](core-mechanics/system-overview.md), [Redemption](core-mechanics/redemption.md)
@@ -90,7 +90,7 @@ Yes — increase the borrowed amount via **Update Trove** any time your resultin
 
 <summary>How do I close my Trove?</summary>
 
-Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is always available). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is possible as long as net debt stays at or above 200 USDFC). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
 
 Two cases where closing is refused: during [Recovery Mode](core-mechanics/recovery-mode.md), and when closing would push the system's total collateral ratio below 150%. In both cases you can still repay debt; you just can't withdraw the collateral until conditions improve.
 
@@ -138,7 +138,7 @@ The risks: your stable deposit gradually converts into **volatile FIL** at times
 
 <summary>What happens if the Stability Pool is empty during a liquidation?</summary>
 
-The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio (above 100%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
+The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio after the liquidator's 0.5% cut (roughly above 100.5%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
 
 **Related:** [Stability Pool](core-mechanics/stability-pool.md#if-the-pool-runs-dry-redistribution)
 

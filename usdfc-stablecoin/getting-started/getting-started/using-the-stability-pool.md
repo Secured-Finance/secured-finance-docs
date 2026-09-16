@@ -97,8 +97,10 @@ When a Trove is liquidated, the following happens:
 Rewards are distributed based on your share of the Stability Pool:
 
 $$
-\text{Your Reward} = \text{Liquidated Collateral} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
+\text{Your Reward} = \text{FIL allocated to the pool} \times \frac{\text{Your Deposit}}{\text{Total Stability Pool}}
 $$
+
+"FIL allocated to the pool" is the liquidated collateral after the liquidator's 0.5% share, and only the fraction matching the debt the pool actually repaid.
 
 
 ### Deposit Dilution

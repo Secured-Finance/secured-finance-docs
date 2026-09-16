@@ -12,11 +12,38 @@ A Trove is not a set-and-forget position: FIL moves, and your collateral ratio m
 
 The **Dashboard** page of the [USDFC app](https://app.usdfc.net) shows your Trove and Stability Pool positions alongside protocol-wide statistics.
 
+**My Positions**
+
+| Item | What it means |
+| --- | --- |
+| Total Debt | Everything you owe: borrowed USDFC + accumulated borrowing fees + the 20 USDFC Liquidation Reserve |
+| Collateral | FIL locked in your Trove |
+| Collateral Ratio | Collateral value ÷ Total Debt — see below |
+| Liquidation Risk | The app's label for your ratio: Very Low (200%+), Low (150–<200%), Medium (120–<150%), High (<120%) |
+| Liquidation Gain | FIL credited to you from liquidations, waiting to be claimed |
+| Deposit | Your remaining USDFC in the Stability Pool (it shrinks as liquidations consume it) |
+| Pool Share | Your deposit as a share of the whole pool — your cut of every liquidation |
+
+**Protocol Overview**
+
+| Item | What it means |
+| --- | --- |
+| FIL price / Source | The FIL/USD price the protocol is using and which oracle it comes from — see [Price Oracle](../core-mechanics/price-oracle.md) |
+| Recovery Mode | Whether the system is in [Recovery Mode](../core-mechanics/recovery-mode.md) (Active / Inactive) |
+| Total Value Locked | All FIL collateral in the protocol |
+| Total Active Troves | Number of open Troves |
+| USDFC Supply | Total USDFC in circulation |
+| USDFC in Stability Pool | How much of the supply is backing liquidations (and the percentage) |
+| Borrowing Fee | The fee you'd pay to mint right now — 0.5% + Base Rate, or 0.00% during Recovery Mode |
+| Total Collateral Ratio | The system-wide ratio. Below 150% triggers Recovery Mode, and during Recovery Mode Troves below this number can be liquidated |
+
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 23.22.25.png" alt="The Dashboard with your position and protocol statistics"><figcaption><p>The Dashboard with your position and protocol statistics</p></figcaption></figure>
 
 ## Step 2 — Know your metrics
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt="Trove metrics: collateral, debt, collateral ratio, and liquidation price"><figcaption><p>Your Trove metrics</p></figcaption></figure>
+The Trove page shows your collateral, debt, collateral ratio, liquidation risk, and debt in front. One number worth tracking — your liquidation price — is **not** displayed, so calculate it yourself from the figures shown.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.22.57.png" alt="Trove page showing collateral, debt, collateral ratio, and liquidation risk"><figcaption><p>Your Trove metrics as shown in the app</p></figcaption></figure>
 
 ### Collateral Ratio
 
@@ -28,9 +55,9 @@ $$
 
 The app labels the ranges: **200% and above** very low risk, **150% to under 200%** low, **120% to under 150%** medium, **below 120%** high. Below **110%**, your Trove is eligible for [liquidation](../core-mechanics/liquidation.md) — and during [Recovery Mode](../core-mechanics/recovery-mode.md), Troves below the **system's total ratio** (up to 150%) can be liquidated.
 
-### Liquidation Price
+### Liquidation Price (calculate this yourself)
 
-The FIL price at which your Trove reaches 110%:
+Not shown in the app. It is the FIL price at which your Trove reaches 110%:
 
 $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
@@ -44,7 +71,7 @@ Shown on the Trove page: the total debt of Troves with lower collateral ratios t
 
 ### Recovery Mode
 
-When the system enters Recovery Mode, the app displays a prominent notice on the Dashboard — you don't need an external source to know.
+Not a metric but a state: when the system enters Recovery Mode, the app displays a prominent notice on the Dashboard — you don't need an external source to know.
 
 ## Step 3 — Set up price alerts
 
