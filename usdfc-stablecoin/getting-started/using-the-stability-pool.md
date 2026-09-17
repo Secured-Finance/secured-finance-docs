@@ -27,7 +27,7 @@ Liquidation gains accrue only when liquidations happen, so don't expect steady d
 * **Your deposit** shrinks as its share of USDFC is used to repay liquidated debt.
 * **Your liquidation gain** (FIL) grows as you receive your share of seized collateral.
 
-This is a conversion, not a loss: your USDFC becomes FIL, usually at a discount, since a liquidated Trove hands over more than $1 of collateral per $1 of debt repaid. Note the flip side — you're accumulating a volatile asset, and its price can fall after you receive it.
+This is a conversion, and usually not a loss: your USDFC becomes FIL at a discount, since a liquidated Trove normally hands over more than $1 of collateral per $1 of debt repaid. Two caveats: in a severe crash a Trove can be liquidated below roughly 100.5%, and that particular liquidation is a net loss for the pool; and you're accumulating a volatile asset whose price can fall after you receive it.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.36.01.png" alt="Deposit and liquidation gains on the Stability Pool page"><figcaption><p>Deposit and liquidation gains on the Stability Pool page</p></figcaption></figure>
 
