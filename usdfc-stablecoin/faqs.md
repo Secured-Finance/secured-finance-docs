@@ -14,7 +14,7 @@ USDFC is a decentralized stablecoin pegged to the US Dollar and backed entirely 
 
 **Key properties:**
 
-* **Over-collateralized** — every Trove must open above the 110% minimum collateral ratio and is liquidated if it falls below it
+* **Over-collateralized** — every Trove must open above the 110% minimum collateral ratio and can be liquidated if it falls below it
 * **Redeemable** — exchangeable for $1 of FIL directly from the protocol (whenever the system's total collateral ratio is at or above 110%)
 * **Interest-free** — a one-time borrowing fee, no ongoing charges
 * **No central issuer** — minting, liquidation, and redemption are all on-chain mechanisms
@@ -80,7 +80,7 @@ There is **no interest** — the borrowing fee is the entire cost, however long 
 
 <summary>Can I mint more from an existing Trove?</summary>
 
-Yes — increase the borrowed amount via **Update Trove** as long as your resulting ratio stays above the minimum (in Recovery Mode: at least 150% and no lower than before). The borrowing fee applies to the newly minted amount only.
+Yes — increase the borrowed amount via **Update Trove** as long as your resulting ratio stays above the minimum and the system-wide ratio stays at or above 150% (in Recovery Mode: your ratio must end at 150% or higher and not fall). The borrowing fee applies to the newly minted amount only.
 
 **Related:** [Minting USDFC Step-by-Step](getting-started/minting-usdfc-step-by-step.md)
 

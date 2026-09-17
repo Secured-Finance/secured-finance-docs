@@ -57,7 +57,7 @@ $$
 
 ## Troubleshooting
 
-* **Withdraw USDFC is disabled or reverts** — there are Troves below 110% waiting to be liquidated; withdrawals reopen once they clear.
+* **Withdraw USDFC is disabled or reverts** — there are Troves below 110% waiting to be liquidated; withdrawals reopen once they clear. Withdrawals also revert while the [price feed](../core-mechanics/price-oracle.md) cannot return a usable price.
 * **Claim FIL is greyed out** — no liquidation has credited your deposit yet; gains only appear after liquidations occur.
 * **My deposit is smaller than what I put in** — expected: part of it was used to repay liquidated debt, and the corresponding FIL is in your liquidation gain.
 
