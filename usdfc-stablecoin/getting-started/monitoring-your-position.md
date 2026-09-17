@@ -67,7 +67,7 @@ Compare it to the current FIL price on the Dashboard to see your real buffer.
 
 ### Debt in front
 
-Shown on the Trove page: the total debt of Troves with lower collateral ratios than yours. [Redemptions](redeeming-usdfc.md) hit the lowest-ratio Troves first, so a small "debt in front" means your Trove is near the front of the redemption queue — being redeemed doesn't cost you money, but it converts your collateral to debt reduction whether you wanted it or not. Raising your ratio moves you back in the queue.
+Shown on the Trove page: the total debt of Troves with lower collateral ratios than yours. [Redemptions](redeeming-usdfc.md) hit the lowest-ratio Troves first, so a small "debt in front" means your Trove is near the front of the redemption queue — being redeemed doesn't charge you a fee (the collateral removed matches the debt reduction at the oracle price), but it converts your collateral to debt reduction whether you wanted it or not. Raising your ratio moves you back in the queue.
 
 ### Recovery Mode
 

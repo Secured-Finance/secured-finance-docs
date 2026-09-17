@@ -1,5 +1,5 @@
 ---
-description: Try everything risk-free on the Filecoin Calibration testnet
+description: Try everything with no real funds at risk on the Filecoin Calibration testnet
 ---
 
 # 🧪 Getting Test USDFC on Testnet

@@ -19,7 +19,7 @@ Minting is how USDFC comes into existence: you lock FIL in a [Trove](the-trove-s
 1. **Open a Trove** with FIL collateral and choose a borrow amount (the app requires at least 200 USDFC), keeping the collateral ratio above **110%** — e.g. $1,000 of FIL supports at most ~909 USDFC of total debt.
 2. **Receive the full amount.** The USDFC you requested arrives in your wallet; the fee and Liquidation Reserve are added to your *debt*, not deducted from the transfer.
 3. **Maintain the ratio.** If FIL falls, add collateral or repay to stay clear of [liquidation](liquidation.md). Be aware your Trove can also be affected by [redemption](redemption.md) if its ratio is among the lowest.
-4. **Adjust or close whenever.** Borrow more, repay, or close entirely by repaying the debt (see [minting more](../getting-started/minting-usdfc-step-by-step.md) and [repaying and closing](../getting-started/managing-collateral-effectively.md#repaying-debt-and-closing-your-trove)).
+4. **Adjust or close.** Borrow more, repay, or close entirely (subject to the [Recovery Mode](recovery-mode.md) restrictions) by repaying the debt (see [minting more](../getting-started/minting-usdfc-step-by-step.md) and [repaying and closing](../getting-started/managing-collateral-effectively.md#repaying-debt-and-closing-your-trove)).
 
 ## Minting costs
 

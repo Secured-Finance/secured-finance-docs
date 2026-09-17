@@ -9,7 +9,7 @@ A **Trove** is a personal position inside the protocol: FIL collateral on one si
 ## Lifecycle
 
 1. **Open** — deposit FIL and borrow USDFC (the app requires at least 200). The [borrowing fee](protocol-fees.md) and the 20 USDFC Liquidation Reserve are added to your debt.
-2. **Manage** — add or withdraw collateral, borrow more, or repay, in any combination, as long as the ratio stays above the minimum.
+2. **Manage** — add or withdraw collateral, borrow more, or repay, in any combination, as long as the ratio stays above the minimum and the system-wide checks pass (see [Recovery Mode](recovery-mode.md)).
 3. **Close** — repay the debt in full; your collateral returns. You don't repay the Liquidation Reserve — it is netted out of what you owe. Closing is refused during [Recovery Mode](recovery-mode.md), or if it would push the system-wide ratio below 150%.
 4. **Involuntary changes** — two mechanisms can alter your Trove without your consent: [liquidation](liquidation.md) if your ratio falls below 110%, and [redemption](redemption.md), which pays down the lowest-ratio Troves' debt in exchange for their collateral.
 
@@ -40,7 +40,7 @@ $$
 * The app labels ratios below 150% as elevated risk; see [Managing Collateral Effectively](../getting-started/managing-collateral-effectively.md#choosing-a-collateral-ratio) for the full risk bands.
 
 {% hint style="info" %}
-**Why a Liquidation Reserve?** Liquidation is performed by third parties who pay gas to do it. The 20 USDFC reserve guarantees that liquidating even a small Trove is worth the gas — which is also why it exists as a *reserve* rather than a fee: if your Trove is never liquidated, you never repay it.
+**Why a Liquidation Reserve?** Liquidation is performed by third parties who pay gas to do it. The 20 USDFC reserve is meant to make liquidating even a small Trove worth the gas — which is also why it exists as a *reserve* rather than a fee: if your Trove is never liquidated, you never repay it.
 {% endhint %}
 
 ## Where next

@@ -7,7 +7,7 @@ description: Exchange USDFC for FIL at face value
 Redemption lets any USDFC holder exchange USDFC for $1 worth of FIL directly from the protocol — this arbitrage path is what anchors the peg. The FIL comes from the Troves with the lowest collateral ratios, so redemption is also something Trove owners want to understand from the receiving end. You'll need USDFC in your wallet and FIL for gas.
 
 {% hint style="warning" %}
-**Redemption is not repayment.** Repaying reduces *your own* Trove's debt (via Update Trove). Redeeming reduces whichever Troves have the lowest collateral ratios in the system — you don't get to choose, and it isn't a way to pay down your own debt. If you own a Trove, watch your **Debt in front** figure and keep your ratio up to stay out of the redemption queue.
+**Redemption is not repayment.** Repaying reduces *your own* Trove's debt (via Update Trove). Redeeming reduces whichever Troves have the lowest collateral ratios in the system — you don't get to choose, and it isn't a way to pay down your own debt. If you own a Trove, watch your **Debt in front** figure and keep your ratio up to stay further back in the redemption queue.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/step6.gif" alt="Animated walkthrough of the redemption steps"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
@@ -46,7 +46,7 @@ Your USDFC balance decreases and the FIL arrives in your wallet. On-chain, the a
 
 ## When redemption makes sense
 
-* **USDFC trades below $1** — buy cheap, redeem at face value, pocket the difference (minus the fee). This is the arbitrage that restores the peg.
+* **USDFC trades below $1 by more than the fee and transaction costs** — buy cheap, redeem at face value, pocket the difference. This is the arbitrage that helps restore the peg.
 * **You want FIL, not USDFC** — redemption converts at the oracle price without a DEX spread, though the redemption fee applies.
 
 Redemption is **not** the cheapest exit if you have your own Trove — repaying your own debt has no fee at all.

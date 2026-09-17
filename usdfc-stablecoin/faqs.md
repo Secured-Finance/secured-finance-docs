@@ -39,10 +39,10 @@ Secured Finance is the DeFi platform behind USDFC. It runs three products: the *
 
 Through interlocking mechanisms rather than a single lever:
 
-1. **Over-collateralization** — every Trove must be opened above the 110% minimum and is liquidated if it falls below it
+1. **Over-collateralization** — every Trove must be opened above the 110% minimum and can be liquidated if it falls below it
 2. **Redemption** — anyone can exchange USDFC for $1 of FIL, so once the discount below $1 exceeds the redemption fee and transaction costs, arbitrage burns supply and lifts the price
 3. **Minting arbitrage** — once the premium above $1 exceeds the borrowing fee and costs, minting-and-selling becomes profitable, expanding supply and lowering the price
-4. **Liquidation and the Stability Pool** — remove under-collateralized debt before it can undermine the backing
+4. **Liquidation and the Stability Pool** — work to remove under-collateralized debt and protect the backing
 
 **Related:** [System Overview](core-mechanics/system-overview.md), [Redemption](core-mechanics/redemption.md)
 
@@ -80,7 +80,7 @@ There is **no interest** — the borrowing fee is the entire cost, however long 
 
 <summary>Can I mint more from an existing Trove?</summary>
 
-Yes — increase the borrowed amount via **Update Trove** any time your resulting ratio stays above the minimum. The borrowing fee applies to the newly minted amount only.
+Yes — increase the borrowed amount via **Update Trove** as long as your resulting ratio stays above the minimum (in Recovery Mode: at least 150% and no lower than before). The borrowing fee applies to the newly minted amount only.
 
 **Related:** [Minting USDFC Step-by-Step](getting-started/minting-usdfc-step-by-step.md)
 
@@ -128,7 +128,7 @@ When a Trove falls below 110%, anyone can trigger its liquidation: its debt is r
 
 When liquidations occur, depositors' USDFC is burned to repay the debt and they receive the liquidated FIL in exchange — normally worth **up to ~10% more** than the USDFC consumed, since liquidation happens just below 110%. The exact premium depends on the ratio at liquidation, minus the liquidator's 0.5% share of the collateral; in a severe crash a Trove can be liquidated below roughly 100.5%, at which point that liquidation is a net loss.
 
-The risks: your stable deposit gradually converts into **volatile FIL** at times you don't choose, FIL can fall after you receive it, and withdrawals are briefly suspended while liquidatable Troves are pending. Rewards only accrue when liquidations actually happen.
+The risks: your stable deposit gradually converts into **volatile FIL** at times you don't choose, FIL can fall after you receive it, and withdrawals are temporarily suspended while liquidatable Troves are pending. Rewards only accrue when liquidations actually happen.
 
 **Related:** [Stability Pool](core-mechanics/stability-pool.md), [Using the Stability Pool](getting-started/using-the-stability-pool.md)
 
@@ -148,7 +148,7 @@ The protocol falls back to **redistribution**: the liquidated Trove's debt and c
 
 <summary>What if FIL crashes hard?</summary>
 
-Liquidations fire on the Troves that fall below threshold, the Stability Pool absorbs them, and if the system-wide ratio drops below 150%, [Recovery Mode](core-mechanics/recovery-mode.md) activates — extending liquidation up to the TCR, blocking collateral withdrawal, and waiving fees on repairs. These are the designed responses, not guarantees: in an extreme enough crash, Stability Pool depositors can take losses and remaining Troves absorb redistributed debt. Position sizing and buffer are your real protection.
+Liquidators can close the Troves that fall below threshold, the Stability Pool absorbs them, and if the system-wide ratio drops below 150%, [Recovery Mode](core-mechanics/recovery-mode.md) activates — extending liquidation up to the TCR, blocking collateral withdrawal, and waiving fees on repairs. These are the designed responses, not guarantees: in an extreme enough crash, Stability Pool depositors can take losses and remaining Troves absorb redistributed debt. Position sizing and buffer are your real protection.
 
 </details>
 
@@ -158,9 +158,9 @@ Liquidations fire on the Troves that fall below threshold, the Stability Pool ab
 
 <summary>What is redemption and how does it work?</summary>
 
-Any holder can exchange USDFC for $1 worth of FIL directly from the protocol. The FIL comes from the **lowest-collateral-ratio Troves** (at or above 110%; below that they're left for liquidation), whose debt is reduced by the same value — a forced swap for those owners, not a loss. The fee is (Base Rate + 0.5%), minimum 0.5%, deducted from the FIL.
+Any holder can exchange USDFC for $1 worth of FIL directly from the protocol. The FIL comes from the **lowest-collateral-ratio Troves** (at or above 110%; below that they're left for liquidation), whose debt is reduced by the same value at the oracle price — a forced swap for those owners. The fee is (Base Rate + 0.5%), minimum 0.5%, deducted from the FIL.
 
-If you own a Trove, keeping your ratio above the crowd's — and watching the app's **Debt in front** figure — keeps you out of the redemption queue.
+If you own a Trove, keeping your ratio above the crowd's — and watching the app's **Debt in front** figure — moves you further back in the redemption queue (a large enough redemption can still reach you).
 
 **Related:** [Redemption](core-mechanics/redemption.md)
 

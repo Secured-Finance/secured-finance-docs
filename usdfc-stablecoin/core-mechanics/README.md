@@ -4,7 +4,7 @@ description: How the USDFC protocol works under the hood
 
 # 🔦 Core Mechanics
 
-This section explains the mechanisms behind USDFC — how minting, liquidation, and redemption interact to keep every USDFC backed by more than $1 of FIL and the peg anchored to $1. If you want to *do* things rather than understand them, start with [Getting Started](../getting-started/README.md).
+This section explains the mechanisms behind USDFC — how minting, liquidation, and redemption interact to keep the system over-collateralized with FIL and the peg anchored to $1. If you want to *do* things rather than understand them, start with [Getting Started](../getting-started/README.md).
 
 | Page | What it explains |
 | --- | --- |

@@ -6,7 +6,7 @@ description: How under-collateralized Troves are resolved
 
 ## What are Liquidations?
 
-Liquidation is how the protocol removes under-collateralized debt before it can threaten the system. When a Trove's collateral ratio falls below **110%**, anyone can trigger its liquidation: the Trove's debt is repaid by the [Stability Pool](stability-pool.md) and its FIL collateral is distributed to the pool's depositors. The Trove is closed in the process.
+Liquidation is how the protocol removes under-collateralized debt to limit the threat it poses to the system. When a Trove's collateral ratio falls below **110%**, anyone can trigger its liquidation: the Trove's debt is repaid by the [Stability Pool](stability-pool.md) and its FIL collateral is distributed to the pool's depositors. The Trove is closed in the process.
 
 The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio (TCR) is below 150%, any Trove **below the current TCR** can also be liquidated. For a Trove at or above 110%, this only happens if the Stability Pool can absorb its entire debt, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner — see the [Recovery Mode liquidation table](recovery-mode.md#liquidation-behavior-in-recovery-mode).
 
@@ -26,9 +26,9 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 ## What each party experiences
 
-**The liquidated borrower** (in Normal Mode) loses their collateral but keeps every USDFC they borrowed, and their debt is gone — the Trove is simply closed. Since liquidation happens just below 110%, the collateral lost is worth roughly 10% more than the debt cleared: that gap is the borrower's loss and the system's safety margin. In a capped Recovery Mode liquidation of a Trove above 110%, only collateral worth 110% of the debt is taken and the rest is claimable by the owner.
+**The liquidated borrower** (in Normal Mode) loses their collateral but keeps every USDFC they borrowed, and their debt is gone — the Trove is simply closed. When liquidation happens just below 110% (the typical case), the collateral lost is worth roughly 10% more than the debt cleared: that gap is the borrower's loss and the system's safety margin. In a capped Recovery Mode liquidation of a Trove above 110%, only collateral worth 110% of the debt is taken and the rest is claimable by the owner.
 
-**Stability Pool depositors** acquire the FIL at that same discount — see [Stability Pool](stability-pool.md) for the economics.
+**Stability Pool depositors** acquire the FIL at that same discount in that case, after the liquidator's share — see [Stability Pool](stability-pool.md) for the economics.
 
 **The liquidator** is whoever pays the gas to trigger it, compensated with the 20 USDFC reserve plus 0.5% of the collateral.
 

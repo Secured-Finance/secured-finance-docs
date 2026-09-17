@@ -14,7 +14,7 @@ This section walks you through using the [**USDFC app**](https://app.usdfc.net) 
 | [Monitoring Your Position](monitoring-your-position.md) | Track your Trove's health and react to price moves |
 | [Using the Stability Pool](using-the-stability-pool.md) | Deposit USDFC and earn liquidation gains |
 | [Redeeming USDFC](redeeming-usdfc.md) | Exchange USDFC for FIL at face value |
-| [Getting Test USDFC on Testnet](getting-test-usdfc-on-testnet.md) | Try everything risk-free on the Calibration testnet |
+| [Getting Test USDFC on Testnet](getting-test-usdfc-on-testnet.md) | Try everything with no real funds at risk on the Calibration testnet |
 
 ## After minting
 

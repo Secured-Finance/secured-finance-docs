@@ -46,7 +46,7 @@ Note the important protection in the fourth row: a Trove liquidated **above 110%
 
 ## What to do as a borrower
 
-* **Before:** the real defense happens in Normal Mode — keeping your ratio well above 150% (the app labels 200%+ as very low risk) means Recovery Mode is something you observe, not suffer.
+* **Before:** the real defense happens in Normal Mode — keeping your ratio well above 150% (the app labels 200%+ as very low risk) means Recovery Mode is mostly something you observe rather than suffer — though the withdrawal and closure restrictions apply to every Trove.
 * **During:** add collateral or repay debt immediately if you're below the TCR; both improve your ratio and the system's. Remember collateral withdrawal is blocked, so you cannot rebalance out — only in.
 * **Not available:** closing your Trove. Closing returns collateral to you, so it is blocked until Recovery Mode ends — you can repay debt down to the 200 USDFC minimum in the meantime.
 

@@ -4,7 +4,7 @@ description: The face-value exchange that anchors USDFC's peg
 
 # 💸 Redemption
 
-Redemption is the protocol's mechanism for exchanging 1 USDFC for $1 worth of FIL. Any holder can invoke it (as long as the system's total collateral ratio is at or above 110%), and the FIL comes from the collateral of the lowest-ratio Troves. That standing mechanism is what puts a floor under the price: whenever USDFC trades far enough below $1 that the discount exceeds the redemption fee and transaction costs, redeeming becomes profitable, and the resulting arbitrage pulls the price back up.
+Redemption is the protocol's mechanism for exchanging 1 USDFC for $1 worth of FIL. Any holder can invoke it (as long as the system's total collateral ratio is at or above 110%), and the FIL comes from the collateral of the lowest-ratio Troves. That standing mechanism is what supports the price from below: whenever USDFC trades far enough below $1 that the discount exceeds the redemption fee and transaction costs, redeeming becomes profitable, and the resulting arbitrage pushes the price back toward $1.
 
 {% hint style="success" %}
 **What redemption gives holders**
@@ -20,7 +20,7 @@ Redemption is the protocol's mechanism for exchanging 1 USDFC for $1 worth of FI
 3. If one Trove isn't enough, the redemption continues into the next-lowest, until fulfilled.
 4. The redeemer receives the FIL minus the [redemption fee](#redemption-fee); the fee itself is taken in FIL.
 
-For the affected Trove owner this is a **forced swap, not a loss**: debt falls by exactly the USD value of the collateral taken, so net position value is unchanged — but FIL exposure is gone from that slice, and if FIL later rises, that upside was surrendered. Keeping a higher ratio than the crowd keeps you out of the queue; the app's **Debt in front** figure shows how much debt stands between you and it ([details](../getting-started/monitoring-your-position.md#debt-in-front)).
+For the affected Trove owner this is a **forced swap**: debt falls by exactly the USD value of the collateral taken, valued at the oracle price with 1 USDFC counted as $1, so net position value is unchanged on those terms — but FIL exposure is gone from that slice, and if FIL later rises, that upside was surrendered. Keeping a higher ratio than the crowd moves you further back in the queue — it doesn't exempt you; the app's **Debt in front** figure shows how much debt stands between you and it ([details](../getting-started/monitoring-your-position.md#debt-in-front)).
 
 {% hint style="warning" %}
 **Redemption is not repayment.** Redemption targets Troves in collateral-ratio order and doesn't let you choose which one — it is not a way to pay down your own debt. To reduce your own debt, repay via Update Trove, which has no fee at all.

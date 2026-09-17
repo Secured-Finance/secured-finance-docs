@@ -22,9 +22,9 @@ Until then, fees simply accumulate; none are taken by any intermediary along the
 
 ## Why the fee design looks like this
 
-* **A floor, not zero:** the 0.5% minimum makes minting-and-dumping or redemption-cycling unprofitable at the margin, without meaningfully taxing normal use.
+* **A floor, not zero:** the 0.5% minimum is intended to make minting-and-dumping or redemption-cycling unprofitable at the margin, without meaningfully taxing normal use.
 * **One-time, not ongoing:** with no interest, the cost of a loan doesn't grow with its duration — USDFC is designed to be cheap to hold.
-* **Base Rate coupling:** fees automatically rise exactly when the system is under redemption pressure and fall back when it isn't — a stabilizer that needs no governance action.
+* **Base Rate coupling:** fees rise automatically when the system is under redemption pressure and decay when it isn't (the borrowing fee within its 5% cap) — a stabilizer that needs no governance action.
 
 ## Where next
 
