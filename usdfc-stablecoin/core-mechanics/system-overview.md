@@ -25,7 +25,7 @@ The causal chain: the oracle prices the collateral → ratios determine which Tr
 
 ### Recovery Mode
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Flow diagram of Recovery Mode, triggered when TCR is below 150%: Troves at or below 100% are liquidated by redistributing their debt and collateral to other Troves; Troves between 100% and 110% are offset against the Stability Pool with any remainder redistributed; Troves between 110% and the TCR are offset entirely against the Stability Pool with liquidated collateral capped at 110% of debt and the rest staying in the Trove; new Troves need a ratio of at least 150% and debt increases or collateral withdrawals are blocked"><figcaption><p>USDFC protocol architecture in Recovery Mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Flow diagram of Recovery Mode, triggered when TCR is below 150%: Troves at or below 100% are liquidated by redistributing their debt and collateral to other Troves; Troves between 100% and 110% are offset against the Stability Pool with any remainder redistributed; Troves between 110% and the TCR are offset entirely against the Stability Pool with liquidated collateral capped at 110% of debt, any surplus transferred to CollSurplusPool for the borrower to claim, and the Trove closed; new Troves need a ratio of at least 150%, collateral withdrawals are blocked, and debt increases are allowed only if the resulting ratio is at least 150% and no lower than before"><figcaption><p>USDFC protocol architecture in Recovery Mode</p></figcaption></figure>
 
 ## Key parameters
 
