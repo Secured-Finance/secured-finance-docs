@@ -4,7 +4,7 @@ description: Deposit USDFC and earn liquidation gains
 
 # 🏊 Using the Stability Pool
 
-The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because a Trove is liquidated as soon as it falls below 110%, its collateral is normally still worth more than its debt — so depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
+The Stability Pool is the protocol's first line of defense: when a Trove is liquidated, USDFC from the pool repays its debt and the Trove's FIL collateral is distributed to depositors. Because a Trove is liquidated as soon as it falls below 110% in Normal Mode (below the system TCR during [Recovery Mode](../core-mechanics/recovery-mode.md)), its collateral is normally still worth more than its debt — so depositors typically acquire that FIL at a discount to market price. You'll need USDFC in your wallet and FIL for gas.
 
 <figure><img src="../../.gitbook/assets/step5.gif" alt="Animated walkthrough of depositing into the Stability Pool"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 

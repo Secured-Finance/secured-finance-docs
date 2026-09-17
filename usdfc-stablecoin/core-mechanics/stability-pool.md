@@ -22,13 +22,13 @@ where "FIL allocated to the pool" is the liquidated collateral after the liquida
 
 ## Why depositing is attractive
 
-A Trove is liquidated below 110% but above 100% in the typical case — so the pool takes on, say, $105–109 of FIL for every $100 of USDFC it burns. Depositors are effectively buying FIL below market price, paid for by liquidated borrowers. The trade-off: your stable asset converts into a volatile one at unpredictable times, and in a severe crash a Trove can be liquidated below 100%, making that particular liquidation a net loss for the pool.
+A Trove is liquidated below 110% but above 100% in the typical case — so the pool takes on, say, $105–109 of FIL for every $100 of USDFC it burns (before the liquidator's 0.5% share; roughly $104.5–108.5 after it). Depositors are effectively buying FIL below market price, paid for by liquidated borrowers. The trade-off: your stable asset converts into a volatile one at unpredictable times, and in a severe crash a Trove can be liquidated below roughly 100.5% — the point where the collateral, net of the liquidator's share, no longer covers the debt — making that particular liquidation a net loss for the pool.
 
 Deposits are never locked, with one exception: **withdrawals are suspended while liquidatable Troves (below 110%) are pending**, so the pool cannot be drained just before it's needed. See the [hands-on guide](../getting-started/using-the-stability-pool.md) for deposits, claims, and withdrawals in the app.
 
 ## If the pool runs dry — redistribution
 
-The Stability Pool can only absorb debt it actually holds. If a liquidation exceeds the pool's balance, the protocol falls back to **redistribution**: the remaining debt and collateral of the liquidated Trove are spread across all active Troves, proportionally to their collateral.
+The Stability Pool can only absorb debt it actually holds. If a liquidation exceeds the pool's balance, the protocol falls back to **redistribution**: the remaining debt and collateral of the liquidated Trove are spread across all active Troves, proportionally to their collateral. This applies to Troves below 110%; in [Recovery Mode](recovery-mode.md#liquidation-behavior-in-recovery-mode), a Trove between 110% and the TCR is never redistributed — it is simply not liquidated until the pool can cover its entire debt.
 
 For a receiving Trove, this means both its debt and its collateral increase. Whether that is a net gain depends on the liquidated Trove's ratio: measured before the liquidator's 0.5% cut, redistribution breaks even at roughly 100.5% — above that, the collateral received is worth more than the debt taken on; below it, receivers absorb a shortfall. Either way, a Trove that was healthier than the liquidated one sees its own collateral *ratio* drop, so a deep cascade pushes the whole system toward [Recovery Mode](recovery-mode.md). A well-funded Stability Pool is what keeps that scenario theoretical.
 

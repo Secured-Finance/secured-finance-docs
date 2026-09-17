@@ -4,7 +4,7 @@ description: Borrow more USDFC from an existing Trove
 
 # 👛 Minting USDFC Step-by-Step
 
-If you already have a Trove, you can mint more USDFC against it at any time — as long as your collateral ratio stays above the minimum. You'll need your Trove open and some FIL for gas.
+If you already have a Trove, you can mint more USDFC against it whenever your collateral ratio stays above the minimum (110% in Normal Mode; during [Recovery Mode](../core-mechanics/recovery-mode.md) the Trove must end at 150% or higher and its ratio must not fall). You'll need your Trove open and some FIL for gas.
 
 <figure><img src="../../.gitbook/assets/step2.gif" alt="Animated walkthrough of minting more USDFC"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 

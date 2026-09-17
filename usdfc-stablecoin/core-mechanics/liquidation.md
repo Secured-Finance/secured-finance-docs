@@ -8,7 +8,7 @@ description: How under-collateralized Troves are resolved
 
 Liquidation is how the protocol removes under-collateralized debt before it can threaten the system. When a Trove's collateral ratio falls below **110%**, anyone can trigger its liquidation: the Trove's debt is repaid by the [Stability Pool](stability-pool.md) and its FIL collateral is distributed to the pool's depositors. The Trove is closed in the process.
 
-The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio (TCR) is below 150%, any Trove **below the current TCR** can also be liquidated — though for a Trove above 110%, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner.
+The threshold extends during [Recovery Mode](recovery-mode.md): while the system-wide ratio (TCR) is below 150%, any Trove **below the current TCR** can also be liquidated. For a Trove at or above 110%, this only happens if the Stability Pool can absorb its entire debt, only collateral worth 110% of its debt is taken, and the remainder stays claimable by the owner — see the [Recovery Mode liquidation table](recovery-mode.md#liquidation-behavior-in-recovery-mode).
 
 ## The process
 
@@ -20,7 +20,7 @@ The threshold extends during [Recovery Mode](recovery-mode.md): while the system
 
 | Parameter | Description | Value |
 | --- | --- | --- |
-| Liquidation threshold | Per-Trove ratio below which liquidation is possible | 110% (the current TCR, up to 150%, in Recovery Mode) |
+| Liquidation threshold | Per-Trove ratio below which liquidation is possible | 110% (in Recovery Mode: the current TCR, up to 150% — Troves at or above 110% only if the Stability Pool covers their whole debt) |
 | Liquidator reward | Share of the liquidated collateral paid to the liquidator | 0.5% |
 | Gas compensation | Paid to the liquidator from the Trove's Liquidation Reserve | 20 USDFC |
 

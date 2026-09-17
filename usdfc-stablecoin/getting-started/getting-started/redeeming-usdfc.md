@@ -17,7 +17,7 @@ description: Learn how to redeem your USDFC for FIL collateral under certain con
 Redemption is a process that allows you to exchange your USDFC for FIL collateral at face value (1 USDFC = $1 worth of FIL). This mechanism helps maintain the USDFC peg to the US dollar. This guide will walk you through the redemption process and help you understand when redemption is beneficial.
 
 {% hint style="warning" %}
-Repayment is adjusting your own trove. Redemption instead targets whichever troves have the lowest collateral ratios in the system — you cannot choose which trove is affected.\
+Repayment is adjusting your own trove. Redemption instead targets whichever troves have the lowest collateral ratios in the system (among those at or above 110% — troves below that are left for liquidation) — you cannot choose which trove is affected.\
 To reduce the risk of your Trove being redeemed against, watch the 'Debt in front' amount and keep your collateral ratio up.
 {% endhint %}
 

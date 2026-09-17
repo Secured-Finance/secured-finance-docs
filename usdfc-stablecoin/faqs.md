@@ -126,7 +126,7 @@ When a Trove falls below 110%, anyone can trigger its liquidation: its debt is r
 
 <summary>What do Stability Pool depositors earn — and risk?</summary>
 
-When liquidations occur, depositors' USDFC is burned to repay the debt and they receive the liquidated FIL in exchange — normally worth **up to ~10% more** than the USDFC consumed, since liquidation happens just below 110%. The exact premium depends on the ratio at liquidation; in a severe crash a Trove can be liquidated below 100%, making that liquidation a net loss.
+When liquidations occur, depositors' USDFC is burned to repay the debt and they receive the liquidated FIL in exchange — normally worth **up to ~10% more** than the USDFC consumed, since liquidation happens just below 110%. The exact premium depends on the ratio at liquidation, minus the liquidator's 0.5% share of the collateral; in a severe crash a Trove can be liquidated below roughly 100.5%, at which point that liquidation is a net loss.
 
 The risks: your stable deposit gradually converts into **volatile FIL** at times you don't choose, FIL can fall after you receive it, and withdrawals are briefly suspended while liquidatable Troves are pending. Rewards only accrue when liquidations actually happen.
 

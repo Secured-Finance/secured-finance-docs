@@ -17,7 +17,7 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 
 ### Protocol contracts (Filecoin Mainnet)
 
-<!-- TODO(マージ前): RedStoneのFIL/USDフィードアドレスを確認して1行追加（例：RedStone FIL/USD feed | Primary oracle | アドレス） -->
+<!-- TODO (before merge): confirm the RedStone FIL/USD feed address and add a row, e.g. RedStone FIL/USD feed | Primary oracle | <address> -->
 
 | Contract | Role | Address |
 | --- | --- | --- |
@@ -63,5 +63,5 @@ EIP-2612 and EIP-3009 support was added by a contract upgrade in September 2025 
 {% file src="../.gitbook/assets/Secure_Finance_Report.pdf" %}
 
 {% hint style="warning" %}
-Audits reduce risk but never eliminate it. The protocol's price feed also currently depends on update jobs operated by Secured Finance — see [Price Oracle](core-mechanics/price-oracle.md) for the trust assumptions.
+Audits reduce risk but never eliminate it. The price feed's Tellor fallback also currently depends on an update job operated by Secured Finance (the primary RedStone feed does not) — see [Price Oracle](core-mechanics/price-oracle.md) for the trust assumptions.
 {% endhint %}

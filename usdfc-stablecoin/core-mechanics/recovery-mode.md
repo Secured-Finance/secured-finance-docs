@@ -7,7 +7,7 @@ description: The stricter rules that activate when the whole system is under-col
 Recovery Mode is the protocol's defense against systemic under-collateralization. It activates automatically whenever the **Total Collateral Ratio (TCR)** — the combined collateral of all Troves against all debt — falls below **150%**, and deactivates the moment the TCR is back at or above 150%. It is not an opt-in feature or an edge case for advanced users: when it triggers, its rules apply to every Trove at once.
 
 {% hint style="warning" %}
-During Recovery Mode, Troves below the **current TCR** can be liquidated — not just those below 110%. If the TCR is 145%, a Trove at 140% is at risk. This is why keeping a ratio comfortably above 150% matters even in calm times.
+During Recovery Mode, Troves below the **current TCR** can be liquidated — not just those below 110%. If the TCR is 145%, a Trove at 140% is at risk (a Trove at or above 110% is only liquidated when the Stability Pool can absorb its entire debt; see the table below). This is why keeping a ratio comfortably above 150% matters even in calm times.
 {% endhint %}
 
 The app shows a prominent Recovery Mode notice on the Dashboard whenever it is active.
@@ -16,7 +16,7 @@ The app shows a prominent Recovery Mode notice on the Dashboard whenever it is a
 
 | | Normal Mode | Recovery Mode |
 | --- | --- | --- |
-| Liquidation threshold | 110% | Current TCR (< 150%) |
+| Liquidation threshold | 110% | Current TCR (< 150%); Troves at or above 110% only if the Stability Pool covers their whole debt |
 | Borrowing fee | Base Rate + 0.5% (capped at 5%) | **0%** |
 | Minimum ratio for a new Trove | 110% | 150% |
 | Collateral withdrawal | Allowed (above 110%) | **Not allowed** |
@@ -41,7 +41,7 @@ Note the important protection in the fourth row: a Trove liquidated **above 110%
 ## A typical episode
 
 1. FIL drops sharply; the TCR crosses below 150% and Recovery Mode activates. The Dashboard shows the notice.
-2. Troves below the TCR become liquidatable; their owners add collateral or repay (fee-free) to climb above it, while liquidators work through those that don't.
+2. Troves below the TCR become liquidatable (those at or above 110% only while the Stability Pool can cover their whole debt); their owners add collateral or repay (fee-free) to climb above it, while liquidators work through those that don't.
 3. Top-ups raise the TCR, and so do liquidations that offset debt through the Stability Pool (redistribution alone moves debt and collateral between Troves without improving the TCR). Once the TCR reaches 150%, Recovery Mode ends and the 110% threshold and normal fees return.
 
 ## What to do as a borrower
