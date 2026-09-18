@@ -29,9 +29,9 @@ $$
 
 ### How Total Debt changes over time
 
-The formula above is what you owe the moment the Trove opens. From then on, the balance moves without any new borrowing on your part:
+The formula above is what you owe the moment the Trove opens. From then on, the balance moves — some of it through your own actions, some without them:
 
-* **Up** — when you borrow more (plus that mint's fee), and when a liquidation elsewhere is not fully absorbed by the Stability Pool: the shortfall is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) to all active Troves in proportion to their collateral, adding debt (and collateral) to yours. The protocol applies these pending amounts to your Trove the next time it is touched.
+* **Up** — when you borrow more (plus that mint's fee), and when a liquidation elsewhere is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) rather than absorbed by the Stability Pool: that debt is spread across all active Troves in proportion to their collateral, adding debt (and collateral) to yours without any action on your part. The protocol applies these pending amounts to your Trove the next time it is touched.
 * **Down** — when you repay, and when a [redemption](redemption.md) is processed against your Trove (debt and a matching value of collateral are removed).
 
 The **Total Debt** figure in the app is your current outstanding balance with all of this applied, so it can differ from borrowed amount + fee + reserve.
