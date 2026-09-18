@@ -17,7 +17,15 @@ USDFC is a decentralized protocol that mints a USD-pegged stablecoin against FIL
 
 The causal chain: the oracle prices the collateral → ratios determine which Troves are safe → liquidation and the Stability Pool remove unsafe debt → redemption supports the peg from below → Recovery Mode hardens all of it when the whole system is stressed.
 
-<!-- Architecture diagrams (Normal Mode / Recovery Mode, .gitbook/assets/image (5) (1).png and image (1) (1) (1) (1).png) temporarily removed: the artwork carries pre-launch notes that contradict the text. Restore the "Architecture" section from git history once corrected artwork is ready. -->
+## Architecture
+
+### Normal Mode
+
+<figure><img src="../../.gitbook/assets/usdfc-architecture-normal-mode.png" alt="Flow diagram of Normal Mode: a user connects a wallet, deposits FIL into a Trove at a minimum 110% collateral ratio with 0% interest, and mints USDFC; 20 USDFC is set aside as the Liquidation Reserve, which is not repaid on close; the one-off minting fee (0.5% to 5% in USDFC) and redemption fees (in FIL) go to the Fee Reserve for future distribution; USDFC can be deposited into the Stability Pool; a Trove under 110% is liquidated with its FIL going to Stability Pool depositors and 0.5% plus 20 USDFC to the liquidator; a redeemer exchanges USDFC for FIL at face value, before the redemption fee, from a Trove above 110%; minimum net debt is 200 USDFC excluding the reserve"><figcaption><p>USDFC protocol architecture in Normal Mode</p></figcaption></figure>
+
+### Recovery Mode
+
+<figure><img src="../../.gitbook/assets/usdfc-architecture-recovery-mode.png" alt="Flow diagram of Recovery Mode, triggered when TCR is below 150%: Troves at or below 100% are liquidated by redistributing their debt and collateral to other Troves; Troves between 100% and 110% are offset against the Stability Pool with any remainder redistributed; Troves between 110% and the TCR are liquidated only if the Stability Pool can cover the entire debt, with liquidated collateral capped at 110% of debt, the Trove closed, and the remaining collateral sent to CollSurplusPool for the owner to claim; new Troves need a ratio of at least 150%, collateral withdrawals are blocked, and debt increases are allowed only if the resulting ratio is at least 150% and does not decrease; the 0.5% liquidator share is not shown"><figcaption><p>USDFC protocol architecture in Recovery Mode</p></figcaption></figure>
 
 ## Key parameters
 
