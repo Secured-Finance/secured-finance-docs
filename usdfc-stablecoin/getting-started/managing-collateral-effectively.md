@@ -77,7 +77,7 @@ There is no ratio that removes risk entirely — a deep enough FIL drop can thre
 ## Repaying debt and closing your Trove
 
 * **Partial repayment** — in the **Update Trove** form, reduce the **Borrowed Amount** by the USDFC you want to repay and click **Update Trove**. Net debt (excluding the 20 USDFC reserve) must stay at or above 200 USDFC. Repaying has no fee.
-* **Closing** — open the **Close Trove** tab and click **Repay & Close Trove**. You repay your total debt minus the 20 USDFC reserve, and all collateral returns to your wallet. Because the borrowing fees are part of your debt, you need slightly more USDFC than you originally minted — the difference has to come from a swap, another account, or Stability Pool gains swapped into USDFC.
+* **Closing** — open the **Close Trove** tab and click **Repay & Close Trove**. You repay your current total debt minus the 20 USDFC reserve, and all collateral returns to your wallet. Because the borrowing fees (and any debt redistributed to you from liquidations) are part of your debt, you usually need more USDFC than you originally minted — the difference has to come from a swap, another account, or Stability Pool gains swapped into USDFC.
 * **When closing is refused** — during [Recovery Mode](../core-mechanics/recovery-mode.md), or when closing would push the system's total collateral ratio below 150%. Partial repayment still works in both cases.
 
 ## Where next

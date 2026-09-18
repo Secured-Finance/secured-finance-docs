@@ -34,7 +34,7 @@ On the Dashboard, find "Add USDFC to Wallet" and click **Click here**; approve t
 
 ## Step 5 — Practice closing the Trove
 
-Closing is worth practicing on testnet because of one catch: you must repay your **total debt**, which includes the borrowing fee — so the USDFC you minted isn't quite enough on its own.
+Closing is worth practicing on testnet because of one catch: you must repay your **current total debt** (minus the 20 USDFC reserve), which includes the borrowing fee and any debt redistributed to your Trove from liquidations — so the USDFC you minted isn't enough on its own.
 
 1. On the **Trove** page, open the **Close Trove** tab.
 2. If the app says you need more USDFC to cover the fees, get the shortfall from another account or a swap.
@@ -53,6 +53,6 @@ Closing is worth practicing on testnet because of one catch: you must repay your
 
 * **Faucet says you've already claimed** — it rate-limits per address; wait for the cooldown or test with a different address.
 * **App shows the wrong network** — switch your wallet to Filecoin Calibration (chain ID 314159) and reconnect.
-* **Can't close the Trove** — you need slightly more USDFC than you minted to cover the borrowing fee; see Step 5.
+* **Can't close the Trove** — you need more USDFC than you minted — at least the borrowing fee, plus any debt redistributed to your Trove from liquidations; see Step 5.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.57.06.png" alt="The Stability Pool on testnet"><figcaption><p>The Stability Pool on testnet</p></figcaption></figure>

@@ -16,9 +16,9 @@ Both fees share the same [**Base Rate**](mint-and-borrow.md#base-rate-explanatio
 ## Where the fees go
 
 
-All fees are directed to the protocol's **Fee Reserve**. Following the Token Generation Event (TGE), the accumulated reserve is intended to be distributed to Secured Finance token stakers — aligning the protocol's revenue with its long-term supporters. Timing and mechanism will be announced ahead of the TGE.
+All fees are sent to the protocol's **Fee Reserve** — the `ProtocolTokenStaking` contract (address on the [Contracts and Security](../deployed-contracts.md) page). Following the Token Generation Event (TGE), the accumulated reserve is intended to be distributed to Secured Finance token stakers — aligning the protocol's revenue with its long-term supporters. Timing and mechanism will be announced ahead of the TGE.
 
-Until then, fees simply accumulate; none are taken by any intermediary along the way.
+That distribution is a policy, not something the contract enforces today. Fees accrue as *unallocated* balances when no tokens are staked, and the contract owner can withdraw those balances through owner-only functions — including after staking begins. The contract does not itself guarantee custody until the TGE or any particular distribution.
 
 ## Why the fee design looks like this
 

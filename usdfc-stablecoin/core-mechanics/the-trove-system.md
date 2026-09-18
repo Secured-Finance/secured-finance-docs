@@ -15,7 +15,7 @@ A **Trove** is a personal position inside the protocol: FIL collateral on one si
 
 ## Debt Calculations
 
-### Total Debt Formula
+### Total Debt at opening
 
 $$
 \text{Total Debt} = (\text{Borrowed Amount}) + (\text{Liquidation Reserve}) + (\text{Borrowing Fee})
@@ -27,7 +27,16 @@ $$
 
 **Example (Normal Mode, Base Rate 0%):** borrow 200 USDFC → fee 1.00 USDFC → Total Debt = 200 + 20 + 1.00 = **221.00 USDFC**.
 
-**Closing that Trove:** you repay Total Debt minus the 20 USDFC reserve — so the USDFC you must actually hold is **201.00**. Note that this is 1.00 more than you received: minting more from the same Trove can't cover it (every extra USDFC minted adds its own fee), so the difference has to come from elsewhere — a swap, another account, or Stability Pool gains swapped into USDFC.
+### How Total Debt changes over time
+
+The formula above is what you owe the moment the Trove opens. From then on, the balance moves without any new borrowing on your part:
+
+* **Up** — when you borrow more (plus that mint's fee), and when a liquidation elsewhere is not fully absorbed by the Stability Pool: the shortfall is [redistributed](stability-pool.md#if-the-pool-runs-dry-redistribution) to all active Troves in proportion to their collateral, adding debt (and collateral) to yours. The protocol applies these pending amounts to your Trove the next time it is touched.
+* **Down** — when you repay, and when a [redemption](redemption.md) is processed against your Trove (debt and a matching value of collateral are removed).
+
+The **Total Debt** figure in the app is your current outstanding balance with all of this applied, so it can differ from borrowed amount + fee + reserve.
+
+**Closing that Trove:** you repay your current Total Debt minus the 20 USDFC reserve — in the example above, **201.00** USDFC. Note that this is already 1.00 more than you received at opening (and any debt redistributed to you since then adds to it): minting more from the same Trove can't cover it (every extra USDFC minted adds its own fee), so the difference has to come from elsewhere — a swap, another account, or Stability Pool gains swapped into USDFC.
 
 ### Collateral Ratio Formula
 

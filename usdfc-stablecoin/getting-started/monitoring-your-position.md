@@ -16,7 +16,7 @@ The **Dashboard** page of the [USDFC app](https://app.usdfc.net) shows your Trov
 
 | Item | What it means |
 | --- | --- |
-| Total Debt | Everything you owe: borrowed USDFC + accumulated borrowing fees + the 20 USDFC Liquidation Reserve |
+| Total Debt | Your current outstanding balance: borrowed USDFC + borrowing fees + the 20 USDFC Liquidation Reserve, plus any debt redistributed to your Trove from liquidations, minus repayments and redemptions against you ([details](../core-mechanics/the-trove-system.md#how-total-debt-changes-over-time)) |
 | Collateral | FIL locked in your Trove |
 | Collateral Ratio | Collateral value ÷ Total Debt — see below |
 | Liquidation Risk | The app's label for your ratio: Very Low (200%+), Low (150–<200%), Medium (120–<150%), High (<120%) |

@@ -33,7 +33,7 @@ The latest version of [`@secured-finance/stablecoin-contracts`](https://github.c
 | SortedTroves | Troves ordered by collateral ratio | [`0x2C32e48e358d5b893C46906b69044D342d8DDd5F`](https://filfox.info/en/address/0x2C32e48e358d5b893C46906b69044D342d8DDd5F) |
 | HintHelpers | Gas-efficient operation hints | [`0xf06A4eBa3B9e45533566a31DA2F213bc44E89E60`](https://filfox.info/en/address/0xf06A4eBa3B9e45533566a31DA2F213bc44E89E60) |
 | MultiTroveGetter | Batch Trove queries | [`0x5065b1F44fEF55Df7FD91275Fcc2D7567F8bf98F`](https://filfox.info/en/address/0x5065b1F44fEF55Df7FD91275Fcc2D7567F8bf98F) |
-| ProtocolTokenStaking | Fee Reserve — receives protocol fees | [`0xc8707b3d426E7D7A0706C48dcd1A4b83bc220dB3`](https://filfox.info/en/address/0xc8707b3d426E7D7A0706C48dcd1A4b83bc220dB3) |
+| ProtocolTokenStaking | Fee Reserve — receives protocol fees; unallocated fees are withdrawable by the contract owner (see [Protocol Fees](core-mechanics/protocol-fees.md#where-the-fees-go)) | [`0xc8707b3d426E7D7A0706C48dcd1A4b83bc220dB3`](https://filfox.info/en/address/0xc8707b3d426E7D7A0706C48dcd1A4b83bc220dB3) |
 
 
 Testnet addresses for every contract are in the repository's [`deployments/outputs`](https://github.com/Secured-Finance/stablecoin-contracts/tree/develop/deployments/outputs).

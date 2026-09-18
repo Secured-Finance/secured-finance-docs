@@ -17,15 +17,7 @@ USDFC is a decentralized protocol that mints a USD-pegged stablecoin against FIL
 
 The causal chain: the oracle prices the collateral → ratios determine which Troves are safe → liquidation and the Stability Pool remove unsafe debt → redemption supports the peg from below → Recovery Mode hardens all of it when the whole system is stressed.
 
-## Architecture
-
-### Normal Mode
-
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="Flow diagram of Normal Mode: a user deposits FIL into a Trove and mints USDFC at a minimum 110% collateral ratio with 0% interest, 20 USDFC is set aside as the Liquidation Reserve, minting and redemption fees flow to the Fee Reserve, USDFC can be deposited into the Stability Pool, a Trove under 110% is liquidated with its FIL going to Stability Pool depositors and 0.5% plus 20 USDFC to the liquidator, and a redeemer exchanges USDFC for FIL from a Trove above 110%"><figcaption><p>USDFC protocol architecture in Normal Mode</p></figcaption></figure>
-
-### Recovery Mode
-
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="Flow diagram of Recovery Mode, triggered when TCR is below 150%: Troves at or below 100% are liquidated by redistributing their debt and collateral to other Troves; Troves between 100% and 110% are offset against the Stability Pool with any remainder redistributed; Troves between 110% and the TCR are offset entirely against the Stability Pool with liquidated collateral capped at 110% of debt, any surplus transferred to CollSurplusPool for the borrower to claim, and the Trove closed; new Troves need a ratio of at least 150%, collateral withdrawals are blocked, and debt increases are allowed only if the resulting ratio is at least 150% and no lower than before"><figcaption><p>USDFC protocol architecture in Recovery Mode</p></figcaption></figure>
+<!-- Architecture diagrams (Normal Mode / Recovery Mode, .gitbook/assets/image (5) (1).png and image (1) (1) (1) (1).png) temporarily removed: the artwork carries pre-launch notes that contradict the text. Restore the "Architecture" section from git history once corrected artwork is ready. -->
 
 ## Key parameters
 

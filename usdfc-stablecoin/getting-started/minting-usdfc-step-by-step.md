@@ -13,7 +13,7 @@ If you already have a Trove, you can mint more USDFC against it whenever your co
 In the [USDFC app](https://app.usdfc.net), go to the **Trove** page. You'll see your current collateral, debt, and collateral ratio.
 
 {% hint style="info" %}
-**Debt** shown here is your total debt: borrowed amount + accumulated borrowing fees + the 20 USDFC Liquidation Reserve.
+**Debt** shown here is your current total debt: borrowed amount + borrowing fees + the 20 USDFC Liquidation Reserve, adjusted for any repayments, redemptions, or debt redistributed to your Trove from liquidations.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.11.56.png" alt="Your current position on the Trove page"><figcaption><p>Your current position on the Trove page</p></figcaption></figure>
