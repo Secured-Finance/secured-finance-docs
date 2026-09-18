@@ -11,7 +11,7 @@ description: A decentralized, over-collateralized stablecoin backed by FIL
 ## How it works in brief
 
 * **Open a Trove and mint.** Deposit FIL, choose how much USDFC to borrow, and keep your collateral ratio above the **110% minimum**. A one-time borrowing fee (0.5% or more in Normal Mode; waived in Recovery Mode) is added to your debt; there is no interest.
-* **Stay collateralized.** If FIL falls and a Trove drops below 110%, it can be liquidated: its debt is repaid from the **Stability Pool** and its collateral goes to the pool's depositors — or, where the pool can't cover it, debt and collateral are redistributed to other Troves.
+* **Stay collateralized.** If FIL falls and a Trove drops below 110%, it can be liquidated: its debt is repaid from the **Stability Pool** and its collateral goes to the pool's depositors; in some cases (see [Liquidation](core-mechanics/liquidation.md)) debt and collateral are instead redistributed to other Troves.
 * **Redeem at face value.** Any holder can redeem USDFC for $1 worth of FIL directly from the protocol, minus a small redemption fee, whenever the system's total collateral ratio is at or above 110%. This is what anchors the peg — if USDFC trades far enough below $1 that the discount exceeds the redemption fee and transaction costs, redemption arbitrage pushes it back.
 * **Recovery Mode.** If the whole system's collateral ratio falls below 150%, stricter rules kick in until it recovers.
 
