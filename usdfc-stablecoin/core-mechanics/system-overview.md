@@ -10,7 +10,7 @@ USDFC is a decentralized protocol that mints a USD-pegged stablecoin against FIL
 
 1. **[Troves](the-trove-system.md)** — individual positions where users lock FIL and mint USDFC, each subject to a 110% minimum collateral ratio (150% to open during Recovery Mode).
 2. **[Stability Pool](stability-pool.md)** — a reserve of USDFC that repays the debt of liquidated Troves; depositors receive the seized FIL.
-3. **[Liquidation](liquidation.md)** — lets anyone close a Trove that falls below the minimum ratio, resolving its debt through the Stability Pool or, if the pool falls short, redistribution.
+3. **[Liquidation](liquidation.md)** — lets anyone close a Trove that falls below the minimum ratio, resolving its debt through the Stability Pool or redistribution to other Troves.
 4. **[Redemption](redemption.md)** — lets any holder exchange USDFC for $1 worth of FIL (minus a redemption fee) from the lowest-ratio Troves, anchoring the peg from below.
 5. **[Price Oracle](price-oracle.md)** — supplies the FIL/USD price that all ratio checks depend on.
 6. **[Recovery Mode](recovery-mode.md)** — stricter rules that activate when the system-wide collateral ratio falls below 150%.

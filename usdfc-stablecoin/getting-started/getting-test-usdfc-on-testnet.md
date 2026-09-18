@@ -53,6 +53,6 @@ Closing is worth practicing on testnet because of one catch: you must repay your
 
 * **Faucet says you've already claimed** — it rate-limits per address; wait for the cooldown or test with a different address.
 * **App shows the wrong network** — switch your wallet to Filecoin Calibration (chain ID 314159) and reconnect.
-* **Can't close the Trove** — you need more USDFC than you minted — at least the borrowing fee, plus any debt redistributed to your Trove from liquidations; see Step 5.
+* **Can't close the Trove** — the amount required is your current Total Debt minus the 20 USDFC reserve, which is usually more than you minted (borrowing fee plus any redistributed debt); check your wallet balance and get the shortfall — see Step 5.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 21.57.06.png" alt="The Stability Pool on testnet"><figcaption><p>The Stability Pool on testnet</p></figcaption></figure>

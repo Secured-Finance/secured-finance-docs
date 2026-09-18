@@ -80,7 +80,7 @@ There is **no interest** — the borrowing fee is the entire cost, however long 
 
 <summary>Can I mint more from an existing Trove?</summary>
 
-Yes — increase the borrowed amount via **Update Trove** as long as your resulting ratio stays above the minimum and the system-wide ratio stays at or above 150% (in Recovery Mode: your ratio must end at 150% or higher and not fall). The borrowing fee applies to the newly minted amount only.
+Yes — increase the borrowed amount via **Update Trove** subject to the mode the system is in. In Normal Mode, your resulting ratio must be at least 110% and the system-wide ratio at least 150%. In Recovery Mode, your ratio must end at 150% or higher and must not decrease. The borrowing fee applies to the newly minted amount only.
 
 **Related:** [Minting USDFC Step-by-Step](getting-started/minting-usdfc-step-by-step.md)
 
@@ -90,7 +90,7 @@ Yes — increase the borrowed amount via **Update Trove** as long as your result
 
 <summary>How do I close my Trove?</summary>
 
-Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is possible as long as net debt stays at or above 200 USDFC). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. Note you must cover the borrowing fees, which is slightly more USDFC than you originally received — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is possible as long as net debt stays at or above 200 USDFC). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. The amount required is your **current Total Debt minus the 20 USDFC reserve** — check it against your wallet balance and obtain any shortfall (borrowing fees and any redistributed debt mean it is usually more than you originally received) — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
 
 Two cases where closing is refused: during [Recovery Mode](core-mechanics/recovery-mode.md), and when closing would push the system's total collateral ratio below 150%. In both cases you can still repay debt; you just can't withdraw the collateral until conditions improve.
 
