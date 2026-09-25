@@ -111,6 +111,7 @@
   * [🚨 Recovery Mode](usdfc-stablecoin/advanced-topics/recovery-mode.md)
 * [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts.md)
 * [❓ FAQs](usdfc-stablecoin/faqs.md)
+* [Contract Upgrade History](usdfc-stablecoin/contract-upgrade-history.md)
 
 ## Developer Portal
 
