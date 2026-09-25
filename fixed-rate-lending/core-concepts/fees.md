@@ -35,7 +35,7 @@ Charged to liquidated borrowers: **7% of the liquidated value**, taken from coll
 
 ## Where fees go
 
-Trading fees and Auto-Roll fees accrue to the protocol's **Reserve Fund**, the buffer that protects the protocol in extreme events. Of the liquidation fee, only the **2% protocol share** goes to the Reserve Fund; the 5% goes to the liquidator who executed the call. The Reserve Fund contract address is listed in [Contracts & Security](../contracts-and-security.md).
+Trading fees and Auto-Roll fees accrue to the protocol's **Reserve Fund**, the buffer that protects the protocol in extreme events. Of the liquidation fee, only the **2% protocol share** goes to the Reserve Fund; the 5% goes to the liquidator who executed the call. The Reserve Fund contract address is listed in [Contracts & Security](../contracts-and-security/).
 
 ## Minimizing fees
 

@@ -39,7 +39,7 @@ All trades are matched on a **fully on-chain order book** — a rarity in DeFi, 
 | Understand the mechanics    | [Core Concepts](core-concepts/)                              |
 | Look up any protocol number | [Protocol Parameters](protocol-parameters.md)                |
 | Study the architecture      | [Advanced Topics](advanced-topics/)                          |
-| Verify contracts and audits | [Contracts & Security](contracts-and-security.md)            |
+| Verify contracts and audits | [Contracts & Security](contracts-and-security/)              |
 
 {% hint style="info" %}
 Secured Finance began at a 2020 hackathon with the goal of building an order-book-based rates market for DeFi. Read the background in [Research & Papers](research-and-papers.md).
