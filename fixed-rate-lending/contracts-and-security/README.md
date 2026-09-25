@@ -84,7 +84,7 @@ Polygon zkEVM legacy addresses:
 | Quantstamp | Fixed-Rate Lending contracts | 2023/10–11 | [2023-11-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2023-11-Quantstamp.pdf) |
 | Quantstamp | Fixed-Rate Lending contracts | 2024/3     | [2024-03-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2024-03-Quantstamp.pdf) |
 
-USDFC Stablecoin audits (Hexens 2025/1, Decurity 2025/3) are listed in the [USDFC documentation](../../usdfc-stablecoin/deployed-contracts.md).
+USDFC Stablecoin audits (Hexens 2025/1, Decurity 2025/3) are listed in the [USDFC documentation](../../usdfc-stablecoin/deployed-contracts/).
 
 ## Security resources
 

@@ -109,9 +109,9 @@
   * [🧀 Protocol Fees](usdfc-stablecoin/core-mechanics/protocol-fees.md)
 * [🎓 Advanced Topics](usdfc-stablecoin/advanced-topics/README.md)
   * [🚨 Recovery Mode](usdfc-stablecoin/advanced-topics/recovery-mode.md)
-* [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts.md)
+* [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts/README.md)
+  * [Contract Upgrade History](usdfc-stablecoin/deployed-contracts/contract-upgrade-history.md)
 * [❓ FAQs](usdfc-stablecoin/faqs.md)
-* [Contract Upgrade History](usdfc-stablecoin/contract-upgrade-history.md)
 
 ## Developer Portal
 

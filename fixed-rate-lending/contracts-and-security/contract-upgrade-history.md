@@ -40,7 +40,7 @@ These source and execution references are not an independent audit certificate. 
 
 ## 25 September 2026 - Filecoin oracle updates
 
-These updates were executed separately from the lending contract upgrade above.
+These updates were executed separately from the lending contract upgrade above. Following the discontinuation of Pyth price oracle support on Filecoin, the Fixed-Rate Lending protocol migrated its FIL, iFIL and wpFIL price feeds to RedStone.
 
 ### Lending price feeds
 

@@ -29,7 +29,7 @@ To use USDFC, you first open a trove to manage your FIL collateral and USDFC deb
    * Once the FIL amount and USDFC amount is set, check that the minting costs are added as total debt, then you can click confirm
    * Your connected wallet (ex. MetaMask) asks you to send a transaction
    * Once the USDFC amount is minted, you can see your borrowed amount in the app
-   * Import the USDFC contract [address](../deployed-contracts.md#contract-addresses) to your wallet so you can use it anywhere
+   * Import the USDFC contract [address](../deployed-contracts/#contract-addresses) to your wallet so you can use it anywhere
 3. **Maintain Collateral Ratio**
    * The minimum collateralization ratio (MCR) is set to 110%
      * For instance, if you deposit 1,000 USD worth of FIL, you can mint up to 909 USDFC, keeping a 110% collateral ratio
