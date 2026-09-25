@@ -38,9 +38,11 @@ Filecoin: both upgrade transactions were successfully executed through the multi
 
 These source and execution references are not an independent audit certificate. Integrators should check deployed implementations and corresponding ABIs. Earlier upgrades can be inspected via explorer Past Implementations views and controller upgrade events.
 
-## 25 September 2026 - Filecoin oracle updates
 
-These updates were executed separately from the lending contract upgrade above. Following the discontinuation of Pyth price oracle support on Filecoin, the Fixed-Rate Lending protocol migrated its FIL, iFIL and wpFIL price feeds to RedStone.
+
+## Filecoin oracle updates
+
+Following the discontinuation of Pyth price oracle support on Filecoin, the Fixed-Rate Lending protocol migrated its FIL, iFIL and wpFIL price feeds to RedStone.
 
 ### Lending price feeds
 
@@ -53,10 +55,6 @@ Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were su
 [View execution 53](https://www.glif.io/en/tx/bafy2bzaced6jvxha36jzpkhrqkyym6fek4sazwcwvqnmpkksikoxxcyzkyzjq)
 
 
-
-
-
-These oracle updates do not by themselves establish completion of lending position recovery or market reopening.
 
 
 
