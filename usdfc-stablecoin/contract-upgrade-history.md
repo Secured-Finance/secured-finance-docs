@@ -4,7 +4,7 @@
 
 
 
-USDFC was updated to use RedStone as its primary oracle, including a contract upgrade to adjust parameters.
+Following the discontinuation of Pyth price oracle support on Filecoin, USDFC migrated to RedStone as its primary oracle. The update also included a contract upgrade to adjust parameters.
 
 
 
