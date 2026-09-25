@@ -28,11 +28,11 @@ Arbitrum: successful execution on 24 September 2026 at 23:11:00 UTC, block 508,5
 
 ### Filecoin
 
-Filecoin: two multisig execution messages, both Applied: true; Code: 0.
+Filecoin: both upgrade transactions were successfully executed through the multisig wallet.
 
 [View Filecoin execution 49](https://www.glif.io/en/tx/bafy2bzaceddjkucs54nmddhjoanmsxw2ayqqllk5onp4asoab2dnrcfbqckcm)
 
-Filecoin execution 50: https://www.glif.io/en/tx/bafy2bzacebkbpgyn5vpvegaowusje5gy37uh2t2aw5wapcnegfo5px54xh35a
+[View Filecoin execution 50](https://www.glif.io/en/tx/bafy2bzacebkbpgyn5vpvegaowusje5gy37uh2t2aw5wapcnegfo5px54xh35a)
 
 
 
@@ -44,9 +44,9 @@ These updates were executed separately from the lending contract upgrade above.
 
 ### Lending price feeds
 
-Fixed-Rate Lending: three multisig proposals updated the price feeds for FIL, iFIL and wpFIL. Execution IDs 51, 52 and 53 each returned Applied: true; Code: 0.
+Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were successfully executed through the multisig wallet (transactions 51, 52 and 53).
 
-Execution 51: https://www.glif.io/en/tx/bafy2bzaced6snlpq4qllbijh2wegxplsp45yifhiccuuzp5olayzatxlujiiy
+[View execution 51](https://www.glif.io/en/tx/bafy2bzaced6snlpq4qllbijh2wegxplsp45yifhiccuuzp5olayzatxlujiiy)
 
 [View execution 52](https://www.glif.io/en/tx/bafy2bzacedoa4i6pmiqtxyc2vlhsajmmui34tgtxyo5xl4uxij2t3p5cl6oqa)
 
