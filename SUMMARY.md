@@ -61,7 +61,7 @@
     * [🎡 Orderbook Rotation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/orderbook-rotation.md)
   * [📈 APR vs APY](fixed-rate-lending/advanced-topics/apr-vs-apy.md)
 * [📔 Contracts & Security](fixed-rate-lending/contracts-and-security/README.md)
-  * [Contract Upgrade History](fixed-rate-lending/contracts-and-security/contract-upgrade-history.md)
+  * [⛑️ Contract Upgrade History](fixed-rate-lending/contracts-and-security/contract-upgrade-history.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
 ## SF Yield Vault

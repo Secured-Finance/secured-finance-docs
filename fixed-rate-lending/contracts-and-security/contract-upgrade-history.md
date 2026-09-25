@@ -1,12 +1,6 @@
-# Contract Upgrade History
+# ⛑️ Contract Upgrade History
 
-Contract upgrades and recovery are separate milestones. An upgrade alone does not confirm balance restoration or market reopening.
-
-All dates and times on this page are in UTC.
-
-
-
-September 2026 upgrade
+## September 2026 upgrade
 
 The engineering team confirmed execution on Ethereum Mainnet, Arbitrum One and Filecoin on 24 September 2026 (UTC).
 
@@ -40,7 +34,7 @@ These source and execution references are not an independent audit certificate. 
 
 
 
-25 September 2026 - Additional Filecoin oracle updates
+25 September 2026 - Filecoin oracle updates
 
 These updates were executed separately from the lending contract upgrade above.
 
