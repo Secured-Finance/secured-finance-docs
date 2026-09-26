@@ -45,7 +45,7 @@ For a side-by-side view of all Secured Finance products, see [Protocol at a Glan
 
 ## Token standards
 
-USDFC is an ERC-20 token that also implements **EIP-2612** (`permit`) and **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`). `permit` lets a holder grant a spending allowance with a signature instead of an approval transaction. `transferWithAuthorization` lets a holder sign a transfer that anyone can submit and pay gas for; `receiveWithAuthorization` does the same but must be submitted by the recipient. Together these make USDFC usable in gasless flows and **x402** (HTTP 402) payment flows. The interfaces are in the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol); see [Contracts and Security](deployed-contracts.md#token-standards).
+USDFC is an ERC-20 token that also implements **EIP-2612** (`permit`) and **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`). `permit` lets a holder grant a spending allowance with a signature instead of an approval transaction. `transferWithAuthorization` lets a holder sign a transfer that anyone can submit and pay gas for; `receiveWithAuthorization` does the same but must be submitted by the recipient. Together these make USDFC usable in gasless flows and **x402** (HTTP 402) payment flows. The interfaces are in the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol); see [Contracts and Security](deployed-contracts/README.md#token-standards).
 
 ## Why Filecoin
 
@@ -62,4 +62,4 @@ FIL is the native asset of the Filecoin network, whose storage economy is growin
 | New to USDFC | [Getting Started](getting-started/README.md) |
 | Ready to mint | [Creating Your First Trove](getting-started/creating-your-first-trove.md) |
 | Curious how it works inside | [Core Mechanics](core-mechanics/README.md) |
-| Looking for addresses and audits | [Contracts and Security](deployed-contracts.md) |
+| Looking for addresses and audits | [Contracts and Security](deployed-contracts/README.md) |

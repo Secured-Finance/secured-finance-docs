@@ -34,4 +34,4 @@ For a Trove owner, the practical implication: during an oracle outage the price 
 ## Where next
 
 * [Liquidation](liquidation.md) — how the oracle price triggers liquidations
-* [Contracts and Security](../deployed-contracts.md) — contract addresses
+* [Contracts and Security](../deployed-contracts/README.md) — contract addresses

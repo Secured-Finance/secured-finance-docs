@@ -180,9 +180,9 @@ A system-wide state that activates when total collateralization falls below 150%
 
 <summary>Can I use USDFC for gasless transfers or x402 payments?</summary>
 
-Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can sign a transfer off-chain and let another party (anyone for `transferWithAuthorization`, the recipient for `receiveWithAuthorization`) submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. See [Token standards](deployed-contracts.md#token-standards) and the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol).
+Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can sign a transfer off-chain and let another party (anyone for `transferWithAuthorization`, the recipient for `receiveWithAuthorization`) submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. See [Token standards](deployed-contracts/README.md#token-standards) and the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol).
 
-**Related:** [Contracts and Security](deployed-contracts.md#token-standards)
+**Related:** [Contracts and Security](deployed-contracts/README.md#token-standards)
 
 </details>
 
