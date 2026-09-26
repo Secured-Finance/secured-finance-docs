@@ -7,7 +7,7 @@ description: The single source of truth for every protocol number
 This page is the authoritative reference for all Fixed-Rate Lending Protocol parameters. Other pages link here instead of restating values. **Last verified: 2026-07-16** (liquidation configuration, Base Price values, Mark Price minimum volume, and the supported asset list confirmed with the engineering team against production; remaining values match the contracts repository).
 
 {% hint style="info" %}
-Parameters may change through protocol governance. For integrations, always confirm critical values on-chain — addresses in [Contracts & Security](contracts-and-security.md).
+Parameters may change through protocol governance. For integrations, always confirm critical values on-chain — addresses in [Contracts & Security](contracts-and-security/).
 {% endhint %}
 
 ## Trading fees
@@ -82,7 +82,7 @@ Asset availability last confirmed with the team on 2026-07-16 (JPYC lending mark
 {% endhint %}
 
 {% hint style="warning" %}
-Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](contracts-and-security.md).
+Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](contracts-and-security/).
 {% endhint %}
 
 ## Verifying on-chain

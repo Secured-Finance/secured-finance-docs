@@ -48,7 +48,7 @@ Once the transaction confirms, your Trove appears on the dashboard and the USDFC
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.10.48.png" alt="A newly created Trove on the dashboard"><figcaption><p>A newly created Trove on the dashboard</p></figcaption></figure>
 
 {% hint style="info" %}
-**USDFC not showing in your wallet?** On the Dashboard, find "Add USDFC to Wallet" and click **Click here** — or add it manually with the address from [Contracts and Security](../deployed-contracts.md).
+**USDFC not showing in your wallet?** On the Dashboard, find "Add USDFC to Wallet" and click **Click here** — or add it manually with the address from [Contracts and Security](../deployed-contracts/README.md).
 {% endhint %}
 
 ## Troubleshooting

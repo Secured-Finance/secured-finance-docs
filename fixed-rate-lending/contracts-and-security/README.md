@@ -84,11 +84,11 @@ Polygon zkEVM legacy addresses:
 | Quantstamp | Fixed-Rate Lending contracts | 2023/10–11 | [2023-11-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2023-11-Quantstamp.pdf) |
 | Quantstamp | Fixed-Rate Lending contracts | 2024/3     | [2024-03-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2024-03-Quantstamp.pdf) |
 
-USDFC Stablecoin audits (Hexens 2025/1, Decurity 2025/3) are listed in the [USDFC documentation](../usdfc-stablecoin/deployed-contracts.md).
+USDFC Stablecoin audits (Hexens 2025/1, Decurity 2025/3) are listed in the [USDFC documentation](../../usdfc-stablecoin/deployed-contracts/).
 
 ## Security resources
 
-* **Bug Bounty** — vulnerabilities are rewarded through our [Bug Bounty program](../developer-portal/bug-bounty.md)
-* **Runtime protections** — [Circuit Breaker](advanced-topics/circuit-breaker.md), [Base Price Adjustment](advanced-topics/base-price-adjustment.md), and [minimum-volume Mark Pricing](core-concepts/liquidation/mark-to-market.md)
-* **Last resort** — [Emergency Global Settlement](advanced-topics/emergency-global-settlement.md)
-* **Verify parameters yourself** — on-chain getters listed in [Protocol Parameters](protocol-parameters.md)
+* **Bug Bounty** — vulnerabilities are rewarded through our [Bug Bounty program](../../developer-portal/bug-bounty.md)
+* **Runtime protections** — [Circuit Breaker](../advanced-topics/circuit-breaker.md), [Base Price Adjustment](../advanced-topics/base-price-adjustment.md), and [minimum-volume Mark Pricing](../core-concepts/liquidation/mark-to-market.md)
+* **Last resort** — [Emergency Global Settlement](../advanced-topics/emergency-global-settlement.md)
+* **Verify parameters yourself** — on-chain getters listed in [Protocol Parameters](../protocol-parameters.md)

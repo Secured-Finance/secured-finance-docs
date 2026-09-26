@@ -86,7 +86,7 @@ Now that you've created your first Trove, you can:
 ## Troubleshooting
 
 * **Transaction Failed**: Ensure you have enough FIL for gas fees and that your collateral ratio meets the minimum requirement
-* **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../../deployed-contracts.md) page, or click the wallet icon near the USDFC contract info on the USDFC app
+* **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../../deployed-contracts/) page, or click the wallet icon near the USDFC contract info on the USDFC app
 * **High Gas Fees**: Try again when network congestion is lower or adjust your gas settings
 
 ## Common Questions

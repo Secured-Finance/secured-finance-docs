@@ -60,7 +60,8 @@
     * [⏮️ Genesis Value & Compound Factor](fixed-rate-lending/advanced-topics/orderbook-deep-dive/genesis-value-and-compound-factor.md)
     * [🎡 Orderbook Rotation](fixed-rate-lending/advanced-topics/orderbook-deep-dive/orderbook-rotation.md)
   * [📈 APR vs APY](fixed-rate-lending/advanced-topics/apr-vs-apy.md)
-* [📔 Contracts & Security](fixed-rate-lending/contracts-and-security.md)
+* [📔 Contracts & Security](fixed-rate-lending/contracts-and-security/README.md)
+  * [⛑️ Contract Upgrade History](fixed-rate-lending/contracts-and-security/contract-upgrade-history.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
 ## SF Yield Vault
@@ -109,7 +110,8 @@
   * [🚨 Recovery Mode](usdfc-stablecoin/core-mechanics/recovery-mode.md)
   * [🔮 Price Oracle](usdfc-stablecoin/core-mechanics/price-oracle.md)
   * [🧀 Protocol Fees](usdfc-stablecoin/core-mechanics/protocol-fees.md)
-* [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts.md)
+* [📔 Contracts and Security](usdfc-stablecoin/deployed-contracts/README.md)
+  * [⛑️ Contract Upgrade History](usdfc-stablecoin/deployed-contracts/contract-upgrade-history.md)
 * [❓ FAQs](usdfc-stablecoin/faqs.md)
 
 ## Developer Portal

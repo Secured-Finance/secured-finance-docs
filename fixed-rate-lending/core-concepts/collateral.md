@@ -19,7 +19,7 @@ Asset availability last confirmed with the team on 2026-07-16 (JPYC lending mark
 {% endhint %}
 
 {% hint style="warning" %}
-Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](../contracts-and-security.md).
+Avalanche support is **deprecated**. Polygon zkEVM has been **sunset and is no longer operational**. Legacy deployment addresses are retained for historical reference only: [Contracts & Security](../contracts-and-security/).
 {% endhint %}
 
 Current haircuts, thresholds, and the authoritative asset list: [Protocol Parameters](../protocol-parameters.md).

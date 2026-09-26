@@ -38,7 +38,7 @@ Most DeFi lending is variable-rate: yields change block by block, which makes pl
 
 ## Security
 
-* **Audits**: Quantstamp (Fixed-Rate Lending, 2023 & 2024), Hexens and Decurity (USDFC, 2025) — reports in [Contracts & Security](../fixed-rate-lending/contracts-and-security.md)
+* **Audits**: Quantstamp (Fixed-Rate Lending, 2023 & 2024), Hexens and Decurity (USDFC, 2025) — reports in [Contracts & Security](../fixed-rate-lending/contracts-and-security/)
 * Active [Bug Bounty](../developer-portal/bug-bounty.md) program
 * [Emergency Global Settlement](../fixed-rate-lending/advanced-topics/emergency-global-settlement.md) as a last-resort safeguard for user funds
 

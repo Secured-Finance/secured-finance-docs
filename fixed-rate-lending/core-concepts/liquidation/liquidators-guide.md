@@ -67,5 +67,5 @@ For a liquidation repaying debt worth `D`:
 ## Related
 
 * [Liquidation](./) — mechanism and borrower's view
-* [Contracts & Security](../../contracts-and-security.md) — contract addresses
+* [Contracts & Security](../../contracts-and-security/) — contract addresses
 * [Developer Portal](../../../developer-portal/introduction.md) — subgraph and SDK

@@ -24,5 +24,5 @@ Token Vault holds $100,000 USDC and $200,000 of ETH (1:2 ratio). A user's total 
 
 ## Related
 
-* [Contracts & Security](../contracts-and-security.md) — audits and bug bounty
+* [Contracts & Security](../contracts-and-security/) — audits and bug bounty
 * [Circuit Breaker](circuit-breaker.md) and [Base Price Adjustment](base-price-adjustment.md) — the everyday safety layers that make this one a last resort
