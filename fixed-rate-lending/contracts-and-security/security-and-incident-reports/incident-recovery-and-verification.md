@@ -20,6 +20,6 @@ Final block-specific checks confirmed deployed implementations, removal of tempo
 * [Recovery instructions and manifests — pinned commit](https://github.com/Secured-Finance/contracts/tree/ad0987f0aee40175da7f9f2490c33a7917d2bed1/recovery-data).
 * [Contract Upgrade History](https://docs.secured.finance/fixed-rate-lending/contracts-and-security/contract-upgrade-history).
 
-The incident postmortem will be linked here when published.
+For the cause, impact and response, read [Postmortem: the September 2026 Lending Protocol incident and our recovery](https://medium.com/secured-finance/postmortem-the-september-2026-lending-protocol-incident-and-our-recovery-28bd48e68f22).
 
-Last updated: 18 October 2026 (UTC).
+Last updated: 19 October 2026 (UTC).
