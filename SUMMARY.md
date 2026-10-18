@@ -62,9 +62,9 @@
   * [📈 APR vs APY](fixed-rate-lending/advanced-topics/apr-vs-apy.md)
 * [📔 Contracts & Security](fixed-rate-lending/contracts-and-security/README.md)
   * [⛑️ Contract Upgrade History](fixed-rate-lending/contracts-and-security/contract-upgrade-history.md)
-  * [Security & Incident Reports](fixed-rate-lending/contracts-and-security/security-and-incident-reports/README.md)
-    * [Incident Recovery & Verification](fixed-rate-lending/contracts-and-security/security-and-incident-reports/incident-recovery-and-verification.md)
-  * [Monitoring System](fixed-rate-lending/contracts-and-security/monitoring-system.md)
+  * [🔏 Security & Incident Reports](fixed-rate-lending/contracts-and-security/security-and-incident-reports/README.md)
+    * [🍀 Incident Recovery & Verification](fixed-rate-lending/contracts-and-security/security-and-incident-reports/incident-recovery-and-verification.md)
+  * [👮‍♂️ Monitoring System](fixed-rate-lending/contracts-and-security/monitoring-system.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 
 ## SF Yield Vault

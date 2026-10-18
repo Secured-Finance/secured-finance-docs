@@ -1,4 +1,4 @@
-# Security & Incident Reports
+# 🔏 Security & Incident Reports
 
 Recovery records and security references for Fixed-Rate Lending.
 

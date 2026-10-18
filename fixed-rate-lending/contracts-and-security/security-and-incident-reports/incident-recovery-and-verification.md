@@ -1,4 +1,4 @@
-# Incident Recovery & Verification
+# 🍀 Incident Recovery & Verification
 
 Fixed-Rate Lending recovery on Ethereum, Arbitrum and Filecoin.
 
