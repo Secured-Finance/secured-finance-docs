@@ -1,5 +1,20 @@
 # ⛑️ Contract Upgrade History
 
+## 23 October 2026 upgrade
+
+The Fixed-Rate Lending contracts were upgraded on Ethereum, Arbitrum and Filecoin.
+
+* [PR #447](https://github.com/Secured-Finance/contracts/pull/447) adds configurable minimum pre-order amounts per currency to reduce negligible-value order spam.
+* [PR #450](https://github.com/Secured-Finance/contracts/pull/450) improves withdrawal calculations so small borrowing balances remain accounted for and full deposits can be withdrawn when sufficient collateral remains.
+
+No position migration is required. Integrations using `cleanUpAllFunds(address)` should use the currency-specific `cleanUpFunds(bytes32,address)` instead.
+
+Successful executions on 23 October 2026 (UTC):
+
+* [Ethereum Mainnet](https://etherscan.io/tx/0xf4df07a16be0f8bf6afb79172afb9eb0965b1df48c2d3a325b3ec9683ce6c25f) — 00:31:11 UTC
+* [Arbitrum One](https://arbiscan.io/tx/0x1410fd6d7a69a0d84c5058d25499fd69454b58f4aa34c5cd6b23524974b3a70b) — 00:31:34 UTC
+* [Filecoin](https://filecoin.blockscout.com/tx/0xb56e4cef7f3ca586884913605e0c1aafbe95c715e4d26d3d6f806b2124ebd58b) — 00:32:30 UTC
+
 ## October 2026 recovery and reopening
 
 Recovery-related contract updates were executed on Ethereum, Arbitrum and Filecoin. Corrections executed on 15 October under [PR #444](https://github.com/Secured-Finance/contracts/pull/444) cleared residual order-book entries and reversed an affected Filecoin fill. The subsequent [PR #446](https://github.com/Secured-Finance/contracts/pull/446) cleanup removed temporary recovery functionality and restored order-estimation functions.
@@ -62,4 +77,4 @@ Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were su
 
 [View execution 53](https://glif.io/en/tx/bafy2bzaced6jvxha36jzpkhrqkyym6fek4sazwcwvqnmpkksikoxxcyzkyzjq)
 
-Last updated: 18 October 2026 (UTC).
+Last updated: 23 October 2026 (UTC).
