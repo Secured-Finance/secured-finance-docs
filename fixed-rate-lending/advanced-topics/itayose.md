@@ -24,7 +24,7 @@ When enabled, each new lend or borrow pre-order must meet the configured minimum
 
 
 
-[See Protocol Parameters for configuration details.](itayose.md#the-three-phases)
+[See Protocol Parameters for configuration details.](../protocol-parameters.md)
 
 ### During Itayose
 
