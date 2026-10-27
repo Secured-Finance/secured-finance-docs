@@ -14,6 +14,18 @@ description: The opening auction that sets a fair price for every new market
 * The app displays the **estimated opening APR** based on the evolving pre-open book.
 * **1 hour** before opening, the book freezes — no placing, amending, or canceling.
 
+### Minimum pre-order amount
+
+The protocol supports a configurable minimum amount for pre-orders in each currency to reduce negligible-value order spam.
+
+
+
+When enabled, each new lend or borrow pre-order must meet the configured minimum. This restriction applies to pre-orders submitted before market opening, not to regular orders placed during continuous trading. A configured value of zero disables the restriction.
+
+
+
+[See Protocol Parameters for configuration details.](itayose.md#the-three-phases)
+
 ### During Itayose
 
 The smart contract consolidates all overlapping bids and offers and computes the opening price to **maximize executed volume**, considering total lend amount, total borrow amount, and the imbalance between them. With no imbalance, the mid-price is taken; with an imbalance, the price moves toward the heavier side. If no orders overlap, the market simply opens without an opening price.

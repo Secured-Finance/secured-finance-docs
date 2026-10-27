@@ -10,6 +10,12 @@ This page is the authoritative reference for all Fixed-Rate Lending Protocol par
 Parameters may change through protocol governance. For integrations, always confirm critical values on-chain — addresses in [Contracts & Security](contracts-and-security/).
 {% endhint %}
 
+## Minimum pre-order amount
+
+Minimum pre-order amounts are configurable per currency. The latest configured minimum applies to newly submitted pre-orders across that currency’s maturities. A value of zero disables the restriction.
+
+Rollout status — 27 October 2026: Contract support has been deployed on Ethereum, Arbitrum and Filecoin. UI support and non-zero limit activation are being rolled out separately. Planned amounts should not be treated as active limits; integrations should verify the configuration on the relevant network.
+
 ## Trading fees
 
 | Parameter                                    | Value                                      | Notes                                                                              |
