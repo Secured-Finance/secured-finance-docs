@@ -26,7 +26,7 @@ The **Fixed Income** tab is the trading interface where you lend and borrow by t
 3. Choose the order type:
    * **Market order** — executes immediately at the best available price; pays the taker fee ([Fees](../../core-concepts/fees.md))
    * **Limit order** — executes only at your price or better. Volume that rests on the book pays **no fee**; if your price crosses existing orders, the part that fills immediately pays the taker fee ([Fees](../../core-concepts/fees.md))
-4. Enter the amount. The form shows the implied APR, estimated fee, and (for borrows) collateral usage.
+4. Enter the amount. The form shows the implied APR, estimated fee, and (for borrows) collateral usage. During the pre-order period, orders must meet the minimum size for the selected currency. Below that minimum, the form shows the required size and disables Place Order. If the minimum cannot be validated, try again once validation is available. This minimum applies only to pre-orders, not regular trading after the market opens.
 5. **Place Order** → confirm in your wallet.
 
 Orders are matched by price-time priority, fully on-chain. Execution prices are bounded each block by the [Circuit Breaker](../../advanced-topics/circuit-breaker.md).
