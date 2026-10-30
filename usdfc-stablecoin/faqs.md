@@ -90,7 +90,7 @@ Yes — increase the borrowed amount via **Update Trove** subject to the mode th
 
 <summary>How do I close my Trove?</summary>
 
-Closing requires full repayment in one transaction via the **Close Trove** tab (partial *repayment* via Update Trove is possible as long as net debt stays at or above 200 USDFC). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. The amount required is your **current Total Debt minus the 20 USDFC reserve** — check it against your wallet balance and obtain any shortfall (borrowing fees and any redistributed debt mean it is usually more than you originally received) — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
+Closing requires full repayment in one transaction via the **Close Trove** tab (partial _repayment_ via Update Trove is possible as long as net debt stays at or above 200 USDFC). The 20 USDFC Liquidation Reserve is netted out at closing, and all your collateral returns to your wallet. The amount required is your **current Total Debt minus the 20 USDFC reserve** — check it against your wallet balance and obtain any shortfall (borrowing fees and any redistributed debt mean it is usually more than you originally received) — see [the Trove lifecycle](core-mechanics/the-trove-system.md#debt-calculations).
 
 Two cases where closing is refused: during [Recovery Mode](core-mechanics/recovery-mode.md), and when closing would push the system's total collateral ratio below 150%. In both cases you can still repay debt; you just can't withdraw the collateral until conditions improve.
 
@@ -126,7 +126,7 @@ When a Trove falls below 110%, anyone can trigger its liquidation: its debt is r
 
 <summary>What do Stability Pool depositors earn — and risk?</summary>
 
-When liquidations occur, depositors' USDFC is burned to repay the debt and they receive the liquidated FIL in exchange — normally worth **up to ~10% more** than the USDFC consumed, since liquidation happens just below 110%. The exact premium depends on the ratio at liquidation, minus the liquidator's 0.5% share of the collateral; in a severe crash a Trove can be liquidated below roughly 100.5%, at which point that liquidation is a net loss.
+When liquidations occur, depositors' USDFC is burned to repay the debt and they receive the liquidated FIL in exchange — normally worth **up to \~10% more** than the USDFC consumed, since liquidation happens just below 110%. The exact premium depends on the ratio at liquidation, minus the liquidator's 0.5% share of the collateral; in a severe crash a Trove can be liquidated below roughly 100.5%, at which point that liquidation is a net loss.
 
 The risks: your stable deposit gradually converts into **volatile FIL** at times you don't choose, FIL can fall after you receive it, and withdrawals are temporarily suspended while liquidatable Troves are pending. Rewards only accrue when liquidations actually happen.
 
@@ -138,7 +138,7 @@ The risks: your stable deposit gradually converts into **volatile FIL** at times
 
 <summary>What happens if the Stability Pool is empty during a liquidation?</summary>
 
-The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio before the liquidator's 0.5% cut (roughly above 100.5%: yes; below: receivers absorb the shortfall), and their own collateral *ratio* generally drops. Everything is automatic; no action is required from Trove owners.
+The protocol falls back to **redistribution**: the liquidated Trove's debt and collateral are spread across all active Troves, in proportion to each Trove's **collateral**. Receiving Troves gain both debt and collateral; whether that nets out positive depends on the liquidated Trove's ratio before the liquidator's 0.5% cut (roughly above 100.5%: yes; below: receivers absorb the shortfall), and their own collateral _ratio_ generally drops. Everything is automatic; no action is required from Trove owners.
 
 **Related:** [Stability Pool](core-mechanics/stability-pool.md#if-the-pool-runs-dry-redistribution)
 
@@ -180,9 +180,9 @@ A system-wide state that activates when total collateralization falls below 150%
 
 <summary>Can I use USDFC for gasless transfers or x402 payments?</summary>
 
-Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can sign a transfer off-chain and let another party (anyone for `transferWithAuthorization`, the recipient for `receiveWithAuthorization`) submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. See [Token standards](deployed-contracts/README.md#token-standards) and the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol).
+Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAuthorization`) and **EIP-2612** (`permit`), so a holder can sign a transfer off-chain and let another party (anyone for `transferWithAuthorization`, the recipient for `receiveWithAuthorization`) submit it and pay the gas — the building blocks of gasless flows and **x402** (HTTP 402) payments. See [Token standards](deployed-contracts/#token-standards) and the [`DebtToken` contract](https://github.com/Secured-Finance/stablecoin-contracts/blob/develop/contracts/DebtToken.sol).
 
-**Related:** [Contracts and Security](deployed-contracts/README.md#token-standards)
+**Related:** [Contracts and Security](deployed-contracts/#token-standards)
 
 </details>
 
@@ -191,5 +191,7 @@ Yes. USDFC implements **EIP-3009** (`transferWithAuthorization` / `receiveWithAu
 <summary>Where does the FIL/USD price come from?</summary>
 
 From the protocol's PriceFeed contract, which uses RedStone as the primary FIL/USD source with Tellor as fallback — including defined behavior when prices go stale. See [Price Oracle](core-mechanics/price-oracle.md) for the mechanics and trust assumptions.
+
+Opening a Trove, increasing debt or withdrawing collateral requires a current primary-oracle price. When a fallback or last accepted price is used, these actions are restricted. Adding collateral and repaying debt remain available, subject to price-freshness and other protocol checks. If the last accepted price is too old, price-dependent transactions may also revert. Retry restricted actions once a valid primary price is available.
 
 </details>
