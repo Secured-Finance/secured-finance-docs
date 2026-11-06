@@ -1,16 +1,16 @@
 ---
-description: Track your Secured Finance Points (SFP) in the app
+description: View retained SFP balances after the points-earning phase ended
 ---
 
 # 🚀 Points
 
-The [**Points**](https://app.secured.finance/points/) dashboard tracks the **Secured Finance Points (SFP)** you have earned by using the protocol.
+The [**Points**](https://app.secured.finance/points/) dashboard shows historical **Secured Finance Points (SFP)** earned during the program.
 
 {% hint style="warning" %}
-**The current phase of Secured Finance Points ended after April 30, 2026 (UTC).** Points earned to date are retained. For the program details and what happens next, see [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/).
+**The SFP phase ended after April 30, 2026 (UTC).** Points earned to date are retained. The earning activities below are historical, not instructions for earning new points. SFP v3, tokenomics, and TGE timing have not been finalized. See [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/) for program history and current status.
 {% endhint %}
 
-## What the dashboard shows
+## Reading historical balances
 
 **Total Points** — your overall SFP balance, broken down by how it was earned:
 
@@ -22,17 +22,13 @@ The [**Points**](https://app.secured.finance/points/) dashboard tracks the **Sec
 | **Refer Friend Points**    | Your share of points earned by users you referred  |
 | **Daily Login Points**     | Points from connecting your wallet each day        |
 
-Alongside the breakdown, the panel shows **Your Rank**, any **Point Boost** applied to your earnings, and your **Referral Code** to share.
-
-**Active Quests** lists any quests currently running. **Leaderboard** shows the community rankings and is visible without connecting a wallet.
+The dashboard also included **Your Rank**, **Point Boost**, **Referral Code**, **Active Quests**, and **Leaderboard** during the active phase. A historical quest or referral field should not be interpreted as an active earning opportunity.
 
 ## How points were earned
 
 The full rules, calculations, and program history are documented in [Secured Finance Points (SFP) v2](../../../community/tokenomics/secured-finance-points-sfp-v2/).
 
-For how SFP relates to the upcoming **Secured Finance Coin (SFC)**, see [Tokenomics](../../../community/tokenomics/).
-
 ## Troubleshooting
 
 * **Balance looks wrong or is missing** — make sure your wallet is connected on a supported network, and that you are checking the same address you used to earn the points.
-* **Refer Friend Points missing** — the invitee must have used your exact referral link and earned their first points before your share appears.
+* **Historical Refer Friend Points** — the applicable program rules depended on the phase in which the referral activity occurred. Check the [v2 rules](../../../community/tokenomics/secured-finance-points-sfp-v2/) or [archived v1 rules](../../../community/tokenomics/secured-finance-points-sfp-v2/secured-finance-points-sfp-v1.md); they used different referral rates. New referrals do not earn points under the ended phase.

@@ -6,6 +6,12 @@ description: >-
 
 # 🔶 Secured Finance Points (SFP) v2
 
+{% hint style="warning" %}
+**Archived SFP v2 program article.** The article below is preserved as a historical record. Its earning instructions and forward-looking statements reflect the program at that time.
+
+**The SFP phase ended after April 30, 2026 (UTC).** Points earned through v1 and v2 are retained; the earning activities described below are no longer active under that phase. SFP v3, tokenomics, and TGE timing have not been finalized. For current status, see the [Points guide](../../../fixed-rate-lending/getting-started/platform-guide/points-and-campaigns.md).
+{% endhint %}
+
 <figure><img src="../../../.gitbook/assets/Points V2.jpg" alt=""><figcaption></figcaption></figure>
 
 ## What is Secured Finance Points (SFP) v2?

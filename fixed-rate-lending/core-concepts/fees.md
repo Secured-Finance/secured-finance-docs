@@ -39,7 +39,7 @@ Trading fees and Auto-Roll fees accrue to the protocol's **Reserve Fund**, the b
 
 ## Minimizing fees
 
-* Use **limit orders** priced so they rest on the book rather than cross it — resting volume pays no trading fee, and it earns [SFP points](../getting-started/platform-guide/points-and-campaigns.md) for providing liquidity
+* Use **limit orders** priced so they rest on the book rather than cross it — resting volume pays no trading fee
 * Participate in **Itayose** pre-open windows — zero fee fills
 * If you don't want quarterly roll fees, **unwind before maturity** rather than letting positions roll
 * Avoid liquidation entirely by managing your [collateral](collateral.md) — the 7% fee is by far the most expensive in the protocol
