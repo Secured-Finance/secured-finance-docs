@@ -4,6 +4,14 @@ description: Deployed addresses, audit reports, and security resources
 
 # 📔 Contracts & Security
 
+Deployed contract addresses, audit reports, upgrade history and security records for Fixed-Rate Lending.
+
+## In this section
+
+* [Contract Upgrade History](contract-upgrade-history.md) — dated changes, integration guidance and execution transactions.
+* [Security & Incident Reports](security-and-incident-reports/) — incident reports and recovery verification.
+* [Monitoring System](monitoring-system.md) — monitoring coverage, alerts and deployment status.
+
 ## Contract addresses
 
 The latest version of [`@secured-finance/contracts`](https://github.com/Secured-Finance/contracts) is deployed at the following addresses on **Ethereum Mainnet, Arbitrum One, and Filecoin** (all addresses on this page are taken from the [`deployments/`](https://github.com/Secured-Finance/contracts/tree/develop/deployments) records in the contracts repository):

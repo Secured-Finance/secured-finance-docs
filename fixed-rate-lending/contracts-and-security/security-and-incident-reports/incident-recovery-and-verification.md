@@ -1,6 +1,6 @@
-# 🍀 Incident Recovery & Verification
+# 🍀 September 2026 Incident: Recovery & Verification
 
-Fixed-Rate Lending recovery on Ethereum, Arbitrum and Filecoin.
+Recovery and verification in October 2026 following the September 2026 Fixed-Rate Lending incident on Ethereum, Arbitrum and Filecoin.
 
 ## Recovery status
 
@@ -18,8 +18,8 @@ Final block-specific checks confirmed deployed implementations, removal of tempo
 
 * Correction transactions: [Ethereum](https://etherscan.io/tx/0x9ca19a16b21fe281821fa33cc4fbbb550db68fb7cfa2d135274763703f41ae26), [Arbitrum](https://arbiscan.io/tx/0x6c6b909247a913e52acf6fdd44f5791b750beed92af6eedee3e8ad4f6ce9b3f6), [Filecoin](https://filecoin.blockscout.com/tx/0x22958d4a14a59f6520795a3cb3b98a6a4d40393a38814119903c4df0c191fbb8).
 * [Recovery instructions and manifests — pinned commit](https://github.com/Secured-Finance/contracts/tree/ad0987f0aee40175da7f9f2490c33a7917d2bed1/recovery-data).
-* [Contract Upgrade History](https://docs.secured.finance/fixed-rate-lending/contracts-and-security/contract-upgrade-history).
+* [Contract Upgrade History](../contract-upgrade-history.md).
 
-For the cause, impact and response, read [Postmortem: the September 2026 Lending Protocol incident and our recovery](https://medium.com/secured-finance/postmortem-the-september-2026-lending-protocol-incident-and-our-recovery-28bd48e68f22).
+For the cause, impact and response, read [September 2026 Incident: Postmortem](https://medium.com/secured-finance/postmortem-the-september-2026-lending-protocol-incident-and-our-recovery-28bd48e68f22).
 
-Last updated: 19 October 2026 (UTC).
+Last updated: 6 November 2026 (UTC).

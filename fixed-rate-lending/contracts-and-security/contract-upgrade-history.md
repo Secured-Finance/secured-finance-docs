@@ -2,15 +2,23 @@
 
 ## 6 November 2026 — Circuit-breaker security update
 
-The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin to strengthen order-price safeguards.
+On 6 November 2026, we strengthened the circuit-breaker safeguards against excessive price movements within a single block. Fixed-Rate Lending trading, deposits and withdrawals were temporarily paused as a precaution while the update was prepared and deployed.
+
+The update was deployed on Ethereum Mainnet, Arbitrum One and Filecoin.
+
+### Safeguards
 
 * LEND and BORROW thresholds use a common reference based on up to three previous reliable block prices. Current-block trades do not change that reference within the block.
 * Active-market limit orders must satisfy the applicable circuit-breaker bounds and the existing order-price range.
 * LendingMarketReader and the app integration were updated for the extended circuit-breaker response.
 
-Users should place active-market limit orders within the permitted price range. Integrators should use the updated ABI, including the referenceUnitPrice return value.
+### Using the updated markets
 
-#### Execution
+Users should place active-market limit orders within the permitted price range. Integrators should use the updated ABI, including the `referenceUnitPrice` return value, and check the LendingMarketReader deployment records.
+
+This update describes the deployed safeguards; it is not an independent audit or a guarantee against all market risks.
+
+### Execution
 
 Successful contract upgrades on 6 November 2026 (UTC):
 
@@ -45,7 +53,7 @@ Cleanup upgrade executions:
 * [Arbitrum](https://arbiscan.io/tx/0x9d7e05e40ef4b294c1730345a27128b46b56c8002ff713dea7934d395df4193f)
 * [Filecoin](https://filecoin.blockscout.com/tx/0x6a5943d4c848a01e0ab0b053ced64f40fe301c5e32a4fcccfd391c4e9d412eba)
 
-Markets and TokenVaults reopened on 16 October following production-state verification. See [Incident Recovery & Verification](https://docs.secured.finance/fixed-rate-lending/contracts-and-security/security-and-incident-reports/incident-recovery-and-verification) for the correction results, verification scope and supporting evidence.
+Markets and TokenVaults reopened on 16 October following production-state verification. See [September 2026 Incident: Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md) for the correction results, verification scope and supporting evidence.
 
 Dates are UTC. Execution transactions are distinct from proposal approvals.
 
