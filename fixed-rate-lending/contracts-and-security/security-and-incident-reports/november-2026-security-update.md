@@ -1,6 +1,6 @@
 # November 2026 Security Update
 
-On 5 November 2026, Fixed-Rate Lending trading, deposits and withdrawals were temporarily paused as a precaution after an order-book pricing issue was identified. Updated contracts and apps were deployed on 6 November, and the engineering team subsequently confirmed unpausing.
+On 6 November 2026, we strengthened the circuit-breaker safeguards against excessive price movements within a single block. Fixed-Rate Lending trading, deposits and withdrawals were temporarily paused as a precaution while the update was prepared and deployed.
 
 ### Strengthened circuit-breaker controls
 
