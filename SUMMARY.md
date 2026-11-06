@@ -64,6 +64,7 @@
   * [⛑️ Contract Upgrade History](fixed-rate-lending/contracts-and-security/contract-upgrade-history.md)
   * [🔏 Security & Incident Reports](fixed-rate-lending/contracts-and-security/security-and-incident-reports/README.md)
     * [🍀 Incident Recovery & Verification](fixed-rate-lending/contracts-and-security/security-and-incident-reports/incident-recovery-and-verification.md)
+    * [November 2026 Security Update](fixed-rate-lending/contracts-and-security/security-and-incident-reports/november-2026-security-update.md)
   * [👮‍♂️ Monitoring System](fixed-rate-lending/contracts-and-security/monitoring-system.md)
 * [❓ FAQs](fixed-rate-lending/faqs.md)
 

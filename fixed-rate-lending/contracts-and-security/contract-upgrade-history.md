@@ -1,5 +1,25 @@
 # ⛑️ Contract Upgrade History
 
+## 6 November 2026 — Circuit-breaker security update
+
+The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin to strengthen order-price safeguards.
+
+* LEND and BORROW thresholds use a common reference based on up to three previous reliable block prices. Current-block trades do not change that reference within the block.
+* Active-market limit orders must satisfy the applicable circuit-breaker bounds and the existing order-price range.
+* LendingMarketReader and the app integration were updated for the extended circuit-breaker response.
+
+Users should place active-market limit orders within the permitted price range. Integrators should use the updated ABI, including the referenceUnitPrice return value.
+
+#### Execution
+
+Successful contract upgrades on 6 November 2026 (UTC):
+
+* [Ethereum Mainnet — 07:14:35 UTC](https://etherscan.io/tx/0xbbfdf27f7faadbbfbfd87066f5724f106bb9c8b81953e5e0bb52ecc43973b62e)
+* [Arbitrum One — 07:15:08 UTC](https://arbiscan.io/tx/0xe5574f1fe6509d3cc7ec6e39c43af91e8e8fe912b33c0a223b910205c5d30d6d)
+* [Filecoin — 07:51:30 UTC](https://filecoin.blockscout.com/tx/0x8101ed5a49883af7d79bae36afc1bb6a3157f06de17c871c9120846c3fd532fe)
+
+Code references: [Contracts #460](https://github.com/Secured-Finance/contracts/pull/460), [Reader deployments #461](https://github.com/Secured-Finance/contracts/pull/461), [App #979](https://github.com/Secured-Finance/secured-finance-app/pull/979).
+
 ## 23 October 2026 upgrade
 
 The Fixed-Rate Lending contracts were upgraded on Ethereum, Arbitrum and Filecoin.
@@ -77,4 +97,4 @@ Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were su
 
 [View execution 53](https://glif.io/en/tx/bafy2bzaced6jvxha36jzpkhrqkyym6fek4sazwcwvqnmpkksikoxxcyzkyzjq)
 
-Last updated: 23 October 2026 (UTC).
+Last updated: 6 November 2026 (UTC).
