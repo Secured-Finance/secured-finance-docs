@@ -1,8 +1,16 @@
 ---
-description: Learn how to redeem your USDFC for FIL collateral under certain conditions
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Redeeming USDFC'
+hidden: true
 ---
 
-# 💸 Redeeming USDFC
+# 💸 Archived UI v1: Redeeming USDFC
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Redeeming USDFC guide](../redeeming-usdfc.md).
 
 ## Prerequisites
 
@@ -29,7 +37,7 @@ First, you need to navigate to the redemption section in the USDFC application.
 2. Connect your wallet if not already connected
 3. Locate the "Redemption" page in the "More" tab in the USDFC application
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt="The Redemption page location in the 'More' tab"><figcaption><p>The Redemption page location in the "More" tab</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (136).png" alt="The Redemption page location in the &#x27;More&#x27; tab"><figcaption><p>The Redemption page location in the "More" tab</p></figcaption></figure>
 
 ## Step 2: Review Redemption Information
 
@@ -73,7 +81,6 @@ Once you're satisfied with the details, you can proceed with the redemption.
 
 <figure><img src="../../../.gitbook/assets/image (140).png" alt="Screenshot showing updated wallet balances after redemption"><figcaption><p>Screenshot showing updated wallet balances after redemption</p></figcaption></figure>
 
-
 ## Step 6: Verify Redemption
 
 After the transaction is confirmed, verify that your redemption was successful.
@@ -82,7 +89,7 @@ After the transaction is confirmed, verify that your redemption was successful.
 2. Verify that the FIL has been added to your wallet balance
 3. Review the transaction details in your wallet history or on a blockchain explorer
 
-<figure><img src="../../../.gitbook/assets/image (141).png" alt="Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced"><figcaption><p>Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (141).png" alt="Lowest Collateral Ratio Trove&#x27;s FIL Collateral and USDFC Debt was reduced"><figcaption><p>Lowest Collateral Ratio Trove's FIL Collateral and USDFC Debt was reduced</p></figcaption></figure>
 
 ## Understanding Redemption Mechanics
 
@@ -103,7 +110,6 @@ $$
 
 The base rate increases with each redemption and decays over time, which helps prevent large-scale redemptions that could destabilize the system.
 
-
 ### When to Redeem
 
 Redemption is most beneficial in the following scenarios:
@@ -111,7 +117,6 @@ Redemption is most beneficial in the following scenarios:
 1. When USDFC is trading below its $1 peg (arbitrage opportunity)
 2. When you want to exit the USDFC system entirely
 3. When you believe FIL price will increase and want to acquire it at the current price
-
 
 ## Next Steps
 

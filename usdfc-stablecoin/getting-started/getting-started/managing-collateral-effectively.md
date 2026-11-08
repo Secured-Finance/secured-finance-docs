@@ -1,8 +1,16 @@
 ---
-description: Learn how to manage your collateral to maintain a healthy Trove
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Managing Collateral Effectively'
+hidden: true
 ---
 
-# 🤝 Managing Collateral Effectively
+# 🤝 Archived UI v1: Managing Collateral Effectively
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Managing Collateral Effectively guide](../managing-collateral-effectively.md).
 
 ## Prerequisites
 
@@ -32,7 +40,7 @@ To manage your collateral, you need to adjust your Trove.
 1. Click on the "Adjust" button
 2. This will open the Trove adjustment interface
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="'Adjust Trove' interface"><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="&#x27;Adjust Trove&#x27; interface"><figcaption><p>"Adjust Trove" interface</p></figcaption></figure>
 
 ## Step 3: Add or Withdraw Collateral
 
@@ -89,6 +97,10 @@ After the transaction is confirmed, verify that your collateral was adjusted suc
 
 ### Key Collateral Ratio Thresholds
 
+{% hint style="warning" %}
+**Current correction:** 110% is not a universal safe ratio. The price calculation below applies only in Normal Mode. See [current liquidation rules](../../core-mechanics/recovery-mode.md#liquidation-behavior-in-recovery-mode).
+{% endhint %}
+
 | Threshold                      | Value | Description                                                                         |
 | ------------------------------ | ----- | ----------------------------------------------------------------------------------- |
 | Minimum Collateral Ratio (MCR) | 110%  | The absolute minimum ratio required to avoid liquidation                            |
@@ -97,12 +109,15 @@ After the transaction is confirmed, verify that your collateral was adjusted suc
 
 ### Calculating Your Liquidation Price
 
+{% hint style="warning" %}
+**Current correction:** The following 110% formula covers Normal Mode only. It does not determine Recovery Mode eligibility. See [current liquidation rules](../../core-mechanics/recovery-mode.md#liquidation-behavior-in-recovery-mode).
+{% endhint %}
+
 To calculate the FIL price at which your Trove would reach the minimum collateral ratio (110%):
 
 $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
-
 
 ## Strategies for Collateral Management
 
@@ -123,7 +138,6 @@ $$
 * Maintain a collateral ratio between 110% and 150%
 * Requires very active monitoring and quick reactions to price changes
 * Maximizes capital efficiency but has higher liquidation risk
-
 
 ## Next Steps
 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="620" viewBox="0 0 600 620"><rect width="600" height="620" fill="white"/>
+<text x="30" y="50" font-family="DejaVu Sans, sans-serif" font-size="32" font-weight="bold" fill="#171717">START: resting orders</text>
+<rect x="20" y="80" width="560" height="510" rx="10" fill="#FFF" stroke="#9370DB" stroke-width="2"/>
+<rect x="20" y="80" width="560" height="60" rx="10" fill="#EDE9FE" stroke="#9370DB" stroke-width="2"/>
+<text x="40" y="121" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">Price</text>
+<text x="205" y="121" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">BORROW</text>
+<text x="423" y="121" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">LEND</text>
+<text x="40" y="182" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">90.00</text>
+<text x="205" y="182" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717">10</text>
+<text x="423" y="182" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<rect x="21" y="204" width="558" height="64" fill="#F8F6FD"/>
+<line x1="20" y1="204" x2="580" y2="204" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="246" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#6C4BA4">88.00</text>
+<text x="205" y="246" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#6C4BA4">LEND ceiling</text>
+<text x="423" y="246" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<line x1="20" y1="268" x2="580" y2="268" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="310" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">81.00</text>
+<text x="205" y="310" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717">10</text>
+<text x="423" y="310" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<rect x="21" y="332" width="558" height="64" fill="#F8F6FD"/>
+<line x1="20" y1="332" x2="580" y2="332" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="374" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#6C4BA4">80.00</text>
+<text x="205" y="374" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#6C4BA4">Reference only</text>
+<text x="423" y="374" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<line x1="20" y1="396" x2="580" y2="396" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="438" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">79.00</text>
+<text x="205" y="438" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<text x="423" y="438" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717">5</text>
+<rect x="21" y="460" width="558" height="64" fill="#F8F6FD"/>
+<line x1="20" y1="460" x2="580" y2="460" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="502" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#6C4BA4">76.00</text>
+<text x="205" y="502" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#6C4BA4">BORROW floor</text>
+<text x="423" y="502" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<line x1="20" y1="524" x2="580" y2="524" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="566" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">75.00</text>
+<text x="205" y="566" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717"></text>
+<text x="423" y="566" font-family="DejaVu Sans, sans-serif" font-size="30" font-weight="normal" fill="#171717">10</text>
+</svg>

@@ -1,8 +1,16 @@
 ---
-description: Learn how to deposit USDFC into the Stability Pool and earn rewards
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Using the Stability Pool'
+hidden: true
 ---
 
-# 🏊 Using the Stability Pool
+# 🏊 Archived UI v1: Using the Stability Pool
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Using the Stability Pool guide](../using-the-stability-pool.md).
 
 ## Prerequisites
 
@@ -102,15 +110,17 @@ $$
 
 "FIL allocated to the pool" is the liquidated collateral minus the liquidator's 0.5% share — only the fraction matching the debt the pool actually repaid. For Recovery Mode liquidations of Troves between 110% and the TCR, the collateral is first capped at 110% of the debt and the 0.5% is then taken from that amount, so the pool receives collateral worth about 109.45% of the debt.
 
-
 ### Deposit Dilution
+
+{% hint style="warning" %}
+**Current correction:** Stability Pool deposits can lose value. Do not rely on the “not a loss” statement below. See [current Stability Pool risks](../../core-mechanics/stability-pool.md).
+{% endhint %}
 
 It's important to understand that your deposit may be "diluted" over time:
 
 1. When liquidations occur, some of your deposited USDFC is used to repay debt
 2. Your deposit amount decreases, but you receive FIL collateral in return
 3. This is not a loss but a conversion from USDFC to FIL at a potentially favorable rate
-
 
 ## Strategies for Stability Pool Participation
 
@@ -131,7 +141,6 @@ It's important to understand that your deposit may be "diluted" over time:
 * Deposit a large portion of your USDFC (70-100%)
 * Higher potential rewards during periods of liquidations
 * Less liquidity for other opportunities
-
 
 ## Next Steps
 

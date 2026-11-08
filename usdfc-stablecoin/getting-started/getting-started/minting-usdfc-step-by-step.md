@@ -1,8 +1,16 @@
 ---
-description: A comprehensive guide to minting USDFC stablecoins
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Minting USDFC Step-by-Step'
+hidden: true
 ---
 
-# 👛 Minting USDFC Step-by-Step
+# 👛 Archived UI v1: Minting USDFC Step-by-Step
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Minting USDFC Step-by-Step guide](../minting-usdfc-step-by-step.md).
 
 ## Prerequisites
 
@@ -40,7 +48,7 @@ To mint additional USDFC, you need to adjust your Trove.
 "Net debt" is Total Debt - Liquidation Reserve. In this example, 221.02 - 20 = 201.02 USDFC.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt="Screenshot after clicking the 'Adjust Trove' button"><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt="Screenshot after clicking the &#x27;Adjust Trove&#x27; button"><figcaption><p>Screenshot after clicking the "Adjust Trove" button</p></figcaption></figure>
 
 ## Step 3: Specify Minting Amount
 
@@ -74,7 +82,7 @@ Once you're satisfied with the details, you can proceed with minting.
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 6.15.51.png" alt="The confirmation screen with the 'Adjust Trove' method"><figcaption><p>The confirmation screen with the "Adjust Trove" method</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-05-11 at 6.15.51.png" alt="The confirmation screen with the &#x27;Adjust Trove&#x27; method"><figcaption><p>The confirmation screen with the "Adjust Trove" method</p></figcaption></figure>
 
 ## Step 6: Verify Minted USDFC
 

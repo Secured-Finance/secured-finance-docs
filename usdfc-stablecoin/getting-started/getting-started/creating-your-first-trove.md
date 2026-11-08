@@ -1,8 +1,16 @@
 ---
-description: Learn how to create your first Trove to start using USDFC
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Creating Your First Trove'
+hidden: true
 ---
 
-# ⛽ Creating Your First Trove
+# ⛽ Archived UI v1: Creating Your First Trove
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Creating Your First Trove guide](../creating-your-first-trove.md).
 
 ## Prerequisites
 
@@ -23,7 +31,7 @@ Before you can create a Trove, you need to connect your wallet to the USDFC appl
 3. Select your wallet provider (MetaMask, WalletConnect, etc.)
 4. Confirm the connection
 
-<figure><img src="../../../.gitbook/assets/image (124).png" alt="The wallet connection interface after the 'Connect Wallet' button"><figcaption><p>The wallet connection interface after the "Connect Wallet" button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124).png" alt="The wallet connection interface after the &#x27;Connect Wallet&#x27; button"><figcaption><p>The wallet connection interface after the "Connect Wallet" button</p></figcaption></figure>
 
 ## Step 2: Navigate to the Trove Management Section
 
@@ -62,7 +70,7 @@ Once you're satisfied with the details, you can create your Trove.
 2. Confirm the transaction in your wallet
 3. Wait for the transaction to be processed on the blockchain
 
-<figure><img src="../../../.gitbook/assets/image (130).png" alt="The confirmation screen with the 'Confirm' button highlighted"><figcaption><p>The confirmation screen with the "Confirm" button highlighted</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130).png" alt="The confirmation screen with the &#x27;Confirm&#x27; button highlighted"><figcaption><p>The confirmation screen with the "Confirm" button highlighted</p></figcaption></figure>
 
 ## Step 6: Verify Your Trove Creation
 
@@ -86,7 +94,7 @@ Now that you've created your first Trove, you can:
 ## Troubleshooting
 
 * **Transaction Failed**: Ensure you have enough FIL for gas fees and that your collateral ratio meets the minimum requirement
-* **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../../deployed-contracts/README.md) page, or click the wallet icon near the USDFC contract info on the USDFC app
+* **USDFC Not Showing in Wallet**: Add USDFC as a custom token in your wallet using the contract address found in the [deployed contracts](../../deployed-contracts/) page, or click the wallet icon near the USDFC contract info on the USDFC app
 * **High Gas Fees**: Try again when network congestion is lower or adjust your gas settings
 
 ## Common Questions

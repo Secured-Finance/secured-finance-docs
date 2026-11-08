@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="354" height="358" viewBox="0 0 354 358" role="img" aria-labelledby="title desc"><title id="title">Starting order book</title><desc id="desc">Resting BORROW orders: 10 at 90.00 and 10 at 81.00. Resting LEND orders: 5 at 79.00 and 10 at 75.00. LEND ceiling 88.00, reference 80.00, BORROW floor 76.00.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3555AC"/></marker></defs><rect width="354" height="358" fill="white"/><g font-family="Arial, Helvetica, sans-serif" fill="#25324B">
+<text x="12" y="25" font-size="16" font-weight="600" fill="#25324B" text-anchor="start">Start · resting orders</text>
+<text x="12" y="60" font-size="14" font-weight="600" fill="#3555AC" text-anchor="start">Price</text>
+<text x="125" y="60" font-size="14" font-weight="600" fill="#3555AC" text-anchor="start">BORROW</text>
+<text x="249" y="60" font-size="14" font-weight="600" fill="#3555AC" text-anchor="start">LEND</text>
+<path d="M 12 72 H 342" stroke="#DFE5F0"/>
+<text x="12" y="99" font-size="15" font-weight="500" fill="#25324B" text-anchor="start">90.00</text>
+<text x="125" y="99" font-size="15" font-weight="400" fill="#25324B" text-anchor="start">10</text>
+<text x="249" y="99" font-size="15" font-weight="400" fill="#8B94A4" text-anchor="start">—</text>
+<rect x="8" y="113" width="338" height="35" rx="3" fill="#F5F7FC"/>
+<text x="12" y="137" font-size="15" font-weight="500" fill="#3555AC" text-anchor="start">88.00</text>
+<text x="125" y="137" font-size="14" font-weight="400" fill="#566176" text-anchor="start">LEND ceiling</text>
+<text x="12" y="175" font-size="15" font-weight="500" fill="#25324B" text-anchor="start">81.00</text>
+<text x="125" y="175" font-size="15" font-weight="400" fill="#25324B" text-anchor="start">10</text>
+<text x="249" y="175" font-size="15" font-weight="400" fill="#8B94A4" text-anchor="start">—</text>
+<rect x="8" y="189" width="338" height="35" rx="3" fill="#F5F7FC"/>
+<text x="12" y="213" font-size="15" font-weight="500" fill="#3555AC" text-anchor="start">80.00</text>
+<text x="125" y="213" font-size="14" font-weight="400" fill="#566176" text-anchor="start">Reference only</text>
+<text x="12" y="251" font-size="15" font-weight="500" fill="#25324B" text-anchor="start">79.00</text>
+<text x="125" y="251" font-size="15" font-weight="400" fill="#8B94A4" text-anchor="start">—</text>
+<text x="249" y="251" font-size="15" font-weight="400" fill="#25324B" text-anchor="start">5</text>
+<rect x="8" y="265" width="338" height="35" rx="3" fill="#F5F7FC"/>
+<text x="12" y="289" font-size="15" font-weight="500" fill="#3555AC" text-anchor="start">76.00</text>
+<text x="125" y="289" font-size="14" font-weight="400" fill="#566176" text-anchor="start">BORROW floor</text>
+<text x="12" y="327" font-size="15" font-weight="500" fill="#25324B" text-anchor="start">75.00</text>
+<text x="125" y="327" font-size="15" font-weight="400" fill="#8B94A4" text-anchor="start">—</text>
+<text x="249" y="327" font-size="15" font-weight="400" fill="#25324B" text-anchor="start">10</text>
+</g></svg>

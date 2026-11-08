@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="354" height="746" viewBox="0 0 354 746" role="img" aria-labelledby="title desc"><title id="title">Order life cycle</title><desc id="desc">One limit-order-based state machine. Accepted limit orders begin Open, Partially Filled or Filled. Open and Partially Filled can become Filled, Cancelled or Expired. Expired to Cancelled is a display-only update. Market execution outcomes are annotated below, not transitions from resting limit orders.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3555AC"/></marker></defs><rect width="354" height="746" fill="white"/><g font-family="Arial, Helvetica, sans-serif" fill="#25324B">
+<text x="12" y="24" font-size="17" font-weight="600" fill="#25324B" text-anchor="start">Order life cycle</text>
+<text x="12" y="50" font-size="14" font-weight="400" fill="#566176" text-anchor="start">After submission, a limit order starts as</text>
+<text x="12" y="70" font-size="14" font-weight="400" fill="#566176" text-anchor="start">Open, Partially Filled or Filled.</text>
+<path d="M 134 147 C 134 167 80 166 80 192" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 220 147 C 220 167 277 166 277 192" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 177 147 C 177 185 177 228 177 270" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 121 285 C 99 285 80 262 80 234" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 233 285 C 255 285 277 262 277 234" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 121 123 C 9 123 10 123 10 246 C 10 386 10 386 121 386" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 177 312 C 177 334 177 343 177 365" fill="none" stroke="#3555AC" stroke-width="1.5"  marker-end="url(#arrow)"/>
+<path d="M 304 234 C 341 262 341 308 341 345 C 341 386 301 386 233 386" fill="none" stroke="#3555AC" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="121" y="105" width="112" height="42" rx="7" fill="#F5F7FC" stroke="#3555AC" stroke-width="1.4"/>
+<text x="177.0" y="131" font-size="15" font-weight="500" fill="#3555AC" text-anchor="middle">Open</text>
+<rect x="121" y="270" width="112" height="42" rx="7" fill="#F5F7FC" stroke="#3555AC" stroke-width="1.4"/>
+<text x="177.0" y="296" font-size="15" font-weight="500" fill="#3555AC" text-anchor="middle">Partially Filled</text>
+<rect x="35" y="192" width="90" height="42" rx="7" fill="#F5F7FC" stroke="#3555AC" stroke-width="1.4"/>
+<text x="80.0" y="218" font-size="15" font-weight="500" fill="#3555AC" text-anchor="middle">Filled</text>
+<rect x="235" y="192" width="84" height="42" rx="7" fill="#F5F7FC" stroke="#3555AC" stroke-width="1.4"/>
+<text x="277.0" y="218" font-size="15" font-weight="500" fill="#3555AC" text-anchor="middle">Expired</text>
+<rect x="121" y="365" width="112" height="42" rx="7" fill="#F5F7FC" stroke="#3555AC" stroke-width="1.4"/>
+<text x="177.0" y="391" font-size="15" font-weight="500" fill="#3555AC" text-anchor="middle">Cancelled</text>
+<text x="184" y="208" font-size="12" font-weight="400" fill="#566176" text-anchor="start">Partial</text>
+<text x="184" y="224" font-size="12" font-weight="400" fill="#566176" text-anchor="start">fill</text>
+<text x="184" y="340" font-size="12" font-weight="400" fill="#566176" text-anchor="start">Cancel</text>
+<text x="252" y="329" font-size="12" font-weight="400" fill="#566176" text-anchor="start">Display</text>
+<text x="252" y="345" font-size="12" font-weight="400" fill="#566176" text-anchor="start">update</text>
+<text x="252" y="361" font-size="12" font-weight="400" fill="#566176" text-anchor="start">only</text>
+<text x="12" y="432" font-size="14" font-weight="400" fill="#25324B" text-anchor="start">Solid arrows: execution or closure.</text>
+<text x="12" y="454" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">Further partial fills keep the same status.</text>
+<text x="12" y="475" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">Cancellation and expiry close the remainder.</text>
+<text x="12" y="496" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">Dashed arrow: no execution resumes.</text>
+<path d="M 12 513 H 342" stroke="#DFE5F0"/>
+<text x="12" y="540" font-size="15" font-weight="600" fill="#3555AC" text-anchor="start">Market execution · no resting remainder</text>
+<text x="12" y="564" font-size="14" font-weight="600" fill="#25324B" text-anchor="start">Filled</text>
+<text x="91" y="564" font-size="13.5" font-weight="400" fill="#25324B" text-anchor="start">The entire amount executes.</text>
+<text x="12" y="590" font-size="14" font-weight="600" fill="#25324B" text-anchor="start">Blocked</text>
+<text x="91" y="590" font-size="13.5" font-weight="400" fill="#25324B" text-anchor="start">A price bound stops execution.</text>
+<text x="91" y="609" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">The fill can be partial or zero.</text>
+<text x="12" y="635" font-size="14" font-weight="600" fill="#25324B" text-anchor="start">Killed</text>
+<text x="91" y="635" font-size="13.5" font-weight="400" fill="#25324B" text-anchor="start">Liquidity runs out after a partial fill.</text>
+<text x="12" y="665" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">These are immediate market outcomes,</text>
+<text x="12" y="685" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">not transitions from resting limit orders.</text>
+<text x="12" y="717" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">Empty opposite book: transaction reverts</text>
+<text x="12" y="736" font-size="13.5" font-weight="400" fill="#566176" text-anchor="start">before entering the accepted-order flow.</text>
+</g></svg>

@@ -4,7 +4,7 @@ description: Borrow more USDFC from an existing Trove
 
 # 👛 Minting USDFC Step-by-Step
 
-If you already have a Trove, you can mint more USDFC against it subject to the mode the system is in: in Normal Mode, your resulting ratio must be at least 110% and the system-wide ratio at least 150%; during [Recovery Mode](../core-mechanics/recovery-mode.md), your ratio must end at 150% or higher and must not decrease. You'll need your Trove open and some FIL for gas.
+If you already have a Trove, you can request additional USDFC against it. You'll need your Trove open and some FIL for gas.
 
 <figure><img src="../../.gitbook/assets/step2.gif" alt="Animated walkthrough of minting more USDFC"><figcaption><p>Quick walkthrough of this step</p></figcaption></figure>
 
@@ -29,6 +29,16 @@ With an open Trove, the **Update Trove** tab is already selected when you land o
 
 ## Step 3 — Confirm
 
+{% hint style="warning" %}
+**Before borrowing more, check all three:**
+
+* **Oracle:** any debt increase requires a current primary-oracle price, even when adding FIL in the same transaction. Read the [Trove page's price warning](../core-mechanics/price-oracle.md#checking-oracle-status-in-the-app).
+* **Mode and ratios:** in Normal Mode, the adjustment must leave your ratio at least 110% and the whole system's ratio at least 150%. In Recovery Mode, your resulting ratio must be at least 150% and no lower than before the adjustment.
+* **Costs:** review the new total debt, borrowing fee and gas before signing.
+
+See the [full borrowing rules](../core-mechanics/recovery-mode.md#what-changes), including combined adjustments.
+{% endhint %}
+
 Click **Update Trove** and confirm in your wallet. The newly minted USDFC is sent to your wallet in full; the fee is added to your debt.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-03-27 19.13.19.png" alt="Confirming the Update Trove transaction"><figcaption><p>Confirming the Update Trove transaction</p></figcaption></figure>
@@ -45,7 +55,8 @@ For each borrowing operation, your wallet receives the requested amount and your
 
 ## Troubleshooting
 
-* **Update Trove is disabled** — the new ratio would fall below 110%, or (in Recovery Mode) the adjustment doesn't leave the Trove at 150%+ without lowering its ratio.
+* **Oracle restriction** — A displayed price does not establish that additional borrowing is available. Check the [oracle requirements](../core-mechanics/price-oracle.md#which-actions-remain-available).
+* **Update Trove is disabled** — check the [mode-specific borrowing requirements](../core-mechanics/recovery-mode.md#what-changes) for the proposed adjustment.
 * **Transaction reverts** — the FIL price may have moved; refresh and re-check the resulting ratio before confirming again.
 * **USDFC not in your wallet** — add the token via "Add USDFC to Wallet" on the Dashboard, or check the transaction on Filfox.
 

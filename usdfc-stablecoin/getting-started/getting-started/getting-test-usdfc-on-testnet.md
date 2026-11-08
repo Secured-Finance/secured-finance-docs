@@ -1,8 +1,16 @@
 ---
-description: Learn how to get and use test USDFC on the Filecoin Calibration testnet
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Getting Test USDFC on Testnet'
+hidden: true
 ---
 
-# 🧪 Getting Test USDFC on Testnet
+# 🧪 Archived UI v1: Getting Test USDFC on Testnet
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Getting Test USDFC on Testnet guide](../getting-test-usdfc-on-testnet.md).
 
 ## Overview
 

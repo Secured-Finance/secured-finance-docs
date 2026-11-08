@@ -87,16 +87,19 @@ Polygon zkEVM legacy addresses:
 
 ## Audit reports
 
-| Auditor    | Scope                        | Period     | Report                                                                                                            |
-| ---------- | ---------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------- |
-| Quantstamp | Fixed-Rate Lending contracts | 2023/10–11 | [2023-11-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2023-11-Quantstamp.pdf) |
-| Quantstamp | Fixed-Rate Lending contracts | 2024/3     | [2024-03-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2024-03-Quantstamp.pdf) |
+| Auditor    | Scope                                                                   | Period     | Report                                                                                                                                                                                                 |
+| ---------- | ----------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Quantstamp | Fixed-Rate Lending contracts                                            | 2023/10–11 | [2023-11-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2023-11-Quantstamp.pdf)                                                                                      |
+| Quantstamp | Fixed-Rate Lending contracts                                            | 2024/3     | [2024-03-Quantstamp.pdf](https://github.com/Secured-Finance/contracts/blob/develop/audits/2024-03-Quantstamp.pdf)                                                                                      |
+| Quantstamp | September 2026 incident: root cause, fix verification, remediation plan | 2026/9     | [2026-09-Quantstamp-Incident-Technical-Report.pdf](https://github.com/Secured-Finance/contracts/blob/c1ef5ea873564f6f3cf6df49587733b166694ecd/audits/2026-09-Quantstamp-Incident-Technical-Report.pdf) |
+
+The 2023 and 2024 audits cover the contracts as deployed at those dates. The September 2026 report covers the incident's root cause, a deterministic reproduction, a mainnet-fork replay confirming that the fix ([PR #435](https://github.com/Secured-Finance/contracts/pull/435)) reverts the attack, and the remediation plan. The state corrections that followed ([PR #444](https://github.com/Secured-Finance/contracts/pull/444), [PR #446](https://github.com/Secured-Finance/contracts/pull/446)) and their verification are documented in [Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md). Every contract change since the 2024 audit, with its pull request and execution transactions, is listed in [Contract Upgrade History](contract-upgrade-history.md); no audit report other than the September 2026 report has been published for those changes.
 
 USDFC Stablecoin audits (Hexens 2025/1, Decurity 2025/3) are listed in the [USDFC documentation](../../usdfc-stablecoin/deployed-contracts/).
 
 ## Security resources
 
-* **Bug Bounty** — vulnerabilities are rewarded through our [Bug Bounty program](../../developer-portal/bug-bounty.md)
+* **Bug Bounty** — the [Bug Bounty program](../../developer-portal/bug-bounty.md) currently covers the USDFC contracts; there is no bounty program for the Fixed-Rate Lending contracts at present
 * **Runtime protections** — [Circuit Breaker](../advanced-topics/circuit-breaker.md), [Base Price Adjustment](../advanced-topics/base-price-adjustment.md), and [minimum-volume Mark Pricing](../core-concepts/liquidation/mark-to-market.md)
 * **Last resort** — [Emergency Global Settlement](../advanced-topics/emergency-global-settlement.md)
 * **Verify parameters yourself** — on-chain getters listed in [Protocol Parameters](../protocol-parameters.md)

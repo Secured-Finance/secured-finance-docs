@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="878" viewBox="0 0 640 878" role="img" aria-labelledby="title desc">
+<title id="title">Three wallet options</title><desc id="desc">Software wallets and hardware wallets let you control your keys. With a custodial account, a provider holds the keys. This guide uses MetaMask as a software-wallet example.</desc>
+<rect width="640" height="878" rx="24" fill="#f5f8fc"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#152c4b">
+<text x="32" y="59" font-size="36" font-weight="700">Three wallet options</text>
+<text x="32" y="98" font-size="25" fill="#51657d">Compare who controls the keys</text>
+<rect x="24" y="128" width="592" height="212" rx="18" fill="#eaf3ff" stroke="#8db5e8" stroke-width="2"/>
+<g fill="none" stroke="#225eab" stroke-width="3"><rect x="48" y="161" width="40" height="57" rx="7"/><path d="M59 170h18M62 208h12"/></g>
+<text x="111" y="181" font-size="32" font-weight="700">Software wallet</text>
+<text x="111" y="226" font-size="26">You control the keys.</text>
+<text x="111" y="264" font-size="26">App or browser extension.</text>
+<text x="111" y="305" font-size="24" fill="#225eab" font-weight="700">This guide uses MetaMask.</text>
+<rect x="24" y="360" width="592" height="212" rx="18" fill="#ffffff" stroke="#d6e0ec" stroke-width="2"/>
+<g fill="none" stroke="#51657d" stroke-width="3"><rect x="44" y="398" width="49" height="32" rx="8"/><rect x="53" y="406" width="19" height="14" rx="2"/><circle cx="82" cy="413" r="2"/></g>
+<text x="111" y="413" font-size="32" font-weight="700">Hardware wallet</text>
+<text x="111" y="458" font-size="26">You control keys on a device.</text>
+<text x="111" y="496" font-size="26">Review what you sign.</text>
+<text x="111" y="537" font-size="24" fill="#51657d">Check app and network support.</text>
+<rect x="24" y="592" width="592" height="212" rx="18" fill="#ffffff" stroke="#d6e0ec" stroke-width="2"/>
+<g fill="none" stroke="#51657d" stroke-width="3"><path d="M43 638l26-17 26 17M46 642h46M49 676h40M53 646v25M69 646v25M85 646v25"/></g>
+<text x="111" y="645" font-size="32" font-weight="700">Custodial account</text>
+<text x="111" y="690" font-size="26">A provider holds the keys.</text>
+<text x="111" y="728" font-size="26">Example: an exchange account.</text>
+<text x="111" y="769" font-size="24" fill="#51657d">Different from this wallet setup.</text>
+<text x="32" y="849" font-size="22" fill="#51657d">Original illustration, not a wallet screenshot.</text>
+</g></svg>

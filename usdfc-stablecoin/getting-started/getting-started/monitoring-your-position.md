@@ -1,8 +1,16 @@
 ---
-description: Learn how to track and manage your Trove's health
+description: >-
+  Historical UI v1 instructions. Use the linked current guide for current steps
+  and protocol rules.
+tagTitle: 'Archived UI v1: Monitoring Your Position'
+hidden: true
 ---
 
-# 🏦 Monitoring Your Position
+# 🏦 Archived UI v1: Monitoring Your Position
+
+{% include "../../../.gitbook/includes/usdfc-archived-ui-v1-notice.md" %}
+
+For current instructions, use the [Monitoring Your Position guide](../monitoring-your-position.md).
 
 ## Prerequisites
 
@@ -42,15 +50,17 @@ $$
 * **Danger Zone**: 110% to 150% (High risk)
 * **Liquidation Zone**: Below 110% (Immediate risk)
 
-
 ### Liquidation Price
+
+{% hint style="warning" %}
+**Current correction:** The 110%-based price calculation below covers Normal Mode only and does not determine Recovery Mode eligibility. See [current liquidation rules](../../core-mechanics/recovery-mode.md#liquidation-behavior-in-recovery-mode).
+{% endhint %}
 
 The liquidation price is the FIL price at which your Trove would reach the minimum collateral ratio (110%) and become eligible for liquidation.
 
 $$
 \text{Liquidation Price} = \frac{\text{Debt in USDFC} \times 1.1}{\text{Collateral in FIL}}
 $$
-
 
 ### Current FIL Price
 
@@ -81,6 +91,10 @@ Use blockchain monitoring tools to track your Trove's health.
 3. Configure alerts for significant changes to your Trove
 
 ## Step 4: Regular Check-ins
+
+{% hint style="warning" %}
+Current correction: The daily, weekly and monthly schedules below are historical suggestions, not safe monitoring intervals. Recheck after market, oracle, system-mode or position changes. A high starting ratio does not guarantee time to act.
+{% endhint %}
 
 Establish a routine for checking your Trove's health.
 
@@ -123,7 +137,6 @@ Develop a plan for responding to different market scenarios.
 1. Evaluate if you want to withdraw some collateral
 2. Consider minting additional USDFC
 3. Rebalance your position to maintain your target collateral ratio
-
 
 ## Next Steps
 

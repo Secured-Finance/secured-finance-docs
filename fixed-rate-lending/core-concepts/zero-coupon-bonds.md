@@ -6,9 +6,9 @@ description: >-
 
 # 💠 Zero-Coupon Bonds
 
-A **Zero-Coupon (ZC) bond** pays no periodic interest. It trades at a discount and is redeemed at its full face value at maturity — the discount _is_ the interest. On Secured Finance, every ZC bond has a face value (par) of **100**, so a bond's price directly expresses its market-implied rate.
+A **Zero-Coupon (ZC) bond** pays no periodic interest. The difference between its purchase price and face value determines its rate for the term. Secured Finance quotes bond prices against a par value of **100**. Here, face value is the position’s maturity accounting value: at maturity the position **auto-rolls**, rather than automatically paying funds to your wallet. Review [Fixed Maturity & Auto-Roll](fixed-maturity-and-auto-roll.md) for the rollover rate and fees.
 
-The ZC structure was chosen deliberately: only two cash flows (entry and maturity) means minimal gas, no coupon tracking or reinvestment, and transparent yield math.
+The discount-to-par structure makes term rates comparable without periodic coupon payments. Closing the position requires an executed unwind or offsetting trade against available liquidity, followed by a separate withdrawal.
 
 ## Price, discount factor, and value
 
@@ -18,13 +18,15 @@ $$
 \text{ZC Bond Price} = \text{Discount Factor} \times 100
 $$
 
-From any position you can compute present and future value:
+For an executed amount at a given price, the gross relationship before fees is:
 
 $$
 FV = PV \times \frac{100}{\text{Bond Price}}
 $$
 
-**Example:** Bob buys 1,000 FIL notional of a ZC bond at 96.90. He pays 969 FIL today (PV) and holds a claim worth 1,000 FIL at maturity (FV) — a 3.2% return over the term, fixed at execution.
+**Example, excluding fees:** a fully executed purchase of 1,000 USDC face value at 96.90 costs 969 USDC (PV). The 31 USDC difference represents about **3.20% over the term**, not an annual rate. Actual proceeds depend on fees and how and when the position is closed.
+
+**What to enter in the app:** the order **Amount** is PV in the selected currency. For example, an amount of 100 USDC fully executed at a price of 98 corresponds to approximately **102.0408 USDC FV** before fees and rounding (100 × 100 ÷ 98). Entering 100 USDC does not mean exactly 100 USDC of maturity value. Market orders can execute at several prices or fill only partly, so verify actual filled amounts and the resulting position.
 
 ## Converting price to APR
 
@@ -36,7 +38,7 @@ $$
 APR = \left(\frac{100}{\text{Bond Price}} - 1\right)\times\frac{\text{seconds per year}}{\text{seconds to maturity}}
 $$
 
-_Example:_ a 3-month bond at 98.50 → (100/98.50 − 1) × 4.055 ≈ **6.17% APR**.
+**Example:** a bond with 90 days remaining at 98.50 → (100/98.50 − 1) × (365/90) ≈ **6.18% APR**, before fees.
 
 **Maturities over 1 year** (annual compounding):
 
@@ -56,10 +58,10 @@ Orders are capped at a price of **100.00** — the protocol does not allow negat
 
 ## Buying and selling in practice
 
-* **Lend = buy the bond.** Your yield is locked if you hold to maturity.
-* **Borrow = sell the bond.** You receive the discounted amount now and owe 100 per bond at maturity. Requires [collateral](collateral.md).
-* **Exit anytime** by unwinding — taking the opposite side in the same market at the current price. Rates may have moved for or against you.
-* **At maturity** the position [auto-rolls](fixed-maturity-and-auto-roll.md); there is no automatic settlement. Unwind to withdraw funds.
+* **Lend = buy the bond.** The execution price fixes the gross rate for the current term. Fees and the price at which you exit affect the realized return.
+* **Borrow = sell the bond.** Execution credits funds to your protocol balance and creates an FV debt position. It requires [collateral](collateral.md); maturity does not automatically repay the debt.
+* **To exit**, use Unwind or execute an opposite order in the same currency and maturity. Liquidity and permitted prices can limit execution to part or none of the position. Rates and fees may have moved against you; verify the remaining position after each attempt.
+* **At maturity** the position [auto-rolls](fixed-maturity-and-auto-roll.md) at a new rate with a roll fee. To receive available assets in your wallet, close the intended exposure and then withdraw.
 
 ## Common questions
 
@@ -67,7 +69,7 @@ Orders are capped at a price of **100.00** — the protocol does not allow negat
 
 <summary>Why use ZC bonds instead of interest-bearing loans?</summary>
 
-Two cash flows are cheaper and safer on-chain than many: less gas, no reinvestment risk for lenders, and clear upfront terms. The discount-to-par structure also makes yields directly comparable across maturities.
+There are no periodic coupon payments to track. The discount-to-par structure makes rates for different maturities comparable, but it does not remove smart-contract risk, exit-liquidity risk, or the risk of a different rate at Auto-Roll.
 
 </details>
 
@@ -75,7 +77,7 @@ Two cash flows are cheaper and safer on-chain than many: less gas, no reinvestme
 
 <summary>How is my yield affected if I sell before maturity?</summary>
 
-Your realized yield depends on the price you sell at. If rates have fallen since you bought, the bond price has risen and you gain; if rates have risen, you may realize less than the original APR.
+Your realized return depends on the execution price, filled amount and fees. A fall in rates generally raises bond prices, while a rise lowers them. An early exit can realize a loss, and available liquidity may prevent full closure.
 
 </details>
 

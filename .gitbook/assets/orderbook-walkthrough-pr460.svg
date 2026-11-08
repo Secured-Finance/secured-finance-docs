@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1470" viewBox="0 0 2000 1470"><rect width="2000" height="1470" fill="white"/><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker></defs>
+<text x="1000" y="58" font-family="DejaVu Sans, sans-serif" font-size="36" font-weight="bold" fill="#171717" text-anchor="middle">One order book, three different outcomes</text>
+<text x="1000" y="100" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="normal" fill="#171717" text-anchor="middle">Each case resets this book. Amounts are Present Value (PV); assume all other checks pass.</text>
+<rect x="60" y="135" width="1880" height="85" rx="16" fill="#F5F3FB" stroke="#C6B8E7" stroke-width="2"/>
+<text x="95" y="171" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="bold" fill="#171717" text-anchor="start">Shared reference R = 80.00   •   Base percentage r = 5%</text>
+<text x="95" y="205" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="normal" fill="#171717" text-anchor="start">LEND upper threshold U = 88.00   •   BORROW lower threshold D = 76.00</text>
+<text x="85" y="267" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="bold" fill="#171717" text-anchor="start">START: resting orders</text>
+<rect x="60" y="290" width="1220" height="465" rx="16" fill="#FFF" stroke="#B2A1D8" stroke-width="2"/>
+<rect x="60" y="290" width="1220" height="60" rx="16" fill="#EDE9FE" stroke="#B2A1D8" stroke-width="2"/>
+<text x="90" y="330" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">Price</text>
+<text x="300" y="330" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">BORROW offers (sell ZC)</text>
+<text x="830" y="330" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">LEND bids (buy ZC)</text>
+<text x="90" y="387" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="normal" fill="#171717" text-anchor="start">90.00</text>
+<text x="300" y="387" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="830" y="387" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<rect x="61" y="406" width="1218" height="56" fill="#FAF9FD"/>
+<line x1="60" y1="406" x2="1280" y2="406" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="443" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="bold" fill="#6C4BA4" text-anchor="start">88.00</text>
+<text x="300" y="443" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#6C4BA4" text-anchor="start">LEND upper execution threshold</text>
+<text x="830" y="443" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<line x1="60" y1="462" x2="1280" y2="462" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="499" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="normal" fill="#171717" text-anchor="start">81.00</text>
+<text x="300" y="499" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="830" y="499" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<rect x="61" y="518" width="1218" height="56" fill="#FAF9FD"/>
+<line x1="60" y1="518" x2="1280" y2="518" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="555" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="bold" fill="#6C4BA4" text-anchor="start">80.00</text>
+<text x="300" y="555" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#6C4BA4" text-anchor="start">Shared reference; not an order</text>
+<text x="830" y="555" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<line x1="60" y1="574" x2="1280" y2="574" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="611" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="normal" fill="#171717" text-anchor="start">79.00</text>
+<text x="300" y="611" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<text x="830" y="611" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start">5</text>
+<rect x="61" y="630" width="1218" height="56" fill="#FAF9FD"/>
+<line x1="60" y1="630" x2="1280" y2="630" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="667" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="bold" fill="#6C4BA4" text-anchor="start">76.00</text>
+<text x="300" y="667" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#6C4BA4" text-anchor="start">BORROW lower execution threshold</text>
+<text x="830" y="667" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<line x1="60" y1="686" x2="1280" y2="686" stroke="#E1DCEB" stroke-width="2"/>
+<text x="90" y="723" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="normal" fill="#171717" text-anchor="start">75.00</text>
+<text x="300" y="723" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start"></text>
+<text x="830" y="723" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<line x1="250" y1="290" x2="250" y2="755" stroke="#D6CCE8" stroke-width="2"/>
+<rect x="1320" y="290" width="620" height="205" rx="16" fill="#F8F6FD" stroke="#B2A1D8" stroke-width="2"/>
+<text x="1350" y="330" font-family="DejaVu Sans, sans-serif" font-size="23" font-weight="bold" fill="#171717" text-anchor="start">LEND taker: buy cheaper offers first</text>
+<text x="1350" y="372" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717" text-anchor="start">81.00 → 90.00</text>
+<text x="1350" y="411" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">Cases A and B: 10 fills at 81.00.</text>
+<text x="1350" y="449" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">90.00 exceeds U = 88.00.</text>
+<text x="1350" y="480" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#171717" text-anchor="start">That offer stays on the book.</text>
+<rect x="1320" y="520" width="620" height="235" rx="16" fill="#F8F6FD" stroke="#B2A1D8" stroke-width="2"/>
+<text x="1350" y="560" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">BORROW taker: sell to higher bids first</text>
+<text x="1350" y="602" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717" text-anchor="start">79.00 → 75.00</text>
+<text x="1350" y="641" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#171717" text-anchor="start">A market BORROW of 10 fills 5 at 79.00.</text>
+<text x="1350" y="679" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#171717" text-anchor="start">The other 5 are Blocked: 75.00 &lt; D.</text>
+<text x="1350" y="718" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="normal" fill="#171717" text-anchor="start">The bid at 75.00 stays on the book.</text>
+<rect x="60" y="800" width="600" height="560" rx="16" fill="#FFF" stroke="#9370DB" stroke-width="2"/>
+<rect x="60" y="800" width="600" height="63" rx="16" fill="#EDE9FE" stroke="#9370DB" stroke-width="2"/>
+<text x="85" y="841" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">A • LEND 20 at market</text>
+<text x="85" y="904" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#6C4BA4" text-anchor="start">Partially Filled &amp; Blocked</text>
+<text x="85" y="946" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="normal" fill="#171717" text-anchor="start">Fills 10 at 81.00; 10 does not rest.</text>
+<text x="85" y="995" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="bold" fill="#6B6B6B" text-anchor="start">AFTER</text>
+<text x="85" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">Price</text>
+<text x="265" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">BORROW</text>
+<text x="460" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">LEND</text>
+<line x1="80" y1="1050" x2="640" y2="1050" stroke="#B5A5D4" stroke-width="2"/>
+<text x="85" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">90.00</text>
+<text x="265" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="460" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="85" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">88.00</text>
+<text x="265" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="460" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="85" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">81.00</text>
+<text x="265" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="460" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="85" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">79.00</text>
+<text x="265" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="460" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">5</text>
+<text x="85" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">75.00</text>
+<text x="265" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="460" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<rect x="700" y="800" width="600" height="560" rx="16" fill="#FFF" stroke="#9370DB" stroke-width="2"/>
+<rect x="700" y="800" width="600" height="63" rx="16" fill="#EDE9FE" stroke="#9370DB" stroke-width="2"/>
+<text x="725" y="841" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">B • LEND 15, limit 88.00</text>
+<text x="725" y="904" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#6C4BA4" text-anchor="start">Partially Filled</text>
+<text x="725" y="946" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="normal" fill="#171717" text-anchor="start">Fills 10 at 81.00; 5 rests at 88.00.</text>
+<text x="725" y="995" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="bold" fill="#6B6B6B" text-anchor="start">AFTER</text>
+<text x="725" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">Price</text>
+<text x="905" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">BORROW</text>
+<text x="1100" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">LEND</text>
+<line x1="720" y1="1050" x2="1280" y2="1050" stroke="#B5A5D4" stroke-width="2"/>
+<text x="725" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">90.00</text>
+<text x="905" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="1100" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<rect x="1090" y="1109" width="165" height="44" rx="5" fill="#E2F3E6" stroke="#71A77B" stroke-width="2"/>
+<text x="725" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">88.00</text>
+<text x="905" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1100" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#25733B" text-anchor="start">5 NEW</text>
+<text x="725" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">81.00</text>
+<text x="905" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1100" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="725" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">79.00</text>
+<text x="905" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1100" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">5</text>
+<text x="725" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">75.00</text>
+<text x="905" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1100" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<rect x="1340" y="800" width="600" height="560" rx="16" fill="#FFF" stroke="#9370DB" stroke-width="2"/>
+<rect x="1340" y="800" width="600" height="63" rx="16" fill="#EDE9FE" stroke="#9370DB" stroke-width="2"/>
+<text x="1365" y="841" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#171717" text-anchor="start">C • LEND 15, limit 93.00</text>
+<text x="1365" y="904" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="bold" fill="#6C4BA4" text-anchor="start">Reverted transaction</text>
+<text x="1365" y="946" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="normal" fill="#171717" text-anchor="start">93.00 &gt; accepted LEND maximum 88.00.</text>
+<text x="1365" y="995" font-family="DejaVu Sans, sans-serif" font-size="20" font-weight="bold" fill="#6B6B6B" text-anchor="start">AFTER</text>
+<text x="1365" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">Price</text>
+<text x="1545" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">BORROW</text>
+<text x="1740" y="1035" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="bold" fill="#171717" text-anchor="start">LEND</text>
+<line x1="1360" y1="1050" x2="1920" y2="1050" stroke="#B5A5D4" stroke-width="2"/>
+<text x="1365" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">90.00</text>
+<text x="1545" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="1740" y="1089" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1365" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">88.00</text>
+<text x="1545" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1740" y="1141" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1365" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">81.00</text>
+<text x="1545" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="1740" y="1193" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1365" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">79.00</text>
+<text x="1545" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1740" y="1245" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">5</text>
+<text x="1365" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">75.00</text>
+<text x="1545" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#999" text-anchor="start">—</text>
+<text x="1740" y="1297" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="normal" fill="#171717" text-anchor="start">10</text>
+<text x="1000" y="1410" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="normal" fill="#171717" text-anchor="middle">The thresholds apply to the taker side. Resting BORROW at 90.00 and LEND at 75.00 are valid passive orders.</text>
+</svg>

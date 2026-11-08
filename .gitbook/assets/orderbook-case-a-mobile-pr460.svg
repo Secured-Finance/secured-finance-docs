@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="570" viewBox="0 0 600 570"><rect width="600" height="570" fill="white"/>
+<rect x="20" y="20" width="560" height="530" rx="10" fill="#FFF" stroke="#9370DB" stroke-width="2"/>
+<rect x="20" y="20" width="560" height="65" rx="10" fill="#EDE9FE" stroke="#9370DB" stroke-width="2"/>
+<text x="40" y="63" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">A · Market LEND 20</text>
+<text x="40" y="125" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#6C4BA4">Partially Filled &amp; Blocked</text>
+<text x="40" y="170" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="normal" fill="#171717">10 filled at 81.00; 10 stopped.</text>
+<text x="40" y="225" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="bold" fill="#555">AFTER</text>
+<text x="40" y="275" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">Price</text>
+<text x="205" y="275" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">BORROW</text>
+<text x="423" y="275" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="bold" fill="#171717">LEND</text>
+<line x1="35" y1="290" x2="565" y2="290" stroke="#D9D0EA" stroke-width="2"/>
+<text x="40" y="335" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">90.00</text>
+<text x="205" y="335" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">10</text>
+<text x="423" y="335" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="40" y="384" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">88.00</text>
+<text x="205" y="384" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="423" y="384" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="40" y="433" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">81.00</text>
+<text x="205" y="433" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="423" y="433" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="40" y="482" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">79.00</text>
+<text x="205" y="482" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="423" y="482" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">5</text>
+<text x="40" y="531" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">75.00</text>
+<text x="205" y="531" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#999">—</text>
+<text x="423" y="531" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="normal" fill="#171717">10</text>
+</svg>

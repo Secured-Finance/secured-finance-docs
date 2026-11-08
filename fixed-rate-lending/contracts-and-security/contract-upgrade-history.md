@@ -1,23 +1,25 @@
 # ⛑️ Contract Upgrade History
 
+Dates and execution times are UTC. Upgrade transactions record deployment; configuration observations below record only the state checked at the stated date or block.
+
 ## 6 November 2026 — Circuit-breaker security update
 
 On 6 November 2026, we strengthened the circuit-breaker safeguards against excessive price movements within a single block. Fixed-Rate Lending trading, deposits and withdrawals were temporarily paused as a precaution while the update was prepared and deployed.
 
 The update was deployed on Ethereum Mainnet, Arbitrum One and Filecoin.
 
-### Safeguards
+### Changes
 
 * LEND and BORROW thresholds use a common reference based on up to three previous reliable block prices. Current-block trades do not change that reference within the block.
-* Active-market limit orders must satisfy the applicable circuit-breaker bounds and the existing order-price range.
+* Active-market limit orders must satisfy the applicable circuit-breaker bounds and the existing order-price range. An out-of-range limit order is rejected before any fill, even if matching liquidity is available at permitted prices.
 
-### Using the updated markets
+### User impact
 
 Users should place active-market limit orders within the permitted price range. Integrators should use the updated ABI, including the `referenceUnitPrice` return value.
 
-This update describes the deployed safeguards; it is not an independent audit or a guarantee against all market risks.
+This November entry documents price-reference and order-placement hardening. For the September incident’s cause and recovery, see [Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md) and the [September incident postmortem](https://medium.com/secured-finance/postmortem-the-september-2026-lending-protocol-incident-and-our-recovery-28bd48e68f22).
 
-### Execution
+### Execution transactions
 
 Successful contract upgrades on 6 November 2026 (UTC):
 
@@ -27,14 +29,20 @@ Successful contract upgrades on 6 November 2026 (UTC):
 
 Code reference: [Contracts #460](https://github.com/Secured-Finance/contracts/pull/460).
 
-## 23 October 2026 upgrade
+## 23 October 2026 — Pre-order minimums and withdrawal accounting
 
 The Fixed-Rate Lending contracts were upgraded on Ethereum, Arbitrum and Filecoin.
+
+### Changes
 
 * [PR #447](https://github.com/Secured-Finance/contracts/pull/447) adds configurable minimum pre-order amounts per currency to reduce negligible-value order spam.
 * [PR #450](https://github.com/Secured-Finance/contracts/pull/450) improves withdrawal calculations so small borrowing balances remain accounted for and full deposits can be withdrawn when sufficient collateral remains.
 
+### User impact
+
 No position migration is required. Integrations using `cleanUpAllFunds(address)` should use the currency-specific `cleanUpFunds(bytes32,address)` instead.
+
+### Execution transactions
 
 Successful executions on 23 October 2026 (UTC):
 
@@ -42,9 +50,19 @@ Successful executions on 23 October 2026 (UTC):
 * [Arbitrum One](https://arbiscan.io/tx/0x1410fd6d7a69a0d84c5058d25499fd69454b58f4aa34c5cd6b23524974b3a70b) — 00:31:34 UTC
 * [Filecoin](https://filecoin.blockscout.com/tx/0xb56e4cef7f3ca586884913605e0c1aafbe95c715e4d26d3d6f806b2124ebd58b) — 00:32:30 UTC
 
-## October 2026 recovery and reopening
+## October 2026 — Recovery and reopening
 
-Recovery-related contract updates were executed on Ethereum, Arbitrum and Filecoin. Corrections executed on 15 October under [PR #444](https://github.com/Secured-Finance/contracts/pull/444) cleared residual order-book entries and reversed an affected Filecoin fill. The subsequent [PR #446](https://github.com/Secured-Finance/contracts/pull/446) cleanup removed temporary recovery functionality and restored order-estimation functions.
+Recovery-related contract updates were executed on Ethereum, Arbitrum and Filecoin.
+
+### Changes
+
+Corrections executed on 15 October under [PR #444](https://github.com/Secured-Finance/contracts/pull/444) cleared residual order-book entries and reversed an affected Filecoin fill. The subsequent [PR #446](https://github.com/Secured-Finance/contracts/pull/446) cleanup removed temporary recovery functionality and restored order-estimation functions.
+
+### User impact
+
+Markets and TokenVaults reopened on 16 October following production-state verification. See [September 2026 Incident: Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md) for correction results, verification scope and supporting evidence.
+
+### Execution transactions
 
 Cleanup upgrade executions:
 
@@ -52,13 +70,11 @@ Cleanup upgrade executions:
 * [Arbitrum](https://arbiscan.io/tx/0x9d7e05e40ef4b294c1730345a27128b46b56c8002ff713dea7934d395df4193f)
 * [Filecoin](https://filecoin.blockscout.com/tx/0x6a5943d4c848a01e0ab0b053ced64f40fe301c5e32a4fcccfd391c4e9d412eba)
 
-Markets and TokenVaults reopened on 16 October following production-state verification. See [September 2026 Incident: Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md) for the correction results, verification scope and supporting evidence.
-
-Dates are UTC. Execution transactions are distinct from proposal approvals.
-
-## September 2026 upgrade
+## 24 September 2026 — Order-book and recovery tooling update
 
 The engineering team confirmed execution on Ethereum Mainnet, Arbitrum One and Filecoin on 24 September 2026 (UTC).
+
+### Changes
 
 Source reference: Contracts PR #435, merged into develop on 24 September 2026.
 
@@ -66,21 +82,27 @@ Source reference: Contracts PR #435, merged into develop on 24 September 2026.
 
 Merge commit: 68d29760d53891f8a4e89069b1de6831febea54b
 
-Changes include revised order-book tree removal and rebalancing, chunk metadata, order-price and growth limits, batched Itayose, recovery tooling, and TokenVault safeguards. Inclusion of recovery tools does not mean recovery has been executed for every position.
+Changes include revised order-book tree removal and rebalancing, chunk metadata, order-price and growth limits, batched Itayose, recovery tooling, and TokenVault safeguards.
 
-### Ethereum Mainnet
+### User impact
+
+This deployment made the revised order-book and recovery tooling available. For completed recovery actions and reopening, see the October entry and [Recovery & Verification](security-and-incident-reports/incident-recovery-and-verification.md).
+
+### Execution transactions
+
+**Ethereum Mainnet**
 
 Ethereum: successful execution on 24 September 2026 at 22:47:59 UTC, block 26,050,390.
 
 [View Ethereum transaction](https://etherscan.io/tx/0x03a64f5fc22a8e1b58e925509bd5cdc7cb2d0207600388373e64de58a9679204)
 
-### Arbitrum One
+**Arbitrum One**
 
 Arbitrum: successful execution on 24 September 2026 at 23:11:00 UTC, block 508,590,941.
 
 [View Arbitrum transaction](https://arbiscan.io/tx/0xce98babc6739dfbee481efe13685df3110f6cbb21f22941782ceaaf964edd279)
 
-### Filecoin
+**Filecoin**
 
 Filecoin: both upgrade transactions were successfully executed through the multisig wallet.
 
@@ -88,15 +110,25 @@ Filecoin: both upgrade transactions were successfully executed through the multi
 
 [View Filecoin execution 50](https://glif.io/en/tx/bafy2bzacebkbpgyn5vpvegaowusje5gy37uh2t2aw5wapcnegfo5px54xh35a)
 
-These source and execution references are not an independent audit certificate. Integrators should check deployed implementations and corresponding ABIs. Earlier upgrades can be inspected via explorer Past Implementations views and controller upgrade events.
+Integrators should check deployed implementations and corresponding ABIs. Earlier upgrades can be inspected via explorer Past Implementations views and controller upgrade events.
 
-## Filecoin oracle updates
+## Filecoin oracle migration to RedStone <a href="#filecoin-oracle-updates" id="filecoin-oracle-updates"></a>
 
 Following the discontinuation of Pyth price oracle support on Filecoin, the Fixed-Rate Lending protocol migrated its FIL, iFIL and wpFIL price feeds to RedStone.
 
-### Lending price feeds
+### Changes
+
+FIL, iFIL and wpFIL lending collateral feeds migrated from Pyth-based pricing to RedStone-based pricing.
+
+### User impact
+
+Collateral valuation for these assets uses the replacement price-feed paths. Dated observations of those paths are recorded below.
+
+### Execution transactions
 
 Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were successfully executed through the multisig wallet (transactions 51, 52 and 53).
+
+Execution dates: see the linked transactions.
 
 [View execution 51](https://glif.io/en/tx/bafy2bzaced6snlpq4qllbijh2wegxplsp45yifhiccuuzp5olayzatxlujiiy)
 
@@ -104,4 +136,16 @@ Fixed-Rate Lending: all three price-feed updates for FIL, iFIL and wpFIL were su
 
 [View execution 53](https://glif.io/en/tx/bafy2bzaced6jvxha36jzpkhrqkyym6fek4sazwcwvqnmpkksikoxxcyzkyzjq)
 
-Last updated: 6 November 2026 (UTC).
+## Configuration observations
+
+These observations are separate from upgrade execution dates and are not a live configuration feed.
+
+### 6 November 2026 — Filecoin collateral feed paths
+
+At Filecoin block **6,523,328**, the CurrencyController feed paths were FIL → RedStone FIL/USD; iFIL → iFIL/FIL conversion × RedStone FIL/USD; and wpFIL → wpFIL/FIL conversion × RedStone FIL/USD. See [Collateral](../core-concepts/collateral.md) for the pricing mechanism.
+
+### 6 November 2026, 23:34 UTC — Filecoin USDFC configured price
+
+At Filecoin block **6,523,388**, USDFC used [StaticPriceAggregator](https://filfox.info/en/address/0x8aa14976161882e6853FAa93fB89324464aed8f1), returning **100000000 with 8 decimals** ($1). Its timestamp reflected the current block time, not a market-price update. This was a configured static valuation, not evidence of the traded USDFC/USD price.
+
+Last updated: 7 November 2026 (UTC).
