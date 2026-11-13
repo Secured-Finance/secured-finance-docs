@@ -6,7 +6,7 @@ description: Every tab and field of the SF Yield Vault interface
 
 This page tours the vault view in the [**SF Yield Vault app**](https://vaults.secured.finance/) — what each tab shows and what the fields mean. For step-by-step walkthroughs, see [Deposit assets](deposit-assets.md) and [Withdraw assets](withdrawing-assets.md).
 
-{% file src="../../.gitbook/assets/USDFC_Vault_Walkthrough_RoughCut.mp4" %}
+{% file src="../../.gitbook/assets/USDFC_Vault_Walkthrough.mp4" %}
 
 Figures on this page are sourced from Secured Finance's indexing service, which tracks the vaults on-chain; your own position is read directly from the vault contract. Values refresh automatically, though indexed figures can lag the chain by a few minutes.
 
