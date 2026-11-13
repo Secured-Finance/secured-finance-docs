@@ -2,9 +2,11 @@
 description: Every tab and field of the SF Yield Vault interface
 ---
 
-# 🎮 Platform guide
+# 🎮 Platform Guide
 
 This page tours the vault view in the [**SF Yield Vault app**](https://vaults.secured.finance/) — what each tab shows and what the fields mean. For step-by-step walkthroughs, see [Deposit assets](deposit-assets.md) and [Withdraw assets](withdrawing-assets.md).
+
+{% file src="../../.gitbook/assets/USDFC_Vault_Walkthrough_RoughCut.mp4" %}
 
 Figures on this page are sourced from Secured Finance's indexing service, which tracks the vaults on-chain; your own position is read directly from the vault contract. Values refresh automatically, though indexed figures can lag the chain by a few minutes.
 
@@ -22,19 +24,19 @@ Two tabs below the header handle the actions you can take.
 
 **Deposit** moves assets from your wallet into the vault:
 
-| Field | Meaning |
-| --- | --- |
-| **From wallet** | The asset you send (e.g. JPYC). **Max** uses your full balance |
-| **To vault** | The vault share token you receive (e.g. yvJPYC) |
-| **You will receive** | Estimated shares at the current price per share |
+| Field                | Meaning                                                        |
+| -------------------- | -------------------------------------------------------------- |
+| **From wallet**      | The asset you send (e.g. JPYC). **Max** uses your full balance |
+| **To vault**         | The vault share token you receive (e.g. yvJPYC)                |
+| **You will receive** | Estimated shares at the current price per share                |
 
 **Withdraw** redeems shares back to your wallet:
 
-| Field | Meaning |
-| --- | --- |
-| **From vault** | The share token you redeem (e.g. yvJPYC). **Max** fills in the largest amount currently withdrawable — your full position when liquidity allows ([details](withdrawing-assets.md)) |
-| **To wallet** | The asset returned (e.g. JPYC) |
-| **You will receive** | Estimated assets at the current price per share |
+| Field                | Meaning                                                                                                                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **From vault**       | The share token you redeem (e.g. yvJPYC). **Max** fills in the largest amount currently withdrawable — your full position when liquidity allows ([details](withdrawing-assets.md)) |
+| **To wallet**        | The asset returned (e.g. JPYC)                                                                                                                                                     |
+| **You will receive** | Estimated assets at the current price per share                                                                                                                                    |
 
 Every action — approvals, deposits, withdrawals — is confirmed through your wallet and completes on-chain.
 
@@ -58,7 +60,7 @@ Vault metadata and on-chain references for those who want the technical context,
 
 ## Risk
 
-The risks of depositing — smart contract, strategy, and liquidity risk. Review this tab before depositing; it complements the strategy pages' [risk notes](../core-mechanics/available-vaults-and-strategies/README.md).
+The risks of depositing — smart contract, strategy, and liquidity risk. Review this tab before depositing; it complements the strategy pages' [risk notes](../core-mechanics/available-vaults-and-strategies/).
 
 <figure><img src="../../.gitbook/assets/yv-risk-tab.png" alt="Risk tab"><figcaption><p>The Risk tab</p></figcaption></figure>
 
