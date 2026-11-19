@@ -4,7 +4,7 @@ description: Duration-aware minimum collateral requirements
 
 # 🪄 Base Price Adjustment
 
-Zero-Coupon bonds start at a deep discount and converge to par (100) at maturity — which means a borrower's obligation _grows_ in present-value terms over time. To keep positions safely collateralized along that path (and to stop attackers from using artificially low prices to compute collateral requirements), the protocol enforces a **minimum collateral base price (BP)**: when an order's price is below the BP, required collateral is computed from the BP instead.
+Zero-Coupon bonds start at a deep discount and converge to par (100) at maturity — which means a borrower's obligation _grows_ in present-value terms over time. To keep positions safely collateralized along that path (and to stop attackers from using artificially low prices to compute collateral requirements), the protocol enforces a **minimum collateral base price (BP)**: when a market's price is below the BP, debt in that market is valued at the BP instead.
 
 ## The formula
 
@@ -35,9 +35,16 @@ Current category assignments (BTC — A, ETH/JPYC — B, USDC/USDFC — C, FIL/a
 
 (Illustrative annualized math; contracts compute in seconds.)
 
+## Where the floor applies
+
+* **Debt only.** The floor raises the value used for borrowing positions. Lending positions are valued at the market price and are not raised by the floor.
+* **Each maturity uses its own BP.** Debt in a market is compared with the BP for that market's time to maturity. The price of another maturity does not change it.
+* **Rolled positions use the BP of the market they rolled into.**
+* **A market with no established price is valued at par (100.00)**, not at the BP.
+
 ## What it means for borrowers
 
-* Your **minimum collateral** is computed from BP when market prices are below it — a spike-proof floor.
+* Your **minimum collateral** is computed from BP when the market price of your maturity is below it — a spike-proof floor.
 * As maturity approaches, BP rises toward 96.00, so **collateral requirements gradually increase**. Plan buffers for long-dated, high-yield (high-category) borrows.
 * The formula is deterministic — you can project your future requirements exactly.
 

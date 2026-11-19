@@ -2,6 +2,52 @@
 
 Dates and execution times are UTC. Upgrade transactions record deployment; configuration observations below record only the state checked at the stated date or block.
 
+## 16 November 2026 — Consistent position valuation before and after cleanup
+
+The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin.
+
+### Changes
+
+* [PR #465](https://github.com/Secured-Finance/contracts/pull/465) values a vault balance and filled orders in the same maturity as one net position before a price is applied. Reported funds are now the same before and after cleanup.
+* Valuation reverts if a non-zero stored balance is recorded with a maturity that differs from its order book. This is a consistency check and is not expected in normal operation.
+
+### User impact
+
+No position migration is required. Accounts holding offsetting positions in one maturity may see lower reported debt before cleanup than under the previous calculation.
+
+### Execution transactions
+
+Successful contract upgrades on 16 November 2026 (UTC):
+
+* [Ethereum Mainnet — 06:29:47 UTC](https://etherscan.io/tx/0x969839eae10b0619d5219da2a00f906f979f62a8d6ad6b1e9c190f5b10002fe8)
+* [Arbitrum One — 06:30:16 UTC](https://arbiscan.io/tx/0xc7b18a94ce3226ad12c3f0de33caff0706530b0d19c9b20080cebaa49dc059f9)
+* [Filecoin — 06:31:00 UTC](https://filecoin.blockscout.com/tx/0x3278ad112bff2b959a697b183e92acf5a743727efc48453da806ed785807baef)
+
+## 13 November 2026 — Minimum collateral base price applied per maturity
+
+The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin.
+
+### Changes
+
+[PR #464](https://github.com/Secured-Finance/contracts/pull/464) changes how debt is valued when an account's positions across maturities are added up:
+
+* Debt in each maturity is valued at no less than that maturity's own [minimum collateral base price](../advanced-topics/base-price-adjustment.md). Previously, debt outside the nearest maturity could be valued below its floor.
+* The valuation of debt in one maturity no longer depends on the market price of the nearest maturity.
+* The floor applies to debt only. Lending positions are not raised by it.
+* A market with no established price values positions at par (100.00).
+
+### User impact
+
+No position migration is required. If a market trades below its base price, borrowers in that maturity need the collateral implied by the base price. Check your coverage in Portfolio.
+
+### Execution transactions
+
+Successful contract upgrades on 13 November 2026 (UTC):
+
+* [Ethereum Mainnet — 09:08:35 UTC](https://etherscan.io/tx/0x92e28d8c8755b602617c83b71ebf8a542e47ffa197834fdc00ed753b05af0516)
+* [Arbitrum One — 09:10:17 UTC](https://arbiscan.io/tx/0x45892135732bc085edfd41a8c432c9274b43ab0a583746ed15afcc491038ad77)
+* [Filecoin — 09:24:00 UTC](https://filecoin.blockscout.com/tx/0x1930ed873c8fee0662cee7bcef2a749c7ab5d4474f9a4d215d5fe9e6c67d60ac)
+
 ## 6 November 2026 — Circuit-breaker security update
 
 On 6 November 2026, we strengthened the circuit-breaker safeguards against excessive price movements within a single block. Fixed-Rate Lending trading, deposits and withdrawals were temporarily paused as a precaution while the update was prepared and deployed.
@@ -148,4 +194,4 @@ At Filecoin block **6,523,328**, the CurrencyController feed paths were FIL → 
 
 At Filecoin block **6,523,388**, USDFC used [StaticPriceAggregator](https://filfox.info/en/address/0x8aa14976161882e6853FAa93fB89324464aed8f1), returning **100000000 with 8 decimals** ($1). Its timestamp reflected the current block time, not a market-price update. This was a configured static valuation, not evidence of the traded USDFC/USD price.
 
-Last updated: 7 November 2026 (UTC).
+Last updated: 19 November 2026 (UTC).
