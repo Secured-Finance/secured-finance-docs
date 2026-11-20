@@ -4,7 +4,7 @@ description: Duration-aware minimum collateral requirements
 
 # 🪄 Base Price Adjustment
 
-Zero-Coupon bonds start at a deep discount and converge to par (100) at maturity — which means a borrower's obligation _grows_ in present-value terms over time. To keep positions safely collateralized along that path (and to stop attackers from using artificially low prices to compute collateral requirements), the protocol enforces a **minimum collateral base price (BP)**: when an order's price is below the BP, required collateral is computed from the BP instead.
+Zero-Coupon bonds converge to par (100) at maturity, so a borrower's obligation can grow in present-value terms over time. The protocol enforces a minimum collateral base price (BP): when a market's price is below the BP, debt in that market is valued at the BP instead.
 
 ## The formula
 
@@ -35,11 +35,18 @@ Current category assignments (BTC — A, ETH/JPYC — B, USDC/USDFC — C, FIL/a
 
 (Illustrative annualized math; contracts compute in seconds.)
 
+## Where the floor applies
+
+* **Debt only.** BP is a floor for borrowing positions; it does not raise the value of lending positions.
+* **Per maturity.** Before a position rolls, its source maturity's floor applies. After conversion, the destination maturity's floor applies.
+* **Net positions.** A vault balance and filled orders in the same maturity are netted before valuation, keeping valuation consistent before and after cleanup.
+* **Unpriced markets.** Where no market price has been established, positions are valued at par (100.00), not at BP.
+
 ## What it means for borrowers
 
-* Your **minimum collateral** is computed from BP when market prices are below it — a spike-proof floor.
+* Debt valuation uses BP when the relevant maturity's market price is below it.
 * As maturity approaches, BP rises toward 96.00, so **collateral requirements gradually increase**. Plan buffers for long-dated, high-yield (high-category) borrows.
-* The formula is deterministic — you can project your future requirements exactly.
+* The formula lets you project BP over time. Actual collateral requirements also depend on your positions, market prices and protocol parameters.
 
 ## Related
 
