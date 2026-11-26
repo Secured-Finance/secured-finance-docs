@@ -13,7 +13,7 @@ The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One
 
 ### Background
 
-On 21 November, a gap in the ZC token withdrawal limit was used on Filecoin to liquidate a market-making account operated by Secured Finance. The loss, about $15,000, was covered by the protocol reserve fund and Secured Finance. No other user's funds were affected. Trading was paused on 22–23 November and resumed on 26 November after the upgrades were complete; TokenVault deposits and withdrawals remained available. The affected positions on Filecoin were corrected on 25 November.
+On 21 November, a gap in the ZC token withdrawal limit was used on Filecoin to liquidate an account. The loss, about $15,000, was covered by the protocol reserve fund. No other accounts were affected. Trading was paused on 22–23 November and resumed on 26 November after the upgrades were complete; TokenVault deposits and withdrawals remained available. The affected positions on Filecoin were corrected on 25 November.
 
 ### User impact
 
