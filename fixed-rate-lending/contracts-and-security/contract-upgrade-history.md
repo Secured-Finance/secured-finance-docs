@@ -2,6 +2,39 @@
 
 Dates and execution times are UTC. Upgrade transactions record deployment; configuration observations below record only the state checked at the stated date or block.
 
+## 24–26 November 2026 — Security update: ZC token withdrawal limits
+
+The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin.
+
+### Changes
+
+* [PR #468](https://github.com/Secured-Finance/contracts/pull/468) limits ZC token withdrawals to the collateral available to the account. Collateral valuation and liquidation no longer use prices from trades in the current block. Lending markets expose the live price through `getLiveUnitPrice`.
+* [PR #470](https://github.com/Secured-Finance/contracts/pull/470) removes temporary maintenance functions, the one-argument `getTotalCollateralAmount(address)`, and `migrateOrderChunks`.
+
+### Background
+
+On 21 November, a gap in the ZC token withdrawal limit was used on Filecoin to liquidate a market-making account operated by Secured Finance. The loss, about $15,000, was covered by the protocol reserve fund and Secured Finance. No other user's funds were affected. Trading was paused on 22–23 November and resumed on 26 November after the upgrades were complete; TokenVault deposits and withdrawals remained available. The affected positions on Filecoin were corrected on 25 November.
+
+### User impact
+
+* No position migration is required.
+* Integrators should use the updated ABI and replace `getTotalCollateralAmount(address)` with `getTotalCollateralAmount(address,bool)`. Passing `false` returns the same valuation-price amount as the removed function; `true` uses the conservative prices applied to risk-increasing actions.
+* Markets reopened on 26 November 2026 (UTC).
+
+### Execution transactions
+
+Successful contract upgrades on 24 November 2026 (UTC):
+
+* [Ethereum Mainnet — 16:33:35 UTC](https://etherscan.io/tx/0xcab1471245d64461a55dda54daac9b4a764baeb1a278277eba1cfb0daefef9bc)
+* [Arbitrum One — 16:36:13 UTC](https://arbiscan.io/tx/0x942a12096c7e3191d3da61d896528f95b3a92123b3053a27c704559c9b722b32)
+* [Filecoin — 16:39:00 UTC](https://filecoin.blockscout.com/tx/0x43406e23e8553bfe60c5a55465b12443d83040f5ed4e9ea69c5cfc0595216fac)
+
+Successful contract upgrades on 26 November 2026 (UTC):
+
+* [Ethereum Mainnet — 07:01:59 UTC](https://etherscan.io/tx/0x0fe6fe4f3a7b308ac41f445753e77273f234b3536cf260c479f636649428e9d8)
+* [Arbitrum One — 07:01:45 UTC](https://arbiscan.io/tx/0xee3376f2d4528ff5252a6a24d3bad2bedd5e7a014f584fd20c90aa2eb7e9eccd)
+* [Filecoin — 07:01:30 UTC](https://filecoin.blockscout.com/tx/0x5a5dd8aef3155253de8f77499754dad97ab55efaaa3c869f07ef474c0fc63723)
+
 ## 16 November 2026 — Consistent position valuation before and after cleanup
 
 The Fixed-Rate Lending contracts were upgraded on Ethereum Mainnet, Arbitrum One and Filecoin.
@@ -193,4 +226,4 @@ At Filecoin block **6,523,328**, the CurrencyController feed paths were FIL → 
 
 At Filecoin block **6,523,388**, USDFC used [StaticPriceAggregator](https://filfox.info/en/address/0x8aa14976161882e6853FAa93fB89324464aed8f1), returning **100000000 with 8 decimals** ($1). Its timestamp reflected the current block time, not a market-price update. This was a configured static valuation, not evidence of the traded USDFC/USD price.
 
-Last updated: 20 November 2026 (UTC).
+Last updated: 26 November 2026 (UTC).
